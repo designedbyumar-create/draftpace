@@ -1,0 +1,3143 @@
+[
+  {
+    "slice": "product",
+    "angle": "mockup-app",
+    "headline": "Home Maintenance App That Says So When Nothing Needs You",
+    "sub": "Home shows what needs you now, what is coming up, and what has recently been handled.",
+    "items": [
+      "Wrong",
+      "To care for",
+      "Coming up",
+      "Handled",
+      "Everything else is under control."
+    ],
+    "link": {
+      "kind": "shop",
+      "slug": "home-management-companion"
+    },
+    "proof": [
+      "Home shows what needs you now, what is coming up, and what has recently been handled. When there is nothing, it says so."
+    ],
+    "proofFile": "src/shop/products/home-management-companion.ts",
+    "query": "home maintenance app",
+    "board": "Home Maintenance Checklists",
+    "when": "evergreen",
+    "visual": "App-store promo in the homeschool reference style, Home Base palette: dark sage panel, app icon and name, two-tone headline, 3 rows (needs you now / coming up / handled), large tilted phone showing the REAL workspace screen (home-management-companion-workspace.png, dev badge cropped) with the four tabs Wrong, To care for, Coming up, Handled; prop: a coffee mug on a kitchen counter edge. Rows on the screen are demo data.",
+    "flags": [],
+    "reserve": false,
+    "n": 1
+  },
+  {
+    "slice": "appliances",
+    "angle": "infographic",
+    "headline": "Where Is the Model Number on a Washer, Dryer, Fridge and Dishwasher?",
+    "sub": "It is almost never on the front.",
+    "items": [
+      "Front-load washer: Inside the door, on the rim of the opening",
+      "Top-load washer: Under the lid, on the tub rim",
+      "Refrigerator: Inside, on a side wall, often the left in a top-freezer",
+      "Dishwasher: On the tub frame or edge, visible with the door open"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "how-to-find-the-model-number-on-any-appliance"
+    },
+    "proof": [
+      "The model number is printed on a rating plate or sticker, and it is almost never on the front.",
+      "Inside the door, on the rim of the opening",
+      "Under the lid, on the tub rim",
+      "Inside, on a side wall, often the left in a top-freezer",
+      "On the tub frame or edge, visible with the door open"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "where is the model number on appliances",
+    "board": "Appliance Records and Warranties",
+    "when": "evergreen",
+    "visual": "Flat-lay of four appliances drawn as a tidy row (front-load washer with door open, top-load washer with lid up, fridge with door open, dishwasher with door open), each with a small sage tag pointing to where its data plate sits; kraft-tan label cards carry the four items; sage panel, paper background.",
+    "flags": [],
+    "reserve": false,
+    "n": 2
+  },
+  {
+    "slice": "product",
+    "angle": "mockup-printable",
+    "headline": "Emergency Info Sheet for Your House: Print It and Leave It by the Door",
+    "sub": "This is the most useful page in the book. It takes ten minutes, and almost nobody does it.",
+    "items": [
+      "Main shutoff",
+      "Turns",
+      "Tool needed",
+      "Panel",
+      "Main breaker"
+    ],
+    "link": {
+      "kind": "shop",
+      "slug": "home-management-companion"
+    },
+    "proof": [
+      "This is the most useful page in the book. It takes ten minutes, and almost nobody does it."
+    ],
+    "proofFile": "book",
+    "query": "home emergency information sheet printable",
+    "board": "Home Safety and Shutoffs",
+    "when": "evergreen",
+    "visual": "Mockup-printable: the REAL Home Survey page 6 (Plate 01, If something goes wrong tonight, assets/book-p06.png) tilted on a clipboard hung by a front door beside a key hook, a small slate-blue water-valve icon as the only blue; headline top-left.",
+    "flags": [],
+    "reserve": false,
+    "proofExtra": [
+      {
+        "file": "src/shop/products/home-management-companion.ts",
+        "proof": [
+          "The facts that only matter in an emergency, written down once, on a page you can print and leave by the door."
+        ]
+      }
+    ],
+    "n": 3
+  },
+  {
+    "slice": "appliances",
+    "angle": "template-preview",
+    "headline": "What an Appliance Data Plate Says: Model, Serial, Volts (Example)",
+    "sub": "The example below uses made-up values, but the layout is typical.",
+    "items": [
+      "MODEL ABC1234XYZ: Which product this is. What a parts store or repair service asks for first.",
+      "SERIAL VF1234567: Your one unit. Used for warranty and recalls, and often carries the build date.",
+      "VOLTS / WATTS 240V, 5400W: Electrical rating. Useful to an electrician, rarely to you."
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "how-to-find-the-model-number-on-any-appliance"
+    },
+    "proof": [
+      "The example below uses made-up values, but the layout is typical.",
+      "ABC1234XYZ",
+      "VF1234567",
+      "Which product this is. What a parts store or repair service asks for first.",
+      "Your one unit. Used for warranty and recalls, and often carries the build date.",
+      "Electrical rating. Useful to an electrician, rarely to you."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "appliance model number and serial number plate",
+    "board": "Appliance Records and Warranties",
+    "when": "evergreen",
+    "visual": "plate-closeup archetype: a large close-up of a dryer rim data plate drawn as a metal label with the MODEL, SERIAL and VOLTS / WATTS lines; sage callout arrows to each line with the plain-language meaning in kraft-tan cards; small EXAMPLE tag in ochre.",
+    "flags": [
+      "example-tag"
+    ],
+    "reserve": false,
+    "n": 4
+  },
+  {
+    "slice": "product",
+    "angle": "mockup-app",
+    "headline": "Fall Home Maintenance Checklist App: Seasonal Jobs in the Month They Belong",
+    "sub": "Seasonal work raised in the month it actually belongs to.",
+    "items": [
+      "Spring",
+      "Summer",
+      "Fall",
+      "Winter",
+      "October",
+      "Annual boiler service",
+      "Test the smoke alarms"
+    ],
+    "link": {
+      "kind": "shop",
+      "slug": "home-management-companion"
+    },
+    "proof": [
+      "Seasonal work raised in the month it actually belongs to."
+    ],
+    "proofFile": "src/shop/products/home-management-companion.ts",
+    "query": "fall home maintenance checklist app",
+    "board": "Seasonal Home Maintenance",
+    "when": "September to November",
+    "visual": "Mockup-app pin: dark sage panel, headline in two tones, rows for the four seasons, tilted phone showing the REAL seasons screen (home-management-companion-seasons.png) with Fall selected and the October list (Annual boiler service, Test the smoke alarms); prop: a small pile of fall leaves and a kraft-tan filter at the phone's foot. Rows are demo data.",
+    "flags": [
+      "example-tag"
+    ],
+    "reserve": false,
+    "n": 5
+  },
+  {
+    "slice": "appliances",
+    "angle": "comparison",
+    "headline": "Model Number vs Serial Number: What Each One Is For",
+    "sub": "Both are usually on the same plate, so photograph the whole plate and write both down.",
+    "items": [
+      "Model number: identifies the product design and is what you use to order parts",
+      "Serial number: identifies your specific unit and is what warranty and recall checks use"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "how-to-find-the-model-number-on-any-appliance"
+    },
+    "proof": [
+      "The model number identifies the product design and is what you use to order parts. The serial number identifies your specific unit and is what warranty and recall checks use. Both are usually on the same plate, so photograph the whole plate and write both down."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "model number vs serial number",
+    "board": "Appliance Records and Warranties",
+    "when": "evergreen",
+    "visual": "Two-column split: left card 'Model' with a parts-store bag and a part, right card 'Serial' with a single appliance and a warranty card; the same close-up plate runs across the bottom with the two lines highlighted in sage.",
+    "flags": [],
+    "reserve": false,
+    "n": 6
+  },
+  {
+    "slice": "product",
+    "angle": "mockup-printable",
+    "headline": "Kitchen Appliance Record Page: Make, Model, Installed, Notes and Warranty",
+    "sub": "Tick what is there, then write down whatever is worth the detail.",
+    "items": [
+      "Refrigerator",
+      "Dishwasher",
+      "Oven or range",
+      "Range hood",
+      "Make and model",
+      "Installed"
+    ],
+    "link": {
+      "kind": "shop",
+      "slug": "home-management-companion"
+    },
+    "proof": [
+      "Refrigerator Freezer Dishwasher",
+      "Notes, filter size, warranty",
+      "Tick what is there, then write down whatever is worth the detail."
+    ],
+    "proofFile": "book",
+    "query": "appliance record sheet printable",
+    "board": "Appliance Records and Warranties",
+    "when": "evergreen",
+    "visual": "Mockup-printable: the REAL Home Survey page 8 (Plate 02, Kitchen, assets/book-p08.png) lying on a kitchen worktop beside a pen, tilted, with a fridge door corner in the background; sage highlight on the 'What is here' tick boxes.",
+    "flags": [],
+    "reserve": false,
+    "n": 7
+  },
+  {
+    "slice": "appliances",
+    "angle": "how-to-steps",
+    "headline": "How to Save an Appliance Model Number So You Can Find It Again",
+    "sub": "Do it while the appliance works and you can reach it.",
+    "items": [
+      "Open the door, lid or drawer where the plate should be",
+      "Use a flashlight, because plates sit in shadow",
+      "Photograph the whole plate, then a close shot of each code",
+      "Type the model and serial into whatever you keep records in",
+      "Note the year you bought it and where"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "how-to-find-the-model-number-on-any-appliance"
+    },
+    "proof": [
+      "Do it while the appliance works and you can reach it.",
+      "Open the door, lid or drawer where the plate should be.",
+      "Use a flashlight, because plates sit in shadow.",
+      "Photograph the whole plate, then a close shot of each code.",
+      "Type the model and serial into whatever you keep records in",
+      "Note the year you bought it and where."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "how to record appliance model number",
+    "board": "Appliance Records and Warranties",
+    "when": "evergreen",
+    "visual": "Numbered step strip 1 to 5 in sage circles: an open washer door with a flashlight beam on the plate, a phone photographing it, a notebook line, a calendar year note; kraft-tan step cards on a paper background.",
+    "flags": [],
+    "reserve": false,
+    "n": 8
+  },
+  {
+    "slice": "product",
+    "angle": "mockup-app",
+    "headline": "Home Repair History App: Who Did the Work, What They Did, What It Cost",
+    "sub": "History keeps the work, the person and the cost, so the question three years from now has an answer.",
+    "items": [
+      "The work",
+      "The person",
+      "The cost"
+    ],
+    "link": {
+      "kind": "shop",
+      "slug": "home-management-companion"
+    },
+    "proof": [
+      "History keeps the work, the person and the cost, so the question three years from now has an answer."
+    ],
+    "proofFile": "src/shop/products/home-management-companion.ts",
+    "query": "home repair history log",
+    "board": "Home Maintenance Log",
+    "when": "evergreen",
+    "visual": "Mockup-app pin: dark sage panel with three feature rows (work, person, cost), tilted phone showing the REAL history screen (home-management-companion-history.png, 'What's been done' with three entries, dev badge cropped); prop: a plumber's wrench and a paper receipt on a desk. Entries on the screen are demo data, so no figure is used in the headline.",
+    "flags": [
+      "example-tag"
+    ],
+    "reserve": false,
+    "n": 9
+  },
+  {
+    "slice": "appliances",
+    "angle": "question",
+    "headline": "What If the Appliance Model Number Sticker Is Worn Off? Where to Look Next",
+    "sub": "These usually work, in roughly this order.",
+    "items": [
+      "The original receipt or order confirmation email",
+      "The manual or the box, if either survived",
+      "A past repair invoice",
+      "The retailer's account or the maker's registration, if you registered the product"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "how-to-find-the-model-number-on-any-appliance"
+    },
+    "proof": [
+      "Worn, painted over, hidden behind cabinetry or peeled off. These usually work, in roughly this order.",
+      "The original receipt or order confirmation email. Search your inbox for the brand.",
+      "The manual or the box, if either survived.",
+      "A past repair invoice. Technicians almost always write the model on it.",
+      "The retailer's account or the maker's registration, if you registered the product."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "appliance model number sticker worn off",
+    "board": "Appliance Records and Warranties",
+    "when": "evergreen",
+    "visual": "A faded, peeling plate on a washer rim in close-up at the top, then a descending sage ladder of four kraft-tan cards (receipt, manual and box, repair invoice, retailer account) each with a small prop drawn.",
+    "flags": [],
+    "reserve": false,
+    "n": 10
+  },
+  {
+    "slice": "product",
+    "angle": "mockup-printable",
+    "headline": "Home Maintenance Schedule Printable: Job, How Often, and Which Ones Matter Most",
+    "sub": "The same list Home Base works from.",
+    "items": [
+      "Replace the air filter: HVAC system, every 3 months",
+      "Clean the condenser coils: Refrigerator, every 6 months",
+      "Check the door seals: Refrigerator, yearly"
+    ],
+    "link": {
+      "kind": "shop",
+      "slug": "home-management-companion"
+    },
+    "proof": [
+      "The same list Home Base works from.",
+      "Replace the air filter HVAC system every 3 months",
+      "Clean the condenser coils Refrigerator every 6 months",
+      "Check the door seals Refrigerator yearly"
+    ],
+    "proofFile": "book",
+    "query": "home maintenance schedule printable",
+    "board": "Home Maintenance Checklists",
+    "when": "evergreen",
+    "visual": "Mockup-printable: the REAL Home Survey page 21 (Plate 14, The jobs, and how often, assets/book-p21.png) with the JOB / ON WHAT / HOW OFTEN columns legible, tilted on a binder with a kraft-tan tab; the COSTLY and SAFETY tags in the last column kept as printed (SAFETY in ochre).",
+    "flags": [],
+    "reserve": false,
+    "n": 11
+  },
+  {
+    "slice": "appliances",
+    "angle": "checklist",
+    "headline": "What to Write Down When You Buy an Appliance: The Five Fields",
+    "sub": "Write them once, while the machine is in front of you.",
+    "items": [
+      "Brand and exact model",
+      "Serial number, photographed if it's long or hard to read",
+      "When it was purchased and when it was installed",
+      "When the warranty ends, and what it actually covers: parts, labor, or both",
+      "What to buy for it: a filter size, a part number, a bulb type"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "what-to-record-when-you-buy-an-appliance"
+    },
+    "proof": [
+      "Write five things down now: the brand and model, the serial number, when it was bought and installed, and when the warranty ends.",
+      "Brand and exact model. Not the marketing name on the box; the string off the rating plate.",
+      "Serial number, photographed if it's long or hard to read.",
+      "When it was purchased and when it was installed.",
+      "When the warranty ends, and what it actually covers: parts, labor, or both.",
+      "What to buy for it: a filter size, a part number, a bulb type."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "appliance information to record",
+    "board": "Appliance Records and Warranties",
+    "when": "evergreen",
+    "visual": "fridge-list archetype: a printed five-line checklist held to a fridge door by a magnet, sage tick boxes, one appliance sketch beside it; ochre underline only on 'warranty ends'.",
+    "flags": [],
+    "reserve": false,
+    "n": 12
+  },
+  {
+    "slice": "product",
+    "angle": "mockup-app",
+    "headline": "Renter Home App: It Stops Asking About the Roof and Asks About the Deposit",
+    "sub": "The notice deadline, the deposit, and what you reported to the landlord and when.",
+    "items": [
+      "The notice deadline",
+      "The deposit",
+      "What you reported to the landlord and when"
+    ],
+    "link": {
+      "kind": "shop",
+      "slug": "home-management-companion"
+    },
+    "proof": [
+      "Say you rent and it stops asking about the roof and the gutters and starts asking about what costs a renter money: the notice deadline, the deposit, and what you reported to the landlord and when."
+    ],
+    "proofFile": "src/shop/products/home-management-companion.ts",
+    "query": "renter home maintenance tracker",
+    "board": "Renting and Move-In",
+    "when": "evergreen",
+    "visual": "Mockup-app pin with a keys-on-a-hook prop: dark sage panel, headline, three rows (notice deadline, deposit, reported to landlord), tilted phone showing a CAPTURED screen of the Renting area's care list from the real component with stub data (Lease, Security deposit, Maintenance requests rows); prop: two keys on a ring and a lease folder.",
+    "flags": [],
+    "reserve": false,
+    "n": 13
+  },
+  {
+    "slice": "appliances",
+    "angle": "template-preview",
+    "headline": "Appliance Record Example: A Filled Dishwasher Page You Can Copy",
+    "sub": "A made-up record for a single dishwasher, not a real one.",
+    "items": [
+      "Appliance: Dishwasher, stainless",
+      "Brand and model: Bosch SHXM4AY55N",
+      "Serial number: Photographed the plate inside the door",
+      "Warranty ends: 6/2/2026, parts and labor",
+      "What to buy: None; the filter is reusable"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "what-to-record-when-you-buy-an-appliance"
+    },
+    "proof": [
+      "A made-up record for a single dishwasher, not a real one.",
+      "Dishwasher, stainless",
+      "Bosch SHXM4AY55N",
+      "Photographed the plate inside the door",
+      "6/2/2026, parts and labor",
+      "None; the filter is reusable"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "appliance record template",
+    "board": "Appliance Records and Warranties",
+    "when": "evergreen",
+    "visual": "A filled one-page appliance record laid on a desk beside a pencil: two columns, Field and What you'd write, the six dishwasher rows in handwriting font; EXAMPLE tag in ochre.",
+    "flags": [
+      "example-tag"
+    ],
+    "reserve": false,
+    "n": 14
+  },
+  {
+    "slice": "product",
+    "angle": "mockup-printable",
+    "headline": "Print an Item Card: Make, Model and What to Buy, Ready for the Hardware Store Counter",
+    "sub": "The paper is enough on its own at the counter.",
+    "items": [
+      "The make",
+      "The model",
+      "The what-to-buy line"
+    ],
+    "link": {
+      "kind": "shop",
+      "slug": "home-management-companion"
+    },
+    "proof": [
+      "Print an Item Card for anything you are about to buy a part for. It carries the make, the model and the what-to-buy line, so the paper is enough on its own at the counter."
+    ],
+    "proofFile": "src/shop/products/home-management-companion.ts",
+    "query": "hardware store parts list what size filter",
+    "board": "Appliance Records and Warranties",
+    "when": "evergreen",
+    "visual": "Mockup-printable: the Item Card PDF captured from the real component with stub data (make, model, a what-to-buy line such as a filter size), held up at a hardware-store counter edge next to a furnace filter and a bulb; kraft tan card on sage panel. Stub values are example text.",
+    "flags": [
+      "example-tag"
+    ],
+    "reserve": false,
+    "n": 15
+  },
+  {
+    "slice": "appliances",
+    "angle": "infographic",
+    "headline": "Appliance Info to Record: The Extra Line for Fridge, Furnace and Water Heater",
+    "sub": "The five fields cover most things. A few categories are worth one extra line.",
+    "items": [
+      "Refrigerator: Water filter part number, and the replacement interval printed inside",
+      "Furnace or central air: Filter size, and whether it's a standard 1 inch or a thicker media filter",
+      "Water heater: Tank size in gallons, and the fuel type: gas or electric",
+      "Garage door opener: Remote or keypad type, not the code itself"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "what-to-record-when-you-buy-an-appliance"
+    },
+    "proof": [
+      "The five fields cover most things. A few categories are worth one extra line.",
+      "Water filter part number, and the replacement interval printed inside",
+      "Filter size, and whether it's a standard 1 inch or a thicker media filter",
+      "Tank size in gallons, and the fuel type: gas or electric",
+      "Remote or keypad type, not the code itself"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "appliance information to write down fridge furnace water heater",
+    "board": "Appliance Records and Warranties",
+    "when": "evergreen",
+    "visual": "house-cutaway archetype: a simple cutaway of a house showing fridge, furnace, water heater and garage door opener each with a kraft-tan tag carrying its extra line; slate blue only on the water heater pipes.",
+    "flags": [],
+    "reserve": false,
+    "n": 16
+  },
+  {
+    "slice": "product",
+    "angle": "mockup-app",
+    "headline": "Home Care Schedule App: It Suggests the Care, You Untick What Does Not Apply",
+    "sub": "Nothing is created without you confirming it.",
+    "items": [
+      "Tell it whether you own or rent",
+      "Tap what your home has",
+      "Untick anything that does not apply"
+    ],
+    "link": {
+      "kind": "shop",
+      "slug": "home-management-companion"
+    },
+    "proof": [
+      "It suggests the care each one usually needs and you untick anything that does not apply. Nothing is created without you confirming it."
+    ],
+    "proofFile": "src/shop/products/home-management-companion.ts",
+    "query": "home maintenance schedule app",
+    "board": "Home Maintenance Checklists",
+    "when": "evergreen",
+    "visual": "Mockup-app pin: dark sage panel, three step rows, tilted phone showing a CAPTURED screen of the care list for one area (for example Heating, cooling and air) from the real setup component with stub data, some rows ticked and one unticked; prop: a furnace filter in kraft tan beside the phone.",
+    "flags": [],
+    "reserve": false,
+    "n": 17
+  },
+  {
+    "slice": "appliances",
+    "angle": "checklist",
+    "headline": "Appliance Warranty Tracker: 5 Things to Record When Something Is Installed",
+    "sub": "Check the expiration date before you agree to pay for a repair.",
+    "items": [
+      "Purchase date and install date",
+      "Serial number",
+      "Where the proof of purchase is",
+      "The warranty length, and whether you registered it or paid to extend it",
+      "Any condition attached, most often a required annual service"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "appliance-warranties-what-to-track"
+    },
+    "proof": [
+      "Record five things when something is installed, and check the expiration date before you agree to pay for a repair.",
+      "Purchase date and install date, which are often different, and the warranty terms say which one starts the clock.",
+      "Serial number, which is what a manufacturer asks for first.",
+      "Where the proof of purchase is, even if that's just a search term for your inbox.",
+      "The warranty length, and whether you registered it or paid to extend it.",
+      "Any condition attached, most often a required annual service."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "appliance warranty tracking",
+    "board": "Appliance Records and Warranties",
+    "when": "evergreen",
+    "visual": "A binder page with five sage tick-box rows and a small water heater sketch in the corner; an ochre paperclip on the proof-of-purchase row only.",
+    "flags": [],
+    "reserve": false,
+    "n": 18
+  },
+  {
+    "slice": "product",
+    "angle": "mockup-printable",
+    "headline": "Home Repair Contacts Page: The Four Trades You Will Need First",
+    "sub": "The plumber who was good, and the one who was not. Write down both.",
+    "items": [
+      "Plumber",
+      "Electrician",
+      "Heating and cooling",
+      "Roofer"
+    ],
+    "link": {
+      "kind": "shop",
+      "slug": "home-management-companion"
+    },
+    "proof": [
+      "The plumber who was good, and the one who was not. Write down both.",
+      "Plumber Electrician Heating and cooling Roofer",
+      "THE FOUR YOU WILL NEED FIRST"
+    ],
+    "proofFile": "book",
+    "query": "home repair contacts list printable",
+    "board": "Home Binder and Printables",
+    "when": "evergreen",
+    "visual": "Mockup-printable: the REAL Home Survey page 32 (Plate 17, Who to call, assets/book-p32.png) tilted on a desk next to a landline-style handset silhouette and a mug; the four named rows highlighted with a sage underline.",
+    "flags": [],
+    "reserve": false,
+    "n": 19
+  },
+  {
+    "slice": "appliances",
+    "angle": "comparison",
+    "headline": "Manufacturer's Warranty vs Home Warranty Plan: Two Things People Mix Up",
+    "sub": "This is for the manufacturer's warranty that comes with a new appliance in the US.",
+    "items": [
+      "Manufacturer's warranty: Free with the purchase; Covers defects in that one item; Ends on a fixed date, no renewal",
+      "Home warranty plan: A separate paid service contract; Covers many systems, with a fee per visit; Renews yearly, like insurance"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "appliance-warranties-what-to-track"
+    },
+    "proof": [
+      "Two different things people mix up",
+      "Free with the purchase",
+      "Covers defects in that one item",
+      "Ends on a fixed date, no renewal",
+      "A separate paid service contract",
+      "Covers many systems, with a fee per visit",
+      "Renews yearly, like insurance",
+      "This is for the manufacturer's warranty that comes with a new appliance in the US, not a paid whole-house home warranty plan"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "manufacturer warranty vs home warranty",
+    "board": "Appliance Records and Warranties",
+    "when": "evergreen",
+    "visual": "Two facing cards: left sage card with a single appliance and a receipt, right kraft-tan card with a house outline and a few system icons; three plain lines under each; no prices.",
+    "flags": [],
+    "reserve": false,
+    "n": 20
+  },
+  {
+    "slice": "product",
+    "angle": "mockup-app",
+    "headline": "Home Maintenance Log App: Act on a Job and It Records Who Did It and What It Cost",
+    "sub": "Acting records what actually happened: who did it, what it cost, and anything worth remembering next time.",
+    "items": [
+      "Act on a job or push it back",
+      "Who did it",
+      "What it cost",
+      "Anything worth remembering next time"
+    ],
+    "link": {
+      "kind": "shop",
+      "slug": "home-management-companion"
+    },
+    "proof": [
+      "Acting records what actually happened: who did it, what it cost, and anything worth remembering next time."
+    ],
+    "proofFile": "src/shop/products/home-management-companion.ts",
+    "query": "home maintenance log app",
+    "board": "Home Maintenance Log",
+    "when": "evergreen",
+    "visual": "Mockup-app pin: dark sage panel, four rows, tilted phone cropped tight on the REAL 'Clean the condenser coils' card from the workspace screen (Last done 6 months ago, usually every 6 months; Action and Snooze buttons) with a second captured screen of the act-on-a-job form (who, cost, note) overlapping it; prop: a pencil and a cloth.",
+    "flags": [],
+    "reserve": false,
+    "n": 21
+  },
+  {
+    "slice": "appliances",
+    "angle": "question",
+    "headline": "Does Your Furnace Warranty Require Annual Service? Check Page Four",
+    "sub": "Knowing it exists, and keeping the service dates written down, is the whole fix.",
+    "items": [
+      "Many furnace, heat pump and water heater warranties require a documented annual service",
+      "The requirement usually sits in a single paragraph on page four, not on the front of the card"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "appliance-warranties-what-to-track"
+    },
+    "proof": [
+      "Many furnace, heat pump and water heater warranties require a documented annual service, sometimes called an inspection or maintenance visit in the fine print.",
+      "The requirement is easy to miss because it usually sits in a single paragraph on page four, not on the front of the card.",
+      "Knowing it exists, and keeping the service dates written down, is the whole fix."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "furnace warranty annual service requirement",
+    "board": "Appliance Records and Warranties",
+    "when": "evergreen",
+    "visual": "A warranty booklet open to a page with one paragraph highlighted in ochre (needs a look) beside a furnace sketch and a small service-dates list; calm, no alarm marks.",
+    "flags": [],
+    "reserve": false,
+    "n": 22
+  },
+  {
+    "slice": "product",
+    "angle": "mockup-printable",
+    "headline": "Home Safety Walkthrough Page: Smoke or CO Detector, Gas Shutoff, Fire Extinguisher",
+    "sub": "Tick what is there, then write down whatever is worth the detail.",
+    "items": [
+      "Smoke or CO detector",
+      "Fire extinguisher",
+      "Gas shutoff",
+      "Escape ladder",
+      "First aid kit"
+    ],
+    "link": {
+      "kind": "shop",
+      "slug": "home-management-companion"
+    },
+    "proof": [
+      "Smoke or CO detector Fire extinguisher Radon system",
+      "Gas shutoff Escape ladder Security system",
+      "Tick what is there, then write down whatever is worth the detail."
+    ],
+    "proofFile": "book",
+    "query": "home safety checklist printable",
+    "board": "Home Safety and Shutoffs",
+    "when": "evergreen",
+    "visual": "Mockup-printable: the REAL Home Survey page 13 (Plate 07, Safety and security, assets/book-p13.png) on a hallway console beside a smoke-alarm silhouette; ochre used only for a small 'safety' tag, no red, no alarm drama. A page to fill in, not safety advice.",
+    "flags": [],
+    "reserve": false,
+    "n": 23
+  },
+  {
+    "slice": "appliances",
+    "angle": "how-to-steps",
+    "headline": "How to Make an Appliance Warranty Claim: Steps in Order",
+    "sub": "This is not legal advice.",
+    "items": [
+      "Contact the seller first",
+      "If that doesn't work, contact the manufacturer directly",
+      "Have the serial number, the purchase date and the proof of purchase ready before you call",
+      "Ask what documentation they need, and get the outcome in writing, with a claim or reference number"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "appliance-warranties-what-to-track"
+    },
+    "proof": [
+      "If you do need to make a claim",
+      "Contact the seller first. Many warranty problems get resolved there before the manufacturer is even involved.",
+      "If that doesn't work, contact the manufacturer directly.",
+      "Have the serial number, the purchase date and the proof of purchase ready before you call.",
+      "Ask what documentation they need, and get the outcome in writing, with a claim or reference number.",
+      "it isn't legal advice"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "how to make an appliance warranty claim",
+    "board": "Appliance Records and Warranties",
+    "when": "evergreen",
+    "visual": "Four numbered sage steps down the left, a desk on the right with a phone, receipt and warranty card laid out ready; kraft-tan step cards.",
+    "flags": [],
+    "reserve": false,
+    "n": 24
+  },
+  {
+    "slice": "product",
+    "angle": "template-preview",
+    "headline": "Home Maintenance Log Printable: The Page You Will Be Glad of in Three Years",
+    "sub": "The home's memory.",
+    "items": [
+      "Date",
+      "What was done",
+      "On what",
+      "By whom",
+      "Cost"
+    ],
+    "link": {
+      "kind": "shop",
+      "slug": "home-management-companion"
+    },
+    "proof": [
+      "The home's memory.",
+      "This is the page you will be glad of in three years, when something fails and the questions are whether it is still under warranty and who touched it last."
+    ],
+    "proofFile": "book",
+    "query": "home maintenance log printable",
+    "board": "Home Maintenance Log",
+    "when": "evergreen",
+    "visual": "Template-preview: a clean flat view of the REAL Home Survey page 33 (Plate 18, What has been done, assets/book-p33.png) with the five column headers and two hand-written example rows in a pen font, sitting on a kraft-tan card; the rows are drawn as sample handwriting, not book content.",
+    "flags": [
+      "example-tag"
+    ],
+    "reserve": false,
+    "n": 25
+  },
+  {
+    "slice": "appliances",
+    "angle": "scenario",
+    "headline": "Something Broke Today: Check the Warranty Expiration Date Before You Pay",
+    "sub": "Knowing the date in advance turns a bad surprise into an ordinary decision.",
+    "items": [
+      "Fix it yourself",
+      "Call the manufacturer",
+      "Pay for the repair with your eyes open"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "appliance-warranties-what-to-track"
+    },
+    "proof": [
+      "Something breaks, you want it fixed today, and the expiration date only gets checked after the invoice is already in your hand.",
+      "Knowing the date in advance turns a bad surprise into an ordinary decision: fix it yourself, call the manufacturer, or pay for the repair with your eyes open."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "check appliance warranty before repair",
+    "board": "Appliance Records and Warranties",
+    "when": "evergreen",
+    "visual": "scenario: a calm kitchen with a dishwasher door open and a handwritten warranty-ends date on a sticky note on the front; three sage option chips below (fix it yourself, call the manufacturer, pay for the repair).",
+    "flags": [],
+    "reserve": false,
+    "n": 26
+  },
+  {
+    "slice": "product",
+    "angle": "infographic",
+    "headline": "Fall Home Maintenance by Month: 10 Jobs in September, 11 in October, 2 in November",
+    "sub": "Some jobs are not on a timer, they are on a season.",
+    "items": [
+      "September: 10 jobs, from furnace tune-up to rodent check",
+      "October: 11 jobs, from bleeding the radiators to draining the outdoor faucet",
+      "November: 2 jobs, outdoor faucet and gutters"
+    ],
+    "link": {
+      "kind": "shop",
+      "slug": "home-management-companion"
+    },
+    "proof": [
+      "September Book a professional tune-up (furnace) 10 JOBS Annual service (boiler)",
+      "October Book a professional tune-up (furnace) 11 JOBS Bleed the radiators (boiler)",
+      "November Shut off and drain before the freeze (outdoor faucet) 2 JOBS Clear the gutters (gutters)",
+      "Some jobs are not on a timer, they are on a season."
+    ],
+    "proofFile": "book",
+    "query": "fall home maintenance checklist by month",
+    "board": "Seasonal Home Maintenance",
+    "when": "September to November",
+    "visual": "Infographic, year-wheel archetype: a wheel or three-month strip with September, October and November segments sized by job count, three named jobs in each, the other nine months greyed out; data from Home Survey page 28 and 29 (Plate 15, The year). Sage segments, kraft tan labels.",
+    "flags": [],
+    "reserve": false,
+    "n": 27
+  },
+  {
+    "slice": "maintenance",
+    "angle": "myth-vs-truth",
+    "headline": "When Is Home Maintenance Due? Count From the Last Time, Not Today",
+    "sub": "If you truly don't know, treat it as due.",
+    "items": [
+      "A common mistake is to start every interval from the day you happen to write the list",
+      "If you know roughly when something was last done, count from that date.",
+      "If you truly don't know, treat it as due."
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "how-often-home-systems-need-servicing"
+    },
+    "proof": [
+      "If you truly don't know, treat it as due.",
+      "A common mistake is to start every interval from the day you happen to write the list",
+      "If you know roughly when something was last done, count from that date."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "how to know when home maintenance is due",
+    "board": "Home Maintenance Log",
+    "when": "evergreen",
+    "visual": "Two-panel split on paper: left panel 'Start from the day you wrote the list' with a plain calendar page and a muted strike-through arrow; right panel 'Count from the last time it was done' with a dated log line and a sage tick. A furnace and a pen as props. No red.",
+    "flags": [],
+    "reserve": false,
+    "n": 28
+  },
+  {
+    "slice": "product",
+    "angle": "template-preview",
+    "headline": "Home Quick Reference Sheet: Filter Sizes, Paint Codes, Bulb Types, Where Things Live",
+    "sub": "Not passwords, alarm codes, or anything that opens the house.",
+    "items": [
+      "Furnace",
+      "Fridge",
+      "Humidifier",
+      "Range hood",
+      "Bulb types",
+      "Bin day",
+      "Spare keys",
+      "Water meter"
+    ],
+    "link": {
+      "kind": "shop",
+      "slug": "home-management-companion"
+    },
+    "proof": [
+      "The numbers you look up every time.",
+      "Furnace Fridge Humidifier Range hood",
+      "Bulb types Bin day",
+      "Not passwords, alarm codes, or anything that opens the house."
+    ],
+    "proofFile": "book",
+    "query": "home quick reference sheet printable",
+    "board": "Home Binder and Printables",
+    "when": "evergreen",
+    "visual": "Template-preview: the REAL Home Survey page 30 (Plate 16, Quick reference, assets/book-p30.png) as a flat fridge-list: page held on a fridge door by two magnets, the Filter sizes, Paint, Odds and ends and Where things live blocks visible; a small note that it holds no passwords or alarm codes.",
+    "flags": [],
+    "reserve": false,
+    "n": 29
+  },
+  {
+    "slice": "maintenance",
+    "angle": "infographic",
+    "headline": "Home Maintenance Schedule: How Often Each System Needs Service",
+    "sub": "Your own manual wins over any table.",
+    "items": [
+      "Replace the furnace or AC filter: Every 1 to 3 months",
+      "Book a heating tune-up: Annually, before the heating season",
+      "Flush the water heater tank: Annually",
+      "Clean the refrigerator condenser coils: Every 6 months",
+      "Clear the gutters: Twice a year, spring and fall",
+      "Test smoke and CO alarms: Monthly"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "how-often-home-systems-need-servicing"
+    },
+    "proof": [
+      "Your own manual wins over any table.",
+      "Replace the furnace or AC filter",
+      "Every 1 to 3 months",
+      "Book a heating tune-up",
+      "Annually, before the heating season",
+      "Flush the water heater tank",
+      "Clean the refrigerator condenser coils",
+      "Every 6 months",
+      "Clear the gutters",
+      "Twice a year, spring and fall",
+      "Test smoke and CO alarms",
+      "Monthly"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "home maintenance schedule how often",
+    "board": "Home Maintenance Checklists",
+    "when": "evergreen",
+    "visual": "House-cutaway archetype: a calm line drawing of a house in section on paper (#f4f2ec) with six sage callout tags pointing at the furnace, water heater, fridge, gutter, ceiling alarm and the filter slot, each tag carrying the job and its typical interval from the guide table. Kraft tan for the filter tag. No red.",
+    "flags": [],
+    "reserve": false,
+    "n": 30
+  },
+  {
+    "slice": "product",
+    "angle": "comparison",
+    "headline": "Home Binder vs App: What Paper Cannot Do and Home Base Does",
+    "sub": "It holds what you tell it and works out the timing.",
+    "items": [
+      "It does the arithmetic",
+      "It picks",
+      "It remembers"
+    ],
+    "link": {
+      "kind": "shop",
+      "slug": "home-management-companion"
+    },
+    "proof": [
+      "It does the arithmetic It picks It remembers",
+      "Home Base does not connect to your bank, your utilities, or your appliances. It holds what you tell it and works out the timing."
+    ],
+    "proofFile": "book",
+    "query": "home binder vs app",
+    "board": "Home Binder and Printables",
+    "when": "evergreen",
+    "visual": "Comparison pin: split pin, left a paper binder page (Home Survey page 36 closing panel 'What it does that paper cannot') and right the Home Base workspace screen, with three connecting rows: does the arithmetic, picks, remembers. Calm, no versus-fight styling.",
+    "flags": [],
+    "reserve": false,
+    "n": 31
+  },
+  {
+    "slice": "maintenance",
+    "angle": "scenario",
+    "headline": "Moved In Three Years Ago? The Home Maintenance That Is Probably Due",
+    "sub": "None of that is unusual, and none of it is expensive to fix once you know it's due.",
+    "items": [
+      "The furnace filter has never been changed, because no one mentioned it needed to be.",
+      "The water heater has never been flushed.",
+      "The smoke alarms are original to a house built in 2013, which puts them a year past the 10 year mark printed on the back of the unit."
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "how-often-home-systems-need-servicing"
+    },
+    "proof": [
+      "None of that is unusual, and none of it is expensive to fix once you know it's due.",
+      "The furnace filter has never been changed, because no one mentioned it needed to be.",
+      "The water heater has never been flushed.",
+      "The smoke alarms are original to a house built in 2013, which puts them a year past the 10 year mark printed on the back of the unit."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "what maintenance is due on my house new homeowner",
+    "board": "New Homeowner Checklists",
+    "when": "evergreen",
+    "visual": "Scenario card in the guide's own example: a house-in-section drawing with three ochre (#8a5a11) 'needs a look' dots on the furnace filter slot, the water heater and a ceiling alarm, and a small key-and-tag prop labelled 'three years ago'. Reassuring tone, sage and paper, no alarm imagery.",
+    "flags": [
+      "example-tag"
+    ],
+    "reserve": false,
+    "n": 32
+  },
+  {
+    "slice": "product",
+    "angle": "infographic",
+    "headline": "Home Survey Checklist: The 12 Areas of a House to Walk Through Once",
+    "sub": "Twelve areas of a home, in roughly the order you meet them.",
+    "items": [
+      "Kitchen",
+      "Laundry",
+      "Heating, cooling and air",
+      "Water and plumbing",
+      "Power and electrical",
+      "Safety and security",
+      "Structure and exterior",
+      "Grounds and garden",
+      "Pests and damp",
+      "Everyday things",
+      "Papers and facts",
+      "Renting"
+    ],
+    "link": {
+      "kind": "shop",
+      "slug": "home-management-companion"
+    },
+    "proof": [
+      "Kitchen Plate 02 Laundry Plate 03 Heating, cooling and air Plate 04 Water and plumbing Plate 05",
+      "Structure and exterior Plate 08 Grounds and garden Plate 09 Pests and damp Plate 10 Everyday things Plate 11 Papers and facts Plate 12 Renting Plate 13",
+      "Twelve areas of a home, in roughly the order you meet them."
+    ],
+    "proofFile": "book",
+    "query": "home survey checklist what to check in a house",
+    "board": "New Homeowner Checklists",
+    "when": "evergreen",
+    "visual": "Infographic, house-cutaway archetype: a cutaway house with the twelve areas as numbered tags (Plate 02 to Plate 13) placed where each lives (roof and gutters, boiler, laundry, garden, papers as a folder at the front door); contents list from Home Survey page 2. Muted slate blue only on the water tag.",
+    "flags": [],
+    "reserve": false,
+    "n": 33
+  },
+  {
+    "slice": "maintenance",
+    "angle": "checklist",
+    "headline": "Kitchen and Laundry Appliance Maintenance: The Small Jobs Easy to Forget",
+    "sub": "Smaller jobs, easy to forget, real consequences when they're skipped.",
+    "items": [
+      "Clean the refrigerator condenser coils: Every 6 months",
+      "Clean the dryer vent: At least once a year",
+      "Replace the washing machine's supply hoses: Every 3 to 5 years, sooner if cracked or bulging",
+      "Degrease the range hood filter: Monthly"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "how-often-home-systems-need-servicing"
+    },
+    "proof": [
+      "Smaller jobs, easy to forget, real consequences when they're skipped.",
+      "Clean the refrigerator condenser coils",
+      "Every 6 months",
+      "Clean the dryer vent",
+      "At least once a year",
+      "Replace the washing machine's supply hoses",
+      "Every 3 to 5 years, sooner if cracked or bulging",
+      "Degrease the range hood filter",
+      "Monthly"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "appliance maintenance checklist",
+    "board": "Home Maintenance Checklists",
+    "when": "evergreen",
+    "visual": "Fridge-list archetype: a kraft-tan list card held on a fridge door with a magnet, four tick-box rows with the job and interval, a small fridge-coil, dryer and range-hood icon beside each (Phosphor-style line icons, sage).",
+    "flags": [],
+    "reserve": false,
+    "n": 34
+  },
+  {
+    "slice": "product",
+    "angle": "question",
+    "headline": "Furnace, Heat Pump, Mini Split or Boiler? Which Heating and Cooling Do You Have?",
+    "sub": "Tick what is there, then write down whatever is worth the detail.",
+    "items": [
+      "Furnace",
+      "Central air conditioning",
+      "Heat pump",
+      "Mini split",
+      "Boiler",
+      "Window air conditioner",
+      "Thermostat"
+    ],
+    "link": {
+      "kind": "shop",
+      "slug": "home-management-companion"
+    },
+    "proof": [
+      "Furnace Central air conditioning HVAC system",
+      "Heat pump Mini split Boiler",
+      "Tick what is there, then write down whatever is worth the detail."
+    ],
+    "proofFile": "book",
+    "query": "heating and cooling system types in my house",
+    "board": "New Homeowner Checklists",
+    "when": "evergreen",
+    "visual": "Question pin: a cutaway of a basement and utility cupboard with a furnace, a boiler and a heat pump outdoor unit each tagged with a question mark, headline over it; the REAL Home Survey page 10 (Plate 04, assets/book-p10.png) as a small tilted inset.",
+    "flags": [],
+    "reserve": false,
+    "n": 35
+  },
+  {
+    "slice": "maintenance",
+    "angle": "before-after",
+    "headline": "What Skipped Home Maintenance Turns Into, Three Jobs Side by Side",
+    "sub": "Each has a real interval, and pushing it past that interval is what turns a cheap job into a repair.",
+    "items": [
+      "Clear the gutters: Water pools at the roof edge, then soaks the fascia, then rots wood you cannot see from the ground",
+      "Flush the water heater: Sediment settles on the tank floor, which lowers efficiency and shortens the tank's life",
+      "Inspect the roof and flashing: A small gap at a flashing joint becomes a leak, then wet insulation, then a stained ceiling"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "home-maintenance-you-skip-that-costs-the-most"
+    },
+    "proof": [
+      "Each has a real interval, and pushing it past that interval is what turns a cheap job into a repair.",
+      "Clear the gutters",
+      "Water pools at the roof edge, then soaks the fascia, then rots wood you cannot see from the ground",
+      "Flush the water heater",
+      "Sediment settles on the tank floor, which lowers efficiency and shortens the tank's life",
+      "Inspect the roof and flashing",
+      "A small gap at a flashing joint becomes a leak, then wet insulation, then a stained ceiling"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "what happens if you skip home maintenance",
+    "board": "Home Maintenance Checklists",
+    "when": "evergreen",
+    "visual": "Before-after rows: three horizontal strips, left tile 'the job' (sage tag with a gutter, a tank and a roof flashing joint) and right tile 'what skipping turns it into' as a calm labelled diagram, not a photo of damage. Ochre only on the right-hand 'needs a look' marker. No red, no disaster imagery.",
+    "flags": [],
+    "reserve": false,
+    "n": 36
+  },
+  {
+    "slice": "product",
+    "angle": "quote-card",
+    "headline": "Renting: The Notice Date Matters More Than the Renewal Date",
+    "sub": "Renting has a short list of its own, and most of it is deadlines.",
+    "items": [
+      "Started",
+      "Renews on",
+      "Notice by"
+    ],
+    "link": {
+      "kind": "shop",
+      "slug": "home-management-companion"
+    },
+    "proof": [
+      "The notice date matters more than the renewal date, because that is the one that passes quietly.",
+      "Renting has a short list of its own, and most of it is deadlines."
+    ],
+    "proofFile": "book",
+    "query": "rental lease notice date renewal",
+    "board": "Renting and Move-In",
+    "when": "evergreen",
+    "visual": "Quote-card: the sentence set large in serif on paper-cream, a small crop of the REAL Home Survey page 35 (Plate 19, If you rent, The lease block: Started, Renews on, Notice by) underneath with the 'Notice by' line circled in sage; keys on a ring as the prop.",
+    "flags": [],
+    "reserve": false,
+    "n": 37
+  },
+  {
+    "slice": "maintenance",
+    "angle": "infographic",
+    "headline": "What a Full Gutter Actually Costs: The Fascia Board Behind It",
+    "sub": "The labor is the same crew either way. Only the price changes.",
+    "items": [
+      "Water backs up at the roof edge instead of running to the downspout",
+      "so it soaks the fascia board behind the gutter every time it rains",
+      "it starts to rot from the inside, where you cannot see it from the ground",
+      "It is replacing fascia, and sometimes the sheathing behind it."
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "home-maintenance-you-skip-that-costs-the-most"
+    },
+    "proof": [
+      "The labor is the same crew either way. Only the price changes.",
+      "Water backs up at the roof edge instead of running to the downspout",
+      "so it soaks the fascia board behind the gutter every time it rains",
+      "it starts to rot from the inside, where you cannot see it from the ground",
+      "It is replacing fascia, and sometimes the sheathing behind it."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "why clean gutters fascia rot",
+    "board": "Seasonal Home Maintenance",
+    "when": "October to November and March to April (gutters are a spring and fall job)",
+    "visual": "Gutter cross-section diagram: roof edge, gutter full of leaves, fascia board and downspout in sage line art, muted slate-blue (water only) arrows showing water backing up behind the gutter, four numbered captions from the guide. Calm technical drawing, not a damage photo.",
+    "flags": [
+      "example-tag"
+    ],
+    "reserve": false,
+    "n": 38
+  },
+  {
+    "slice": "product",
+    "angle": "before-after",
+    "headline": "One Water Heater With a Date Beats Forty Blank Rows in Your Home Binder",
+    "sub": "Fill in what you find, leave the rest.",
+    "items": [
+      "Forty blank rows",
+      "One water heater with a date on it"
+    ],
+    "link": {
+      "kind": "shop",
+      "slug": "home-management-companion"
+    },
+    "proof": [
+      "One water heater with a date on it is worth more than forty blank rows.",
+      "Fill in what you find, leave the rest"
+    ],
+    "proofFile": "book",
+    "query": "how to start a home binder",
+    "board": "Home Binder and Printables",
+    "when": "evergreen",
+    "visual": "Before-after: left a Home Survey table page (page 11, Water and plumbing, assets/book-p11.png) completely blank with many empty rows, right the same table with one row filled in by hand for the water heater with a date in it; tick mark in sage on the right.",
+    "flags": [],
+    "reserve": false,
+    "n": 39
+  },
+  {
+    "slice": "maintenance",
+    "angle": "question",
+    "headline": "What Is the Most Important Home Maintenance Task? Start With One",
+    "sub": "If you can only do one this weekend, start with the furnace or the water heater",
+    "items": [
+      "Service the furnace or heating system: Once a year, before the cold months",
+      "Flush the water heater: Once a year"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "home-maintenance-you-skip-that-costs-the-most"
+    },
+    "proof": [
+      "If you can only do one this weekend, start with the furnace or the water heater",
+      "both tend to fail in the season you need them most, and both take under an hour to check or book",
+      "Service the furnace or heating system",
+      "Once a year, before the cold months",
+      "Flush the water heater",
+      "Once a year"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "most important home maintenance tasks",
+    "board": "Home Maintenance Checklists",
+    "when": "evergreen",
+    "visual": "Question card: a big sage question headline over two large cut-out props, a furnace with its door open and a tank water heater, each with a small interval tag; kraft tan label 'under an hour to check or book'. Paper background, ink text.",
+    "flags": [],
+    "reserve": false,
+    "n": 40
+  },
+  {
+    "slice": "seasonal",
+    "angle": "infographic",
+    "headline": "Seasonal Home Maintenance Checklist: The Year on One Wheel",
+    "sub": "Only jobs that have a season. Some months have nothing on them, and that is correct.",
+    "items": [
+      "February: Look for tree limbs over the roof or near power lines",
+      "April: Clear the gutters. Book air conditioning service",
+      "September: Book the furnace tune-up now",
+      "October: The busy one",
+      "November: Clear the gutters once the leaves are down",
+      "July and August: Nothing seasonal. A good month."
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "home-maintenance-checklist-by-month"
+    },
+    "proof": [
+      "Only jobs that have a season. Some months have nothing on them, and that is correct.",
+      "Look for tree limbs over the roof or near power lines.",
+      "Clear the gutters. Book air conditioning service.",
+      "Book the furnace tune-up now, before the first cold week.",
+      "The busy one.",
+      "Clear the gutters once the leaves are down.",
+      "Nothing seasonal. A good month."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "seasonal home maintenance checklist",
+    "board": "Seasonal Home Maintenance",
+    "when": "evergreen; best pinned January and again in late August",
+    "visual": "Year-wheel archetype: a sage-and-paper circle of twelve month wedges, the busy months (April, September, October, November) filled sage, July, August and January left as plain paper with a small tick, one short job label on the wedge ends; a seed-packet-style tag in the corner reads US home, northern hemisphere. Flat illustration, no phone.",
+    "flags": [],
+    "reserve": false,
+    "n": 41
+  },
+  {
+    "slice": "maintenance",
+    "angle": "template-preview",
+    "headline": "How to Read a Furnace Filter Size: What 16x25x1 Means",
+    "sub": "Buy by the number on the frame and not by a tape measure.",
+    "items": [
+      "The three numbers on the frame are length, width and depth in inches.",
+      "A filter marked 16x25x1 is about sixteen inches by twenty-five inches, and one inch thick.",
+      "Sizes are usually nominal, so the real dimensions run a little smaller than the printed number"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "how-often-change-furnace-filter"
+    },
+    "proof": [
+      "buy by the number on the frame and not by a tape measure",
+      "The three numbers on the frame are length, width and depth in inches.",
+      "A filter marked 16x25x1 is about sixteen inches by twenty-five inches, and one inch thick.",
+      "Sizes are usually nominal, so the real dimensions run a little smaller than the printed number"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "how to read furnace filter size",
+    "board": "Home Maintenance Checklists",
+    "when": "evergreen",
+    "visual": "Plate-closeup archetype: a large close-up of a cardboard filter frame with '16x25x1' printed on it, three sage callout arrows labelled length, width, depth. Kraft tan frame, paper background. 16x25x1 is the guide's own example.",
+    "flags": [
+      "example-tag"
+    ],
+    "reserve": false,
+    "n": 42
+  },
+  {
+    "slice": "seasonal",
+    "angle": "checklist",
+    "headline": "October Home Maintenance Checklist: The Busy Month, Job by Job",
+    "sub": "Nothing here is urgent yet, which is the point of doing it now.",
+    "items": [
+      "Disconnect hoses and drain outdoor faucets",
+      "Blow out irrigation lines",
+      "Bleed radiators if you have them",
+      "Swap the humidifier pad",
+      "Service the snow blower",
+      "Take window air conditioners out"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "home-maintenance-checklist-by-month"
+    },
+    "proof": [
+      "Disconnect hoses and drain outdoor faucets, blow out irrigation lines, bleed radiators if you have them, swap the humidifier pad, service the snow blower, and take window air conditioners out.",
+      "Nothing here is urgent yet, which is the point of doing it now."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "october home maintenance checklist",
+    "board": "Seasonal Home Maintenance",
+    "when": "September to October (pin again next September)",
+    "visual": "Fridge-list archetype: a paper checklist held by a magnet on a fridge door, six ruled lines with empty sage tick boxes, an outdoor tap and a coiled hose drawn beside it, a small wall calendar page for October behind. Kraft-tan magnet, ink handwriting-style type.",
+    "flags": [],
+    "reserve": false,
+    "n": 43
+  },
+  {
+    "slice": "maintenance",
+    "angle": "comparison",
+    "headline": "1 Inch vs 4 Inch Furnace Filter: How Often to Change Each",
+    "sub": "A different schedule, not a longer version of the same one.",
+    "items": [
+      "A one inch filter: 30 to 90 days",
+      "A four inch media filter: 6 to 12 months",
+      "Your furnace's own manual has the final say over both."
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "how-often-change-furnace-filter"
+    },
+    "proof": [
+      "a different schedule, not a longer version of the same one",
+      "a one inch filter at 30 to 90 days and a four inch media filter at 6 to 12 months",
+      "your furnace's own manual has the final say over both"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "1 inch vs 4 inch furnace filter how often to change",
+    "board": "Home Maintenance Checklists",
+    "when": "evergreen",
+    "visual": "Side-by-side comparison: a thin one-inch filter on the left and a deep four-inch media filter on the right drawn to scale in kraft tan, each with a sage interval tag from the guide. Paper background, small 'your manual wins' note.",
+    "flags": [],
+    "reserve": false,
+    "n": 44
+  },
+  {
+    "slice": "seasonal",
+    "angle": "myth-vs-truth",
+    "headline": "Seasonal Home Maintenance Myths: Jobs That Look Seasonal and Are Not",
+    "sub": "These go on an interval. Tie them to the date you last did them, not to a month.",
+    "items": [
+      "Test smoke and CO alarms: every month",
+      "Furnace and AC filter: check monthly, change at least every 3 months",
+      "Dryer lint filter: before and after each load",
+      "Water heater flush: once a year",
+      "Replace smoke alarm units: 10 years from the manufacture date"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "home-maintenance-checklist-by-month"
+    },
+    "proof": [
+      "These go on an interval. Tie them to the date you last did them, not to a month.",
+      "Test smoke and CO alarms",
+      "Every month",
+      "Check monthly, change at least every 3 months",
+      "Before and after each load",
+      "Water heater flush",
+      "Once a year",
+      "10 years from the manufacture date"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "home maintenance jobs every month vs seasonal",
+    "board": "Seasonal Home Maintenance",
+    "when": "evergreen",
+    "visual": "Two-column myth-vs-truth card: left a small calendar with a crossed-out month label and the words Looks seasonal, right a sage panel with the real interval for each job; tiny drawings of a smoke alarm, a filter, a lint trap and a water heater tank, each with its row. Ochre only on the smoke alarm row.",
+    "flags": [],
+    "reserve": false,
+    "n": 45
+  },
+  {
+    "slice": "maintenance",
+    "angle": "how-to-steps",
+    "headline": "How to Tell a Furnace Filter Is Overdue: Hold It Up to a Light",
+    "sub": "Checking and changing are not the same task.",
+    "items": [
+      "Hold it up to a light.",
+      "If you cannot see light through it, or it looks grey and matted rather than white or lightly grey, change it regardless of the calendar.",
+      "A filter that still looks clean at the one month mark does not need replacing yet, just checking again next month."
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "how-often-change-furnace-filter"
+    },
+    "proof": [
+      "Checking and changing are not the same task.",
+      "Hold it up to a light.",
+      "If you cannot see light through it, or it looks grey and matted rather than white or lightly grey, change it regardless of the calendar.",
+      "A filter that still looks clean at the one month mark does not need replacing yet, just checking again next month."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "how to tell if furnace filter needs changing",
+    "board": "Home Maintenance Checklists",
+    "when": "evergreen",
+    "visual": "Three-step strip: a hand holding a filter up to a window light (light visible through it), a grey matted filter beside a white one (kraft and paper tones, no red), and a calendar page with 'check again next month'. Sage step numbers.",
+    "flags": [],
+    "reserve": false,
+    "n": 46
+  },
+  {
+    "slice": "seasonal",
+    "angle": "question",
+    "headline": "What Home Maintenance Should Be Done Every Month?",
+    "sub": "That's the whole monthly list. Everything else runs on a season or a longer interval.",
+    "items": [
+      "Test the smoke and CO alarms",
+      "Check the furnace or AC filter and change it if it looks dirty",
+      "Clean the dryer lint filter every load"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "home-maintenance-checklist-by-month"
+    },
+    "proof": [
+      "What home maintenance should be done every month?",
+      "Test the smoke and CO alarms, since fire safety authorities say monthly. Check the furnace or AC filter and change it if it looks dirty. Clean the dryer lint filter every load.",
+      "That's the whole monthly list. Everything else runs on a season or a longer interval."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "what home maintenance should be done every month",
+    "board": "Seasonal Home Maintenance",
+    "when": "evergreen; January and the start of each month",
+    "visual": "Question card on paper with a large serif question, below it three numbered rows each with a small drawn prop (smoke alarm, filter in its frame, lint filter on a finger); a sage 'that is all' stamp at the bottom. Calm, uncluttered.",
+    "flags": [],
+    "reserve": false,
+    "n": 47
+  },
+  {
+    "slice": "maintenance",
+    "angle": "template-preview",
+    "headline": "Home Maintenance Log Example: Three Entries, One Line Each",
+    "sub": "A made-up week, not a real one, to show how little each entry needs.",
+    "items": [
+      "Aug 14: Flushed the water heater tank, Ace Plumbing, $180.00. Anode rod is due next time",
+      "Oct 2: Cleaned the dryer vent, You, $0. More lint than expected, check every 6 months",
+      "Nov 20: Furnace tune-up, Reliable Heat & Air, $145.00. Said the blower belt is wearing"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "home-maintenance-log-template"
+    },
+    "proof": [
+      "A made-up week, not a real one, to show how little each entry needs.",
+      "Flushed the water heater tank",
+      "Ace Plumbing",
+      "$180.00",
+      "Anode rod is due next time",
+      "Cleaned the dryer vent",
+      "$0",
+      "More lint than expected, check every 6 months",
+      "Furnace tune-up",
+      "Reliable Heat & Air",
+      "$145.00",
+      "Said the blower belt is wearing"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "home maintenance log example",
+    "board": "Home Maintenance Log",
+    "when": "evergreen",
+    "visual": "Template-preview: a filled log page on a binder with five ruled columns (date, what was done, who did it, cost, note) and three handwritten-style rows from the guide, a pen and a paper clip as props. Tilted slightly, kraft tan binder, paper page, sage header row. Entries are the guide's own made-up example.",
+    "flags": [
+      "example-tag"
+    ],
+    "reserve": false,
+    "n": 48
+  },
+  {
+    "slice": "seasonal",
+    "angle": "checklist",
+    "headline": "Spring Home Maintenance Checklist: March, April and May",
+    "sub": "US home, northern hemisphere. Your appliance manuals win over any list.",
+    "items": [
+      "March: Check that downspouts drain away from the house",
+      "April: Look at the roof from the ground for lifted or missing shingles",
+      "April: Clear the gutters. Book air conditioning service",
+      "May: Reconnect hoses and turn outdoor water back on, then look for drips at the faucet"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "home-maintenance-checklist-by-month"
+    },
+    "proof": [
+      "Check that downspouts drain away from the house and that the soil hasn't sunk toward the foundation.",
+      "Look at the roof from the ground for lifted or missing shingles. Clear the gutters. Book air conditioning service.",
+      "Reconnect hoses and turn outdoor water back on, then look for drips at the faucet.",
+      "your appliance manuals win over any list, this one included"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "spring home maintenance checklist",
+    "board": "Seasonal Home Maintenance",
+    "when": "February to May (pin from late February)",
+    "visual": "Three-month strip (March, April, May) laid across a paper page: each month a column with a small drawn prop (downspout and soil line, roofline seen from the ground, outdoor tap with a hose reconnected and a single drip drop in slate blue), sage tick boxes. Light spring paper tone, still the sage palette.",
+    "flags": [],
+    "reserve": false,
+    "n": 49
+  },
+  {
+    "slice": "maintenance",
+    "angle": "quote-card",
+    "headline": "The One Note to Write After a Service Visit That Saves the Next One",
+    "sub": "When a technician tells you what's coming next, write it down.",
+    "items": [
+      "Belt is wearing.",
+      "Other spring will go soon.",
+      "Filter size is different from what the old one said."
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "home-maintenance-log-template"
+    },
+    "proof": [
+      "When a technician tells you what's coming next, write it down.",
+      "Belt is wearing. Other spring will go soon. Filter size is different from what the old one said.",
+      "The most valuable field is the last one."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "what to write in a home maintenance log",
+    "board": "Home Maintenance Log",
+    "when": "evergreen",
+    "visual": "Quote cards: three sticky-note style cards in kraft tan pinned to a furnace door, each carrying one of the guide's example notes in handwriting type, a pencil beside them. Paper background, sage headline. The notes are the guide's own examples.",
+    "flags": [
+      "example-tag"
+    ],
+    "reserve": false,
+    "n": 50
+  },
+  {
+    "slice": "seasonal",
+    "angle": "mockup-printable",
+    "headline": "Home Maintenance Calendar by Month: October Has 11 Jobs and December Has None",
+    "sub": "Some jobs are not on a timer, they are on a season.",
+    "items": [
+      "October: 11 jobs",
+      "November: 2 jobs",
+      "December: Nothing seasonal. A good month."
+    ],
+    "link": {
+      "kind": "shop",
+      "slug": "home-management-companion"
+    },
+    "proof": [
+      "What belongs to which month.",
+      "Some jobs are not on a timer, they are on a season.",
+      "11 JOBS",
+      "2 JOBS",
+      "Nothing seasonal. A good month."
+    ],
+    "proofFile": "book",
+    "query": "home maintenance calendar by month printable",
+    "board": "Seasonal Home Maintenance",
+    "when": "evergreen; strongest September and January",
+    "visual": "mockup-printable: the real Home Survey page Plate 15, The Year (What belongs to which month), tilted on a desk next to a cup and a pencil, a kraft clipboard behind; the October block (11 jobs) and the empty December visible. Headline in the left third.",
+    "flags": [],
+    "reserve": false,
+    "n": 51
+  },
+  {
+    "slice": "maintenance",
+    "angle": "scenario",
+    "headline": "Four Questions to Ask Before the Repair Technician Leaves",
+    "sub": "Four short questions, asked while the van is still in the driveway.",
+    "items": [
+      "What exactly was wrong with it, in plain words?",
+      "What's the part number, in case I need it again?",
+      "Is there anything else you'd keep an eye on?",
+      "Can you write that diagnosis on the invoice for me?"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "what-to-keep-after-a-home-repair"
+    },
+    "proof": [
+      "Four short questions, asked while the van is still in the driveway.",
+      "What exactly was wrong with it, in plain words?",
+      "What's the part number, in case I need it again?",
+      "Is there anything else you'd keep an eye on?",
+      "Can you write that diagnosis on the invoice for me?"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "questions to ask a repair technician",
+    "board": "Home Maintenance Log",
+    "when": "evergreen",
+    "visual": "Scenario card: a front door and a driveway in simple line art with a van at the kerb, four numbered speech-bubble questions in sage and paper stacked beside it, a clipboard prop. Calm, friendly, no alarm imagery.",
+    "flags": [],
+    "reserve": false,
+    "n": 52
+  },
+  {
+    "slice": "seasonal",
+    "angle": "infographic",
+    "headline": "Fall Home Maintenance: Work Back From Your First Frost, Step by Step",
+    "sub": "An example, not a rule: say your area's first frost tends to arrive in the third week of October.",
+    "items": [
+      "Early September: Book the heating tune-up",
+      "Late September: Seal gaps, swap the filter, test alarms",
+      "First half of October: Drain outdoor water, service equipment",
+      "After the leaves drop: Clear the gutters"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "fall-home-maintenance-checklist"
+    },
+    "proof": [
+      "Say your area's first frost tends to arrive in the third week of October. That's an example, not a rule, and yours will differ.",
+      "Early September",
+      "Book the heating tune-up",
+      "Late September",
+      "Seal gaps, swap the filter, test alarms",
+      "First half of October",
+      "Drain outdoor water, service equipment",
+      "After the leaves drop",
+      "Clear the gutters"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "fall home maintenance checklist",
+    "board": "Seasonal Home Maintenance",
+    "when": "September to November (in season now; pin again next August)",
+    "visual": "Then-and-now style timeline: a horizontal line from September to a small frost marker in the third week of October, four dated stops along it each with a drawn prop (furnace, caulk gun and filter, outdoor tap, gutter); a small 'example dates' tag on the line. Flat sage and paper.",
+    "flags": [
+      "example-tag"
+    ],
+    "reserve": false,
+    "n": 53
+  },
+  {
+    "slice": "maintenance",
+    "angle": "how-to-steps",
+    "headline": "Technician Already Gone? How to Get the Repair Diagnosis Afterwards",
+    "sub": "Most keep their own service notes and will read them back to you over the phone.",
+    "items": [
+      "Technicians are often out the door before you've thought to ask anything.",
+      "call the company the same day and ask what they have on file",
+      "ask what's on their service ticket",
+      "Most keep their own service notes and will read them back to you over the phone."
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "what-to-keep-after-a-home-repair"
+    },
+    "proof": [
+      "Technicians are often out the door before you've thought to ask anything.",
+      "call the company the same day and ask what they have on file",
+      "ask what's on their service ticket",
+      "Most keep their own service notes and will read them back to you over the phone."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "what to do after a home repair",
+    "board": "Home Maintenance Log",
+    "when": "evergreen",
+    "visual": "Three-step strip: a phone with a call bubble, a service ticket in kraft tan, a log page being filled in with a pen. Sage step numbers, paper background; the 'same day' label in ochre.",
+    "flags": [],
+    "reserve": false,
+    "n": 54
+  },
+  {
+    "slice": "seasonal",
+    "angle": "checklist",
+    "headline": "September Home Maintenance Checklist: Heating, Safety and Pests",
+    "sub": "September is for heating, safety and pests.",
+    "items": [
+      "Book the professional furnace tune-up now",
+      "Seal the gaps mice use, around pipes and the garage door",
+      "Put in a new furnace filter",
+      "Book the chimney inspection if you burn anything",
+      "Clean the dryer vent"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "fall-home-maintenance-checklist"
+    },
+    "proof": [
+      "September is for heating, safety and pests.",
+      "Book the professional furnace tune-up now. Seal the gaps mice use, around pipes and the garage door, before the cold sends them looking. Put in a new furnace filter. Book the chimney inspection if you burn anything. Clean the dryer vent."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "september home maintenance checklist",
+    "board": "Seasonal Home Maintenance",
+    "when": "August to September (pin again next August)",
+    "visual": "Plate-and-prop checklist: a paper list with five ruled lines on a utility-room shelf, a new furnace filter in its cardboard frame leaning beside it, a caulk tube and a dryer vent hose coil as small props; sage tick boxes, kraft-tan filter. Ochre only on the chimney line.",
+    "flags": [],
+    "reserve": false,
+    "n": 55
+  },
+  {
+    "slice": "maintenance",
+    "angle": "question",
+    "headline": "How Long Should You Keep Home Repair Records? As Long as You Own It",
+    "sub": "As long as you own the item or the house, in practice.",
+    "items": [
+      "A repair record for an appliance is useful until you replace it.",
+      "A record tied to the house, like a roof or a furnace, is worth keeping for as long as you live there, and worth handing to a buyer when you sell."
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "what-to-keep-after-a-home-repair"
+    },
+    "proof": [
+      "As long as you own the item or the house, in practice.",
+      "A repair record for an appliance is useful until you replace it.",
+      "A record tied to the house, like a roof or a furnace, is worth keeping for as long as you live there, and worth handing to a buyer when you sell."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "how long to keep home repair records",
+    "board": "Home Binder and Printables",
+    "when": "evergreen",
+    "visual": "Question card with two folder tabs in a home binder: one tab for an appliance (a washer drawn on it) and one for the house (a roofline and furnace), each with the guide's one-line answer. Binder in kraft tan, paper pages, sage tabs.",
+    "flags": [],
+    "reserve": false,
+    "n": 56
+  },
+  {
+    "slice": "seasonal",
+    "angle": "scenario",
+    "headline": "Fall Home Maintenance Mistake: Gutters Cleared in October, Full Again in November",
+    "sub": "The most common miss is the gutters.",
+    "items": [
+      "Early October: gutters cleared",
+      "November: full again",
+      "Clear them once the leaves are down, not before"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "fall-home-maintenance-checklist"
+    },
+    "proof": [
+      "The most common miss is the gutters: cleared in early October, full again in November.",
+      "Clear the gutters once the leaves are down, not before."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "when to clean gutters in the fall",
+    "board": "Seasonal Home Maintenance",
+    "when": "October to November (in season now)",
+    "visual": "Two-panel before-after scene of the same gutter: left an October ladder on level ground with a clean gutter and a tree still full of leaves, right the same gutter in November with leaves piled in it; a small house-cutaway roofline edge and downspout. Muted slate blue only for a hint of rainwater.",
+    "flags": [],
+    "reserve": false,
+    "n": 57
+  },
+  {
+    "slice": "moving",
+    "angle": "checklist",
+    "headline": "New House Checklist: The Day One List Before Anything Else",
+    "sub": "These are time sensitive in a way the rest of the list isn't.",
+    "items": [
+      "Photograph the gas, electric and water meters, with the date visible, before anyone touches them.",
+      "Find the main water shutoff, the breaker panel, and the gas shutoff.",
+      "Write down which company supplies each utility, and the account number if there's paperwork for it.",
+      "Find out whether the alarm system has a code, and who besides you has it.",
+      "Test every smoke and carbon monoxide alarm, and note the replacement date printed on each unit."
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "first-week-after-buying-a-house"
+    },
+    "proof": [
+      "These are time sensitive in a way the rest of the list isn't.",
+      "Photograph the gas, electric and water meters, with the date visible, before anyone touches them.",
+      "Find the main water shutoff, the breaker panel, and the gas shutoff.",
+      "Write down which company supplies each utility, and the account number if there's paperwork for it.",
+      "Find out whether the alarm system has a code, and who besides you has it.",
+      "Test every smoke and carbon monoxide alarm, and note the replacement date printed on each unit."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "new house checklist",
+    "board": "New Homeowner Checklists",
+    "when": "evergreen",
+    "visual": "fridge-list archetype: a sage-bordered checklist card held to a fridge door by a kraft magnet, five tick boxes in paper and ink, small line props beside each row (three meters, a water valve, a breaker panel, a keypad, a smoke alarm); a ring of house keys hangs from the card corner. Free guide badge.",
+    "flags": [],
+    "reserve": false,
+    "n": 58
+  },
+  {
+    "slice": "seasonal",
+    "angle": "mockup-app",
+    "headline": "Fall Home Maintenance Checklist App: A Fall Tab Built From Your House",
+    "sub": "It builds the list from the things you have told Home Base about.",
+    "items": [
+      "Fall tab for September to November",
+      "A home with no irrigation system does not see the irrigation job",
+      "You type in what you did, nothing is scanned",
+      "Reminders stay off until you turn them on"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "fall-home-maintenance-checklist"
+    },
+    "proof": [
+      "Home Base's Seasons page has a Fall tab titled",
+      "covering September to November. It builds the list from the things you have told Home Base about, so a home with no irrigation system does not see the irrigation job.",
+      "You type in what you did, nothing is scanned, and reminders stay off until you turn them on."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "fall home maintenance checklist app",
+    "board": "Seasonal Home Maintenance",
+    "when": "September to November (in season now)",
+    "visual": "mockup-app in the homeschool-reference layout: dark sage panel, Home Base icon and name, big two-tone headline, four feature rows from the items, a large tilted phone showing the real screen creative/public/screens/home-management-companion-seasons.png (Fall tab, October: Annual boiler service, Test the smoke alarms), Next.js dev badge cropped; a pumpkin-free prop: a pair of garden gloves and a coiled hose.",
+    "flags": [],
+    "reserve": false,
+    "n": 59
+  },
+  {
+    "slice": "moving",
+    "angle": "scenario",
+    "headline": "New Homeowner Checklist Timing: Why the First Week Is the Real Window",
+    "sub": "That's the real window: about a week of easy access, then a slow decline toward zero.",
+    "items": [
+      "Say you close on a Friday and move in over the weekend.",
+      "By Monday, the shutoffs are found, the meters are photographed, and the smoke alarms are tested.",
+      "By the following weekend, the inspection report is marked up with a date beside each item.",
+      "The previous owner, who's been quick to answer texts so far, has gone quiet."
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "first-week-after-buying-a-house"
+    },
+    "proof": [
+      "Say you close on a Friday and move in over the weekend.",
+      "By Monday, the shutoffs are found, the meters are photographed, and the smoke alarms are tested.",
+      "By the following weekend, the inspection report is marked up with a date beside each item",
+      "the previous owner, who's been quick to answer texts so far, has gone quiet.",
+      "That's the real window: about a week of easy access, then a slow decline toward zero."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "first week in a new house what to do",
+    "board": "New Homeowner Checklists",
+    "when": "evergreen",
+    "visual": "move-in-walkthrough archetype: a two-week calendar strip across the pin, Friday (closing, keys) to the following weekend, with the first Monday ticked off in sage and a fading text-bubble from the previous owner at the far end; boxes and a lamp sit at the edge. Closing keys and a taped box as props. No dates or numbers beyond the guide's weekday words.",
+    "flags": [
+      "example-tag"
+    ],
+    "reserve": false,
+    "n": 60
+  },
+  {
+    "slice": "seasonal",
+    "angle": "question",
+    "headline": "Do I Still Need Fall Home Maintenance if I Live in the South?",
+    "sub": "Some of it. The freeze jobs depend on whether your area gets hard freezes.",
+    "items": [
+      "Heating checks",
+      "Alarm tests",
+      "The dryer vent",
+      "Gutters",
+      "Pest gaps"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "fall-home-maintenance-checklist"
+    },
+    "proof": [
+      "Do I still need fall maintenance if I live in the south?",
+      "Some of it. Heating checks, alarm tests, the dryer vent, gutters and pest gaps still apply. The freeze jobs, like draining outdoor faucets, depend on whether your area gets hard freezes."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "fall home maintenance checklist warm climate",
+    "board": "Seasonal Home Maintenance",
+    "when": "September to November",
+    "visual": "Split card: a left column of five 'still applies' rows with sage ticks and small props (furnace, alarm, dryer vent, gutter, pipe gap), a right column with one row 'freeze jobs: depends on your area' with an outdoor tap and a plain question mark; paper background, no map or weather symbols.",
+    "flags": [],
+    "reserve": false,
+    "n": 61
+  },
+  {
+    "slice": "moving",
+    "angle": "before-after",
+    "headline": "Home Inspection Report After Closing: Read It Again as a To-Do List",
+    "sub": "The inspection report was read once, as a buying decision.",
+    "items": [
+      "Read it again now as a maintenance plan.",
+      "Pull out anything with a timeframe attached and give it an actual date.",
+      "That's a maintenance schedule somebody else already did the legwork on."
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "first-week-after-buying-a-house"
+    },
+    "proof": [
+      "The inspection report was read once, as a buying decision.",
+      "Read it again now as a maintenance plan",
+      "Pull out anything with a timeframe attached and give it an actual date.",
+      "That's a maintenance schedule somebody else already did the legwork on."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "what to do with home inspection report after buying a house",
+    "board": "New Homeowner Checklists",
+    "when": "evergreen",
+    "visual": "then-and-now archetype: two copies of the same inspection report page side by side. Left 'Read once, as a buying decision' with plain text lines; right 'Read again, as a maintenance plan' with the same lines now highlighted in soft sage and a blank date box added beside each (no dates or findings invented, lines are grey bars). A pen and a binder clip as props.",
+    "flags": [],
+    "reserve": false,
+    "n": 62
+  },
+  {
+    "slice": "seasonal",
+    "angle": "scenario",
+    "headline": "Winterize Your House: The Two Days Before the First Hard Freeze",
+    "sub": "That's four jobs in about ninety minutes, and it's the same order every year once you've done it once.",
+    "items": [
+      "Wednesday afternoon: shut off and drain the outdoor faucet, disconnect and coil the hose, shut the irrigation valve",
+      "Thursday morning: bring in the window air conditioner and open the cabinet doors under sinks on an exterior wall"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "winterize-your-house-checklist"
+    },
+    "proof": [
+      "Say the forecast on Tuesday shows the first hard freeze of the year for Thursday night, a low near 26°F.",
+      "Wednesday afternoon, while it's still in the 40s, you'd shut off and drain the outdoor faucet, disconnect and coil the hose, blow out or shut the valve on the irrigation line",
+      "Thursday morning you'd bring in the window air conditioner and open the cabinet doors under any sink on an exterior wall",
+      "That's four jobs in about ninety minutes, and it's the same order every year once you've done it once."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "how to winterize a house before first freeze",
+    "board": "Seasonal Home Maintenance",
+    "when": "October to November (in season now)",
+    "visual": "Move-in-walkthrough style two-day strip: a Wednesday panel (outdoor tap, coiled hose, mild afternoon sun) and a Thursday panel (window air conditioner on the floor, open cabinet doors under a sink), a thin thermometer between them marking the example low near 26°F in slate blue. Labelled 'example'.",
+    "flags": [
+      "example-tag"
+    ],
+    "reserve": false,
+    "n": 63
+  },
+  {
+    "slice": "moving",
+    "angle": "question",
+    "headline": "Should You Change the Locks When You Buy a House? Rekey Before You Move In",
+    "sub": "Changing the locks is the item first-week checklists leave out most often.",
+    "items": [
+      "You have no way to know how many keys exist from before you owned the place.",
+      "Rekey or replace every exterior lock before you move belongings in, not after.",
+      "The front door, the back door, any gate, and the garage keypad code.",
+      "Write the new code or key location down on your own record once it's changed."
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "first-week-after-buying-a-house"
+    },
+    "proof": [
+      "Changing the locks is the item first-week checklists leave out most often.",
+      "You have no way to know how many keys exist from before you owned the place, so rekey or replace every exterior lock before you move belongings in, not after: the front door, the back door, any gate, and the garage keypad code.",
+      "Write the new code or key location down on your own record once it's changed"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "should i change the locks when i buy a house",
+    "board": "New Homeowner Checklists",
+    "when": "evergreen",
+    "visual": "A kraft key ring photographed flat on paper with four tags (Front door, Back door, Gate, Garage keypad) and a sage question mark tag; headline top-left in ink on paper. Prop: a deadbolt and a spare key. Quiet, no alarm imagery.",
+    "flags": [],
+    "reserve": false,
+    "n": 64
+  },
+  {
+    "slice": "seasonal",
+    "angle": "checklist",
+    "headline": "Winterize House Checklist: Seven Jobs to Finish Before the Freeze",
+    "sub": "Do them on a dry day before the freeze, not after.",
+    "items": [
+      "Shut off and drain the outdoor faucet, and disconnect the hose",
+      "Blow out the irrigation lines, or shut the valve",
+      "Cover any outdoor faucet or hose bib you can't shut off",
+      "Insulate exposed pipes in the attic, crawl space, basement or garage",
+      "Take out the window air conditioner",
+      "Replace the humidifier pad",
+      "Seal the gaps around pipes and the garage door"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "winterize-your-house-checklist"
+    },
+    "proof": [
+      "Do them on a dry day before the freeze, not after.",
+      "Shut off and drain the outdoor faucet, and disconnect the hose.",
+      "Blow out the irrigation lines, or shut the valve if you don't own a compressor.",
+      "Cover any outdoor faucet or hose bib you can't shut off, with a foam cover or wrapped insulation.",
+      "Insulate exposed pipes in the attic, crawl space, basement or garage.",
+      "Take out the window air conditioner and store it for winter.",
+      "Replace the humidifier pad.",
+      "Seal the gaps around pipes and the garage door, before mice go looking for them."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "winterize house checklist",
+    "board": "Seasonal Home Maintenance",
+    "when": "October to November (in season now)",
+    "visual": "Printable checklist on a clipboard against a mudroom wall: seven ruled lines with sage tick boxes, three ticked, a foam faucet cover and a pipe sleeve hanging on pegs beside it; a line at the foot reads 'This list lives on the page for this visit only'.",
+    "flags": [],
+    "reserve": false,
+    "n": 65
+  },
+  {
+    "slice": "moving",
+    "angle": "template-preview",
+    "headline": "New House Week One: What to Write Down While It Is Still Easy to Ask",
+    "sub": "Week one, while it's still easy to ask",
+    "items": [
+      "Brand, model and serial for the furnace or boiler, water heater, and any appliance left behind.",
+      "When the furnace or boiler was last serviced, usually on a sticker or in a logbook near the unit.",
+      "The age of the roof, windows, and any major system, from the inspection report or the previous owner.",
+      "Warranty end dates for anything recent, especially appliances the previous owner left in the house.",
+      "Any technician the previous owner recommends."
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "first-week-after-buying-a-house"
+    },
+    "proof": [
+      "Week one, while it's still easy to ask",
+      "Brand, model and serial for the furnace or boiler, water heater, and any appliance left behind.",
+      "When the furnace or boiler was last serviced, usually on a sticker or in a logbook near the unit.",
+      "The age of the roof, windows, and any major system, from the inspection report or the previous owner.",
+      "Warranty end dates for anything recent, especially appliances the previous owner left in the house.",
+      "Any technician the previous owner recommends."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "new homeowner questions to ask previous owner",
+    "board": "New Homeowner Checklists",
+    "when": "evergreen",
+    "visual": "survey-binder archetype: a fill-in page on a clipboard with five labelled blank lines in sage rules (furnace or boiler, last serviced, age of roof and windows, warranty end dates, technician), a pencil across it; kraft clipboard on a paper desk. Lines left blank, no filled-in values.",
+    "flags": [],
+    "reserve": false,
+    "n": 66
+  },
+  {
+    "slice": "seasonal",
+    "angle": "comparison",
+    "headline": "Freeze vs Hard Freeze: What Temperature Puts Outdoor Plumbing at Risk",
+    "sub": "Either one is your cue to finish the winterize list, not just the second.",
+    "items": [
+      "Freeze: 32°F or below",
+      "Hard freeze: 28°F or below",
+      "Per the National Weather Service"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "winterize-your-house-checklist"
+    },
+    "proof": [
+      "A freeze is 32°F or below; a hard freeze is 28°F or below, cold enough to put unprotected outdoor plumbing at real risk, per the National Weather Service.",
+      "Either one is your cue to finish this list, not just the second."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "what temperature do pipes freeze",
+    "board": "Seasonal Home Maintenance",
+    "when": "October to February (in season now)",
+    "visual": "Two thermometers side by side on a paper card, left marked at 32°F, right at 28°F, the right one with a small outdoor tap with an uncovered pipe stub; slate blue only for the mercury, ochre for the note 'needs a look'. No snowflakes or red.",
+    "flags": [],
+    "reserve": false,
+    "n": 67
+  },
+  {
+    "slice": "moving",
+    "angle": "infographic",
+    "headline": "How Long Do Furnaces, Water Heaters and Roofs Last? Typical Service Lives",
+    "sub": "General trade guidance, not a prediction for your house. Climate, use and upkeep change these a lot.",
+    "items": [
+      "Furnace (gas): often 15 to 20 years",
+      "Water heater, tank: roughly 8 to 12 years",
+      "Water heater, tankless: often 15 to 20 years",
+      "Central air conditioning: often around 15 years",
+      "Asphalt shingle roof: 15 to 30 years, depending on the product",
+      "Main electrical panel: often 30 years or more"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "inherited-a-house-where-to-start"
+    },
+    "proof": [
+      "General trade guidance, not a prediction for your house",
+      "Climate, use and upkeep change these a lot.",
+      "Furnace (gas)",
+      "Often 15 to 20 years",
+      "Water heater, tank",
+      "Roughly 8 to 12 years",
+      "Water heater, tankless",
+      "Central air conditioning",
+      "Often around 15 years",
+      "Asphalt shingle roof",
+      "15 to 30 years, depending on the product",
+      "Main electrical panel",
+      "Often 30 years or more"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "how long do water heaters and furnaces last",
+    "board": "Home Maintenance Checklists",
+    "when": "evergreen",
+    "visual": "house-cutaway archetype: a house in section with six horizontal range bars (sage for the years range, ochre not used) attached to the furnace, tank, tankless unit, air conditioner, roof and panel, each labelled with the guide's own wording; a small 'typical, not a prediction' note in the corner. Free guide badge.",
+    "flags": [],
+    "reserve": false,
+    "n": 68
+  },
+  {
+    "slice": "seasonal",
+    "angle": "how-to-steps",
+    "headline": "How to Drain an Outdoor Faucet Before the First Freeze",
+    "sub": "Water left in the pipe between the shutoff and the tap freezes, expands, and can split the pipe inside the wall.",
+    "items": [
+      "Disconnect the hose",
+      "If your faucet has an interior shutoff, close it",
+      "Open the outdoor tap and let it run until it stops",
+      "No shutoff? Cover the faucet and hose bib with an insulated cover"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "winterize-your-house-checklist"
+    },
+    "proof": [
+      "Water left in the pipe between the shutoff and the tap freezes, expands, and can split the pipe inside the wall, where you won't see it until the thaw.",
+      "If your faucet has an interior shutoff, close it, then open the outdoor tap and let it run until it stops.",
+      "If it doesn't have one, or you're not sure, cover the faucet and hose bib with an insulated cover"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "how to winterize outdoor faucet",
+    "board": "Seasonal Home Maintenance",
+    "when": "October to November (in season now)",
+    "visual": "Wall-section step diagram: a house cutaway showing the interior shutoff on the basement side of the wall, the pipe running to the outdoor tap, numbered 1 to 4 callouts; slate blue only for the water in the pipe, which drains out in the last frame.",
+    "flags": [],
+    "reserve": false,
+    "n": 69
+  },
+  {
+    "slice": "moving",
+    "angle": "scenario",
+    "headline": "How Old Is My Water Heater? Reading the Age From a Serial Number",
+    "sub": "On some brands, not all, the first two digits are the year and the next two are the month.",
+    "items": [
+      "Say the sticker on the water heater reads Serial: 2308-114477.",
+      "Which would make this unit built in August 2023.",
+      "Treat it as a starting guess until you confirm it against that brand's own page."
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "inherited-a-house-where-to-start"
+    },
+    "proof": [
+      "Say the sticker on the water heater reads Serial: 2308-114477.",
+      "On some brands, not all, the first two digits are the year and the next two are the month, which would make this unit built in August 2023.",
+      "treat it as a starting guess until you confirm it against that brand's own page"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "how to tell how old a water heater is",
+    "board": "Appliance Records and Warranties",
+    "when": "evergreen",
+    "visual": "plate-closeup archetype: a close crop of a water heater data label with the serial 2308-114477 on it, '23' and '08' circled in sage with small 'year' and 'month' tags, a flashlight beam across the tank. The serial is the guide's own example.",
+    "flags": [
+      "example-tag"
+    ],
+    "reserve": false,
+    "n": 70
+  },
+  {
+    "slice": "seasonal",
+    "angle": "question",
+    "headline": "What Should I Set My Thermostat to if I'm Away for the Winter?",
+    "sub": "The figure insurers commonly use for an unoccupied house is no lower than 55°F.",
+    "items": [
+      "Don't turn the heat off if the house will sit empty over a freeze",
+      "55°F keeps the air inside wall and floor cavities above freezing",
+      "Open the cabinet doors under exterior-wall sinks",
+      "Ask someone to check on the house"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "winterize-your-house-checklist"
+    },
+    "proof": [
+      "What should I set my thermostat to if I'm away for the winter?",
+      "No lower than 55°F is the figure insurers commonly use for an unoccupied house, since it keeps the space inside walls and floors, where the pipes run, above freezing.",
+      "Leave cabinet doors open under exterior-wall sinks, and ask someone to check on the house if you'll be gone more than a few days."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "thermostat setting when away for winter",
+    "board": "Seasonal Home Maintenance",
+    "when": "November to February (in season now)",
+    "visual": "Thermostat-face close-up on a wall beside a front door with keys on a hook: the dial at 55 with a sage ring, a small house cutaway inset showing pipes inside the wall cavity, an open under-sink cabinet drawn at the corner. Carries 'commonly used by insurers' as the sub, not as advice.",
+    "flags": [],
+    "reserve": false,
+    "n": 71
+  },
+  {
+    "slice": "moving",
+    "angle": "how-to-steps",
+    "headline": "Inherited House Walk Round: Photograph Every Plate and Label",
+    "sub": "Photograph every plate and label you find instead of copying numbers by hand.",
+    "items": [
+      "Furnace, boiler or heat pump: model, serial, and any service sticker",
+      "Water heater: the label usually carries a manufacture date",
+      "Breaker panel: often carries an installation or inspection sticker with a date on it.",
+      "Every major appliance: make, model, serial.",
+      "Utility meters: readings and serial numbers",
+      "Attic, basement and closets, where manuals and old paperwork tend to survive"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "inherited-a-house-where-to-start"
+    },
+    "proof": [
+      "An afternoon with a flashlight and your phone's camera, checking data plates, service stickers and any paperwork still in a drawer",
+      "Photograph every plate and label you find instead of copying numbers by hand.",
+      "Furnace, boiler or heat pump: model, serial, and any service sticker",
+      "Water heater: the label usually carries a manufacture date",
+      "Breaker panel: often carries an installation or inspection sticker with a date on it.",
+      "Every major appliance: make, model, serial.",
+      "Utility meters: readings and serial numbers",
+      "Attic, basement and closets, where manuals and old paperwork tend to survive"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "inherited a house where to start",
+    "board": "New Homeowner Checklists",
+    "when": "evergreen",
+    "visual": "house-cutaway archetype as a numbered route: a house in section with six numbered sage stops (furnace, water heater, panel, appliance, meter, attic and closets), a phone and a flashlight at the foot; photo-frame corners on each stop.",
+    "flags": [],
+    "reserve": false,
+    "n": 72
+  },
+  {
+    "slice": "seasonal",
+    "angle": "template-preview",
+    "headline": "Winterize Checklist: Write the Date Next to Each Job So Next Year Takes Five Minutes",
+    "sub": "Drained faucet, October 21 is enough.",
+    "items": [
+      "Drained faucet, October 21",
+      "Next October you'll know whether you were early or late"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "winterize-your-house-checklist"
+    },
+    "proof": [
+      "The cheapest thing you can do for next year is note the date.",
+      "Drained faucet, October 21",
+      "Next October you'll know whether you were early or late, and that it's a job you've done before."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "home maintenance log winterize",
+    "board": "Seasonal Home Maintenance",
+    "when": "October to November (in season now)",
+    "visual": "Template-preview: a lined index card or log strip with a handwritten example line 'Drained faucet, October 21' and two blank dated lines under it, a pencil across it, a coiled hose and outdoor-tap sketch in the corner; the example line carries an 'example' tag.",
+    "flags": [
+      "example-tag"
+    ],
+    "reserve": false,
+    "n": 73
+  },
+  {
+    "slice": "moving",
+    "angle": "question",
+    "headline": "What to Check First in a House With No Records: Water Heater, Furnace, Panel",
+    "sub": "Everything else can follow at a slower pace.",
+    "items": [
+      "The water heater",
+      "The furnace or heat pump",
+      "The breaker panel",
+      "Photograph their plates, note the age if you can find it."
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "inherited-a-house-where-to-start"
+    },
+    "proof": [
+      "Start with whatever would be worst to have fail without warning: the water heater, the furnace or heat pump, and the breaker panel.",
+      "Photograph their plates, note the age if you can find it",
+      "Everything else can follow at a slower pace."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "what to check first in an old house",
+    "board": "New Homeowner Checklists",
+    "when": "evergreen",
+    "visual": "A big sage question mark over a house section with three stops ringed and numbered 1 2 3 (water heater, furnace, breaker panel) and the rest of the house in faint paper lines. Free guide badge. Different composition from the walk-round pin: three big objects, not six small stops.",
+    "flags": [],
+    "reserve": false,
+    "n": 74
+  },
+  {
+    "slice": "binder",
+    "angle": "how-to-steps",
+    "headline": "How to Make a Home Binder in an Afternoon: Fill the Five Sections in This Order",
+    "sub": "Start with the first and stop whenever you like. Each one is useful on its own.",
+    "items": [
+      "If something goes wrong",
+      "Numbers you look up",
+      "Who to call",
+      "What has been done",
+      "Dates that cost money"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "how-to-make-a-home-binder"
+    },
+    "proof": [
+      "Build one in an afternoon.",
+      "Start with the first and stop whenever you like. Each one is useful on its own.",
+      "Do this one tonight."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "how to make a home binder",
+    "board": "Home Binder and Printables",
+    "when": "evergreen",
+    "visual": "Five numbered tab dividers fanned out on a kitchen table beside an open three-ring binder, tab 1 'If something goes wrong' lifted first with a small ochre tag marked 'tonight'; sage and paper palette, step numbers 1 to 5 down the side. Archetype: survey-binder.",
+    "flags": [],
+    "reserve": false,
+    "n": 75
+  },
+  {
+    "slice": "moving",
+    "angle": "template-preview",
+    "headline": "Rental Lease and Deposit Record: One Day-One Page, Filled In",
+    "sub": "Four records made on day one settle most deposit arguments later.",
+    "items": [
+      "Photos taken: 22 rooms and closets, dated Sep 26",
+      "Lease started: Sep 26, renews Sep 26 next year",
+      "Notice by: 60 days before renewal",
+      "Deposit: $1,400, held by the property manager"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "moving-into-a-rental-what-to-document"
+    },
+    "proof": [
+      "Four records made on day one settle most deposit arguments later.",
+      "22 rooms and closets, dated Sep 26",
+      "Sep 26, renews Sep 26 next year",
+      "60 days before renewal",
+      "$1,400, held by the property manager",
+      "An illustration, not a real lease."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "rental move in record template",
+    "board": "Renting and Move-In",
+    "when": "evergreen",
+    "visual": "template-preview: a two-column Field / Filled in card in sage and paper with the four rows set in handwriting-style type, a small 'An illustration, not a real lease' note, keys and a lease folder beside it. The figures are the guide's own example.",
+    "flags": [
+      "example-tag"
+    ],
+    "reserve": false,
+    "n": 76
+  },
+  {
+    "slice": "binder",
+    "angle": "infographic",
+    "headline": "Home Binder Supplies: What to Put the Pages In",
+    "sub": "Paper, digital, or both. The five sections stay the same either way.",
+    "items": [
+      "A 1 to 2 inch, three-ring binder, or a single folder if you go digital.",
+      "Sheet protectors for anything you would mind ruining with a spilled coffee.",
+      "Five tab dividers, one per section, labeled in plain words rather than numbers.",
+      "A digital mirror if you want one: one folder, five subfolders, the same five names."
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "how-to-make-a-home-binder"
+    },
+    "proof": [
+      "Paper, digital, or both. The five sections stay the same either way.",
+      "A 1 to 2 inch, three-ring binder, or a single folder if you go digital.",
+      "Sheet protectors for anything you would mind ruining with a spilled coffee.",
+      "Five tab dividers, one per section, labeled in plain words rather than numbers.",
+      "A digital mirror if you want one: one folder, five subfolders, the same five names."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "home binder supplies",
+    "board": "Home Binder and Printables",
+    "when": "evergreen",
+    "visual": "Top-down flat-lay with four labeled callouts pointing at the objects: a three-ring binder, sheet protectors with a coffee mug beside them, five kraft tab dividers, and a small laptop folder tree with five subfolders. Kraft tan cards, sage lines. Archetype: survey-binder.",
+    "flags": [],
+    "reserve": false,
+    "n": 77
+  },
+  {
+    "slice": "moving",
+    "angle": "comparison",
+    "headline": "Normal Wear and Tear vs Damage in a Rental: Where the Line Usually Falls",
+    "sub": "The line between the two is set by your state's law and can come down to specifics.",
+    "items": [
+      "Usually normal wear: a worn patch of carpet in a walkway, small nail holes from a picture, faded paint, or a sticking door",
+      "Usually damage: a burn mark, a pet stain that soaked through, a broken tile, or a hole in a wall"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "moving-into-a-rental-what-to-document"
+    },
+    "proof": [
+      "A worn patch of carpet in a walkway, small nail holes from a picture, faded paint, or a sticking door are usually normal wear from ordinary living.",
+      "A burn mark, a pet stain that soaked through, a broken tile, or a hole in a wall are usually damage.",
+      "The line between the two is set by your state's law and can come down to specifics",
+      "photograph the condition at move-in and lean on that record rather than a guess about the category"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "normal wear and tear vs damage rental",
+    "board": "Renting and Move-In",
+    "when": "evergreen",
+    "visual": "then-and-now style split card: left half a worn carpet walkway, nail holes and a faded wall patch in muted kraft and sage line art, right half a burn mark, a tile with a crack and a wall hole; a dated photo tile at the bottom reading 'photograph it at move-in'. Not legal advice.",
+    "flags": [],
+    "reserve": false,
+    "n": 78
+  },
+  {
+    "slice": "binder",
+    "angle": "template-preview",
+    "headline": "Home Binder Table of Contents: A Filled-In Example to Copy",
+    "sub": "An illustration, not a real household. Use it as a starting template.",
+    "items": [
+      "1. If something goes wrong: Water, gas and electrical shutoffs; who to call first",
+      "2. Numbers you look up: Filter size 16x25x1, paint color, trash day",
+      "3. Who to call: Ace Plumbing, Bright Spark Electric, a roofer",
+      "4. What has been done: Date, job, who did it, what it cost",
+      "5. Dates that cost money: Warranty ends, insurance renews, lease notice"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "how-to-make-a-home-binder"
+    },
+    "proof": [
+      "An illustration, not a real household. Use it as a starting template.",
+      "Water, gas and electrical shutoffs; who to call first",
+      "Filter size 16x25x1, paint color, trash day",
+      "Ace Plumbing, Bright Spark Electric, a roofer",
+      "Date, job, who did it, what it cost",
+      "Warranty ends, insurance renews, lease notice"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "home binder table of contents",
+    "board": "Home Binder and Printables",
+    "when": "evergreen",
+    "visual": "A clean typed contents page, five ruled rows with the section names in sage and the one-line page contents beside them, laid on a desk next to a binder spine and a pencil; 'Example' stamp in the corner. Archetype: survey-binder. Template-preview of the guide's own table.",
+    "flags": [
+      "example-tag"
+    ],
+    "reserve": false,
+    "n": 79
+  },
+  {
+    "slice": "moving",
+    "angle": "how-to-steps",
+    "headline": "How to Report a Rental Repair in Writing and Keep the Log",
+    "sub": "A message has a date; a phone call does not, unless you follow it with one.",
+    "items": [
+      "Tell the landlord in writing and keep a copy.",
+      "Add a line to your log with the date, what you said and what they answered.",
+      "If the same problem comes back, that log is your record that you flagged it first."
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "moving-into-a-rental-what-to-document"
+    },
+    "proof": [
+      "When something breaks, tell the landlord in writing and keep a copy.",
+      "A message has a date; a phone call does not, unless you follow it with one.",
+      "Add a line to your log with the date, what you said and what they answered.",
+      "If the same problem comes back, that log is your record that you flagged it first."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "how to report a repair to landlord in writing",
+    "board": "Renting and Move-In",
+    "when": "evergreen",
+    "visual": "move-in-walkthrough archetype: three numbered steps down the pin (a phone message bubble, a log table with Date / What / The answer columns left blank, a stacked 'flagged it first' note) with a sage tick on the log; kraft clipboard prop. No invented repairs or dates.",
+    "flags": [],
+    "reserve": false,
+    "n": 80
+  },
+  {
+    "slice": "binder",
+    "angle": "checklist",
+    "headline": "Home Binder Documents: Five Papers Worth Keeping as Paper",
+    "sub": "Papers worth keeping as paper.",
+    "items": [
+      "Closing documents, or your lease if you rent.",
+      "The home inspection report.",
+      "Permits for any work that needed one.",
+      "Manuals for appliances and systems you still own.",
+      "Warranty cards and receipts for the larger purchases."
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "how-to-make-a-home-binder"
+    },
+    "proof": [
+      "Papers worth keeping as paper",
+      "Closing documents, or your lease if you rent.",
+      "The home inspection report.",
+      "Permits for any work that needed one.",
+      "Manuals for appliances and systems you still own.",
+      "Warranty cards and receipts for the larger purchases."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "what documents to keep for your house",
+    "board": "New Homeowner Checklists",
+    "when": "evergreen",
+    "visual": "A fridge-list style tick list on a paper card held by a magnet on a fridge door, five sage checkboxes with the five lines; behind it a sheet-protector sleeve peeking from a binder on the counter. Archetype: fridge-list.",
+    "flags": [],
+    "reserve": false,
+    "n": 81
+  },
+  {
+    "slice": "moving",
+    "angle": "comparison",
+    "headline": "Renting: What You Usually Look After and What the Landlord Usually Does",
+    "sub": "Check your own lease and your state's tenant rights guide for the specifics.",
+    "items": [
+      "Usually yours: keeping the place clean",
+      "Usually yours: changing smoke alarm batteries, if your lease says so",
+      "Usually yours: reporting problems promptly",
+      "Usually the landlord's: the roof and structure",
+      "Usually the landlord's: major systems like heating and plumbing",
+      "Usually the landlord's: repairs that are not your fault"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "moving-into-a-rental-what-to-document"
+    },
+    "proof": [
+      "Keeping the place clean",
+      "Changing smoke alarm batteries, if your lease says so",
+      "Reporting problems promptly",
+      "The roof and structure",
+      "Major systems like heating and plumbing",
+      "Repairs that are not your fault",
+      "so check your own lease and your state's tenant rights guide for the specifics"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "tenant vs landlord responsibilities",
+    "board": "Renting and Move-In",
+    "when": "evergreen",
+    "visual": "A floor plan of a small flat split down the middle into two columns, 'Usually yours' in sage and 'Usually the landlord's' in kraft tan, each with its items tagged onto rooms and a roof-and-pipes strip across the top for the landlord side. Free guide badge.",
+    "flags": [],
+    "reserve": false,
+    "n": 82
+  },
+  {
+    "slice": "binder",
+    "angle": "scenario",
+    "headline": "Home Binder Rule: Write Where Things Are, Never the Codes",
+    "sub": "A binder gets lent to a house sitter, photographed for a repair quote and left on the counter.",
+    "items": [
+      "Passwords, alarm codes, the code to the garage keypad",
+      "lent to a house sitter",
+      "photographed for a repair quote",
+      "left on the counter",
+      "Write where things are and who to call."
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "how-to-make-a-home-binder"
+    },
+    "proof": [
+      "A binder gets lent to a house sitter, photographed for a repair quote and left on the counter.",
+      "Write where things are and who to call. Never write the codes and passwords themselves.",
+      "What never goes in"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "what not to put in a home binder",
+    "board": "Home Binder and Printables",
+    "when": "evergreen",
+    "visual": "Three small vignette tiles in a row: binder handed to a house sitter at the door, a phone photographing a page for a repair quote, the binder left open on a kitchen counter; below, a kraft card 'What never goes in' with the list. Calm, no red; ochre only on the card edge. Archetype: then-and-now.",
+    "flags": [],
+    "reserve": false,
+    "n": 83
+  },
+  {
+    "slice": "moving",
+    "angle": "checklist",
+    "headline": "What to Photograph When You Move Into a Rental: Wide Shots First, Then Close Ones",
+    "sub": "Photos with the date visible do the same job as a checklist and are harder to dispute.",
+    "items": [
+      "Every room, wide shots first",
+      "Then close shots of anything scratched, stained or worn",
+      "The walls, the floors, the windows",
+      "The inside of the oven, the refrigerator and any cabinets"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "moving-into-a-rental-what-to-document"
+    },
+    "proof": [
+      "Every room, wide shots first, then close shots of anything scratched, stained or worn: the walls, the floors, the windows, and the inside of the oven, the refrigerator and any cabinets.",
+      "photos with the date visible do the same job and are harder to dispute"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "what to photograph when moving into a rental",
+    "board": "Renting and Move-In",
+    "when": "evergreen",
+    "visual": "photo-tiles grid in the move-in-walkthrough style: a phone showing a wide room shot with a small close-up tile of a scuffed wall beside it, plus tiles for floor, window, oven interior, refrigerator interior and cabinet, each carrying a small date stamp tab left blank; four sage tick rows beneath.",
+    "flags": [],
+    "reserve": false,
+    "n": 84
+  },
+  {
+    "slice": "binder",
+    "angle": "comparison",
+    "headline": "Paper vs Digital Home Binder: What Each One Is Good At",
+    "sub": "Paper for the emergency page and the numbers, an app for what falls due next.",
+    "items": [
+      "Paper: easy to hand to someone, works when the power is out",
+      "Paper: does not tell you when the filter is due",
+      "An app is the opposite",
+      "The two together cover both"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "how-to-make-a-home-binder"
+    },
+    "proof": [
+      "A paper binder is easy to hand to someone, and it works when the power is out. It does not tell you when the filter is due. An app is the opposite.",
+      "paper for the emergency page and the numbers, an app for what falls due next."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "paper vs digital home binder",
+    "board": "Home Binder and Printables",
+    "when": "evergreen",
+    "visual": "Two-column split: left a kraft-tan paper binder open to the emergency page, right a phone with a plain sage list screen, a thin plus sign between them; each column with two short lines. No real app screen needed. Archetype: survey-binder.",
+    "flags": [],
+    "reserve": false,
+    "n": 85
+  },
+  {
+    "slice": "safety",
+    "angle": "infographic",
+    "headline": "Where the Main Water Shutoff Usually Is, by Where You Look",
+    "sub": "There is no single answer, which is exactly why it is worth finding and writing down once.",
+    "items": [
+      "Near the water meter: A valve on the pipe just before or after the meter",
+      "Where the line enters the house: often the basement wall closest to the street",
+      "Basement or crawlspace: A wrench-turn or lever valve on an exposed section of pipe",
+      "An outside box near the curb: A ground-level box"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "where-is-my-water-shutoff"
+    },
+    "proof": [
+      "There is no single answer, which is exactly why it is worth finding and writing down once.",
+      "Near the water meter",
+      "A valve on the pipe just before or after the meter",
+      "Where the line enters the house",
+      "often the basement wall closest to the street",
+      "Basement or crawlspace",
+      "A wrench-turn or lever valve on an exposed section of pipe",
+      "An outside box near the curb",
+      "A ground-level box"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "where is the main water shutoff valve usually located",
+    "board": "Home Safety and Shutoffs",
+    "when": "evergreen",
+    "visual": "House-cutaway archetype: a calm line drawing of a house in section with a basement, a street on one side and a curb box at ground level; four sage numbered tags at the meter, the foundation wall, the basement pipe and the curb box; a small slate-blue pipe line from street to house. Free guide badge.",
+    "flags": [],
+    "reserve": false,
+    "n": 86
+  },
+  {
+    "slice": "binder",
+    "angle": "before-after",
+    "headline": "Home Binder Stalled After One Page? That Is Still Worth Having",
+    "sub": "The emergency page alone, filled in, beats an empty binder.",
+    "items": [
+      "Add one section a week",
+      "Keep it somewhere you will actually reach for it"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "how-to-make-a-home-binder"
+    },
+    "proof": [
+      "A binder that never gets past the first page is still worth having. The emergency page alone, filled in, beats an empty binder.",
+      "Add one section a week instead of trying to finish it in one sitting"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "home binder not finished",
+    "board": "Home Binder and Printables",
+    "when": "evergreen",
+    "visual": "Before-after split: left an empty binder on a closet shelf with blank pages, right the same binder on a counter with a single filled-in 'If something goes wrong' page and a sage tick. Archetype: then-and-now.",
+    "flags": [],
+    "reserve": false,
+    "n": 87
+  },
+  {
+    "slice": "safety",
+    "angle": "checklist",
+    "headline": "Where Is My Main Water Shutoff? The Ten Minute Check",
+    "sub": "Find it before you need it.",
+    "items": [
+      "Find the valve and note where it is.",
+      "Work out which way it turns, and write that down.",
+      "Note any tool it needs, such as a wrench for a meter box.",
+      "Mark it with tape or paint so it is easy to find in the dark",
+      "Check that it moves without forcing it.",
+      "Show everyone else in the house, and draw the location on a page where it will be found in an emergency."
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "where-is-my-water-shutoff"
+    },
+    "proof": [
+      "Find it before you need it",
+      "Find the valve and note where it is.",
+      "Work out which way it turns, and write that down.",
+      "Note any tool it needs, such as a wrench for a meter box.",
+      "Mark it with tape or paint so it is easy to find in the dark",
+      "Check that it moves without forcing it.",
+      "Show everyone else in the house, and draw the location on a page where it will be found in an emergency."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "where is my main water shutoff",
+    "board": "Home Safety and Shutoffs",
+    "when": "evergreen",
+    "visual": "Fridge-list archetype: a kraft-tan card held on a fridge door by a sage magnet, six hand-ruled tick rows with ochre-free sage ticks, a small sketch of a shutoff valve with a taped marker in the corner, paper background #f4f2ec, ink text. Free guide badge.",
+    "flags": [],
+    "reserve": false,
+    "n": 88
+  },
+  {
+    "slice": "binder",
+    "angle": "infographic",
+    "headline": "Life Admin Binder: The Eight Tabs at a Glance",
+    "sub": "Skip a tab that does not apply to you.",
+    "items": [
+      "1. Who to call",
+      "2. Paperwork",
+      "3. Money",
+      "4. Home",
+      "5. People and pets",
+      "6. Accounts and devices",
+      "7. What you'd want",
+      "8. Business"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "life-admin-binder-what-goes-in-it"
+    },
+    "proof": [
+      "usually a three-ring binder with eight tabs, that tells someone where your important papers are and who to call",
+      "1. Who to call",
+      "2. Paperwork",
+      "3. Money",
+      "4. Home",
+      "5. People and pets",
+      "6. Accounts and devices",
+      "7. What you'd want",
+      "8. Business"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "life admin binder tabs",
+    "board": "Home Binder and Printables",
+    "when": "evergreen",
+    "visual": "A binder shown edge-on with eight staggered kraft tabs fanned down its side, each tab carrying its number and name in ink, one sage-highlighted; a short caption below. Archetype: survey-binder.",
+    "flags": [],
+    "reserve": false,
+    "n": 89
+  },
+  {
+    "slice": "safety",
+    "angle": "comparison",
+    "headline": "Main Water Shutoff Valve Types: Wheel Handle vs Lever Handle",
+    "sub": "Write down which type yours is.",
+    "items": [
+      "Wheel or round handle: Usually a gate valve; Turns several times; Often stiff if unused for years; May need gentle, steady effort",
+      "Lever handle: Usually a ball valve; Turns a quarter turn; Closed when the lever sits across the pipe; Easier to check at a glance"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "where-is-my-water-shutoff"
+    },
+    "proof": [
+      "Wheel or round handle",
+      "Usually a gate valve",
+      "Turns several times",
+      "Often stiff if unused for years",
+      "May need gentle, steady effort",
+      "Lever handle",
+      "Usually a ball valve",
+      "Turns a quarter turn",
+      "Closed when the lever sits across the pipe",
+      "Easier to check at a glance",
+      "Write down which type yours is"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "gate valve vs ball valve main water shutoff",
+    "board": "Home Safety and Shutoffs",
+    "when": "evergreen",
+    "visual": "Two-column split on paper: left a line drawing of a round wheel-handle valve on a copper pipe, right a lever-handle valve with the lever across the pipe, muted slate blue only for the pipe water hint, sage column headers, four short rows under each. Free guide badge.",
+    "flags": [],
+    "reserve": false,
+    "n": 90
+  },
+  {
+    "slice": "binder",
+    "angle": "how-to-steps",
+    "headline": "Life Admin Binder: Build It in This Order, Three Pages in One Evening",
+    "sub": "Three pages in one evening is a real start. The rest can wait for weekends.",
+    "items": [
+      "Get a one-and-a-half-inch three-ring binder and eight tab dividers.",
+      "Write tab 1 first: who to call first, who would sort things out, who would speak for your medical care.",
+      "Under tab 6, write the email address everything is registered to.",
+      "Tell one person the binder exists and where it sits."
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "life-admin-binder-what-goes-in-it"
+    },
+    "proof": [
+      "Three pages in one evening is a real start. The rest can wait for weekends.",
+      "Get a one-and-a-half-inch three-ring binder and eight tab dividers.",
+      "Write tab 1 first: who to call first, who would sort things out, who would speak for your medical care.",
+      "Under tab 6, write the email address everything is registered to.",
+      "Tell one person the binder exists and where it sits."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "how to make a life admin binder",
+    "board": "Home Binder and Printables",
+    "when": "evergreen",
+    "visual": "Numbered four-step vertical flow with small drawn props per step: empty binder and dividers, a pen over tab 1, a laptop email field, two people at a shelf; desk surface, sage numerals. Archetype: survey-binder.",
+    "flags": [],
+    "reserve": false,
+    "n": 91
+  },
+  {
+    "slice": "safety",
+    "angle": "template-preview",
+    "headline": "Water Shutoff Page Template: One Household's, Filled In",
+    "sub": "An illustration, not a real address. Use it as a template for your own page.",
+    "items": [
+      "Main shutoff: Basement, left wall, next to the water heater",
+      "Turns: Left, quarter turn, lever handle",
+      "Tool needed: None",
+      "Draw where it is: Sketch marked W near the water heater"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "where-is-my-water-shutoff"
+    },
+    "proof": [
+      "Example: one household's shutoff page, filled in",
+      "An illustration, not a real address. Use it as a template for your own page.",
+      "Main shutoff",
+      "Basement, left wall, next to the water heater",
+      "Left, quarter turn, lever handle",
+      "Tool needed",
+      "None",
+      "Draw where it is",
+      "Sketch marked W near the water heater"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "water shutoff location printable page",
+    "board": "Home Safety and Shutoffs",
+    "when": "evergreen",
+    "visual": "Plate-closeup archetype: a single ruled page on a kraft clipboard with four fill-in rows in handwriting-style type, a small floor sketch with a sage W marker beside a water heater outline. Free guide badge.",
+    "flags": [
+      "example-tag"
+    ],
+    "reserve": false,
+    "n": 92
+  },
+  {
+    "slice": "binder",
+    "angle": "comparison",
+    "headline": "Life Admin Binder or Home Binder? Which One Do You Need?",
+    "sub": "A life admin binder is the emergency version, not a chore or meal-plan binder for running the house.",
+    "items": [
+      "Life admin binder: where your important papers are and who to call",
+      "Not a chore or meal-plan binder for running the house",
+      "How to make a home binder is closer"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "life-admin-binder-what-goes-in-it"
+    },
+    "proof": [
+      "This is the emergency version, the one a partner or sibling opens when you can't answer, not a chore or meal-plan binder for running the house.",
+      "If you searched for a life admin binder to run the household, meaning chores, meal plans and maintenance, this isn't that."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "life admin binder vs home binder",
+    "board": "Home Binder and Printables",
+    "when": "evergreen",
+    "visual": "Two binders side by side on a shelf: left labeled 'Life admin' with eight narrow tabs, right labeled 'Home' with five wide kraft tabs, a small sage arrow under each with its one-line job. Archetype: survey-binder.",
+    "flags": [],
+    "reserve": false,
+    "n": 93
+  },
+  {
+    "slice": "safety",
+    "angle": "how-to-steps",
+    "headline": "Stuck Water Shutoff Valve? Do Not Force It: What to Do Instead",
+    "sub": "A stuck gate valve can snap.",
+    "items": [
+      "Do not force it with a wrench or a pipe",
+      "Note that it is stuck",
+      "use a smaller shutoff under a sink or behind a toilet to slow a specific leak in the meantime",
+      "call a plumber to free or replace the main valve before it is an emergency"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "where-is-my-water-shutoff"
+    },
+    "proof": [
+      "A stuck gate valve can snap.",
+      "Do not force it with a wrench or a pipe",
+      "Note that it is stuck",
+      "use a smaller shutoff under a sink or behind a toilet to slow a specific leak in the meantime",
+      "call a plumber to free or replace the main valve before it is an emergency"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "stuck main water shutoff valve won't turn",
+    "board": "Home Safety and Shutoffs",
+    "when": "evergreen",
+    "visual": "Four numbered steps on paper in a vertical flow, each with a small line icon: a valve with a sage hold marker, a pencil on a page, a sink with its small shutoff valve, a plumber's card; ochre accent only on the 'do not force' step tag. Free guide badge.",
+    "flags": [],
+    "reserve": false,
+    "n": 94
+  },
+  {
+    "slice": "binder",
+    "angle": "template-preview",
+    "headline": "Life Admin Binder Example: What a Filled-In Page Looks Like",
+    "sub": "An invented household, to show how short a good page is.",
+    "items": [
+      "Will: fireproof box in the hall closet, and Marcus knows the box is there.",
+      "Passport and birth certificate: same box.",
+      "Everything is registered to my main email address.",
+      "No passwords in this binder."
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "life-admin-binder-what-goes-in-it"
+    },
+    "proof": [
+      "An invented household, to show how short a good page is.",
+      "Will: fireproof box in the hall closet, and Marcus knows the box is there.",
+      "Passport and birth certificate: same box.",
+      "Everything is registered to my main email address.",
+      "No passwords in this binder."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "life admin binder example",
+    "board": "Home Binder and Printables",
+    "when": "evergreen",
+    "visual": "A typed single binder page, tilted on a desk, with two tab headings ('2. Paperwork', '6. Accounts') and the short location lines in ink; 'Example, invented household' stamp; a fireproof-box line drawing in the corner. Template-preview of the guide's own table.",
+    "flags": [
+      "example-tag"
+    ],
+    "reserve": false,
+    "n": 95
+  },
+  {
+    "slice": "safety",
+    "angle": "checklist",
+    "headline": "New House Checklist: Day One Safety Jobs Before Anything Else",
+    "sub": "These are time sensitive in a way the rest of the list isn't.",
+    "items": [
+      "Find the main water shutoff, the breaker panel, and the gas shutoff.",
+      "Locate them now, not during an emergency.",
+      "Test every smoke and carbon monoxide alarm, and note the replacement date printed on each unit.",
+      "Find out whether the alarm system has a code, and who besides you has it."
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "first-week-after-buying-a-house"
+    },
+    "proof": [
+      "These are time sensitive in a way the rest of the list isn't.",
+      "Find the main water shutoff, the breaker panel, and the gas shutoff.",
+      "Locate them now, not during an emergency.",
+      "Test every smoke and carbon monoxide alarm, and note the replacement date printed on each unit.",
+      "Find out whether the alarm system has a code, and who besides you has it."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "new house checklist first day safety",
+    "board": "New Homeowner Checklists",
+    "when": "evergreen",
+    "visual": "Move-in-walkthrough archetype: a set of house keys and a sage key tag on a kraft card carrying the four rows with tick boxes; ochre only on a small 'safety' tag beside the alarm row; paper background. Free guide badge.",
+    "flags": [],
+    "reserve": false,
+    "n": 96
+  },
+  {
+    "slice": "binder",
+    "angle": "myth-vs-truth",
+    "headline": "Life Admin Binder Myth: It Needs Copies of Everything. It Needs Locations.",
+    "sub": "Each page holds locations and names, not copies of documents or passwords.",
+    "items": [
+      "Leave off: Copies of the documents themselves",
+      "Leave off: Account numbers",
+      "Leave off: Passwords and the master password",
+      "Leave off: Alarm codes"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "life-admin-binder-what-goes-in-it"
+    },
+    "proof": [
+      "Each page holds locations and names, not copies of documents or passwords.",
+      "Copies of the documents themselves",
+      "Account numbers",
+      "Passwords and the master password",
+      "Alarm codes"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "what to put in a life admin binder",
+    "board": "Home Binder and Printables",
+    "when": "evergreen",
+    "visual": "Two-panel myth/truth card: left a thick stack of photocopies crossed out in muted slate (no red), right one page reading 'where it is, who to ask' with a sage tick; the four leave-off lines listed beneath. Archetype: fridge-list.",
+    "flags": [],
+    "reserve": false,
+    "n": 97
+  },
+  {
+    "slice": "safety",
+    "angle": "scenario",
+    "headline": "Closing on a Friday: What the First Weekend Looks Like in a New House",
+    "sub": "That's the real window: about a week of easy access, then a slow decline toward zero.",
+    "items": [
+      "By Monday, the shutoffs are found, the meters are photographed, and the smoke alarms are tested.",
+      "By the following weekend, the inspection report is marked up with a date beside each item"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "first-week-after-buying-a-house"
+    },
+    "proof": [
+      "Say you close on a Friday and move in over the weekend.",
+      "By Monday, the shutoffs are found, the meters are photographed, and the smoke alarms are tested.",
+      "By the following weekend, the inspection report is marked up with a date beside each item",
+      "That's the real window: about a week of easy access, then a slow decline toward zero."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "first week in a new house what to do",
+    "board": "New Homeowner Checklists",
+    "when": "evergreen",
+    "visual": "Then-and-now strip: a calm week timeline Friday to the following weekend with a sage bar that is tall at Monday and tapers off, small tiles for shutoff, meters and alarm; keys and a moving box prop. Free guide badge.",
+    "flags": [
+      "example-tag"
+    ],
+    "reserve": false,
+    "n": 98
+  },
+  {
+    "slice": "safety",
+    "angle": "quote-card",
+    "headline": "Smoke and CO Alarms: Test Monthly, Replace at 10 Years",
+    "sub": "The one job here where the cost of skipping is not measured in dollars.",
+    "items": [
+      "Test smoke and CO alarms; replace the units",
+      "Test monthly, replace at 10 years"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "home-maintenance-you-skip-that-costs-the-most"
+    },
+    "proof": [
+      "Test smoke and CO alarms; replace the units",
+      "Test monthly, replace at 10 years",
+      "The one job here where the cost of skipping is not measured in dollars"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "how often to replace smoke detectors and test",
+    "board": "Home Safety and Shutoffs",
+    "when": "evergreen",
+    "visual": "Quote-card on sage soft #e6ede2: the sentence set large in ink, a ceiling alarm line drawing above it with a small ochre safety tag, the two intervals as two kraft chips beneath. Free guide badge. Typical intervals only; your own manual wins.",
+    "flags": [],
+    "reserve": false,
+    "n": 99
+  },
+  {
+    "slice": "safety",
+    "angle": "question",
+    "headline": "How Old Are Your Washing Machine Hoses? Replace Rubber Hoses by 10 Years",
+    "sub": "Sooner if cracked or bulging.",
+    "items": [
+      "Replace the washing machine's rubber supply hoses",
+      "By 10 years, sooner if cracked or bulging",
+      "A burst hose floods a laundry room while nobody is home to catch it"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "home-maintenance-you-skip-that-costs-the-most"
+    },
+    "proof": [
+      "Replace the washing machine's rubber supply hoses",
+      "By 10 years, sooner if cracked or bulging",
+      "A burst hose floods a laundry room while nobody is home to catch it"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "how often to replace washing machine hoses",
+    "board": "Home Safety and Shutoffs",
+    "when": "evergreen",
+    "visual": "Plate-closeup archetype: a close line drawing of the back of a washer with two rubber hoses and a small tag on each reading a year; slate blue only for a single water-drop hint; the question as a large headline, the interval on a kraft chip. Free guide badge.",
+    "flags": [],
+    "reserve": false,
+    "n": 100
+  },
+  {
+    "slice": "safety",
+    "angle": "mockup-printable",
+    "headline": "If Something Goes Wrong Tonight: The Home Survey Emergency Page",
+    "sub": "It takes ten minutes, and almost nobody does it.",
+    "items": [
+      "Water: Main shutoff, Turns, Tool needed",
+      "Gas: Shutoff, Emergency",
+      "Electricity: Panel, Main breaker",
+      "Draw where they are"
+    ],
+    "link": {
+      "kind": "shop",
+      "slug": "home-management-companion"
+    },
+    "proof": [
+      "If something goes wrong tonight.",
+      "This is the most useful page in the book. It takes ten minutes, and almost nobody does it.",
+      "Main shutoff",
+      "Tool needed",
+      "Main breaker",
+      "DRAW WHERE THEY ARE",
+      "A rough plan beats a paragraph. Mark the water shutoff W, the gas G, and the panel E."
+    ],
+    "proofFile": "book",
+    "proofExtra": [
+      {
+        "file": "src/content/guides.ts",
+        "proof": [
+          "The Home Survey that comes with it has a page for exactly this, with boxes for water, gas and electricity, and a place to draw where each one is."
+        ]
+      }
+    ],
+    "query": "emergency shutoff page printable home binder",
+    "board": "Home Safety and Shutoffs",
+    "when": "evergreen",
+    "visual": "Mockup-printable: the real Home Survey page 'PLATE 01 If something goes wrong tonight' (first plate of the workbook), tilted on a desk beside a binder and a pen, with the headline on paper. The page is rendered from the real workbook PDF (creative/out/homebase/book.pdf, plate 01), not redrawn. Product line with real price, from the listing.",
+    "flags": [],
+    "reserve": false,
+    "n": 101
+  }
+]

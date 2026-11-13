@@ -1,0 +1,433 @@
+[
+  {
+    "slice": "moving",
+    "angle": "checklist",
+    "headline": "New House Checklist: The Day One List Before Anything Else",
+    "sub": "These are time sensitive in a way the rest of the list isn't.",
+    "items": [
+      "Photograph the gas, electric and water meters, with the date visible, before anyone touches them.",
+      "Find the main water shutoff, the breaker panel, and the gas shutoff.",
+      "Write down which company supplies each utility, and the account number if there's paperwork for it.",
+      "Find out whether the alarm system has a code, and who besides you has it.",
+      "Test every smoke and carbon monoxide alarm, and note the replacement date printed on each unit."
+    ],
+    "link": { "kind": "guide", "slug": "first-week-after-buying-a-house" },
+    "proof": [
+      "These are time sensitive in a way the rest of the list isn't.",
+      "Photograph the gas, electric and water meters, with the date visible, before anyone touches them.",
+      "Find the main water shutoff, the breaker panel, and the gas shutoff.",
+      "Write down which company supplies each utility, and the account number if there's paperwork for it.",
+      "Find out whether the alarm system has a code, and who besides you has it.",
+      "Test every smoke and carbon monoxide alarm, and note the replacement date printed on each unit."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "new house checklist",
+    "board": "New Homeowner Checklists",
+    "when": "evergreen",
+    "visual": "fridge-list archetype: a sage-bordered checklist card held to a fridge door by a kraft magnet, five tick boxes in paper and ink, small line props beside each row (three meters, a water valve, a breaker panel, a keypad, a smoke alarm); a ring of house keys hangs from the card corner. Free guide badge.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "moving",
+    "angle": "scenario",
+    "headline": "New Homeowner Checklist Timing: Why the First Week Is the Real Window",
+    "sub": "That's the real window: about a week of easy access, then a slow decline toward zero.",
+    "items": [
+      "Say you close on a Friday and move in over the weekend.",
+      "By Monday, the shutoffs are found, the meters are photographed, and the smoke alarms are tested.",
+      "By the following weekend, the inspection report is marked up with a date beside each item.",
+      "The previous owner, who's been quick to answer texts so far, has gone quiet."
+    ],
+    "link": { "kind": "guide", "slug": "first-week-after-buying-a-house" },
+    "proof": [
+      "Say you close on a Friday and move in over the weekend.",
+      "By Monday, the shutoffs are found, the meters are photographed, and the smoke alarms are tested.",
+      "By the following weekend, the inspection report is marked up with a date beside each item",
+      "the previous owner, who's been quick to answer texts so far, has gone quiet.",
+      "That's the real window: about a week of easy access, then a slow decline toward zero."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "first week in a new house what to do",
+    "board": "New Homeowner Checklists",
+    "when": "evergreen",
+    "visual": "move-in-walkthrough archetype: a two-week calendar strip across the pin, Friday (closing, keys) to the following weekend, with the first Monday ticked off in sage and a fading text-bubble from the previous owner at the far end; boxes and a lamp sit at the edge. Closing keys and a taped box as props. No dates or numbers beyond the guide's weekday words.",
+    "flags": ["example-tag"],
+    "reserve": false
+  },
+  {
+    "slice": "moving",
+    "angle": "question",
+    "headline": "Should You Change the Locks When You Buy a House? Rekey Before You Move In",
+    "sub": "Changing the locks is the item first-week checklists leave out most often.",
+    "items": [
+      "You have no way to know how many keys exist from before you owned the place.",
+      "Rekey or replace every exterior lock before you move belongings in, not after.",
+      "The front door, the back door, any gate, and the garage keypad code.",
+      "Write the new code or key location down on your own record once it's changed."
+    ],
+    "link": { "kind": "guide", "slug": "first-week-after-buying-a-house" },
+    "proof": [
+      "Changing the locks is the item first-week checklists leave out most often.",
+      "You have no way to know how many keys exist from before you owned the place, so rekey or replace every exterior lock before you move belongings in, not after: the front door, the back door, any gate, and the garage keypad code.",
+      "Write the new code or key location down on your own record once it's changed"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "should i change the locks when i buy a house",
+    "board": "New Homeowner Checklists",
+    "when": "evergreen",
+    "visual": "A kraft key ring photographed flat on paper with four tags (Front door, Back door, Gate, Garage keypad) and a sage question mark tag; headline top-left in ink on paper. Prop: a deadbolt and a spare key. Quiet, no alarm imagery.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "moving",
+    "angle": "before-after",
+    "headline": "Home Inspection Report After Closing: Read It Again as a To-Do List",
+    "sub": "The inspection report was read once, as a buying decision.",
+    "items": [
+      "Read it again now as a maintenance plan.",
+      "Pull out anything with a timeframe attached and give it an actual date.",
+      "That's a maintenance schedule somebody else already did the legwork on."
+    ],
+    "link": { "kind": "guide", "slug": "first-week-after-buying-a-house" },
+    "proof": [
+      "The inspection report was read once, as a buying decision.",
+      "Read it again now as a maintenance plan",
+      "Pull out anything with a timeframe attached and give it an actual date.",
+      "That's a maintenance schedule somebody else already did the legwork on."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "what to do with home inspection report after buying a house",
+    "board": "New Homeowner Checklists",
+    "when": "evergreen",
+    "visual": "then-and-now archetype: two copies of the same inspection report page side by side. Left 'Read once, as a buying decision' with plain text lines; right 'Read again, as a maintenance plan' with the same lines now highlighted in soft sage and a blank date box added beside each (no dates or findings invented, lines are grey bars). A pen and a binder clip as props.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "moving",
+    "angle": "template-preview",
+    "headline": "New House Week One: What to Write Down While It Is Still Easy to Ask",
+    "sub": "Week one, while it's still easy to ask",
+    "items": [
+      "Brand, model and serial for the furnace or boiler, water heater, and any appliance left behind.",
+      "When the furnace or boiler was last serviced, usually on a sticker or in a logbook near the unit.",
+      "The age of the roof, windows, and any major system, from the inspection report or the previous owner.",
+      "Warranty end dates for anything recent, especially appliances the previous owner left in the house.",
+      "Any technician the previous owner recommends."
+    ],
+    "link": { "kind": "guide", "slug": "first-week-after-buying-a-house" },
+    "proof": [
+      "Week one, while it's still easy to ask",
+      "Brand, model and serial for the furnace or boiler, water heater, and any appliance left behind.",
+      "When the furnace or boiler was last serviced, usually on a sticker or in a logbook near the unit.",
+      "The age of the roof, windows, and any major system, from the inspection report or the previous owner.",
+      "Warranty end dates for anything recent, especially appliances the previous owner left in the house.",
+      "Any technician the previous owner recommends."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "new homeowner questions to ask previous owner",
+    "board": "New Homeowner Checklists",
+    "when": "evergreen",
+    "visual": "survey-binder archetype: a fill-in page on a clipboard with five labelled blank lines in sage rules (furnace or boiler, last serviced, age of roof and windows, warranty end dates, technician), a pencil across it; kraft clipboard on a paper desk. Lines left blank, no filled-in values.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "moving",
+    "angle": "infographic",
+    "headline": "Bought a House in the Fall? The Extra Jobs a September or October Move Adds",
+    "sub": "A spring or summer move skips this section entirely.",
+    "items": [
+      "Draining outdoor faucets",
+      "Servicing the heating system before you need it",
+      "Sealing obvious gaps before the cold"
+    ],
+    "link": { "kind": "guide", "slug": "first-week-after-buying-a-house" },
+    "proof": [
+      "A house bought in September or October comes with extra jobs the list above doesn't cover: draining outdoor faucets, servicing the heating system before you need it, and sealing obvious gaps before the cold.",
+      "A spring or summer move skips this section entirely."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "new house fall maintenance checklist",
+    "board": "Seasonal Home Maintenance",
+    "when": "September to November",
+    "visual": "house-cutaway archetype: a simple house in section with three sage numbered callouts: outdoor tap on the exterior wall, the furnace in the basement, a window frame with a caulk line; autumn leaves in kraft tan at the foot. Overlaps seasonal slice, so a reserve.",
+    "flags": [],
+    "reserve": true
+  },
+  {
+    "slice": "moving",
+    "angle": "infographic",
+    "headline": "How Long Do Furnaces, Water Heaters and Roofs Last? Typical Service Lives",
+    "sub": "General trade guidance, not a prediction for your house. Climate, use and upkeep change these a lot.",
+    "items": [
+      "Furnace (gas): often 15 to 20 years",
+      "Water heater, tank: roughly 8 to 12 years",
+      "Water heater, tankless: often 15 to 20 years",
+      "Central air conditioning: often around 15 years",
+      "Asphalt shingle roof: 15 to 30 years, depending on the product",
+      "Main electrical panel: often 30 years or more"
+    ],
+    "link": { "kind": "guide", "slug": "inherited-a-house-where-to-start" },
+    "proof": [
+      "General trade guidance, not a prediction for your house",
+      "Climate, use and upkeep change these a lot.",
+      "Furnace (gas)",
+      "Often 15 to 20 years",
+      "Water heater, tank",
+      "Roughly 8 to 12 years",
+      "Water heater, tankless",
+      "Central air conditioning",
+      "Often around 15 years",
+      "Asphalt shingle roof",
+      "15 to 30 years, depending on the product",
+      "Main electrical panel",
+      "Often 30 years or more"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "how long do water heaters and furnaces last",
+    "board": "Home Maintenance Checklists",
+    "when": "evergreen",
+    "visual": "house-cutaway archetype: a house in section with six horizontal range bars (sage for the years range, ochre not used) attached to the furnace, tank, tankless unit, air conditioner, roof and panel, each labelled with the guide's own wording; a small 'typical, not a prediction' note in the corner. Free guide badge.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "moving",
+    "angle": "scenario",
+    "headline": "How Old Is My Water Heater? Reading the Age From a Serial Number",
+    "sub": "On some brands, not all, the first two digits are the year and the next two are the month.",
+    "items": [
+      "Say the sticker on the water heater reads Serial: 2308-114477.",
+      "Which would make this unit built in August 2023.",
+      "Treat it as a starting guess until you confirm it against that brand's own page."
+    ],
+    "link": { "kind": "guide", "slug": "inherited-a-house-where-to-start" },
+    "proof": [
+      "Say the sticker on the water heater reads Serial: 2308-114477.",
+      "On some brands, not all, the first two digits are the year and the next two are the month, which would make this unit built in August 2023.",
+      "treat it as a starting guess until you confirm it against that brand's own page"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "how to tell how old a water heater is",
+    "board": "Appliance Records and Warranties",
+    "when": "evergreen",
+    "visual": "plate-closeup archetype: a close crop of a water heater data label with the serial 2308-114477 on it, '23' and '08' circled in sage with small 'year' and 'month' tags, a flashlight beam across the tank. The serial is the guide's own example.",
+    "flags": ["example-tag"],
+    "reserve": false
+  },
+  {
+    "slice": "moving",
+    "angle": "how-to-steps",
+    "headline": "Inherited House Walk Round: Photograph Every Plate and Label",
+    "sub": "Photograph every plate and label you find instead of copying numbers by hand.",
+    "items": [
+      "Furnace, boiler or heat pump: model, serial, and any service sticker",
+      "Water heater: the label usually carries a manufacture date",
+      "Breaker panel: often carries an installation or inspection sticker with a date on it.",
+      "Every major appliance: make, model, serial.",
+      "Utility meters: readings and serial numbers",
+      "Attic, basement and closets, where manuals and old paperwork tend to survive"
+    ],
+    "link": { "kind": "guide", "slug": "inherited-a-house-where-to-start" },
+    "proof": [
+      "An afternoon with a flashlight and your phone's camera, checking data plates, service stickers and any paperwork still in a drawer",
+      "Photograph every plate and label you find instead of copying numbers by hand.",
+      "Furnace, boiler or heat pump: model, serial, and any service sticker",
+      "Water heater: the label usually carries a manufacture date",
+      "Breaker panel: often carries an installation or inspection sticker with a date on it.",
+      "Every major appliance: make, model, serial.",
+      "Utility meters: readings and serial numbers",
+      "Attic, basement and closets, where manuals and old paperwork tend to survive"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "inherited a house where to start",
+    "board": "New Homeowner Checklists",
+    "when": "evergreen",
+    "visual": "house-cutaway archetype as a numbered route: a house in section with six numbered sage stops (furnace, water heater, panel, appliance, meter, attic and closets), a phone and a flashlight at the foot; photo-frame corners on each stop.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "moving",
+    "angle": "quote-card",
+    "headline": "No Maintenance Records? Treat Every Unknown as Due",
+    "sub": "Every date you write down from here is a real one, and real dates are what the rest of this depends on.",
+    "items": [
+      "Where you truly can't find out when something was last done, assume it's due.",
+      "Checking something that didn't need it costs an hour, and skipping something that did costs a great deal more."
+    ],
+    "link": { "kind": "guide", "slug": "inherited-a-house-where-to-start" },
+    "proof": [
+      "Where you truly can't find out when something was last done, assume it's due.",
+      "checking something that didn't need it costs an hour, and skipping something that did costs a great deal more.",
+      "Every date you write down from here is a real one, and real dates are what the rest of this depends on."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "no home maintenance records where to start",
+    "board": "Home Maintenance Checklists",
+    "when": "evergreen",
+    "visual": "quote-card on sage soft: the first sentence large in ink serif-style type with 'assume it's due' in strong sage, a kraft tag below holding the second sentence, a single hand-written date line left blank. Weakest of the slice: mostly type, so a reserve.",
+    "flags": [],
+    "reserve": true
+  },
+  {
+    "slice": "moving",
+    "angle": "question",
+    "headline": "What to Check First in a House With No Records: Water Heater, Furnace, Panel",
+    "sub": "Everything else can follow at a slower pace.",
+    "items": [
+      "The water heater",
+      "The furnace or heat pump",
+      "The breaker panel",
+      "Photograph their plates, note the age if you can find it."
+    ],
+    "link": { "kind": "guide", "slug": "inherited-a-house-where-to-start" },
+    "proof": [
+      "Start with whatever would be worst to have fail without warning: the water heater, the furnace or heat pump, and the breaker panel.",
+      "Photograph their plates, note the age if you can find it",
+      "Everything else can follow at a slower pace."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "what to check first in an old house",
+    "board": "New Homeowner Checklists",
+    "when": "evergreen",
+    "visual": "A big sage question mark over a house section with three stops ringed and numbered 1 2 3 (water heater, furnace, breaker panel) and the rest of the house in faint paper lines. Free guide badge. Different composition from the walk-round pin: three big objects, not six small stops.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "moving",
+    "angle": "template-preview",
+    "headline": "Rental Lease and Deposit Record: One Day-One Page, Filled In",
+    "sub": "Four records made on day one settle most deposit arguments later.",
+    "items": [
+      "Photos taken: 22 rooms and closets, dated Sep 26",
+      "Lease started: Sep 26, renews Sep 26 next year",
+      "Notice by: 60 days before renewal",
+      "Deposit: $1,400, held by the property manager"
+    ],
+    "link": { "kind": "guide", "slug": "moving-into-a-rental-what-to-document" },
+    "proof": [
+      "Four records made on day one settle most deposit arguments later.",
+      "22 rooms and closets, dated Sep 26",
+      "Sep 26, renews Sep 26 next year",
+      "60 days before renewal",
+      "$1,400, held by the property manager",
+      "An illustration, not a real lease."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "rental move in record template",
+    "board": "Renting and Move-In",
+    "when": "evergreen",
+    "visual": "template-preview: a two-column Field / Filled in card in sage and paper with the four rows set in handwriting-style type, a small 'An illustration, not a real lease' note, keys and a lease folder beside it. The figures are the guide's own example.",
+    "flags": ["example-tag"],
+    "reserve": false
+  },
+  {
+    "slice": "moving",
+    "angle": "comparison",
+    "headline": "Normal Wear and Tear vs Damage in a Rental: Where the Line Usually Falls",
+    "sub": "The line between the two is set by your state's law and can come down to specifics.",
+    "items": [
+      "Usually normal wear: a worn patch of carpet in a walkway, small nail holes from a picture, faded paint, or a sticking door",
+      "Usually damage: a burn mark, a pet stain that soaked through, a broken tile, or a hole in a wall"
+    ],
+    "link": { "kind": "guide", "slug": "moving-into-a-rental-what-to-document" },
+    "proof": [
+      "A worn patch of carpet in a walkway, small nail holes from a picture, faded paint, or a sticking door are usually normal wear from ordinary living.",
+      "A burn mark, a pet stain that soaked through, a broken tile, or a hole in a wall are usually damage.",
+      "The line between the two is set by your state's law and can come down to specifics",
+      "photograph the condition at move-in and lean on that record rather than a guess about the category"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "normal wear and tear vs damage rental",
+    "board": "Renting and Move-In",
+    "when": "evergreen",
+    "visual": "then-and-now style split card: left half a worn carpet walkway, nail holes and a faded wall patch in muted kraft and sage line art, right half a burn mark, a tile with a crack and a wall hole; a dated photo tile at the bottom reading 'photograph it at move-in'. Not legal advice.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "moving",
+    "angle": "comparison",
+    "headline": "Renting: What You Usually Look After and What the Landlord Usually Does",
+    "sub": "Check your own lease and your state's tenant rights guide for the specifics.",
+    "items": [
+      "Usually yours: keeping the place clean",
+      "Usually yours: changing smoke alarm batteries, if your lease says so",
+      "Usually yours: reporting problems promptly",
+      "Usually the landlord's: the roof and structure",
+      "Usually the landlord's: major systems like heating and plumbing",
+      "Usually the landlord's: repairs that are not your fault"
+    ],
+    "link": { "kind": "guide", "slug": "moving-into-a-rental-what-to-document" },
+    "proof": [
+      "Keeping the place clean",
+      "Changing smoke alarm batteries, if your lease says so",
+      "Reporting problems promptly",
+      "The roof and structure",
+      "Major systems like heating and plumbing",
+      "Repairs that are not your fault",
+      "so check your own lease and your state's tenant rights guide for the specifics"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "tenant vs landlord responsibilities",
+    "board": "Renting and Move-In",
+    "when": "evergreen",
+    "visual": "A floor plan of a small flat split down the middle into two columns, 'Usually yours' in sage and 'Usually the landlord's' in kraft tan, each with its items tagged onto rooms and a roof-and-pipes strip across the top for the landlord side. Free guide badge.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "moving",
+    "angle": "how-to-steps",
+    "headline": "How to Report a Rental Repair in Writing and Keep the Log",
+    "sub": "A message has a date; a phone call does not, unless you follow it with one.",
+    "items": [
+      "Tell the landlord in writing and keep a copy.",
+      "Add a line to your log with the date, what you said and what they answered.",
+      "If the same problem comes back, that log is your record that you flagged it first."
+    ],
+    "link": { "kind": "guide", "slug": "moving-into-a-rental-what-to-document" },
+    "proof": [
+      "When something breaks, tell the landlord in writing and keep a copy.",
+      "A message has a date; a phone call does not, unless you follow it with one.",
+      "Add a line to your log with the date, what you said and what they answered.",
+      "If the same problem comes back, that log is your record that you flagged it first."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "how to report a repair to landlord in writing",
+    "board": "Renting and Move-In",
+    "when": "evergreen",
+    "visual": "move-in-walkthrough archetype: three numbered steps down the pin (a phone message bubble, a log table with Date / What / The answer columns left blank, a stacked 'flagged it first' note) with a sage tick on the log; kraft clipboard prop. No invented repairs or dates.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "moving",
+    "angle": "checklist",
+    "headline": "What to Photograph When You Move Into a Rental: Wide Shots First, Then Close Ones",
+    "sub": "Photos with the date visible do the same job as a checklist and are harder to dispute.",
+    "items": [
+      "Every room, wide shots first",
+      "Then close shots of anything scratched, stained or worn",
+      "The walls, the floors, the windows",
+      "The inside of the oven, the refrigerator and any cabinets"
+    ],
+    "link": { "kind": "guide", "slug": "moving-into-a-rental-what-to-document" },
+    "proof": [
+      "Every room, wide shots first, then close shots of anything scratched, stained or worn: the walls, the floors, the windows, and the inside of the oven, the refrigerator and any cabinets.",
+      "photos with the date visible do the same job and are harder to dispute"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "what to photograph when moving into a rental",
+    "board": "Renting and Move-In",
+    "when": "evergreen",
+    "visual": "photo-tiles grid in the move-in-walkthrough style: a phone showing a wide room shot with a small close-up tile of a scuffed wall beside it, plus tiles for floor, window, oven interior, refrigerator interior and cabinet, each carrying a small date stamp tab left blank; four sage tick rows beneath.",
+    "flags": [],
+    "reserve": false
+  }
+]
