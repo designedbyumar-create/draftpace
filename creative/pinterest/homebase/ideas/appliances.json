@@ -1,0 +1,443 @@
+[
+  {
+    "slice": "appliances",
+    "angle": "infographic",
+    "headline": "Where Is the Model Number on a Washer, Dryer, Fridge and Dishwasher?",
+    "sub": "It is almost never on the front.",
+    "items": [
+      "Front-load washer: Inside the door, on the rim of the opening",
+      "Top-load washer: Under the lid, on the tub rim",
+      "Refrigerator: Inside, on a side wall, often the left in a top-freezer",
+      "Dishwasher: On the tub frame or edge, visible with the door open"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "how-to-find-the-model-number-on-any-appliance"
+    },
+    "proof": [
+      "The model number is printed on a rating plate or sticker, and it is almost never on the front.",
+      "Inside the door, on the rim of the opening",
+      "Under the lid, on the tub rim",
+      "Inside, on a side wall, often the left in a top-freezer",
+      "On the tub frame or edge, visible with the door open"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "where is the model number on appliances",
+    "board": "Appliance Records and Warranties",
+    "when": "evergreen",
+    "visual": "Flat-lay of four appliances drawn as a tidy row (front-load washer with door open, top-load washer with lid up, fridge with door open, dishwasher with door open), each with a small sage tag pointing to where its data plate sits; kraft-tan label cards carry the four items; sage panel, paper background.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "appliances",
+    "angle": "template-preview",
+    "headline": "What an Appliance Data Plate Says: Model, Serial, Volts (Example)",
+    "sub": "The example below uses made-up values, but the layout is typical.",
+    "items": [
+      "MODEL ABC1234XYZ: Which product this is. What a parts store or repair service asks for first.",
+      "SERIAL VF1234567: Your one unit. Used for warranty and recalls, and often carries the build date.",
+      "VOLTS / WATTS 240V, 5400W: Electrical rating. Useful to an electrician, rarely to you."
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "how-to-find-the-model-number-on-any-appliance"
+    },
+    "proof": [
+      "The example below uses made-up values, but the layout is typical.",
+      "ABC1234XYZ",
+      "VF1234567",
+      "Which product this is. What a parts store or repair service asks for first.",
+      "Your one unit. Used for warranty and recalls, and often carries the build date.",
+      "Electrical rating. Useful to an electrician, rarely to you."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "appliance model number and serial number plate",
+    "board": "Appliance Records and Warranties",
+    "when": "evergreen",
+    "visual": "plate-closeup archetype: a large close-up of a dryer rim data plate drawn as a metal label with the MODEL, SERIAL and VOLTS / WATTS lines; sage callout arrows to each line with the plain-language meaning in kraft-tan cards; small EXAMPLE tag in ochre.",
+    "flags": [
+      "example-tag"
+    ],
+    "reserve": false
+  },
+  {
+    "slice": "appliances",
+    "angle": "comparison",
+    "headline": "Model Number vs Serial Number: What Each One Is For",
+    "sub": "Both are usually on the same plate, so photograph the whole plate and write both down.",
+    "items": [
+      "Model number: identifies the product design and is what you use to order parts",
+      "Serial number: identifies your specific unit and is what warranty and recall checks use"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "how-to-find-the-model-number-on-any-appliance"
+    },
+    "proof": [
+      "The model number identifies the product design and is what you use to order parts. The serial number identifies your specific unit and is what warranty and recall checks use. Both are usually on the same plate, so photograph the whole plate and write both down."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "model number vs serial number",
+    "board": "Appliance Records and Warranties",
+    "when": "evergreen",
+    "visual": "Two-column split: left card 'Model' with a parts-store bag and a part, right card 'Serial' with a single appliance and a warranty card; the same close-up plate runs across the bottom with the two lines highlighted in sage.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "appliances",
+    "angle": "how-to-steps",
+    "headline": "How to Save an Appliance Model Number So You Can Find It Again",
+    "sub": "Do it while the appliance works and you can reach it.",
+    "items": [
+      "Open the door, lid or drawer where the plate should be",
+      "Use a flashlight, because plates sit in shadow",
+      "Photograph the whole plate, then a close shot of each code",
+      "Type the model and serial into whatever you keep records in",
+      "Note the year you bought it and where"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "how-to-find-the-model-number-on-any-appliance"
+    },
+    "proof": [
+      "Do it while the appliance works and you can reach it.",
+      "Open the door, lid or drawer where the plate should be.",
+      "Use a flashlight, because plates sit in shadow.",
+      "Photograph the whole plate, then a close shot of each code.",
+      "Type the model and serial into whatever you keep records in",
+      "Note the year you bought it and where."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "how to record appliance model number",
+    "board": "Appliance Records and Warranties",
+    "when": "evergreen",
+    "visual": "Numbered step strip 1 to 5 in sage circles: an open washer door with a flashlight beam on the plate, a phone photographing it, a notebook line, a calendar year note; kraft-tan step cards on a paper background.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "appliances",
+    "angle": "question",
+    "headline": "What If the Appliance Model Number Sticker Is Worn Off? Where to Look Next",
+    "sub": "These usually work, in roughly this order.",
+    "items": [
+      "The original receipt or order confirmation email",
+      "The manual or the box, if either survived",
+      "A past repair invoice",
+      "The retailer's account or the maker's registration, if you registered the product"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "how-to-find-the-model-number-on-any-appliance"
+    },
+    "proof": [
+      "Worn, painted over, hidden behind cabinetry or peeled off. These usually work, in roughly this order.",
+      "The original receipt or order confirmation email. Search your inbox for the brand.",
+      "The manual or the box, if either survived.",
+      "A past repair invoice. Technicians almost always write the model on it.",
+      "The retailer's account or the maker's registration, if you registered the product."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "appliance model number sticker worn off",
+    "board": "Appliance Records and Warranties",
+    "when": "evergreen",
+    "visual": "A faded, peeling plate on a washer rim in close-up at the top, then a descending sage ladder of four kraft-tan cards (receipt, manual and box, repair invoice, retailer account) each with a small prop drawn.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "appliances",
+    "angle": "checklist",
+    "headline": "What to Write Down When You Buy an Appliance: The Five Fields",
+    "sub": "Write them once, while the machine is in front of you.",
+    "items": [
+      "Brand and exact model",
+      "Serial number, photographed if it's long or hard to read",
+      "When it was purchased and when it was installed",
+      "When the warranty ends, and what it actually covers: parts, labor, or both",
+      "What to buy for it: a filter size, a part number, a bulb type"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "what-to-record-when-you-buy-an-appliance"
+    },
+    "proof": [
+      "Write five things down now: the brand and model, the serial number, when it was bought and installed, and when the warranty ends.",
+      "Brand and exact model. Not the marketing name on the box; the string off the rating plate.",
+      "Serial number, photographed if it's long or hard to read.",
+      "When it was purchased and when it was installed.",
+      "When the warranty ends, and what it actually covers: parts, labor, or both.",
+      "What to buy for it: a filter size, a part number, a bulb type."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "appliance information to record",
+    "board": "Appliance Records and Warranties",
+    "when": "evergreen",
+    "visual": "fridge-list archetype: a printed five-line checklist held to a fridge door by a magnet, sage tick boxes, one appliance sketch beside it; ochre underline only on 'warranty ends'.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "appliances",
+    "angle": "template-preview",
+    "headline": "Appliance Record Example: A Filled Dishwasher Page You Can Copy",
+    "sub": "A made-up record for a single dishwasher, not a real one.",
+    "items": [
+      "Appliance: Dishwasher, stainless",
+      "Brand and model: Bosch SHXM4AY55N",
+      "Serial number: Photographed the plate inside the door",
+      "Warranty ends: 6/2/2026, parts and labor",
+      "What to buy: None; the filter is reusable"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "what-to-record-when-you-buy-an-appliance"
+    },
+    "proof": [
+      "A made-up record for a single dishwasher, not a real one.",
+      "Dishwasher, stainless",
+      "Bosch SHXM4AY55N",
+      "Photographed the plate inside the door",
+      "6/2/2026, parts and labor",
+      "None; the filter is reusable"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "appliance record template",
+    "board": "Appliance Records and Warranties",
+    "when": "evergreen",
+    "visual": "A filled one-page appliance record laid on a desk beside a pencil: two columns, Field and What you'd write, the six dishwasher rows in handwriting font; EXAMPLE tag in ochre.",
+    "flags": [
+      "example-tag"
+    ],
+    "reserve": false
+  },
+  {
+    "slice": "appliances",
+    "angle": "infographic",
+    "headline": "Appliance Info to Record: The Extra Line for Fridge, Furnace and Water Heater",
+    "sub": "The five fields cover most things. A few categories are worth one extra line.",
+    "items": [
+      "Refrigerator: Water filter part number, and the replacement interval printed inside",
+      "Furnace or central air: Filter size, and whether it's a standard 1 inch or a thicker media filter",
+      "Water heater: Tank size in gallons, and the fuel type: gas or electric",
+      "Garage door opener: Remote or keypad type, not the code itself"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "what-to-record-when-you-buy-an-appliance"
+    },
+    "proof": [
+      "The five fields cover most things. A few categories are worth one extra line.",
+      "Water filter part number, and the replacement interval printed inside",
+      "Filter size, and whether it's a standard 1 inch or a thicker media filter",
+      "Tank size in gallons, and the fuel type: gas or electric",
+      "Remote or keypad type, not the code itself"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "appliance information to write down fridge furnace water heater",
+    "board": "Appliance Records and Warranties",
+    "when": "evergreen",
+    "visual": "house-cutaway archetype: a simple cutaway of a house showing fridge, furnace, water heater and garage door opener each with a kraft-tan tag carrying its extra line; slate blue only on the water heater pipes.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "appliances",
+    "angle": "myth-vs-truth",
+    "headline": "Appliance Model Number: Why a Photo Alone Is Not Enough",
+    "sub": "A photo of the plate takes a second and is always accurate.",
+    "items": [
+      "Myth: the plate photo is the record",
+      "Truth: type the model number somewhere searchable as well"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "what-to-record-when-you-buy-an-appliance"
+    },
+    "proof": [
+      "A photo of the plate takes a second and is always accurate.",
+      "Type the model number somewhere searchable as well, because a photo buried in three years of camera roll isn't findable the day you actually need it."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "how to keep appliance records",
+    "board": "Appliance Records and Warranties",
+    "when": "evergreen",
+    "visual": "Split card: left, a phone camera roll grid of look-alike photos with an ochre question mark ('Myth'); right, a typed one-line record with the model number in a notes field ('Truth'); sage divider.",
+    "flags": [],
+    "reserve": true
+  },
+  {
+    "slice": "appliances",
+    "angle": "mockup-printable",
+    "headline": "Appliance Item Card: Brand, Model and What to Buy for the Hardware Store",
+    "sub": "What to buy for it: a filter size, a part number, a bulb type.",
+    "items": [
+      "Brand and exact model",
+      "Serial number",
+      "What to buy for it: a filter size, a part number, a bulb type"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "what-to-record-when-you-buy-an-appliance"
+    },
+    "proof": [
+      "What to buy for it: a filter size, a part number, a bulb type. The one fact worth having at the hardware store.",
+      "Brand and exact model. Not the marketing name on the box; the string off the rating plate."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "appliance model number card printable",
+    "board": "Appliance Records and Warranties",
+    "when": "evergreen",
+    "visual": "mockup-printable: the Home Base Item Card PDF (make, model, what-to-buy line) printed and tilted on a clipboard on a hardware-store counter beside a furnace filter; capture the real Item Card from the component with stub data.",
+    "flags": [],
+    "reserve": true
+  },
+  {
+    "slice": "appliances",
+    "angle": "checklist",
+    "headline": "Appliance Warranty Tracker: 5 Things to Record When Something Is Installed",
+    "sub": "Check the expiration date before you agree to pay for a repair.",
+    "items": [
+      "Purchase date and install date",
+      "Serial number",
+      "Where the proof of purchase is",
+      "The warranty length, and whether you registered it or paid to extend it",
+      "Any condition attached, most often a required annual service"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "appliance-warranties-what-to-track"
+    },
+    "proof": [
+      "Record five things when something is installed, and check the expiration date before you agree to pay for a repair.",
+      "Purchase date and install date, which are often different, and the warranty terms say which one starts the clock.",
+      "Serial number, which is what a manufacturer asks for first.",
+      "Where the proof of purchase is, even if that's just a search term for your inbox.",
+      "The warranty length, and whether you registered it or paid to extend it.",
+      "Any condition attached, most often a required annual service."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "appliance warranty tracking",
+    "board": "Appliance Records and Warranties",
+    "when": "evergreen",
+    "visual": "A binder page with five sage tick-box rows and a small water heater sketch in the corner; an ochre paperclip on the proof-of-purchase row only.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "appliances",
+    "angle": "comparison",
+    "headline": "Manufacturer's Warranty vs Home Warranty Plan: Two Things People Mix Up",
+    "sub": "This is for the manufacturer's warranty that comes with a new appliance in the US.",
+    "items": [
+      "Manufacturer's warranty: Free with the purchase; Covers defects in that one item; Ends on a fixed date, no renewal",
+      "Home warranty plan: A separate paid service contract; Covers many systems, with a fee per visit; Renews yearly, like insurance"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "appliance-warranties-what-to-track"
+    },
+    "proof": [
+      "Two different things people mix up",
+      "Free with the purchase",
+      "Covers defects in that one item",
+      "Ends on a fixed date, no renewal",
+      "A separate paid service contract",
+      "Covers many systems, with a fee per visit",
+      "Renews yearly, like insurance",
+      "This is for the manufacturer's warranty that comes with a new appliance in the US, not a paid whole-house home warranty plan"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "manufacturer warranty vs home warranty",
+    "board": "Appliance Records and Warranties",
+    "when": "evergreen",
+    "visual": "Two facing cards: left sage card with a single appliance and a receipt, right kraft-tan card with a house outline and a few system icons; three plain lines under each; no prices.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "appliances",
+    "angle": "question",
+    "headline": "Does Your Furnace Warranty Require Annual Service? Check Page Four",
+    "sub": "Knowing it exists, and keeping the service dates written down, is the whole fix.",
+    "items": [
+      "Many furnace, heat pump and water heater warranties require a documented annual service",
+      "The requirement usually sits in a single paragraph on page four, not on the front of the card"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "appliance-warranties-what-to-track"
+    },
+    "proof": [
+      "Many furnace, heat pump and water heater warranties require a documented annual service, sometimes called an inspection or maintenance visit in the fine print.",
+      "The requirement is easy to miss because it usually sits in a single paragraph on page four, not on the front of the card.",
+      "Knowing it exists, and keeping the service dates written down, is the whole fix."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "furnace warranty annual service requirement",
+    "board": "Appliance Records and Warranties",
+    "when": "evergreen",
+    "visual": "A warranty booklet open to a page with one paragraph highlighted in ochre (needs a look) beside a furnace sketch and a small service-dates list; calm, no alarm marks.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "appliances",
+    "angle": "how-to-steps",
+    "headline": "How to Make an Appliance Warranty Claim: Steps in Order",
+    "sub": "This is not legal advice.",
+    "items": [
+      "Contact the seller first",
+      "If that doesn't work, contact the manufacturer directly",
+      "Have the serial number, the purchase date and the proof of purchase ready before you call",
+      "Ask what documentation they need, and get the outcome in writing, with a claim or reference number"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "appliance-warranties-what-to-track"
+    },
+    "proof": [
+      "If you do need to make a claim",
+      "Contact the seller first. Many warranty problems get resolved there before the manufacturer is even involved.",
+      "If that doesn't work, contact the manufacturer directly.",
+      "Have the serial number, the purchase date and the proof of purchase ready before you call.",
+      "Ask what documentation they need, and get the outcome in writing, with a claim or reference number.",
+      "it isn't legal advice"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "how to make an appliance warranty claim",
+    "board": "Appliance Records and Warranties",
+    "when": "evergreen",
+    "visual": "Four numbered sage steps down the left, a desk on the right with a phone, receipt and warranty card laid out ready; kraft-tan step cards.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "appliances",
+    "angle": "scenario",
+    "headline": "Something Broke Today: Check the Warranty Expiration Date Before You Pay",
+    "sub": "Knowing the date in advance turns a bad surprise into an ordinary decision.",
+    "items": [
+      "Fix it yourself",
+      "Call the manufacturer",
+      "Pay for the repair with your eyes open"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "appliance-warranties-what-to-track"
+    },
+    "proof": [
+      "Something breaks, you want it fixed today, and the expiration date only gets checked after the invoice is already in your hand.",
+      "Knowing the date in advance turns a bad surprise into an ordinary decision: fix it yourself, call the manufacturer, or pay for the repair with your eyes open."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "check appliance warranty before repair",
+    "board": "Appliance Records and Warranties",
+    "when": "evergreen",
+    "visual": "scenario: a calm kitchen with a dishwasher door open and a handwritten warranty-ends date on a sticky note on the front; three sage option chips below (fix it yourself, call the manufacturer, pay for the repair).",
+    "flags": [],
+    "reserve": false
+  }
+]

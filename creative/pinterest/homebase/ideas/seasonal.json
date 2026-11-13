@@ -1,0 +1,558 @@
+[
+  {
+    "slice": "seasonal",
+    "angle": "infographic",
+    "headline": "Seasonal Home Maintenance Checklist: The Year on One Wheel",
+    "sub": "Only jobs that have a season. Some months have nothing on them, and that is correct.",
+    "items": [
+      "February: Look for tree limbs over the roof or near power lines",
+      "April: Clear the gutters. Book air conditioning service",
+      "September: Book the furnace tune-up now",
+      "October: The busy one",
+      "November: Clear the gutters once the leaves are down",
+      "July and August: Nothing seasonal. A good month."
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "home-maintenance-checklist-by-month"
+    },
+    "proof": [
+      "Only jobs that have a season. Some months have nothing on them, and that is correct.",
+      "Look for tree limbs over the roof or near power lines.",
+      "Clear the gutters. Book air conditioning service.",
+      "Book the furnace tune-up now, before the first cold week.",
+      "The busy one.",
+      "Clear the gutters once the leaves are down.",
+      "Nothing seasonal. A good month."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "seasonal home maintenance checklist",
+    "board": "Seasonal Home Maintenance",
+    "when": "evergreen; best pinned January and again in late August",
+    "visual": "Year-wheel archetype: a sage-and-paper circle of twelve month wedges, the busy months (April, September, October, November) filled sage, July, August and January left as plain paper with a small tick, one short job label on the wedge ends; a seed-packet-style tag in the corner reads US home, northern hemisphere. Flat illustration, no phone.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "seasonal",
+    "angle": "checklist",
+    "headline": "October Home Maintenance Checklist: The Busy Month, Job by Job",
+    "sub": "Nothing here is urgent yet, which is the point of doing it now.",
+    "items": [
+      "Disconnect hoses and drain outdoor faucets",
+      "Blow out irrigation lines",
+      "Bleed radiators if you have them",
+      "Swap the humidifier pad",
+      "Service the snow blower",
+      "Take window air conditioners out"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "home-maintenance-checklist-by-month"
+    },
+    "proof": [
+      "Disconnect hoses and drain outdoor faucets, blow out irrigation lines, bleed radiators if you have them, swap the humidifier pad, service the snow blower, and take window air conditioners out.",
+      "Nothing here is urgent yet, which is the point of doing it now."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "october home maintenance checklist",
+    "board": "Seasonal Home Maintenance",
+    "when": "September to October (pin again next September)",
+    "visual": "Fridge-list archetype: a paper checklist held by a magnet on a fridge door, six ruled lines with empty sage tick boxes, an outdoor tap and a coiled hose drawn beside it, a small wall calendar page for October behind. Kraft-tan magnet, ink handwriting-style type.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "seasonal",
+    "angle": "myth-vs-truth",
+    "headline": "Seasonal Home Maintenance Myths: Jobs That Look Seasonal and Are Not",
+    "sub": "These go on an interval. Tie them to the date you last did them, not to a month.",
+    "items": [
+      "Test smoke and CO alarms: every month",
+      "Furnace and AC filter: check monthly, change at least every 3 months",
+      "Dryer lint filter: before and after each load",
+      "Water heater flush: once a year",
+      "Replace smoke alarm units: 10 years from the manufacture date"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "home-maintenance-checklist-by-month"
+    },
+    "proof": [
+      "These go on an interval. Tie them to the date you last did them, not to a month.",
+      "Test smoke and CO alarms",
+      "Every month",
+      "Check monthly, change at least every 3 months",
+      "Before and after each load",
+      "Water heater flush",
+      "Once a year",
+      "10 years from the manufacture date"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "home maintenance jobs every month vs seasonal",
+    "board": "Seasonal Home Maintenance",
+    "when": "evergreen",
+    "visual": "Two-column myth-vs-truth card: left a small calendar with a crossed-out month label and the words Looks seasonal, right a sage panel with the real interval for each job; tiny drawings of a smoke alarm, a filter, a lint trap and a water heater tank, each with its row. Ochre only on the smoke alarm row.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "seasonal",
+    "angle": "question",
+    "headline": "What Home Maintenance Should Be Done Every Month?",
+    "sub": "That's the whole monthly list. Everything else runs on a season or a longer interval.",
+    "items": [
+      "Test the smoke and CO alarms",
+      "Check the furnace or AC filter and change it if it looks dirty",
+      "Clean the dryer lint filter every load"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "home-maintenance-checklist-by-month"
+    },
+    "proof": [
+      "What home maintenance should be done every month?",
+      "Test the smoke and CO alarms, since fire safety authorities say monthly. Check the furnace or AC filter and change it if it looks dirty. Clean the dryer lint filter every load.",
+      "That's the whole monthly list. Everything else runs on a season or a longer interval."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "what home maintenance should be done every month",
+    "board": "Seasonal Home Maintenance",
+    "when": "evergreen; January and the start of each month",
+    "visual": "Question card on paper with a large serif question, below it three numbered rows each with a small drawn prop (smoke alarm, filter in its frame, lint filter on a finger); a sage 'that is all' stamp at the bottom. Calm, uncluttered.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "seasonal",
+    "angle": "checklist",
+    "headline": "Spring Home Maintenance Checklist: March, April and May",
+    "sub": "US home, northern hemisphere. Your appliance manuals win over any list.",
+    "items": [
+      "March: Check that downspouts drain away from the house",
+      "April: Look at the roof from the ground for lifted or missing shingles",
+      "April: Clear the gutters. Book air conditioning service",
+      "May: Reconnect hoses and turn outdoor water back on, then look for drips at the faucet"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "home-maintenance-checklist-by-month"
+    },
+    "proof": [
+      "Check that downspouts drain away from the house and that the soil hasn't sunk toward the foundation.",
+      "Look at the roof from the ground for lifted or missing shingles. Clear the gutters. Book air conditioning service.",
+      "Reconnect hoses and turn outdoor water back on, then look for drips at the faucet.",
+      "your appliance manuals win over any list, this one included"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "spring home maintenance checklist",
+    "board": "Seasonal Home Maintenance",
+    "when": "February to May (pin from late February)",
+    "visual": "Three-month strip (March, April, May) laid across a paper page: each month a column with a small drawn prop (downspout and soil line, roofline seen from the ground, outdoor tap with a hose reconnected and a single drip drop in slate blue), sage tick boxes. Light spring paper tone, still the sage palette.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "seasonal",
+    "angle": "mockup-printable",
+    "headline": "Home Maintenance Calendar by Month: October Has 11 Jobs and December Has None",
+    "sub": "Some jobs are not on a timer, they are on a season.",
+    "items": [
+      "October: 11 jobs",
+      "November: 2 jobs",
+      "December: Nothing seasonal. A good month."
+    ],
+    "link": {
+      "kind": "shop",
+      "slug": "home-management-companion"
+    },
+    "proof": [
+      "What belongs to which month.",
+      "Some jobs are not on a timer, they are on a season.",
+      "11 JOBS",
+      "2 JOBS",
+      "Nothing seasonal. A good month."
+    ],
+    "proofFile": "book",
+    "query": "home maintenance calendar by month printable",
+    "board": "Seasonal Home Maintenance",
+    "when": "evergreen; strongest September and January",
+    "visual": "mockup-printable: the real Home Survey page Plate 15, The Year (What belongs to which month), tilted on a desk next to a cup and a pencil, a kraft clipboard behind; the October block (11 jobs) and the empty December visible. Headline in the left third.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "seasonal",
+    "angle": "infographic",
+    "headline": "Fall Home Maintenance: Work Back From Your First Frost, Step by Step",
+    "sub": "An example, not a rule: say your area's first frost tends to arrive in the third week of October.",
+    "items": [
+      "Early September: Book the heating tune-up",
+      "Late September: Seal gaps, swap the filter, test alarms",
+      "First half of October: Drain outdoor water, service equipment",
+      "After the leaves drop: Clear the gutters"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "fall-home-maintenance-checklist"
+    },
+    "proof": [
+      "Say your area's first frost tends to arrive in the third week of October. That's an example, not a rule, and yours will differ.",
+      "Early September",
+      "Book the heating tune-up",
+      "Late September",
+      "Seal gaps, swap the filter, test alarms",
+      "First half of October",
+      "Drain outdoor water, service equipment",
+      "After the leaves drop",
+      "Clear the gutters"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "fall home maintenance checklist",
+    "board": "Seasonal Home Maintenance",
+    "when": "September to November (in season now; pin again next August)",
+    "visual": "Then-and-now style timeline: a horizontal line from September to a small frost marker in the third week of October, four dated stops along it each with a drawn prop (furnace, caulk gun and filter, outdoor tap, gutter); a small 'example dates' tag on the line. Flat sage and paper.",
+    "flags": [
+      "example-tag"
+    ],
+    "reserve": false
+  },
+  {
+    "slice": "seasonal",
+    "angle": "checklist",
+    "headline": "September Home Maintenance Checklist: Heating, Safety and Pests",
+    "sub": "September is for heating, safety and pests.",
+    "items": [
+      "Book the professional furnace tune-up now",
+      "Seal the gaps mice use, around pipes and the garage door",
+      "Put in a new furnace filter",
+      "Book the chimney inspection if you burn anything",
+      "Clean the dryer vent"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "fall-home-maintenance-checklist"
+    },
+    "proof": [
+      "September is for heating, safety and pests.",
+      "Book the professional furnace tune-up now. Seal the gaps mice use, around pipes and the garage door, before the cold sends them looking. Put in a new furnace filter. Book the chimney inspection if you burn anything. Clean the dryer vent."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "september home maintenance checklist",
+    "board": "Seasonal Home Maintenance",
+    "when": "August to September (pin again next August)",
+    "visual": "Plate-and-prop checklist: a paper list with five ruled lines on a utility-room shelf, a new furnace filter in its cardboard frame leaning beside it, a caulk tube and a dryer vent hose coil as small props; sage tick boxes, kraft-tan filter. Ochre only on the chimney line.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "seasonal",
+    "angle": "scenario",
+    "headline": "Fall Home Maintenance Mistake: Gutters Cleared in October, Full Again in November",
+    "sub": "The most common miss is the gutters.",
+    "items": [
+      "Early October: gutters cleared",
+      "November: full again",
+      "Clear them once the leaves are down, not before"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "fall-home-maintenance-checklist"
+    },
+    "proof": [
+      "The most common miss is the gutters: cleared in early October, full again in November.",
+      "Clear the gutters once the leaves are down, not before."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "when to clean gutters in the fall",
+    "board": "Seasonal Home Maintenance",
+    "when": "October to November (in season now)",
+    "visual": "Two-panel before-after scene of the same gutter: left an October ladder on level ground with a clean gutter and a tree still full of leaves, right the same gutter in November with leaves piled in it; a small house-cutaway roofline edge and downspout. Muted slate blue only for a hint of rainwater.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "seasonal",
+    "angle": "mockup-app",
+    "headline": "Fall Home Maintenance Checklist App: A Fall Tab Built From Your House",
+    "sub": "It builds the list from the things you have told Home Base about.",
+    "items": [
+      "Fall tab for September to November",
+      "A home with no irrigation system does not see the irrigation job",
+      "You type in what you did, nothing is scanned",
+      "Reminders stay off until you turn them on"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "fall-home-maintenance-checklist"
+    },
+    "proof": [
+      "Home Base's Seasons page has a Fall tab titled",
+      "covering September to November. It builds the list from the things you have told Home Base about, so a home with no irrigation system does not see the irrigation job.",
+      "You type in what you did, nothing is scanned, and reminders stay off until you turn them on."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "fall home maintenance checklist app",
+    "board": "Seasonal Home Maintenance",
+    "when": "September to November (in season now)",
+    "visual": "mockup-app in the homeschool-reference layout: dark sage panel, Home Base icon and name, big two-tone headline, four feature rows from the items, a large tilted phone showing the real screen creative/public/screens/home-management-companion-seasons.png (Fall tab, October: Annual boiler service, Test the smoke alarms), Next.js dev badge cropped; a pumpkin-free prop: a pair of garden gloves and a coiled hose.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "seasonal",
+    "angle": "question",
+    "headline": "Do I Still Need Fall Home Maintenance if I Live in the South?",
+    "sub": "Some of it. The freeze jobs depend on whether your area gets hard freezes.",
+    "items": [
+      "Heating checks",
+      "Alarm tests",
+      "The dryer vent",
+      "Gutters",
+      "Pest gaps"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "fall-home-maintenance-checklist"
+    },
+    "proof": [
+      "Do I still need fall maintenance if I live in the south?",
+      "Some of it. Heating checks, alarm tests, the dryer vent, gutters and pest gaps still apply. The freeze jobs, like draining outdoor faucets, depend on whether your area gets hard freezes."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "fall home maintenance checklist warm climate",
+    "board": "Seasonal Home Maintenance",
+    "when": "September to November",
+    "visual": "Split card: a left column of five 'still applies' rows with sage ticks and small props (furnace, alarm, dryer vent, gutter, pipe gap), a right column with one row 'freeze jobs: depends on your area' with an outdoor tap and a plain question mark; paper background, no map or weather symbols.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "seasonal",
+    "angle": "comparison",
+    "headline": "Fall Checklist or Winterize Checklist: Where One Ends and the Other Starts",
+    "sub": "The winterize checklist is the narrow slice with a hard deadline set by the weather.",
+    "items": [
+      "Fall: the whole season in order",
+      "Winterize: outdoor water, irrigation, pipes and the dripping-faucet plan for a freeze",
+      "Cold snap forecast this week: go to winterize first"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "fall-home-maintenance-checklist"
+    },
+    "proof": [
+      "This page is the whole season in order.",
+      "The winterize checklist is the narrow slice of it that has a hard deadline set by the weather: outdoor water, irrigation, pipes and the dripping-faucet plan for a freeze.",
+      "If a cold snap is forecast this week, go there first and come back."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "fall vs winterize house checklist",
+    "board": "Seasonal Home Maintenance",
+    "when": "September to November",
+    "visual": "Nested-circles comparison: a large paper circle labelled Fall (September to November) containing a smaller sage circle labelled Winterize (the freeze jobs, hard deadline), with an outdoor tap and a pipe wrap drawn in the small one and a furnace and gutter in the large.",
+    "flags": [],
+    "reserve": true
+  },
+  {
+    "slice": "seasonal",
+    "angle": "scenario",
+    "headline": "Winterize Your House: The Two Days Before the First Hard Freeze",
+    "sub": "That's four jobs in about ninety minutes, and it's the same order every year once you've done it once.",
+    "items": [
+      "Wednesday afternoon: shut off and drain the outdoor faucet, disconnect and coil the hose, shut the irrigation valve",
+      "Thursday morning: bring in the window air conditioner and open the cabinet doors under sinks on an exterior wall"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "winterize-your-house-checklist"
+    },
+    "proof": [
+      "Say the forecast on Tuesday shows the first hard freeze of the year for Thursday night, a low near 26°F.",
+      "Wednesday afternoon, while it's still in the 40s, you'd shut off and drain the outdoor faucet, disconnect and coil the hose, blow out or shut the valve on the irrigation line",
+      "Thursday morning you'd bring in the window air conditioner and open the cabinet doors under any sink on an exterior wall",
+      "That's four jobs in about ninety minutes, and it's the same order every year once you've done it once."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "how to winterize a house before first freeze",
+    "board": "Seasonal Home Maintenance",
+    "when": "October to November (in season now)",
+    "visual": "Move-in-walkthrough style two-day strip: a Wednesday panel (outdoor tap, coiled hose, mild afternoon sun) and a Thursday panel (window air conditioner on the floor, open cabinet doors under a sink), a thin thermometer between them marking the example low near 26°F in slate blue. Labelled 'example'.",
+    "flags": [
+      "example-tag"
+    ],
+    "reserve": false
+  },
+  {
+    "slice": "seasonal",
+    "angle": "checklist",
+    "headline": "Winterize House Checklist: Seven Jobs to Finish Before the Freeze",
+    "sub": "Do them on a dry day before the freeze, not after.",
+    "items": [
+      "Shut off and drain the outdoor faucet, and disconnect the hose",
+      "Blow out the irrigation lines, or shut the valve",
+      "Cover any outdoor faucet or hose bib you can't shut off",
+      "Insulate exposed pipes in the attic, crawl space, basement or garage",
+      "Take out the window air conditioner",
+      "Replace the humidifier pad",
+      "Seal the gaps around pipes and the garage door"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "winterize-your-house-checklist"
+    },
+    "proof": [
+      "Do them on a dry day before the freeze, not after.",
+      "Shut off and drain the outdoor faucet, and disconnect the hose.",
+      "Blow out the irrigation lines, or shut the valve if you don't own a compressor.",
+      "Cover any outdoor faucet or hose bib you can't shut off, with a foam cover or wrapped insulation.",
+      "Insulate exposed pipes in the attic, crawl space, basement or garage.",
+      "Take out the window air conditioner and store it for winter.",
+      "Replace the humidifier pad.",
+      "Seal the gaps around pipes and the garage door, before mice go looking for them."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "winterize house checklist",
+    "board": "Seasonal Home Maintenance",
+    "when": "October to November (in season now)",
+    "visual": "Printable checklist on a clipboard against a mudroom wall: seven ruled lines with sage tick boxes, three ticked, a foam faucet cover and a pipe sleeve hanging on pegs beside it; a line at the foot reads 'This list lives on the page for this visit only'.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "seasonal",
+    "angle": "comparison",
+    "headline": "Freeze vs Hard Freeze: What Temperature Puts Outdoor Plumbing at Risk",
+    "sub": "Either one is your cue to finish the winterize list, not just the second.",
+    "items": [
+      "Freeze: 32°F or below",
+      "Hard freeze: 28°F or below",
+      "Per the National Weather Service"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "winterize-your-house-checklist"
+    },
+    "proof": [
+      "A freeze is 32°F or below; a hard freeze is 28°F or below, cold enough to put unprotected outdoor plumbing at real risk, per the National Weather Service.",
+      "Either one is your cue to finish this list, not just the second."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "what temperature do pipes freeze",
+    "board": "Seasonal Home Maintenance",
+    "when": "October to February (in season now)",
+    "visual": "Two thermometers side by side on a paper card, left marked at 32°F, right at 28°F, the right one with a small outdoor tap with an uncovered pipe stub; slate blue only for the mercury, ochre for the note 'needs a look'. No snowflakes or red.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "seasonal",
+    "angle": "how-to-steps",
+    "headline": "How to Drain an Outdoor Faucet Before the First Freeze",
+    "sub": "Water left in the pipe between the shutoff and the tap freezes, expands, and can split the pipe inside the wall.",
+    "items": [
+      "Disconnect the hose",
+      "If your faucet has an interior shutoff, close it",
+      "Open the outdoor tap and let it run until it stops",
+      "No shutoff? Cover the faucet and hose bib with an insulated cover"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "winterize-your-house-checklist"
+    },
+    "proof": [
+      "Water left in the pipe between the shutoff and the tap freezes, expands, and can split the pipe inside the wall, where you won't see it until the thaw.",
+      "If your faucet has an interior shutoff, close it, then open the outdoor tap and let it run until it stops.",
+      "If it doesn't have one, or you're not sure, cover the faucet and hose bib with an insulated cover"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "how to winterize outdoor faucet",
+    "board": "Seasonal Home Maintenance",
+    "when": "October to November (in season now)",
+    "visual": "Wall-section step diagram: a house cutaway showing the interior shutoff on the basement side of the wall, the pipe running to the outdoor tap, numbered 1 to 4 callouts; slate blue only for the water in the pipe, which drains out in the last frame.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "seasonal",
+    "angle": "question",
+    "headline": "What Should I Set My Thermostat to if I'm Away for the Winter?",
+    "sub": "The figure insurers commonly use for an unoccupied house is no lower than 55°F.",
+    "items": [
+      "Don't turn the heat off if the house will sit empty over a freeze",
+      "55°F keeps the air inside wall and floor cavities above freezing",
+      "Open the cabinet doors under exterior-wall sinks",
+      "Ask someone to check on the house"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "winterize-your-house-checklist"
+    },
+    "proof": [
+      "What should I set my thermostat to if I'm away for the winter?",
+      "No lower than 55°F is the figure insurers commonly use for an unoccupied house, since it keeps the space inside walls and floors, where the pipes run, above freezing.",
+      "Leave cabinet doors open under exterior-wall sinks, and ask someone to check on the house if you'll be gone more than a few days."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "thermostat setting when away for winter",
+    "board": "Seasonal Home Maintenance",
+    "when": "November to February (in season now)",
+    "visual": "Thermostat-face close-up on a wall beside a front door with keys on a hook: the dial at 55 with a sage ring, a small house cutaway inset showing pipes inside the wall cavity, an open under-sink cabinet drawn at the corner. Carries 'commonly used by insurers' as the sub, not as advice.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "seasonal",
+    "angle": "template-preview",
+    "headline": "Winterize Checklist: Write the Date Next to Each Job So Next Year Takes Five Minutes",
+    "sub": "Drained faucet, October 21 is enough.",
+    "items": [
+      "Drained faucet, October 21",
+      "Next October you'll know whether you were early or late"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "winterize-your-house-checklist"
+    },
+    "proof": [
+      "The cheapest thing you can do for next year is note the date.",
+      "Drained faucet, October 21",
+      "Next October you'll know whether you were early or late, and that it's a job you've done before."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "home maintenance log winterize",
+    "board": "Seasonal Home Maintenance",
+    "when": "October to November (in season now)",
+    "visual": "Template-preview: a lined index card or log strip with a handwritten example line 'Drained faucet, October 21' and two blank dated lines under it, a pencil across it, a coiled hose and outdoor-tap sketch in the corner; the example line carries an 'example' tag.",
+    "flags": [
+      "example-tag"
+    ],
+    "reserve": false
+  },
+  {
+    "slice": "seasonal",
+    "angle": "question",
+    "headline": "Do I Need to Winterize My House if I Don't Get Hard Freezes?",
+    "sub": "Only partly. Skip the outdoor faucet and irrigation jobs, or save them for the rare cold snap that is forecast.",
+    "items": [
+      "The window air conditioner",
+      "The humidifier pad",
+      "Sealing gaps around pipes"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "winterize-your-house-checklist"
+    },
+    "proof": [
+      "Do I need to winterize my house if I don't get hard freezes?",
+      "Only partly. Skip the outdoor faucet and irrigation jobs, or save them for the rare cold snap that is forecast. The window air conditioner, the humidifier pad and sealing gaps around pipes are still worth doing on your own schedule"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "do i need to winterize my house in a mild climate",
+    "board": "Seasonal Home Maintenance",
+    "when": "October to November",
+    "visual": "Sorting card: two small trays, left 'only if a freeze is forecast' with an outdoor tap and irrigation valve, right 'still worth doing' with a window air conditioner, humidifier pad and pipe gap; paper background, no weather icons.",
+    "flags": [],
+    "reserve": true
+  }
+]
