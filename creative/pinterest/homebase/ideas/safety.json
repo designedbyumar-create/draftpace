@@ -1,0 +1,335 @@
+[
+  {
+    "slice": "safety",
+    "angle": "checklist",
+    "headline": "Where Is My Main Water Shutoff? The Ten Minute Check",
+    "sub": "Find it before you need it.",
+    "items": [
+      "Find the valve and note where it is.",
+      "Work out which way it turns, and write that down.",
+      "Note any tool it needs, such as a wrench for a meter box.",
+      "Mark it with tape or paint so it is easy to find in the dark",
+      "Check that it moves without forcing it.",
+      "Show everyone else in the house, and draw the location on a page where it will be found in an emergency."
+    ],
+    "link": { "kind": "guide", "slug": "where-is-my-water-shutoff" },
+    "proof": [
+      "Find it before you need it",
+      "Find the valve and note where it is.",
+      "Work out which way it turns, and write that down.",
+      "Note any tool it needs, such as a wrench for a meter box.",
+      "Mark it with tape or paint so it is easy to find in the dark",
+      "Check that it moves without forcing it.",
+      "Show everyone else in the house, and draw the location on a page where it will be found in an emergency."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "where is my main water shutoff",
+    "board": "Home Safety and Shutoffs",
+    "when": "evergreen",
+    "visual": "Fridge-list archetype: a kraft-tan card held on a fridge door by a sage magnet, six hand-ruled tick rows with ochre-free sage ticks, a small sketch of a shutoff valve with a taped marker in the corner, paper background #f4f2ec, ink text. Free guide badge.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "safety",
+    "angle": "comparison",
+    "headline": "Main Water Shutoff Valve Types: Wheel Handle vs Lever Handle",
+    "sub": "Write down which type yours is.",
+    "items": [
+      "Wheel or round handle: Usually a gate valve; Turns several times; Often stiff if unused for years; May need gentle, steady effort",
+      "Lever handle: Usually a ball valve; Turns a quarter turn; Closed when the lever sits across the pipe; Easier to check at a glance"
+    ],
+    "link": { "kind": "guide", "slug": "where-is-my-water-shutoff" },
+    "proof": [
+      "Wheel or round handle",
+      "Usually a gate valve",
+      "Turns several times",
+      "Often stiff if unused for years",
+      "May need gentle, steady effort",
+      "Lever handle",
+      "Usually a ball valve",
+      "Turns a quarter turn",
+      "Closed when the lever sits across the pipe",
+      "Easier to check at a glance",
+      "Write down which type yours is"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "gate valve vs ball valve main water shutoff",
+    "board": "Home Safety and Shutoffs",
+    "when": "evergreen",
+    "visual": "Two-column split on paper: left a line drawing of a round wheel-handle valve on a copper pipe, right a lever-handle valve with the lever across the pipe, muted slate blue only for the pipe water hint, sage column headers, four short rows under each. Free guide badge.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "safety",
+    "angle": "infographic",
+    "headline": "Where the Main Water Shutoff Usually Is, by Where You Look",
+    "sub": "There is no single answer, which is exactly why it is worth finding and writing down once.",
+    "items": [
+      "Near the water meter: A valve on the pipe just before or after the meter",
+      "Where the line enters the house: often the basement wall closest to the street",
+      "Basement or crawlspace: A wrench-turn or lever valve on an exposed section of pipe",
+      "An outside box near the curb: A ground-level box"
+    ],
+    "link": { "kind": "guide", "slug": "where-is-my-water-shutoff" },
+    "proof": [
+      "There is no single answer, which is exactly why it is worth finding and writing down once.",
+      "Near the water meter",
+      "A valve on the pipe just before or after the meter",
+      "Where the line enters the house",
+      "often the basement wall closest to the street",
+      "Basement or crawlspace",
+      "A wrench-turn or lever valve on an exposed section of pipe",
+      "An outside box near the curb",
+      "A ground-level box"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "where is the main water shutoff valve usually located",
+    "board": "Home Safety and Shutoffs",
+    "when": "evergreen",
+    "visual": "House-cutaway archetype: a calm line drawing of a house in section with a basement, a street on one side and a curb box at ground level; four sage numbered tags at the meter, the foundation wall, the basement pipe and the curb box; a small slate-blue pipe line from street to house. Free guide badge.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "safety",
+    "angle": "template-preview",
+    "headline": "Water Shutoff Page Template: One Household's, Filled In",
+    "sub": "An illustration, not a real address. Use it as a template for your own page.",
+    "items": [
+      "Main shutoff: Basement, left wall, next to the water heater",
+      "Turns: Left, quarter turn, lever handle",
+      "Tool needed: None",
+      "Draw where it is: Sketch marked W near the water heater"
+    ],
+    "link": { "kind": "guide", "slug": "where-is-my-water-shutoff" },
+    "proof": [
+      "Example: one household's shutoff page, filled in",
+      "An illustration, not a real address. Use it as a template for your own page.",
+      "Main shutoff",
+      "Basement, left wall, next to the water heater",
+      "Left, quarter turn, lever handle",
+      "Tool needed",
+      "None",
+      "Draw where it is",
+      "Sketch marked W near the water heater"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "water shutoff location printable page",
+    "board": "Home Safety and Shutoffs",
+    "when": "evergreen",
+    "visual": "Plate-closeup archetype: a single ruled page on a kraft clipboard with four fill-in rows in handwriting-style type, a small floor sketch with a sage W marker beside a water heater outline. Free guide badge.",
+    "flags": ["example-tag"],
+    "reserve": false
+  },
+  {
+    "slice": "safety",
+    "angle": "how-to-steps",
+    "headline": "Stuck Water Shutoff Valve? Do Not Force It: What to Do Instead",
+    "sub": "A stuck gate valve can snap.",
+    "items": [
+      "Do not force it with a wrench or a pipe",
+      "Note that it is stuck",
+      "use a smaller shutoff under a sink or behind a toilet to slow a specific leak in the meantime",
+      "call a plumber to free or replace the main valve before it is an emergency"
+    ],
+    "link": { "kind": "guide", "slug": "where-is-my-water-shutoff" },
+    "proof": [
+      "A stuck gate valve can snap.",
+      "Do not force it with a wrench or a pipe",
+      "Note that it is stuck",
+      "use a smaller shutoff under a sink or behind a toilet to slow a specific leak in the meantime",
+      "call a plumber to free or replace the main valve before it is an emergency"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "stuck main water shutoff valve won't turn",
+    "board": "Home Safety and Shutoffs",
+    "when": "evergreen",
+    "visual": "Four numbered steps on paper in a vertical flow, each with a small line icon: a valve with a sage hold marker, a pencil on a page, a sink with its small shutoff valve, a plumber's card; ochre accent only on the 'do not force' step tag. Free guide badge.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "safety",
+    "angle": "checklist",
+    "headline": "New House Checklist: Day One Safety Jobs Before Anything Else",
+    "sub": "These are time sensitive in a way the rest of the list isn't.",
+    "items": [
+      "Find the main water shutoff, the breaker panel, and the gas shutoff.",
+      "Locate them now, not during an emergency.",
+      "Test every smoke and carbon monoxide alarm, and note the replacement date printed on each unit.",
+      "Find out whether the alarm system has a code, and who besides you has it."
+    ],
+    "link": { "kind": "guide", "slug": "first-week-after-buying-a-house" },
+    "proof": [
+      "These are time sensitive in a way the rest of the list isn't.",
+      "Find the main water shutoff, the breaker panel, and the gas shutoff.",
+      "Locate them now, not during an emergency.",
+      "Test every smoke and carbon monoxide alarm, and note the replacement date printed on each unit.",
+      "Find out whether the alarm system has a code, and who besides you has it."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "new house checklist first day safety",
+    "board": "New Homeowner Checklists",
+    "when": "evergreen",
+    "visual": "Move-in-walkthrough archetype: a set of house keys and a sage key tag on a kraft card carrying the four rows with tick boxes; ochre only on a small 'safety' tag beside the alarm row; paper background. Free guide badge.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "safety",
+    "angle": "scenario",
+    "headline": "Closing on a Friday: What the First Weekend Looks Like in a New House",
+    "sub": "That's the real window: about a week of easy access, then a slow decline toward zero.",
+    "items": [
+      "By Monday, the shutoffs are found, the meters are photographed, and the smoke alarms are tested.",
+      "By the following weekend, the inspection report is marked up with a date beside each item"
+    ],
+    "link": { "kind": "guide", "slug": "first-week-after-buying-a-house" },
+    "proof": [
+      "Say you close on a Friday and move in over the weekend.",
+      "By Monday, the shutoffs are found, the meters are photographed, and the smoke alarms are tested.",
+      "By the following weekend, the inspection report is marked up with a date beside each item",
+      "That's the real window: about a week of easy access, then a slow decline toward zero."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "first week in a new house what to do",
+    "board": "New Homeowner Checklists",
+    "when": "evergreen",
+    "visual": "Then-and-now strip: a calm week timeline Friday to the following weekend with a sage bar that is tall at Monday and tapers off, small tiles for shutoff, meters and alarm; keys and a moving box prop. Free guide badge.",
+    "flags": ["example-tag"],
+    "reserve": false
+  },
+  {
+    "slice": "safety",
+    "angle": "quote-card",
+    "headline": "Smoke and CO Alarms: Test Monthly, Replace at 10 Years",
+    "sub": "The one job here where the cost of skipping is not measured in dollars.",
+    "items": [
+      "Test smoke and CO alarms; replace the units",
+      "Test monthly, replace at 10 years"
+    ],
+    "link": { "kind": "guide", "slug": "home-maintenance-you-skip-that-costs-the-most" },
+    "proof": [
+      "Test smoke and CO alarms; replace the units",
+      "Test monthly, replace at 10 years",
+      "The one job here where the cost of skipping is not measured in dollars"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "how often to replace smoke detectors and test",
+    "board": "Home Safety and Shutoffs",
+    "when": "evergreen",
+    "visual": "Quote-card on sage soft #e6ede2: the sentence set large in ink, a ceiling alarm line drawing above it with a small ochre safety tag, the two intervals as two kraft chips beneath. Free guide badge. Typical intervals only; your own manual wins.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "safety",
+    "angle": "question",
+    "headline": "How Old Are Your Washing Machine Hoses? Replace Rubber Hoses by 10 Years",
+    "sub": "Sooner if cracked or bulging.",
+    "items": [
+      "Replace the washing machine's rubber supply hoses",
+      "By 10 years, sooner if cracked or bulging",
+      "A burst hose floods a laundry room while nobody is home to catch it"
+    ],
+    "link": { "kind": "guide", "slug": "home-maintenance-you-skip-that-costs-the-most" },
+    "proof": [
+      "Replace the washing machine's rubber supply hoses",
+      "By 10 years, sooner if cracked or bulging",
+      "A burst hose floods a laundry room while nobody is home to catch it"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "how often to replace washing machine hoses",
+    "board": "Home Safety and Shutoffs",
+    "when": "evergreen",
+    "visual": "Plate-closeup archetype: a close line drawing of the back of a washer with two rubber hoses and a small tag on each reading a year; slate blue only for a single water-drop hint; the question as a large headline, the interval on a kraft chip. Free guide badge.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "safety",
+    "angle": "mockup-printable",
+    "headline": "If Something Goes Wrong Tonight: The Home Survey Emergency Page",
+    "sub": "It takes ten minutes, and almost nobody does it.",
+    "items": [
+      "Water: Main shutoff, Turns, Tool needed",
+      "Gas: Shutoff, Emergency",
+      "Electricity: Panel, Main breaker",
+      "Draw where they are"
+    ],
+    "link": { "kind": "shop", "slug": "home-management-companion" },
+    "proof": [
+      "If something goes wrong tonight.",
+      "This is the most useful page in the book. It takes ten minutes, and almost nobody does it.",
+      "Main shutoff",
+      "Tool needed",
+      "Main breaker",
+      "DRAW WHERE THEY ARE",
+      "A rough plan beats a paragraph. Mark the water shutoff W, the gas G, and the panel E."
+    ],
+    "proofFile": "book",
+    "proofExtra": [
+      {
+        "file": "src/content/guides.ts",
+        "proof": [
+          "The Home Survey that comes with it has a page for exactly this, with boxes for water, gas and electricity, and a place to draw where each one is."
+        ]
+      }
+    ],
+    "query": "emergency shutoff page printable home binder",
+    "board": "Home Safety and Shutoffs",
+    "when": "evergreen",
+    "visual": "Mockup-printable: the real Home Survey page 'PLATE 01 If something goes wrong tonight' (first plate of the workbook), tilted on a desk beside a binder and a pen, with the headline on paper. The page is rendered from the real workbook PDF (creative/out/homebase/book.pdf, plate 01), not redrawn. Product line with real price, from the listing.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "safety",
+    "angle": "before-after",
+    "headline": "Outdoor Faucets Before the First Hard Freeze: Shut Off and Drain",
+    "sub": "Once, before the first hard freeze.",
+    "items": [
+      "Shut off and drain outdoor faucets",
+      "Water trapped in the line freezes, expands, and splits the pipe inside the wall"
+    ],
+    "link": { "kind": "guide", "slug": "home-maintenance-you-skip-that-costs-the-most" },
+    "proof": [
+      "Shut off and drain outdoor faucets",
+      "Once, before the first hard freeze",
+      "Water trapped in the line freezes, expands, and splits the pipe inside the wall"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "drain outdoor faucets before winter",
+    "board": "Seasonal Home Maintenance",
+    "when": "October, November (before the first hard freeze)",
+    "visual": "Split before and after: left an outdoor tap with a slate-blue trapped-water line inside the pipe, right the same tap shut off and drained with a sage tick; a diagram, not damage. Free guide badge.",
+    "flags": [],
+    "reserve": true
+  },
+  {
+    "slice": "safety",
+    "angle": "question",
+    "headline": "Dryer Vent Cleaning: How Often Should You Clean It?",
+    "sub": "Lint buildup restricts airflow and is a documented cause of house fires.",
+    "items": [
+      "Clean the dryer vent",
+      "Once a year, our default",
+      "Lint buildup restricts airflow and is a documented cause of house fires"
+    ],
+    "link": { "kind": "guide", "slug": "home-maintenance-you-skip-that-costs-the-most" },
+    "proof": [
+      "Clean the dryer vent",
+      "Once a year, our default",
+      "Lint buildup restricts airflow and is a documented cause of house fires"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "how often to clean dryer vent",
+    "board": "Home Safety and Shutoffs",
+    "when": "evergreen",
+    "visual": "Laundry-room line drawing of a dryer with its vent duct running to the wall, a sage callout on the duct with the interval on a kraft chip, an ochre safety tag; calm, no flames. Free guide badge.",
+    "flags": [],
+    "reserve": true
+  }
+]

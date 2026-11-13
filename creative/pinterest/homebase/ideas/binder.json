@@ -1,0 +1,413 @@
+[
+  {
+    "slice": "binder",
+    "angle": "how-to-steps",
+    "headline": "How to Make a Home Binder in an Afternoon: Fill the Five Sections in This Order",
+    "sub": "Start with the first and stop whenever you like. Each one is useful on its own.",
+    "items": [
+      "If something goes wrong",
+      "Numbers you look up",
+      "Who to call",
+      "What has been done",
+      "Dates that cost money"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "how-to-make-a-home-binder"
+    },
+    "proof": [
+      "Build one in an afternoon.",
+      "Start with the first and stop whenever you like. Each one is useful on its own.",
+      "Do this one tonight."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "how to make a home binder",
+    "board": "Home Binder and Printables",
+    "when": "evergreen",
+    "visual": "Five numbered tab dividers fanned out on a kitchen table beside an open three-ring binder, tab 1 'If something goes wrong' lifted first with a small ochre tag marked 'tonight'; sage and paper palette, step numbers 1 to 5 down the side. Archetype: survey-binder.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "binder",
+    "angle": "template-preview",
+    "headline": "Home Binder Table of Contents: A Filled-In Example to Copy",
+    "sub": "An illustration, not a real household. Use it as a starting template.",
+    "items": [
+      "1. If something goes wrong: Water, gas and electrical shutoffs; who to call first",
+      "2. Numbers you look up: Filter size 16x25x1, paint color, trash day",
+      "3. Who to call: Ace Plumbing, Bright Spark Electric, a roofer",
+      "4. What has been done: Date, job, who did it, what it cost",
+      "5. Dates that cost money: Warranty ends, insurance renews, lease notice"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "how-to-make-a-home-binder"
+    },
+    "proof": [
+      "An illustration, not a real household. Use it as a starting template.",
+      "Water, gas and electrical shutoffs; who to call first",
+      "Filter size 16x25x1, paint color, trash day",
+      "Ace Plumbing, Bright Spark Electric, a roofer",
+      "Date, job, who did it, what it cost",
+      "Warranty ends, insurance renews, lease notice"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "home binder table of contents",
+    "board": "Home Binder and Printables",
+    "when": "evergreen",
+    "visual": "A clean typed contents page, five ruled rows with the section names in sage and the one-line page contents beside them, laid on a desk next to a binder spine and a pencil; 'Example' stamp in the corner. Archetype: survey-binder. Template-preview of the guide's own table.",
+    "flags": [
+      "example-tag"
+    ],
+    "reserve": false
+  },
+  {
+    "slice": "binder",
+    "angle": "infographic",
+    "headline": "Home Binder Supplies: What to Put the Pages In",
+    "sub": "Paper, digital, or both. The five sections stay the same either way.",
+    "items": [
+      "A 1 to 2 inch, three-ring binder, or a single folder if you go digital.",
+      "Sheet protectors for anything you would mind ruining with a spilled coffee.",
+      "Five tab dividers, one per section, labeled in plain words rather than numbers.",
+      "A digital mirror if you want one: one folder, five subfolders, the same five names."
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "how-to-make-a-home-binder"
+    },
+    "proof": [
+      "Paper, digital, or both. The five sections stay the same either way.",
+      "A 1 to 2 inch, three-ring binder, or a single folder if you go digital.",
+      "Sheet protectors for anything you would mind ruining with a spilled coffee.",
+      "Five tab dividers, one per section, labeled in plain words rather than numbers.",
+      "A digital mirror if you want one: one folder, five subfolders, the same five names."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "home binder supplies",
+    "board": "Home Binder and Printables",
+    "when": "evergreen",
+    "visual": "Top-down flat-lay with four labeled callouts pointing at the objects: a three-ring binder, sheet protectors with a coffee mug beside them, five kraft tab dividers, and a small laptop folder tree with five subfolders. Kraft tan cards, sage lines. Archetype: survey-binder.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "binder",
+    "angle": "checklist",
+    "headline": "Home Binder Documents: Five Papers Worth Keeping as Paper",
+    "sub": "Papers worth keeping as paper.",
+    "items": [
+      "Closing documents, or your lease if you rent.",
+      "The home inspection report.",
+      "Permits for any work that needed one.",
+      "Manuals for appliances and systems you still own.",
+      "Warranty cards and receipts for the larger purchases."
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "how-to-make-a-home-binder"
+    },
+    "proof": [
+      "Papers worth keeping as paper",
+      "Closing documents, or your lease if you rent.",
+      "The home inspection report.",
+      "Permits for any work that needed one.",
+      "Manuals for appliances and systems you still own.",
+      "Warranty cards and receipts for the larger purchases."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "what documents to keep for your house",
+    "board": "New Homeowner Checklists",
+    "when": "evergreen",
+    "visual": "A fridge-list style tick list on a paper card held by a magnet on a fridge door, five sage checkboxes with the five lines; behind it a sheet-protector sleeve peeking from a binder on the counter. Archetype: fridge-list.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "binder",
+    "angle": "scenario",
+    "headline": "Home Binder Rule: Write Where Things Are, Never the Codes",
+    "sub": "A binder gets lent to a house sitter, photographed for a repair quote and left on the counter.",
+    "items": [
+      "Passwords, alarm codes, the code to the garage keypad",
+      "lent to a house sitter",
+      "photographed for a repair quote",
+      "left on the counter",
+      "Write where things are and who to call."
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "how-to-make-a-home-binder"
+    },
+    "proof": [
+      "A binder gets lent to a house sitter, photographed for a repair quote and left on the counter.",
+      "Write where things are and who to call. Never write the codes and passwords themselves.",
+      "What never goes in"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "what not to put in a home binder",
+    "board": "Home Binder and Printables",
+    "when": "evergreen",
+    "visual": "Three small vignette tiles in a row: binder handed to a house sitter at the door, a phone photographing a page for a repair quote, the binder left open on a kitchen counter; below, a kraft card 'What never goes in' with the list. Calm, no red; ochre only on the card edge. Archetype: then-and-now.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "binder",
+    "angle": "comparison",
+    "headline": "Paper vs Digital Home Binder: What Each One Is Good At",
+    "sub": "Paper for the emergency page and the numbers, an app for what falls due next.",
+    "items": [
+      "Paper: easy to hand to someone, works when the power is out",
+      "Paper: does not tell you when the filter is due",
+      "An app is the opposite",
+      "The two together cover both"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "how-to-make-a-home-binder"
+    },
+    "proof": [
+      "A paper binder is easy to hand to someone, and it works when the power is out. It does not tell you when the filter is due. An app is the opposite.",
+      "paper for the emergency page and the numbers, an app for what falls due next."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "paper vs digital home binder",
+    "board": "Home Binder and Printables",
+    "when": "evergreen",
+    "visual": "Two-column split: left a kraft-tan paper binder open to the emergency page, right a phone with a plain sage list screen, a thin plus sign between them; each column with two short lines. No real app screen needed. Archetype: survey-binder.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "binder",
+    "angle": "before-after",
+    "headline": "Home Binder Stalled After One Page? That Is Still Worth Having",
+    "sub": "The emergency page alone, filled in, beats an empty binder.",
+    "items": [
+      "Add one section a week",
+      "Keep it somewhere you will actually reach for it"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "how-to-make-a-home-binder"
+    },
+    "proof": [
+      "A binder that never gets past the first page is still worth having. The emergency page alone, filled in, beats an empty binder.",
+      "Add one section a week instead of trying to finish it in one sitting"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "home binder not finished",
+    "board": "Home Binder and Printables",
+    "when": "evergreen",
+    "visual": "Before-after split: left an empty binder on a closet shelf with blank pages, right the same binder on a counter with a single filled-in 'If something goes wrong' page and a sage tick. Archetype: then-and-now.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "binder",
+    "angle": "question",
+    "headline": "Is a Home Binder the Same as a Home Management Binder?",
+    "sub": "Yes, they are two names for the same idea.",
+    "items": [
+      "One place with the facts about your house that you would otherwise have to remember or search for.",
+      "Five sections cover most of it"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "how-to-make-a-home-binder"
+    },
+    "proof": [
+      "Is a home binder the same as a home management binder?",
+      "Yes, they are two names for the same idea: one place with the facts about your house that you would otherwise have to remember or search for."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "home management binder",
+    "board": "Home Binder and Printables",
+    "when": "evergreen",
+    "visual": "Large question headline over a binder with two hand-lettered spine labels, 'Home binder' and 'Home management binder', both pointing to the same sage binder; five small tab icons along the bottom. Archetype: survey-binder.",
+    "flags": [],
+    "reserve": true
+  },
+  {
+    "slice": "binder",
+    "angle": "infographic",
+    "headline": "Life Admin Binder: The Eight Tabs at a Glance",
+    "sub": "Skip a tab that does not apply to you.",
+    "items": [
+      "1. Who to call",
+      "2. Paperwork",
+      "3. Money",
+      "4. Home",
+      "5. People and pets",
+      "6. Accounts and devices",
+      "7. What you'd want",
+      "8. Business"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "life-admin-binder-what-goes-in-it"
+    },
+    "proof": [
+      "usually a three-ring binder with eight tabs, that tells someone where your important papers are and who to call",
+      "1. Who to call",
+      "2. Paperwork",
+      "3. Money",
+      "4. Home",
+      "5. People and pets",
+      "6. Accounts and devices",
+      "7. What you'd want",
+      "8. Business"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "life admin binder tabs",
+    "board": "Home Binder and Printables",
+    "when": "evergreen",
+    "visual": "A binder shown edge-on with eight staggered kraft tabs fanned down its side, each tab carrying its number and name in ink, one sage-highlighted; a short caption below. Archetype: survey-binder.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "binder",
+    "angle": "how-to-steps",
+    "headline": "Life Admin Binder: Build It in This Order, Three Pages in One Evening",
+    "sub": "Three pages in one evening is a real start. The rest can wait for weekends.",
+    "items": [
+      "Get a one-and-a-half-inch three-ring binder and eight tab dividers.",
+      "Write tab 1 first: who to call first, who would sort things out, who would speak for your medical care.",
+      "Under tab 6, write the email address everything is registered to.",
+      "Tell one person the binder exists and where it sits."
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "life-admin-binder-what-goes-in-it"
+    },
+    "proof": [
+      "Three pages in one evening is a real start. The rest can wait for weekends.",
+      "Get a one-and-a-half-inch three-ring binder and eight tab dividers.",
+      "Write tab 1 first: who to call first, who would sort things out, who would speak for your medical care.",
+      "Under tab 6, write the email address everything is registered to.",
+      "Tell one person the binder exists and where it sits."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "how to make a life admin binder",
+    "board": "Home Binder and Printables",
+    "when": "evergreen",
+    "visual": "Numbered four-step vertical flow with small drawn props per step: empty binder and dividers, a pen over tab 1, a laptop email field, two people at a shelf; desk surface, sage numerals. Archetype: survey-binder.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "binder",
+    "angle": "template-preview",
+    "headline": "Life Admin Binder Example: What a Filled-In Page Looks Like",
+    "sub": "An invented household, to show how short a good page is.",
+    "items": [
+      "Will: fireproof box in the hall closet, and Marcus knows the box is there.",
+      "Passport and birth certificate: same box.",
+      "Everything is registered to my main email address.",
+      "No passwords in this binder."
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "life-admin-binder-what-goes-in-it"
+    },
+    "proof": [
+      "An invented household, to show how short a good page is.",
+      "Will: fireproof box in the hall closet, and Marcus knows the box is there.",
+      "Passport and birth certificate: same box.",
+      "Everything is registered to my main email address.",
+      "No passwords in this binder."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "life admin binder example",
+    "board": "Home Binder and Printables",
+    "when": "evergreen",
+    "visual": "A typed single binder page, tilted on a desk, with two tab headings ('2. Paperwork', '6. Accounts') and the short location lines in ink; 'Example, invented household' stamp; a fireproof-box line drawing in the corner. Template-preview of the guide's own table.",
+    "flags": [
+      "example-tag"
+    ],
+    "reserve": false
+  },
+  {
+    "slice": "binder",
+    "angle": "comparison",
+    "headline": "Life Admin Binder or Home Binder? Which One Do You Need?",
+    "sub": "A life admin binder is the emergency version, not a chore or meal-plan binder for running the house.",
+    "items": [
+      "Life admin binder: where your important papers are and who to call",
+      "Not a chore or meal-plan binder for running the house",
+      "How to make a home binder is closer"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "life-admin-binder-what-goes-in-it"
+    },
+    "proof": [
+      "This is the emergency version, the one a partner or sibling opens when you can't answer, not a chore or meal-plan binder for running the house.",
+      "If you searched for a life admin binder to run the household, meaning chores, meal plans and maintenance, this isn't that."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "life admin binder vs home binder",
+    "board": "Home Binder and Printables",
+    "when": "evergreen",
+    "visual": "Two binders side by side on a shelf: left labeled 'Life admin' with eight narrow tabs, right labeled 'Home' with five wide kraft tabs, a small sage arrow under each with its one-line job. Archetype: survey-binder.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "binder",
+    "angle": "myth-vs-truth",
+    "headline": "Life Admin Binder Myth: It Needs Copies of Everything. It Needs Locations.",
+    "sub": "Each page holds locations and names, not copies of documents or passwords.",
+    "items": [
+      "Leave off: Copies of the documents themselves",
+      "Leave off: Account numbers",
+      "Leave off: Passwords and the master password",
+      "Leave off: Alarm codes"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "life-admin-binder-what-goes-in-it"
+    },
+    "proof": [
+      "Each page holds locations and names, not copies of documents or passwords.",
+      "Copies of the documents themselves",
+      "Account numbers",
+      "Passwords and the master password",
+      "Alarm codes"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "what to put in a life admin binder",
+    "board": "Home Binder and Printables",
+    "when": "evergreen",
+    "visual": "Two-panel myth/truth card: left a thick stack of photocopies crossed out in muted slate (no red), right one page reading 'where it is, who to ask' with a sage tick; the four leave-off lines listed beneath. Archetype: fridge-list.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "binder",
+    "angle": "quote-card",
+    "headline": "Life Admin Binder Tip: One Page Per Tab Until the Whole Thing Exists",
+    "sub": "A binder that starts with 75 blank pages gets abandoned at tab 2.",
+    "items": [
+      "We'd keep each tab to one page until the whole thing exists, then add depth where you find gaps."
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "life-admin-binder-what-goes-in-it"
+    },
+    "proof": [
+      "A binder that starts with 75 blank pages gets abandoned at tab 2.",
+      "We'd keep each tab to one page until the whole thing exists, then add depth where you find gaps."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "life admin binder tips",
+    "board": "Home Binder and Printables",
+    "when": "evergreen",
+    "visual": "Quote card on paper texture: the tip set large in ink serif, a slim eight-tab binder edge drawn along the bottom with only tab 1 pulled out; sage rule above.",
+    "flags": [],
+    "reserve": true
+  }
+]
