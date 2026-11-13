@@ -242,7 +242,7 @@ const cut = (s) => s.charAt(0).toUpperCase() + s.slice(1);
 /* ---------------------------------------------------------------- #54 stepping stones */
 function pin54() {
   const i = idea(54);
-  const [s1, s2, , s4] = i.items;
+  const [, s1, s2] = i.items;
   const steps = [
     { x: 40, y: 408, n: 1, art: phoneCallArt(), text: cut(s1) },
     { x: 310, y: 692, n: 2, art: ticketArt(), text: cut(s2) },
@@ -250,11 +250,9 @@ function pin54() {
   ];
   const cards = steps.map((s) => `<div style="${abs(s.x, s.y, 650, 248, `background:#fbfaf6;border-radius:18px;box-shadow:${SOFT};z-index:2`)}">
     <div style="${abs(24, 20, 220, 210)}">${s.art}</div>
-    <div data-check="text" style="${abs(262, 26, 360, 196, "display:flex;flex-direction:column;justify-content:center")}"><div style="font:600 ${s.n === 1 ? 31 : 36}px/1.2 'Plex',sans-serif;color:${C.ink}">${esc(s.text)}</div></div>
+    <div data-check="text" style="${abs(262, s.n === 1 ? 16 : 26, 360, s.n === 1 ? 170 : 196, "display:flex;flex-direction:column;justify-content:center")}"><div style="font:600 ${s.n === 3 ? 38 : 33}px/1.2 'Plex',sans-serif;color:${C.ink}">${esc(s.text)}</div></div>
   </div>`).join("");
-  const chip = `<div data-check="text" style="${abs(618, 528, 0, 0)}"></div>`;
-  const sameDay = `<div style="position:absolute;left:312px;top:640px;transform:rotate(-3deg);background:${C.ochre};color:#fff;font:600 26px/1 'Plex',sans-serif;letter-spacing:.02em;padding:12px 22px;border-radius:999px;box-shadow:0 3px 4px rgba(40,20,5,.35),0 10px 16px rgba(40,20,5,.3);z-index:4;white-space:nowrap">same day</div>`;
-  const dots = `<path d="M690 660 C 760 700 800 690 790 700" stroke="none" fill="none"/>`;
+  const sameDay = `<div style="position:absolute;left:440px;top:596px;transform:rotate(-3deg);background:${C.ochre};color:#fff;font:600 26px/1 'Plex',sans-serif;letter-spacing:.02em;padding:12px 22px;border-radius:999px;box-shadow:0 3px 4px rgba(40,20,5,.35),0 10px 16px rgba(40,20,5,.3);z-index:4;white-space:nowrap">same day</div>`;
   const scene = `
   ${flagstone({})}
   ${cards}
@@ -262,8 +260,7 @@ function pin54() {
   ${sameDay}
   ${bulbs({ x: 44, y: 760, size: 230, rot: -4 })}
   ${hoseReel({ x: 730, y: 1040, size: 270 })}
-  ${trowel({ x: 70, y: 1268, len: 520, rot: -2 })}
-  <svg style="${abs(0, 372, 1000, 982, "z-index:1")}" viewBox="0 372 1000 982" aria-hidden="true"><path d="M365 656 C 365 676 360 684 352 692" fill="none"/></svg>`;
+  ${trowel({ x: 70, y: 1252, len: 520, rot: -2 })}`;
   return printable({ n: 54, scene, paper: "#e9ece6", bottomMax: 366 });
 }
 
@@ -294,7 +291,7 @@ function pin56() {
   ${tab(450, washerArt(0.4), "Appliance")}
   ${tab(840, roofFurnaceArt(0.4), "House")}
   ${ring(500)}${ring(820)}${ring(1120)}
-  ${bulbs({ x: 40, y: 1262, size: 260, rot: -3 })}
+  ${bulbs({ x: 40, y: 1244, size: 260, rot: -3 })}
   ${plantBox({ x: 560, y: 1240, w: 400, rot: 0 })}`;
   return printable({ n: 56, scene, paper: "#efe6d6", bottomMax: 366 });
 }
@@ -316,20 +313,20 @@ function pin41() {
     const a0 = -90 + k * 30, a1 = a0 + 30, mid = a0 + 15;
     const on = busy.has(k), job = hasJob.has(k);
     const fill = on ? C.sage : job ? "#cfe0d0" : "#fbfaf6";
-    const [tx, ty] = P(200, mid);
-    const [kx, ky] = P(232, mid);
+    const [tx, ty] = P(178, mid);
+    const [kx, ky] = P(228, mid);
     return `<path d="${sector(a0, a1)}" fill="${fill}" stroke="#e9efe3" stroke-width="4" stroke-linejoin="round"/>
     <text x="${tx.toFixed(1)}" y="${(ty + 8).toFixed(1)}" text-anchor="middle" font-family="Plex" font-weight="600" font-size="24" fill="${on ? "#fff" : C.ink}">${m}</text>
     ${plainTick.has(k) ? `<g transform="translate(${kx.toFixed(1)} ${ky.toFixed(1)})"><circle r="15" fill="none" stroke="${C.sage}" stroke-width="3.5"/><path d="M-7 0 L-2 6 L8 -6" fill="none" stroke="${C.sage}" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></g>` : ""}`;
   }).join("");
   // job labels: [months' mid angle, side, box y, height, text]
   const L = [
-    { a: -45, side: "r", y: 452, h: 142, t: "tree limbs over the roof or near power lines" },
-    { a: 15, side: "r", y: 808, h: 142, t: "Clear the gutters. Book air conditioning service" },
-    { a: 120, side: "l", y: 1058, h: 98, t: "Nothing seasonal. A good month." },
-    { a: 165, side: "l", y: 842, h: 100, t: "Book the furnace tune-up now" },
+    { a: -45, side: "r", y: 446, h: 150, t: "Look for tree limbs over the roof or near power lines" },
+    { a: 15, side: "r", y: 800, h: 150, t: "Clear the gutters. Book air conditioning service" },
+    { a: 120, side: "l", y: 1052, h: 120, t: "Nothing seasonal. A good month." },
+    { a: 165, side: "l", y: 836, h: 120, t: "Book the furnace tune-up now" },
     { a: 195, side: "l", y: 690, h: 62, t: "The busy one" },
-    { a: 225, side: "l", y: 520, h: 112, t: "Clear the gutters once the leaves are down" },
+    { a: 225, side: "l", y: 504, h: 146, t: "Clear the gutters once the leaves are down" },
   ];
   const LW = 205;
   const lines = L.map((l) => {
@@ -343,22 +340,22 @@ function pin41() {
     <circle cx="${CX}" cy="${CY}" r="${RD}" fill="#fbfaf6"/>${wedges}
     <circle cx="${CX}" cy="${CY}" r="${R0 - 6}" fill="#fbfaf6" stroke="#cdd6c8" stroke-width="3"/>${lines}</svg>`;
   const hub = `<div style="${abs(CX - 70, CY - 70, 140, 140, "display:grid;place-items:center;z-index:3")}">${icon("house-line", { size: 100, color: C.sage, weight: "duotone" })}</div>`;
-  const seed = `<div style="${abs(280, 392, 440, 112, "transform:rotate(-2deg);z-index:3")}">
-    <div style="${abs(0, 0, 440, 112, `background:#fbfaf6;border-radius:8px 8px 14px 14px;box-shadow:${SOFT};border:2px solid #d9ddd0`)}"></div>
+  const seed = `<div style="${abs(280, 392, 440, 124, "transform:rotate(-2deg);z-index:3")}">
+    <div style="${abs(0, 0, 440, 124, `background:#fbfaf6;border-radius:8px 8px 14px 14px;box-shadow:${SOFT};border:2px solid #d9ddd0`)}"></div>
     <div style="${abs(0, 0, 440, 34, `background:${C.sage};border-radius:8px 8px 0 0`)}"></div>
-    <div data-check="text" style="${abs(18, 40, 404, 66, "display:flex;align-items:center;gap:14px")}"><span style="flex:none">${icon("plant", { size: 44, color: C.sage, weight: "duotone" })}</span><span class="serif" style="font-size:36px;font-weight:500;line-height:1.05;color:${C.ink}">US home, northern hemisphere</span></div></div>`;
+    <div data-check="text" style="${abs(18, 38, 404, 80, "display:flex;align-items:center;gap:14px")}"><span style="flex:none">${icon("plant", { size: 44, color: C.sage, weight: "duotone" })}</span><span class="serif" style="font-size:36px;font-weight:500;line-height:1.05;color:${C.ink}">US home, northern hemisphere</span></div></div>`;
   const scene = `
   ${lawn({})}
   ${wheel}${hub}${labels}${seed}
-  ${wheelbarrow({ x: 10, y: 1150, w: 420, rot: -1 })}
-  ${bulbs({ x: 640, y: 1220, size: 250, rot: 4 })}`;
-  return printable({ n: 41, scene, paper: "#e4efe0", bottomMax: 366 });
+  ${wheelbarrow({ x: 250, y: 1112, w: 420, rot: 0 })}
+  ${bulbs({ x: 720, y: 1180, size: 250, rot: 4 })}`;
+  return printable({ n: 41, scene, paper: "#e4efe0", bottomMax: 366, extraCss: ".top h1{font-size:72px}" });
 }
 
 /* ---------------------------------------------------------------- #43 clipboard on a clapboard wall */
 function pin43() {
   const i = idea(43);
-  const rows = i.items.map((t) => `<div data-check="text" style="display:flex;align-items:center;gap:18px;height:96px;border-bottom:3px solid #cdd6c8"><span style="flex:none;width:40px;height:40px;border:4px solid ${C.sage};border-radius:7px;background:#fff"></span><span class="hand" style="font-size:44px;line-height:.98;font-weight:700;color:${C.ink}">${esc(t)}</span></div>`).join("");
+  const rows = i.items.map((t) => `<div data-check="text" style="display:flex;align-items:center;gap:18px;height:104px;border-bottom:3px solid #cdd6c8"><span style="flex:none;width:40px;height:40px;border:4px solid ${C.sage};border-radius:7px;background:#fff"></span><span class="hand" style="font-size:44px;line-height:1;font-weight:700;color:${C.ink}">${esc(t)}</span></div>`).join("");
   const calCells = Array.from({ length: 5 }, (_, r) => Array.from({ length: 7 }, (_, c) => `<div style="${abs(14 + c * 38, 84 + r * 34, 30, 24, "background:#e3eadf;border-radius:3px")}"></div>`).join("")).join("");
   const calendar = `<div style="${abs(634, 400, 300, 270, `background:#fbfaf6;border-radius:6px;box-shadow:${SOFT};transform:rotate(4deg);z-index:1`)}"><div style="${abs(0, 0, 300, 62, `background:${C.sageDeep};border-radius:6px 6px 0 0;display:flex;align-items:center;justify-content:center;font:600 38px/1 'Newsreader',serif;color:#fff;letter-spacing:.03em`)}">October</div>${calCells}</div>`;
   const tap = `<svg style="${abs(700, 740, 270, 190, "z-index:2;filter:drop-shadow(0 10px 8px rgba(40,30,10,.4))")}" viewBox="0 0 270 190" aria-hidden="true">
@@ -383,7 +380,7 @@ function pin43() {
   const scene = `
   ${clapboard({})}
   ${calendar}${tap}${hose}${hook}${board}
-  ${trowel({ x: 560, y: 1286, len: 400, rot: 0 })}`;
+  ${plantBox({ x: 590, y: 1236, w: 380, rot: 0 })}`;
   return printable({ n: 43, scene, paper: "#f4ecc9", bottomMax: 366 });
 }
 
@@ -397,18 +394,17 @@ function pin45() {
     { art: heaterArt(0.72), job: "Water heater flush", when: "Once a year" },
     { art: alarmArt(0.78, C.ochre), job: "Replace smoke alarm units", when: "10 years from the manufacture date", warn: true },
   ];
-  const Y0 = 536, PITCH = 150;
-  const left = rows.map((r, k) => `<div style="${abs(24, Y0 + k * PITCH, 424, 136, `background:#fbfaf6;border-radius:12px;box-shadow:${SOFT};display:flex;align-items:center;gap:14px;padding:0 16px;${r.warn ? `border-left:8px solid ${C.ochre}` : ""}`)}"><div style="flex:none;width:104px;height:104px;display:grid;place-items:center">${r.art}</div><div data-check="text" style="font:600 27px/1.15 'Plex',sans-serif;color:${C.ink}">${esc(r.job)}</div></div>`).join("");
-  const right = rows.map((r, k) => `<div data-check="text" style="${abs(492, Y0 + k * PITCH, 468, 136, `border-radius:12px;display:flex;align-items:center;padding:0 24px;background:${r.warn ? "#f6ecd2" : "rgba(255,255,255,.14)"};font:600 31px/1.18 'Plex',sans-serif;color:${r.warn ? C.ochre : "#fff"}`)}">${esc(r.when)}</div>`).join("");
-  const arrows = rows.map((_, k) => `<div style="${abs(446, Y0 + k * PITCH + 44, 48, 48, `border-radius:50%;background:#fbfaf6;display:grid;place-items:center;box-shadow:0 3px 6px rgba(40,10,5,.35);z-index:3`)}">${icon("arrow-right", { size: 28, color: C.sageDeep, weight: "bold" })}</div>`).join("");
+  const Y0 = 536, PITCH = 140;
+  const left = rows.map((r, k) => `<div style="${abs(24, Y0 + k * PITCH, 424, 126, `background:#fbfaf6;border-radius:12px;box-shadow:${SOFT};display:flex;align-items:center;gap:14px;padding:0 16px;${r.warn ? `border-left:8px solid ${C.ochre}` : ""}`)}"><div style="flex:none;width:104px;height:104px;display:grid;place-items:center">${r.art}</div><div data-check="text" style="align-self:stretch;display:flex;align-items:center;font:600 27px/1.15 'Plex',sans-serif;color:${C.ink}"><span>${esc(r.job)}</span></div></div>`).join("");
+  const right = rows.map((r, k) => `<div data-check="text" style="${abs(492, Y0 + k * PITCH, 468, 126, `border-radius:12px;display:flex;align-items:center;padding:0 24px;background:${r.warn ? "#f6ecd2" : "rgba(255,255,255,.14)"};font:600 31px/1.18 'Plex',sans-serif;color:${r.warn ? C.ochre : "#fff"}`)}">${esc(r.when)}</div>`).join("");
+  const arrows = rows.map((_, k) => `<div style="${abs(446, Y0 + k * PITCH + 39, 48, 48, `border-radius:50%;background:#fbfaf6;display:grid;place-items:center;box-shadow:0 3px 6px rgba(40,10,5,.35);z-index:3`)}">${icon("arrow-right", { size: 28, color: C.sageDeep, weight: "bold" })}</div>`).join("");
   const scene = `
   ${brick({})}
-  <div style="${abs(476, 396, 500, 902, `background:${C.sage};border-radius:16px;box-shadow:${SOFT}`)}"></div>
-  <div style="${abs(24, 396, 424, 128, `background:#fbfaf6;border-radius:12px;box-shadow:${SOFT};display:flex;align-items:center;gap:16px;padding:0 18px`)}"><div style="flex:none">${calendarArt(0.92)}</div><div style="min-width:0"><div class="serif" style="font-size:31px;line-height:1.05;font-weight:500;color:${C.ink};text-decoration:line-through;text-decoration-thickness:3px">Seasonal</div><div data-check="text" style="font:600 30px/1.1 'Plex',sans-serif;color:${C.ink};margin-top:6px">Looks seasonal</div></div></div>
+  <div style="${abs(476, 396, 500, 842, `background:${C.sage};border-radius:16px;box-shadow:${SOFT}`)}"></div>
+  <div style="${abs(24, 396, 424, 128, `background:#fbfaf6;border-radius:12px;box-shadow:${SOFT};display:flex;align-items:center;gap:16px;padding:0 18px`)}"><div style="flex:none">${calendarArt(0.92)}</div><div style="min-width:0"><div class="serif" style="font-size:31px;line-height:1.05;font-weight:500;color:${C.ink};text-decoration:line-through;text-decoration-thickness:3px">Seasonal</div><div data-check="text" style="font:600 30px/40px 'Plex',sans-serif;height:42px;color:${C.ink};margin-top:6px">Looks seasonal</div></div></div>
   <div data-check="text" style="${abs(500, 410, 452, 100, "display:flex;align-items:center;font:600 31px/1.18 'Plex',sans-serif;color:#fff")}">${esc(i.sub.split(". ")[0] + ".")}</div>
   ${left}${right}${arrows}
-  ${bulbs({ x: 30, y: 1290, size: 210, rot: 0 })}
-  ${trowel({ x: 520, y: 1306, len: 440, rot: -1 })}`;
+  ${trowel({ x: 500, y: 1262, len: 440, rot: -1 })}`;
   return printable({ n: 45, scene, paper: "#f1e0d8", bottomMax: 366 });
 }
 
@@ -432,7 +428,7 @@ function pin47() {
   const scene = `
   ${decking({})}
   ${cards}${stamp}
-  ${birdBath({ x: 70, y: 1128, size: 330 })}`;
+  ${birdBath({ x: 80, y: 1092, size: 262 })}`;
   return printable({ n: 47, scene, paper: "#edeeea", bottomMax: 366 });
 }
 

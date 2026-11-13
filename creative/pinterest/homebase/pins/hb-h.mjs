@@ -116,7 +116,7 @@ function pin40() {
     beam(-40, 700, 1040, 700, 30, "#3b2f23", "#53422f"),
   ].join(""));
   const bg = fill("background:linear-gradient(180deg,#2b251c 0,#3a2f22 55%,#1e1912 100%)") + rafters + `<div style="${abs(0, 380, 1000, 900, "background:radial-gradient(ellipse at 50% 78%,rgba(255,190,90,.38),rgba(255,190,90,0) 60%)")}"></div>`;
-  const card = (x, name, tag) => `<div data-check="card" style="${abs(x, 392, 430, 206, `background:${C.paperLight};border-radius:18px;padding:18px 22px;border-left:12px solid ${C.sage};box-shadow:0 14px 26px rgba(0,0,0,.5)`)}"><div style="font:600 31px/1.18 'Plex',sans-serif;color:${C.ink}">${esc(name)}</div><div style="display:inline-block;margin-top:14px;background:${C.sage};color:#fff;font:600 25px/1.2 'Plex',sans-serif;padding:8px 16px;border-radius:14px">${esc(tag)}</div></div>`;
+  const card = (x, name, tag) => `<div data-check="card" style="${abs(x, 392, 430, 206, `background:${C.paperLight};border-radius:18px;padding:18px 22px;border-left:12px solid ${C.sage};box-shadow:0 14px 26px rgba(0,0,0,.5);display:flex;flex-direction:column;justify-content:space-between;align-items:flex-start`)}"><div style="font:600 31px/1.18 'Plex',sans-serif;color:${C.ink}">${esc(name)}</div><div style="display:inline-block;background:${C.sage};color:#fff;font:600 25px/1.2 'Plex',sans-serif;padding:8px 16px;border-radius:14px">${esc(tag)}</div></div>`;
   const furnace = `<svg style="${abs(40, 628, 380, 588, SH)}" viewBox="-40 0 440 680" aria-hidden="true"><defs>
     <linearGradient id="fg" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#dfe5e0"/><stop offset=".6" stop-color="#c3ccc5"/><stop offset="1" stop-color="#a3afa7"/></linearGradient></defs>
     <rect x="50" y="0" width="240" height="30" rx="6" fill="#98a39c"/><rect x="20" y="20" width="300" height="640" rx="12" fill="url(#fg)"/>
@@ -164,7 +164,7 @@ function pin42() {
     <path d="M706 640 H${fx + fw + dx / 2 + 14}"/><path d="M${fx + fw + dx / 2 + 36} 624 L${fx + fw + dx / 2 + 14} 640 L${fx + fw + dx / 2 + 36} 656"/>`);
   const card = (y, h, text) => `<div data-check="note" style="${abs(700, y, 262, h, `background:${C.paperLight};border-radius:16px;border-left:10px solid ${C.sage};padding:16px 20px;font:500 26px/1.3 'Plex',sans-serif;color:${C.ink};box-shadow:0 14px 24px rgba(40,25,5,.4)`)}">${esc(text)}</div>`;
   const ex = `<div class="example" style="${abs(fx + 232, fy + dy + 44, 150, 42, "display:flex;align-items:center;justify-content:center;font-size:24px;line-height:1;color:#4b4339;background:rgba(255,255,255,.7);padding:0")}">Example</div>`;
-  return printable({ n: 42, paper: "#eadfc4", scene: `${osb}${trusses}${arrows}${frame}${ex}${pill(fx + fw / 2 - 80, 411, 160, "width")}${pill(67, fy + dy + fh / 2 - 80, 160, "length", true)}${pill(706, 598, 150, "depth")}${card(392, 186, i.items[0])}${card(676, 224, i.items[1])}${card(920, 260, i.items[2])}${insulationRoll({ x: 30, y: 1170, w: 400, h: 160, rot: -1.5 })}${carton({ x: 490, y: 1190, w: 200, h: 150, rot: 1.5 })}` });
+  return printable({ n: 42, paper: "#eadfc4", scene: `${osb}${trusses}${arrows}${frame}${ex}${pill(fx + fw / 2 - 80, 411, 160, "width")}${pill(67, fy + dy + fh / 2 - 80, 160, "length", true)}${pill(706, 598, 150, "depth")}${card(392, 186, i.items[0])}${card(676, 224, i.items[1])}${card(920, 238, i.items[2])}${insulationRoll({ x: 100, y: 1192, w: 380, h: 146, rot: -1.5 })}${carton({ x: 530, y: 1200, w: 170, h: 136, rot: 1.5 })}` });
 }
 
 /* ---------- pin 44: a one inch filter beside a four inch filter, to scale ---------- */
@@ -179,7 +179,7 @@ function pin44() {
   const u = 22, fw = 16 * u, fh = 25 * u, top = 640;
   const f1 = filterBox({ x: 70, y: top, w: fw, h: fh, dx: u * 0.9, dy: u * 0.5, b: 30, id: "f44a", pleat: 14 });
   const f4 = filterBox({ x: 530, y: top, w: fw, h: fh, dx: u * 4 * 0.9, dy: u * 4 * 0.5, b: 30, id: "f44b", pleat: 14 });
-  const card = (x, label, big) => `<div data-check="interval" style="${abs(x, 392, 430, 176, `background:${C.paperLight};border-radius:18px;border-left:12px solid ${C.sage};padding:18px 24px;box-shadow:0 14px 24px rgba(60,40,0,.4)`)}"><div style="font:600 29px/1.2 'Plex',sans-serif;color:${C.sageDeep}">${esc(label)}</div><div style="font:500 56px/1.1 'Newsreader',Georgia,serif;color:${C.ink};margin-top:12px;letter-spacing:-.01em">${esc(big)}</div></div>`;
+  const card = (x, label, big) => `<div data-check="interval" style="${abs(x, 392, 430, 176, `background:${C.paperLight};border-radius:18px;border-left:12px solid ${C.sage};padding:18px 24px;box-shadow:0 14px 24px rgba(60,40,0,.4)`)}"><div style="font:600 29px/1.2 'Plex',sans-serif;color:${C.sageDeep}">${esc(label)}</div><div style="font:500 48px/1.1 'Newsreader',Georgia,serif;color:${C.ink};margin-top:12px;letter-spacing:-.01em">${esc(big)}</div></div>`;
   const shadow = (x, w) => `<div style="${abs(x, top + fh - 6, w, 34, "background:radial-gradient(ellipse,rgba(20,10,0,.55),rgba(20,10,0,0) 70%)")}"></div>`;
   const note = `<div data-check="manual note" style="${abs(100, 1222, 800, 106, `background:${C.kraft};border-radius:8px;transform:rotate(-1deg);display:flex;align-items:center;gap:20px;padding:0 30px;font:500 36px/1.12 'Newsreader',Georgia,serif;color:${C.ink};box-shadow:0 12px 20px rgba(0,0,0,.5),inset 0 0 0 2px rgba(60,40,10,.22)`)}"><span style="flex:none">${icon("book-open-text", { size: 56, color: C.sageDeep, weight: "duotone" })}</span><span>${esc(i.items[2])}</span></div>`;
   return printable({ n: 44, paper: "#f1e6bf", scene: `${batts}${joists}${planks({ y: 1196, h: 158, base: "#7d5f3a", dark: "#664b2b", seed: 8 })}${card(40, l1, t1)}${card(530, l2, t2)}${shadow(40, 420)}${shadow(500, 500)}${f1}${f4}${note}` });
@@ -198,16 +198,16 @@ function pin46() {
     ${filt(68, 22, 124, 168, null, "p1", 'transform="rotate(-4 130 106)"')}
     <rect x="86" y="40" width="88" height="132" fill="#fffbd8" opacity=".5" transform="rotate(-4 130 106)"/>
     <path d="M74 206 C 70 178 200 176 206 204 L214 240 H66 Z" fill="#e7bb94"/><rect x="62" y="150" width="36" height="84" rx="18" fill="#e0ad84" transform="rotate(-14 80 192)"/><rect x="62" y="150" width="12" height="84" rx="6" fill="#f3d3b6" opacity=".6" transform="rotate(-14 80 192)"/></svg>`;
-  const rg = rng(8), smudge = Array.from({ length: 34 }, () => `<path d="M${100 + rg() * 110} ${60 + rg() * 130} l${6 + rg() * 20} ${(rg() - 0.5) * 8}" stroke="#4c4b46" stroke-width="3" stroke-linecap="round" opacity=".55"/>`).join("");
+  const rg = rng(8), smudge = Array.from({ length: 34 }, () => `<path d="M${32 + rg() * 60} ${56 + rg() * 126} l${6 + rg() * 18} ${(rg() - 0.5) * 8}" stroke="#4c4b46" stroke-width="3" stroke-linecap="round" opacity=".55"/>`).join("");
   const ill2 = `<svg viewBox="0 0 260 240" width="260" height="240" aria-hidden="true"><defs>${pleatDef("p2g", "#9a9992", "#7f7e77")}${pleatDef("p2w", "#f6f3ea", "#dcd8cb")}</defs>
     <rect width="260" height="240" rx="18" fill="#efe6d3"/>
-    ${filt(18, 36, 108, 162, null, "p2g")}<rect x="30" y="48" width="84" height="138" fill="#5d5c57" opacity=".28"/><g transform="translate(-76 -4)">${smudge.replace(/translate/g, "")}</g>
+    ${filt(18, 36, 108, 162, null, "p2g")}<rect x="30" y="48" width="84" height="138" fill="#5d5c57" opacity=".28"/><g>${smudge}</g>
     ${filt(138, 36, 108, 162, null, "p2w")}</svg>`;
   const cal = `<svg viewBox="0 0 260 240" width="260" height="240" aria-hidden="true"><rect width="260" height="240" rx="18" fill="${C.wash}"/>
-    <rect x="40" y="14" width="180" height="212" rx="10" fill="${C.paperLight}" stroke="#b7c3b3" stroke-width="2"/><path d="M40 24 a10 10 0 0 1 10 -10 H210 a10 10 0 0 1 10 10 V52 H40 Z" fill="${C.sage}"/><circle cx="84" cy="14" r="7" fill="#26332a"/><circle cx="176" cy="14" r="7" fill="#26332a"/>
-    ${Array.from({ length: 28 }, (_, k) => `<rect x="${50 + (k % 7) * 24.5}" y="${62 + Math.floor(k / 7) * 24}" width="18" height="18" rx="4" fill="#dde4da"/>`).join("")}
-    <circle cx="${50 + 3 * 24.5 + 9}" cy="${62 + 24 + 9}" r="16" fill="none" stroke="${C.sage}" stroke-width="5"/></svg>`;
-  const calCaption = `<div style="${abs(0, 172, 260, 60, "display:flex;align-items:center;justify-content:center;text-align:center;font:600 22px/1.15 'Plex',sans-serif;color:" + C.ink)}"><span style="background:${C.paperLight};padding:6px 14px;border-radius:8px;box-shadow:0 2px 6px rgba(0,0,0,.18)">checking again next month</span></div>`;
+    <rect x="40" y="12" width="180" height="156" rx="10" fill="${C.paperLight}" stroke="#b7c3b3" stroke-width="2"/><path d="M40 22 a10 10 0 0 1 10 -10 H210 a10 10 0 0 1 10 10 V44 H40 Z" fill="${C.sage}"/><circle cx="84" cy="12" r="7" fill="#26332a"/><circle cx="176" cy="12" r="7" fill="#26332a"/>
+    ${Array.from({ length: 28 }, (_, k) => `<rect x="${50 + (k % 7) * 24.5}" y="${52 + Math.floor(k / 7) * 28}" width="18" height="22" rx="4" fill="#dde4da"/>`).join("")}
+    <circle cx="${50 + 3 * 24.5 + 9}" cy="${52 + 28 + 11}" r="17" fill="none" stroke="${C.sage}" stroke-width="5"/></svg>`;
+  const calCaption = `<div style="${abs(0, 176, 260, 56, "display:flex;align-items:center;justify-content:center;text-align:center;text-wrap:balance;font:600 22px/1.15 'Plex',sans-serif;color:" + C.ink)}"><span style="background:${C.paperLight};padding:6px 14px;border-radius:8px;box-shadow:0 2px 6px rgba(0,0,0,.18)">checking again next month</span></div>`;
   const ills = [ill1, ill2, cal + calCaption];
   const rowH = 300, gap = 20, y0 = 396;
   const rows = i.items.map((t, k) => {
@@ -232,7 +232,7 @@ function pin48() {
   const bank = i.items.join(" | ");
   rows.flat().forEach((c) => { if (!bank.includes(c)) throw new Error(`pin 48 cell not in bank: ${c}`); });
   const heads = ["Date", "What was done", "Who did it", "Cost", "Note"];
-  const cw = [110, 200, 150, 112, 248];
+  const cw = [124, 188, 130, 120, 218];
   const floor = planks({ y: 372, h: 982, base: "#4d3a27", dark: "#3f2f1f", seed: 14, bh: 70 });
   const r = rng(6), slats = [];
   for (let k = 0; k < 14; k++) slats.push(`<rect x="${20 + k * 68.6}" y="0" width="3" height="982" fill="#2a160a" opacity=".5"/>`);
@@ -245,18 +245,18 @@ function pin48() {
     <rect x="16" y="0" width="968" height="12" fill="#c9a24a" opacity=".85"/></svg>`;
   const lock = `<svg style="${abs(424, 1196, 152, 150, SH)}" viewBox="0 0 152 150" aria-hidden="true"><rect x="8" y="10" width="136" height="120" rx="14" fill="#c9a24a"/><rect x="8" y="10" width="136" height="26" rx="12" fill="#f0d98a" opacity=".6"/><circle cx="76" cy="70" r="20" fill="#3a2a10"/><path d="M68 70 H84 L86 104 H66 Z" fill="#3a2a10"/><circle cx="76" cy="66" r="7" fill="#c9a24a"/></svg>`;
   const ringsX = 48;
-  const table = `<div style="display:flex;background:${C.sage};height:58px">${heads.map((h, k) => `<div style="flex:none;width:${cw[k]}px;padding:0 10px;display:flex;align-items:center;font:600 24px 'Plex',sans-serif;color:#fff;border-left:${k ? "2px solid rgba(255,255,255,.35)" : "0"}">${esc(h)}</div>`).join("")}</div>`
-    + rows.map((row, ri) => `<div data-check="log row ${ri + 1}" style="display:flex;height:178px;border-bottom:3px solid ${C.rule}">${row.map((c, k) => `<div style="flex:none;width:${cw[k]}px;padding:12px 10px;border-left:${k ? `2px solid ${C.rule}` : "0"};font:600 ${k === 4 || k === 1 ? 33 : 35}px/1.08 'Hand',cursive;color:#23395a;overflow:hidden">${esc(c)}</div>`).join("")}</div>`).join("")
+  const table = `<div style="display:flex;background:${C.sage};height:58px">${heads.map((h, k) => `<div style="flex:none;width:${cw[k]}px;padding:0 8px;display:flex;align-items:center;font:600 22px 'Plex',sans-serif;color:#fff;white-space:nowrap;border-left:${k ? "2px solid rgba(255,255,255,.35)" : "0"}">${esc(h)}</div>`).join("")}</div>`
+    + rows.map((row, ri) => `<div data-check="log row ${ri + 1}" style="display:flex;height:178px;border-bottom:3px solid ${C.rule}">${row.map((c, k) => `<div style="flex:none;width:${cw[k]}px;padding:12px 10px;border-left:${k ? `2px solid ${C.rule}` : "0"};font:600 ${k === 4 || k === 1 || k === 0 ? 33 : 35}px/1.08 'Hand',cursive;color:#23395a;overflow:hidden">${esc(c).replace(/(\S*-\S*)/g, '<span style="white-space:nowrap">$1</span>')}</div>`).join("")}</div>`).join("")
     + [0, 1].map(() => `<div style="height:56px;border-bottom:3px solid ${C.rule};opacity:.7"></div>`).join("");
   const binder = `<div style="${abs(24, 404, 952, 770, "transform:rotate(-1deg)")}">
     <div style="${abs(0, 0, 952, 770, "background:linear-gradient(135deg,#d3b283,#b99365);border-radius:18px;box-shadow:0 3px 5px rgba(20,8,0,.5),0 30px 50px rgba(20,8,0,.6)")}"></div>
     <div style="${abs(0, 0, 952, 770, "border-radius:18px;background:repeating-linear-gradient(0deg,rgba(255,255,255,.05) 0 2px,transparent 2px 6px)")}"></div>
     ${[110, 360, 610].map((yy) => `<div style="${abs(ringsX, yy, 74, 40, "border-radius:20px;background:linear-gradient(#e8eaec,#9ea3a9);box-shadow:0 5px 8px rgba(0,0,0,.4)")}"></div>`).join("")}
-    <div style="${abs(110, 38, 820, 700, `background:${C.paperLight};border-radius:4px;box-shadow:0 3px 5px rgba(20,8,0,.35);overflow:hidden`)}">${table}
-      <div class="example" style="${abs(650, 636, 150, 42, "display:flex;align-items:center;justify-content:center;font-size:24px;line-height:1;color:#4b4339;padding:0;background:#fff")}">Example</div></div>
+    <div style="${abs(150, 38, 780, 700, `background:${C.paperLight};border-radius:4px;box-shadow:0 3px 5px rgba(20,8,0,.35);overflow:hidden`)}">${table}
+      <div class="example" style="${abs(610, 636, 150, 42, "display:flex;align-items:center;justify-content:center;font-size:24px;line-height:1;color:#4b4339;padding:0;background:#fff")}">Example</div></div>
     ${[130, 380, 630].map((yy) => `<div style="${abs(ringsX + 40, yy - 18, 60, 14, "background:#c7ccd1;border-radius:7px;box-shadow:0 2px 3px rgba(0,0,0,.3)")}"></div>`).join("")}
   </div>`;
-  return printable({ n: 48, paper: "#e9dcc6", scene: `${floor}${trunk}${binder}${lock}${pencil({ x: 40, y: 1250, len: 380, rot: -4 })}<div style="${abs(640, 1222, 1, 1)}"></div>` });
+  return printable({ n: 48, paper: "#e9dcc6", extraCss: ".top h1{font-size:66px}", scene: `${floor}${trunk}${binder}${lock}${pencil({ x: 40, y: 1250, len: 380, rot: -4 })}<div style="${abs(640, 1222, 1, 1)}"></div>` });
 }
 
 /* ---------- pin 50: the notes to write after a service visit ---------- */
@@ -273,7 +273,7 @@ function pin50() {
   const tape = (x, y, rot) => `<div style="${abs(x, y, 110, 40, `background:rgba(169,205,178,.78);transform:rotate(${rot}deg);box-shadow:0 2px 4px rgba(0,0,0,.25);z-index:3`)}"></div>`;
   const note = (x, y, w, h, rot, text, fs) => `<div style="${abs(x, y, w, h, `transform:rotate(${rot}deg)`)}">
     <div data-check="note" style="${abs(0, 0, w, h, `background:linear-gradient(160deg,#d6b583,${C.kraft});box-shadow:0 3px 4px rgba(0,0,0,.35),0 22px 32px rgba(0,0,0,.45);padding:44px 34px 24px;display:flex;align-items:center;font:600 ${fs}px/1.02 'Hand',cursive;color:#2a2118`)}"><span>${esc(text)}</span></div>${tape(w / 2 - 55, -18, -3)}</div>`;
-  const ex = `<div class="example" style="${abs(78, 612, 150, 42, "display:flex;align-items:center;justify-content:center;font-size:24px;line-height:1;color:#3e4842;background:rgba(255,255,255,.7);padding:0")}">Example</div>`;
+  const ex = `<div class="example" style="${abs(776, 1112, 150, 42, "display:flex;align-items:center;justify-content:center;font-size:24px;line-height:1;color:#3e4842;background:rgba(255,255,255,.7);padding:0")}">Example</div>`;
   return printable({
     n: 50, paper: "#e7dcc6", bottomMax: 372,
     scene: `${wall}${lantern({ x: 790, y: 396, s: 1 })}${cabinet}${ex}${note(150, 690, 400, 250, -4, i.items[0], 78)}${note(520, 800, 420, 270, 3.2, i.items[1], 74)}${note(110, 1010, 480, 290, -2, i.items[2], 62)}${pencil({ x: 590, y: 1230, len: 340, rot: -8 })}`,
@@ -303,7 +303,7 @@ function pin52() {
   const bubbles = i.items.map((q, k) => {
     const y = by0 + k * (bubbleH + bGap);
     return `<svg style="${abs(428, y + 54, 32, 44)}" viewBox="0 0 32 44" aria-hidden="true"><path d="M32 4 L2 22 L32 40 Z" fill="${C.paperLight}"/></svg>
-    <div data-check="question ${k + 1}" style="${abs(456, y, 506, bubbleH, `background:${C.paperLight};border-radius:30px;box-shadow:0 14px 24px rgba(60,40,10,.3),inset 0 0 0 2px rgba(60,80,66,.12);display:flex;align-items:center;gap:20px;padding:0 28px 0 22px`)}"><div style="flex:none;width:62px;height:62px;border-radius:50%;background:${C.sage};display:grid;place-items:center;font:600 36px 'Newsreader',serif;color:#fff">${k + 1}</div><div style="font:500 29px/1.28 'Plex',sans-serif;color:${C.ink}">${esc(q)}</div></div>`;
+    <div data-check="question ${k + 1}" style="${abs(456, y, 506, bubbleH, `background:${C.paperLight};border-radius:30px;box-shadow:0 14px 24px rgba(60,40,10,.3),inset 0 0 0 2px rgba(60,80,66,.12);display:flex;align-items:center;gap:20px;padding:0 28px 0 22px`)}"><div style="flex:none;width:62px;height:62px;border-radius:50%;background:${C.sage};display:grid;place-items:center;font:600 36px 'Newsreader',serif;color:#fff">${k + 1}</div><div style="text-wrap:balance;font:500 29px/1.28 'Plex',sans-serif;color:${C.ink}">${esc(q)}</div></div>`;
   }).join("");
   const board = `<div style="${abs(70, 1092, 300, 250, "transform:rotate(-3deg)")}">
     <div style="${abs(0, 20, 300, 230, "background:linear-gradient(135deg,#a9743c,#8d5d2c);border-radius:16px;box-shadow:0 4px 6px rgba(40,20,5,.3),0 26px 40px rgba(40,20,5,.5)")}"></div>

@@ -130,16 +130,16 @@ const timeline = `<svg viewBox="0 0 380 150" style="width:380px;height:150px;dis
 const scene28 = `${blockWall({ base: "#d3dacf", mortar: "#aeb8ab", light: [0.8, 0.02], tone: 0.34 })}
   ${copper("M-10 1196 H1010", 26)}${rings([ring(150, 1182, 30, 54), ring(480, 1182, 30, 54), ring(820, 1182, 30, 54)])}
   <svg style="${abs(0, 1262, 1000, 94)}" viewBox="0 0 1000 94" aria-hidden="true"><defs><linearGradient id="fl" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#b6b9b0"/><stop offset="1" stop-color="#8a8e86"/></linearGradient></defs><rect width="1000" height="94" fill="url(#fl)"/><rect width="1000" height="6" fill="#6e7269"/><rect y="6" width="1000" height="3" fill="#fff" opacity=".35"/></svg>
-  <div style="${abs(34, 408, 450, 760, "transform:rotate(-1.4deg);background:#f4f2ec;border-radius:10px;box-shadow:0 3px 4px rgba(20,25,20,.3),0 26px 40px rgba(20,25,20,.45)")}">
+  <div style="${abs(34, 408, 450, 700, "transform:rotate(-1.4deg);background:#f4f2ec;border-radius:10px;box-shadow:0 3px 4px rgba(20,25,20,.3),0 26px 40px rgba(20,25,20,.45)")}">
     <div style="position:absolute;left:30px;right:30px;top:26px;font:700 33px/1.12 'Plex',sans-serif;color:#5b625e">Start from the day you wrote the list</div>
     <div style="position:absolute;left:35px;top:134px;opacity:.95">${calendarMuted}</div>
-    <div style="position:absolute;left:35px;top:424px">${struckArrow}</div>
-    <div data-check="caption" style="position:absolute;left:30px;right:30px;bottom:24px;height:150px;font:500 25px/1.28 'Plex',sans-serif;color:#4b524e;overflow:hidden">${esc(i28.items[0])}</div></div>
-  <div style="${abs(516, 396, 450, 772, "transform:rotate(1.2deg);background:#e6efe4;border:4px solid #4f7a5c;border-radius:10px;box-shadow:0 3px 4px rgba(20,25,20,.3),0 26px 40px rgba(20,25,20,.45)")}">
+    <div style="position:absolute;left:35px;top:424px;transform:scale(.8);transform-origin:0 0">${struckArrow}</div>
+    <div data-check="caption" style="position:absolute;left:30px;right:30px;bottom:22px;height:112px;font:500 25px/1.28 'Plex',sans-serif;color:#4b524e;overflow:hidden">${esc(i28.items[0])}</div></div>
+  <div style="${abs(516, 396, 450, 712, "transform:rotate(1.2deg);background:#e6efe4;border:4px solid #4f7a5c;border-radius:10px;box-shadow:0 3px 4px rgba(20,25,20,.3),0 26px 40px rgba(20,25,20,.45)")}">
     <div style="position:absolute;left:30px;right:30px;top:26px;font:700 33px/1.12 'Plex',sans-serif;color:${C.sageDeep}">Count from the last time it was done</div>
     <div style="position:absolute;left:30px;right:30px;top:154px">${logLine}</div>
-    <div style="position:absolute;left:35px;top:330px">${timeline}</div>
-    <div data-check="caption" style="position:absolute;left:30px;right:30px;bottom:24px;height:150px;font:500 25px/1.28 'Plex',sans-serif;color:${C.ink};overflow:hidden">${esc(i28.items[1])}</div></div>
+    <div style="position:absolute;left:35px;top:340px">${timeline}</div>
+    <div data-check="caption" style="position:absolute;left:30px;right:30px;bottom:22px;height:112px;font:500 25px/1.28 'Plex',sans-serif;color:${C.ink};overflow:hidden">${esc(i28.items[1])}</div></div>
   ${furnace({ x: 28, y: 1124, w: 300, h: 250 })}
   ${pen({ x: 560, y: 1292, len: 360, rot: -4 })}`;
 
@@ -179,7 +179,8 @@ function houseSection({ viewBox, width, height, badges = [], markers = "", glow 
     <!-- basement: water heater -->
     <rect x="596" y="304" width="12" height="30" fill="#b8683a"/><rect x="620" y="304" width="12" height="30" fill="#b8683a"/>
     <path d="M560 354 C 560 336 582 332 614 332 C 646 332 668 336 668 354 V 440 H 560 Z" fill="url(#hh)" stroke="${ink}" stroke-width="4"/><rect x="560" y="378" width="108" height="14" fill="#7aa485" opacity=".9"/><rect x="590" y="402" width="48" height="30" rx="4" fill="#fbfaf6" stroke="${ink}" stroke-width="2"/><circle cx="614" cy="417" r="9" fill="#e8ede6" stroke="${ink}" stroke-width="2"/>
-    <path d="M626 312 H520 Q500 312 500 330 V344" fill="none" stroke="#b8683a" stroke-width="10" stroke-linecap="round" opacity=".0"/>
+    <path d="M614 334 V318 H112" fill="none" stroke="#7c4220" stroke-width="12" stroke-linejoin="round"/><path d="M614 334 V318 H112" fill="none" stroke="#b8683a" stroke-width="8" stroke-linejoin="round"/><path d="M614 331 V315 H112" fill="none" stroke="#e9a877" stroke-width="2" stroke-opacity=".8"/>
+    ${[170, 420].map((xx) => `<rect x="${xx}" y="310" width="14" height="18" rx="3" fill="#d09061" stroke="#7c4220" stroke-width="2"/>`).join("")}
     ${markers}${b}</svg>`;
 }
 
@@ -201,7 +202,7 @@ const scene30 = `<svg style="${abs(0, SCENE_TOP, 1000, H)}" viewBox="0 0 1000 ${
     const kraft = k === 0;
     return `<div data-check="tag" style="${abs(x, y, 440, 142, `box-sizing:border-box;display:flex;align-items:center;gap:16px;padding:12px 18px;border-radius:16px;background:${kraft ? "linear-gradient(135deg,#d3b184,#c8a679)" : "linear-gradient(135deg,#e9f1e6,#d9e6d6)"};border:3px solid ${kraft ? "#8a6a3a" : C.sage};box-shadow:0 3px 4px rgba(30,40,30,.2),0 12px 18px rgba(30,40,30,.22);transform:rotate(${[-0.6, 0.5, 0.4, -0.5, -0.4, 0.6][k]}deg)`)}">
       ${numBadge(k + 1, { size: 52, fs: 28 })}
-      <div style="flex:1;min-width:0"><div style="font:700 26px/1.12 'Plex',sans-serif;color:${C.ink}">${esc(job)}</div><div style="font:500 24px/1.2 'Plex',sans-serif;color:#3a463f;margin-top:6px">${esc(when)}</div></div>
+      <div style="flex:1;min-width:0"><div style="font:700 26px/1.12 'Plex',sans-serif;color:${C.ink}">${esc(job).replace("tune-up", '<span style="white-space:nowrap">tune-up</span>')}</div><div style="font:500 24px/1.2 'Plex',sans-serif;color:#3a463f;margin-top:6px">${esc(when)}</div></div>
       <div style="flex:none;opacity:.9">${icon(tagIcons30[k], { size: 44, color: kraft ? "#5a4020" : C.sageDeep, weight: "duotone" })}</div></div>`;
   }).join("")}`;
 
@@ -225,10 +226,9 @@ const scene32 = `${blockWall({ base: "#355248", mortar: "#243a32", light: [0.18,
       height: 380,
       markers: `${ochreDot(352, 398, 1)}${ochreDot(614, 376, 2)}${ochreDot(450, 206, 3)}`,
     })}</div>
-  ${[0, 1, 2].map((k) => `<div data-check="item" style="${abs(40, 888 + k * 150, 640, 138, `box-sizing:border-box;display:flex;align-items:center;gap:18px;padding:14px 20px;border-radius:14px;background:#f4f2ec;box-shadow:0 3px 4px rgba(0,0,0,.35),0 14px 20px rgba(0,0,0,.4);transform:rotate(${[-0.4, 0.3, -0.3][k]}deg)`)}">
+  ${[[888, 138], [1038, 100], [1150, 182]].map(([yy, hh], k) => `<div data-check="item" style="${abs(40, yy, 640, hh, `box-sizing:border-box;display:flex;align-items:center;gap:18px;padding:14px 20px;border-radius:14px;background:#f4f2ec;box-shadow:0 3px 4px rgba(0,0,0,.35),0 14px 20px rgba(0,0,0,.4);transform:rotate(${[-0.4, 0.3, -0.3][k]}deg)`)}">
       ${numBadge(k + 1, { size: 50, bg: C.ochre, fs: 28 })}
-      <div style="flex:1;min-width:0;font:500 25px/1.25 'Plex',sans-serif;color:${C.ink}">${esc(i32.items[k])}</div></div>`).join("")}
-  <span class="example" style="position:absolute;left:560px;top:896px;z-index:4;font-size:24px;padding:5px 12px;background:#f4f2ec;color:#4b4339">Example</span>
+      <div style="flex:1;min-width:0;font:500 25px/1.25 'Plex',sans-serif;color:${C.ink}">${esc(i32.items[k])}${k === 2 ? `<div style="margin-top:10px"><span class="example" style="font-size:24px;padding:5px 12px;color:#4b4339">Example</span></div>` : ""}</div></div>`).join("")}
   ${keyTag({ x: 712, y: 878, rot: 5 })}
   ${workLamp({ x: 44, y: 372, s: 0.5 })}
   <svg style="${abs(0, SCENE_TOP, 520, 360, "pointer-events:none")}" viewBox="0 0 520 360" aria-hidden="true"><defs><radialGradient id="ll" cx="20%" cy="0%" r="90%"><stop offset="0" stop-color="#fff2b8" stop-opacity=".38"/><stop offset="1" stop-color="#fff2b8" stop-opacity="0"/></radialGradient></defs><rect width="520" height="360" fill="url(#ll)"/></svg>`;
@@ -273,23 +273,20 @@ const strips36 = [
   { job: "Flush the water heater", chain: ["Sediment settles on the tank floor", "which lowers efficiency", "and shortens the tank's life"], icons: ["stack", "chart-line-down", "hourglass"], art: "tank" },
   { job: "Inspect the roof and flashing", chain: ["A small gap at a flashing joint becomes a leak", "then wet insulation", "then a stained ceiling"], icons: ["drop", "waves", "house-simple"], art: "roof" },
 ];
-// the items in the bank: "<job>: <consequence>". Every chain above is a cut of that consequence.
-strips36.forEach((s, k) => {
+// Each job and chain is a cut of the bank item "<job>: <consequence>"; say so loudly if the wording ever drifts.
+strips36.forEach((st, k) => {
   const [job, rest] = split(i36.items[k]);
-  if (job !== s.job || s.chain.join(" ").replace(/ then /g, ", then ").replace(/ which /g, ", which ").replace(/ and shortens/g, " and shortens") !== rest.replace(/^(.*?) becomes/, "$1 becomes").replace(/ becomes a leak, then/, " becomes a leak, then")) {
-    // wording check only: print so a drift is noticed
-    const joined = s.chain.join(" ");
-    const flat = rest.replace(/,/g, "");
-    if (joined.replace(/,/g, "") !== flat) console.log(`⚠ #36 strip ${k + 1} chain differs from the bank: "${joined}" vs "${rest}"`);
-  }
+  const flat = (t) => t.replace(/,/g, "");
+  if (job !== st.job || flat(st.chain.join(" ")) !== flat(rest)) console.log(`⚠ #36 strip ${k + 1} differs from the bank: "${st.chain.join(" ")}" vs "${rest}"`);
 });
 function art36(kind) {
   if (kind === "gutter")
-    return `<svg viewBox="0 0 250 170" style="width:250px;height:170px;display:block" aria-hidden="true"><rect x="0" y="0" width="250" height="170" rx="10" fill="#e6ede2"/>
-      <path d="M0 60 L170 20 V54 L0 94 Z" fill="#9fb3a3"/><path d="M0 60 L170 20" stroke="#4f7a5c" stroke-width="5"/>
-      <rect x="150" y="20" width="22" height="104" fill="#cdb089" stroke="#8a6a3a" stroke-width="3"/>
-      <path d="M176 22 H224 V50 Q224 64 210 64 H190 Q176 64 176 50 Z" fill="#dfe6dc" stroke="#4f7a5c" stroke-width="5" transform="translate(-40 28)"/>
-      <rect x="196" y="82" width="20" height="78" fill="#dfe6dc" stroke="#4f7a5c" stroke-width="5" transform="translate(-10 0)"/></svg>`;
+    return `<svg viewBox="0 0 250 170" style="width:250px;height:170px;display:block" aria-hidden="true"><rect width="250" height="170" rx="10" fill="#e6ede2"/>
+      <path d="M250 6 L132 52 V84 L250 38 Z" fill="#9fb3a3" stroke="#4f7a5c" stroke-width="4" stroke-linejoin="round"/>
+      <rect x="116" y="52" width="18" height="84" fill="#cdb089" stroke="#8a6a3a" stroke-width="3"/>
+      <path d="M116 52 H52 V104 Q52 132 78 132 H104 Q116 132 116 122 Z" fill="#dfe6dc" stroke="#4f7a5c" stroke-width="5" stroke-linejoin="round"/>
+      <g fill="#c4a35a" stroke="#8a6a2a" stroke-width="2"><ellipse cx="72" cy="86" rx="16" ry="8" transform="rotate(-14 72 86)"/><ellipse cx="98" cy="80" rx="16" ry="8" transform="rotate(12 98 80)"/><ellipse cx="84" cy="106" rx="18" ry="8"/></g><ellipse cx="86" cy="68" rx="15" ry="7" fill="#9bb07a" stroke="#6a7f48" stroke-width="2" transform="rotate(8 86 68)"/>
+      <rect x="62" y="130" width="26" height="36" fill="#dfe6dc" stroke="#4f7a5c" stroke-width="5"/></svg>`;
   if (kind === "tank")
     return `<svg viewBox="0 0 250 170" style="width:250px;height:170px;display:block" aria-hidden="true"><rect width="250" height="170" rx="10" fill="#e6ede2"/>
       <rect x="86" y="6" width="14" height="22" fill="${COPPER[1]}"/><rect x="128" y="6" width="14" height="22" fill="${COPPER[1]}"/>
@@ -327,63 +324,63 @@ const scene36 = `<svg style="${abs(0, SCENE_TOP, 1000, H)}" viewBox="0 0 1000 ${
 const i38 = idea(38);
 const SL = C.slate;
 const ink38 = "#3f6a52";
-const gutterDiagram = `<svg viewBox="0 0 860 560" style="width:860px;height:560px;display:block" aria-hidden="true"><defs>
-    <marker id="aw" markerWidth="8" markerHeight="8" refX="5" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8 Z" fill="${SL}"/></marker></defs>
-    <!-- house wall and soffit -->
-    <rect x="610" y="150" width="34" height="410" fill="#e8e4d6" stroke="${ink38}" stroke-width="5"/><rect x="644" y="150" width="216" height="410" fill="#f7f5ee"/>
-    <path d="M644 330 H330" stroke="${ink38}" stroke-width="5"/><rect x="330" y="314" width="314" height="16" fill="#e8dcc0" stroke="${ink38}" stroke-width="4"/>
-    <!-- sheathing and roof deck -->
-    <path d="M610 150 L860 60 V92 L644 176 V150 Z" fill="#e8dcc0" stroke="${ink38}" stroke-width="4" opacity="0"/>
-    <path d="M330 168 L860 -30 V10 L330 214 Z" fill="#dfe9dc" stroke="${ink38}" stroke-width="5" stroke-linejoin="round" opacity="0"/>
-    <path d="M300 160 L860 -50 L860 -8 L300 202 Z" fill="#cfdccb" stroke="${ink38}" stroke-width="5" stroke-linejoin="round"/>
-    <path d="M300 202 L860 -8 V30 L330 236 Z" fill="#e8dcc0" stroke="${ink38}" stroke-width="4" stroke-linejoin="round"/>
-    ${[420, 500, 580, 660, 740].map((xx) => `<path d="M${xx} ${160 - (xx - 300) * 0.375 + 1} l-8 36" stroke="${ink38}" stroke-width="3" opacity=".55"/>`).join("")}
+const arrowHead = (x, y, ang, len = 30, wid = 15, col = SL) => {
+  const c = Math.cos(ang), n = Math.sin(ang);
+  return `<path d="M${x} ${y} L${x - c * len - n * wid} ${y - n * len + c * wid} L${x - c * len + n * wid} ${y - n * len - c * wid} Z" fill="${col}"/>`;
+};
+const roofY = (x) => 232 - 0.377 * (x - 330); // top of the roof deck
+const gutterDiagram = `<svg viewBox="0 0 860 560" style="width:860px;height:560px;display:block" aria-hidden="true">
+  <g transform="translate(-30 0)">
+    <path d="M60 548 H840" stroke="${ink38}" stroke-width="5"/>
+    <!-- house wall -->
+    <rect x="640" y="150" width="40" height="398" fill="#e8e4d6" stroke="${ink38}" stroke-width="5"/>${[200, 270, 340, 410, 480].map((yy) => `<path d="M640 ${yy} H680" stroke="${ink38}" stroke-width="2" stroke-opacity=".35"/>`).join("")}
+    <!-- soffit -->
+    <rect x="320" y="392" width="320" height="14" fill="#e8dcc0" stroke="${ink38}" stroke-width="4"/>
+    <!-- roof deck (the sheathing), shingles on top -->
+    <path d="M330 ${roofY(330)} L860 ${roofY(860)} V${roofY(860) + 40} L330 ${roofY(330) + 40} Z" fill="#e8dcc0" stroke="${ink38}" stroke-width="5" stroke-linejoin="round"/>
+    <path d="M326 ${roofY(326) - 16} L860 ${roofY(860) - 16} V${roofY(860)} L326 ${roofY(326)} Z" fill="#cfdccb" stroke="${ink38}" stroke-width="5" stroke-linejoin="round"/>
+    ${[420, 510, 600, 690, 780].map((xx) => `<path d="M${xx} ${roofY(xx) - 16} V${roofY(xx)}" stroke="${ink38}" stroke-width="3" stroke-opacity=".5"/>`).join("")}
     <!-- fascia board -->
-    <rect x="304" y="190" width="30" height="170" fill="#e8dcc0" stroke="${ink38}" stroke-width="5"/><path d="M312 214 V340 M322 206 V330" stroke="${ink38}" stroke-width="2" stroke-opacity=".4"/>
-    <!-- gutter full of leaves -->
-    <path d="M196 170 H306 V250 Q306 292 264 292 H232 Q196 292 196 250 Z" fill="#dfe6dc" stroke="${ink38}" stroke-width="6" stroke-linejoin="round"/>
-    <g fill="#c4a35a" stroke="#8a6a2a" stroke-width="3"><ellipse cx="226" cy="216" rx="28" ry="13" transform="rotate(-18 226 216)"/><ellipse cx="270" cy="206" rx="30" ry="13" transform="rotate(14 270 206)"/><ellipse cx="248" cy="238" rx="32" ry="13" transform="rotate(-8 248 238)"/><ellipse cx="214" cy="256" rx="24" ry="11" transform="rotate(22 214 256)"/><ellipse cx="282" cy="256" rx="26" ry="11" transform="rotate(-20 282 256)"/></g>
-    <g fill="#9bb07a" stroke="#6a7f48" stroke-width="3"><ellipse cx="250" cy="196" rx="26" ry="11" transform="rotate(8 250 196)"/><ellipse cx="236" cy="270" rx="26" ry="10" transform="rotate(-6 236 270)"/></g>
+    <rect x="300" y="${roofY(330) - 8}" width="32" height="${392 - roofY(330) + 22}" fill="#e8dcc0" stroke="${ink38}" stroke-width="5"/><path d="M310 262 V386 M322 258 V380" stroke="${ink38}" stroke-width="2" stroke-opacity=".35"/>
+    <!-- gutter, full of leaves -->
+    <path d="M300 222 H212 V300 Q212 346 258 346 H288 Q300 346 300 332 Z" fill="#dfe6dc" stroke="${ink38}" stroke-width="6" stroke-linejoin="round"/>
+    <g fill="#c4a35a" stroke="#8a6a2a" stroke-width="3"><ellipse cx="236" cy="262" rx="28" ry="13" transform="rotate(-18 236 262)"/><ellipse cx="274" cy="252" rx="28" ry="13" transform="rotate(14 274 252)"/><ellipse cx="252" cy="286" rx="30" ry="13" transform="rotate(-6 252 286)"/><ellipse cx="228" cy="306" rx="22" ry="11" transform="rotate(20 228 306)"/><ellipse cx="274" cy="312" rx="24" ry="11" transform="rotate(-16 274 312)"/></g>
+    <g fill="#9bb07a" stroke="#6a7f48" stroke-width="3"><ellipse cx="258" cy="232" rx="30" ry="12" transform="rotate(6 258 232)"/><ellipse cx="226" cy="238" rx="22" ry="10" transform="rotate(-14 226 238)"/></g>
     <!-- downspout -->
-    <rect x="210" y="290" width="40" height="40" fill="#dfe6dc" stroke="${ink38}" stroke-width="5" opacity=".0"/>
-    <path d="M222 292 V548 M262 292 V548" stroke="${ink38}" stroke-width="5" opacity="0"/>
-    <rect x="96" y="226" width="64" height="16" fill="#dfe6dc" stroke="${ink38}" stroke-width="4" opacity="0"/>
-    <path d="M196 252 H150 Q130 252 130 272 V548" fill="none" stroke="${ink38}" stroke-width="5" opacity="0"/>
-    <rect x="104" y="300" width="42" height="248" fill="#dfe6dc" stroke="${ink38}" stroke-width="5"/><path d="M146 300 L196 262" stroke="${ink38}" stroke-width="5"/><rect x="96" y="540" width="58" height="12" rx="3" fill="${ink38}"/>
-    <!-- water: runs down the roof, backs up at the edge, then goes behind the gutter into the fascia -->
-    <path d="M700 -4 L378 126" fill="none" stroke="${SL}" stroke-width="9" stroke-linecap="round" marker-end="url(#aw)" transform="translate(0 38)"/>
-    <path d="M346 176 C 330 190, 322 210, 322 238" fill="none" stroke="${SL}" stroke-width="9" stroke-linecap="round" marker-end="url(#aw)" stroke-dasharray="1 0"/>
-    <path d="M380 176 C 392 150, 330 142, 310 160" fill="none" stroke="${SL}" stroke-width="8" stroke-linecap="round" marker-end="url(#aw)" opacity="0"/>
-    <path d="M318 212 V330" stroke="${SL}" stroke-width="8" stroke-linecap="round" stroke-dasharray="2 16" opacity=".9"/>
-    ${[[330, 250], [346, 292], [336, 336]].map(([a, b]) => `<path d="M${a} ${b} q-7 -12 -14 0 a7 7 0 0 0 14 0 Z" fill="${SL}"/>`).join("")}
-    <!-- hidden rot, a dashed ochre marker -->
-    <rect x="296" y="236" width="46" height="96" rx="10" fill="none" stroke="${C.ochre}" stroke-width="5" stroke-dasharray="9 8"/>
-    ${svgBadge(380, 246, 1, { r: 26, bg: SL, fs: 30 })}
-    ${svgBadge(374, 300, 2, { r: 26, bg: SL, fs: 30 })}
-    ${svgBadge(268, 312, 3, { r: 26, bg: C.ochre, fs: 30 }).replace("<g>", "<g opacity='0'>")}
-    ${svgBadge(448, 380, 3, { r: 26, bg: C.ochre, fs: 30 })}
-    ${svgBadge(560, 330, 4, { r: 26, bg: C.sageDeep, fs: 30 })}
-    <path d="M526 332 H348" stroke="${C.sageDeep}" stroke-width="0"/>
-    <path d="M610 100 H850 V560 H610" fill="none" stroke="none"/></svg>`;
+    <rect x="224" y="344" width="36" height="204" fill="#dfe6dc" stroke="${ink38}" stroke-width="5"/><rect x="214" y="540" width="56" height="12" rx="3" fill="${ink38}"/>
+    <!-- water: down the roof, backing up at the edge, then into the board -->
+    <path d="M630 ${roofY(630) - 52} L372 ${roofY(372) - 44}" stroke="${SL}" stroke-width="9" stroke-linecap="round" stroke-dasharray="26 16"/>
+    <path d="M630 ${roofY(630) - 52} L400 ${roofY(400) - 46}" stroke="${SL}" stroke-width="9" stroke-linecap="round" opacity="0"/>
+    ${arrowHead(372, roofY(372) - 44, Math.atan2(roofY(372) - roofY(630) + 8, 372 - 630))}
+    <path d="M248 176 Q 306 166 312 ${roofY(330) - 10}" fill="none" stroke="${SL}" stroke-width="9" stroke-linecap="round"/>${arrowHead(312, roofY(330) + 4, Math.PI / 2 - 0.05)}
+    ${[[318, 276], [316, 322], [318, 366]].map(([a, b]) => `<path d="M${a} ${b - 14} q-9 14 -9 20 a9 9 0 0 0 18 0 q0 -6 -9 -20 Z" fill="${SL}"/>`).join("")}
+    <!-- hidden rot: a dashed ochre marker inside the board -->
+    <rect x="292" y="300" width="48" height="96" rx="10" fill="none" stroke="${C.ochre}" stroke-width="5" stroke-dasharray="9 8" opacity="0"/>
+    <rect x="296" y="330" width="40" height="64" rx="10" fill="none" stroke="${C.ochre}" stroke-width="5" stroke-dasharray="9 8"/>
+    ${svgBadge(168, 240, 1, { r: 27, bg: SL, fs: 31 })}
+    ${svgBadge(386, 262, 2, { r: 27, bg: SL, fs: 31 })}
+    ${svgBadge(388, 366, 3, { r: 27, bg: C.ochre, fs: 31 })}
+    <path d="M470 ${roofY(470) + 42} V 292" stroke="${C.sageDeep}" stroke-width="4"/>${svgBadge(470, 318, 4, { r: 27, bg: C.sageDeep, fs: 31 })}
+  </g></svg>`;
 const scene38 = `${desk({ top: SCENE_TOP, height: H, base: "#c99b66", dark: "#a97b45", planks: 5, seed: 21 })}
   <svg style="${abs(0, SCENE_TOP, 1000, H, "pointer-events:none")}" viewBox="0 0 1000 ${H}" aria-hidden="true"><defs><radialGradient id="wb" cx="70%" cy="6%" r="75%"><stop offset="0" stop-color="#fff3c2" stop-opacity=".5"/><stop offset="1" stop-color="#fff3c2" stop-opacity="0"/></radialGradient></defs><rect width="1000" height="${H}" fill="url(#wb)"/></svg>
   <div style="${abs(56, 400, 888, 612, "background:#f4f2ec;border-radius:4px;box-shadow:0 2px 3px rgba(40,20,5,.3),0 22px 38px rgba(40,20,5,.45);transform:rotate(-0.8deg);overflow:hidden")}">
     <div style="position:absolute;left:14px;top:20px;width:860px;height:560px;overflow:hidden">${gutterDiagram}</div>
     <span class="example" style="position:absolute;right:22px;top:20px;font-size:26px;padding:5px 12px;background:#f4f2ec;color:#4b4339">Example</span>
-    ${[0, 1, 2].map((k) => `<div style="${abs(0, 0, 0, 0)}"></div>`).join("")}</div>
+  </div>
   ${[0, 1, 2, 3].map((k) => {
     const x = 56 + (k % 2) * 456, y = 1040 + Math.floor(k / 2) * 150;
     return `<div data-check="caption" style="${abs(x, y, 432, 138, `box-sizing:border-box;display:flex;align-items:center;gap:14px;padding:12px 16px;border-radius:12px;background:linear-gradient(135deg,#d6b88b,#c8a679);border:2px solid #8a6a3a;box-shadow:0 3px 4px rgba(40,20,5,.3),0 14px 20px rgba(40,20,5,.4);transform:rotate(${[-0.5, 0.4, 0.4, -0.4][k]}deg)`)}">
       ${numBadge(k + 1, { size: 48, bg: k === 2 ? C.ochre : k === 3 ? C.sageDeep : SL, fs: 27 })}
       <div style="flex:1;min-width:0;font:600 24px/1.22 'Plex',sans-serif;color:#26180a">${esc(i38.items[k])}</div></div>`;
   }).join("")}
-  ${pencil({ x: 640, y: 1338, len: 340, rot: -3 })}`;
+  ${pencil({ x: 600, y: 985, len: 340, rot: -4 })}`;
 
 export const pins = [
   printable({ n: 28, scene: scene28, paper: "#e7ede4" }),
   printable({ n: 30, scene: scene30, paper: "#f4f2ec" }),
   printable({ n: 32, scene: scene32, paper: "#e4eae6" }),
-  printable({ n: 34, scene: scene34, paper: "#ebe9df" }),
+  printable({ n: 34, scene: scene34, paper: "#ebe9df", extraCss: ".top h1{font-size:76px}" }),
   printable({ n: 36, scene: scene36, paper: "#efe9dc" }),
   printable({ n: 38, scene: scene38, paper: "#f1e8d6" }),
 ];
