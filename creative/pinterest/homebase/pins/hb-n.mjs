@@ -82,8 +82,8 @@ function pin75() {
   const tabCols = ["#b7cdb7", "#e3cf9f", "#c5d6c0", "#ecdcb6", "#a9c4b0"];
   const TY = (k) => 468 + k * 134;
   const tab = (k) => `<div style="${abs(660, TY(k), 330, 98, `background:linear-gradient(${tabCols[k]},${tabCols[k]}ee);border-radius:0 18px 18px 0;box-shadow:0 3px 3px rgba(30,20,8,.25),0 10px 16px rgba(30,20,8,.3);display:flex;align-items:center;gap:14px;padding:0 14px 0 14px`)}">
-    ${disc(k + 1, 52)}<div style="font-size:25px;line-height:1.1;font-weight:700;color:#1a2420">${esc(labels[k])}</div></div>`;
-  const body = (k, extra = "") => `<div style="${abs(372, TY(k) - 52 - k * 6, 296, 760, `background:${tabCols[k]};border-radius:6px 0 0 6px;box-shadow:-2px 4px 8px rgba(30,20,8,.2);${extra}`)}"></div>`;
+    ${disc(k + 1, 52)}<div style="font-size:25px;line-height:1.1;font-weight:700;text-wrap:balance;color:#1a2420">${esc(labels[k])}</div></div>`;
+  const body = (k, extra = "") => `<div style="${abs(372, TY(k) - 52 - k * 6, 296, 1236 - (TY(k) - 52 - k * 6), `background:${tabCols[k]};border-radius:6px 0 0 6px;box-shadow:-2px 4px 8px rgba(30,20,8,.2);${extra}`)}"></div>`;
   const front = `<div style="${abs(372, TY(0) - 52, 618, 790, "transform:rotate(-2.2deg);transform-origin:0% 55%;filter:drop-shadow(0 26px 22px rgba(30,20,8,.45))")}">
       <div style="position:absolute;left:0;top:52px;width:296px;height:738px;background:#f4ecd6;border-radius:6px 0 0 6px;box-shadow:inset 0 0 0 2px rgba(0,0,0,.08)">
         <div class="serif" style="position:absolute;left:34px;top:46px;font-size:210px;line-height:1;font-weight:500;color:${C.sage};opacity:.9">1</div>
@@ -126,7 +126,7 @@ function pin77() {
   const o3 = kr.map((c, k) => `<div style="${abs(X1 + 40 + k * 56, Y2 + 12 + k * 4, 170, 206, `transform:rotate(${-8 + k * 4}deg);transform-origin:50% 100%;background:${c};border-radius:5px;box-shadow:0 3px 4px rgba(30,20,8,.28),0 10px 16px rgba(30,20,8,.3)`)}"><div style="position:absolute;left:${20 + (k % 3) * 30}px;top:-22px;width:62px;height:24px;background:${c};border-radius:8px 8px 0 0;filter:brightness(.93)"></div></div>`).join("");
   // 4: laptop with a five-subfolder tree
   const bar = (w) => `<div style="height:9px;width:${w}px;background:#b9c6bd;border-radius:5px"></div>`;
-  const kids = [0, 1, 2, 3, 4].map((k) => `<div style="display:flex;align-items:center;gap:8px;margin:3px 0 3px 26px">${icon("folder", { size: 28, color: C.sageDeep, weight: "fill" })}${bar(60 + (k % 3) * 18)}</div>`).join("");
+  const kids = [0, 1, 2, 3, 4].map((k) => `<div style="display:flex;align-items:center;gap:8px;margin:1px 0 1px 26px">${icon("folder", { size: 26, color: C.sageDeep, weight: "fill" })}${bar(60 + (k % 3) * 18)}</div>`).join("");
   const o4 = `<div style="${abs(X2 + 20, Y2 + 10, 400, 214, `background:linear-gradient(#2d3338,#1f2428);border-radius:14px;${SH}`)}"><div style="position:absolute;inset:12px;background:#f6f3ea;border-radius:6px;padding:10px 16px">
       <div style="display:flex;align-items:center;gap:8px;margin-bottom:4px">${icon("folder-open", { size: 30, color: C.sageDeep, weight: "fill" })}${bar(90)}</div>${kids}</div></div>
     <div style="${abs(X2 + 4, Y2 + 222, 432, 22, "background:linear-gradient(#cfd4d8,#9aa1a7);border-radius:0 0 18px 18px;box-shadow:0 10px 14px rgba(15,30,20,.4)")}"></div>`;
@@ -149,7 +149,7 @@ function pin79() {
       <div style="position:absolute;left:46px;top:210px;width:58px;height:440px;background:#efeadc;border-radius:5px;box-shadow:inset 0 0 0 2px rgba(0,0,0,.15)"></div>
       <div style="position:absolute;left:0;top:40px;width:150px;height:10px;background:rgba(255,255,255,.12)"></div><div style="position:absolute;left:0;bottom:40px;width:150px;height:10px;background:rgba(255,255,255,.12)"></div></div>`;
   return `${desk({ base: "#7a5233", dark: "#5e3d22", planks: 7, seed: 11 })}
-    ${spine}${pg}${pencil({ x: 120, y: 1308, len: 460, rot: -1.5, body: "#e7b23f" })}${labelMaker({ x: 668, y: 1244, s: 0.52, rot: 6 })}`;
+    ${spine}${pg}${pencil({ x: 120, y: 1308, len: 460, rot: -1.5, body: "#e7b23f" })}${flags({ x: 690, y: 1236, s: 0.9, rot: 6 })}`;
 }
 
 /* =============================================================
@@ -191,7 +191,7 @@ function pin83() {
     <g transform="translate(206 190)"><path d="M0 0 H46 V62 Q23 76 0 62Z" fill="#f3ede4"/><path d="M46 14 C74 12 74 54 46 52" fill="none" stroke="#f3ede4" stroke-width="10"/></g>`;
   const tile = (svg, k) => `<div style="${abs(40 + k * 315, 396, 290, 360, `border-radius:20px;overflow:hidden;${SH}`)}"><svg viewBox="0 0 290 360" width="290" height="360" aria-hidden="true">${svg}</svg></div>
     <div style="${abs(40 + k * 315, 766, 290, 70, "font-size:26px;line-height:1.2;font-weight:700;color:#1a2420;text-align:center;display:grid;place-items:center")}">${esc(caps[k])}</div>`;
-  const card = `<div style="${abs(40, 858, 920, 436, `transform:rotate(-.5deg);background:linear-gradient(#d7b783,#c8a679);border-radius:8px 26px 26px 8px;${SH};overflow:hidden`)}">
+  const card = `<div style="${abs(40, 858, 920, 384, `transform:rotate(-.5deg);background:linear-gradient(#d7b783,#c8a679);border-radius:8px 26px 26px 8px;${SH};overflow:hidden`)}">
       <div style="position:absolute;left:0;top:0;bottom:0;width:14px;background:${C.ochre}"></div>
       <div class="serif" style="position:absolute;left:64px;top:36px;font-size:52px;font-weight:600;color:#1a2420">What never goes in</div>
       <div style="position:absolute;left:64px;right:50px;top:122px;display:flex;gap:20px;align-items:center">${idisc("lock-key", 58)}<div style="font-size:32px;line-height:1.2;color:#241d10;font-weight:500">${esc(i.items[0])}</div></div>
@@ -199,7 +199,7 @@ function pin83() {
       <div style="position:absolute;left:64px;right:50px;top:262px;display:flex;gap:20px;align-items:center">${idisc("map-pin", 58, C.sage)}<div class="serif" style="font-size:42px;line-height:1.1;color:#1a2420;font-weight:600">${esc(i.items[4])}</div></div>
     </div>`;
   const bg = `<div style="${abs(0, SCENE_TOP, 1000, 982, "background:#dbe4e4;background-image:repeating-linear-gradient(0deg,rgba(255,255,255,.22) 0 2px,transparent 2px 7px),repeating-linear-gradient(90deg,rgba(60,90,90,.06) 0 2px,transparent 2px 7px);box-shadow:inset 0 0 120px rgba(40,70,70,.25)")}"></div>`;
-  return `${bg}${[t1, t2, t3].map(tile).join("")}${card}${pencil({ x: 80, y: 1312, len: 380, rot: -1, body: C.sage })}${flags({ x: 760, y: 1240, s: 0.8, rot: 5 })}`;
+  return `${bg}${[t1, t2, t3].map(tile).join("")}${card}${pencil({ x: 80, y: 1312, len: 380, rot: -1, body: C.sage })}${labelMaker({ x: 640, y: 1262, s: 0.62, rot: -4 })}`;
 }
 
 /* =============================================================
@@ -209,14 +209,14 @@ function pin85() {
   const t = items(85);
   const bg = `<div style="${abs(0, SCENE_TOP, 545, 982, "background:#e8dcc2;background-image:repeating-linear-gradient(90deg,rgba(150,120,70,.08) 0 2px,transparent 2px 9px);box-shadow:inset 0 0 90px rgba(100,70,30,.25)")}"></div>
     <div style="${abs(545, SCENE_TOP, 455, 982, "background:#cfdecd;background-image:radial-gradient(rgba(60,100,70,.12) 1.4px,transparent 2px);background-size:13px 13px;box-shadow:inset 0 0 90px rgba(40,80,50,.25)")}"></div>`;
-  const cover = `<div style="${abs(8, 396, 600, 640, `transform:rotate(-2deg);background:linear-gradient(135deg,#cfae78,#bd9a62);border-radius:14px;${SH}`)}"></div>`;
+  const cover = `<div style="${abs(8, 396, 600, 596, `transform:rotate(-2deg);background:linear-gradient(135deg,#cfae78,#bd9a62);border-radius:14px;${SH}`)}"></div>`;
   const pg = sheet({ src: bookPage(6), x: 22, y: 416, w: 548, tilt: -2, crop: { x0: 0, y0: 0, x1: 1, y1: 0.74 }, id: "pg" });
-  const ph = phone({ src: screen("seasons"), y0: 56, y1: 560, width: 430, tilt: 2.5, x: 548, y: 420 });
+  const ph = phone({ src: screen("seasons"), y0: 56, y1: 470, width: 430, tilt: 2, x: 528, y: 420, closed: true });
   const plus = `<div style="${abs(522, 640, 76, 76, `border-radius:50%;background:${C.sageDeep};display:grid;place-items:center;border:5px solid #fbfaf6;${SH};z-index:4`)}">${icon("plus", { size: 40, color: "#fff", weight: "bold" })}</div>`;
-  const blk = (ic, text, x, y, w) => `<div style="${abs(x, y, w, 150, "display:flex;gap:16px;align-items:flex-start")}">${idisc(ic, 54, C.sageDeep)}<div style="font-size:27px;line-height:1.24;color:#1a2420;font-weight:600">${esc(text)}</div></div>`;
+  const blk = (ic, text, x, y, w) => `<div style="${abs(x, y, w, 150, "display:flex;gap:16px;align-items:flex-start")}">${idisc(ic, 54, C.sageDeep)}<div style="font-size:26px;line-height:1.22;color:#1a2420;font-weight:600">${esc(text)}</div></div>`;
   const banner = `<div style="${abs(40, 1226, 920, 84, `background:linear-gradient(${C.sage},${C.sageDeep});border-radius:42px;${SH};display:flex;align-items:center;justify-content:center;gap:18px;color:#fff;font:600 38px 'Newsreader',Georgia,serif`)}" data-check="banner">${icon("plus-circle", { size: 44, color: "#fff", weight: "bold" })}${esc(t[3])}</div>`;
   return `${bg}${cover}${rings(36, [520, 700, 880], { r: 26 })}${pg}${ph}${plus}
-    ${blk("notebook", t[0], 40, 1030, 470)}${blk("hourglass", t[1], 40, 1136, 470)}${blk("device-mobile", t[2], 560, 1030, 400)}${banner}`;
+    ${blk("notebook", t[0], 40, 1034, 480)}${blk("hourglass", t[1], 40, 1142, 480)}${blk("device-mobile", t[2], 570, 1034, 400)}${banner}`;
 }
 
 /* =============================================================
@@ -236,7 +236,7 @@ function pin87() {
     <div style="${abs(340, SCENE_TOP, 6, 982, "background:#fbfaf6;box-shadow:0 0 14px rgba(0,0,0,.35)")}"></div>`;
   const cover = `<div style="${abs(366, 396, 624, 810, `transform:rotate(1.2deg);background:linear-gradient(135deg,${C.sageDeep},#3b6249);border-radius:16px;${SH}`)}"></div>`;
   const pg = sheet({ src: bookPage(6), x: 392, y: 420, w: 586, tilt: 1.2, id: "pg" });
-  const tick = `<div style="${abs(884, 1134, 112, 112, `border-radius:50%;background:${C.sage};border:6px solid #fbfaf6;display:grid;place-items:center;${SH}`)}">${icon("check", { size: 66, color: "#fff", weight: "bold" })}</div>`;
+  const tick = `<div style="${abs(890, 1108, 100, 100, `border-radius:50%;background:${C.sage};border:6px solid #fbfaf6;display:grid;place-items:center;${SH}`)}">${icon("check", { size: 66, color: "#fff", weight: "bold" })}</div>`;
   const chip = (ic, text, x, y, w, h) => `<div style="${abs(x, y, w, h, `background:#fbfaf6;border-radius:22px;${SH};display:flex;gap:14px;align-items:center;padding:0 18px`)}">${idisc(ic, 48)}<div style="font-size:25px;line-height:1.2;font-weight:700;color:#1a2420">${esc(text)}</div></div>`;
   return `${left}${stalled}${right2}${cover}${rings(392, [560, 800, 1040], { r: 26 })}${pg}${tick}
     ${chip("calendar-plus", t[0], 24, 1236, 330, 76)}${chip("hand-pointing", t[1], 372, 1228, 608, 92)}`;
@@ -245,10 +245,10 @@ function pin87() {
 /* ---------- the pins ---------- */
 export const pins = [
   printable({ n: 75, scene: pin75(), paper: "#f1e7d2" }),
-  printable({ n: 77, scene: pin77(), paper: "#e3ebdd" }),
+  printable({ n: 77, scene: pin77(), paper: "#e3ebdd", extraCss: ".top h1{font-size:64px}" }),
   printable({ n: 79, scene: pin79(), paper: "#efe9dc", extraCss: ".top h1{font-size:68px}" }),
   printable({ n: 81, scene: pin81(), paper: "#f3ead6", sub: false }),
   printable({ n: 83, scene: pin83(), paper: "#e6eeee", extraCss: ".top h1{font-size:68px}" }),
-  printable({ n: 85, scene: pin85(), paper: "#eee6d4" }),
+  printable({ n: 85, scene: pin85(), paper: "#eee6d4", extraCss: ".top h1{font-size:68px}.top p{font-size:25px}" }),
   printable({ n: 87, scene: pin87(), paper: "#e8eadf", extraCss: ".top h1{font-size:72px}" }),
 ];

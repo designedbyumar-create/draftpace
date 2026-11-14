@@ -99,13 +99,13 @@ function cloth({ x, y, w = 620, h = 190, rot = -3 }) {
     <path d="M24 154 Q200 168 330 160 T598 156" stroke="#8a6f1c" stroke-opacity=".55" stroke-width="3" stroke-dasharray="9 7" fill="none"/></svg>`;
 }
 
-/** An open-end wrench, flat steel. */
+/** An open-end wrench, flat steel, jaws at both ends. */
 function wrench({ x, y, len = 420, rot = -24 }) {
   return `<svg style="${abs(x, y, len, 110, `transform:rotate(${rot}deg);filter:${SOFT}`)}" viewBox="0 0 420 110" aria-hidden="true">
-    <path d="M70 45 H340 V65 H70Z" fill="#a9b1b6"/><path d="M70 45 H340 V52 H70Z" fill="#fff" opacity=".4"/>
-    <path d="M70 55 m-60 0 a50 50 0 1 1 78 -40 L70 40 V70 L88 95 A50 50 0 0 1 10 55Z" fill="#a9b1b6" transform="translate(10 0)"/>
-    <path d="M16 55 L70 40 V70Z" fill="#6c757b"/>
-    <circle cx="372" cy="55" r="34" fill="#a9b1b6"/><circle cx="372" cy="55" r="15" fill="#6c757b"/><circle cx="372" cy="55" r="34" fill="none" stroke="#fff" stroke-opacity=".35" stroke-width="3"/></svg>`;
+    <defs><mask id="wm"><rect width="420" height="110" fill="#fff"/><rect x="0" y="39" width="66" height="32" fill="#000"/><rect x="364" y="43" width="60" height="24" fill="#000"/></mask></defs>
+    <g mask="url(#wm)"><rect x="70" y="42" width="290" height="26" rx="6" fill="#a9b1b6"/><circle cx="64" cy="55" r="46" fill="#a9b1b6"/><circle cx="364" cy="55" r="36" fill="#a9b1b6"/>
+    <rect x="70" y="42" width="290" height="8" fill="#fff" opacity=".4"/><circle cx="64" cy="55" r="46" fill="none" stroke="#fff" stroke-opacity=".3" stroke-width="3"/></g>
+    <circle cx="214" cy="55" r="7" fill="#6c757b"/></svg>`;
 }
 
 /** A paper receipt with a torn edge. Rules only; no words, no figures. */
@@ -174,13 +174,13 @@ const P5 = promo({
   highlight: ["Seasonal Jobs", "They Belong"],
   appTagline: "fall home maintenance checklist app",
   features: [
-    { icon: "leaf", label: "Spring, Summer, Fall, Winter", text: "Four seasons, one list" },
-    { icon: "calendar-check", label: "October", text: "Seasonal work raised in the month it actually belongs to" },
+    { icon: "leaf", label: "Spring, Summer, Fall, Winter", text: "Seasonal work" },
+    { icon: "calendar-check", label: "October", text: "Raised in the month it actually belongs to" },
     { icon: "fire", label: "Annual boiler service", text: "October" },
     { icon: "bell-ringing", label: "Test the smoke alarms", text: "October" },
   ],
   phone: place({ src: screen("seasons"), y0: 60, cut: 700, width: 470, tilt: -7, lines: L5, tag: { x: 16, y: 574 } }),
-  prop: leafPile({ x: 620, y: 1130 }),
+  prop: leafPile({ x: 50, y: 1090 }),
 });
 
 // 9: the history screen, three entries, with a wrench and a blank receipt.
@@ -193,10 +193,10 @@ const P9 = promo({
   highlight: ["Who Did the Work,", "What It Cost"],
   appTagline: "home repair history log",
   features: [
-    { icon: "wrench", label: "The work", text: "History keeps the work" },
-    { icon: "user", label: "The person", text: "The person who did it" },
+    { icon: "wrench", label: "The work", text: "What was taken care of, when" },
+    { icon: "user", label: "The person", text: "Who did it" },
     { icon: "coins", label: "The cost", text: "And what it cost" },
-    { icon: "question", label: "A year from now", text: "The question three years from now has an answer" },
+    { icon: "question", label: "Your home's memory", text: "So the question three years from now has an answer" },
   ],
   phone: place({ src: screen("history"), y0: 56, cut: 640, width: 480, tilt: 3, lines: L9, tag: { x: 16, y: 412 } }),
   prop: `${receipt({ x: 770, y: 1040, w: 200, rot: 10 })}${wrench({ x: 540, y: 1220, len: 420, rot: -14 })}`,
@@ -215,7 +215,7 @@ const P13 = promo({
     { icon: "calendar-x", label: "The notice deadline", text: "Decide before the notice deadline" },
     { icon: "arrows-clockwise", label: "Lease renews", text: "Lease, every year" },
     { icon: "shield-check", label: "Renters insurance", text: "Review before it renews, every year" },
-    { icon: "check-square", label: "Untick what does not apply", text: "And change any of it later" },
+    { icon: "check-square", label: "Untick anything that doesn't apply", text: "And change any of it later" },
   ],
   screen: { src: asset("renting-care-list.png"), y0: 0, y1: 474, width: 500, tilt: 5 },
   prop: `${leaseFolder({ x: 40, y: 1130, w: 330, rot: 6 })}${keysOnRing({ x: 300, y: 1100, rot: -14, s: 0.9 })}`,
@@ -231,13 +231,14 @@ const P17 = promo({
   highlight: ["You Untick What"],
   appTagline: "home maintenance schedule app",
   features: [
-    { icon: "house-line", label: "Tell it whether you own or rent", text: "Then tap what your home has" },
-    { icon: "hand-tap", label: "Tap what your home has", text: "It suggests the care" },
-    { icon: "check-square", label: "Untick anything", text: "That does not apply" },
+    { icon: "house-line", label: "Tell it whether you own or rent", text: "" },
+    { icon: "hand-tap", label: "Tap what your home has", text: "It suggests the care each one usually needs" },
+    { icon: "check-square", label: "Untick anything that does not apply", text: "And change any of it later" },
     { icon: "seal-check", label: "Nothing is created", text: "Without you confirming it" },
   ],
   screen: { src: asset("area-care-list.png"), y0: 8, y1: 780, width: 460, tilt: -5 },
-  prop: furnaceFilter({ x: 50, y: 1060, w: 290, h: 350, rot: -9 }),
+  prop: furnaceFilter({ x: 60, y: 1020, w: 260, h: 310, rot: -9 }),
+  extraCss: ".feat span:empty{display:none}",
 });
 
 // 21: the real condenser-coils card; the phone's foot rests under a cloth.
@@ -251,12 +252,11 @@ const P21 = promo({
   appTagline: "home maintenance log app",
   features: [
     { icon: "hand-pointing", label: "Act on a job or push it back", text: "Action, or Snooze" },
-    { icon: "user", label: "Who did it", text: "Recorded when you act" },
-    { icon: "coins", label: "What it cost", text: "Recorded when you act" },
-    { icon: "notepad", label: "Anything worth remembering", text: "Next time" },
+    { icon: "user", label: "Who did it", text: "Acting records what actually happened" },
+    { icon: "coins", label: "What it cost", text: "And anything worth remembering next time" },
   ],
-  phone: place({ src: screen("workspace"), y0: 470, cut: 785, width: 520, tilt: -4, lines: L21, headSize: 108 }),
-  prop: `${cloth({ x: 400, y: 1120, w: 640, h: 195, rot: -3 })}${pencil({ x: 430, y: 1250, len: 400, rot: -6 })}`,
+  phone: place({ src: screen("workspace"), y0: 560, cut: 785, width: 490, tilt: -4, lines: L21, headSize: 108, xShift: 14 }),
+  prop: `${cloth({ x: 420, y: 1090, w: 640, h: 195, rot: -3 })}${pencil({ x: 450, y: 1215, len: 400, rot: -6 })}`,
 });
 
 // 59: the fall pin, the same seasons screen but cropped tight on the tabs and the list.
