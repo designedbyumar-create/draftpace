@@ -255,8 +255,8 @@ const P21 = promo({
     { icon: "user", label: "Who did it", text: "Acting records what actually happened" },
     { icon: "coins", label: "What it cost", text: "And anything worth remembering next time" },
   ],
-  phone: place({ src: screen("workspace"), y0: 560, cut: 785, width: 490, tilt: -4, lines: L21, headSize: 108, xShift: 14 }),
-  prop: `${cloth({ x: 420, y: 1090, w: 640, h: 195, rot: -3 })}${pencil({ x: 450, y: 1215, len: 400, rot: -6 })}`,
+  phone: place({ src: screen("workspace"), y0: 604, cut: 785, width: 490, tilt: -4, lines: L21, headSize: 108, xShift: 14 }),
+  prop: `${cloth({ x: 420, y: 1040, w: 640, h: 195, rot: -3 })}${pencil({ x: 450, y: 1165, len: 400, rot: -6 })}`,
 });
 
 // 59: the fall pin, the same seasons screen but cropped tight on the tabs and the list.

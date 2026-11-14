@@ -59,28 +59,28 @@ function pin96() {
   const i = idea(96);
   const rows = i.items;
   // The alarm row is the third; the safety tag sits beside it.
-  const rowH = [112, 66, 148, 112];
+  const rowH = [124, 76, 160, 124];
   let top = 0;
   const list = rows.map((t, k) => {
     const y = top;
     top += rowH[k];
     return `<div style="${abs(0, y, 740, rowH[k] - 10, "display:flex;align-items:flex-start;gap:22px;border-bottom:2.5px dashed rgba(70,45,15,.38)")}">
       <div style="flex:none;width:38px;height:38px;margin-top:5px;border:4px solid ${C.ink};border-radius:8px;background:rgba(255,250,236,.55)"></div>
-      <div style="font:500 31px/1.28 'Plex',sans-serif;color:${C.ink};width:${k === 2 ? 560 : 640}px">${esc(t)}</div></div>`;
+      <div style="font:500 31px/1.28 'Plex',sans-serif;color:${C.ink};width:${k === 2 ? 580 : 640}px">${esc(t)}</div></div>`;
   }).join("");
-  const card = `<div style="${abs(66, 700, 868, 592, "transform:rotate(-1.2deg)")}">
+  const card = `<div style="${abs(66, 740, 868, 560, "transform:rotate(-1.2deg)")}">
     <div style="position:absolute;inset:0;border-radius:14px;background:linear-gradient(160deg,#dcc196,#c9a577);box-shadow:0 3px 4px rgba(40,20,5,.3),0 26px 46px rgba(40,20,5,.42)"></div>
     <div style="position:absolute;inset:0;border-radius:14px;background:repeating-linear-gradient(90deg,rgba(120,80,30,.05) 0 2px,transparent 2px 7px)"></div>
     <div style="${abs(60, 48, 760, 500)}">${list}</div>
-    ${safetyTag(676, 48 + 112 + 66 + 8, 140)}
+    ${safetyTag(716, 48 + 124 + 76 + 10, 140)}
   </div>`;
   const scene = `
   <div style="${abs(0, 372, 1000, 1000, "background:linear-gradient(180deg,#ece5d3,#e4dcc7)")}"></div>
   <div style="${abs(0, 372, 1000, 1000, "background:repeating-linear-gradient(90deg,rgba(120,100,60,.07) 0 2px,transparent 2px 64px)")}"></div>
   <div style="${abs(0, 372, 1000, 1000, "background:radial-gradient(ellipse at 22% 6%,rgba(255,255,255,.55),transparent 60%),radial-gradient(ellipse at 90% 100%,rgba(40,30,10,.22),transparent 60%)")}"></div>
   ${hookRail({ x: 80, y: 440, w: 560, hooks: [150, 330, 520] })}
-  ${keys({ x: 232, y: 492, w: 186, rot: 2 })}
-  ${keys({ x: 420, y: 500, w: 130, rot: -4, tag: C.sageDeep })}
+  ${keys({ x: 232, y: 486, w: 170, rot: 2 })}
+  ${keys({ x: 430, y: 494, w: 120, rot: -4, tag: C.sageDeep })}
   <div style="${abs(700, 430, 220, 120, "display:flex;align-items:center;justify-content:center;opacity:.9")}">${icon("house-line", { size: 110, color: C.sage, weight: "duotone" })}</div>
   ${card}`;
   return printable({ n: 96, paper: C.paper, scene });
@@ -94,7 +94,7 @@ function pin98() {
   const monClauses = monday.replace(/^By Monday, /, "").replace(/\.$/, "").split(/, (?:and )?/); // the shutoffs are found / the meters are photographed / the smoke alarms are tested
   const afterWeekend = weekend.replace(/^By the following weekend, /, ""); // the inspection report is marked up with a date beside each item
   const heights = [0.5, 0.8, 0.93, 1, 0.86, 0.74, 0.62, 0.52, 0.44, 0.36, 0.29, 0.23, 0.18, 0.13, 0.09, 0.06];
-  const bw = 40, gap = 14, cx0 = 54, cyBase = 262, chartH = 220;
+  const bw = 36, gap = 13, cx0 = 54, cyBase = 262, chartH = 220;
   const bars = heights.map((hh, k) => {
     const hpx = Math.max(8, hh * chartH);
     const x = cx0 + k * (bw + gap);
@@ -118,11 +118,11 @@ function pin98() {
     <div style="position:absolute;inset:0;border-radius:22px;background:${C.paperLight};box-shadow:0 4px 6px rgba(0,0,0,.3),0 30px 56px rgba(0,0,0,.5)"></div>
     <div style="position:absolute;inset:0;border-radius:22px;border:3px solid #e1e6dc"></div>
     ${exampleTag(722, 24)}
-    <div class="eyebrow" style="${abs(34, 40, 400, 30)}">By Monday</div>
-    ${chart.replace("top:56px", "top:70px")}
-    <div style="${abs(0, 436, 900, 150)}">${tiles}</div>
-    <div class="eyebrow" style="${abs(34, 606, 600, 30)}">By the following weekend</div>
-    <div style="${abs(28, 648, 844, 150, "background:#fff;border:2.5px solid #d7dfd3;border-radius:16px;box-shadow:0 6px 12px rgba(30,40,30,.12);display:flex;align-items:center;gap:22px;padding:0 26px")}" data-check="note">
+    ${chart.replace("top:56px", "top:50px")}
+    <div class="eyebrow" style="${abs(34, 408, 600, 30)}">By Monday</div>
+    <div style="${abs(0, 448, 900, 150)}">${tiles}</div>
+    <div class="eyebrow" style="${abs(34, 624, 600, 30)}">By the following weekend</div>
+    <div style="${abs(28, 664, 844, 150, "background:#fff;border:2.5px solid #d7dfd3;border-radius:16px;box-shadow:0 6px 12px rgba(30,40,30,.12);display:flex;align-items:center;gap:22px;padding:0 26px")}" data-check="note">
       <div style="flex:none">${icon("clipboard-text", { size: 66, color: C.sageDeep, weight: "duotone" })}</div>
       <div style="font:600 32px/1.25 'Plex',sans-serif;color:${C.ink}">${esc(cap(afterWeekend))}</div></div>
   </div>`;
@@ -132,7 +132,7 @@ function pin98() {
   <div style="${abs(0, 372, 1000, 1000, "background:radial-gradient(ellipse at 20% 5%,rgba(255,255,255,.18),transparent 60%),radial-gradient(ellipse at 90% 100%,rgba(0,0,0,.35),transparent 60%)")}"></div>
   ${board}
   ${movingBox({ x: 690, y: 1186, w: 280, rot: 2 })}
-  ${keys({ x: 70, y: 1196, w: 120, rot: 74 })}`;
+  `;
   return printable({ n: 98, paper: "#e4ebe1", scene });
 }
 
@@ -153,7 +153,7 @@ function alarmArt() {
     <circle cx="300" cy="196" r="128" fill="#fbfaf6" ${stroke}/><circle cx="300" cy="196" r="104" fill="none" stroke="${C.ink}" stroke-width="3" opacity=".5"/>
     ${slots(300, 196, 176)}
     <circle cx="300" cy="196" r="38" fill="${C.wash}" ${stroke}/><circle cx="300" cy="196" r="14" fill="${C.sage}"/><circle cx="388" cy="118" r="7" fill="${C.sage}"/>
-    <ellipse cx="700" cy="226" rx="118" ry="20" fill="#000" opacity=".12"/>
+    <ellipse cx="700" cy="226" rx="100" ry="20" fill="#000" opacity=".12"/>
     <rect x="590" y="94" width="220" height="220" rx="46" fill="#fbfaf6" ${stroke}/><rect x="610" y="114" width="180" height="180" rx="32" fill="none" stroke="${C.ink}" stroke-width="3" opacity=".5"/>
     <rect x="636" y="140" width="128" height="92" rx="10" fill="${C.wash}" ${stroke}/>
     <text x="700" y="203" text-anchor="middle" font-family="Plex,sans-serif" font-weight="700" font-size="56" fill="${C.ink}">CO</text>
@@ -168,8 +168,8 @@ function pin99() {
   const i = idea(99);
   const [eyebrow, big] = i.headline.split(": ");
   const [test, replace] = i.items[1].split(", ").map(cap);
-  const chip = (x, ic, label) => `<div style="${abs(x, 1130, 420, 120, "display:flex;align-items:center;gap:20px;padding:0 28px;background:linear-gradient(160deg,#dcc196,#c9a577);border-radius:14px;box-shadow:0 3px 4px rgba(40,20,5,.3),0 16px 26px rgba(40,20,5,.35)")}">
-    ${icon(ic, { size: 56, color: C.ink, weight: "duotone" })}<div style="font:600 36px/1.1 'Plex',sans-serif;color:${C.ink}">${esc(label)}</div></div>`;
+  const chip = (x, ic, label) => `<div style="${abs(x, 1150, 420, 130, "display:flex;align-items:center;gap:16px;padding:0 22px;background:linear-gradient(160deg,#dcc196,#c9a577);border-radius:14px;box-shadow:0 3px 4px rgba(40,20,5,.3),0 16px 26px rgba(40,20,5,.35)")}">
+    ${icon(ic, { size: 48, color: C.ink, weight: "duotone" })}<div style="font:600 32px/1.1 'Plex',sans-serif;white-space:nowrap;color:${C.ink}">${esc(label)}</div></div>`;
   const body = `
   <div style="${abs(0, 0, 1000, 372, "background:#e6ede2")}"></div>
   <div style="position:absolute;left:64px;right:64px;top:64px" data-check="headline" data-bottom-max="366">
@@ -179,9 +179,9 @@ function pin99() {
   <div style="position:absolute;left:560px;top:690px;width:3px;height:0"></div>
   ${safetyTag(780, 700, 150, "transform:rotate(4deg)")}
   <div style="${abs(500, 296, 3, 3)}"></div>
-  <div style="${abs(60, 810, 880, 280, "background:#fbfaf6;border-radius:18px;box-shadow:0 4px 6px rgba(30,40,30,.15),0 22px 40px rgba(30,40,30,.22)")}"></div>
-  <div style="${abs(60, 810, 14, 280, `background:${C.sage};border-radius:18px 0 0 18px`)}"></div>
-  <div data-check="quote" style="${abs(110, 836, 800, 232, "display:flex;align-items:center;font:500 62px/1.12 'Newsreader',Georgia,serif;letter-spacing:-.01em;color:#1a2420")}">${esc(i.sub)}</div>
+  <div style="${abs(60, 820, 880, 280, "background:#fbfaf6;border-radius:18px;box-shadow:0 4px 6px rgba(30,40,30,.15),0 22px 40px rgba(30,40,30,.22)")}"></div>
+  <div style="${abs(60, 820, 14, 280, `background:${C.sage};border-radius:18px 0 0 18px`)}"></div>
+  <div data-check="quote" style="${abs(110, 846, 800, 232, "display:flex;align-items:center;font:500 62px/1.12 'Newsreader',Georgia,serif;letter-spacing:-.01em;color:#1a2420")}">${esc(i.sub)}</div>
   ${chip(60, "bell-ringing", test)}${chip(520, "calendar-check", replace)}
   ${footFor(i)}`;
   return { n: 99, id: `99-${i.headline.toLowerCase().replace(/[^a-z0-9]+/g, "-").slice(0, 40).replace(/-$/, "")}`, html: page(p, { body, paper: "#e6ede2", css: ".foot{z-index:7}" }) };
@@ -205,14 +205,14 @@ function hoseDrawing() {
       <circle cx="420" cy="112" r="20" fill="#e9e4d4" ${line}/><path d="M420 112 L420 62" ${line} fill="none" stroke-width="9"/><circle cx="420" cy="58" r="12" fill="${C.sage}" stroke="${C.ink}" stroke-width="4"/>
       <rect x="86" y="170" width="608" height="460" rx="22" fill="#fbfaf6" ${line}/>
       <rect x="112" y="196" width="556" height="420" rx="14" fill="#f1efe6" stroke="${C.ink}" stroke-width="3" opacity=".9"/>
-      <g stroke="${C.ink}" stroke-width="5" stroke-linecap="round">${Array.from({ length: 7 }, (_, k) => `<path d="M470 ${246 + k * 22} H640"/>`).join("")}</g>
+      <g stroke="${C.ink}" stroke-width="5" stroke-linecap="round">${Array.from({ length: 7 }, (_, k) => `<path d="M470 ${350 + k * 22} H640"/>`).join("")}</g>
       <rect x="140" y="440" width="220" height="110" rx="8" fill="#fff" stroke="${C.ink}" stroke-width="3"/><g stroke="${C.rule}" stroke-width="5" stroke-linecap="round"><path d="M160 468 H330"/><path d="M160 494 H300"/><path d="M160 520 H318"/></g>
       <path d="M690 340 C 740 340 760 400 700 470" fill="none" stroke="${C.ink}" stroke-width="14" stroke-linecap="round"/><path d="M690 340 C 740 340 760 400 700 470" fill="none" stroke="#56615d" stroke-width="8" stroke-linecap="round"/>
-      ${hose("M238 130 C 128 160 128 262 238 294")}
-      ${hose("M420 130 C 530 160 530 262 420 294")}
-      ${nut(238, 126)}${nut(420, 126)}${nut(238, 298)}${nut(420, 298)}
-      ${tag(124, 186, -4)}${tag(500, 180, 5)}
-      <path d="M200 340 c 0 0 -17 24 -17 36 a17 17 0 0 0 34 0 c 0 -12 -17 -36 -17 -36 Z" fill="${C.slate}" opacity=".95"/><path d="M193 372 a10 10 0 0 0 8 10" stroke="#fff" stroke-width="4" fill="none" stroke-linecap="round" opacity=".6"/>
+      ${hose("M238 130 C 238 210 170 220 170 292")}
+      ${hose("M420 130 C 420 210 500 220 500 292")}
+      ${nut(238, 126)}${nut(420, 126)}${nut(170, 298)}${nut(500, 298)}
+      ${tag(24, 236, -4)}${tag(528, 214, 5)}
+      <path d="M170 346 c 0 0 -17 24 -17 36 a17 17 0 0 0 34 0 c 0 -12 -17 -36 -17 -36 Z" fill="${C.slate}" opacity=".95"/><path d="M163 378 a10 10 0 0 0 8 10" stroke="#fff" stroke-width="4" fill="none" stroke-linecap="round" opacity=".6"/>
     </g></svg>`;
 }
 

@@ -105,11 +105,10 @@ function pin70() {
     <div class="mono" style="${abs(44, 126, 640, 100, "font-weight:600;font-size:88px;line-height:100px;color:#1f2623;letter-spacing:0")}">2308-114477</div>
     <div style="${abs(40, 118, 114, 114, `border:7px solid ${C.sage};border-radius:50%`)}"></div>
     <div style="${abs(146, 118, 114, 114, `border:7px solid ${C.sage};border-radius:50%`)}"></div>
-    <div style="${abs(96, 84, 4, 34, `background:${C.sage}`)}"></div>
-    <div style="${abs(198, 232, 4, 34, `background:${C.sage}`)}"></div>
-    <div style="${abs(48, 52, 96, 36, `background:${C.sage};border-radius:18px;color:#fff;font:700 26px/36px 'Plex',sans-serif;text-align:center`)}"></div>
-    <div style="${abs(60, 64, 80, 36, `background:${C.sage};border-radius:18px;color:#fff;font:700 26px/36px 'Plex',sans-serif;text-align:center`)}">year</div>
-    <div style="${abs(146, 264, 112, 40, `background:${C.sage};border-radius:20px;color:#fff;font:700 26px/40px 'Plex',sans-serif;text-align:center`)}">month</div>
+    <div style="${abs(91, 232, 4, 34, `background:${C.sage}`)}"></div>
+    <div style="${abs(204, 232, 4, 34, `background:${C.sage}`)}"></div>
+        <div style="${abs(52, 264, 80, 40, `background:${C.sage};border-radius:18px;color:#fff;font:700 26px/40px 'Plex',sans-serif;text-align:center`)}">year</div>
+    <div style="${abs(150, 264, 112, 40, `background:${C.sage};border-radius:20px;color:#fff;font:700 26px/40px 'Plex',sans-serif;text-align:center`)}">month</div>
     ${barcode(430, 262)}
     ${rows(44, 318, 3, 340)}
   </div>`;
@@ -157,14 +156,14 @@ function pin72() {
     <path d="M385 894 V1170" stroke="#000" stroke-opacity=".06" stroke-width="3"/>
     <rect x="250" y="1086" width="0" height="0"/></svg>
   ${clap}
-  ${stop({ x: 385 - 165, y: 468, n: 6, label: "Attic, basement and closets", art: (ax, ay) => atticObj({ x: ax, y: ay + 6, w: 150 }), w: 330, ah: 104, aw: 124, lh: 34 }).replace('height:62px', "height:34px")}
-  ${stop({ x: 95, y: 664, n: 3, label: "Breaker panel", art: (ax, ay) => panelObj({ x: ax + 7, y: ay - 2, w: 136 }), ah: 150 })}
-  ${stop({ x: 400, y: 664, n: 4, label: "Every major appliance", art: (ax, ay) => washerObj({ x: ax + 4, y: ay - 6, w: 142 }), ah: 150 })}
+  ${stop({ x: 385 - 165, y: 446, n: 6, label: "Attic, basement and closets", art: (ax, ay) => atticObj({ x: ax, y: ay + 6, w: 150 }), w: 330, ah: 104, aw: 124, lh: 34 }).replace('height:62px', "height:34px")}
+  ${stop({ x: 95, y: 646, n: 3, label: "Breaker panel", art: (ax, ay) => panelObj({ x: ax + 7, y: ay - 2, w: 136 }), ah: 150 })}
+  ${stop({ x: 400, y: 646, n: 4, label: "Every major appliance", art: (ax, ay) => washerObj({ x: ax + 4, y: ay - 6, w: 142 }), ah: 150 })}
   ${stop({ x: 95, y: 912, n: 1, label: "Furnace, boiler or heat pump", art: (ax, ay) => furnaceObj({ x: ax - 4, y: ay - 4, w: 158 }), ah: 150 })}
   ${stop({ x: 400, y: 912, n: 2, label: "Water heater", art: (ax, ay) => waterHeater({ x: ax + 30, y: ay - 8, w: 92 }), ah: 150 })}
   ${stop({ x: 772, y: 690, n: 5, label: "Utility meters", art: (ax, ay) => meterObj({ x: ax + 6, y: ay - 8, w: 130 }), w: 190, ah: 150, aw: 150 })}
   ${flashlight({ x: 60, y: 1250, len: 300, rot: -3 })}
-  ${phoneFlat({ x: 690, y: 1196, w: 120, h: 216, rot: 14, screen: `<div style="${abs(0, 0, 100, 200, "background:linear-gradient(#cfe3e0,#e8e2d0)")}"></div><div style="${abs(14, 48, 72, 80, `background:${C.sage};border-radius:8px;opacity:.9`)}"></div><div style="${abs(24, 74, 52, 28, "background:#f4eddc;border-radius:3px")}"></div>` })}
+  ${phoneFlat({ x: 700, y: 1170, w: 100, h: 176, rot: 14, screen: `<div style="${abs(0, 0, 100, 200, "background:linear-gradient(#cfe3e0,#e8e2d0)")}"></div><div style="${abs(14, 48, 72, 80, `background:${C.sage};border-radius:8px;opacity:.9`)}"></div><div style="${abs(24, 74, 52, 28, "background:#f4eddc;border-radius:3px")}"></div>` })}
   ${brassKey({ x: 400, y: 1250, len: 150, rot: -8 })}`;
   return printable({ n: 72, scene, paper: "#e4ebe5", bottomMax: 368 });
 }
@@ -180,12 +179,12 @@ function pin74() {
     <path d="M730 420 V500 H800 V560"/><rect x="480" y="880" width="120" height="90" rx="3"/><path d="M540 880 V970 M480 925 H600"/><rect x="480" y="1150" width="120" height="90" rx="3"/><rect x="620" y="1150" width="0" height="0"/></svg>`;
   const ringObj = (cx, cy, n, art, d = 292) => `<div style="${abs(cx - d / 2, cy - d / 2, d, d, `border-radius:50%;background:#fbfaf6;border:9px solid ${C.sage};box-shadow:0 4px 6px rgba(20,40,25,.3),0 22px 34px rgba(20,40,25,.35)`)}"></div>
     <div style="${abs(cx - d / 2 - 12, cy - d / 2 - 12, d + 24, d + 24, `border-radius:50%;border:4px dashed ${C.sage};opacity:.55`)}"></div>${art}${badge(n, cx - d / 2 - 18, cy - d / 2 - 14, 78)}`;
-  const label = (x, y, w, t) => `<div data-check="label" class="serif" style="${abs(x, y, w, 120, `font-size:58px;line-height:1.04;font-weight:500;color:${C.ink};display:flex;align-items:center`)}">${esc(t)}</div>`;
+  const label = (x, y, w, t) => `<div data-check="label" class="serif" style="${abs(x, y, w, 180, `font-size:58px;line-height:1.04;font-weight:500;color:${C.ink};display:flex;align-items:center`)}">${esc(t)}</div>`;
   const scene = `${grid}${house}
-  <div class="serif" style="${abs(600, 372, 400, 520, `font-size:640px;line-height:640px;font-weight:600;color:${C.sage};opacity:.9;text-align:center;letter-spacing:-.02em;z-index:0`)}">?</div>
+  <div class="serif" style="${abs(580, 400, 400, 420, `font-size:440px;line-height:440px;font-weight:600;color:${C.sage};opacity:.9;text-align:center;letter-spacing:-.02em;z-index:0`)}">?</div>
   ${ringObj(236, 592, 1, waterHeater({ x: 236 - 62, y: 592 - 118, w: 124 }))}
-  ${label(420, 530, 250, "The water heater")}
-  ${label(60, 842, 440, "The furnace or heat pump")}
+  ${label(420, 502, 250, "The water heater")}
+  ${label(60, 838, 440, "The furnace or heat pump")}
   ${ringObj(764, 928, 2, furnaceObj({ x: 764 - 88, y: 928 - 88, w: 176 }))}
   ${ringObj(236, 1196, 3, panelObj({ x: 236 - 62, y: 1196 - 76, w: 124 }), 270)}
   <div data-check="note" style="${abs(410, 1122, 540, 190, `background:${C.sageDeep};border-radius:14px;box-shadow:0 3px 5px rgba(0,0,0,.3),0 18px 30px rgba(20,40,25,.4);padding:20px 28px;display:flex;flex-direction:column;justify-content:center;gap:10px`)}"><div class="serif" style="font-size:54px;line-height:1.02;font-weight:500;color:#fff">The breaker panel</div><div style="font:500 29px/1.25 'Plex',sans-serif;color:#e3ece4">Photograph their plates, note the age if you can find it.</div></div>`;
@@ -199,7 +198,7 @@ function pin76() {
   const fields = [["Photos taken", "22 rooms and closets, dated Sep 26"], ["Lease started", "Sep 26, renews Sep 26 next year"], ["Notice by", "60 days before renewal"], ["Deposit", "$1,400, held by the property manager"]];
   const rows = fields.map(([f, v], k) => `<div style="${abs(0, 76 + k * 108, 800, 108, `border-top:2px solid ${C.rule};display:flex;align-items:center`)}">
     <div class="serif" style="width:290px;padding-left:34px;font-size:40px;line-height:1.05;font-weight:500;color:${C.sageDeep}">${esc(f)}</div>
-    <div class="hand" data-check="value" style="width:476px;font-size:46px;line-height:.98;font-weight:600;color:#26324a;transform:rotate(-1deg)">${esc(v)}</div></div>`).join("");
+    <div class="hand" data-check="value" style="width:500px;font-size:43px;line-height:.98;font-weight:600;color:#26324a;transform:rotate(-1deg)">${esc(v)}</div></div>`).join("");
   const felt = `<div style="${abs(48, 400, 904, 940, "background:#7f9b83;border-radius:14px;box-shadow:inset 0 10px 20px rgba(0,0,0,.45),inset 0 -4px 10px rgba(0,0,0,.25),0 2px 0 rgba(255,255,255,.2)")}"></div>
   <div style="${abs(48, 400, 904, 940, "border-radius:14px;background:repeating-linear-gradient(45deg,rgba(255,255,255,.05) 0 2px,transparent 2px 5px),radial-gradient(circle at 30% 20%,rgba(255,255,255,.14),rgba(10,30,15,.28))")}"></div>`;
   const folder = `<div style="${abs(90, 996, 760, 340, "")}">
@@ -259,7 +258,7 @@ function pin78() {
   const kraft = `<div style="${abs(0, 372, 1000, 982, "background:#c4a06f")}"></div>
   <div style="${abs(0, 372, 1000, 982, "background:repeating-linear-gradient(90deg,rgba(255,255,255,.06) 0 3px,transparent 3px 14px),radial-gradient(circle at 25% 15%,rgba(255,255,255,.2),rgba(80,50,15,.3))")}"></div>
   <svg style="${abs(0, 372, 1000, 982, "opacity:.35")}" viewBox="0 372 1000 982" aria-hidden="true"><path d="M0 700 L120 650 L260 720 L400 640 L560 700 M600 1000 L760 940 L900 1010 L1000 960 M0 1200 L90 1150 L220 1220" stroke="#8a6a3c" stroke-width="3" fill="none"/></svg>`;
-  return printable({ n: 78, scene: `${kraft}${card}${tile}`, paper: "#ece4d6", bottomMax: 368 });
+  return printable({ n: 78, scene: `${kraft}${card}${tile}`, paper: "#ece4d6", bottomMax: 368, extraCss: ".top h1{font-size:76px}.top p{margin-top:10px}" });
 }
 
 /* ======================================================================
@@ -269,31 +268,31 @@ function pin80() {
   const pad = `<div style="${abs(0, 372, 1000, 982, "background:#f5e7a8")}"></div>
   <div style="${abs(0, 372, 1000, 982, "background:repeating-linear-gradient(0deg,transparent 0 42px,rgba(70,110,150,.35) 42px 44px);background-position:0 8px")}"></div>
   <div style="${abs(26, 372, 4, 982, "background:rgba(190,60,50,.55)")}"></div><div style="${abs(34, 372, 4, 982, "background:rgba(190,60,50,.55)")}"></div>`;
-  const text = (y, h, t, sz = 38) => `<div data-check="step" style="${abs(396, y, 554, h, `${CARD};padding:0 28px;display:flex;align-items:center;font:500 ${sz}px/1.2 'Newsreader',serif;color:${C.ink}`)}">${esc(t)}</div>`;
+  const text = (y, h, t, sz = 38, x = 396, w = 554) => `<div data-check="step" style="${abs(x, y, w, h, `${CARD};padding:0 28px;display:flex;align-items:center;font:500 ${sz}px/1.2 'Newsreader',serif;color:${C.ink}`)}">${esc(t)}</div>`;
   const bubbles = `<div style="${abs(24, 90, 140, 38, "border-radius:18px;background:#e1e5e0")}"></div><div style="${abs(24, 138, 100, 28, "border-radius:14px;background:#e1e5e0")}"></div>
     <div style="${abs(68, 200, 164, 74, `border-radius:20px;background:${C.sage}`)}"></div><div style="${abs(88, 218, 110, 8, "border-radius:4px;background:#fff;opacity:.8")}"></div><div style="${abs(88, 238, 80, 8, "border-radius:4px;background:#fff;opacity:.8")}"></div>
     <div style="${abs(24, 304, 150, 56, "border-radius:18px;background:#e1e5e0")}"></div><div style="${abs(24, 40, 150, 28, "")}"></div>`;
   const log = (() => {
     const heads = ["Date", "What", "The answer"];
-    const widths = [128, 128, 190];
+    const widths = [110, 110, 172];
     let xx = 0;
     const th = heads.map((h, k) => { const s = `<div style="${abs(xx, 0, widths[k], 48, `border-right:2px solid ${C.rule};padding:0 10px;font:600 26px/48px 'Plex',sans-serif;color:#fff;background:${C.sage}`)}">${h}</div>`; xx += widths[k]; return s; }).join("");
-    const lines = Array.from({ length: 4 }, (_, k) => `<div style="${abs(0, 48 + k * 48, 446, 48, `border-bottom:2px solid ${C.rule}`)}"></div>`).join("");
-    const vlines = [128, 256].map((vx) => `<div style="${abs(vx, 48, 2, 192, `background:${C.rule}`)}"></div>`).join("");
-    return `<div style="${abs(40, 34, 446, 244, "background:#fbfaf6;box-shadow:0 2px 4px rgba(0,0,0,.25)")}">${th}${lines}${vlines}
-      <div style="${abs(364, 56, 48, 34, "display:grid;place-items:center")}">${icon("check", { size: 36, color: C.sage, weight: "bold" })}</div></div>`;
+    const lines = Array.from({ length: 4 }, (_, k) => `<div style="${abs(0, 48 + k * 48, 392, 48, `border-bottom:2px solid ${C.rule}`)}"></div>`).join("");
+    const vlines = [110, 220].map((vx) => `<div style="${abs(vx, 48, 2, 192, `background:${C.rule}`)}"></div>`).join("");
+    return `<div style="${abs(40, 34, 392, 244, "background:#fbfaf6;box-shadow:0 2px 4px rgba(0,0,0,.25)")}">${th}${lines}${vlines}
+      <div style="${abs(330, 56, 48, 34, "display:grid;place-items:center")}">${icon("check", { size: 36, color: C.sage, weight: "bold" })}</div></div>`;
   })();
-  const clip = `<div style="${abs(76, 720, 526, 340, "transform:rotate(-2deg)")}">
-    <div style="${abs(0, 0, 526, 340, "background:linear-gradient(135deg,#c8a679,#a9824e);border-radius:18px;box-shadow:0 3px 5px rgba(60,40,10,.35),0 26px 44px rgba(60,40,10,.4)")}"></div>
-    <div style="${abs(163, -22, 200, 70, "border-radius:14px;background:linear-gradient(#e6e8eb,#a9adb3);box-shadow:0 6px 10px rgba(0,0,0,.35)")}"></div>
-    <div style="${abs(193, -36, 140, 30, "border-radius:12px 12px 0 0;background:linear-gradient(#f4f5f7,#bcc0c6)")}"></div>${log}</div>`;
-  const notes = [[100, 1200, -6, "#cfe0c8"], [98, 1164, 3, C.butter], [96, 1126, -2, "#fbfaf6"]].map(([nx, ny, nr, nc], k) => `<div style="${abs(nx, ny + 40, 250, 130, `transform:rotate(${nr}deg);background:${nc};box-shadow:0 4px 6px rgba(60,40,10,.35)`)}">${k === 2 ? `<div class="hand" style="position:absolute;inset:0;display:grid;place-items:center;text-align:center;font-size:48px;line-height:.95;font-weight:700;color:${C.sageDeep};padding:0 14px">flagged it first</div>` : ""}</div>`).join("");
+  const clip = `<div style="${abs(130, 752, 472, 306, "transform:rotate(-1.5deg)")}">
+    <div style="${abs(0, 0, 472, 306, "background:linear-gradient(135deg,#c8a679,#a9824e);border-radius:18px;box-shadow:0 3px 5px rgba(60,40,10,.35),0 26px 44px rgba(60,40,10,.4)")}"></div>
+    <div style="${abs(136, -22, 200, 70, "border-radius:14px;background:linear-gradient(#e6e8eb,#a9adb3);box-shadow:0 6px 10px rgba(0,0,0,.35)")}"></div>
+    <div style="${abs(166, -36, 140, 30, "border-radius:12px 12px 0 0;background:linear-gradient(#f4f5f7,#bcc0c6)")}"></div>${log}</div>`;
+  const notes = [[100, 1170, -6, "#cfe0c8"], [98, 1140, 3, C.butter], [96, 1110, -2, "#fbfaf6"]].map(([nx, ny, nr, nc], k) => `<div style="${abs(nx, ny + 40, 250, 130, `transform:rotate(${nr}deg);background:${nc};box-shadow:0 4px 6px rgba(60,40,10,.35)`)}">${k === 2 ? `<div class="hand" style="position:absolute;inset:0;display:grid;place-items:center;text-align:center;font-size:48px;line-height:.95;font-weight:700;color:${C.sageDeep};padding:0 14px">flagged it first</div>` : ""}</div>`).join("");
   const scene = `${pad}
-  ${badge(1, 44, 412, 70)}${badge(2, 44, 706, 70)}${badge(3, 44, 1100, 70)}
+  ${badge(1, 44, 412, 70)}${badge(2, 44, 740, 70)}${badge(3, 44, 1100, 70)}
   ${phoneFlat({ x: 138, y: 400, w: 244, h: 296, rot: -3, screen: bubbles })}
   ${text(430, 236, "Tell the landlord in writing and keep a copy.", 46)}
   ${clip}
-  ${text(736, 300, "Add a line to your log with the date, what you said and what they answered.", 40)}
+  ${text(740, 330, "Add a line to your log with the date, what you said and what they answered.", 35, 624, 326)}
   ${notes}
   ${text(1112, 216, "If the same problem comes back, that log is your record that you flagged it first.", 33)}`;
   return printable({ n: 80, scene, paper: "#f1ecd2", bottomMax: 368 });
