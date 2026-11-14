@@ -7,9 +7,9 @@
  *   node pinterest/homebase/post/build-master.mjs
  *
  * Priority = how time-sensitive the pin is. Tier 1 is for the weeks now
- * (holidays, year-end, heating bills, saving toward December); tier 2 for
- * the January new-year money reset and tax-refund season; tier 3 is
- * evergreen; tier 4 is the lease and moving season (spring and summer). Inside a tier the order keeps pins on the same guide apart, keeps
+ * (winterizing, fall jobs, the first freeze, gutters in November); tier 2 for
+ * the new-year start (January binders, the maintenance calendar, a fresh start for the house); tier 3 is
+ * evergreen; tier 4 is the spring and late-summer pins. Inside a tier the order keeps pins on the same guide apart, keeps
  * the product pins spaced, and keeps the near-duplicate pairs a month apart.
  * Descriptions, tags and alt text come from post/copy-*.mjs.
  */
@@ -38,14 +38,12 @@ for (const f of fs.readdirSync(HERE).filter((f) => /^copy-.*\.mjs$/.test(f)).sor
 for (let n = 1; n <= 101; n++) if (!have.has(n)) throw new Error(`no copy or render for idea #${n}`);
 
 // 2. The priority tiers (by idea number, in the order they should be tried).
-const T1 = [100, 101, 29, 63, 61, 30, 32, 36, 14, 23, 9];
-const T4 = [87];
-const meta0 = (n) => bank.find((i) => i.n === n);
-const rest = bank.map((i) => i.n).filter((n) => ![...T1, ...T4].includes(n));
-const T2 = rest.filter((n) => /jan/i.test(meta0(n).when));
-const T3 = rest.filter((n) => !T2.includes(n));
+const T1 = [63, 69, 65, 57, 67, 53, 71, 59, 73, 5, 27, 61, 38];
+const T2 = [51, 47, 41, 75, 79, 31, 85, 89, 93, 77, 81, 83, 87, 91, 95, 97, 33, 25, 11, 29, 3];
+const T4 = [49, 55];
+const T3 = bank.map((i) => i.n).filter((n) => ![...T1, ...T2, ...T4].includes(n));
 const tiers = [T1, T2, T3, T4];
-const NEAR = [[29, 65], [23, 99]];
+const NEAR = [[5, 59], [3, 101], [27, 51]];
 
 const meta = (n) => bank.find((i) => i.n === n);
 const key = (n) => (meta(n).link.kind === "shop" ? "shop" : meta(n).link.slug);
@@ -104,7 +102,7 @@ if (order.length !== 101 || new Set(order).size !== 101) throw new Error("order 
 
 // 3. The images.
 const slug = (t) => t.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "").slice(0, 52).replace(/-$/, "");
-const FOLDER = "Personal-Finance-Companion-All-101-Pins";
+const FOLDER = "Home-Base-All-101-Pins";
 const PKG = path.join(OUT, "package-all-101");
 fs.rmSync(PKG, { recursive: true, force: true });
 fs.mkdirSync(path.join(PKG, FOLDER, "images"), { recursive: true });
@@ -123,15 +121,14 @@ const product = jobs.filter((j) => meta(j.n).link.kind === "shop").map((j) => j.
 const example = jobs.filter((j) => (meta(j.n).flags ?? []).includes("example-tag")).map((j) => j.n);
 const caution = jobs.filter((j) => /confirm with your state|confirm anything you're relying on/i.test(`${j.description} ${j.alt}`)).map((j) => j.n);
 const NEW_BOARDS = {
-  "Organize Your Finances": "How to gather, sort and keep track of your money when it is scattered",
-  "Subscriptions and Renewals": "Finding, tracking and cancelling subscriptions before they renew",
-  "Financial Binder and Printables": "Printable finance pages, binder sections and worksheets",
-  "Monthly Bills and Due Dates": "Bills lists, variable bills, autopay checks and what to do after a missed payment",
-  "Debt Payoff": "Snowball vs avalanche, minimum payments and a plan you can keep",
-  "Safe to Spend and Budgeting": "What is safe to spend, first budgets and how to make one last",
-  "Splitting Bills": "Fair ways to split bills with a partner or roommate",
-  "Savings and Sinking Funds": "Emergency funds, sinking funds and finding money this month",
-  "Money After a Life Change": "Sorting out your money after a job change, a move or a separation",
+  "Home Maintenance Checklists": "Checklists and schedules for the jobs a home needs, and how often",
+  "Seasonal Home Maintenance": "Fall, winter and spring home jobs in the month they belong to",
+  "Appliance Records and Warranties": "Model numbers, serial numbers and warranties, written down once",
+  "Home Binder and Printables": "Home binders, life admin binders and printable home pages",
+  "New Homeowner Checklists": "What to do in the first week and first year in a new or inherited house",
+  "Renting and Move-In": "What to document and keep when you rent",
+  "Home Safety and Shutoffs": "Where the shutoffs are and the safety jobs that matter",
+  "Home Maintenance Log": "What to write down after a repair or a job so the next one is easy",
 };
 const boards = [...new Set(jobs.map((j) => meta(j.n).board))].sort();
 
@@ -139,10 +136,10 @@ const out = [];
 out.push(rule, "PERSONAL FINANCE COMPANION: ALL 101 PINS, IN PRIORITY ORDER", "PIN DETAILS FOR POSTING BY HAND", rule, "");
 out.push("101 pins. Post them in number order: 001 first, then 002, and so on to 101. The image files are named with the same number (images/001_..., images/002_...), and each entry below gives the fields to type into Pinterest.", "");
 out.push("WHAT THE ORDER MEANS", thin);
-out.push(`- 001 to ${pad(lastOf(1))}: post NOW. Time-sensitive for November and December (the holiday gift fund, the year-end check, saving toward December, heating and cooling bills, the January review pages).`);
-out.push(`- ${pad(firstOf(2))} to ${pad(lastOf(2))}: the new-year money reset and tax-refund season (a January fresh start, subscription clean-ups, emergency fund, binder and organizing pins, splitting bills as people move in together, importing statements). Starting these in the second half of December works well.`);
+out.push(`- 001 to ${pad(lastOf(1))}: post NOW. Time-sensitive for November and December (winterizing before the freeze, fall jobs, gutters, the first-frost timeline).`);
+out.push(`- ${pad(firstOf(2))} to ${pad(lastOf(2))}: the new-year start: the home binder and life admin binder, the monthly checklist, the maintenance calendar and log pages, the product pins. Starting these in mid-December works well.`);
 out.push(`- ${pad(firstOf(3))} to ${pad(lastOf(3))}: evergreen. Good any time.`);
-out.push(`- ${pad(firstOf(4))} to ${pad(lastOf(4))}: lease and moving-in-together pins. Their searches peak from May to September, so if you reach them before spring it is fine to pause and start them then.`);
+out.push(`- ${pad(firstOf(4))} to ${pad(lastOf(4))}: spring and late-summer pins (the spring checklist from late February, the September checklist from August). Hold them for their season.`);
 out.push("- Inside each group the order keeps pins about the same guide apart, spaces out the pins that link to the product, and keeps look-alike pairs a month apart, so posting in number order is the right thing to do.", "");
 out.push("HOW TO POST EACH PIN", thin);
 out.push("1. Pinterest > Create > Create Pin, and upload the image file named on the pin.");
@@ -156,14 +153,14 @@ out.push("8. Publish now, or schedule. Pace: 3 or 4 pins a day suits a new run o
 out.push("READ THIS FIRST", thin);
 out.push(`- Product pins: ${list(product)} link to the product page and show its price on the pin. Every other pin links to a free guide. No description states a price. The pins show the listing price ($49 once). Check the price in Lemon Squeezy matches the product page before posting.`);
 out.push(`- Pins with a small 'Example' tag (${list(example)}) show a figure from a guide's own worked example, not real data.`);
-out.push("- Where a pin touches your own situation (debts, a missed payment, a split, a life change), its description keeps the guide's own caution, such as not legal, tax or financial advice, or that the figures are an example. Keep those lines if you edit anything.");
-out.push("- Product pins that show an app screen use the real screens with demo data (a made-up household), shown exactly as the app makes them. None implies a real person's money. The price on product pins is the listing's own.");
-out.push(`- Look-alike pairs are kept apart in this order: the two sinking fund worksheet pins (${pad(at(29))} and ${pad(at(65))}) and the two January review pins (${pad(at(23))} and ${pad(at(99))}). Do not reorder them together.`);
+out.push("- Home Base guide pins keep each guide's own limits: intervals are typical and your own manual wins; the seasonal pins are for a US home in the northern hemisphere; the rental pins say usually and mention state law. Keep those lines if you edit anything. Nothing here is professional, safety, insurance or legal advice.");
+out.push("- Product pins that show an app screen use the real screens with demo data (a made-up home), shown exactly as the app makes them. None implies a real person's money. The price on product pins is the listing's own.");
+out.push(`- Look-alike pairs are kept apart in this order: the two emergency-page mockups (${pad(at(3))} and ${pad(at(101))}), the two fall app pins (${pad(at(5))} and ${pad(at(59))}) and the two calendar pins (${pad(at(27))} and ${pad(at(51))}). Do not reorder them together.`);
 out.push("- Tags are suggestions based on Pinterest-style search phrases. Pinterest search data was not available, so check the suggestions Pinterest offers as you type each tag.", "");
 out.push("BOARDS USED", thin);
 for (const b of boards) out.push(`- ${b}${NEW_BOARDS[b] ? `   (NEW if you have not made it: create it. Suggested board description: ${NEW_BOARDS[b]})` : ""}`);
 out.push("", rule, "");
-const WHEN = { 1: "Post now (November and December)", 2: "Around the new year (January money reset, tax-refund season)", 3: "Evergreen, any time", 4: "Spring and summer (lease and moving season)" };
+const WHEN = { 1: "Post now (in season: November and December)", 2: "Around the new year (January start)", 3: "Evergreen, any time", 4: "Hold for its season (spring or late summer)" };
 for (const j of jobs) {
   const i = meta(j.n);
   const issues = [];
