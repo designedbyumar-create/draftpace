@@ -38,8 +38,8 @@ for (const f of fs.readdirSync(HERE).filter((f) => /^copy-.*\.mjs$/.test(f)).sor
 for (let n = 1; n <= 101; n++) if (!have.has(n)) throw new Error(`no copy or render for idea #${n}`);
 
 // 2. The priority tiers (by idea number, in the order they should be tried).
-const T1 = [63, 69, 65, 57, 67, 53, 71, 59, 73, 5, 27, 61, 38];
-const T2 = [51, 47, 41, 75, 79, 31, 85, 89, 93, 77, 81, 83, 87, 91, 95, 97, 33, 25, 11, 29, 3];
+const T1 = [63, 69, 65, 57, 67, 53, 71, 73, 5, 27, 61, 38];
+const T2 = [47, 41, 75, 79, 31, 85, 89, 93, 77, 81, 83, 87, 91, 95, 97, 33, 25, 11, 29, 3];
 const T4 = [49, 55];
 const T3 = bank.map((i) => i.n).filter((n) => ![...T1, ...T2, ...T4].includes(n));
 const tiers = [T1, T2, T3, T4];
@@ -88,7 +88,7 @@ const clash = (i) => i > 0 && i < order.length && key(order[i]) === key(order[i 
 for (let pass = 0; pass < 6; pass++) {
   for (let i = 1; i < order.length; i++) {
     if (!clash(i)) continue;
-    for (let d = 2; d <= 14; d++) for (const j of [i + d, i - d]) {
+    for (let d = 2; d <= 45; d++) for (const j of [i + d, i - d]) {
       if (j < 1 || j >= order.length || tierOf.get(order[j]) !== tierOf.get(order[i])) continue;
       [order[i], order[j]] = [order[j], order[i]];
       const near = [i, i + 1, j, j + 1];
