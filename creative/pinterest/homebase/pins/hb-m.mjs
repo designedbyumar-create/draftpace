@@ -103,8 +103,8 @@ function pin70() {
     <div class="mono" style="${abs(44, 40, 300, 46, "font-weight:600;font-size:40px;line-height:46px;color:#4a524e")}">Serial:</div>
     <div style="${abs(44, 120, 600, 110, "")}"></div>
     <div class="mono" style="${abs(44, 126, 640, 100, "font-weight:600;font-size:88px;line-height:100px;color:#1f2623;letter-spacing:0")}">2308-114477</div>
-    <div style="${abs(40, 118, 114, 114, `border:7px solid ${C.sage};border-radius:50%`)}"></div>
-    <div style="${abs(146, 118, 114, 114, `border:7px solid ${C.sage};border-radius:50%`)}"></div>
+    <div style="${abs(44, 118, 114, 114, `border:7px solid ${C.sage};border-radius:50%`)}"></div>
+    <div style="${abs(152, 118, 114, 114, `border:7px solid ${C.sage};border-radius:50%`)}"></div>
     <div style="${abs(91, 232, 4, 34, `background:${C.sage}`)}"></div>
     <div style="${abs(204, 232, 4, 34, `background:${C.sage}`)}"></div>
         <div style="${abs(52, 264, 80, 40, `background:${C.sage};border-radius:18px;color:#fff;font:700 26px/40px 'Plex',sans-serif;text-align:center`)}">year</div>
@@ -198,7 +198,7 @@ function pin76() {
   const fields = [["Photos taken", "22 rooms and closets, dated Sep 26"], ["Lease started", "Sep 26, renews Sep 26 next year"], ["Notice by", "60 days before renewal"], ["Deposit", "$1,400, held by the property manager"]];
   const rows = fields.map(([f, v], k) => `<div style="${abs(0, 76 + k * 108, 800, 108, `border-top:2px solid ${C.rule};display:flex;align-items:center`)}">
     <div class="serif" style="width:290px;padding-left:34px;font-size:40px;line-height:1.05;font-weight:500;color:${C.sageDeep}">${esc(f)}</div>
-    <div class="hand" data-check="value" style="width:500px;font-size:43px;line-height:.98;font-weight:600;color:#26324a;transform:rotate(-1deg)">${esc(v)}</div></div>`).join("");
+    <div class="hand" style="width:500px;font-size:40px;line-height:1.12;font-weight:600;color:#26324a;transform:rotate(-1deg)">${esc(v)}</div></div>`).join("");
   const felt = `<div style="${abs(48, 400, 904, 940, "background:#7f9b83;border-radius:14px;box-shadow:inset 0 10px 20px rgba(0,0,0,.45),inset 0 -4px 10px rgba(0,0,0,.25),0 2px 0 rgba(255,255,255,.2)")}"></div>
   <div style="${abs(48, 400, 904, 940, "border-radius:14px;background:repeating-linear-gradient(45deg,rgba(255,255,255,.05) 0 2px,transparent 2px 5px),radial-gradient(circle at 30% 20%,rgba(255,255,255,.14),rgba(10,30,15,.28))")}"></div>`;
   const folder = `<div style="${abs(90, 996, 760, 340, "")}">
@@ -303,34 +303,29 @@ function pin80() {
  * ====================================================================== */
 function pin82() {
   const px = 60, py = 500;
-  const tag = (x, y, w, ico, text, color) => `<div data-check="tag" style="${abs(x, y, w, 0, "")}"></div><div data-check="tag" style="${abs(x, y, w, 0, "")}"></div>
-    <div data-check="tag" style="${abs(x, y, w, 88, `background:#fbfaf6;border-radius:10px;border-left:10px solid ${color};box-shadow:0 2px 4px rgba(40,30,15,.3),0 8px 16px rgba(40,30,15,.2);display:flex;align-items:center;gap:12px;padding:0 14px;font:600 25px/1.14 'Plex',sans-serif;color:${C.ink}`)}"><span style="flex:none">${icon(ico, { size: 40, color, weight: "duotone" })}</span><span>${esc(text)}</span></div>`;
+  const tag = (x, y, w, ico, text, color, h = 88) => `<div data-check="tag" style="${abs(x, y, w, h, `background:#fbfaf6;border-radius:10px;border-left:10px solid ${color};box-shadow:0 2px 4px rgba(40,30,15,.3),0 8px 16px rgba(40,30,15,.2);display:flex;align-items:center;gap:12px;padding:0 14px;font:600 25px/1.14 'Plex',sans-serif;color:${C.ink}`)}"><span style="flex:none">${icon(ico, { size: 40, color, weight: "duotone" })}</span><span>${esc(text)}</span></div>`;
   const wall = "#3a403c";
   const left = `<div style="${abs(px, py, 440, 584, `background:${C.wash}`)}"></div>`;
   const right = `<div style="${abs(px + 440, py, 440, 584, "background:#efe3cf")}"></div>`;
   const rooms = svg(px, py, 880, 584, "0 0 880 584", `
     <g fill="none" stroke="${wall}" stroke-width="9" stroke-linejoin="round"><rect x="4" y="4" width="872" height="576"/>
       <path d="M4 194 H196 M262 194 H436 M4 388 H150 M216 388 H436 M444 150 H600 M666 150 H876 M444 366 H590 M656 366 H876"/><path d="M440 4 V576" stroke-width="5" stroke-dasharray="3 12" stroke-linecap="round"/></g>
-    <g fill="#fff" opacity=".85"><rect x="320" y="58" width="96" height="60" rx="6" stroke="#9aa89c" stroke-width="3"/><rect x="40" y="62" width="150" height="70" rx="6" stroke="#9aa89c" stroke-width="3"/>
-      <rect x="40" y="440" width="120" height="104" rx="6" stroke="#9aa89c" stroke-width="3"/><circle cx="360" cy="480" r="46" stroke="#9aa89c" stroke-width="3"/></g>
     <g stroke="#b9733f" stroke-width="12" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M470 120 H850 M690 120 V210 M850 120 V250"/></g>
     <g fill="none" stroke="#d09061" stroke-width="4" opacity=".9"><path d="M470 114 H850 M684 114 V210"/></g>
     <path d="M444 8 L660 8 L874 8 L874 150 L444 150Z" fill="#c4b393" opacity=".45"/>
-    <path d="M450 112 L660 24 L868 112" fill="none" stroke="#6b5b53" stroke-width="12" stroke-linejoin="round"/><path d="M450 112 L660 24 L868 112 Z" fill="#a39382" opacity=".45"/>
-    <g fill="#fff" stroke="#b09a72" stroke-width="3"><rect x="720" y="400" width="130" height="64" rx="8"/><circle cx="786" cy="430" r="14"/><rect x="480" y="470" width="90" height="70" rx="10"/><path d="M500 440 V470" stroke-width="10"/></g>`);
+    <path d="M450 112 L660 24 L868 112" fill="none" stroke="#6b5b53" stroke-width="12" stroke-linejoin="round"/><path d="M450 112 L660 24 L868 112 Z" fill="#a39382" opacity=".45"/>`);
   const sheetBase = `<div data-check="plan" style="${abs(40, 392, 920, 710, "background:#f6f1e3;border-radius:6px;box-shadow:0 3px 5px rgba(40,25,5,.4),0 26px 44px rgba(40,25,5,.45)")}"></div>
-  <div style="${abs(px, 412, 440, 70, `background:${C.sage};display:flex;align-items:center;padding:0 22px`)}" ><span class="serif" style="font-size:46px;font-weight:600;color:#fff">Usually yours</span></div>
-  <div style="${abs(px + 440, 412, 440, 70, "background:#c8a679;display:flex;align-items:center;padding:0 22px")}"><span class="serif" style="font-size:46px;font-weight:600;color:${C.ink};white-space:nowrap">Usually the landlord's</span></div>`;
+  <div style="${abs(px, 412, 440, 70, `background:${C.sage};display:flex;align-items:center;padding:0 22px`)}" ><span class="serif" style="font-size:40px;font-weight:600;color:#fff">Usually yours</span></div>
+  <div style="${abs(px + 440, 412, 440, 70, "background:#c8a679;display:flex;align-items:center;padding:0 22px")}"><span class="serif" style="font-size:40px;font-weight:600;color:${C.ink};white-space:nowrap">Usually the landlord's</span></div>`;
   const scene = `${desk({ top: 372, height: 982, base: "#c99b66", dark: "#b0834d", planks: 5, seed: 13 })}${sheetBase}${left}${right}${rooms}
-  ${tag(px + 24, py + 214, 392, "broom", "Keeping the place clean", C.sage)}
-  ${tag(px + 24, py + 62 + 0, 280, "bell-ringing", "", C.sage).replace(/data-check="tag"/g, "").replace(/<div style="[^"]*">[^]*$/, "")}
-  ${tag(px + 24, py + 12, 392, "bell-ringing", "Changing smoke alarm batteries, if your lease says so", C.sage).replace("height:88px", "height:108px")}
-  ${tag(px + 24, py + 440, 392, "phone", "Reporting problems promptly", C.sage)}
-  ${tag(px + 464, py + 44, 392, "house-line", "The roof and structure", "#8c6b47").replace("height:88px", "height:76px")}
-  ${tag(px + 464, py + 210, 392, "wrench", "Major systems like heating and plumbing", "#8c6b47").replace("height:88px", "height:104px")}
-  ${tag(px + 464, py + 440, 392, "seal-check", "Repairs that are not your fault", "#8c6b47")}
+  ${tag(px + 24, py + 40, 392, "bell-ringing", "Changing smoke alarm batteries, if your lease says so", C.sage, 112)}
+  ${tag(px + 24, py + 248, 392, "broom", "Keeping the place clean", C.sage)}
+  ${tag(px + 24, py + 442, 392, "phone", "Reporting problems promptly", C.sage)}
+  ${tag(px + 464, py + 54, 392, "house-line", "The roof and structure", "#8c6b47", 76)}
+  ${tag(px + 464, py + 204, 392, "wrench", "Major systems like heating and plumbing", "#8c6b47", 108)}
+  ${tag(px + 464, py + 420, 392, "seal-check", "Repairs that are not your fault", "#8c6b47")}
   ${pencil({ x: 80, y: 1236, len: 460, rot: -4 })}${brassKey({ x: 650, y: 1166, len: 250, rot: 12 })}${keyRing({ x: 620, y: 1150, w: 110, rot: 0 })}`;
-  return printable({ n: 82, scene, paper: "#efe6d8", bottomMax: 368 });
+  return printable({ n: 82, scene, paper: "#efe6d8", bottomMax: 368, extraCss: ".top h1{font-size:56px}.top p{margin-top:10px}" });
 }
 
 /* ======================================================================
@@ -363,27 +358,16 @@ function pin84() {
   })();
   const floor = `<svg style="${abs(0, 372, 1000, 982, "")}" viewBox="0 0 1000 982" aria-hidden="true"><defs><pattern id="hb" width="80" height="80" patternUnits="userSpaceOnUse">${bands}</pattern></defs><rect width="1000" height="982" fill="url(#hb)"/>
     <rect width="1000" height="982" fill="url(#hbs)" /><defs><radialGradient id="hbs" cx="30%" cy="15%" r="90%"><stop offset="0" stop-color="#ffd9a0" stop-opacity=".22"/><stop offset="1" stop-color="#1a0c02" stop-opacity=".5"/></radialGradient></defs></svg>`;
-  const pols = [
-    { x: 400, y: 396, rot: -5, art: shots.wall, label: "scratched" },
-    { x: 626, y: 412, rot: 4, art: shots.floor, label: "floors" },
-    { x: 770, y: 600, rot: -3, art: shots.window, label: "windows" },
-    { x: 540, y: 660, rot: 5, art: shots.oven, label: "oven" },
-    { x: 350, y: 640, rot: -6, art: shots.fridge, label: "refrigerator" },
-    { x: 760, y: 330, rot: 0, art: shots.cabinet, label: "cabinets" },
-  ];
-  const useP = pols.slice(0, 5).concat([]).map((o) => polaroid(o)).join("");
-  const roomPhoto = `<div style="position:absolute;left:10px;top:10px;width:260px;height:480px;overflow:hidden;border-radius:28px;background:#f4f2ee"><div style="${abs(0, 60, 260, 260, "overflow:hidden")}"><div style="position:absolute;left:-30px;top:0;width:320px;height:320px">${shots.room.replace('viewBox="0 0 176 176"', 'viewBox="0 0 176 176"')}</div></div>
-    <div style="${abs(0, 60, 260, 26, "background:rgba(0,0,0,.0)")}"></div><div style="${abs(40, 340, 180, 36, `border-radius:18px;background:${C.sage}`)}"></div><div style="${abs(104, 392, 52, 52, "border-radius:50%;border:5px solid #1b1820")}"></div></div>`;
   const rowsT = ["Every room, wide shots first", "Then close shots of anything scratched, stained or worn", "The walls, the floors, the windows", "The inside of the oven, the refrigerator and any cabinets"];
   const list = `<div data-check="list" style="${abs(50, 944, 900, 392, `${CARD};padding:12px 26px;display:flex;flex-direction:column;justify-content:space-around`)}">${rowsT.map((t) => `<div style="display:flex;align-items:center;gap:20px">${tick(40)}<span class="serif" style="font-size:38px;line-height:1.1;font-weight:500;color:${C.ink}">${esc(t)}</span></div>`).join("")}</div>`;
   const scene = `${floor}
   ${phoneFlat({ x: 60, y: 410, w: 280, h: 500, rot: -3, screen: `<div style="position:absolute;left:0;top:0;width:258px;height:480px;overflow:hidden"><div style="${abs(-30, 70, 320, 320, "")}">${shots.room}</div><div style="${abs(0, 0, 258, 70, "background:#f4f2ee")}"></div><div style="${abs(0, 390, 258, 90, "background:#1b1820")}"></div><div style="${abs(103, 410, 52, 52, "border-radius:50%;border:5px solid #f4f2ee")}"></div></div>` })}
   ${polaroid({ x: 380, y: 404, rot: -5, art: shots.wall, label: "scratched" })}
   ${polaroid({ x: 596, y: 396, rot: 4, art: shots.floor, label: "floors" })}
-  ${polaroid({ x: 776, y: 426, rot: -3, art: shots.window, label: "windows", w: 190 })}
-  ${polaroid({ x: 430, y: 668, rot: 3, art: shots.oven, label: "oven" })}
-  ${polaroid({ x: 640, y: 664, rot: -4, art: shots.fridge, label: "refrigerator" })}
-  ${polaroid({ x: 790, y: 690, rot: 5, art: shots.cabinet, label: "cabinets", w: 170 })}
+  ${polaroid({ x: 792, y: 420, rot: -3, art: shots.window, label: "windows", w: 170 })}
+  ${polaroid({ x: 380, y: 668, rot: 3, art: shots.oven, label: "oven" })}
+  ${polaroid({ x: 600, y: 664, rot: -4, art: shots.fridge, label: "refrigerator" })}
+  ${polaroid({ x: 810, y: 690, rot: 5, art: shots.cabinet, label: "cabinets", w: 150 })}
   ${list}`;
   return printable({ n: 84, scene, paper: "#efe4d3", bottomMax: 368 });
 }
