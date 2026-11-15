@@ -1,0 +1,398 @@
+[
+  {
+    "slice": "fog",
+    "angle": "template-preview",
+    "headline": "Brain Fog Life Admin: The Five-Line Note to Write Before You Stop",
+    "sub": "Write this before you stop, and you won't have to rebuild anything tomorrow.",
+    "items": [
+      "Where I stopped: Form filled to page 2. Page 3 needs the policy number.",
+      "Who I spoke to: Priya, claims desk, Monday at 11.",
+      "Reference: Claim number ending 4471.",
+      "What I already tried: Website login failed twice. Phone line was faster.",
+      "Next physical action: Find the policy letter in the blue folder."
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "life-admin-with-brain-fog"
+    },
+    "proof": [
+      "Write this before you stop, and you won't have to rebuild anything tomorrow.",
+      "Where I stopped",
+      "Form filled to page 2. Page 3 needs the policy number.",
+      "Who I spoke to",
+      "Priya, claims desk, Monday at 11.",
+      "Claim number ending 4471.",
+      "What I already tried",
+      "Website login failed twice. Phone line was faster.",
+      "Next physical action",
+      "Find the policy letter in the blue folder."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "brain fog notes template",
+    "board": "Brain Fog Life Admin",
+    "when": "evergreen",
+    "visual": "template-preview: one cream index card (or half a notepad page) in handwriting, five labelled rows filled in with the guide's example (Where I stopped, Who I spoke to, Reference, What I already tried, Next physical action), the last row ringed in mulberry; a blue folder and a pen at the edge. Small caption 'An illustration, not a real account'.",
+    "flags": [
+      "example-tag"
+    ],
+    "reserve": false
+  },
+  {
+    "slice": "fog",
+    "angle": "comparison",
+    "headline": "Brain Fog Task List: What Needs a Clear Head and What Is Fine on a Foggy Day",
+    "sub": "Some jobs need a clear head, and some don't.",
+    "items": [
+      "Needs a clear head: A call with a stranger",
+      "Needs a clear head: A form with numbers on it",
+      "Needs a clear head: A decision with money in it",
+      "Needs a clear head: Anything you'll have to explain",
+      "Fine on a foggy day: Open one envelope",
+      "Fine on a foggy day: Copy a number onto the page",
+      "Fine on a foggy day: Put the letter by the phone",
+      "Fine on a foggy day: Write today's stopping note"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "life-admin-with-brain-fog"
+    },
+    "proof": [
+      "Some jobs need a clear head, and some don't.",
+      "Needs a clear head",
+      "A call with a stranger",
+      "A form with numbers on it",
+      "A decision with money in it",
+      "Anything you'll have to explain",
+      "Fine on a foggy day",
+      "Open one envelope",
+      "Copy a number onto the page",
+      "Put the letter by the phone",
+      "Write today's stopping note"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "brain fog daily tasks list",
+    "board": "Brain Fog Life Admin",
+    "when": "evergreen",
+    "visual": "comparison: two tall columns on a blush ground; left a heavy kraft folder and a phone stack, 'Needs a clear head' with four lines; right a single opened envelope and a sticky note, 'Fine on a foggy day' with four lines, the right column ringed in mulberry. No faces, no weather clip art.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "fog",
+    "angle": "script-card",
+    "headline": "Phone Calls With Brain Fog: Five Lines for When You Lose the Thread",
+    "sub": "Put these at the bottom of your page.",
+    "items": [
+      "You lost the thread: Sorry, I lost my place. Can you repeat the last part?",
+      "They're going too fast: Could you slow down? I'm writing this down.",
+      "You want it in writing: Can you send that to me in writing, so I can go through it after we hang up?",
+      "Asked the same thing again: I gave those details to your colleague. Can you see the notes on the account?",
+      "You need to stop: I need to stop here. Can I call back, and who should I ask for?"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "life-admin-with-brain-fog"
+    },
+    "proof": [
+      "Put these at the bottom of your page.",
+      "Sorry, I lost my place. Can you repeat the last part?",
+      "Could you slow down? I'm writing this down.",
+      "Can you send that to me in writing, so I can go through it after we hang up?",
+      "I gave those details to your colleague. Can you see the notes on the account?",
+      "I need to stop here. Can I call back, and who should I ask for?"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "what to say when you lose your train of thought on a phone call",
+    "board": "Phone Call Anxiety Scripts",
+    "when": "evergreen",
+    "visual": "opening-line-card variant: a recipe-box style stack of five cream index cards fanned on a desk, each with its situation as a small tab and the line in large handwriting inside mulberry quote marks; a phone face down and a pen beside them.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "fog",
+    "angle": "quote-card",
+    "headline": "Brain Fog Admin: On a Bad Day the Only Job Is the Stopping Note",
+    "sub": "Write where you are and the next physical action, and close the folder.",
+    "items": [
+      "On a bad day, the only job is the stopping note."
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "life-admin-with-brain-fog"
+    },
+    "proof": [
+      "On a bad day, the only job is the stopping note. Write where you are and the next physical action, and close the folder."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "brain fog bad day what to do",
+    "board": "Brain Fog Life Admin",
+    "when": "evergreen",
+    "visual": "quote-card: one large cream card centred on a blush ground, the sentence in big serif with 'the stopping note' in mulberry; underneath, a closed kraft folder with a single butter sticky note on its cover. Very quiet, lots of space.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "fog",
+    "angle": "scenario",
+    "headline": "Brain Fog Planning: The Plan You Made on a Good Tuesday Meets Thursday",
+    "sub": "So treat a good day as a bonus, not the baseline.",
+    "items": [
+      "A plan made on a good Tuesday assumes a version of you that may not turn up on Thursday."
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "life-admin-with-brain-fog"
+    },
+    "proof": [
+      "A plan made on a good Tuesday assumes a version of you that may not turn up on Thursday.",
+      "So treat a good day as a bonus, not the baseline."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "brain fog planning bad days",
+    "board": "Brain Fog Life Admin",
+    "when": "evergreen",
+    "visual": "pov-desk-scene: an open planner seen from above, the Tuesday page full of neat confident writing with ticked boxes, the Thursday page blank with a mug and an unopened envelope on it; the guide sentence as the headline caption. No product, no timer.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "fog",
+    "angle": "before-after",
+    "headline": "Brain Fog Systems: What Happens After Three Weeks of Ignoring It",
+    "sub": "Test a system by asking what happens after three weeks of ignoring it.",
+    "items": [
+      "Some stay roughly right.",
+      "Others turn misleading and want an hour before they help again."
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "life-admin-with-brain-fog"
+    },
+    "proof": [
+      "Test a system by asking what happens after three weeks of ignoring it.",
+      "Some stay roughly right.",
+      "Others turn misleading and want an hour before they help again.",
+      "Anything that needs daily upkeep to stay accurate will fail during the stretch you need it most"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "life admin system when you stop using it",
+    "board": "Brain Fog Life Admin",
+    "when": "evergreen",
+    "visual": "before-after: top half a single page of notes left alone for three weeks, still readable ('stays roughly right'); bottom half a crowded daily tracker page with crossed-out entries and a stale date ('turns misleading'); a plain wall calendar with three weeks of untouched squares between them. Mulberry ring on the top page only.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "fog",
+    "angle": "checklist",
+    "headline": "Life Admin With Brain Fog: Six Adjustments, Start With the First Two",
+    "sub": "You don't need all six. Start with the first two.",
+    "items": [
+      "Put the details outside your head.",
+      "Write the next physical action, not the goal.",
+      "Record where you stopped, every time.",
+      "Sort tasks by how much they ask of you, not by importance.",
+      "Expect to repeat yourself.",
+      "Don't add a second job."
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "life-admin-with-brain-fog"
+    },
+    "proof": [
+      "You don't need all six. Start with the first two.",
+      "Put the details outside your head.",
+      "Write the next physical action, not the goal.",
+      "Record where you stopped, every time.",
+      "Sort tasks by how much they ask of you, not by importance.",
+      "Expect to repeat yourself.",
+      "Don't add a second job."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "life admin with brain fog tips",
+    "board": "Brain Fog Life Admin",
+    "when": "evergreen",
+    "visual": "notepad-checklist: a spiral pad with six handwritten lines and tick boxes, the first two ticked in mulberry and bracketed; a glass of water at the pad's edge.",
+    "flags": [],
+    "reserve": true
+  },
+  {
+    "slice": "fog",
+    "angle": "how-to-steps",
+    "headline": "After an Adult ADHD Diagnosis: The First Month of Admin, in Order",
+    "sub": "Nothing here is a deadline set by anyone. It's an order that keeps the costly steps early.",
+    "items": [
+      "Before you leave the visit: Ask how follow-ups and refills work, and when the next visit is.",
+      "The same day: Put the next appointment in your calendar with the time you have to leave, not just the time it starts.",
+      "Within a week: Fill in the one page below.",
+      "Within two weeks: Ask your insurer how visits and prescriptions are covered.",
+      "Within a month: Decide who you want to tell, and how."
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "diagnosed-with-adhd-as-an-adult"
+    },
+    "proof": [
+      "Nothing here is a deadline set by anyone. It's an order that keeps the costly steps early.",
+      "Before you leave the visit",
+      "Ask how follow-ups and refills work, and when the next visit is.",
+      "The same day",
+      "Put the next appointment in your calendar with the time you have to leave, not just the time it starts.",
+      "Within a week",
+      "Fill in the one page below.",
+      "Within two weeks",
+      "Ask your insurer how visits and prescriptions are covered.",
+      "Within a month",
+      "Decide who you want to tell, and how."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "diagnosed with adhd as an adult what now",
+    "board": "ADHD Life Admin",
+    "when": "evergreen",
+    "visual": "how-to-steps: five stepping-stone index cards laid in a gentle diagonal from a clinic appointment card to a small wall calendar, each with its 'when' as a tab in mulberry; no dates, no countdown. Headline in serif at the top, 'Free guide' tag.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "fog",
+    "angle": "template-preview",
+    "headline": "ADHD Diagnosis Admin: The One Page to Fill In After the Appointment",
+    "sub": "An illustration, not a real account.",
+    "items": [
+      "Next appointment: October 14, 9:30. Leave by 8:45. Bring the current list of questions.",
+      "Prescriber's office: Phone number and hours. Patient number, from the portal or the card.",
+      "Pharmacy: Name, phone and hours, and the one person you asked about refills.",
+      "Reference numbers: One line per office: clinic, pharmacy, insurer.",
+      "Who I've told so far: Names only. Add to it if you decide to tell more people."
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "diagnosed-with-adhd-as-an-adult"
+    },
+    "proof": [
+      "An illustration, not a real account.",
+      "Next appointment",
+      "October 14, 9:30. Leave by 8:45. Bring the current list of questions.",
+      "Phone number and hours. Patient number, from the portal or the card.",
+      "Name, phone and hours, and the one person you asked about refills.",
+      "One line per office: clinic, pharmacy, insurer.",
+      "Names only. Add to it if you decide to tell more people."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "adhd diagnosis paperwork template",
+    "board": "ADHD Life Admin",
+    "when": "evergreen",
+    "visual": "template-preview: one ruled page, tilted on a desk next to a kraft envelope, six labelled rows handwritten in the guide's example wording, 'Reference numbers' row ringed in mulberry; handwriting face, no real names or numbers beyond the guide's own example.",
+    "flags": [
+      "example-tag"
+    ],
+    "reserve": false
+  },
+  {
+    "slice": "fog",
+    "angle": "checklist",
+    "headline": "After an ADHD Diagnosis: Questions to Ask Before You Leave the Appointment",
+    "sub": "Logistics only. Your prescriber can answer these.",
+    "items": [
+      "When is the next visit, and how do I book it?",
+      "How do refills work for what I've been prescribed, and how far ahead should I ask?",
+      "Who do I contact between visits, and how?",
+      "What happens if the pharmacy doesn't have my prescription in stock?"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "diagnosed-with-adhd-as-an-adult"
+    },
+    "proof": [
+      "Logistics only. Your prescriber can answer these",
+      "When is the next visit, and how do I book it?",
+      "How do refills work for what I've been prescribed, and how far ahead should I ask?",
+      "Who do I contact between visits, and how?",
+      "What happens if the pharmacy doesn't have my prescription in stock?"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "questions to ask after adhd diagnosis",
+    "board": "ADHD Life Admin",
+    "when": "evergreen",
+    "visual": "notepad-checklist: a spiral pad held on a clipboard-sized desk scene, four unticked handwritten questions with empty boxes, a pen across them; small line 'Not medical advice'.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "fog",
+    "angle": "quote-card",
+    "headline": "ADHD Diagnosed, Still Behind: A Diagnosis Can Explain the Pile Without Removing It",
+    "sub": "What tends to change is the approach: less trying harder, more building around the difficulty.",
+    "items": [
+      "A diagnosis can explain the pile without removing it",
+      "less trying harder, more building around the difficulty"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "diagnosed-with-adhd-as-an-adult"
+    },
+    "proof": [
+      "A diagnosis can explain the pile without removing it",
+      "What tends to change is the approach: less trying harder, more building around the difficulty."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "adhd diagnosis still overwhelmed",
+    "board": "ADHD Life Admin",
+    "when": "evergreen",
+    "visual": "pile-sort quote: top, a wide cropped pile of unopened mail on a blush ground; across it a cream card carrying the sentence in serif with 'explain' and 'building around' in mulberry. No sorting arrow, no after state.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "fog",
+    "angle": "scenario",
+    "headline": "Write Your ADHD History Once So You Do Not Rebuild It in Every Waiting Room",
+    "sub": "Keep it to facts.",
+    "items": [
+      "the year, the clinician or clinic, what was assessed, and what happened"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "diagnosed-with-adhd-as-an-adult"
+    },
+    "proof": [
+      "Written down once, it stops being something you reconstruct while sitting in front of someone.",
+      "Keep it to facts: the year, the clinician or clinic, what was assessed, and what happened.",
+      "the page gets you started when your mind goes blank."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "how to explain your adhd history to a new doctor",
+    "board": "ADHD Life Admin",
+    "when": "evergreen",
+    "visual": "pov-desk-scene: a hand holding one folded page over the lap in a waiting-room chair, seen from above with only knees and a tote bag, the page showing four short handwritten lines (year, clinic, assessed, what happened); calm blush palette.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "fog",
+    "angle": "question",
+    "headline": "Should You Tell Your Employer About an ADHD Diagnosis? It Is Yours to Decide",
+    "sub": "You don't need to decide during the first month.",
+    "items": [
+      "That's your decision, and it isn't one this guide can make for you.",
+      "If you're considering it, ask HR how workplace adjustments work before you decide"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "diagnosed-with-adhd-as-an-adult"
+    },
+    "proof": [
+      "That's your decision, and it isn't one this guide can make for you.",
+      "You don't need to decide during the first month.",
+      "If you're considering it, ask HR how workplace adjustments work before you decide"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "should i tell my employer i have adhd",
+    "board": "ADHD Life Admin",
+    "when": "evergreen",
+    "visual": "question-card: a large cream card with the question in serif, an unsealed envelope and a butter sticky note reading 'no deadline' pinned beside it; no verdict shown. Not legal or medical advice line.",
+    "flags": [],
+    "reserve": true
+  }
+]
