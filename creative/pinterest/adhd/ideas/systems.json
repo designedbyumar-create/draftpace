@@ -1,0 +1,420 @@
+[
+  {
+    "slice": "systems",
+    "angle": "how-to-steps",
+    "headline": "Weekly Reset for a Bad Week: Four Steps in Ten Minutes",
+    "sub": "Set a timer if it helps you stop. When the ten minutes are up, you're done, even if the list is still long.",
+    "items": [
+      "Minutes 0 to 3: look",
+      "Minutes 3 to 5: pick one",
+      "Minutes 5 to 8: a day and a step",
+      "Minutes 8 to 10: put it away"
+    ],
+    "link": { "kind": "guide", "slug": "a-weekly-reset-that-survives-a-bad-week" },
+    "proof": [
+      "Set a timer if it helps you stop. When the ten minutes are up, you're done, even if the list is still long.",
+      "Minutes 0 to 3: look",
+      "Minutes 3 to 5: pick one",
+      "Minutes 5 to 8: a day and a step",
+      "Minutes 8 to 10: put it away"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "weekly reset for a bad week",
+    "board": "ADHD Planning Systems",
+    "when": "evergreen; peaks on Sundays and in January",
+    "visual": "notepad-checklist archetype: a spiral pad with four handwritten rows and tick boxes, the four step labels as the rows, with a small kitchen timer at the pad's edge (the guide says to set a timer if it helps you stop; a guide pin, so a timer is allowed) and a butter sticky note stuck to the corner. Light blush-grey ground, mulberry only on the ticks.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "systems",
+    "angle": "before-after",
+    "headline": "Five Things on the Counter, One Gets a Day: A Weekly Reset Example",
+    "sub": "Say you sit down on Sunday evening with five things in your head or on the counter.",
+    "items": [
+      "Book the dentist",
+      "Reply to Sam about the deposit",
+      "Library card expires",
+      "Closet is a mess",
+      "Parking ticket, unopened"
+    ],
+    "link": { "kind": "guide", "slug": "a-weekly-reset-that-survives-a-bad-week" },
+    "proof": [
+      "Say you sit down on Sunday evening with five things in your head or on the counter.",
+      "Book the dentist",
+      "This is the one. Put Tuesday on it.",
+      "Reply to Sam about the deposit",
+      "Library card expires",
+      "Closet is a mess",
+      "Parking ticket, unopened",
+      "Stays where it is."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "weekly reset example adhd",
+    "board": "Overwhelm and Overdue",
+    "when": "evergreen; peaks on Sundays",
+    "visual": "sticky-note-wall-to-one-card archetype: five butter sticky notes in a loose row along the edge of a kitchen counter, each with one of the five lines in handwriting. The dentist note is lifted forward and large, with Tuesday circled in mulberry; the other four stay in place, slightly faded and labelled Stays where it is. Mail corner at the edge, unopened parking ticket envelope.",
+    "flags": ["example-tag"],
+    "reserve": false
+  },
+  {
+    "slice": "systems",
+    "angle": "comparison",
+    "headline": "Weekly Reset Templates: One Needs a Good Week, One Survives a Bad One",
+    "sub": null,
+    "items": [
+      "Needs a good week: Reviews everything that happened",
+      "Needs a good week: Plans the whole week",
+      "Needs a good week: Breaks after one missed day",
+      "Needs a good week: Leaves a catch-up job",
+      "Survives a bad one: Looks at what's in front of you",
+      "Survives a bad one: Picks one thing",
+      "Survives a bad one: Reads the same after a missed week",
+      "Survives a bad one: Leaves nothing to catch up on"
+    ],
+    "link": { "kind": "guide", "slug": "a-weekly-reset-that-survives-a-bad-week" },
+    "proof": [
+      "Needs a good week",
+      "Reviews everything that happened",
+      "Plans the whole week",
+      "Breaks after one missed day",
+      "Leaves a catch-up job",
+      "Survives a bad one",
+      "Looks at what's in front of you",
+      "Picks one thing",
+      "Reads the same after a missed week",
+      "Leaves nothing to catch up on"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "weekly reset template adhd",
+    "board": "ADHD Planning Systems",
+    "when": "evergreen",
+    "visual": "this-not-that archetype: two columns side by side. Left is a long, crowded printed template sheet with the four 'needs a good week' lines struck through; right is a single cream index card with the four 'survives a bad one' lines, circled in mulberry. Small headers: a full planner page vs one sticky note.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "systems",
+    "angle": "question",
+    "headline": "Missed a Week of Your Reset? Do This Week's Ten Minutes and Nothing Else",
+    "sub": "A missed week doesn't need reviewing or catching up.",
+    "items": [
+      "Do this week's ten minutes and nothing else.",
+      "Treat it as though it hadn't been on the calendar."
+    ],
+    "link": { "kind": "guide", "slug": "a-weekly-reset-that-survives-a-bad-week" },
+    "proof": [
+      "Do this week's ten minutes and nothing else.",
+      "A missed week doesn't need reviewing or catching up.",
+      "Treat it as though it hadn't been on the calendar."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "what to do if you miss a weekly reset",
+    "board": "ADHD Planning Systems",
+    "when": "evergreen; peaks in January and after holidays",
+    "visual": "question archetype: a wall calendar with one week left completely blank and a gentle page curl, the question 'What if I miss a week of my reset?' on a cream index card pinned above it, and the answer in large handwriting on a butter sticky note stuck to the following week. No red marks, no crossed-out days.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "systems",
+    "angle": "scenario",
+    "headline": "Why You Stop Using Planners: A Blank Thursday and a Book Under the Post",
+    "sub": "Say it's the third week.",
+    "items": [
+      "Monday to Wednesday are full: neat handwriting, colors, a plan for Thursday.",
+      "Then Thursday was a bad day, and you skipped it.",
+      "Friday you opened the book, saw the blank Thursday sitting there, and closed it.",
+      "It's now the following Tuesday and the book is under a pile of post."
+    ],
+    "link": { "kind": "guide", "slug": "why-you-abandon-planners-and-how-to-come-back" },
+    "proof": [
+      "Say it's the third week",
+      "Monday to Wednesday are full: neat handwriting, colors, a plan for Thursday.",
+      "Then Thursday was a bad day, and you skipped it.",
+      "Friday you opened the book, saw the blank Thursday sitting there, and closed it.",
+      "It's now the following Tuesday and the book is under a pile of post."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "why do i keep abandoning planners",
+    "board": "ADHD Planning Systems",
+    "when": "evergreen; peaks in January",
+    "visual": "pov-desk-scene archetype, seen from above and wordless: an open planner, Monday to Wednesday filled in neat handwriting, Thursday visibly blank, and a pile of post sliding over one corner of the book. Headline in a speech-bubble-free caption above. No people, no marks of failure.",
+    "flags": ["example-tag"],
+    "reserve": false
+  },
+  {
+    "slice": "systems",
+    "angle": "checklist",
+    "headline": "Choosing a Planner for ADHD: Five Checks to Run Before You Commit",
+    "sub": "Whether it's paper or an app, run it past these before you commit.",
+    "items": [
+      "It survives a missed week without extra work from you.",
+      "It doesn't count or display what you didn't do, so a gap is invisible.",
+      "It asks for very little to start, and you can be using it in five minutes.",
+      "You can put it down halfway and pick it up again where you stopped.",
+      "It's somewhere you'll pass without deciding to look."
+    ],
+    "link": { "kind": "guide", "slug": "why-you-abandon-planners-and-how-to-come-back" },
+    "proof": [
+      "Whether it's paper or an app, run it past these before you commit.",
+      "It survives a missed week without extra work from you.",
+      "It doesn't count or display what you didn't do, so a gap is invisible.",
+      "It asks for very little to start, and you can be using it in five minutes.",
+      "You can put it down halfway and pick it up again where you stopped.",
+      "It's somewhere you'll pass without deciding to look."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "adhd planner what to look for",
+    "board": "ADHD Planning Systems",
+    "when": "evergreen; peaks in January and August",
+    "visual": "notepad-checklist archetype: a spiral notepad with five handwritten rows, each with a ticked box in mulberry; a closed plain planner and a phone lie at the pad's edge to say 'paper or an app'. Light ground, kraft envelope corner for warmth.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "systems",
+    "angle": "how-to-steps",
+    "headline": "How to Get Back Into a Planner After Missing Days Without Starting Over",
+    "sub": "Do this in one sitting of about fifteen minutes. Don't buy or set up anything first.",
+    "items": [
+      "Don't reset it",
+      "Find the one page",
+      "Write where you got to",
+      "Pick one item",
+      "Put it where you'll pass it",
+      "Stop there"
+    ],
+    "link": { "kind": "guide", "slug": "why-you-abandon-planners-and-how-to-come-back" },
+    "proof": [
+      "Do this in one sitting of about fifteen minutes. Don't buy or set up anything first.",
+      "Don't reset it",
+      "Find the one page",
+      "Write where you got to",
+      "Pick one item",
+      "Put it where you'll pass it",
+      "Stop there",
+      "I stopped after the school form, next is the dentist call."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "how to get back into a planner",
+    "board": "ADHD Planning Systems",
+    "when": "evergreen; peaks in January",
+    "visual": "how-to-steps layout: six numbered steps down the left on a pale card; on the right a single planner page torn free and clipped, with a cream index card at its top reading 'I stopped after the school form, next is the dentist call.' (the guide's own example sentence) and the page set on a set of keys by the door. The rest of the planner, gaps and all, stays closed in the background.",
+    "flags": ["example-tag"],
+    "reserve": false
+  },
+  {
+    "slice": "systems",
+    "angle": "myth-vs-truth",
+    "headline": "Stopped Using Your Planner? A More Useful Reading Than Lost Motivation",
+    "sub": null,
+    "items": [
+      "The easy reading is that you lost motivation.",
+      "A more useful one is that the book had a rule in it: every day gets an entry.",
+      "Once a day is blank, the rule is broken, and every page after that shows you the break."
+    ],
+    "link": { "kind": "guide", "slug": "why-you-abandon-planners-and-how-to-come-back" },
+    "proof": [
+      "The easy reading is that you lost motivation.",
+      "A more useful one is that the book had a rule in it: every day gets an entry.",
+      "Once a day is blank, the rule is broken, and every page after that shows you the break."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "why i stop using planners adhd",
+    "board": "ADHD Planning Systems",
+    "when": "evergreen; peaks in January",
+    "visual": "myth-vs-truth layout: the top half is a faded sticky note reading 'You lost motivation' set aside with a light line through it; the bottom half is a cream index card with the rule in handwriting ('every day gets an entry'), a planner page with one blank day under it and a mulberry circle around the word 'rule'. Calm, never shaming.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "systems",
+    "angle": "template-preview",
+    "headline": "How to Restart a Half-Finished Project: A Four-Line Restart Note",
+    "sub": "An illustration, not a real case. Say you started a warranty claim on a dishwasher six weeks ago and stopped.",
+    "items": [
+      "Where did I get to? Form filled in to page 2. Receipt photographed but not attached.",
+      "Was anything missing? The serial number. It's on a sticker inside the door.",
+      "Smallest next piece: Open the door and photograph the serial number sticker.",
+      "Still needed? Yes. The claim window closes on the 30th."
+    ],
+    "link": { "kind": "guide", "slug": "how-to-restart-a-project-you-gave-up-on" },
+    "proof": [
+      "An illustration, not a real case. Say you started a warranty claim on a dishwasher six weeks ago and stopped.",
+      "Where did I get to?",
+      "Form filled in to page 2. Receipt photographed but not attached.",
+      "Was anything missing?",
+      "The serial number. It's on a sticker inside the door.",
+      "Smallest next piece",
+      "Open the door and photograph the serial number sticker.",
+      "Still needed?",
+      "Yes. The claim window closes on the 30th."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "how to restart a project you stopped",
+    "board": "Overwhelm and Overdue",
+    "when": "evergreen; peaks in January",
+    "visual": "template-preview: one large cream index card on a desk, four ruled lines, each with its question printed small and the guide's example answer in handwriting, the smallest-next-piece line circled in mulberry. A half-filled warranty form with a paperclip and a receipt tucked under the card.",
+    "flags": ["example-tag"],
+    "reserve": false
+  },
+  {
+    "slice": "systems",
+    "angle": "infographic",
+    "headline": "Restarting After a Week, a Month or Longer: What to Add to the First Step",
+    "sub": null,
+    "items": [
+      "A week or two: Read your last note and go straight to the next piece.",
+      "A month or so: As above, and leave yourself a note at the end of the sitting so next time starts from it.",
+      "Longer than that: Do the still-needed check before you spend any effort. Dates may have passed."
+    ],
+    "link": { "kind": "guide", "slug": "how-to-restart-a-project-you-gave-up-on" },
+    "proof": [
+      "A week or two",
+      "Read your last note and go straight to the next piece.",
+      "A month or so",
+      "As above, and leave yourself a note at the end of the sitting so next time starts from it.",
+      "Longer than that",
+      "Do the still-needed check before you spend any effort. Dates may have passed."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "how to restart a project after a long break",
+    "board": "ADHD Life Admin",
+    "when": "evergreen; peaks in January",
+    "visual": "infographic: a horizontal strip of three paper tags on a string, each a different length of gap (one thin, one wider, one widest) with the time away as the heading and the line to add beneath it; small wall calendar with a page torn off at the third tag. Mulberry only on the 'still needed' check.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "systems",
+    "angle": "comparison",
+    "headline": "ADHD Time Blindness: Vague Plans and the Exact Time That Replaces Them",
+    "sub": null,
+    "items": [
+      "I'll call later / I'll call at 3:30",
+      "This afternoon / After lunch, at 2:00",
+      "Sometime this week / Thursday at 10:00",
+      "When I have a minute / Right after this meeting ends",
+      "Before it closes / Call by 3:30. The office closes at 4:30."
+    ],
+    "link": { "kind": "guide", "slug": "time-blindness-planning" },
+    "proof": [
+      "Vague versus exact",
+      "I'll call later",
+      "I'll call at 3:30",
+      "This afternoon",
+      "After lunch, at 2:00",
+      "Sometime this week",
+      "Thursday at 10:00",
+      "When I have a minute",
+      "Right after this meeting ends",
+      "Before it closes",
+      "Call by 3:30. The office closes at 4:30."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "adhd time blindness planning tips",
+    "board": "ADHD Planning Systems",
+    "when": "evergreen",
+    "visual": "comparison with a clock motif: left column is five torn, grey sticky notes with the vague lines, right column five crisp cream cards each with a small clock face set to the exact time, joined by thin arrows. Mulberry only on the circled times. Wall clock at 3:30 at the top.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "systems",
+    "angle": "infographic",
+    "headline": "How to Stop Being Late: Plan From the Leave Time, Not the Appointment",
+    "sub": "Say the appointment is at 10:00 and each line is your own estimate.",
+    "items": [
+      "Appointment starts: 10:00",
+      "Walk in from the parking lot: 9:50",
+      "Drive there: 9:25",
+      "Shoes, keys, papers: 9:10",
+      "Spare for the thing you didn't count: 9:00 alarm"
+    ],
+    "link": { "kind": "guide", "slug": "time-blindness-planning" },
+    "proof": [
+      "Say the appointment is at 10:00 and each line is your own estimate.",
+      "Appointment starts",
+      "Walk in from the parking lot",
+      "Drive there",
+      "Shoes, keys, papers",
+      "Spare for the thing you didn't count",
+      "9:00 alarm"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "how to stop being late adhd",
+    "board": "ADHD Life Admin",
+    "when": "evergreen; peaks at back-to-routine times",
+    "visual": "infographic: a vertical stepping chain on a clean card, 10:00 at the top working backwards down to a 9:00 alarm at the bottom, each step on a cream tag with its clock time; small keys, shoes and a papers folder drawn at the Shoes, keys, papers step. A clock at the side; no timers, no countdowns on the pin.",
+    "flags": ["example-tag"],
+    "reserve": false
+  },
+  {
+    "slice": "systems",
+    "angle": "before-after",
+    "headline": "ADHD Alarm Label That Gets Done: Find the Number, Phone on the Desk",
+    "sub": "A label that says Call the dentist gets swiped away. One that says Find the number, phone on the desk gets done.",
+    "items": [
+      "Call the dentist",
+      "Find the number, phone on the desk"
+    ],
+    "link": { "kind": "guide", "slug": "time-blindness-planning" },
+    "proof": [
+      "A label that says Call the dentist gets swiped away. One that says Find the number, phone on the desk gets done.",
+      "Set an alarm for that time, and put the first physical step in its label."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "adhd alarm label first step",
+    "board": "ADHD Task Paralysis",
+    "when": "evergreen",
+    "visual": "before-after: two plain phone screens side by side, the left alarm label reading Call the dentist with a swipe-away arrow, the right reading Find the number, phone on the desk with a mulberry ring. A small sticky note on the phone's edge. Not the Companion's screens: ordinary phone alarm shapes drawn flat.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "systems",
+    "angle": "quote-card",
+    "headline": "Unfinished Project Stuck? Finish the Form Is a Project, Find the Serial Number Is a Piece",
+    "sub": "The most common snag is choosing a piece that is too big.",
+    "items": [
+      "\"Finish the form\" is a project.",
+      "\"Find the serial number\" is a piece."
+    ],
+    "link": { "kind": "guide", "slug": "how-to-restart-a-project-you-gave-up-on" },
+    "proof": [
+      "The most common snag is choosing a piece that is too big.",
+      "\"Finish the form\" is a project. \"Find the serial number\" is a piece."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "adhd unfinished projects how to start again",
+    "board": "ADHD Task Paralysis",
+    "when": "evergreen",
+    "visual": "quote-card: a large cream index card in the middle of the pin with the two sentences in big handwriting, the first on a heavier, taller sticky note stack and the second on a single small sticky note on top of the card. Dishwasher door sticker corner at the edge. Weakest idea in the slice: the same sentence appears in the other restart pins.",
+    "flags": ["example-tag"],
+    "reserve": true
+  },
+  {
+    "slice": "systems",
+    "angle": "scenario",
+    "headline": "ADHD Time Blindness Example: Meant to Call at 1:15, and the Office Closed at 4:30",
+    "sub": "At no point did you decide not to call.",
+    "items": [
+      "The email takes a while, then there's lunch, then a message, and then it's 4:40 and the office closed at 4:30.",
+      "The plan that would have worked is one line: call at 3:30."
+    ],
+    "link": { "kind": "guide", "slug": "time-blindness-planning" },
+    "proof": [
+      "At no point did you decide not to call.",
+      "The email takes a while, then there's lunch, then a message, and then it's 4:40 and the office closed at 4:30.",
+      "The plan that would have worked is one line: call at 3:30."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "adhd time blindness example",
+    "board": "ADHD Planning Systems",
+    "when": "evergreen",
+    "visual": "pov-desk-scene archetype: a desk seen from above, a phone face-down, a laptop with an email window open, a half-eaten lunch plate and a clock on the wall at 4:40; a single cream card with 'call at 3:30' leaning against the phone. Reserve: overlaps with the 'later today is not a time' pin already made.",
+    "flags": ["example-tag"],
+    "reserve": true
+  }
+]

@@ -1,0 +1,420 @@
+[
+  {
+    "slice": "calls",
+    "angle": "script-card",
+    "headline": "Phone Call Script: First Sentences to Read When You Dial",
+    "sub": "It only has to get you through the first fifteen seconds, and you can read it.",
+    "items": [
+      "A problem with an order: Hi, I have a problem with my account and I'm hoping you can help me sort it out. Can I explain what happened?",
+      "Booking an appointment: Hi, I'd like to book an appointment. Are you the right person for that?",
+      "Canceling: Hi, I'd like to cancel. Can you tell me what you need from me to do that?",
+      "Making a complaint: Hi, I'd like to make a complaint. Can you tell me how that works here, and who I need to speak to?"
+    ],
+    "link": { "kind": "guide", "slug": "how-to-make-a-phone-call-you-have-been-avoiding" },
+    "proof": [
+      "It only has to get you through the first fifteen seconds, and you can read it.",
+      "Hi, I have a problem with my account and I'm hoping you can help me sort it out. Can I explain what happened?",
+      "Hi, I'd like to book an appointment. Are you the right person for that?",
+      "Hi, I'd like to cancel. Can you tell me what you need from me to do that?",
+      "Hi, I'd like to make a complaint. Can you tell me how that works here, and who I need to speak to?"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "phone call script what to say first",
+    "board": "Phone Call Anxiety Scripts",
+    "when": "evergreen",
+    "visual": "Opening-line-card archetype: four cream index cards fanned on a blush desk beside a face-up phone, each with a small situation tab (order, booking, canceling, complaint) and its real first sentence in handwriting; one card is pulled forward with its quote marks in mulberry.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "calls",
+    "angle": "checklist",
+    "headline": "How to Prepare for a Phone Call: Five Things on One Page",
+    "sub": "Paper is best, because you can't lose it behind another window.",
+    "items": [
+      "What the call is about",
+      "The result you want",
+      "Your reference number",
+      "Two facts",
+      "Your first sentence, word for word"
+    ],
+    "link": { "kind": "guide", "slug": "how-to-make-a-phone-call-you-have-been-avoiding" },
+    "proof": [
+      "what the call is about, the result you want, your reference number, two facts, and your first sentence word for word",
+      "Paper is best, because you can't lose it behind another window."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "how to prepare for a phone call checklist",
+    "board": "Phone Call Anxiety Scripts",
+    "when": "evergreen",
+    "visual": "Notepad-checklist archetype: a spiral pad held flat from above with five handwritten lines, each with a tick box and the first one ticked in mulberry; a pen across the page and a glass of water at the edge, a small phone face-down in the corner.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "calls",
+    "angle": "question",
+    "headline": "Why Is It So Hard to Make a Phone Call? A Call Has No Warm-Up",
+    "sub": "Many people describe this as too many things held at once, not a lack of caring.",
+    "items": [
+      "remember why you're calling",
+      "listen to someone you can't see",
+      "keep your main point in mind",
+      "answer their questions",
+      "write down the reference"
+    ],
+    "link": { "kind": "guide", "slug": "how-to-make-a-phone-call-you-have-been-avoiding" },
+    "proof": [
+      "A call has no warm-up.",
+      "remember why you're calling, listen to someone you can't see, keep your main point in mind, answer their questions, write down the reference",
+      "Many people describe this as too many things held at once, not a lack of caring"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "why is it so hard to make a phone call",
+    "board": "Phone Call Anxiety Scripts",
+    "when": "evergreen",
+    "visual": "A ringing phone in the centre of a blush desk with five butter sticky notes stuck around its edge, one per job (remember why, listen, main point, answer, write down); the headline is set as a question above and one index card beneath the phone reads only 'the talking', pointing to what is left once the rest is on paper.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "calls",
+    "angle": "how-to-steps",
+    "headline": "What to Say in a Voicemail: Name, Reason, Number Twice, a Time",
+    "sub": "Keep it under twenty seconds.",
+    "items": [
+      "Say your name",
+      "One line about why you're calling",
+      "Your phone number slowly, then the number again",
+      "A time you'll be free",
+      "Then write down that you left the message and when"
+    ],
+    "link": { "kind": "guide", "slug": "how-to-make-a-phone-call-you-have-been-avoiding" },
+    "proof": [
+      "Say your name, one line about why you're calling, your phone number slowly, then the number again, and a time you'll be free.",
+      "Keep it under twenty seconds.",
+      "Then write down that you left the message and when."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "what to say when leaving a voicemail",
+    "board": "Phone Call Anxiety Scripts",
+    "when": "evergreen",
+    "visual": "How-to-steps: a phone lying on its side with a voicemail waveform strip, and four numbered handwritten steps on a cream index card propped against it; a butter sticky note at the edge that says 'left it' with no time on it.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "calls",
+    "angle": "infographic",
+    "headline": "Phone Call Anxiety: A Four-Rung Ladder From the Page to the Call",
+    "sub": "Coaches often suggest working up from easier calls. It's worth trying, not proven, and you can skip any rung.",
+    "items": [
+      "Rung 1: the page. Write the five things. Stop there if you need to.",
+      "Rung 2: no one to answer. Call after hours and leave the voicemail, or listen to the recorded greeting.",
+      "Rung 3: an easy call. Ask something with no stakes, like opening hours or whether they can help with your kind of problem.",
+      "Rung 4: the call. Dial with the page in front of you and read the first sentence."
+    ],
+    "link": { "kind": "guide", "slug": "how-to-make-a-phone-call-you-have-been-avoiding" },
+    "proof": [
+      "Coaches often suggest working up from easier calls. It's worth trying, not proven, and you can skip any rung.",
+      "Write the five things. Stop there if you need to.",
+      "Call after hours and leave the voicemail, or listen to the recorded greeting.",
+      "Ask something with no stakes, like opening hours or whether they can help with your kind of problem.",
+      "Dial with the page in front of you and read the first sentence."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "phone anxiety ladder steps",
+    "board": "Phone Call Anxiety Scripts",
+    "when": "evergreen",
+    "visual": "Infographic: a four-step staircase drawn as stacked paper strips climbing to a small phone at the top, each rung labelled in handwriting; the first rung (the page) is drawn as a sheet of paper, the last as a phone; mulberry only on the rung being stood on. Calm, no progress bar or percentage.",
+    "flags": [],
+    "reserve": true
+  },
+  {
+    "slice": "calls",
+    "angle": "script-card",
+    "headline": "Wrong Charge on Your Bill: Four Opening Lines for the Phone",
+    "sub": "Each opens with the problem, not an apology, and ends with a question.",
+    "items": [
+      "Wrong amount charged: Hi, the amount I've been charged isn't what I was expecting. Can you tell me what it's for?",
+      "Charged twice: Hi, I've been charged twice for the same thing and I'd like to get it put right. Can you look at the account for me?",
+      "Charged after canceling: Hi, I canceled this and I've been charged since. Can you check when the cancellation was recorded?",
+      "Charge you don't recognize: Hi, there's a charge on my account I don't recognize. Can you tell me what it is?"
+    ],
+    "link": { "kind": "guide", "slug": "scripts-for-the-admin-calls-everyone-dreads" },
+    "proof": [
+      "Each opens with the problem, not an apology, and ends with a question.",
+      "Hi, the amount I've been charged isn't what I was expecting. Can you tell me what it's for?",
+      "Hi, I've been charged twice for the same thing and I'd like to get it put right. Can you look at the account for me?",
+      "Hi, I canceled this and I've been charged since. Can you check when the cancellation was recorded?",
+      "Hi, there's a charge on my account I don't recognize. Can you tell me what it is?"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "what to say when you were charged twice customer service",
+    "board": "Phone Call Anxiety Scripts",
+    "when": "evergreen",
+    "visual": "Opening-line-card variant: a small open recipe box of tabbed cream index cards beside a folded bill, four tabs labelled by situation; the 'charged twice' card is lifted out and stood against the box with its full sentence large inside mulberry quote marks. No amounts or account numbers drawn.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "calls",
+    "angle": "checklist",
+    "headline": "Customer Service Call: Four Things to Get Before You Hang Up",
+    "sub": "This is the part that saves the second call.",
+    "items": [
+      "a read-back of what was agreed",
+      "a reference number for the call",
+      "the name of the person",
+      "what happens next with a date"
+    ],
+    "link": { "kind": "guide", "slug": "scripts-for-the-admin-calls-everyone-dreads" },
+    "proof": [
+      "This is the part that saves the second call.",
+      "Four things: a read-back of what was agreed, a reference number for the call, the name of the person, and what happens next with a date."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "customer service call reference number what to ask before hanging up",
+    "board": "ADHD Life Admin",
+    "when": "evergreen",
+    "visual": "Notepad-checklist: a pad with a pen next to a phone that has just ended a call; four tick-box lines, the last one ('what happens next with a date') circled in mulberry, and a butter sticky note at the corner with a blank 'ref' line left for the reader to fill.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "calls",
+    "angle": "how-to-steps",
+    "headline": "How a Customer Service Call Goes: Open, Facts, Ask, Read Back, Close",
+    "sub": "Say what happened, once, in order.",
+    "items": [
+      "Open: Hi, I'm waiting on a refund that hasn't arrived. Can you tell me whether it's been sent, and when?",
+      "Facts, once: Your colleague Dana said it would take five business days on the 9th.",
+      "The ask: I'd like the refund sent today, or a date I can rely on.",
+      "Read back: So the refund goes out by Friday. Can I have a reference number for this call?",
+      "Close: And your name, please? Thank you."
+    ],
+    "link": { "kind": "guide", "slug": "scripts-for-the-admin-calls-everyone-dreads" },
+    "proof": [
+      "Say what happened, once, in order",
+      "Hi, I'm waiting on a refund that hasn't arrived. Can you tell me whether it's been sent, and when?",
+      "Your colleague Dana said it would take five business days on the 9th.",
+      "I'd like the refund sent today, or a date I can rely on.",
+      "So the refund goes out by Friday. Can I have a reference number for this call?",
+      "And your name, please? Thank you."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "how to talk to customer service script",
+    "board": "Phone Call Anxiety Scripts",
+    "when": "evergreen",
+    "visual": "How-to-steps: five narrow cream index cards stacked like a staircase, numbered 1 to 5 with the stage name as a tab and one line each in handwriting; a phone at the top left. The guide's example refund is shown as the guide's own illustration.",
+    "flags": ["example-tag"],
+    "reserve": false
+  },
+  {
+    "slice": "calls",
+    "angle": "myth-vs-truth",
+    "headline": "Customer Service Calls: Clear and Polite Tends to Beat a Harder Tone",
+    "sub": "Being polite is enough",
+    "items": [
+      "A lot of advice about hard calls is really about being assertive, which assumes you're too soft.",
+      "You may not be.",
+      "being clear about what you want and having the facts ready tends to help more than a harder tone"
+    ],
+    "link": { "kind": "guide", "slug": "scripts-for-the-admin-calls-everyone-dreads" },
+    "proof": [
+      "Being polite is enough",
+      "A lot of advice about hard calls is really about being assertive, which assumes you're too soft. You may not be.",
+      "being clear about what you want and having the facts ready tends to help more than a harder tone"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "how to talk to customer service politely",
+    "board": "ADHD Life Admin",
+    "when": "evergreen",
+    "visual": "Myth-vs-truth, two columns on a blush ground: the left sticky note ('be assertive, sound tougher') crossed out with a thin line, the right index card ('being clear about what you want and having the facts ready') circled in mulberry; a phone between them.",
+    "flags": [],
+    "reserve": true
+  },
+  {
+    "slice": "calls",
+    "angle": "scenario",
+    "headline": "What to Say When Customer Service Says They Can't Help",
+    "sub": "Polite and specific works better than firm.",
+    "items": [
+      "They say they can't help: I understand that's the policy. What options do I have from here?",
+      "Asking for a supervisor: Is there someone with more authority to change this that I can speak to? I'll hold.",
+      "You're told to call back: Can you note on the account that I called today and what I asked for? Then I'll say so when I call again."
+    ],
+    "link": { "kind": "guide", "slug": "scripts-for-the-admin-calls-everyone-dreads" },
+    "proof": [
+      "Polite and specific works better than firm.",
+      "I understand that's the policy. What options do I have from here?",
+      "Is there someone with more authority to change this that I can speak to? I'll hold.",
+      "Can you note on the account that I called today and what I asked for? Then I'll say so when I call again."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "what to say when customer service says they can't help",
+    "board": "Phone Call Anxiety Scripts",
+    "when": "evergreen",
+    "visual": "POV desk scene from above: a phone on speaker with a speech bubble reading 'They say they can't help', and three index cards in a row at the bottom of a lined page (the guide says to keep them at the bottom of the page), each with one reply in handwriting; a mug at the edge.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "calls",
+    "angle": "scenario",
+    "headline": "How to Say No on the Phone: When They Push Back, Repeat It in Fewer Words",
+    "sub": "If they push, repeat your answer in fewer words rather than defending it in more.",
+    "items": [
+      "They push back: I understand it's disappointing. I've thought about it and my answer is still no.",
+      "They ask why: I'd rather not go into all of it. It's just not something I can do this time.",
+      "You need a moment: Can I have a minute to think about that? I'd like to call you back tonight."
+    ],
+    "link": { "kind": "guide", "slug": "how-to-say-no-or-give-bad-news-on-the-phone" },
+    "proof": [
+      "If they push, repeat your answer in fewer words rather than defending it in more.",
+      "I understand it's disappointing. I've thought about it and my answer is still no.",
+      "I'd rather not go into all of it. It's just not something I can do this time.",
+      "Can I have a minute to think about that? I'd like to call you back tonight."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "how to say no politely on the phone",
+    "board": "Phone Call Anxiety Scripts",
+    "when": "evergreen",
+    "visual": "Relatable scene from the guide's own example (a refusal to a sister about hosting): a phone held to an ear on a kitchen table, a glass of water at hand, and three short index cards fanned beside a notepad; no names or dates drawn, only the three replies.",
+    "flags": ["example-tag"],
+    "reserve": false
+  },
+  {
+    "slice": "calls",
+    "angle": "question",
+    "headline": "How to Tell Someone Bad News on the Phone: What Makes This Call Hard?",
+    "sub": "Pick the closest, because it changes what's worth having ready.",
+    "items": [
+      "You're telling them something they won't want to hear.",
+      "You're saying no to something.",
+      "Money is involved.",
+      "It's personal.",
+      "They've been difficult about this before."
+    ],
+    "link": { "kind": "guide", "slug": "how-to-say-no-or-give-bad-news-on-the-phone" },
+    "proof": [
+      "What makes this one hard?",
+      "Pick the closest, because it changes what's worth having ready.",
+      "You're telling them something they won't want to hear.",
+      "You're saying no to something.",
+      "Money is involved.",
+      "It's personal.",
+      "They've been difficult about this before."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "how to tell someone bad news on the phone",
+    "board": "Phone Call Anxiety Scripts",
+    "when": "evergreen",
+    "visual": "Question card: one large index card with the question 'What makes this one hard?' and five hand-drawn tick circles with the five real options; one is ringed in mulberry. A quiet phone sits face-up beside it. No result or score is drawn.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "calls",
+    "angle": "before-after",
+    "headline": "How to Start an Email You Keep Putting Off: Don't Start Blank",
+    "sub": "Getting this one sentence down is most of the work.",
+    "items": [
+      "Before: a blank message with \"Hi,\"",
+      "After: Hello, I'm hoping you can help me with something."
+    ],
+    "link": { "kind": "guide", "slug": "the-email-you-keep-not-sending-and-how-to-chase-a-reply" },
+    "proof": [
+      "write \"Hi,\", and close it again",
+      "A blank draft is the whole problem, so don't start blank",
+      "Hello, I'm hoping you can help me with something.",
+      "Getting this one sentence down is most of the work."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "how to start an email you keep putting off",
+    "board": "ADHD Life Admin",
+    "when": "evergreen",
+    "visual": "Before-after split on a laptop-and-desk scene: on the left an email compose window with only 'Hi,' and a blinking cursor, a butter sticky note slapped over it; on the right the same window with the real first line typed in and a cream index card holding the same sentence in mulberry quote marks.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "calls",
+    "angle": "comparison",
+    "headline": "Email Subject Lines That Get Opened: Say the Ask, Not Just the Topic",
+    "sub": "Say the ask in the subject. Vague ones are easy to leave for later.",
+    "items": [
+      "Question  >  Question about my March invoice: can you confirm the amount?",
+      "Following up  >  Reply needed by Friday: lease renewal form",
+      "Problem  >  Boiler noise in flat 3: can someone visit this week?",
+      "Hi  >  Can't host in March: telling you now so you have time"
+    ],
+    "link": { "kind": "guide", "slug": "the-email-you-keep-not-sending-and-how-to-chase-a-reply" },
+    "proof": [
+      "Say the ask in the subject. Vague ones are easy to leave for later.",
+      "Question about my March invoice: can you confirm the amount?",
+      "Reply needed by Friday: lease renewal form",
+      "Boiler noise in flat 3: can someone visit this week?",
+      "Can't host in March: telling you now so you have time"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "email subject line examples that get opened",
+    "board": "ADHD Life Admin",
+    "when": "evergreen",
+    "visual": "Comparison: four email-list rows on a laptop screen, each with the vague subject struck through in grey on the left and the specific one in ink on the right with a mulberry tick; a butter sticky note at the corner of the laptop. Subjects are the guide's own illustrations.",
+    "flags": ["example-tag"],
+    "reserve": false
+  },
+  {
+    "slice": "calls",
+    "angle": "infographic",
+    "headline": "How Long to Wait Before Following Up on an Email: A Chase Plan",
+    "sub": "The days are a suggestion we'd use for something that isn't an emergency.",
+    "items": [
+      "Day 0: you send. Note the date, who it went to, and what you asked for.",
+      "Day 5: nothing yet. Chase by a different route, such as a call if you emailed. Ask for a date.",
+      "Day 10: still nothing. Write again to the same person and add a second person or a general address.",
+      "Day 15: still nothing. Decide whether it needs escalating, or whether you can let it go."
+    ],
+    "link": { "kind": "guide", "slug": "the-email-you-keep-not-sending-and-how-to-chase-a-reply" },
+    "proof": [
+      "The days are a suggestion we'd use for something that isn't an emergency.",
+      "Note the date, who it went to, and what you asked for.",
+      "Chase by a different route, such as a call if you emailed. Ask for a date.",
+      "Write again to the same person and add a second person or a general address.",
+      "Decide whether it needs escalating, or whether you can let it go."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "how long to wait before following up on an email",
+    "board": "ADHD Life Admin",
+    "when": "evergreen",
+    "visual": "Infographic: a plain horizontal paper-strip timeline across a wall calendar page with four stops (Day 0, 5, 10, 15) each carrying a butter sticky note with its real action; the Day 5 note, 'chase by a different route', ringed in mulberry. The calendar is undated and nothing is marked late.",
+    "flags": ["example-tag"],
+    "reserve": false
+  },
+  {
+    "slice": "calls",
+    "angle": "script-card",
+    "headline": "Follow Up Email Wording: Ask for a Date, Not an Update",
+    "sub": "Ask for a date rather than an update, because an update can be nothing.",
+    "items": [
+      "A decision: Hello, I'm following up because I need to know either way. When do you think you'll be able to tell me?",
+      "Money owed to you: Hello, I'm following up because it's still outstanding. Can you tell me when it will be dealt with?",
+      "A document or form: Hello, I'm still waiting on this. Could you tell me when I can expect it, or what you need from me first?"
+    ],
+    "link": { "kind": "guide", "slug": "the-email-you-keep-not-sending-and-how-to-chase-a-reply" },
+    "proof": [
+      "Ask for a date rather than an update, because an update can be nothing.",
+      "Hello, I'm following up because I need to know either way. When do you think you'll be able to tell me?",
+      "Hello, I'm following up because it's still outstanding. Can you tell me when it will be dealt with?",
+      "Hello, I'm still waiting on this. Could you tell me when I can expect it, or what you need from me first?"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "follow up email wording no reply",
+    "board": "ADHD Life Admin",
+    "when": "evergreen",
+    "visual": "Opening-line-card on a laptop: an email compose window with a cream index card taped over its top-left carrying one chase line in large handwriting inside mulberry quote marks, two more cards peeking out beneath it with their situation tabs (decision, money owed, document).",
+    "flags": [],
+    "reserve": false
+  }
+]

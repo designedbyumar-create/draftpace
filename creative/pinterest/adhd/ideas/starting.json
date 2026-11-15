@@ -1,0 +1,571 @@
+[
+  {
+    "slice": "starting",
+    "sub": "Set a timer for ten minutes. It's a ceiling, not a target. You're allowed to stop early.",
+    "flags": [],
+    "reserve": false,
+    "proofFile": "src/content/guides.ts",
+    "when": "evergreen",
+    "angle": "infographic",
+    "headline": "ADHD Task Paralysis: The Next Ten Minutes, Minute by Minute",
+    "items": [
+      "Minute 0 to 1: choose",
+      "Minute 1 to 2: say where it ends",
+      "Minute 2 to 4: find the first step",
+      "Minute 4 to 5: check the size",
+      "Minute 5 to 9: do only that",
+      "Minute 9 to 10: leave a note"
+    ],
+    "proof": [
+      "Set a timer for ten minutes. It's a ceiling, not a target. You're allowed to stop early.",
+      "Minute 0 to 1: choose",
+      "Minute 1 to 2: say where it ends",
+      "Minute 2 to 4: find the first step",
+      "Minute 4 to 5: check the size",
+      "Minute 5 to 9: do only that",
+      "Minute 9 to 10: leave a note"
+    ],
+    "query": "adhd task paralysis what to do",
+    "board": "ADHD Task Paralysis",
+    "visual": "Vertical timeline infographic on the blush-grey ground: six cream index cards stacked down a mulberry line, each headed with its minute range in IBM Plex Sans and the step in handwriting; the last card (leave a note) has a butter sticky note stuck to it. A small clock face at ten sits top right as the ceiling; nothing counts down.",
+    "link": {
+      "kind": "guide",
+      "slug": "task-paralysis-what-to-do-in-the-next-ten-minutes"
+    }
+  },
+  {
+    "slice": "starting",
+    "sub": "You've opened the same tab four times.",
+    "flags": [],
+    "reserve": false,
+    "proofFile": "src/content/guides.ts",
+    "when": "evergreen",
+    "angle": "scenario",
+    "headline": "What Task Paralysis Feels Like: The Letter Face Down on the Desk",
+    "items": [
+      "The letter is on the desk, face down, and you've moved it twice to wipe the table."
+    ],
+    "proof": [
+      "You've opened the same tab four times.",
+      "The letter is on the desk, face down, and you've moved it twice to wipe the table."
+    ],
+    "query": "what is adhd task paralysis",
+    "board": "ADHD Task Paralysis",
+    "visual": "POV desk scene from above (pov-desk-scene): a face-down kraft envelope with a damp-cloth ring beside it, a laptop with the same browser tab open four times as four tiny stacked tabs, a half-cleared table. Calm middle, cluttered edges, one mulberry circle round the envelope. No words on props except the tab labels left blank.",
+    "link": {
+      "kind": "guide",
+      "slug": "task-paralysis-what-to-do-in-the-next-ten-minutes"
+    }
+  },
+  {
+    "slice": "starting",
+    "sub": "It needs no motivation, because nothing in it can go wrong, and no one on the other end can say no.",
+    "flags": [
+      "example-tag"
+    ],
+    "reserve": false,
+    "proofFile": "src/content/guides.ts",
+    "when": "evergreen",
+    "angle": "before-after",
+    "headline": "How to Break Down a Task: One Insurance Claim Shrunk Three Times",
+    "items": [
+      "Sort out the insurance claim",
+      "Call the insurer.",
+      "Find the letter with the claim number on it and put it next to the phone."
+    ],
+    "proof": [
+      "Sort out the insurance claim",
+      "Call the insurer.",
+      "Find the letter with the claim number on it and put it next to the phone.",
+      "It needs no motivation, because nothing in it can go wrong, and no one on the other end can say no."
+    ],
+    "query": "how to break down a task adhd",
+    "board": "ADHD Task Paralysis",
+    "visual": "Three paper cards stepping down in size left to right, the first a big grey 'wall' card, the second smaller, the third a small butter sticky note with the mulberry-ringed words; a letter and a phone sit at the end of the row. Reads as before to after in one look (sticky-note-wall-to-one-card variant). The three wordings are the guide's own example.",
+    "link": {
+      "kind": "guide",
+      "slug": "task-paralysis-what-to-do-in-the-next-ten-minutes"
+    }
+  },
+  {
+    "slice": "starting",
+    "sub": "Pick one task, write the first physical step, and do only that for a few minutes.",
+    "flags": [],
+    "reserve": false,
+    "proofFile": "src/content/guides.ts",
+    "when": "evergreen",
+    "angle": "myth-vs-truth",
+    "headline": "How to Snap Out of Task Paralysis: You Do Not, You Shrink the Task",
+    "items": [
+      "Don't try to snap out of it.",
+      "Shrink the task until the first step needs no decision.",
+      "Opening the folder counts."
+    ],
+    "proof": [
+      "Don't try to snap out of it.",
+      "Shrink the task until the first step needs no decision.",
+      "Pick one task, write the first physical step, and do only that for a few minutes.",
+      "Opening the folder counts."
+    ],
+    "query": "how to snap out of task paralysis",
+    "board": "ADHD Task Paralysis",
+    "visual": "Two-column card: left half a crossed-out grey note reading 'Snap out of it', right half a mulberry-circled cream index card with 'Shrink the task until the first step needs no decision.' A manila folder, open, at the bottom edge with a small tick. Flat-SVG props, light ground.",
+    "link": {
+      "kind": "guide",
+      "slug": "task-paralysis-what-to-do-in-the-next-ten-minutes"
+    }
+  },
+  {
+    "slice": "starting",
+    "sub": "It happens, and it doesn't mean you're doing it wrong.",
+    "flags": [],
+    "reserve": false,
+    "proofFile": "src/content/guides.ts",
+    "when": "evergreen",
+    "angle": "checklist",
+    "headline": "ADHD Can't Start a Task? Three Ways to Make the First Step Smaller",
+    "items": [
+      "Shrink the step again.",
+      "Change one thing about the setting before you touch the task.",
+      "Ask someone to be nearby."
+    ],
+    "proof": [
+      "It happens, and it doesn't mean you're doing it wrong.",
+      "Shrink the step again.",
+      "Change one thing about the setting before you touch the task.",
+      "Ask someone to be nearby."
+    ],
+    "query": "adhd cant start a task",
+    "board": "ADHD Task Paralysis",
+    "visual": "Notepad checklist (notepad-checklist): a spiral pad in handwriting with three boxed lines, the first ticked in mulberry; a glass of water stands at the pad's edge to say 'change the setting'. Nothing else on the desk.",
+    "link": {
+      "kind": "guide",
+      "slug": "task-paralysis-what-to-do-in-the-next-ten-minutes"
+    }
+  },
+  {
+    "slice": "starting",
+    "sub": "Only the last row is a first physical step.",
+    "flags": [
+      "example-tag"
+    ],
+    "reserve": false,
+    "proofFile": "src/content/guides.ts",
+    "when": "evergreen",
+    "angle": "comparison",
+    "headline": "Is It a First Step? Three Ways to Write the Same Task, Only One Counts",
+    "items": [
+      "Sort out the insurance",
+      "Decide what to do about the claim",
+      "Find the policy letter and put it on the desk"
+    ],
+    "proof": [
+      "Only the last row is a first physical step.",
+      "Sort out the insurance",
+      "Decide what to do about the claim",
+      "Find the policy letter and put it on the desk"
+    ],
+    "query": "first physical step examples",
+    "board": "ADHD Task Paralysis",
+    "visual": "Three-row this-not-that card: the first two rows struck through in grey with a small cross, the third circled in mulberry with a tick; a policy letter lies on the desk corner at the bottom. The cracked-phone-screen insurance claim is the guide's own illustration.",
+    "link": {
+      "kind": "guide",
+      "slug": "first-physical-step-20-examples"
+    }
+  },
+  {
+    "slice": "starting",
+    "sub": "Sort the mail pile",
+    "flags": [],
+    "reserve": false,
+    "proofFile": "src/content/guides.ts",
+    "when": "evergreen",
+    "angle": "quote-card",
+    "headline": "Sort the Mail Pile: Open the Top Five Items and Do Nothing Else",
+    "items": [
+      "Open the top five items and do nothing else"
+    ],
+    "proof": [
+      "Sort the mail pile",
+      "Open the top five items and do nothing else"
+    ],
+    "query": "how to start sorting a mail pile",
+    "board": "Paperwork Organization",
+    "visual": "A tall mail pile cropped by the pin edges with one big butter sticky note stuck on top, large enough to read at thumbnail size, carrying the line in handwriting; a mulberry circle round the top five envelopes. Kraft envelopes and a letter opener as props.",
+    "link": {
+      "kind": "guide",
+      "slug": "first-physical-step-20-examples"
+    }
+  },
+  {
+    "slice": "starting",
+    "sub": "Run your step past these. If it fails one, shrink it.",
+    "flags": [],
+    "reserve": false,
+    "proofFile": "src/content/guides.ts",
+    "when": "evergreen",
+    "angle": "checklist",
+    "headline": "Check Your Own First Step: Five Questions Before You Start",
+    "items": [
+      "Could someone watching see it happen?",
+      "Can it be done in a few minutes?",
+      "Is it a real action, not deciding or planning?",
+      "Is it small enough that starting is not a decision?",
+      "Do you already have everything it needs?"
+    ],
+    "proof": [
+      "Run your step past these. If it fails one, shrink it.",
+      "Could someone watching see it happen?",
+      "Can it be done in a few minutes?",
+      "Is it a real action, not deciding or planning?",
+      "Is it small enough that starting is not a decision?",
+      "Do you already have everything it needs?"
+    ],
+    "query": "how to make a task small enough to start",
+    "board": "ADHD Task Paralysis",
+    "visual": "A cream index card on the desk with five handwritten tick-box lines, the boxes ticked in mulberry as a sample; a pencil lying across it and a folder at the edge. Notepad-checklist archetype with a card instead of a spiral pad.",
+    "link": {
+      "kind": "guide",
+      "slug": "first-physical-step-20-examples"
+    }
+  },
+  {
+    "slice": "starting",
+    "sub": null,
+    "flags": [],
+    "reserve": false,
+    "proofFile": "src/content/guides.ts",
+    "when": "evergreen",
+    "angle": "how-to-steps",
+    "headline": "How to Turn Any Task Into a First Step in Six Lines",
+    "items": [
+      "Say the task the way you'd say it to yourself, however rough.",
+      "Say what would be true when it's finished.",
+      "Ask what the first action is that involves a phone, a screen, a form or a piece of paper.",
+      "If it's still fuzzy, ask what you'd need to find.",
+      "Write the step as a verb plus an object",
+      "Optionally write the second and third, but choose one to happen today."
+    ],
+    "proof": [
+      "Say the task the way you'd say it to yourself, however rough.",
+      "Say what would be true when it's finished.",
+      "Ask what the first action is that involves a phone, a screen, a form or a piece of paper.",
+      "If it's still fuzzy, ask what you'd need to find.",
+      "Write the step as a verb plus an object",
+      "Optionally write the second and third, but choose one to happen today."
+    ],
+    "query": "how to break a big task into small steps",
+    "board": "ADHD Task Paralysis",
+    "visual": "Numbered how-to on a pale ground: six short handwritten lines down a notepad page, numbers 1 to 6 in mulberry, the fifth line underlined; a phone, a form and a sheet of paper drawn small in the margin for the three kinds of action.",
+    "link": {
+      "kind": "guide",
+      "slug": "first-physical-step-20-examples"
+    }
+  },
+  {
+    "slice": "starting",
+    "sub": "No, but they can look the same and can happen together.",
+    "flags": [],
+    "reserve": false,
+    "proofFile": "src/content/guides.ts",
+    "when": "evergreen",
+    "angle": "myth-vs-truth",
+    "headline": "Is Executive Dysfunction Just an Excuse for Procrastinating? Not Quite",
+    "items": [
+      "Procrastination is a choice to delay something you expect to regret delaying.",
+      "Executive dysfunction describes trouble with skills like starting and organizing.",
+      "the useful question is what would lower the cost of starting today, not who is to blame."
+    ],
+    "proof": [
+      "No, but they can look the same and can happen together.",
+      "Procrastination is a choice to delay something you expect to regret delaying.",
+      "Executive dysfunction describes trouble with skills like starting and organizing.",
+      "the useful question is what would lower the cost of starting today, not who is to blame."
+    ],
+    "query": "is executive dysfunction just an excuse",
+    "board": "ADHD Task Paralysis",
+    "visual": "Split card: a small crossed-out sticky note reading 'Just an excuse' on the left, the guide's two definitions on cream cards on the right, and one mulberry-ringed line at the bottom about the useful question. Not a diagnosis, no medical imagery, a form on the desk as the only prop.",
+    "link": {
+      "kind": "guide",
+      "slug": "executive-dysfunction-is-not-procrastination"
+    }
+  },
+  {
+    "slice": "starting",
+    "sub": "Say a parking permit renewal is due Friday.",
+    "flags": [
+      "example-tag"
+    ],
+    "reserve": false,
+    "proofFile": "src/content/guides.ts",
+    "when": "evergreen",
+    "angle": "scenario",
+    "headline": "Two Tuesdays, One Untouched Form: Procrastinating or Stuck?",
+    "items": [
+      "That's what most people mean by procrastination: a choice, made with your eyes open, to trade later for now.",
+      "You look at the first field, look at your phone, look at the form again, and forty minutes later you feel worse than when you sat down."
+    ],
+    "proof": [
+      "Say a parking permit renewal is due Friday.",
+      "That's what most people mean by procrastination: a choice, made with your eyes open, to trade later for now.",
+      "You look at the first field, look at your phone, look at the form again, and forty minutes later you feel worse than when you sat down."
+    ],
+    "query": "executive dysfunction vs procrastination",
+    "board": "ADHD Task Paralysis",
+    "visual": "Two desk vignettes side by side under the same blank one-page form: Tuesday one with a phone showing a game, Tuesday two with the same untouched form and the phone face down. The form carries a mulberry circle on the first field. Captioned Tuesday 1 and Tuesday 2 in handwriting. The permit scenario is the guide's own illustration.",
+    "link": {
+      "kind": "guide",
+      "slug": "executive-dysfunction-is-not-procrastination"
+    }
+  },
+  {
+    "slice": "starting",
+    "sub": "You're not trying to name a condition. You're picking which kind of help to try first.",
+    "flags": [],
+    "reserve": false,
+    "proofFile": "src/content/guides.ts",
+    "when": "evergreen",
+    "angle": "question",
+    "headline": "Procrastinating or Unable to Start? Five Questions to Ask About Today",
+    "items": [
+      "Is there something you'd rather be doing?",
+      "Could you say the first physical action out loud, such as open the form or find the account number?",
+      "Would a deadline in an hour get you moving?",
+      "Is it one task, or a pile?",
+      "Are you also short on sleep, ill, grieving or flat?"
+    ],
+    "proof": [
+      "You're not trying to name a condition. You're picking which kind of help to try first.",
+      "Is there something you'd rather be doing?",
+      "Could you say the first physical action out loud, such as open the form or find the account number?",
+      "Would a deadline in an hour get you moving?",
+      "Is it one task, or a pile?",
+      "Are you also short on sleep, ill, grieving or flat?"
+    ],
+    "query": "am i procrastinating or is it executive dysfunction",
+    "board": "ADHD Task Paralysis",
+    "visual": "Five stacked cream index cards fanned on the desk, each with one question in large handwriting and a small unticked circle; the last card, about sleep and capacity, is tilted forward with a mulberry edge. Plain, quiet, no icons beyond the circles.",
+    "link": {
+      "kind": "guide",
+      "slug": "executive-dysfunction-is-not-procrastination"
+    }
+  },
+  {
+    "slice": "starting",
+    "sub": null,
+    "flags": [],
+    "reserve": true,
+    "proofFile": "src/content/guides.ts",
+    "when": "evergreen",
+    "angle": "comparison",
+    "headline": "Starting Is the Wall: What to Try Instead of More Pressure",
+    "items": [
+      "Take away the nicer option for twenty minutes: phone in another room, tab closed.",
+      "Put what you need in front of you first: the reference number, the date, the letter.",
+      "Remove decisions. Choose today's one thing and leave the rest out of sight.",
+      "Stop when the small step is done. Doing more is allowed, not required."
+    ],
+    "proof": [
+      "If you're choosing something nicer",
+      "If starting itself is the wall",
+      "Take away the nicer option for twenty minutes: phone in another room, tab closed.",
+      "Put what you need in front of you first: the reference number, the date, the letter.",
+      "Remove decisions. Choose today's one thing and leave the rest out of sight.",
+      "Stop when the small step is done. Doing more is allowed, not required."
+    ],
+    "query": "what helps when i cant get started",
+    "board": "ADHD Task Paralysis",
+    "visual": "Two-column card headed 'If you're choosing something nicer' (one line, grey) and 'If starting itself is the wall' (three lines, mulberry-ringed); a phone turned face down at the left edge, a letter and reference number note at the right.",
+    "link": {
+      "kind": "guide",
+      "slug": "executive-dysfunction-is-not-procrastination"
+    }
+  },
+  {
+    "slice": "starting",
+    "sub": "what is the next physical action, and what would have to be on the table for me to do it?",
+    "flags": [
+      "example-tag"
+    ],
+    "reserve": false,
+    "proofFile": "src/content/guides.ts",
+    "when": "evergreen",
+    "angle": "template-preview",
+    "headline": "Keep Thinking About a Task? Turn the Thought Into One Physical Action",
+    "items": [
+      "Sort out the insurance | Find the renewal letter and read the date on it | The letter and this year's quote",
+      "I need to reply to Sam | Open the email and write: Sorry for the slow reply. | A decision: yes or no to Saturday",
+      "Book the dentist | Look up the number and stick it by the phone | Two days that work for me"
+    ],
+    "proof": [
+      "what is the next physical action, and what would have to be on the table for me to do it?",
+      "Sort out the insurance",
+      "Find the renewal letter and read the date on it",
+      "The letter and this year's quote",
+      "I need to reply to Sam",
+      "Open the email and write: Sorry for the slow reply.",
+      "A decision: yes or no to Saturday",
+      "Book the dentist",
+      "Look up the number and stick it by the phone",
+      "Two days that work for me"
+    ],
+    "query": "keep thinking about a task but not doing it",
+    "board": "ADHD Task Paralysis",
+    "visual": "A worksheet-style printed card on the desk with three columns (The thought / Next physical action / What needs to be in front of me) and three filled rows in handwriting, the middle column in mulberry; a pen beside it. A template preview in the Alongside Book's plain page style. All three rows are the guide's own illustrations.",
+    "link": {
+      "kind": "guide",
+      "slug": "why-you-keep-thinking-about-a-task-and-not-doing-it"
+    }
+  },
+  {
+    "slice": "starting",
+    "sub": null,
+    "flags": [],
+    "reserve": true,
+    "proofFile": "src/content/guides.ts",
+    "when": "evergreen",
+    "angle": "comparison",
+    "headline": "Circling or Moving? How to Tell Which One You Are Doing",
+    "items": [
+      "You rehearse how they'll react",
+      "You reword the task on your list",
+      "Nothing you could photograph has happened",
+      "You can name a verb: find, open, write, call",
+      "It has a day, or you're doing it now",
+      "Someone watching could see it happen"
+    ],
+    "proof": [
+      "Circling",
+      "Moving",
+      "You rehearse how they'll react",
+      "You reword the task on your list",
+      "Nothing you could photograph has happened",
+      "You can name a verb: find, open, write, call",
+      "It has a day, or you're doing it now",
+      "Someone watching could see it happen"
+    ],
+    "query": "overthinking a task instead of doing it",
+    "board": "ADHD Task Paralysis",
+    "visual": "Two columns: left a tangle of grey looping pencil line round three struck notes labelled Circling, right a straight mulberry line to one ticked card labelled Moving; an empty photo-frame rectangle beside it to carry 'could you photograph it'.",
+    "link": {
+      "kind": "guide",
+      "slug": "why-you-keep-thinking-about-a-task-and-not-doing-it"
+    }
+  },
+  {
+    "slice": "starting",
+    "sub": "This is for one task that keeps coming back at eleven at night.",
+    "flags": [],
+    "reserve": false,
+    "proofFile": "src/content/guides.ts",
+    "when": "evergreen",
+    "angle": "quote-card",
+    "headline": "Task on Your Mind at Night? Put the Action on a Sticky Note for Tomorrow",
+    "items": [
+      "Tonight, write the action on a sticky note and put it on the thing you'll touch first tomorrow."
+    ],
+    "proof": [
+      "This is for one task that keeps coming back at eleven at night.",
+      "Tonight, write the action on a sticky note and put it on the thing you'll touch first tomorrow."
+    ],
+    "query": "how to stop thinking about a task you keep putting off",
+    "board": "ADHD Task Paralysis",
+    "visual": "Evening desk scene: a lamp, a folder on the desk with one butter sticky note stuck to its front carrying the sentence large in handwriting, a wall clock reading near eleven in the corner. One mulberry circle on the note. Calm, no bedroom, no figure.",
+    "link": {
+      "kind": "guide",
+      "slug": "why-you-keep-thinking-about-a-task-and-not-doing-it"
+    }
+  },
+  {
+    "slice": "starting",
+    "sub": "The other seven still exist. They just aren't asking you to choose among them every time you look.",
+    "flags": [
+      "example-tag"
+    ],
+    "reserve": false,
+    "proofFile": "src/content/guides.ts",
+    "when": "evergreen",
+    "angle": "before-after",
+    "headline": "To-Do List Too Long? Nine Rows Cut Down to Two Lines for Tomorrow Morning",
+    "items": [
+      "Taxes. Dentist. Car. Mom's birthday. Spare room. Airline refund. Email Priya. Insurance. Laundry.",
+      "what you look at tomorrow morning is two lines: copy the booking reference, and order the card by Friday."
+    ],
+    "proof": [
+      "Taxes. Dentist. Car. Mom's birthday. Spare room. Airline refund. Email Priya. Insurance. Laundry.",
+      "what you look at tomorrow morning is two lines: copy the booking reference, and order the card by Friday.",
+      "The other seven still exist. They just aren't asking you to choose among them every time you look."
+    ],
+    "query": "how to simplify a to do list adhd",
+    "board": "ADHD Planning Systems",
+    "visual": "Top half a crowded page of nine crammed handwritten rows, cropped by the pin edges; a mulberry arrow down to a clean card with just two lines. The nine rows are the guide's own example list.",
+    "link": {
+      "kind": "guide",
+      "slug": "why-to-do-lists-make-it-worse"
+    }
+  },
+  {
+    "slice": "starting",
+    "sub": "Do this on one page or one screen, with a timer set for ten minutes.",
+    "flags": [],
+    "reserve": false,
+    "proofFile": "src/content/guides.ts",
+    "when": "evergreen",
+    "angle": "how-to-steps",
+    "headline": "How to Cut a Long To-Do List Down to One Thing in Ten Minutes",
+    "items": [
+      "Copy everything onto one page, in whatever order it comes.",
+      "Cross out what isn't a task",
+      "Do anything that takes two minutes or less right now, and cross it out.",
+      "Rewrite each remaining row as a first step someone watching could see you do.",
+      "Pick one for today.",
+      "Give a date to the rows that have a real one",
+      "Move everything else to a second page."
+    ],
+    "proof": [
+      "Do this on one page or one screen, with a timer set for ten minutes.",
+      "Copy everything onto one page, in whatever order it comes.",
+      "Cross out what isn't a task",
+      "Do anything that takes two minutes or less right now, and cross it out.",
+      "Rewrite each remaining row as a first step someone watching could see you do.",
+      "Pick one for today.",
+      "Give a date to the rows that have a real one",
+      "Move everything else to a second page."
+    ],
+    "query": "how to shorten a to do list when overwhelmed",
+    "board": "ADHD Planning Systems",
+    "visual": "Seven numbered strips on a long notepad page, steps 1 to 7, with the fifth, 'Pick one for today', on a butter sticky note stuck over the page; a second page peeking out underneath for the parked rows. Mulberry used only for the sticky note's ring.",
+    "link": {
+      "kind": "guide",
+      "slug": "why-to-do-lists-make-it-worse"
+    }
+  },
+  {
+    "slice": "starting",
+    "sub": "A list shows a two-minute email and a four-hour form as the same kind of row, so picking between them costs effort every time.",
+    "flags": [
+      "example-tag"
+    ],
+    "reserve": false,
+    "proofFile": "src/content/guides.ts",
+    "when": "evergreen",
+    "angle": "question",
+    "headline": "Why To-Do Lists Do Not Work: Rows Say the Goal, Not the First Move",
+    "items": [
+      "a row like Airline refund says what you want to be true, not what to do first.",
+      "The first physical move is the part that was hard all along, and the list leaves it blank."
+    ],
+    "proof": [
+      "A list shows a two-minute email and a four-hour form as the same kind of row, so picking between them costs effort every time.",
+      "a row like Airline refund says what you want to be true, not what to do first.",
+      "The first physical move is the part that was hard all along, and the list leaves it blank."
+    ],
+    "query": "why to do lists dont work",
+    "board": "ADHD Planning Systems",
+    "visual": "A single to-do list row 'Airline refund' written large on lined paper with an empty blank box to its right and a handwritten question mark where the first move should be; a small stack of other rows fading below. The one row is the guide's own example.",
+    "link": {
+      "kind": "guide",
+      "slug": "why-to-do-lists-make-it-worse"
+    }
+  }
+]

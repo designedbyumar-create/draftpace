@@ -1,0 +1,425 @@
+[
+  {
+    "slice": "overdue",
+    "angle": "script-card",
+    "headline": "What to Say When You Are Late Replying: One Sentence About the Gap",
+    "sub": "One sentence, no story. Take the one closest to how you feel about it, and change any word.",
+    "items": [
+      "I know this has been outstanding a while, and I'd like to sort it out now.",
+      "This is later than it should be. What do you need from me?",
+      "I haven't dealt with this until now. Can you tell me where it stands?"
+    ],
+    "link": { "kind": "guide", "slug": "how-to-deal-with-something-you-have-put-off" },
+    "proof": [
+      "One sentence, no story. Take the one closest to how you feel about it, and change any word.",
+      "I know this has been outstanding a while, and I'd like to sort it out now.",
+      "This is later than it should be. What do you need from me?",
+      "I haven't dealt with this until now. Can you tell me where it stands?",
+      "Keep it short",
+      "Name it plainly",
+      "Ask where it stands"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "what to say when you are late replying",
+    "board": "Phone Call Anxiety Scripts",
+    "when": "evergreen",
+    "visual": "Opening-line-card archetype: one cream index card, the first line set large inside mulberry quote marks, clipped to a kraft envelope; two more cards fanned behind it carry the other two lines, each with its small label (Keep it short, Name it plainly, Ask where it stands). A butter sticky note at the corner reads 'Change any word'. Wash ground, no phone.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "overdue",
+    "angle": "template-preview",
+    "headline": "How to Deal With a Letter You Put Off for Months: A Filled-In Example",
+    "sub": "An illustration, not a real account. Say a clinic sent a bill in May and it's now September.",
+    "items": [
+      "Open it: Envelope from the clinic, dated May 12. Read it once. Decide nothing.",
+      "Find the facts: Amount: $180. Pay by: June 12. Reference: the number top right.",
+      "The practical question: Is it still open, and can I pay it in two parts?",
+      "The sentence about the gap: This is later than it should be, and I'd like to sort it out now.",
+      "The route: The billing number on the letter. Tuesday at 10:00, before the line gets busy."
+    ],
+    "link": { "kind": "guide", "slug": "how-to-deal-with-something-you-have-put-off" },
+    "proof": [
+      "An illustration, not a real account. Say a clinic sent a bill in May and it's now September.",
+      "Open it",
+      "Envelope from the clinic, dated May 12. Read it once. Decide nothing.",
+      "Find the facts",
+      "Amount: $180. Pay by: June 12. Reference: the number top right.",
+      "The practical question",
+      "Is it still open, and can I pay it in two parts?",
+      "The sentence about the gap",
+      "This is later than it should be, and I'd like to sort it out now.",
+      "The route",
+      "The billing number on the letter. Tuesday at 10:00, before the line gets busy."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "how to deal with something you have put off",
+    "board": "Overwhelm and Overdue",
+    "when": "evergreen",
+    "visual": "Template-preview: a ruled worksheet card on a desk with two columns (Step, What's on the page) and the five rows filled in a handwriting face, a mulberry tick beside each step; a small 'An illustration' stamp in the corner so the example is labelled. A kraft envelope half under the card. Amounts only as the guide's own example.",
+    "flags": ["example-tag"],
+    "reserve": false
+  },
+  {
+    "slice": "overdue",
+    "angle": "scenario",
+    "headline": "Afraid to Open the Mail? The Envelope Under the Fruit Bowl Since May",
+    "sub": "You know roughly what it is. You don't know what it says.",
+    "items": [
+      "Say it's a Sunday night.",
+      "An envelope from a clinic under the fruit bowl that arrived in May.",
+      "You know roughly what it is. You don't know what it says."
+    ],
+    "link": { "kind": "guide", "slug": "how-to-deal-with-something-you-have-put-off" },
+    "proof": [
+      "Say it's a Sunday night. There's an envelope from a clinic under the fruit bowl that arrived in May. You know roughly what it is. You don't know what it says"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "afraid to open mail adhd",
+    "board": "Overwhelm and Overdue",
+    "when": "evergreen",
+    "visual": "Pov-desk-scene, a wordless kitchen-table moment seen from above: a fruit bowl with one kraft envelope sliding out from under it, a lamp pool of light, a phone face down. The headline carries the words. Cropped close and calm, no pile, one envelope only.",
+    "flags": ["example-tag"],
+    "reserve": false
+  },
+  {
+    "slice": "overdue",
+    "angle": "myth-vs-truth",
+    "headline": "Late Replying? Skip the Explanation Unless It Changes What They Can Do",
+    "sub": "Acknowledge the gap, then ask the practical question.",
+    "items": [
+      "The instinct is to justify: an illness, a hard year, a bereavement.",
+      "Acknowledge the gap, then ask the practical question.",
+      "Organizations that send bills and letters hear from late people often, so a late reply is rarely news to them."
+    ],
+    "link": { "kind": "guide", "slug": "how-to-deal-with-something-you-have-put-off" },
+    "proof": [
+      "Skip the explanation unless it changes what they can do for you.",
+      "The instinct is to justify: an illness, a hard year, a bereavement.",
+      "Organizations that send bills and letters hear from late people often, so a late reply is rarely news to them.",
+      "Acknowledge the gap, then ask the practical question."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "what to say when you are late paying a bill",
+    "board": "Phone Call Anxiety Scripts",
+    "when": "evergreen",
+    "visual": "Two-column this-not-that: left a crumpled butter sticky note with a long scribbled apology struck through (headed 'The instinct'), right a clean cream card with one short line circled in mulberry (headed 'Acknowledge the gap, then ask'). Small ringing-phone prop between the two. No words beyond the quoted lines.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "overdue",
+    "angle": "infographic",
+    "headline": "Everything Is Overdue? Sort Into Three Piles Instead of Ranking",
+    "sub": "Only the first two piles get any attention today.",
+    "items": [
+      "A person is waiting means someone has asked, or will notice soon.",
+      "A date is attached means there is a real day it has to happen by.",
+      "No one is waiting means it counts, but nothing changes this week."
+    ],
+    "link": { "kind": "guide", "slug": "how-to-start-when-everything-is-overdue" },
+    "proof": [
+      "A person is waiting means someone has asked, or will notice soon.",
+      "A date is attached means there is a real day it has to happen by.",
+      "No one is waiting means it counts, but nothing changes this week.",
+      "Only the first two piles get any attention today."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "everything is overdue where to start",
+    "board": "Overwhelm and Overdue",
+    "when": "evergreen",
+    "visual": "Infographic of three tall columns of butter sticky notes on a wash ground, headed 'A person', 'A date', 'No one'; the first two columns are bright and ringed in mulberry, the third is pale and tucked to the side. Notes carry blank handwriting scribbles, not invented tasks. No paper-mail stacks, so it stays apart from the paperwork pile pins.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "overdue",
+    "angle": "checklist",
+    "headline": "How to Pick the First Thing When Everything Is Late: Six Steps",
+    "sub": "Take just the person and date piles, and go down this list once.",
+    "items": [
+      "Cross out anything with a real consequence that has already started or lands in the next few days.",
+      "Pick the one that would change something for another person tomorrow.",
+      "If two tie, pick the one with fewer steps.",
+      "Write the first physical step, something a person watching could see.",
+      "Do that step. Only that step.",
+      "Copy the rest of the list onto one page or one screen, and put it out of sight."
+    ],
+    "link": { "kind": "guide", "slug": "how-to-start-when-everything-is-overdue" },
+    "proof": [
+      "Take just the person and date piles, and go down this list once.",
+      "Cross out anything with a real consequence that has already started or lands in the next few days",
+      "pick the one that would change something for another person tomorrow",
+      "If two tie, pick the one with fewer steps.",
+      "Write the first physical step, something a person watching could see",
+      "Do that step. Only that step.",
+      "Copy the rest of the list onto one page or one screen, and put it out of sight."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "how to prioritize when everything is urgent adhd",
+    "board": "ADHD Life Admin",
+    "when": "evergreen",
+    "visual": "Notepad-checklist archetype: a spiral pad with the six steps in short handwritten form and square tick boxes, only the fifth ('Do that step') ticked in mulberry; a glass of water at the pad's edge. Light wash ground.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "overdue",
+    "angle": "script-card",
+    "headline": "Late Replying to Someone Who Is Waiting? Send One Short Message With a Date",
+    "sub": "You don't owe an essay. A short message that gives them a date is worth more than a long one that explains.",
+    "items": [
+      "Hi, sorry this took me a while. I can get you an answer by Thursday. Does that work?",
+      "Hi, I'm working through this now and need until Friday. I'll send it by noon that day."
+    ],
+    "link": { "kind": "guide", "slug": "how-to-start-when-everything-is-overdue" },
+    "proof": [
+      "You don't owe an essay. A short message that gives them a date is worth more than a long one that explains.",
+      "Hi, sorry this took me a while. I can get you an answer by Thursday. Does that work?",
+      "Hi, I'm working through this now and need until Friday. I'll send it by noon that day.",
+      "Someone waits on a reply",
+      "You need more time"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "how to reply to a late message",
+    "board": "Overwhelm and Overdue",
+    "when": "evergreen",
+    "visual": "A phone in hand from above showing a plain text thread with two short bubbles (the two lines, drawn as ordinary messaging, not an app screen of ours); a small index card beside it labelled 'Someone waits on a reply'. A butter sticky note says 'a date, not an essay'.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "overdue",
+    "angle": "comparison",
+    "headline": "How to Prioritize When Everything Is Overdue: One Question for Each Item",
+    "sub": "Ranking eleven late things is a decision about eleven things, and that decision is usually what stalls you.",
+    "items": [
+      "Ranking eleven late things is a decision about eleven things",
+      "Sorting is easier because each item only gets one question: who or what is waiting on it?"
+    ],
+    "link": { "kind": "guide", "slug": "how-to-start-when-everything-is-overdue" },
+    "proof": [
+      "Ranking eleven late things is a decision about eleven things, and that decision is usually what stalls you.",
+      "Sorting is easier because each item only gets one question: who or what is waiting on it?"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "how to prioritize when everything feels urgent",
+    "board": "ADHD Task Paralysis",
+    "when": "evergreen",
+    "visual": "Two halves: left a tangle of eleven numbered sticky notes with crossed-out numbering, labelled 'Ranking'; right the same notes fanned neatly under one big mulberry question 'Who or what is waiting on it?', labelled 'Sorting'. Notes are blank scribbles, no invented tasks.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "overdue",
+    "angle": "before-after",
+    "headline": "How to Organize a Bag of Unopened Mail: Four Stacks, Nothing Decided Yet",
+    "sub": "Each item goes in one stack and gets one word of next step. Nothing is done yet.",
+    "items": [
+      "Act: a person is waiting on you, or a date is printed on it.",
+      "Keep: a reference or record you'll need again, like a claim letter or statement.",
+      "Ask someone: you can't tell what it is or what it wants.",
+      "Bin or shred: junk, or anything with an account number on it that you're sure is finished."
+    ],
+    "link": { "kind": "guide", "slug": "paperwork-pile-where-to-start" },
+    "proof": [
+      "Each item goes in one stack and gets one word of next step. Nothing is done yet.",
+      "Act: a person is waiting on you, or a date is printed on it.",
+      "Keep: a reference or record you'll need again, like a claim letter or statement.",
+      "Ask someone: you can't tell what it is or what it wants.",
+      "Bin or shred: junk, or anything with an account number on it that you're sure is finished.",
+      "Bank statement\", \"Keep",
+      "Electric bill\", \"Act, a date",
+      "Medical bill, unclear\", \"Ask someone",
+      "Charity flyer\", \"Bin or shred"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "how to organize mail",
+    "board": "Paperwork Organization",
+    "when": "evergreen",
+    "visual": "Pile-sort archetype, before and after in one look: top half a shopping bag spilling mail across the pin's edges; an arrow down to four labelled kraft trays (Act, Keep, Ask someone, Bin or shred) with the Act tray ringed in mulberry. A few envelopes carry the guide's own example labels (Bank statement, Electric bill, Medical bill, Charity flyer).",
+    "flags": ["example-tag"],
+    "reserve": false
+  },
+  {
+    "slice": "overdue",
+    "angle": "how-to-steps",
+    "headline": "Paperwork Pile Where to Start: Open Every Envelope Over a Bin for Ten Minutes",
+    "sub": "You don't finish the pile. You find out what's in it.",
+    "items": [
+      "Minute 0: set it up",
+      "Minutes 1 to 8: open and stack",
+      "As you go: copy the numbers",
+      "Minutes 9 to 10: pick one",
+      "Timer ends: stop"
+    ],
+    "link": { "kind": "guide", "slug": "paperwork-pile-where-to-start" },
+    "proof": [
+      "You don't finish the pile. You find out what's in it.",
+      "Minute 0: set it up",
+      "Minutes 1 to 8: open and stack",
+      "As you go: copy the numbers",
+      "Minutes 9 to 10: pick one",
+      "Timer ends: stop",
+      "Open each item and put it in a stack. Don't read it through and don't decide."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "paperwork pile where to start",
+    "board": "Paperwork Organization",
+    "when": "evergreen",
+    "visual": "How-to timeline down the pin: five numbered stops on a vertical line, a small clock face and an open bin at the top, a kraft envelope being slit open at stop two, a blank reference page with a pen at stop three. Wash ground, mulberry only on the line and the final 'stop' tick.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "overdue",
+    "angle": "quote-card",
+    "headline": "Paperwork Overwhelm: If You Stop After Three Envelopes, That Is a Start",
+    "sub": "Ten minutes is a limit, not a quota.",
+    "items": [
+      "If you stop after three envelopes, that's a start.",
+      "Ten minutes is a limit, not a quota."
+    ],
+    "link": { "kind": "guide", "slug": "paperwork-pile-where-to-start" },
+    "proof": [
+      "If you stop after three envelopes, that's a start. Ten minutes is a limit, not a quota."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "paperwork overwhelm adhd",
+    "board": "Overwhelm and Overdue",
+    "when": "evergreen",
+    "visual": "Quote card: the line 'Ten minutes is a limit, not a quota.' set large in Newsreader on a cream index card, three opened kraft envelopes lined up neatly beside it and the rest of a pile out of focus at the edge.",
+    "flags": [],
+    "reserve": true
+  },
+  {
+    "slice": "overdue",
+    "angle": "question",
+    "headline": "What Is a Doom Pile? Didn't Organize, Only Moved (and What to Do About It)",
+    "sub": "It's a description, not a diagnosis, and lots of people have one.",
+    "items": [
+      "Didn't Organize, Only Moved",
+      "A stack of unsorted things moved somewhere to clear a surface.",
+      "Open, stack by what each item needs, and do a little regularly."
+    ],
+    "link": { "kind": "guide", "slug": "paperwork-pile-where-to-start" },
+    "proof": [
+      "It's a name for a stack of unsorted things moved somewhere to clear a surface. ADDitude explains it as Didn't Organize, Only Moved. It's a description, not a diagnosis, and lots of people have one.",
+      "open, stack by what each item needs, and do a little regularly"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "what is a doom pile adhd",
+    "board": "Paperwork Organization",
+    "when": "evergreen",
+    "visual": "Question layout: the headline's question over a close-up of one chair seat holding a leaning stack of folders, mail and a jumper, with a single butter sticky note on top spelling out D.O.O.M. as 'Didn't Organize, Only Moved' in handwriting. Calm, light, not a mess shot.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "overdue",
+    "angle": "checklist",
+    "headline": "Bill Due Date System for ADHD: Six Steps That Do Not Rely on Remembering",
+    "sub": "A system that doesn't rely on remembering.",
+    "items": [
+      "List every recurring bill with its due date.",
+      "Line the dates up with your paydays.",
+      "Decide what runs on autopay and what doesn't.",
+      "Put the date on the item.",
+      "Choose the reminder yourself.",
+      "Look once a week at what has a date in the next few days."
+    ],
+    "link": { "kind": "guide", "slug": "why-you-keep-missing-bill-due-dates" },
+    "proof": [
+      "A system that doesn't rely on remembering",
+      "List every recurring bill with its due date.",
+      "Line the dates up with your paydays.",
+      "Decide what runs on autopay and what doesn't.",
+      "Put the date on the item.",
+      "Choose the reminder yourself",
+      "Look once a week at what has a date in the next few days."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "bill due date system adhd",
+    "board": "ADHD Life Admin",
+    "when": "evergreen",
+    "visual": "Notepad-checklist archetype on a wall-calendar corner: a spiral pad with six short handwritten steps and tick boxes, a month wall calendar behind with a few dates circled in mulberry (no amounts, no provider names), a small stack of kraft envelopes at the edge.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "overdue",
+    "angle": "scenario",
+    "headline": "Why Do I Forget to Pay Bills? The 12th Never Showed Up With the Bill in Front of You",
+    "sub": "At no point did you decide not to pay.",
+    "items": [
+      "You saw the email on the 4th. You meant to do it after the weekend.",
+      "On the 13th a text arrives about a late fee.",
+      "At no point did you decide not to pay."
+    ],
+    "link": { "kind": "guide", "slug": "why-you-keep-missing-bill-due-dates" },
+    "proof": [
+      "Say the phone bill is due on the 12th",
+      "You saw the email on the 4th. You meant to do it after the weekend.",
+      "on the 13th a text arrives about a late fee",
+      "At no point did you decide not to pay. The 12th just never showed up as a moment with the bill in front of you."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "why do i forget to pay bills",
+    "board": "ADHD Life Admin",
+    "when": "evergreen",
+    "visual": "Pov-desk-scene as a calendar strip: a wall calendar page with the 4th, 12th and 13th each carrying a small butter note in the guide's own words ('email', 'due', 'text about a late fee'), the days between blank and pale, a phone showing only a generic text bubble. The 12th gets a hollow mulberry ring: the moment that never arrived.",
+    "flags": ["example-tag"],
+    "reserve": false
+  },
+  {
+    "slice": "overdue",
+    "angle": "before-after",
+    "headline": "How to Change Bill Due Dates to Match Payday: One Month, Before and After",
+    "sub": "Each bill's due date can often be moved, but you have to ask, and some companies won't.",
+    "items": [
+      "Card: due the 25th, asked to move to the 6th, paid from the 5th paycheck",
+      "Phone: due the 12th, asked to move to the 21st, paid from the 20th paycheck",
+      "Electric: due the 18th, asked to move to the 21st, paid from the 20th paycheck"
+    ],
+    "link": { "kind": "guide", "slug": "why-you-keep-missing-bill-due-dates" },
+    "proof": [
+      "Say you're paid on the 5th and the 20th.",
+      "Each bill's due date can often be moved, but you have to ask, and some companies won't.",
+      "Card\", \"25th\", \"6th\", \"5th paycheck",
+      "Phone\", \"12th\", \"21st\", \"20th paycheck",
+      "Electric\", \"18th\", \"21st\", \"20th paycheck"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "how to change bill due dates to match payday",
+    "board": "ADHD Life Admin",
+    "when": "evergreen",
+    "visual": "Before-after table card: two month strips, 'Due now' above and 'Asked to move to' below, with a mulberry arrow from each bill to its new date and the two payday dates (5th, 20th) marked with a small envelope. Only the guide's three example rows; a small 'An illustration' stamp.",
+    "flags": ["example-tag"],
+    "reserve": false
+  },
+  {
+    "slice": "overdue",
+    "angle": "question",
+    "headline": "Is Autopay a Good Idea If You Forget Bills? Two Questions Before You Switch It On",
+    "sub": "You can also stop an automatic payment, so it isn't a lifelong choice.",
+    "items": [
+      "What exactly will it pay, the full balance, the minimum or a fixed amount?",
+      "Will your account have that money on that date?",
+      "Fixed bills such as rent and insurance are good candidates."
+    ],
+    "link": { "kind": "guide", "slug": "why-you-keep-missing-bill-due-dates" },
+    "proof": [
+      "What exactly will it pay, the full balance, the minimum or a fixed amount? And will your account have that money on that date?",
+      "Fixed bills such as rent and insurance are good candidates.",
+      "You can also stop an automatic payment, so it isn't a lifelong choice."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "is autopay a good idea adhd",
+    "board": "ADHD Life Admin",
+    "when": "evergreen",
+    "visual": "Question layout: two cream index cards side by side, each carrying one of the two questions in large handwriting, with a small padlock-free toggle sketch above (on/off) and a kraft envelope beneath. No bank or provider logos, no amounts.",
+    "flags": [],
+    "reserve": true
+  }
+]
