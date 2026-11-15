@@ -1,0 +1,589 @@
+[
+  {
+    "slice": "product",
+    "angle": "mockup-app",
+    "headline": "ADHD Life Admin App That Says So When Nothing Needs You Right Now",
+    "sub": "Nothing needs you right now, said plainly, on the days that's true",
+    "items": [
+      "Derived fresh each time from dates and notes you put there yourself",
+      "Nothing is invented",
+      "quiet is a real, honest answer",
+      "Anything you have recorded is still here in Life."
+    ],
+    "link": { "kind": "shop", "slug": "alongside" },
+    "proof": [
+      "Now shows what deserves your attention, derived fresh each time from dates and notes you put there yourself. Nothing is invented, and quiet is a real, honest answer.",
+      "Nothing needs you right now, said plainly, on the days that's true"
+    ],
+    "proofFile": "src/shop/products/alongside.ts",
+    "proofExtra": [
+      { "file": "src/products/alongside/components/NowView.tsx", "proof": ["Anything you have recorded is still here in Life."] },
+      { "file": "src/products/alongside/attention.ts", "proof": ["Nothing needs you right now"] }
+    ],
+    "query": "adhd life admin app",
+    "board": "ADHD Life Admin",
+    "when": "evergreen",
+    "visual": "App-store promo in the homeschool reference style, mulberry palette: dark mulberry (#5f3d4b) brand panel, app icon and the name ADHD Life Companion, two-tone headline, three feature rows (derived fresh from what you put there / nothing is invented / quiet is a real answer), large tilted phone showing the quiet state of Now. SCREEN TO CAPTURE: Now with no items (NowView with signal null: 'Nothing needs you right now' and 'Anything you have recorded is still here in Life.', Keep something button, Now/Life tabs). Prop: a butter sticky note and a mug at the phone's foot.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "product",
+    "angle": "mockup-app",
+    "headline": "Phone Call Anxiety App: An Opening Line You Can Use or Replace With Your Own",
+    "sub": "The first fifteen seconds are the part people rehearse.",
+    "items": [
+      "Your opening",
+      "Hi, I would like to cancel. Can you tell me what you need from me to do that?",
+      "Change any of this, or write your own.",
+      "Ready to call?"
+    ],
+    "link": { "kind": "shop", "slug": "alongside" },
+    "proof": [
+      "The first fifteen seconds are the part people rehearse. Change any of this, or write your own.",
+      "Hi, I would like to cancel. Can you tell me what you need from me to do that?",
+      "Ready to call?"
+    ],
+    "proofFile": "src/products/alongside/playbooks/makeAPhoneCall.ts",
+    "query": "phone call anxiety app",
+    "board": "Phone Call Anxiety Scripts",
+    "when": "evergreen",
+    "visual": "Mockup-app promo, mulberry palette: dark panel, app icon and name, two-tone headline, three rows (an opening line / use it or replace it / call now or name one exact time today), large tilted phone. SCREEN TO CAPTURE: the Make a phone call walkthrough at the 'Your opening' step with the 'Cancelling something' suggested line and its 'Change any of this, or write your own.' note (stub answers; the line is the real suggestedWording). Prop: a cream index card and a phone face down beside it.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "product",
+    "angle": "mockup-app",
+    "headline": "ADHD Task Paralysis App: It Asks for the First Physical Step, Nothing Else",
+    "sub": "Something somebody watching could see happen.",
+    "items": [
+      "What is the thing?",
+      "What would be true when it is finished?",
+      "What is the first physical step?",
+      "Which of those could happen today?",
+      "One of them. Not the list."
+    ],
+    "link": { "kind": "shop", "slug": "alongside" },
+    "proof": [
+      "What is the first physical step?",
+      "Something somebody watching could see happen.",
+      "Which of those could happen today?",
+      "One of them. Not the list."
+    ],
+    "proofFile": "src/products/alongside/playbooks/breakDownSomethingTooBig.ts",
+    "query": "task paralysis app",
+    "board": "ADHD Task Paralysis",
+    "when": "evergreen",
+    "visual": "Mockup-app promo, mulberry palette: dark panel, app icon and name, two-tone headline, three rows (what is the thing / what is the first physical step / which could happen today), large tilted phone. SCREEN TO CAPTURE: the Break something down walkthrough at 'What is the first physical step?' with its why line ('Physical: a phone call, an email, opening a form, finding a document...') and the placeholder 'Ring the charity shop about collection' (placeholder is the real one, stub answers). Prop: three butter sticky notes, one pulled forward.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "product",
+    "angle": "mockup-app",
+    "headline": "ADHD Reminder App: One Opt-In Notification for a Date You Chose Yourself",
+    "sub": "Off unless you switch it on.",
+    "items": [
+      "Remind me on the date I chose",
+      "Say what it is about",
+      "Quiet hours",
+      "Nothing is sent in this window."
+    ],
+    "link": { "kind": "shop", "slug": "alongside" },
+    "proof": [
+      "Off unless you switch it on.",
+      "Remind me on the date I chose",
+      "Quiet hours",
+      "Nothing is sent in this window."
+    ],
+    "proofFile": "src/products/alongside/components/SettingsView.tsx",
+    "proofExtra": [
+      {
+        "file": "src/shop/products/alongside.ts",
+        "proof": ["On that day it sends one notification, never during the quiet hours you set, and it says nothing about what it is for on your lock screen unless you allow that."]
+      }
+    ],
+    "query": "adhd reminder app",
+    "board": "ADHD Planning Systems",
+    "when": "evergreen",
+    "visual": "Mockup-app promo, mulberry palette: dark panel, app icon and name, two-tone headline, three rows (only a date you chose / quiet hours / a lock screen that says nothing about it unless you allow it), large tilted phone. SCREEN TO CAPTURE: Settings, Reminders (SettingsView with remindersEnabled true: the 'Remind me on the date I chose' toggle, 'Say what it is about' off, Quiet hours). Prop: a small calendar page with one date circled in mulberry, and a wall clock; no invented notification text.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "product",
+    "angle": "mockup-app",
+    "headline": "Life Admin Organizer App: Everything You Are Holding, in Four Shapes",
+    "sub": "Life: everything you are holding, in four shapes, never mixed together",
+    "items": [
+      "Something to do",
+      "Waiting on someone",
+      "Something ongoing",
+      "Worth having to hand"
+    ],
+    "link": { "kind": "shop", "slug": "alongside" },
+    "proof": [
+      "Life: everything you are holding, in four shapes, never mixed together"
+    ],
+    "proofFile": "src/shop/products/alongside.ts",
+    "proofExtra": [
+      {
+        "file": "src/products/alongside/life.ts",
+        "proof": ["Something to do", "Waiting on someone", "Something ongoing", "Worth having to hand"]
+      }
+    ],
+    "query": "life admin organizer app",
+    "board": "ADHD Life Admin",
+    "when": "evergreen",
+    "visual": "Mockup-app promo, mulberry palette: dark panel, app icon and name, two-tone headline, four rows named for the four real shapes, large tilted phone showing the REAL Life screen (creative/public/screens/alongside-life.png, Next.js dev badge cropped) with its four groups under 'Everything you are holding'. Prop: four small kraft trays at the phone's foot. The rows on the screen (home insurance, dental check, car hire, emergency contacts) are demo data: show them as UI, never quote them as claims.",
+    "flags": ["example-tag"],
+    "reserve": false
+  },
+  {
+    "slice": "product",
+    "angle": "mockup-app",
+    "headline": "ADHD App for After the Call: Sorted, Waiting, Made Progress, Did Not Get to It",
+    "sub": "Did not get to it changes nothing at all, on purpose.",
+    "items": [
+      "Sorted",
+      "Waiting on someone",
+      "Did not get to it",
+      "Made progress"
+    ],
+    "link": { "kind": "shop", "slug": "alongside" },
+    "proof": [
+      "How it went changes what happens next. Sorted closes it. Waiting on someone turns it into that, with a date to check back. Did not get to it changes nothing at all, on purpose."
+    ],
+    "proofFile": "src/shop/products/alongside.ts",
+    "proofExtra": [
+      { "file": "src/products/alongside/outcome.ts", "proof": ["Made progress"] },
+      { "file": "src/products/alongside/playbooks/makeAPhoneCall.ts", "proof": ["How did it go?"] }
+    ],
+    "query": "adhd app after a phone call",
+    "board": "ADHD Life Admin",
+    "when": "evergreen",
+    "visual": "Mockup-app promo, mulberry palette: dark panel, app icon and name, two-tone headline, four rows (Sorted closes it / Waiting on someone gets a date to check back / Did not get to it changes nothing / Made progress is remembered), large tilted phone. SCREEN TO CAPTURE: the 'How did it go?' outcome step of Make a phone call with its four choices (stub run). Prop: a tick on a butter sticky note and a pen.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "product",
+    "angle": "mockup-app",
+    "headline": "ADHD Life Companion: Eight Walkthroughs for the Hardest Things to Start",
+    "sub": "The Companion: eight authored procedures for the situations that are hardest to start",
+    "items": [
+      "There is a call to make and it has been sitting there",
+      "There is an email that needs writing and it has not been written",
+      "Somebody has not come back to you and it needs chasing",
+      "Something has been charged wrongly and it needs sorting"
+    ],
+    "link": { "kind": "shop", "slug": "alongside" },
+    "proof": [
+      "The Companion: eight authored procedures for the situations that are hardest to start"
+    ],
+    "proofFile": "src/shop/products/alongside.ts",
+    "proofExtra": [
+      { "file": "src/products/alongside/playbooks/makeAPhoneCall.ts", "proof": ["There is a call to make and it has been sitting there"] },
+      { "file": "src/products/alongside/playbooks/sendTheEmail.ts", "proof": ["There is an email that needs writing and it has not been written"] },
+      { "file": "src/products/alongside/playbooks/followUpWithSomeone.ts", "proof": ["Somebody has not come back to you and it needs chasing"] },
+      { "file": "src/products/alongside/playbooks/resolveABillingProblem.ts", "proof": ["Something has been charged wrongly and it needs sorting"] }
+    ],
+    "query": "adhd app for hard to start tasks",
+    "board": "ADHD Task Paralysis",
+    "when": "evergreen",
+    "visual": "Mockup-app promo, mulberry palette: dark panel, app icon and name, two-tone headline, four rows (the call, the email, the follow-up, the billing problem), large tilted phone showing the REAL Help screen (creative/public/screens/alongside-help.png, dev badge cropped) with 'What do you need to do?' and its eight situations. Prop: a ringing-phone silhouette and an unsent email window peeking from behind.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "product",
+    "angle": "mockup-app",
+    "headline": "ADHD Life Admin App: Help With One Thing Today, Nothing Set Up First",
+    "sub": "Help with one thing today, with nothing set up first, and no obligation to turn it into a system.",
+    "items": [
+      "What is one thing that has been sitting there?",
+      "A call I keep not making",
+      "An email I have not written",
+      "An appointment to book",
+      "Something that feels too big to start"
+    ],
+    "link": { "kind": "shop", "slug": "alongside" },
+    "proof": [
+      "Help with one thing today, with nothing set up first, and no obligation to turn it into a system."
+    ],
+    "proofFile": "src/shop/products/alongside.ts",
+    "proofExtra": [
+      {
+        "file": "src/products/alongside/components/NowView.tsx",
+        "proof": ["What is one thing that has been sitting there?", "Pick the closest. It walks you through that one thing, and you can stop at any point."]
+      },
+      {
+        "file": "src/products/alongside/firstWin.ts",
+        "proof": ["A call I keep not making", "An email I have not written", "An appointment to book", "Something that feels too big to start"]
+      }
+    ],
+    "query": "adhd app where to start",
+    "board": "ADHD Task Paralysis",
+    "when": "evergreen",
+    "visual": "Mockup-app promo, mulberry palette: dark panel, app icon and name, two-tone headline, three rows (open it with nothing recorded / pick the closest / stop at any point), large tilted phone. SCREEN TO CAPTURE: Now in its first-run state (NowView firstWin true) with 'What is one thing that has been sitting there?' and the four ways to start as full-width buttons. Prop: an empty kraft envelope and a pen at the phone's foot.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "product",
+    "angle": "mockup-app",
+    "headline": "Pick Something Back Up: The ADHD App That Shows You Where You Left Off",
+    "sub": "Nothing here counts it against you.",
+    "items": [
+      "Where did you get to?",
+      "Was anything missing last time?",
+      "What is the smallest piece you could do next?"
+    ],
+    "link": { "kind": "shop", "slug": "alongside" },
+    "proof": [
+      "Where did you get to?",
+      "Written here, this is what you will see next time instead of having to work it out again.",
+      "Nothing here counts it against you.",
+      "What is the smallest piece you could do next?"
+    ],
+    "proofFile": "src/products/alongside/playbooks/resumeSomethingAbandoned.ts",
+    "query": "adhd unfinished projects app",
+    "board": "ADHD Planning Systems",
+    "when": "evergreen",
+    "visual": "Mockup-app promo, mulberry palette: dark panel, app icon and name, two-tone headline, three rows (where did you get to / was anything missing / the smallest piece next), large tilted phone. SCREEN TO CAPTURE: the Pick something back up walkthrough at 'Where did you get to?' with its why line ('Written here, this is what you will see next time...') and the placeholder 'Two of the four rooms are done' (real placeholder, stub answers). Prop: a bookmark ribbon across the phone's corner.",
+    "flags": [],
+    "reserve": true
+  },
+  {
+    "slice": "product",
+    "angle": "mockup-printable",
+    "headline": "ADHD Life Admin Printable: Four Kinds of Page, Nothing More",
+    "sub": "A blank page is a fine week.",
+    "items": [
+      "Something to do",
+      "Waiting on someone",
+      "Something ongoing",
+      "Worth having to hand",
+      "No scoring, no streaks, nothing to keep up."
+    ],
+    "link": { "kind": "shop", "slug": "alongside" },
+    "proof": [
+      "Four kinds of page, nothing more",
+      "No scoring, no streaks, nothing to keep up.",
+      "A blank page is a fine week."
+    ],
+    "proofFile": "book",
+    "query": "adhd life admin printable",
+    "board": "ADHD Life Admin",
+    "when": "evergreen",
+    "visual": "Mockup-printable: the REAL 'How this works' page of The Alongside Book (page 2 of the printed book, book.pdf) lying tilted on a blush desk, headline above, a butter sticky note and a pen beside it, a corner of a kraft envelope. The page is shown exactly as printed.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "product",
+    "angle": "mockup-printable",
+    "headline": "Waiting on Someone Printable: Who You Are Waiting On and When to Check Back",
+    "sub": "Something somebody else has to come back to you on",
+    "items": [
+      "Waiting on someone",
+      "Waiting on",
+      "Check back on",
+      "Note"
+    ],
+    "link": { "kind": "shop", "slug": "alongside" },
+    "proof": [
+      "Waiting on someone",
+      "Something somebody else has to come back to you on",
+      "WAITING ON   CHECK BACK ON   NOTE"
+    ],
+    "proofFile": "book",
+    "query": "waiting on reply tracker printable",
+    "board": "ADHD Life Admin",
+    "when": "evergreen",
+    "visual": "Mockup-printable: the REAL 'Waiting on someone' register page of The Alongside Book (page 4) tilted on a desk with a few ruled rows filled in by hand in a handwriting face (rows are drawn props, clearly handwritten, not part of the book), headline above, a phone face down at the page corner.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "product",
+    "angle": "mockup-printable",
+    "headline": "Project Restart Printable: Where You Left Off and the Next Step on One Page",
+    "sub": "More than one thing ongoing? Photocopy this page.",
+    "items": [
+      "What is it?",
+      "Where you left off",
+      "Next step",
+      "Check back on"
+    ],
+    "link": { "kind": "shop", "slug": "alongside" },
+    "proof": [
+      "WHAT IS IT?",
+      "WHERE YOU LEFT OFF",
+      "NEXT STEP",
+      "CHECK BACK ON",
+      "More than one thing ongoing? Photocopy this page"
+    ],
+    "proofFile": "book",
+    "query": "adhd project tracker printable",
+    "board": "ADHD Planning Systems",
+    "when": "evergreen",
+    "visual": "Mockup-printable: the REAL 'Ongoing thread' page of The Alongside Book (page 5) tilted on a desk next to a second photocopied page peeking out underneath, headline above, a cream index card and a pen. The page is shown exactly as printed, blank.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "product",
+    "angle": "mockup-printable",
+    "headline": "Reference Number Organizer Printable: One Page for the Detail You Will Need Again",
+    "sub": "A claim number, an appointment reference, a phone number.",
+    "items": [
+      "A claim number",
+      "An appointment reference",
+      "A phone number",
+      "Not a notes page."
+    ],
+    "link": { "kind": "shop", "slug": "alongside" },
+    "proof": [
+      "A claim number, an appointment reference, a phone number: the detail that makes dealing with a specific thing possible.",
+      "Not a notes page."
+    ],
+    "proofFile": "book",
+    "query": "reference number log printable",
+    "board": "Paperwork Organization",
+    "when": "evergreen",
+    "visual": "Mockup-printable: the REAL 'Reference' register page of The Alongside Book (page 6) tilted on a desk beside a small stack of kraft envelopes, headline above, a butter sticky note stuck at the page edge. The page is shown exactly as printed.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "product",
+    "angle": "mockup-printable",
+    "headline": "Weekly Review Printable for ADHD: Undated on Purpose, So Any Copy Works",
+    "sub": "Photocopy this page, undated on purpose so any copy works, or keep the review in the app instead.",
+    "items": [
+      "Week of",
+      "What's still open",
+      "What moved",
+      "What's stuck, and what it needs"
+    ],
+    "link": { "kind": "shop", "slug": "alongside" },
+    "proof": [
+      "Photocopy this page, undated on purpose so any copy works, or keep the review in the app instead.",
+      "WHAT'S STILL OPEN",
+      "WHAT MOVED",
+      "WHAT'S STUCK, AND WHAT IT NEEDS"
+    ],
+    "proofFile": "book",
+    "query": "weekly review printable adhd",
+    "board": "ADHD Planning Systems",
+    "when": "evergreen",
+    "visual": "Mockup-printable: the REAL 'Weekly review' page of The Alongside Book (page 7) tilted on a desk with a mug of tea at the corner, headline above, a pen laid across it. The page is shown exactly as printed, blank (undated).",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "product",
+    "angle": "mockup-printable",
+    "headline": "Undated ADHD Planner Pages: Print What You Need, Leave the Rest Blank",
+    "sub": "Somewhere to put it down, so your head doesn't have to hold it.",
+    "items": [
+      "How this works",
+      "Commitments",
+      "Waiting on someone",
+      "Ongoing thread",
+      "Reference",
+      "Weekly review"
+    ],
+    "link": { "kind": "shop", "slug": "alongside" },
+    "proof": [
+      "Somewhere to put it down, so your head doesn't have to hold it.",
+      "Undated. Print what you need.",
+      "leave a page blank when there's nothing there"
+    ],
+    "proofFile": "book",
+    "query": "undated planner printable adhd",
+    "board": "ADHD Planning Systems",
+    "when": "evergreen",
+    "visual": "Mockup-printable: a fan of real Alongside Book pages (cover with 'The Alongside Book', Commitments, Waiting on someone, Ongoing thread, Reference, Weekly review) spread across a desk, each page as printed, headline above, a binder clip and a butter sticky note. Page names on the pin are the real page titles.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "product",
+    "angle": "mockup-printable",
+    "headline": "Pen and Paper Life Admin Book: It Works With a Pen and Nothing Else",
+    "sub": "Neither half needs the other.",
+    "items": [
+      "This book works with a pen and nothing else",
+      "the app works if you never print a page",
+      "Nothing in this book was generated."
+    ],
+    "link": { "kind": "shop", "slug": "alongside" },
+    "proof": [
+      "This book works with a pen and nothing else, and the app works if you never print a page.",
+      "Neither half needs the other.",
+      "Nothing in this book was generated."
+    ],
+    "proofFile": "book",
+    "query": "pen and paper adhd planner",
+    "board": "ADHD Planning Systems",
+    "when": "evergreen",
+    "visual": "Mockup-printable: the REAL 'About this book' last page of The Alongside Book (page 8) tilted on a desk beside a plain pen and an unplugged phone, headline above. The page is shown exactly as printed.",
+    "flags": [],
+    "reserve": true
+  },
+  {
+    "slice": "product",
+    "angle": "script-card",
+    "headline": "Hard Phone Call Script: Getting the First Sentence Out Is Most of It",
+    "sub": "Change any of this, or write your own.",
+    "items": [
+      "Hi, I need to talk to you about money, which I would rather do directly than by email. Have you got a few minutes?",
+      "Change any of this, or write your own."
+    ],
+    "link": { "kind": "shop", "slug": "alongside" },
+    "proof": [
+      "Getting the first sentence out is most of it. Change any of this, or write your own.",
+      "Hi, I need to talk to you about money, which I would rather do directly than by email. Have you got a few minutes?"
+    ],
+    "proofFile": "src/products/alongside/playbooks/makeADifficultPhoneCall.ts",
+    "query": "phone call script anxiety",
+    "board": "Phone Call Anxiety Scripts",
+    "when": "evergreen",
+    "visual": "Opening-line-card archetype: one large cream index card clipped to a ringing phone, the real suggested wording set large inside mulberry quote marks, a small caption 'Change any of this, or write your own.' under it. A tiny phone in the corner shows the Your opening step. Product line at the foot.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "product",
+    "angle": "comparison",
+    "headline": "To-Do List vs ADHD Companion: Everything on Screen at Once vs One Thing Now",
+    "sub": "This shows what is worth your attention right now, in one sentence.",
+    "items": [
+      "everything sits on screen at once",
+      "sorted by nothing",
+      "what is worth your attention right now, in one sentence"
+    ],
+    "link": { "kind": "shop", "slug": "alongside" },
+    "proof": [
+      "everything sits on screen at once, sorted by nothing, and the list itself becomes the thing you were trying to get away from",
+      "This shows what is worth your attention right now, in one sentence, or says plainly that nothing needs you and stops there."
+    ],
+    "proofFile": "src/shop/products/alongside.ts",
+    "query": "adhd to do list alternative",
+    "board": "ADHD Planning Systems",
+    "when": "evergreen",
+    "visual": "This-not-that comparison, two columns. Left, struck through: a long ruled to-do pad crammed with unreadable scribbled lines, labelled 'everything sits on screen at once'. Right, circled in mulberry: a single Now-style card (a plain title bar, one button) labelled 'one thing, in one sentence'. Butter sticky note and a pen as props. No real item text on either side.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "product",
+    "angle": "before-after",
+    "headline": "Sticky Note Overload: Put Each Thing Down Once and Let It Come Back When It Matters",
+    "sub": "So holding it stops being your job.",
+    "items": [
+      "I keep everything in my head and it's exhausting",
+      "Somewhere to put a thing down that will bring it back when it actually matters"
+    ],
+    "link": { "kind": "shop", "slug": "alongside" },
+    "proof": [
+      "I keep everything in my head and it's exhausting",
+      "Somewhere to put a thing down that will bring it back when it actually matters, so holding it stops being your job."
+    ],
+    "proofFile": "src/shop/products/alongside.ts",
+    "query": "sticky note overwhelm adhd",
+    "board": "Overwhelm and Overdue",
+    "when": "evergreen",
+    "visual": "Sticky-note-wall-to-one-card archetype as before and after: top half a monitor edge covered in a wall of butter sticky notes (scribbled lines, no readable words) labelled with the quote 'I keep everything in my head and it's exhausting'; an arrow down to a calm blush ground with one Now-style card on a phone. Mulberry used only on the card's button.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "product",
+    "angle": "infographic",
+    "headline": "Life Admin Categories: The Four Kinds of Thing You Are Carrying",
+    "sub": "Never mixed together.",
+    "items": [
+      "Something you mean to do",
+      "Something somebody else has to come back to you on",
+      "Something ongoing that will take more than one go",
+      "Something you will need again to deal with a specific thing, like a reference number or a phone number"
+    ],
+    "link": { "kind": "shop", "slug": "alongside" },
+    "proof": [
+      "Life: everything you are holding, in four shapes, never mixed together"
+    ],
+    "proofFile": "src/shop/products/alongside.ts",
+    "proofExtra": [
+      {
+        "file": "src/products/alongside/life.ts",
+        "proof": [
+          "Something you mean to do",
+          "Something somebody else has to come back to you on",
+          "Something ongoing that will take more than one go",
+          "Something you will need again to deal with a specific thing, like a reference number or a phone number"
+        ]
+      }
+    ],
+    "query": "life admin categories",
+    "board": "ADHD Life Admin",
+    "when": "evergreen",
+    "visual": "Infographic: four labelled life trays (Something to do, Waiting on someone, Something ongoing, Worth having to hand), each with its one-line description beneath in IBM Plex Sans and a single small prop (a sticky note, an envelope, an open folder, an index card). Mulberry only on the tray titles. Product line at the foot.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "product",
+    "angle": "myth-vs-truth",
+    "headline": "ADHD Life Admin Without a Score: No Streak, No Percentage, No Attempt Counter",
+    "sub": "A record of what actually happened, in your own words.",
+    "items": [
+      "Every system eventually tells you that you've failed at it.",
+      "There is no streak, no percentage and no attempt counter anywhere in it.",
+      "A record of what actually happened, in your own words, that never once says you failed at something."
+    ],
+    "link": { "kind": "shop", "slug": "alongside" },
+    "proof": [
+      "Every system eventually tells you that you've failed at it.",
+      "A record of what actually happened, in your own words, that never once says you failed at something.",
+      "There is no streak, no percentage and no attempt counter anywhere in it."
+    ],
+    "proofFile": "src/shop/products/alongside.ts",
+    "query": "adhd planner without streaks",
+    "board": "ADHD Planning Systems",
+    "when": "evergreen",
+    "visual": "Myth-vs-truth card: left half, a crumpled butter sticky note carrying the myth line 'Every system eventually tells you that you've failed at it.' (struck through); right half, a clean cream card with the truth lines in handwriting and a mulberry tick. Small phone at the corner showing a Life card. No numbers, charts or streak icons anywhere.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "product",
+    "angle": "checklist",
+    "headline": "Billing Problem Checklist: What to Have in Front of You Before You Call",
+    "sub": "Worth having in front of you",
+    "items": [
+      "The statement or the email showing the charge",
+      "The date it happened",
+      "Your account or customer reference, if there is one",
+      "Something to write on"
+    ],
+    "link": { "kind": "shop", "slug": "alongside" },
+    "proof": [
+      "Worth having in front of you",
+      "The statement or the email showing the charge",
+      "The date it happened",
+      "Your account or customer reference, if there is one",
+      "Something to write on"
+    ],
+    "proofFile": "src/products/alongside/playbooks/resolveABillingProblem.ts",
+    "query": "billing problem checklist",
+    "board": "ADHD Life Admin",
+    "when": "evergreen",
+    "visual": "Notepad-checklist archetype: a spiral pad with the four real items handwritten and ticked boxes (first two ticked), a small phone beside it showing the 'Worth having in front of you' step of Sort out a billing problem (SCREEN TO CAPTURE, stub run), a glass of water at the pad's edge. Product line at the foot.",
+    "flags": [],
+    "reserve": false
+  }
+]
