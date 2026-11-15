@@ -49,8 +49,8 @@ const dataLayerStubs = {
     if (source === "@/lib/supabase/client" || source.endsWith("/lib/supabase/client")) {
       throw new Error(`The real Supabase client was imported by ${importer}: add a stub for whatever pulls it in.`);
     }
-    if (!importer || !(source.startsWith(".") || source.startsWith("@/"))) return null;
-    const base = source.startsWith("@/") ? path.join(REPO, "src", source.slice(2)) : path.resolve(path.dirname(importer), source);
+    if (!importer || !(source.startsWith(".") || source.startsWith("@/") || path.isAbsolute(source))) return null;
+    const base = source.startsWith("@/") ? path.join(REPO, "src", source.slice(2)) : path.isAbsolute(source) ? source : path.resolve(path.dirname(importer), source);
     for (const [real, stub] of STUBS) if (base === real.replace(/\.tsx?$/, "")) return stub;
     return null;
   },

@@ -113,10 +113,16 @@ function p11() {
   ${sheet({ src: bookPage(5), x: 96, y: 436, w: 620, tilt: -3 })}
   ${indexCard({ x: 150, y: 1030, w: 300, rot: -4 })}
   ${pen({ x: 340, y: 1200, len: 360, rot: 5, body: "#23202a", trim: "#d6b36a" })}
-  <!-- lamp, seen from above: shade and base -->
-  <svg style="${abs(760, 372, 280, 280, "filter:drop-shadow(0 16px 14px rgba(0,0,0,.5))")}" viewBox="0 0 280 280" aria-hidden="true">
-    ${ring(140, 140, 130, "#e9d3b0")}${ring(140, 140, 110, "#f6e4bd")}${ring(140, 140, 70, "#fff0cf")}${ring(140, 140, 24, "#b9946a")}${ring(140, 140, 8, "#d9bf94")}
-    ${[0,1,2,3,4,5,6,7,8,9,10,11].map((k)=>`<line x1="${140+Math.cos(k*Math.PI/6)*28}" y1="${140+Math.sin(k*Math.PI/6)*28}" x2="${140+Math.cos(k*Math.PI/6)*128}" y2="${140+Math.sin(k*Math.PI/6)*128}" stroke="#b99466" stroke-opacity=".5" stroke-width="3"/>`).join("")}<circle cx="140" cy="140" r="130" fill="none" stroke="#a9835a" stroke-width="4"/></svg>
+  <!-- lamp at the nightstand edge: drum shade, stem, round base, warm glow -->
+  <div style="${abs(690, 380, 330, 330, "background:radial-gradient(circle,rgba(255,214,150,.75),rgba(255,214,150,0) 68%)")}"></div>
+  <svg style="${abs(770, 392, 230, 330, "filter:drop-shadow(0 18px 14px rgba(0,0,0,.5))")}" viewBox="0 0 230 330" aria-hidden="true">
+    <defs><linearGradient id="shd" x1="0" x2="1"><stop offset="0" stop-color="#e9cf9f"/><stop offset=".45" stop-color="#fff0cc"/><stop offset="1" stop-color="#dcb97f"/></linearGradient>
+    <linearGradient id="stm" x1="0" x2="1"><stop offset="0" stop-color="#8a6a4a"/><stop offset=".5" stop-color="#d9b88a"/><stop offset="1" stop-color="#7a5b3d"/></linearGradient></defs>
+    <rect x="109" y="132" width="14" height="140" fill="url(#stm)"/>
+    <ellipse cx="116" cy="290" rx="62" ry="22" fill="#5a3f2a"/><ellipse cx="116" cy="282" rx="62" ry="22" fill="#a98056"/><ellipse cx="116" cy="278" rx="44" ry="13" fill="#c9a57a"/>
+    <path d="M36 122 L56 8 L176 8 L196 122 Z" fill="url(#shd)"/>
+    <ellipse cx="116" cy="8" rx="60" ry="9" fill="#fff6dc"/><ellipse cx="116" cy="122" rx="80" ry="12" fill="#f3d9a3"/>
+    <path d="M36 122 Q116 144 196 122" fill="none" stroke="#b58f55" stroke-width="3"/></svg>
   <!-- glass of water on a coaster -->
   <svg style="${abs(700, 1020, 270, 270, "filter:drop-shadow(0 18px 14px rgba(0,0,0,.55))")}" viewBox="0 0 270 270" aria-hidden="true">
     ${ring(135, 135, 128, "#e8dfd3")}<circle cx="135" cy="135" r="128" fill="none" stroke="#000" stroke-opacity=".15" stroke-width="3"/>
