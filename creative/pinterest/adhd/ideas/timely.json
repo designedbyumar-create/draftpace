@@ -1,0 +1,401 @@
+[
+  {
+    "slice": "timely",
+    "angle": "question",
+    "headline": "Another New Planner This January? Try the One Page of the One You Own First",
+    "sub": "If it still doesn't fit, you've learned what to look for, which is a better reason to buy.",
+    "items": [
+      "A new planner is exciting because it's new, and buying one is easier than sorting the old pile.",
+      "Try the one page with the planner you already own for two weeks first."
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "why-you-abandon-planners-and-how-to-come-back"
+    },
+    "proof": [
+      "A new planner is exciting because it's new, and buying one is easier than sorting the old pile.",
+      "Try the one page with the planner you already own for two weeks first.",
+      "If it still doesn't fit, you've learned what to look for, which is a better reason to buy."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "why do i keep buying planners adhd",
+    "board": "ADHD Planning Systems",
+    "when": "December to January",
+    "visual": "pov-desk-scene from above: a stack of unopened new-year planners with cellophane and a ribbon on the left, the old planner open to a single page on the right with one line circled in mulberry; a butter sticky note between them carries the question in handwriting. Clutter at the edges, calm in the middle.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "timely",
+    "angle": "myth-vs-truth",
+    "headline": "Missed a Day of Your New Routine? One Gap Is Not a Reason to Start Again",
+    "sub": "The researchers reported that missing one opportunity did not materially affect the habit forming process.",
+    "items": [
+      "Does missing a day really wreck it",
+      "Less than it feels like.",
+      "The behaviors were small daily ones, not planners, and the study can't say how a planner behaves.",
+      "It does back the idea that one gap isn't the end."
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "why-you-abandon-planners-and-how-to-come-back"
+    },
+    "proof": [
+      "Does missing a day really wreck it",
+      "Less than it feels like.",
+      "The researchers reported that missing one opportunity did not materially affect the habit forming process.",
+      "The behaviors were small daily ones, not planners, and the study can't say how a planner behaves.",
+      "It does back the idea that one gap isn't the end.",
+      "one gap is not a reason to start again"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "does missing a day break a habit",
+    "board": "ADHD Planning Systems",
+    "when": "January",
+    "visual": "myth-vs-truth split on a blush ground: left, a wall calendar with one blank square struck through in a hard ink line labelled as the myth; right, the same calendar with the blank square left alone and a small mulberry tick on the next day. Quiet, no streak counter, no numbers on the squares beyond the weekday letters.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "timely",
+    "angle": "quote-card",
+    "headline": "New Year Clear-Out: Close a Project on Purpose So It Stops Nagging You",
+    "sub": "Three no answers mean you can close it on purpose.",
+    "items": [
+      "Write down what you decided and why, so it stops nagging as an open question.",
+      "dropped on [date], because [reason]"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "how-to-restart-a-project-you-gave-up-on"
+    },
+    "proof": [
+      "Three no answers mean you can close it on purpose.",
+      "Write down what you decided and why, so it stops nagging as an open question.",
+      "dropped on [date], because [reason]"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "how to let go of an unfinished project",
+    "board": "ADHD Planning Systems",
+    "when": "December to January",
+    "visual": "quote-card: one cream index card centered, the pattern 'Dropped on ____, because ____' handwritten with the blanks left as underlines for the viewer to fill, a closed manila folder with a paper clip behind it and a small bookmark ribbon at the corner; mostly empty blush ground.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "timely",
+    "angle": "template-preview",
+    "headline": "After the Holidays: A Late List Sorted in Two Minutes, Returns and Thank-Yous Included",
+    "sub": "The last column is the only thing you write next to each one.",
+    "items": [
+      "Return the package: The return window is open for 9 more days (A date)",
+      "Thank-you note: Someone will be glad of it, no rush (A person)",
+      "Phone bill, 12 days past due: A late fee is probably already added (A date)",
+      "Book the dentist: Nothing (No one)"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "how-to-start-when-everything-is-overdue"
+    },
+    "proof": [
+      "The last column is the only thing you write next to each one.",
+      "\"Return the package\", \"The return window is open for 9 more days\", \"A date\"",
+      "\"Thank-you note\", \"Someone will be glad of it, no rush\", \"A person\"",
+      "\"Phone bill, 12 days past due\", \"A late fee is probably already added\", \"A date\"",
+      "\"Book the dentist\", \"Nothing\", \"No one\""
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "late list sorted adhd after holidays",
+    "board": "Overwhelm and Overdue",
+    "when": "December to January",
+    "visual": "template-preview: a single ruled page with three columns (the thing, what is waiting on it, pile) and four filled rows in the handwriting face, the pile column in mulberry; a returns label and a boxed gift sit at the page edge. Shows four rows only, not the full table. Example data, not a real account.",
+    "flags": [
+      "example-tag"
+    ],
+    "reserve": false
+  },
+  {
+    "slice": "timely",
+    "angle": "script-card",
+    "headline": "Bill Slipped Over the Holidays? What to Say When You Notice It Is Late",
+    "sub": "Find the bill, pay it if you can, and contact them without an essay of explanation.",
+    "items": [
+      "Hi, I see my payment was due on the 12th and I missed it. I can pay it now. Could you confirm the total, and whether the late fee can be reviewed?",
+      "Thanks. Can you give me a reference number for this call, and your name, so I can write it down?"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "why-you-keep-missing-bill-due-dates"
+    },
+    "proof": [
+      "Find the bill, pay it if you can, and contact them without an essay of explanation.",
+      "Hi, I see my payment was due on the 12th and I missed it. I can pay it now. Could you confirm the total, and whether the late fee can be reviewed?",
+      "Thanks. Can you give me a reference number for this call, and your name, so I can write it down?"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "what to say when you missed a bill payment",
+    "board": "ADHD Life Admin",
+    "when": "December to January",
+    "visual": "opening-line-card: two stacked cream index cards at a small tilt, the first line large in mulberry quote marks, the reference-number line smaller on the second; a phone lies beside a single bill slip clipped to a pen. Example date is the guide's own.",
+    "flags": [
+      "example-tag"
+    ],
+    "reserve": false
+  },
+  {
+    "slice": "timely",
+    "angle": "checklist",
+    "headline": "Scary Letter in the Holiday Post Pile? Read Only Three Things and Decide Nothing",
+    "sub": "If you can't make yourself open it, hand it to someone you trust and ask them to read you those three things.",
+    "items": [
+      "Who sent it",
+      "What it asks",
+      "By what date"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "paperwork-pile-where-to-start"
+    },
+    "proof": [
+      "read only who sent it, what it asks and by what date, and put it in Act",
+      "You're not deciding anything.",
+      "If you can't make yourself open it, hand it to someone you trust and ask them to read you those three things."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "afraid to open mail adhd",
+    "board": "Paperwork Organization",
+    "when": "November to January",
+    "visual": "notepad-checklist: a spiral pad with three handwritten tick-box lines, the first ticked in mulberry; a single window envelope lies at the pad's edge with the flap half open, a pen across it. No readable text on the letter itself.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "timely",
+    "angle": "question",
+    "headline": "Pre-Approved Credit Offers Piling Up in the Post? You Can Cut Most of Them (US)",
+    "sub": "That's a job for a later day, not for the ten minutes.",
+    "items": [
+      "You can opt out at optoutprescreen.com or by phone, either for five years or permanently with a form.",
+      "It asks for your name, address, birth date and Social Security number.",
+      "It only stops offers built from lists at Equifax, Experian and TransUnion.",
+      "It can take weeks for the mail to thin out."
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "paperwork-pile-where-to-start"
+    },
+    "proof": [
+      "If a lot of the pile is pre-approved credit card and insurance offers, you can cut most of them.",
+      "you can opt out at optoutprescreen.com or by phone, either for five years or permanently with a form",
+      "It asks for your name, address, birth date and Social Security number",
+      "it only stops offers built from lists at Equifax, Experian and TransUnion",
+      "it can take weeks for the mail to thin out",
+      "That's a job for a later day, not for the ten minutes."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "how to stop pre approved credit card offers",
+    "board": "Paperwork Organization",
+    "when": "November to January",
+    "visual": "question-card: a kraft envelope marked as an offer with its window flap open next to a cream index card holding the question in Newsreader and the four short answers in Plex Sans; one small mulberry tick. United States only is printed on the card. No logos of the bureaus.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "timely",
+    "angle": "infographic",
+    "headline": "Sunday Reset: A Floor You Can Do on Your Worst Day and a Ceiling for a Good One",
+    "sub": "On a bad week, do the floor. On a good week, the ceiling is allowed. Either one is a full reset.",
+    "items": [
+      "The floor: open the pile and pick one thing.",
+      "Add a day and the first physical step, and you're at the middle.",
+      "The ceiling: also glance at the dates in the next seven days, for bills, appointments and anything that expires.",
+      "Stop at the ceiling."
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "a-weekly-reset-that-survives-a-bad-week"
+    },
+    "proof": [
+      "On a bad week, do the floor. On a good week, the ceiling is allowed. Either one is a full reset.",
+      "The floor: open the pile and pick one thing.",
+      "Add a day and the first physical step, and you're at the middle.",
+      "The ceiling: also glance at the dates in the next seven days, for bills, appointments and anything that expires.",
+      "Stop at the ceiling."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "sunday reset routine adhd",
+    "board": "ADHD Planning Systems",
+    "when": "November to January; Sundays",
+    "visual": "infographic: three low steps drawn as stacked paper slabs (floor, middle, ceiling), labels in Plex Sans, the first step filled mulberry; a wall calendar corner with one Sunday square circled. Diagram only, no timer UI.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "timely",
+    "angle": "quote-card",
+    "headline": "Quiet Week, Nothing Left in the Tank? The Next Smaller Reset Is One Minute",
+    "sub": "A reset that needs you to feel capable isn't a reset you can rely on.",
+    "items": [
+      "The next smaller version is a single minute: open the pile, look at it, close it.",
+      "If that's too much, do nothing, and try again next week without a word about it."
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "a-weekly-reset-that-survives-a-bad-week"
+    },
+    "proof": [
+      "The next smaller version is a single minute: open the pile, look at it, close it.",
+      "If that's too much, do nothing, and try again next week without a word about it.",
+      "A reset that needs you to feel capable isn't a reset you can rely on."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "adhd low energy week routine",
+    "board": "ADHD Planning Systems",
+    "when": "late December; any quiet week",
+    "visual": "quote-card: one very large Newsreader line on a blush ground with the three verbs open, look, close picked out in mulberry, a single closed folder lying flat under a glass of water as the only props; maximum white space for a thumbnail read.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "timely",
+    "angle": "how-to-steps",
+    "headline": "Holiday Plans Always Take Longer? Time Three Ordinary Tasks and Use Your Own Numbers",
+    "sub": "Nearly everyone also misjudges how long tasks will take.",
+    "items": [
+      "Write down the start and end time of three ordinary tasks this week, such as a phone call, a form, and a load of laundry",
+      "Use those numbers next time",
+      "One common rule of thumb is to double your first estimate for anything you haven't timed."
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "time-blindness-planning"
+    },
+    "proof": [
+      "Nearly everyone also misjudges how long tasks will take.",
+      "Write down the start and end time of three ordinary tasks this week, such as a phone call, a form, and a load of laundry, and use those numbers next time.",
+      "one common rule of thumb is to double your first estimate for anything you haven't timed",
+      "It's a rule of thumb, not a proven fix."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "adhd time blindness how long tasks take",
+    "board": "ADHD Planning Systems",
+    "when": "November to January",
+    "visual": "how-to-steps: three cream index cards in a row on a desk each with a task name and a pencilled start and end time in the handwriting face (a call, a form, a load of laundry), a pen and a plain wall clock above; the rule of thumb is a small note at the bottom marked 'a rule of thumb, not a proven fix'. No stopwatch UI.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "timely",
+    "angle": "checklist",
+    "headline": "Holiday Refund or Return Call: The Two-Minute Note to Write Straight After Hanging Up",
+    "sub": "Two minutes. It's the note you'll want if you have to call again.",
+    "items": [
+      "Date and time of the call, and the number you dialed.",
+      "Name of the person, and the reference number.",
+      "What was agreed, in their words if you can.",
+      "What they said happens next, and the date you'll check if it hasn't.",
+      "Anything you need to send or do, with a day."
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "scripts-for-the-admin-calls-everyone-dreads"
+    },
+    "proof": [
+      "Two minutes. It's the note you'll want if you have to call again.",
+      "Date and time of the call, and the number you dialed.",
+      "Name of the person, and the reference number.",
+      "What was agreed, in their words if you can.",
+      "What they said happens next, and the date you'll check if it hasn't.",
+      "Anything you need to send or do, with a day."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "what to write down after a customer service call",
+    "board": "Paperwork Organization",
+    "when": "December to January",
+    "visual": "notepad-checklist variant as a filled-in call note: a lined page with five handwriting lines and a mulberry underline on the reference number line, a phone face down on the page's corner and a returns box cropped at the edge.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "timely",
+    "angle": "scenario",
+    "headline": "How to Say No to a Holiday Ask: Ask for a Minute, Do Not Say Yes to End the Call",
+    "sub": "You're allowed to ask for a minute to think. You're allowed to say you'll call back.",
+    "items": [
+      "You say yes to end the discomfort.",
+      "Let me get back to you on that",
+      "A yes you regret is harder to undo than a pause."
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "how-to-say-no-or-give-bad-news-on-the-phone"
+    },
+    "proof": [
+      "You say yes to end the discomfort.",
+      "say \"Let me get back to you on that\" and hang up",
+      "A yes you regret is harder to undo than a pause.",
+      "You're allowed to ask for a minute to think. You're allowed to say you'll call back."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "how to say no on the phone",
+    "board": "Phone Call Anxiety Scripts",
+    "when": "November to December",
+    "visual": "pov-desk-scene: a phone on speaker lying beside an invitation card and a glass of water, one butter sticky note on the phone with the pause line in handwriting; a pen resting on a blank page. No names and no people, the card's text is not legible.",
+    "flags": [],
+    "reserve": false
+  },
+  {
+    "slice": "timely",
+    "angle": "question",
+    "headline": "New Year To-Do List With 50 Items? Do Not Rewrite All 50, Start With Five",
+    "sub": "You can bring rows back as you get to them.",
+    "items": [
+      "Cross out what isn't a task.",
+      "Pick the five you'd least like to be asked about and rewrite only those as first steps.",
+      "Choose one for today.",
+      "Move the other 45 to a second page you open weekly."
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "why-to-do-lists-make-it-worse"
+    },
+    "proof": [
+      "Don't rewrite all 50. Cross out what isn't a task, then pick the five you'd least like to be asked about and rewrite only those as first steps. Choose one for today and move the other 45 to a second page you open weekly. You can bring rows back as you get to them."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "how to start a to do list adhd overwhelmed",
+    "board": "ADHD Planning Systems",
+    "when": "late December to January",
+    "visual": "sticky-note-wall-to-one-card: a wall of small butter sticky notes with five picked and pulled forward onto one index card, the rest left on a second page; mulberry ring on the one chosen for today. Reserve: crowded with the starting slice's to-do pins.",
+    "flags": [
+      "example-tag"
+    ],
+    "reserve": true
+  },
+  {
+    "slice": "timely",
+    "angle": "script-card",
+    "headline": "January Cancellations: How to Cancel on the Phone and Say No Once to the Discount",
+    "sub": "Then ask for a confirmation number and whether a written confirmation will come.",
+    "items": [
+      "Hi, I'd like to cancel. Can you tell me what you need from me to do that?",
+      "If they offer a discount to stay and you don't want it, say no once, plainly, and repeat that you want to cancel."
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "scripts-for-the-admin-calls-everyone-dreads"
+    },
+    "proof": [
+      "Hi, I'd like to cancel. Can you tell me what you need from me to do that?",
+      "Then ask for a confirmation number and whether a written confirmation will come.",
+      "If they offer a discount to stay and you don't want it, say no once, plainly, and repeat that you want to cancel."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "how to cancel a subscription by phone",
+    "board": "Phone Call Anxiety Scripts",
+    "when": "January",
+    "visual": "opening-line-card: one cream index card with the cancel line in mulberry quote marks, a second smaller card with the discount rule; a phone beside a kraft envelope. Reserve: the cancel line is also in the calls slice's first-sentences pin.",
+    "flags": [],
+    "reserve": true
+  }
+]

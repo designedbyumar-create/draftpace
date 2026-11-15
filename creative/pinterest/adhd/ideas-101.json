@@ -1,0 +1,3211 @@
+[
+  {
+    "slice": "product",
+    "angle": "mockup-app",
+    "headline": "ADHD Life Admin App That Says So When Nothing Needs You Right Now",
+    "sub": "Nothing needs you right now, said plainly, on the days that's true",
+    "items": [
+      "Derived fresh each time from dates and notes you put there yourself",
+      "Nothing is invented",
+      "quiet is a real, honest answer",
+      "Anything you have recorded is still here in Life."
+    ],
+    "link": {
+      "kind": "shop",
+      "slug": "alongside"
+    },
+    "proof": [
+      "Now shows what deserves your attention, derived fresh each time from dates and notes you put there yourself. Nothing is invented, and quiet is a real, honest answer.",
+      "Nothing needs you right now, said plainly, on the days that's true"
+    ],
+    "proofFile": "src/shop/products/alongside.ts",
+    "proofExtra": [
+      {
+        "file": "src/products/alongside/components/NowView.tsx",
+        "proof": [
+          "Anything you have recorded is still here in Life."
+        ]
+      },
+      {
+        "file": "src/products/alongside/attention.ts",
+        "proof": [
+          "Nothing needs you right now"
+        ]
+      }
+    ],
+    "query": "adhd life admin app",
+    "board": "ADHD Life Admin",
+    "when": "evergreen",
+    "visual": "App-store promo in the homeschool reference style, mulberry palette: dark mulberry (#5f3d4b) brand panel, app icon and the name ADHD Life Companion, two-tone headline, three feature rows (derived fresh from what you put there / nothing is invented / quiet is a real answer), large tilted phone showing the quiet state of Now. SCREEN TO CAPTURE: Now with no items (NowView with signal null: 'Nothing needs you right now' and 'Anything you have recorded is still here in Life.', Keep something button, Now/Life tabs). Prop: a butter sticky note and a mug at the phone's foot.",
+    "flags": [],
+    "reserve": false,
+    "n": 1
+  },
+  {
+    "slice": "calls",
+    "angle": "script-card",
+    "headline": "Phone Call Script: First Sentences to Read When You Dial",
+    "sub": "It only has to get you through the first fifteen seconds, and you can read it.",
+    "items": [
+      "A problem with an order: Hi, I have a problem with my account and I'm hoping you can help me sort it out. Can I explain what happened?",
+      "Booking an appointment: Hi, I'd like to book an appointment. Are you the right person for that?",
+      "Canceling: Hi, I'd like to cancel. Can you tell me what you need from me to do that?",
+      "Making a complaint: Hi, I'd like to make a complaint. Can you tell me how that works here, and who I need to speak to?"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "how-to-make-a-phone-call-you-have-been-avoiding"
+    },
+    "proof": [
+      "It only has to get you through the first fifteen seconds, and you can read it.",
+      "Hi, I have a problem with my account and I'm hoping you can help me sort it out. Can I explain what happened?",
+      "Hi, I'd like to book an appointment. Are you the right person for that?",
+      "Hi, I'd like to cancel. Can you tell me what you need from me to do that?",
+      "Hi, I'd like to make a complaint. Can you tell me how that works here, and who I need to speak to?"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "phone call script what to say first",
+    "board": "Phone Call Anxiety Scripts",
+    "when": "evergreen",
+    "visual": "Opening-line-card archetype: four cream index cards fanned on a blush desk beside a face-up phone, each with a small situation tab (order, booking, canceling, complaint) and its real first sentence in handwriting; one card is pulled forward with its quote marks in mulberry.",
+    "flags": [],
+    "reserve": false,
+    "n": 2
+  },
+  {
+    "slice": "product",
+    "angle": "mockup-printable",
+    "headline": "ADHD Life Admin Printable: Four Kinds of Page, Nothing More",
+    "sub": "A blank page is a fine week.",
+    "items": [
+      "Something to do",
+      "Waiting on someone",
+      "Something ongoing",
+      "Worth having to hand",
+      "No scoring, no streaks, nothing to keep up."
+    ],
+    "link": {
+      "kind": "shop",
+      "slug": "alongside"
+    },
+    "proof": [
+      "Four kinds of page, nothing more",
+      "No scoring, no streaks, nothing to keep up.",
+      "A blank page is a fine week."
+    ],
+    "proofFile": "book",
+    "query": "adhd life admin printable",
+    "board": "ADHD Life Admin",
+    "when": "evergreen",
+    "visual": "Mockup-printable: the REAL 'How this works' page of The Alongside Book (page 2 of the printed book, book.pdf) lying tilted on a blush desk, headline above, a butter sticky note and a pen beside it, a corner of a kraft envelope. The page is shown exactly as printed.",
+    "flags": [],
+    "reserve": false,
+    "n": 3
+  },
+  {
+    "slice": "calls",
+    "angle": "checklist",
+    "headline": "How to Prepare for a Phone Call: Five Things on One Page",
+    "sub": "Paper is best, because you can't lose it behind another window.",
+    "items": [
+      "What the call is about",
+      "The result you want",
+      "Your reference number",
+      "Two facts",
+      "Your first sentence, word for word"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "how-to-make-a-phone-call-you-have-been-avoiding"
+    },
+    "proof": [
+      "what the call is about, the result you want, your reference number, two facts, and your first sentence word for word",
+      "Paper is best, because you can't lose it behind another window."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "how to prepare for a phone call checklist",
+    "board": "Phone Call Anxiety Scripts",
+    "when": "evergreen",
+    "visual": "Notepad-checklist archetype: a spiral pad held flat from above with five handwritten lines, each with a tick box and the first one ticked in mulberry; a pen across the page and a glass of water at the edge, a small phone face-down in the corner.",
+    "flags": [],
+    "reserve": false,
+    "n": 4
+  },
+  {
+    "slice": "product",
+    "angle": "mockup-app",
+    "headline": "Phone Call Anxiety App: An Opening Line You Can Use or Replace With Your Own",
+    "sub": "The first fifteen seconds are the part people rehearse.",
+    "items": [
+      "Your opening",
+      "Hi, I would like to cancel. Can you tell me what you need from me to do that?",
+      "Change any of this, or write your own.",
+      "Ready to call?"
+    ],
+    "link": {
+      "kind": "shop",
+      "slug": "alongside"
+    },
+    "proof": [
+      "The first fifteen seconds are the part people rehearse. Change any of this, or write your own.",
+      "Hi, I would like to cancel. Can you tell me what you need from me to do that?",
+      "Ready to call?"
+    ],
+    "proofFile": "src/products/alongside/playbooks/makeAPhoneCall.ts",
+    "query": "phone call anxiety app",
+    "board": "Phone Call Anxiety Scripts",
+    "when": "evergreen",
+    "visual": "Mockup-app promo, mulberry palette: dark panel, app icon and name, two-tone headline, three rows (an opening line / use it or replace it / call now or name one exact time today), large tilted phone. SCREEN TO CAPTURE: the Make a phone call walkthrough at the 'Your opening' step with the 'Cancelling something' suggested line and its 'Change any of this, or write your own.' note (stub answers; the line is the real suggestedWording). Prop: a cream index card and a phone face down beside it.",
+    "flags": [],
+    "reserve": false,
+    "n": 5
+  },
+  {
+    "slice": "calls",
+    "angle": "question",
+    "headline": "Why Is It So Hard to Make a Phone Call? A Call Has No Warm-Up",
+    "sub": "Many people describe this as too many things held at once, not a lack of caring.",
+    "items": [
+      "remember why you're calling",
+      "listen to someone you can't see",
+      "keep your main point in mind",
+      "answer their questions",
+      "write down the reference"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "how-to-make-a-phone-call-you-have-been-avoiding"
+    },
+    "proof": [
+      "A call has no warm-up.",
+      "remember why you're calling, listen to someone you can't see, keep your main point in mind, answer their questions, write down the reference",
+      "Many people describe this as too many things held at once, not a lack of caring"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "why is it so hard to make a phone call",
+    "board": "Phone Call Anxiety Scripts",
+    "when": "evergreen",
+    "visual": "A ringing phone in the centre of a blush desk with five butter sticky notes stuck around its edge, one per job (remember why, listen, main point, answer, write down); the headline is set as a question above and one index card beneath the phone reads only 'the talking', pointing to what is left once the rest is on paper.",
+    "flags": [],
+    "reserve": false,
+    "n": 6
+  },
+  {
+    "slice": "product",
+    "angle": "mockup-printable",
+    "headline": "Waiting on Someone Printable: Who You Are Waiting On and When to Check Back",
+    "sub": "Something somebody else has to come back to you on",
+    "items": [
+      "Waiting on someone",
+      "Waiting on",
+      "Check back on",
+      "Note"
+    ],
+    "link": {
+      "kind": "shop",
+      "slug": "alongside"
+    },
+    "proof": [
+      "Waiting on someone",
+      "Something somebody else has to come back to you on",
+      "WAITING ON   CHECK BACK ON   NOTE"
+    ],
+    "proofFile": "book",
+    "query": "waiting on reply tracker printable",
+    "board": "ADHD Life Admin",
+    "when": "evergreen",
+    "visual": "Mockup-printable: the REAL 'Waiting on someone' register page of The Alongside Book (page 4) tilted on a desk with a few ruled rows filled in by hand in a handwriting face (rows are drawn props, clearly handwritten, not part of the book), headline above, a phone face down at the page corner.",
+    "flags": [],
+    "reserve": false,
+    "n": 7
+  },
+  {
+    "slice": "calls",
+    "angle": "how-to-steps",
+    "headline": "What to Say in a Voicemail: Name, Reason, Number Twice, a Time",
+    "sub": "Keep it under twenty seconds.",
+    "items": [
+      "Say your name",
+      "One line about why you're calling",
+      "Your phone number slowly, then the number again",
+      "A time you'll be free",
+      "Then write down that you left the message and when"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "how-to-make-a-phone-call-you-have-been-avoiding"
+    },
+    "proof": [
+      "Say your name, one line about why you're calling, your phone number slowly, then the number again, and a time you'll be free.",
+      "Keep it under twenty seconds.",
+      "Then write down that you left the message and when."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "what to say when leaving a voicemail",
+    "board": "Phone Call Anxiety Scripts",
+    "when": "evergreen",
+    "visual": "How-to-steps: a phone lying on its side with a voicemail waveform strip, and four numbered handwritten steps on a cream index card propped against it; a butter sticky note at the edge that says 'left it' with no time on it.",
+    "flags": [],
+    "reserve": false,
+    "n": 8
+  },
+  {
+    "slice": "product",
+    "angle": "mockup-app",
+    "headline": "ADHD Task Paralysis App: It Asks for the First Physical Step, Nothing Else",
+    "sub": "Something somebody watching could see happen.",
+    "items": [
+      "What is the thing?",
+      "What would be true when it is finished?",
+      "What is the first physical step?",
+      "Which of those could happen today?",
+      "One of them. Not the list."
+    ],
+    "link": {
+      "kind": "shop",
+      "slug": "alongside"
+    },
+    "proof": [
+      "What is the first physical step?",
+      "Something somebody watching could see happen.",
+      "Which of those could happen today?",
+      "One of them. Not the list."
+    ],
+    "proofFile": "src/products/alongside/playbooks/breakDownSomethingTooBig.ts",
+    "query": "task paralysis app",
+    "board": "ADHD Task Paralysis",
+    "when": "evergreen",
+    "visual": "Mockup-app promo, mulberry palette: dark panel, app icon and name, two-tone headline, three rows (what is the thing / what is the first physical step / which could happen today), large tilted phone. SCREEN TO CAPTURE: the Break something down walkthrough at 'What is the first physical step?' with its why line ('Physical: a phone call, an email, opening a form, finding a document...') and the placeholder 'Ring the charity shop about collection' (placeholder is the real one, stub answers). Prop: three butter sticky notes, one pulled forward.",
+    "flags": [],
+    "reserve": false,
+    "n": 9
+  },
+  {
+    "slice": "calls",
+    "angle": "script-card",
+    "headline": "Wrong Charge on Your Bill: Four Opening Lines for the Phone",
+    "sub": "Each opens with the problem, not an apology, and ends with a question.",
+    "items": [
+      "Wrong amount charged: Hi, the amount I've been charged isn't what I was expecting. Can you tell me what it's for?",
+      "Charged twice: Hi, I've been charged twice for the same thing and I'd like to get it put right. Can you look at the account for me?",
+      "Charged after canceling: Hi, I canceled this and I've been charged since. Can you check when the cancellation was recorded?",
+      "Charge you don't recognize: Hi, there's a charge on my account I don't recognize. Can you tell me what it is?"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "scripts-for-the-admin-calls-everyone-dreads"
+    },
+    "proof": [
+      "Each opens with the problem, not an apology, and ends with a question.",
+      "Hi, the amount I've been charged isn't what I was expecting. Can you tell me what it's for?",
+      "Hi, I've been charged twice for the same thing and I'd like to get it put right. Can you look at the account for me?",
+      "Hi, I canceled this and I've been charged since. Can you check when the cancellation was recorded?",
+      "Hi, there's a charge on my account I don't recognize. Can you tell me what it is?"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "what to say when you were charged twice customer service",
+    "board": "Phone Call Anxiety Scripts",
+    "when": "evergreen",
+    "visual": "Opening-line-card variant: a small open recipe box of tabbed cream index cards beside a folded bill, four tabs labelled by situation; the 'charged twice' card is lifted out and stood against the box with its full sentence large inside mulberry quote marks. No amounts or account numbers drawn.",
+    "flags": [],
+    "reserve": false,
+    "n": 10
+  },
+  {
+    "slice": "product",
+    "angle": "mockup-printable",
+    "headline": "Project Restart Printable: Where You Left Off and the Next Step on One Page",
+    "sub": "More than one thing ongoing? Photocopy this page.",
+    "items": [
+      "What is it?",
+      "Where you left off",
+      "Next step",
+      "Check back on"
+    ],
+    "link": {
+      "kind": "shop",
+      "slug": "alongside"
+    },
+    "proof": [
+      "WHAT IS IT?",
+      "WHERE YOU LEFT OFF",
+      "NEXT STEP",
+      "CHECK BACK ON",
+      "More than one thing ongoing? Photocopy this page"
+    ],
+    "proofFile": "book",
+    "query": "adhd project tracker printable",
+    "board": "ADHD Planning Systems",
+    "when": "evergreen",
+    "visual": "Mockup-printable: the REAL 'Ongoing thread' page of The Alongside Book (page 5) tilted on a desk next to a second photocopied page peeking out underneath, headline above, a cream index card and a pen. The page is shown exactly as printed, blank.",
+    "flags": [],
+    "reserve": false,
+    "n": 11
+  },
+  {
+    "slice": "calls",
+    "angle": "checklist",
+    "headline": "Customer Service Call: Four Things to Get Before You Hang Up",
+    "sub": "This is the part that saves the second call.",
+    "items": [
+      "a read-back of what was agreed",
+      "a reference number for the call",
+      "the name of the person",
+      "what happens next with a date"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "scripts-for-the-admin-calls-everyone-dreads"
+    },
+    "proof": [
+      "This is the part that saves the second call.",
+      "Four things: a read-back of what was agreed, a reference number for the call, the name of the person, and what happens next with a date."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "customer service call reference number what to ask before hanging up",
+    "board": "ADHD Life Admin",
+    "when": "evergreen",
+    "visual": "Notepad-checklist: a pad with a pen next to a phone that has just ended a call; four tick-box lines, the last one ('what happens next with a date') circled in mulberry, and a butter sticky note at the corner with a blank 'ref' line left for the reader to fill.",
+    "flags": [],
+    "reserve": false,
+    "n": 12
+  },
+  {
+    "slice": "product",
+    "angle": "mockup-app",
+    "headline": "ADHD Reminder App: One Opt-In Notification for a Date You Chose Yourself",
+    "sub": "Off unless you switch it on.",
+    "items": [
+      "Remind me on the date I chose",
+      "Say what it is about",
+      "Quiet hours",
+      "Nothing is sent in this window."
+    ],
+    "link": {
+      "kind": "shop",
+      "slug": "alongside"
+    },
+    "proof": [
+      "Off unless you switch it on.",
+      "Remind me on the date I chose",
+      "Quiet hours",
+      "Nothing is sent in this window."
+    ],
+    "proofFile": "src/products/alongside/components/SettingsView.tsx",
+    "proofExtra": [
+      {
+        "file": "src/shop/products/alongside.ts",
+        "proof": [
+          "On that day it sends one notification, never during the quiet hours you set, and it says nothing about what it is for on your lock screen unless you allow that."
+        ]
+      }
+    ],
+    "query": "adhd reminder app",
+    "board": "ADHD Planning Systems",
+    "when": "evergreen",
+    "visual": "Mockup-app promo, mulberry palette: dark panel, app icon and name, two-tone headline, three rows (only a date you chose / quiet hours / a lock screen that says nothing about it unless you allow it), large tilted phone. SCREEN TO CAPTURE: Settings, Reminders (SettingsView with remindersEnabled true: the 'Remind me on the date I chose' toggle, 'Say what it is about' off, Quiet hours). Prop: a small calendar page with one date circled in mulberry, and a wall clock; no invented notification text.",
+    "flags": [],
+    "reserve": false,
+    "n": 13
+  },
+  {
+    "slice": "calls",
+    "angle": "how-to-steps",
+    "headline": "How a Customer Service Call Goes: Open, Facts, Ask, Read Back, Close",
+    "sub": "Say what happened, once, in order.",
+    "items": [
+      "Open: Hi, I'm waiting on a refund that hasn't arrived. Can you tell me whether it's been sent, and when?",
+      "Facts, once: Your colleague Dana said it would take five business days on the 9th.",
+      "The ask: I'd like the refund sent today, or a date I can rely on.",
+      "Read back: So the refund goes out by Friday. Can I have a reference number for this call?",
+      "Close: And your name, please? Thank you."
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "scripts-for-the-admin-calls-everyone-dreads"
+    },
+    "proof": [
+      "Say what happened, once, in order",
+      "Hi, I'm waiting on a refund that hasn't arrived. Can you tell me whether it's been sent, and when?",
+      "Your colleague Dana said it would take five business days on the 9th.",
+      "I'd like the refund sent today, or a date I can rely on.",
+      "So the refund goes out by Friday. Can I have a reference number for this call?",
+      "And your name, please? Thank you."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "how to talk to customer service script",
+    "board": "Phone Call Anxiety Scripts",
+    "when": "evergreen",
+    "visual": "How-to-steps: five narrow cream index cards stacked like a staircase, numbered 1 to 5 with the stage name as a tab and one line each in handwriting; a phone at the top left. The guide's example refund is shown as the guide's own illustration.",
+    "flags": [
+      "example-tag"
+    ],
+    "reserve": false,
+    "n": 14
+  },
+  {
+    "slice": "product",
+    "angle": "mockup-printable",
+    "headline": "Reference Number Organizer Printable: One Page for the Detail You Will Need Again",
+    "sub": "A claim number, an appointment reference, a phone number.",
+    "items": [
+      "A claim number",
+      "An appointment reference",
+      "A phone number",
+      "Not a notes page."
+    ],
+    "link": {
+      "kind": "shop",
+      "slug": "alongside"
+    },
+    "proof": [
+      "A claim number, an appointment reference, a phone number: the detail that makes dealing with a specific thing possible.",
+      "Not a notes page."
+    ],
+    "proofFile": "book",
+    "query": "reference number log printable",
+    "board": "Paperwork Organization",
+    "when": "evergreen",
+    "visual": "Mockup-printable: the REAL 'Reference' register page of The Alongside Book (page 6) tilted on a desk beside a small stack of kraft envelopes, headline above, a butter sticky note stuck at the page edge. The page is shown exactly as printed.",
+    "flags": [],
+    "reserve": false,
+    "n": 15
+  },
+  {
+    "slice": "calls",
+    "angle": "scenario",
+    "headline": "What to Say When Customer Service Says They Can't Help",
+    "sub": "Polite and specific works better than firm.",
+    "items": [
+      "They say they can't help: I understand that's the policy. What options do I have from here?",
+      "Asking for a supervisor: Is there someone with more authority to change this that I can speak to? I'll hold.",
+      "You're told to call back: Can you note on the account that I called today and what I asked for? Then I'll say so when I call again."
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "scripts-for-the-admin-calls-everyone-dreads"
+    },
+    "proof": [
+      "Polite and specific works better than firm.",
+      "I understand that's the policy. What options do I have from here?",
+      "Is there someone with more authority to change this that I can speak to? I'll hold.",
+      "Can you note on the account that I called today and what I asked for? Then I'll say so when I call again."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "what to say when customer service says they can't help",
+    "board": "Phone Call Anxiety Scripts",
+    "when": "evergreen",
+    "visual": "POV desk scene from above: a phone on speaker with a speech bubble reading 'They say they can't help', and three index cards in a row at the bottom of a lined page (the guide says to keep them at the bottom of the page), each with one reply in handwriting; a mug at the edge.",
+    "flags": [],
+    "reserve": false,
+    "n": 16
+  },
+  {
+    "slice": "product",
+    "angle": "mockup-app",
+    "headline": "Life Admin Organizer App: Everything You Are Holding, in Four Shapes",
+    "sub": "Life: everything you are holding, in four shapes, never mixed together",
+    "items": [
+      "Something to do",
+      "Waiting on someone",
+      "Something ongoing",
+      "Worth having to hand"
+    ],
+    "link": {
+      "kind": "shop",
+      "slug": "alongside"
+    },
+    "proof": [
+      "Life: everything you are holding, in four shapes, never mixed together"
+    ],
+    "proofFile": "src/shop/products/alongside.ts",
+    "proofExtra": [
+      {
+        "file": "src/products/alongside/life.ts",
+        "proof": [
+          "Something to do",
+          "Waiting on someone",
+          "Something ongoing",
+          "Worth having to hand"
+        ]
+      }
+    ],
+    "query": "life admin organizer app",
+    "board": "ADHD Life Admin",
+    "when": "evergreen",
+    "visual": "Mockup-app promo, mulberry palette: dark panel, app icon and name, two-tone headline, four rows named for the four real shapes, large tilted phone showing the REAL Life screen (creative/public/screens/alongside-life.png, Next.js dev badge cropped) with its four groups under 'Everything you are holding'. Prop: four small kraft trays at the phone's foot. The rows on the screen (home insurance, dental check, car hire, emergency contacts) are demo data: show them as UI, never quote them as claims.",
+    "flags": [
+      "example-tag"
+    ],
+    "reserve": false,
+    "n": 17
+  },
+  {
+    "slice": "calls",
+    "angle": "question",
+    "headline": "How to Tell Someone Bad News on the Phone: What Makes This Call Hard?",
+    "sub": "Pick the closest, because it changes what's worth having ready.",
+    "items": [
+      "You're telling them something they won't want to hear.",
+      "You're saying no to something.",
+      "Money is involved.",
+      "It's personal.",
+      "They've been difficult about this before."
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "how-to-say-no-or-give-bad-news-on-the-phone"
+    },
+    "proof": [
+      "What makes this one hard?",
+      "Pick the closest, because it changes what's worth having ready.",
+      "You're telling them something they won't want to hear.",
+      "You're saying no to something.",
+      "Money is involved.",
+      "It's personal.",
+      "They've been difficult about this before."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "how to tell someone bad news on the phone",
+    "board": "Phone Call Anxiety Scripts",
+    "when": "evergreen",
+    "visual": "Question card: one large index card with the question 'What makes this one hard?' and five hand-drawn tick circles with the five real options; one is ringed in mulberry. A quiet phone sits face-up beside it. No result or score is drawn.",
+    "flags": [],
+    "reserve": false,
+    "n": 18
+  },
+  {
+    "slice": "product",
+    "angle": "mockup-printable",
+    "headline": "Weekly Review Printable for ADHD: Undated on Purpose, So Any Copy Works",
+    "sub": "Photocopy this page, undated on purpose so any copy works, or keep the review in the app instead.",
+    "items": [
+      "Week of",
+      "What's still open",
+      "What moved",
+      "What's stuck, and what it needs"
+    ],
+    "link": {
+      "kind": "shop",
+      "slug": "alongside"
+    },
+    "proof": [
+      "Photocopy this page, undated on purpose so any copy works, or keep the review in the app instead.",
+      "WHAT'S STILL OPEN",
+      "WHAT MOVED",
+      "WHAT'S STUCK, AND WHAT IT NEEDS"
+    ],
+    "proofFile": "book",
+    "query": "weekly review printable adhd",
+    "board": "ADHD Planning Systems",
+    "when": "evergreen",
+    "visual": "Mockup-printable: the REAL 'Weekly review' page of The Alongside Book (page 7) tilted on a desk with a mug of tea at the corner, headline above, a pen laid across it. The page is shown exactly as printed, blank (undated).",
+    "flags": [],
+    "reserve": false,
+    "n": 19
+  },
+  {
+    "slice": "calls",
+    "angle": "scenario",
+    "headline": "How to Say No on the Phone: When They Push Back, Repeat It in Fewer Words",
+    "sub": "If they push, repeat your answer in fewer words rather than defending it in more.",
+    "items": [
+      "They push back: I understand it's disappointing. I've thought about it and my answer is still no.",
+      "They ask why: I'd rather not go into all of it. It's just not something I can do this time.",
+      "You need a moment: Can I have a minute to think about that? I'd like to call you back tonight."
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "how-to-say-no-or-give-bad-news-on-the-phone"
+    },
+    "proof": [
+      "If they push, repeat your answer in fewer words rather than defending it in more.",
+      "I understand it's disappointing. I've thought about it and my answer is still no.",
+      "I'd rather not go into all of it. It's just not something I can do this time.",
+      "Can I have a minute to think about that? I'd like to call you back tonight."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "how to say no politely on the phone",
+    "board": "Phone Call Anxiety Scripts",
+    "when": "evergreen",
+    "visual": "Relatable scene from the guide's own example (a refusal to a sister about hosting): a phone held to an ear on a kitchen table, a glass of water at hand, and three short index cards fanned beside a notepad; no names or dates drawn, only the three replies.",
+    "flags": [
+      "example-tag"
+    ],
+    "reserve": false,
+    "n": 20
+  },
+  {
+    "slice": "product",
+    "angle": "mockup-app",
+    "headline": "ADHD App for After the Call: Sorted, Waiting, Made Progress, Did Not Get to It",
+    "sub": "Did not get to it changes nothing at all, on purpose.",
+    "items": [
+      "Sorted",
+      "Waiting on someone",
+      "Did not get to it",
+      "Made progress"
+    ],
+    "link": {
+      "kind": "shop",
+      "slug": "alongside"
+    },
+    "proof": [
+      "How it went changes what happens next. Sorted closes it. Waiting on someone turns it into that, with a date to check back. Did not get to it changes nothing at all, on purpose."
+    ],
+    "proofFile": "src/shop/products/alongside.ts",
+    "proofExtra": [
+      {
+        "file": "src/products/alongside/outcome.ts",
+        "proof": [
+          "Made progress"
+        ]
+      },
+      {
+        "file": "src/products/alongside/playbooks/makeAPhoneCall.ts",
+        "proof": [
+          "How did it go?"
+        ]
+      }
+    ],
+    "query": "adhd app after a phone call",
+    "board": "ADHD Life Admin",
+    "when": "evergreen",
+    "visual": "Mockup-app promo, mulberry palette: dark panel, app icon and name, two-tone headline, four rows (Sorted closes it / Waiting on someone gets a date to check back / Did not get to it changes nothing / Made progress is remembered), large tilted phone. SCREEN TO CAPTURE: the 'How did it go?' outcome step of Make a phone call with its four choices (stub run). Prop: a tick on a butter sticky note and a pen.",
+    "flags": [],
+    "reserve": false,
+    "n": 21
+  },
+  {
+    "slice": "calls",
+    "angle": "before-after",
+    "headline": "How to Start an Email You Keep Putting Off: Don't Start Blank",
+    "sub": "Getting this one sentence down is most of the work.",
+    "items": [
+      "Before: a blank message with \"Hi,\"",
+      "After: Hello, I'm hoping you can help me with something."
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "the-email-you-keep-not-sending-and-how-to-chase-a-reply"
+    },
+    "proof": [
+      "write \"Hi,\", and close it again",
+      "A blank draft is the whole problem, so don't start blank",
+      "Hello, I'm hoping you can help me with something.",
+      "Getting this one sentence down is most of the work."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "how to start an email you keep putting off",
+    "board": "ADHD Life Admin",
+    "when": "evergreen",
+    "visual": "Before-after split on a laptop-and-desk scene: on the left an email compose window with only 'Hi,' and a blinking cursor, a butter sticky note slapped over it; on the right the same window with the real first line typed in and a cream index card holding the same sentence in mulberry quote marks.",
+    "flags": [],
+    "reserve": false,
+    "n": 22
+  },
+  {
+    "slice": "product",
+    "angle": "mockup-printable",
+    "headline": "Undated ADHD Planner Pages: Print What You Need, Leave the Rest Blank",
+    "sub": "Somewhere to put it down, so your head doesn't have to hold it.",
+    "items": [
+      "How this works",
+      "Commitments",
+      "Waiting on someone",
+      "Ongoing thread",
+      "Reference",
+      "Weekly review"
+    ],
+    "link": {
+      "kind": "shop",
+      "slug": "alongside"
+    },
+    "proof": [
+      "Somewhere to put it down, so your head doesn't have to hold it.",
+      "Undated. Print what you need.",
+      "leave a page blank when there's nothing there"
+    ],
+    "proofFile": "book",
+    "query": "undated planner printable adhd",
+    "board": "ADHD Planning Systems",
+    "when": "evergreen",
+    "visual": "Mockup-printable: a fan of real Alongside Book pages (cover with 'The Alongside Book', Commitments, Waiting on someone, Ongoing thread, Reference, Weekly review) spread across a desk, each page as printed, headline above, a binder clip and a butter sticky note. Page names on the pin are the real page titles.",
+    "flags": [],
+    "reserve": false,
+    "n": 23
+  },
+  {
+    "slice": "calls",
+    "angle": "comparison",
+    "headline": "Email Subject Lines That Get Opened: Say the Ask, Not Just the Topic",
+    "sub": "Say the ask in the subject. Vague ones are easy to leave for later.",
+    "items": [
+      "Question  >  Question about my March invoice: can you confirm the amount?",
+      "Following up  >  Reply needed by Friday: lease renewal form",
+      "Problem  >  Boiler noise in flat 3: can someone visit this week?",
+      "Hi  >  Can't host in March: telling you now so you have time"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "the-email-you-keep-not-sending-and-how-to-chase-a-reply"
+    },
+    "proof": [
+      "Say the ask in the subject. Vague ones are easy to leave for later.",
+      "Question about my March invoice: can you confirm the amount?",
+      "Reply needed by Friday: lease renewal form",
+      "Boiler noise in flat 3: can someone visit this week?",
+      "Can't host in March: telling you now so you have time"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "email subject line examples that get opened",
+    "board": "ADHD Life Admin",
+    "when": "evergreen",
+    "visual": "Comparison: four email-list rows on a laptop screen, each with the vague subject struck through in grey on the left and the specific one in ink on the right with a mulberry tick; a butter sticky note at the corner of the laptop. Subjects are the guide's own illustrations.",
+    "flags": [
+      "example-tag"
+    ],
+    "reserve": false,
+    "n": 24
+  },
+  {
+    "slice": "product",
+    "angle": "mockup-app",
+    "headline": "ADHD Life Companion: Eight Walkthroughs for the Hardest Things to Start",
+    "sub": "The Companion: eight authored procedures for the situations that are hardest to start",
+    "items": [
+      "There is a call to make and it has been sitting there",
+      "There is an email that needs writing and it has not been written",
+      "Somebody has not come back to you and it needs chasing",
+      "Something has been charged wrongly and it needs sorting"
+    ],
+    "link": {
+      "kind": "shop",
+      "slug": "alongside"
+    },
+    "proof": [
+      "The Companion: eight authored procedures for the situations that are hardest to start"
+    ],
+    "proofFile": "src/shop/products/alongside.ts",
+    "proofExtra": [
+      {
+        "file": "src/products/alongside/playbooks/makeAPhoneCall.ts",
+        "proof": [
+          "There is a call to make and it has been sitting there"
+        ]
+      },
+      {
+        "file": "src/products/alongside/playbooks/sendTheEmail.ts",
+        "proof": [
+          "There is an email that needs writing and it has not been written"
+        ]
+      },
+      {
+        "file": "src/products/alongside/playbooks/followUpWithSomeone.ts",
+        "proof": [
+          "Somebody has not come back to you and it needs chasing"
+        ]
+      },
+      {
+        "file": "src/products/alongside/playbooks/resolveABillingProblem.ts",
+        "proof": [
+          "Something has been charged wrongly and it needs sorting"
+        ]
+      }
+    ],
+    "query": "adhd app for hard to start tasks",
+    "board": "ADHD Task Paralysis",
+    "when": "evergreen",
+    "visual": "Mockup-app promo, mulberry palette: dark panel, app icon and name, two-tone headline, four rows (the call, the email, the follow-up, the billing problem), large tilted phone showing the REAL Help screen (creative/public/screens/alongside-help.png, dev badge cropped) with 'What do you need to do?' and its eight situations. Prop: a ringing-phone silhouette and an unsent email window peeking from behind.",
+    "flags": [],
+    "reserve": false,
+    "n": 25
+  },
+  {
+    "slice": "calls",
+    "angle": "infographic",
+    "headline": "How Long to Wait Before Following Up on an Email: A Chase Plan",
+    "sub": "The days are a suggestion we'd use for something that isn't an emergency.",
+    "items": [
+      "Day 0: you send. Note the date, who it went to, and what you asked for.",
+      "Day 5: nothing yet. Chase by a different route, such as a call if you emailed. Ask for a date.",
+      "Day 10: still nothing. Write again to the same person and add a second person or a general address.",
+      "Day 15: still nothing. Decide whether it needs escalating, or whether you can let it go."
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "the-email-you-keep-not-sending-and-how-to-chase-a-reply"
+    },
+    "proof": [
+      "The days are a suggestion we'd use for something that isn't an emergency.",
+      "Note the date, who it went to, and what you asked for.",
+      "Chase by a different route, such as a call if you emailed. Ask for a date.",
+      "Write again to the same person and add a second person or a general address.",
+      "Decide whether it needs escalating, or whether you can let it go."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "how long to wait before following up on an email",
+    "board": "ADHD Life Admin",
+    "when": "evergreen",
+    "visual": "Infographic: a plain horizontal paper-strip timeline across a wall calendar page with four stops (Day 0, 5, 10, 15) each carrying a butter sticky note with its real action; the Day 5 note, 'chase by a different route', ringed in mulberry. The calendar is undated and nothing is marked late.",
+    "flags": [
+      "example-tag"
+    ],
+    "reserve": false,
+    "n": 26
+  },
+  {
+    "slice": "product",
+    "angle": "script-card",
+    "headline": "Hard Phone Call Script: Getting the First Sentence Out Is Most of It",
+    "sub": "Change any of this, or write your own.",
+    "items": [
+      "Hi, I need to talk to you about money, which I would rather do directly than by email. Have you got a few minutes?",
+      "Change any of this, or write your own."
+    ],
+    "link": {
+      "kind": "shop",
+      "slug": "alongside"
+    },
+    "proof": [
+      "Getting the first sentence out is most of it. Change any of this, or write your own.",
+      "Hi, I need to talk to you about money, which I would rather do directly than by email. Have you got a few minutes?"
+    ],
+    "proofFile": "src/products/alongside/playbooks/makeADifficultPhoneCall.ts",
+    "query": "phone call script anxiety",
+    "board": "Phone Call Anxiety Scripts",
+    "when": "evergreen",
+    "visual": "Opening-line-card archetype: one large cream index card clipped to a ringing phone, the real suggested wording set large inside mulberry quote marks, a small caption 'Change any of this, or write your own.' under it. A tiny phone in the corner shows the Your opening step. Product line at the foot.",
+    "flags": [],
+    "reserve": false,
+    "n": 27
+  },
+  {
+    "slice": "starting",
+    "sub": "You've opened the same tab four times.",
+    "flags": [],
+    "reserve": false,
+    "proofFile": "src/content/guides.ts",
+    "when": "evergreen",
+    "angle": "scenario",
+    "headline": "What Task Paralysis Feels Like: The Letter Face Down on the Desk",
+    "items": [
+      "The letter is on the desk, face down, and you've moved it twice to wipe the table."
+    ],
+    "proof": [
+      "You've opened the same tab four times.",
+      "The letter is on the desk, face down, and you've moved it twice to wipe the table."
+    ],
+    "query": "what is adhd task paralysis",
+    "board": "ADHD Task Paralysis",
+    "visual": "POV desk scene from above (pov-desk-scene): a face-down kraft envelope with a damp-cloth ring beside it, a laptop with the same browser tab open four times as four tiny stacked tabs, a half-cleared table. Calm middle, cluttered edges, one mulberry circle round the envelope. No words on props except the tab labels left blank.",
+    "link": {
+      "kind": "guide",
+      "slug": "task-paralysis-what-to-do-in-the-next-ten-minutes"
+    },
+    "n": 28
+  },
+  {
+    "slice": "product",
+    "angle": "mockup-app",
+    "headline": "ADHD Life Admin App: Help With One Thing Today, Nothing Set Up First",
+    "sub": "Help with one thing today, with nothing set up first, and no obligation to turn it into a system.",
+    "items": [
+      "What is one thing that has been sitting there?",
+      "A call I keep not making",
+      "An email I have not written",
+      "An appointment to book",
+      "Something that feels too big to start"
+    ],
+    "link": {
+      "kind": "shop",
+      "slug": "alongside"
+    },
+    "proof": [
+      "Help with one thing today, with nothing set up first, and no obligation to turn it into a system."
+    ],
+    "proofFile": "src/shop/products/alongside.ts",
+    "proofExtra": [
+      {
+        "file": "src/products/alongside/components/NowView.tsx",
+        "proof": [
+          "What is one thing that has been sitting there?",
+          "Pick the closest. It walks you through that one thing, and you can stop at any point."
+        ]
+      },
+      {
+        "file": "src/products/alongside/firstWin.ts",
+        "proof": [
+          "A call I keep not making",
+          "An email I have not written",
+          "An appointment to book",
+          "Something that feels too big to start"
+        ]
+      }
+    ],
+    "query": "adhd app where to start",
+    "board": "ADHD Task Paralysis",
+    "when": "evergreen",
+    "visual": "Mockup-app promo, mulberry palette: dark panel, app icon and name, two-tone headline, three rows (open it with nothing recorded / pick the closest / stop at any point), large tilted phone. SCREEN TO CAPTURE: Now in its first-run state (NowView firstWin true) with 'What is one thing that has been sitting there?' and the four ways to start as full-width buttons. Prop: an empty kraft envelope and a pen at the phone's foot.",
+    "flags": [],
+    "reserve": false,
+    "n": 29
+  },
+  {
+    "slice": "calls",
+    "angle": "script-card",
+    "headline": "Follow Up Email Wording: Ask for a Date, Not an Update",
+    "sub": "Ask for a date rather than an update, because an update can be nothing.",
+    "items": [
+      "A decision: Hello, I'm following up because I need to know either way. When do you think you'll be able to tell me?",
+      "Money owed to you: Hello, I'm following up because it's still outstanding. Can you tell me when it will be dealt with?",
+      "A document or form: Hello, I'm still waiting on this. Could you tell me when I can expect it, or what you need from me first?"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "the-email-you-keep-not-sending-and-how-to-chase-a-reply"
+    },
+    "proof": [
+      "Ask for a date rather than an update, because an update can be nothing.",
+      "Hello, I'm following up because I need to know either way. When do you think you'll be able to tell me?",
+      "Hello, I'm following up because it's still outstanding. Can you tell me when it will be dealt with?",
+      "Hello, I'm still waiting on this. Could you tell me when I can expect it, or what you need from me first?"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "follow up email wording no reply",
+    "board": "ADHD Life Admin",
+    "when": "evergreen",
+    "visual": "Opening-line-card on a laptop: an email compose window with a cream index card taped over its top-left carrying one chase line in large handwriting inside mulberry quote marks, two more cards peeking out beneath it with their situation tabs (decision, money owed, document).",
+    "flags": [],
+    "reserve": false,
+    "n": 30
+  },
+  {
+    "slice": "product",
+    "angle": "comparison",
+    "headline": "To-Do List vs ADHD Companion: Everything on Screen at Once vs One Thing Now",
+    "sub": "This shows what is worth your attention right now, in one sentence.",
+    "items": [
+      "everything sits on screen at once",
+      "sorted by nothing",
+      "what is worth your attention right now, in one sentence"
+    ],
+    "link": {
+      "kind": "shop",
+      "slug": "alongside"
+    },
+    "proof": [
+      "everything sits on screen at once, sorted by nothing, and the list itself becomes the thing you were trying to get away from",
+      "This shows what is worth your attention right now, in one sentence, or says plainly that nothing needs you and stops there."
+    ],
+    "proofFile": "src/shop/products/alongside.ts",
+    "query": "adhd to do list alternative",
+    "board": "ADHD Planning Systems",
+    "when": "evergreen",
+    "visual": "This-not-that comparison, two columns. Left, struck through: a long ruled to-do pad crammed with unreadable scribbled lines, labelled 'everything sits on screen at once'. Right, circled in mulberry: a single Now-style card (a plain title bar, one button) labelled 'one thing, in one sentence'. Butter sticky note and a pen as props. No real item text on either side.",
+    "flags": [],
+    "reserve": false,
+    "n": 31
+  },
+  {
+    "slice": "starting",
+    "sub": "Set a timer for ten minutes. It's a ceiling, not a target. You're allowed to stop early.",
+    "flags": [],
+    "reserve": false,
+    "proofFile": "src/content/guides.ts",
+    "when": "evergreen",
+    "angle": "infographic",
+    "headline": "ADHD Task Paralysis: The Next Ten Minutes, Minute by Minute",
+    "items": [
+      "Minute 0 to 1: choose",
+      "Minute 1 to 2: say where it ends",
+      "Minute 2 to 4: find the first step",
+      "Minute 4 to 5: check the size",
+      "Minute 5 to 9: do only that",
+      "Minute 9 to 10: leave a note"
+    ],
+    "proof": [
+      "Set a timer for ten minutes. It's a ceiling, not a target. You're allowed to stop early.",
+      "Minute 0 to 1: choose",
+      "Minute 1 to 2: say where it ends",
+      "Minute 2 to 4: find the first step",
+      "Minute 4 to 5: check the size",
+      "Minute 5 to 9: do only that",
+      "Minute 9 to 10: leave a note"
+    ],
+    "query": "adhd task paralysis what to do",
+    "board": "ADHD Task Paralysis",
+    "visual": "Vertical timeline infographic on the blush-grey ground: six cream index cards stacked down a mulberry line, each headed with its minute range in IBM Plex Sans and the step in handwriting; the last card (leave a note) has a butter sticky note stuck to it. A small clock face at ten sits top right as the ceiling; nothing counts down.",
+    "link": {
+      "kind": "guide",
+      "slug": "task-paralysis-what-to-do-in-the-next-ten-minutes"
+    },
+    "n": 32
+  },
+  {
+    "slice": "product",
+    "angle": "before-after",
+    "headline": "Sticky Note Overload: Put Each Thing Down Once and Let It Come Back When It Matters",
+    "sub": "So holding it stops being your job.",
+    "items": [
+      "I keep everything in my head and it's exhausting",
+      "Somewhere to put a thing down that will bring it back when it actually matters"
+    ],
+    "link": {
+      "kind": "shop",
+      "slug": "alongside"
+    },
+    "proof": [
+      "I keep everything in my head and it's exhausting",
+      "Somewhere to put a thing down that will bring it back when it actually matters, so holding it stops being your job."
+    ],
+    "proofFile": "src/shop/products/alongside.ts",
+    "query": "sticky note overwhelm adhd",
+    "board": "Overwhelm and Overdue",
+    "when": "evergreen",
+    "visual": "Sticky-note-wall-to-one-card archetype as before and after: top half a monitor edge covered in a wall of butter sticky notes (scribbled lines, no readable words) labelled with the quote 'I keep everything in my head and it's exhausting'; an arrow down to a calm blush ground with one Now-style card on a phone. Mulberry used only on the card's button.",
+    "flags": [],
+    "reserve": false,
+    "n": 33
+  },
+  {
+    "slice": "starting",
+    "sub": "Pick one task, write the first physical step, and do only that for a few minutes.",
+    "flags": [],
+    "reserve": false,
+    "proofFile": "src/content/guides.ts",
+    "when": "evergreen",
+    "angle": "myth-vs-truth",
+    "headline": "How to Snap Out of Task Paralysis: You Do Not, You Shrink the Task",
+    "items": [
+      "Don't try to snap out of it.",
+      "Shrink the task until the first step needs no decision.",
+      "Opening the folder counts."
+    ],
+    "proof": [
+      "Don't try to snap out of it.",
+      "Shrink the task until the first step needs no decision.",
+      "Pick one task, write the first physical step, and do only that for a few minutes.",
+      "Opening the folder counts."
+    ],
+    "query": "how to snap out of task paralysis",
+    "board": "ADHD Task Paralysis",
+    "visual": "Two-column card: left half a crossed-out grey note reading 'Snap out of it', right half a mulberry-circled cream index card with 'Shrink the task until the first step needs no decision.' A manila folder, open, at the bottom edge with a small tick. Flat-SVG props, light ground.",
+    "link": {
+      "kind": "guide",
+      "slug": "task-paralysis-what-to-do-in-the-next-ten-minutes"
+    },
+    "n": 34
+  },
+  {
+    "slice": "product",
+    "angle": "infographic",
+    "headline": "Life Admin Categories: The Four Kinds of Thing You Are Carrying",
+    "sub": "Never mixed together.",
+    "items": [
+      "Something you mean to do",
+      "Something somebody else has to come back to you on",
+      "Something ongoing that will take more than one go",
+      "Something you will need again to deal with a specific thing, like a reference number or a phone number"
+    ],
+    "link": {
+      "kind": "shop",
+      "slug": "alongside"
+    },
+    "proof": [
+      "Life: everything you are holding, in four shapes, never mixed together"
+    ],
+    "proofFile": "src/shop/products/alongside.ts",
+    "proofExtra": [
+      {
+        "file": "src/products/alongside/life.ts",
+        "proof": [
+          "Something you mean to do",
+          "Something somebody else has to come back to you on",
+          "Something ongoing that will take more than one go",
+          "Something you will need again to deal with a specific thing, like a reference number or a phone number"
+        ]
+      }
+    ],
+    "query": "life admin categories",
+    "board": "ADHD Life Admin",
+    "when": "evergreen",
+    "visual": "Infographic: four labelled life trays (Something to do, Waiting on someone, Something ongoing, Worth having to hand), each with its one-line description beneath in IBM Plex Sans and a single small prop (a sticky note, an envelope, an open folder, an index card). Mulberry only on the tray titles. Product line at the foot.",
+    "flags": [],
+    "reserve": false,
+    "n": 35
+  },
+  {
+    "slice": "starting",
+    "sub": "It needs no motivation, because nothing in it can go wrong, and no one on the other end can say no.",
+    "flags": [
+      "example-tag"
+    ],
+    "reserve": false,
+    "proofFile": "src/content/guides.ts",
+    "when": "evergreen",
+    "angle": "before-after",
+    "headline": "How to Break Down a Task: One Insurance Claim Shrunk Three Times",
+    "items": [
+      "Sort out the insurance claim",
+      "Call the insurer.",
+      "Find the letter with the claim number on it and put it next to the phone."
+    ],
+    "proof": [
+      "Sort out the insurance claim",
+      "Call the insurer.",
+      "Find the letter with the claim number on it and put it next to the phone.",
+      "It needs no motivation, because nothing in it can go wrong, and no one on the other end can say no."
+    ],
+    "query": "how to break down a task adhd",
+    "board": "ADHD Task Paralysis",
+    "visual": "Three paper cards stepping down in size left to right, the first a big grey 'wall' card, the second smaller, the third a small butter sticky note with the mulberry-ringed words; a letter and a phone sit at the end of the row. Reads as before to after in one look (sticky-note-wall-to-one-card variant). The three wordings are the guide's own example.",
+    "link": {
+      "kind": "guide",
+      "slug": "task-paralysis-what-to-do-in-the-next-ten-minutes"
+    },
+    "n": 36
+  },
+  {
+    "slice": "product",
+    "angle": "myth-vs-truth",
+    "headline": "ADHD Life Admin Without a Score: No Streak, No Percentage, No Attempt Counter",
+    "sub": "A record of what actually happened, in your own words.",
+    "items": [
+      "Every system eventually tells you that you've failed at it.",
+      "There is no streak, no percentage and no attempt counter anywhere in it.",
+      "A record of what actually happened, in your own words, that never once says you failed at something."
+    ],
+    "link": {
+      "kind": "shop",
+      "slug": "alongside"
+    },
+    "proof": [
+      "Every system eventually tells you that you've failed at it.",
+      "A record of what actually happened, in your own words, that never once says you failed at something.",
+      "There is no streak, no percentage and no attempt counter anywhere in it."
+    ],
+    "proofFile": "src/shop/products/alongside.ts",
+    "query": "adhd planner without streaks",
+    "board": "ADHD Planning Systems",
+    "when": "evergreen",
+    "visual": "Myth-vs-truth card: left half, a crumpled butter sticky note carrying the myth line 'Every system eventually tells you that you've failed at it.' (struck through); right half, a clean cream card with the truth lines in handwriting and a mulberry tick. Small phone at the corner showing a Life card. No numbers, charts or streak icons anywhere.",
+    "flags": [],
+    "reserve": false,
+    "n": 37
+  },
+  {
+    "slice": "starting",
+    "sub": "It happens, and it doesn't mean you're doing it wrong.",
+    "flags": [],
+    "reserve": false,
+    "proofFile": "src/content/guides.ts",
+    "when": "evergreen",
+    "angle": "checklist",
+    "headline": "ADHD Can't Start a Task? Three Ways to Make the First Step Smaller",
+    "items": [
+      "Shrink the step again.",
+      "Change one thing about the setting before you touch the task.",
+      "Ask someone to be nearby."
+    ],
+    "proof": [
+      "It happens, and it doesn't mean you're doing it wrong.",
+      "Shrink the step again.",
+      "Change one thing about the setting before you touch the task.",
+      "Ask someone to be nearby."
+    ],
+    "query": "adhd cant start a task",
+    "board": "ADHD Task Paralysis",
+    "visual": "Notepad checklist (notepad-checklist): a spiral pad in handwriting with three boxed lines, the first ticked in mulberry; a glass of water stands at the pad's edge to say 'change the setting'. Nothing else on the desk.",
+    "link": {
+      "kind": "guide",
+      "slug": "task-paralysis-what-to-do-in-the-next-ten-minutes"
+    },
+    "n": 38
+  },
+  {
+    "slice": "overdue",
+    "angle": "script-card",
+    "headline": "What to Say When You Are Late Replying: One Sentence About the Gap",
+    "sub": "One sentence, no story. Take the one closest to how you feel about it, and change any word.",
+    "items": [
+      "I know this has been outstanding a while, and I'd like to sort it out now.",
+      "This is later than it should be. What do you need from me?",
+      "I haven't dealt with this until now. Can you tell me where it stands?"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "how-to-deal-with-something-you-have-put-off"
+    },
+    "proof": [
+      "One sentence, no story. Take the one closest to how you feel about it, and change any word.",
+      "I know this has been outstanding a while, and I'd like to sort it out now.",
+      "This is later than it should be. What do you need from me?",
+      "I haven't dealt with this until now. Can you tell me where it stands?",
+      "Keep it short",
+      "Name it plainly",
+      "Ask where it stands"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "what to say when you are late replying",
+    "board": "Phone Call Anxiety Scripts",
+    "when": "evergreen",
+    "visual": "Opening-line-card archetype: one cream index card, the first line set large inside mulberry quote marks, clipped to a kraft envelope; two more cards fanned behind it carry the other two lines, each with its small label (Keep it short, Name it plainly, Ask where it stands). A butter sticky note at the corner reads 'Change any word'. Wash ground, no phone.",
+    "flags": [],
+    "reserve": false,
+    "n": 39
+  },
+  {
+    "slice": "starting",
+    "sub": "Only the last row is a first physical step.",
+    "flags": [
+      "example-tag"
+    ],
+    "reserve": false,
+    "proofFile": "src/content/guides.ts",
+    "when": "evergreen",
+    "angle": "comparison",
+    "headline": "Is It a First Step? Three Ways to Write the Same Task, Only One Counts",
+    "items": [
+      "Sort out the insurance",
+      "Decide what to do about the claim",
+      "Find the policy letter and put it on the desk"
+    ],
+    "proof": [
+      "Only the last row is a first physical step.",
+      "Sort out the insurance",
+      "Decide what to do about the claim",
+      "Find the policy letter and put it on the desk"
+    ],
+    "query": "first physical step examples",
+    "board": "ADHD Task Paralysis",
+    "visual": "Three-row this-not-that card: the first two rows struck through in grey with a small cross, the third circled in mulberry with a tick; a policy letter lies on the desk corner at the bottom. The cracked-phone-screen insurance claim is the guide's own illustration.",
+    "link": {
+      "kind": "guide",
+      "slug": "first-physical-step-20-examples"
+    },
+    "n": 40
+  },
+  {
+    "slice": "product",
+    "angle": "checklist",
+    "headline": "Billing Problem Checklist: What to Have in Front of You Before You Call",
+    "sub": "Worth having in front of you",
+    "items": [
+      "The statement or the email showing the charge",
+      "The date it happened",
+      "Your account or customer reference, if there is one",
+      "Something to write on"
+    ],
+    "link": {
+      "kind": "shop",
+      "slug": "alongside"
+    },
+    "proof": [
+      "Worth having in front of you",
+      "The statement or the email showing the charge",
+      "The date it happened",
+      "Your account or customer reference, if there is one",
+      "Something to write on"
+    ],
+    "proofFile": "src/products/alongside/playbooks/resolveABillingProblem.ts",
+    "query": "billing problem checklist",
+    "board": "ADHD Life Admin",
+    "when": "evergreen",
+    "visual": "Notepad-checklist archetype: a spiral pad with the four real items handwritten and ticked boxes (first two ticked), a small phone beside it showing the 'Worth having in front of you' step of Sort out a billing problem (SCREEN TO CAPTURE, stub run), a glass of water at the pad's edge. Product line at the foot.",
+    "flags": [],
+    "reserve": false,
+    "n": 41
+  },
+  {
+    "slice": "starting",
+    "sub": "Sort the mail pile",
+    "flags": [],
+    "reserve": false,
+    "proofFile": "src/content/guides.ts",
+    "when": "evergreen",
+    "angle": "quote-card",
+    "headline": "Sort the Mail Pile: Open the Top Five Items and Do Nothing Else",
+    "items": [
+      "Open the top five items and do nothing else"
+    ],
+    "proof": [
+      "Sort the mail pile",
+      "Open the top five items and do nothing else"
+    ],
+    "query": "how to start sorting a mail pile",
+    "board": "Paperwork Organization",
+    "visual": "A tall mail pile cropped by the pin edges with one big butter sticky note stuck on top, large enough to read at thumbnail size, carrying the line in handwriting; a mulberry circle round the top five envelopes. Kraft envelopes and a letter opener as props.",
+    "link": {
+      "kind": "guide",
+      "slug": "first-physical-step-20-examples"
+    },
+    "n": 42
+  },
+  {
+    "slice": "overdue",
+    "angle": "template-preview",
+    "headline": "How to Deal With a Letter You Put Off for Months: A Filled-In Example",
+    "sub": "An illustration, not a real account. Say a clinic sent a bill in May and it's now September.",
+    "items": [
+      "Open it: Envelope from the clinic, dated May 12. Read it once. Decide nothing.",
+      "Find the facts: Amount: $180. Pay by: June 12. Reference: the number top right.",
+      "The practical question: Is it still open, and can I pay it in two parts?",
+      "The sentence about the gap: This is later than it should be, and I'd like to sort it out now.",
+      "The route: The billing number on the letter. Tuesday at 10:00, before the line gets busy."
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "how-to-deal-with-something-you-have-put-off"
+    },
+    "proof": [
+      "An illustration, not a real account. Say a clinic sent a bill in May and it's now September.",
+      "Open it",
+      "Envelope from the clinic, dated May 12. Read it once. Decide nothing.",
+      "Find the facts",
+      "Amount: $180. Pay by: June 12. Reference: the number top right.",
+      "The practical question",
+      "Is it still open, and can I pay it in two parts?",
+      "The sentence about the gap",
+      "This is later than it should be, and I'd like to sort it out now.",
+      "The route",
+      "The billing number on the letter. Tuesday at 10:00, before the line gets busy."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "how to deal with something you have put off",
+    "board": "Overwhelm and Overdue",
+    "when": "evergreen",
+    "visual": "Template-preview: a ruled worksheet card on a desk with two columns (Step, What's on the page) and the five rows filled in a handwriting face, a mulberry tick beside each step; a small 'An illustration' stamp in the corner so the example is labelled. A kraft envelope half under the card. Amounts only as the guide's own example.",
+    "flags": [
+      "example-tag"
+    ],
+    "reserve": false,
+    "n": 43
+  },
+  {
+    "slice": "starting",
+    "sub": "Run your step past these. If it fails one, shrink it.",
+    "flags": [],
+    "reserve": false,
+    "proofFile": "src/content/guides.ts",
+    "when": "evergreen",
+    "angle": "checklist",
+    "headline": "Check Your Own First Step: Five Questions Before You Start",
+    "items": [
+      "Could someone watching see it happen?",
+      "Can it be done in a few minutes?",
+      "Is it a real action, not deciding or planning?",
+      "Is it small enough that starting is not a decision?",
+      "Do you already have everything it needs?"
+    ],
+    "proof": [
+      "Run your step past these. If it fails one, shrink it.",
+      "Could someone watching see it happen?",
+      "Can it be done in a few minutes?",
+      "Is it a real action, not deciding or planning?",
+      "Is it small enough that starting is not a decision?",
+      "Do you already have everything it needs?"
+    ],
+    "query": "how to make a task small enough to start",
+    "board": "ADHD Task Paralysis",
+    "visual": "A cream index card on the desk with five handwritten tick-box lines, the boxes ticked in mulberry as a sample; a pencil lying across it and a folder at the edge. Notepad-checklist archetype with a card instead of a spiral pad.",
+    "link": {
+      "kind": "guide",
+      "slug": "first-physical-step-20-examples"
+    },
+    "n": 44
+  },
+  {
+    "slice": "overdue",
+    "angle": "scenario",
+    "headline": "Afraid to Open the Mail? The Envelope Under the Fruit Bowl Since May",
+    "sub": "You know roughly what it is. You don't know what it says.",
+    "items": [
+      "Say it's a Sunday night.",
+      "An envelope from a clinic under the fruit bowl that arrived in May.",
+      "You know roughly what it is. You don't know what it says."
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "how-to-deal-with-something-you-have-put-off"
+    },
+    "proof": [
+      "Say it's a Sunday night. There's an envelope from a clinic under the fruit bowl that arrived in May. You know roughly what it is. You don't know what it says"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "afraid to open mail adhd",
+    "board": "Overwhelm and Overdue",
+    "when": "evergreen",
+    "visual": "Pov-desk-scene, a wordless kitchen-table moment seen from above: a fruit bowl with one kraft envelope sliding out from under it, a lamp pool of light, a phone face down. The headline carries the words. Cropped close and calm, no pile, one envelope only.",
+    "flags": [
+      "example-tag"
+    ],
+    "reserve": false,
+    "n": 45
+  },
+  {
+    "slice": "starting",
+    "sub": null,
+    "flags": [],
+    "reserve": false,
+    "proofFile": "src/content/guides.ts",
+    "when": "evergreen",
+    "angle": "how-to-steps",
+    "headline": "How to Turn Any Task Into a First Step in Six Lines",
+    "items": [
+      "Say the task the way you'd say it to yourself, however rough.",
+      "Say what would be true when it's finished.",
+      "Ask what the first action is that involves a phone, a screen, a form or a piece of paper.",
+      "If it's still fuzzy, ask what you'd need to find.",
+      "Write the step as a verb plus an object",
+      "Optionally write the second and third, but choose one to happen today."
+    ],
+    "proof": [
+      "Say the task the way you'd say it to yourself, however rough.",
+      "Say what would be true when it's finished.",
+      "Ask what the first action is that involves a phone, a screen, a form or a piece of paper.",
+      "If it's still fuzzy, ask what you'd need to find.",
+      "Write the step as a verb plus an object",
+      "Optionally write the second and third, but choose one to happen today."
+    ],
+    "query": "how to break a big task into small steps",
+    "board": "ADHD Task Paralysis",
+    "visual": "Numbered how-to on a pale ground: six short handwritten lines down a notepad page, numbers 1 to 6 in mulberry, the fifth line underlined; a phone, a form and a sheet of paper drawn small in the margin for the three kinds of action.",
+    "link": {
+      "kind": "guide",
+      "slug": "first-physical-step-20-examples"
+    },
+    "n": 46
+  },
+  {
+    "slice": "overdue",
+    "angle": "myth-vs-truth",
+    "headline": "Late Replying? Skip the Explanation Unless It Changes What They Can Do",
+    "sub": "Acknowledge the gap, then ask the practical question.",
+    "items": [
+      "The instinct is to justify: an illness, a hard year, a bereavement.",
+      "Acknowledge the gap, then ask the practical question.",
+      "Organizations that send bills and letters hear from late people often, so a late reply is rarely news to them."
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "how-to-deal-with-something-you-have-put-off"
+    },
+    "proof": [
+      "Skip the explanation unless it changes what they can do for you.",
+      "The instinct is to justify: an illness, a hard year, a bereavement.",
+      "Organizations that send bills and letters hear from late people often, so a late reply is rarely news to them.",
+      "Acknowledge the gap, then ask the practical question."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "what to say when you are late paying a bill",
+    "board": "Phone Call Anxiety Scripts",
+    "when": "evergreen",
+    "visual": "Two-column this-not-that: left a crumpled butter sticky note with a long scribbled apology struck through (headed 'The instinct'), right a clean cream card with one short line circled in mulberry (headed 'Acknowledge the gap, then ask'). Small ringing-phone prop between the two. No words beyond the quoted lines.",
+    "flags": [],
+    "reserve": false,
+    "n": 47
+  },
+  {
+    "slice": "starting",
+    "sub": "Say a parking permit renewal is due Friday.",
+    "flags": [
+      "example-tag"
+    ],
+    "reserve": false,
+    "proofFile": "src/content/guides.ts",
+    "when": "evergreen",
+    "angle": "scenario",
+    "headline": "Two Tuesdays, One Untouched Form: Procrastinating or Stuck?",
+    "items": [
+      "That's what most people mean by procrastination: a choice, made with your eyes open, to trade later for now.",
+      "You look at the first field, look at your phone, look at the form again, and forty minutes later you feel worse than when you sat down."
+    ],
+    "proof": [
+      "Say a parking permit renewal is due Friday.",
+      "That's what most people mean by procrastination: a choice, made with your eyes open, to trade later for now.",
+      "You look at the first field, look at your phone, look at the form again, and forty minutes later you feel worse than when you sat down."
+    ],
+    "query": "executive dysfunction vs procrastination",
+    "board": "ADHD Task Paralysis",
+    "visual": "Two desk vignettes side by side under the same blank one-page form: Tuesday one with a phone showing a game, Tuesday two with the same untouched form and the phone face down. The form carries a mulberry circle on the first field. Captioned Tuesday 1 and Tuesday 2 in handwriting. The permit scenario is the guide's own illustration.",
+    "link": {
+      "kind": "guide",
+      "slug": "executive-dysfunction-is-not-procrastination"
+    },
+    "n": 48
+  },
+  {
+    "slice": "overdue",
+    "angle": "infographic",
+    "headline": "Everything Is Overdue? Sort Into Three Piles Instead of Ranking",
+    "sub": "Only the first two piles get any attention today.",
+    "items": [
+      "A person is waiting means someone has asked, or will notice soon.",
+      "A date is attached means there is a real day it has to happen by.",
+      "No one is waiting means it counts, but nothing changes this week."
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "how-to-start-when-everything-is-overdue"
+    },
+    "proof": [
+      "A person is waiting means someone has asked, or will notice soon.",
+      "A date is attached means there is a real day it has to happen by.",
+      "No one is waiting means it counts, but nothing changes this week.",
+      "Only the first two piles get any attention today."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "everything is overdue where to start",
+    "board": "Overwhelm and Overdue",
+    "when": "evergreen",
+    "visual": "Infographic of three tall columns of butter sticky notes on a wash ground, headed 'A person', 'A date', 'No one'; the first two columns are bright and ringed in mulberry, the third is pale and tucked to the side. Notes carry blank handwriting scribbles, not invented tasks. No paper-mail stacks, so it stays apart from the paperwork pile pins.",
+    "flags": [],
+    "reserve": false,
+    "n": 49
+  },
+  {
+    "slice": "starting",
+    "sub": "No, but they can look the same and can happen together.",
+    "flags": [],
+    "reserve": false,
+    "proofFile": "src/content/guides.ts",
+    "when": "evergreen",
+    "angle": "myth-vs-truth",
+    "headline": "Is Executive Dysfunction Just an Excuse for Procrastinating? Not Quite",
+    "items": [
+      "Procrastination is a choice to delay something you expect to regret delaying.",
+      "Executive dysfunction describes trouble with skills like starting and organizing.",
+      "the useful question is what would lower the cost of starting today, not who is to blame."
+    ],
+    "proof": [
+      "No, but they can look the same and can happen together.",
+      "Procrastination is a choice to delay something you expect to regret delaying.",
+      "Executive dysfunction describes trouble with skills like starting and organizing.",
+      "the useful question is what would lower the cost of starting today, not who is to blame."
+    ],
+    "query": "is executive dysfunction just an excuse",
+    "board": "ADHD Task Paralysis",
+    "visual": "Split card: a small crossed-out sticky note reading 'Just an excuse' on the left, the guide's two definitions on cream cards on the right, and one mulberry-ringed line at the bottom about the useful question. Not a diagnosis, no medical imagery, a form on the desk as the only prop.",
+    "link": {
+      "kind": "guide",
+      "slug": "executive-dysfunction-is-not-procrastination"
+    },
+    "n": 50
+  },
+  {
+    "slice": "overdue",
+    "angle": "checklist",
+    "headline": "How to Pick the First Thing When Everything Is Late: Six Steps",
+    "sub": "Take just the person and date piles, and go down this list once.",
+    "items": [
+      "Cross out anything with a real consequence that has already started or lands in the next few days.",
+      "Pick the one that would change something for another person tomorrow.",
+      "If two tie, pick the one with fewer steps.",
+      "Write the first physical step, something a person watching could see.",
+      "Do that step. Only that step.",
+      "Copy the rest of the list onto one page or one screen, and put it out of sight."
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "how-to-start-when-everything-is-overdue"
+    },
+    "proof": [
+      "Take just the person and date piles, and go down this list once.",
+      "Cross out anything with a real consequence that has already started or lands in the next few days",
+      "pick the one that would change something for another person tomorrow",
+      "If two tie, pick the one with fewer steps.",
+      "Write the first physical step, something a person watching could see",
+      "Do that step. Only that step.",
+      "Copy the rest of the list onto one page or one screen, and put it out of sight."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "how to prioritize when everything is urgent adhd",
+    "board": "ADHD Life Admin",
+    "when": "evergreen",
+    "visual": "Notepad-checklist archetype: a spiral pad with the six steps in short handwritten form and square tick boxes, only the fifth ('Do that step') ticked in mulberry; a glass of water at the pad's edge. Light wash ground.",
+    "flags": [],
+    "reserve": false,
+    "n": 51
+  },
+  {
+    "slice": "starting",
+    "sub": "You're not trying to name a condition. You're picking which kind of help to try first.",
+    "flags": [],
+    "reserve": false,
+    "proofFile": "src/content/guides.ts",
+    "when": "evergreen",
+    "angle": "question",
+    "headline": "Procrastinating or Unable to Start? Five Questions to Ask About Today",
+    "items": [
+      "Is there something you'd rather be doing?",
+      "Could you say the first physical action out loud, such as open the form or find the account number?",
+      "Would a deadline in an hour get you moving?",
+      "Is it one task, or a pile?",
+      "Are you also short on sleep, ill, grieving or flat?"
+    ],
+    "proof": [
+      "You're not trying to name a condition. You're picking which kind of help to try first.",
+      "Is there something you'd rather be doing?",
+      "Could you say the first physical action out loud, such as open the form or find the account number?",
+      "Would a deadline in an hour get you moving?",
+      "Is it one task, or a pile?",
+      "Are you also short on sleep, ill, grieving or flat?"
+    ],
+    "query": "am i procrastinating or is it executive dysfunction",
+    "board": "ADHD Task Paralysis",
+    "visual": "Five stacked cream index cards fanned on the desk, each with one question in large handwriting and a small unticked circle; the last card, about sleep and capacity, is tilted forward with a mulberry edge. Plain, quiet, no icons beyond the circles.",
+    "link": {
+      "kind": "guide",
+      "slug": "executive-dysfunction-is-not-procrastination"
+    },
+    "n": 52
+  },
+  {
+    "slice": "overdue",
+    "angle": "script-card",
+    "headline": "Late Replying to Someone Who Is Waiting? Send One Short Message With a Date",
+    "sub": "You don't owe an essay. A short message that gives them a date is worth more than a long one that explains.",
+    "items": [
+      "Hi, sorry this took me a while. I can get you an answer by Thursday. Does that work?",
+      "Hi, I'm working through this now and need until Friday. I'll send it by noon that day."
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "how-to-start-when-everything-is-overdue"
+    },
+    "proof": [
+      "You don't owe an essay. A short message that gives them a date is worth more than a long one that explains.",
+      "Hi, sorry this took me a while. I can get you an answer by Thursday. Does that work?",
+      "Hi, I'm working through this now and need until Friday. I'll send it by noon that day.",
+      "Someone waits on a reply",
+      "You need more time"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "how to reply to a late message",
+    "board": "Overwhelm and Overdue",
+    "when": "evergreen",
+    "visual": "A phone in hand from above showing a plain text thread with two short bubbles (the two lines, drawn as ordinary messaging, not an app screen of ours); a small index card beside it labelled 'Someone waits on a reply'. A butter sticky note says 'a date, not an essay'.",
+    "flags": [],
+    "reserve": false,
+    "n": 53
+  },
+  {
+    "slice": "starting",
+    "sub": "what is the next physical action, and what would have to be on the table for me to do it?",
+    "flags": [
+      "example-tag"
+    ],
+    "reserve": false,
+    "proofFile": "src/content/guides.ts",
+    "when": "evergreen",
+    "angle": "template-preview",
+    "headline": "Keep Thinking About a Task? Turn the Thought Into One Physical Action",
+    "items": [
+      "Sort out the insurance | Find the renewal letter and read the date on it | The letter and this year's quote",
+      "I need to reply to Sam | Open the email and write: Sorry for the slow reply. | A decision: yes or no to Saturday",
+      "Book the dentist | Look up the number and stick it by the phone | Two days that work for me"
+    ],
+    "proof": [
+      "what is the next physical action, and what would have to be on the table for me to do it?",
+      "Sort out the insurance",
+      "Find the renewal letter and read the date on it",
+      "The letter and this year's quote",
+      "I need to reply to Sam",
+      "Open the email and write: Sorry for the slow reply.",
+      "A decision: yes or no to Saturday",
+      "Book the dentist",
+      "Look up the number and stick it by the phone",
+      "Two days that work for me"
+    ],
+    "query": "keep thinking about a task but not doing it",
+    "board": "ADHD Task Paralysis",
+    "visual": "A worksheet-style printed card on the desk with three columns (The thought / Next physical action / What needs to be in front of me) and three filled rows in handwriting, the middle column in mulberry; a pen beside it. A template preview in the Alongside Book's plain page style. All three rows are the guide's own illustrations.",
+    "link": {
+      "kind": "guide",
+      "slug": "why-you-keep-thinking-about-a-task-and-not-doing-it"
+    },
+    "n": 54
+  },
+  {
+    "slice": "overdue",
+    "angle": "comparison",
+    "headline": "How to Prioritize When Everything Is Overdue: One Question for Each Item",
+    "sub": "Ranking eleven late things is a decision about eleven things, and that decision is usually what stalls you.",
+    "items": [
+      "Ranking eleven late things is a decision about eleven things",
+      "Sorting is easier because each item only gets one question: who or what is waiting on it?"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "how-to-start-when-everything-is-overdue"
+    },
+    "proof": [
+      "Ranking eleven late things is a decision about eleven things, and that decision is usually what stalls you.",
+      "Sorting is easier because each item only gets one question: who or what is waiting on it?"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "how to prioritize when everything feels urgent",
+    "board": "ADHD Task Paralysis",
+    "when": "evergreen",
+    "visual": "Two halves: left a tangle of eleven numbered sticky notes with crossed-out numbering, labelled 'Ranking'; right the same notes fanned neatly under one big mulberry question 'Who or what is waiting on it?', labelled 'Sorting'. Notes are blank scribbles, no invented tasks.",
+    "flags": [],
+    "reserve": false,
+    "n": 55
+  },
+  {
+    "slice": "starting",
+    "sub": "This is for one task that keeps coming back at eleven at night.",
+    "flags": [],
+    "reserve": false,
+    "proofFile": "src/content/guides.ts",
+    "when": "evergreen",
+    "angle": "quote-card",
+    "headline": "Task on Your Mind at Night? Put the Action on a Sticky Note for Tomorrow",
+    "items": [
+      "Tonight, write the action on a sticky note and put it on the thing you'll touch first tomorrow."
+    ],
+    "proof": [
+      "This is for one task that keeps coming back at eleven at night.",
+      "Tonight, write the action on a sticky note and put it on the thing you'll touch first tomorrow."
+    ],
+    "query": "how to stop thinking about a task you keep putting off",
+    "board": "ADHD Task Paralysis",
+    "visual": "Evening desk scene: a lamp, a folder on the desk with one butter sticky note stuck to its front carrying the sentence large in handwriting, a wall clock reading near eleven in the corner. One mulberry circle on the note. Calm, no bedroom, no figure.",
+    "link": {
+      "kind": "guide",
+      "slug": "why-you-keep-thinking-about-a-task-and-not-doing-it"
+    },
+    "n": 56
+  },
+  {
+    "slice": "overdue",
+    "angle": "before-after",
+    "headline": "How to Organize a Bag of Unopened Mail: Four Stacks, Nothing Decided Yet",
+    "sub": "Each item goes in one stack and gets one word of next step. Nothing is done yet.",
+    "items": [
+      "Act: a person is waiting on you, or a date is printed on it.",
+      "Keep: a reference or record you'll need again, like a claim letter or statement.",
+      "Ask someone: you can't tell what it is or what it wants.",
+      "Bin or shred: junk, or anything with an account number on it that you're sure is finished."
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "paperwork-pile-where-to-start"
+    },
+    "proof": [
+      "Each item goes in one stack and gets one word of next step. Nothing is done yet.",
+      "Act: a person is waiting on you, or a date is printed on it.",
+      "Keep: a reference or record you'll need again, like a claim letter or statement.",
+      "Ask someone: you can't tell what it is or what it wants.",
+      "Bin or shred: junk, or anything with an account number on it that you're sure is finished.",
+      "Bank statement\", \"Keep",
+      "Electric bill\", \"Act, a date",
+      "Medical bill, unclear\", \"Ask someone",
+      "Charity flyer\", \"Bin or shred"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "how to organize mail",
+    "board": "Paperwork Organization",
+    "when": "evergreen",
+    "visual": "Pile-sort archetype, before and after in one look: top half a shopping bag spilling mail across the pin's edges; an arrow down to four labelled kraft trays (Act, Keep, Ask someone, Bin or shred) with the Act tray ringed in mulberry. A few envelopes carry the guide's own example labels (Bank statement, Electric bill, Medical bill, Charity flyer).",
+    "flags": [
+      "example-tag"
+    ],
+    "reserve": false,
+    "n": 57
+  },
+  {
+    "slice": "starting",
+    "sub": "Do this on one page or one screen, with a timer set for ten minutes.",
+    "flags": [],
+    "reserve": false,
+    "proofFile": "src/content/guides.ts",
+    "when": "evergreen",
+    "angle": "how-to-steps",
+    "headline": "How to Cut a Long To-Do List Down to One Thing in Ten Minutes",
+    "items": [
+      "Copy everything onto one page, in whatever order it comes.",
+      "Cross out what isn't a task",
+      "Do anything that takes two minutes or less right now, and cross it out.",
+      "Rewrite each remaining row as a first step someone watching could see you do.",
+      "Pick one for today.",
+      "Give a date to the rows that have a real one",
+      "Move everything else to a second page."
+    ],
+    "proof": [
+      "Do this on one page or one screen, with a timer set for ten minutes.",
+      "Copy everything onto one page, in whatever order it comes.",
+      "Cross out what isn't a task",
+      "Do anything that takes two minutes or less right now, and cross it out.",
+      "Rewrite each remaining row as a first step someone watching could see you do.",
+      "Pick one for today.",
+      "Give a date to the rows that have a real one",
+      "Move everything else to a second page."
+    ],
+    "query": "how to shorten a to do list when overwhelmed",
+    "board": "ADHD Planning Systems",
+    "visual": "Seven numbered strips on a long notepad page, steps 1 to 7, with the fifth, 'Pick one for today', on a butter sticky note stuck over the page; a second page peeking out underneath for the parked rows. Mulberry used only for the sticky note's ring.",
+    "link": {
+      "kind": "guide",
+      "slug": "why-to-do-lists-make-it-worse"
+    },
+    "n": 58
+  },
+  {
+    "slice": "overdue",
+    "angle": "question",
+    "headline": "What Is a Doom Pile? Didn't Organize, Only Moved (and What to Do About It)",
+    "sub": "It's a description, not a diagnosis, and lots of people have one.",
+    "items": [
+      "Didn't Organize, Only Moved",
+      "A stack of unsorted things moved somewhere to clear a surface.",
+      "Open, stack by what each item needs, and do a little regularly."
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "paperwork-pile-where-to-start"
+    },
+    "proof": [
+      "It's a name for a stack of unsorted things moved somewhere to clear a surface. ADDitude explains it as Didn't Organize, Only Moved. It's a description, not a diagnosis, and lots of people have one.",
+      "open, stack by what each item needs, and do a little regularly"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "what is a doom pile adhd",
+    "board": "Paperwork Organization",
+    "when": "evergreen",
+    "visual": "Question layout: the headline's question over a close-up of one chair seat holding a leaning stack of folders, mail and a jumper, with a single butter sticky note on top spelling out D.O.O.M. as 'Didn't Organize, Only Moved' in handwriting. Calm, light, not a mess shot.",
+    "flags": [],
+    "reserve": false,
+    "n": 59
+  },
+  {
+    "slice": "starting",
+    "sub": "The other seven still exist. They just aren't asking you to choose among them every time you look.",
+    "flags": [
+      "example-tag"
+    ],
+    "reserve": false,
+    "proofFile": "src/content/guides.ts",
+    "when": "evergreen",
+    "angle": "before-after",
+    "headline": "To-Do List Too Long? Nine Rows Cut Down to Two Lines for Tomorrow Morning",
+    "items": [
+      "Taxes. Dentist. Car. Mom's birthday. Spare room. Airline refund. Email Priya. Insurance. Laundry.",
+      "what you look at tomorrow morning is two lines: copy the booking reference, and order the card by Friday."
+    ],
+    "proof": [
+      "Taxes. Dentist. Car. Mom's birthday. Spare room. Airline refund. Email Priya. Insurance. Laundry.",
+      "what you look at tomorrow morning is two lines: copy the booking reference, and order the card by Friday.",
+      "The other seven still exist. They just aren't asking you to choose among them every time you look."
+    ],
+    "query": "how to simplify a to do list adhd",
+    "board": "ADHD Planning Systems",
+    "visual": "Top half a crowded page of nine crammed handwritten rows, cropped by the pin edges; a mulberry arrow down to a clean card with just two lines. The nine rows are the guide's own example list.",
+    "link": {
+      "kind": "guide",
+      "slug": "why-to-do-lists-make-it-worse"
+    },
+    "n": 60
+  },
+  {
+    "slice": "overdue",
+    "angle": "how-to-steps",
+    "headline": "Paperwork Pile Where to Start: Open Every Envelope Over a Bin for Ten Minutes",
+    "sub": "You don't finish the pile. You find out what's in it.",
+    "items": [
+      "Minute 0: set it up",
+      "Minutes 1 to 8: open and stack",
+      "As you go: copy the numbers",
+      "Minutes 9 to 10: pick one",
+      "Timer ends: stop"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "paperwork-pile-where-to-start"
+    },
+    "proof": [
+      "You don't finish the pile. You find out what's in it.",
+      "Minute 0: set it up",
+      "Minutes 1 to 8: open and stack",
+      "As you go: copy the numbers",
+      "Minutes 9 to 10: pick one",
+      "Timer ends: stop",
+      "Open each item and put it in a stack. Don't read it through and don't decide."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "paperwork pile where to start",
+    "board": "Paperwork Organization",
+    "when": "evergreen",
+    "visual": "How-to timeline down the pin: five numbered stops on a vertical line, a small clock face and an open bin at the top, a kraft envelope being slit open at stop two, a blank reference page with a pen at stop three. Wash ground, mulberry only on the line and the final 'stop' tick.",
+    "flags": [],
+    "reserve": false,
+    "n": 61
+  },
+  {
+    "slice": "starting",
+    "sub": "A list shows a two-minute email and a four-hour form as the same kind of row, so picking between them costs effort every time.",
+    "flags": [
+      "example-tag"
+    ],
+    "reserve": false,
+    "proofFile": "src/content/guides.ts",
+    "when": "evergreen",
+    "angle": "question",
+    "headline": "Why To-Do Lists Do Not Work: Rows Say the Goal, Not the First Move",
+    "items": [
+      "a row like Airline refund says what you want to be true, not what to do first.",
+      "The first physical move is the part that was hard all along, and the list leaves it blank."
+    ],
+    "proof": [
+      "A list shows a two-minute email and a four-hour form as the same kind of row, so picking between them costs effort every time.",
+      "a row like Airline refund says what you want to be true, not what to do first.",
+      "The first physical move is the part that was hard all along, and the list leaves it blank."
+    ],
+    "query": "why to do lists dont work",
+    "board": "ADHD Planning Systems",
+    "visual": "A single to-do list row 'Airline refund' written large on lined paper with an empty blank box to its right and a handwritten question mark where the first move should be; a small stack of other rows fading below. The one row is the guide's own example.",
+    "link": {
+      "kind": "guide",
+      "slug": "why-to-do-lists-make-it-worse"
+    },
+    "n": 62
+  },
+  {
+    "slice": "overdue",
+    "angle": "checklist",
+    "headline": "Bill Due Date System for ADHD: Six Steps That Do Not Rely on Remembering",
+    "sub": "A system that doesn't rely on remembering.",
+    "items": [
+      "List every recurring bill with its due date.",
+      "Line the dates up with your paydays.",
+      "Decide what runs on autopay and what doesn't.",
+      "Put the date on the item.",
+      "Choose the reminder yourself.",
+      "Look once a week at what has a date in the next few days."
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "why-you-keep-missing-bill-due-dates"
+    },
+    "proof": [
+      "A system that doesn't rely on remembering",
+      "List every recurring bill with its due date.",
+      "Line the dates up with your paydays.",
+      "Decide what runs on autopay and what doesn't.",
+      "Put the date on the item.",
+      "Choose the reminder yourself",
+      "Look once a week at what has a date in the next few days."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "bill due date system adhd",
+    "board": "ADHD Life Admin",
+    "when": "evergreen",
+    "visual": "Notepad-checklist archetype on a wall-calendar corner: a spiral pad with six short handwritten steps and tick boxes, a month wall calendar behind with a few dates circled in mulberry (no amounts, no provider names), a small stack of kraft envelopes at the edge.",
+    "flags": [],
+    "reserve": false,
+    "n": 63
+  },
+  {
+    "slice": "systems",
+    "angle": "how-to-steps",
+    "headline": "Weekly Reset for a Bad Week: Four Steps in Ten Minutes",
+    "sub": "Set a timer if it helps you stop. When the ten minutes are up, you're done, even if the list is still long.",
+    "items": [
+      "Minutes 0 to 3: look",
+      "Minutes 3 to 5: pick one",
+      "Minutes 5 to 8: a day and a step",
+      "Minutes 8 to 10: put it away"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "a-weekly-reset-that-survives-a-bad-week"
+    },
+    "proof": [
+      "Set a timer if it helps you stop. When the ten minutes are up, you're done, even if the list is still long.",
+      "Minutes 0 to 3: look",
+      "Minutes 3 to 5: pick one",
+      "Minutes 5 to 8: a day and a step",
+      "Minutes 8 to 10: put it away"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "weekly reset for a bad week",
+    "board": "ADHD Planning Systems",
+    "when": "evergreen; peaks on Sundays and in January",
+    "visual": "notepad-checklist archetype: a spiral pad with four handwritten rows and tick boxes, the four step labels as the rows, with a small kitchen timer at the pad's edge (the guide says to set a timer if it helps you stop; a guide pin, so a timer is allowed) and a butter sticky note stuck to the corner. Light blush-grey ground, mulberry only on the ticks.",
+    "flags": [],
+    "reserve": false,
+    "n": 64
+  },
+  {
+    "slice": "overdue",
+    "angle": "scenario",
+    "headline": "Why Do I Forget to Pay Bills? The 12th Never Showed Up With the Bill in Front of You",
+    "sub": "At no point did you decide not to pay.",
+    "items": [
+      "You saw the email on the 4th. You meant to do it after the weekend.",
+      "On the 13th a text arrives about a late fee.",
+      "At no point did you decide not to pay."
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "why-you-keep-missing-bill-due-dates"
+    },
+    "proof": [
+      "Say the phone bill is due on the 12th",
+      "You saw the email on the 4th. You meant to do it after the weekend.",
+      "on the 13th a text arrives about a late fee",
+      "At no point did you decide not to pay. The 12th just never showed up as a moment with the bill in front of you."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "why do i forget to pay bills",
+    "board": "ADHD Life Admin",
+    "when": "evergreen",
+    "visual": "Pov-desk-scene as a calendar strip: a wall calendar page with the 4th, 12th and 13th each carrying a small butter note in the guide's own words ('email', 'due', 'text about a late fee'), the days between blank and pale, a phone showing only a generic text bubble. The 12th gets a hollow mulberry ring: the moment that never arrived.",
+    "flags": [
+      "example-tag"
+    ],
+    "reserve": false,
+    "n": 65
+  },
+  {
+    "slice": "systems",
+    "angle": "before-after",
+    "headline": "Five Things on the Counter, One Gets a Day: A Weekly Reset Example",
+    "sub": "Say you sit down on Sunday evening with five things in your head or on the counter.",
+    "items": [
+      "Book the dentist",
+      "Reply to Sam about the deposit",
+      "Library card expires",
+      "Closet is a mess",
+      "Parking ticket, unopened"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "a-weekly-reset-that-survives-a-bad-week"
+    },
+    "proof": [
+      "Say you sit down on Sunday evening with five things in your head or on the counter.",
+      "Book the dentist",
+      "This is the one. Put Tuesday on it.",
+      "Reply to Sam about the deposit",
+      "Library card expires",
+      "Closet is a mess",
+      "Parking ticket, unopened",
+      "Stays where it is."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "weekly reset example adhd",
+    "board": "Overwhelm and Overdue",
+    "when": "evergreen; peaks on Sundays",
+    "visual": "sticky-note-wall-to-one-card archetype: five butter sticky notes in a loose row along the edge of a kitchen counter, each with one of the five lines in handwriting. The dentist note is lifted forward and large, with Tuesday circled in mulberry; the other four stay in place, slightly faded and labelled Stays where it is. Mail corner at the edge, unopened parking ticket envelope.",
+    "flags": [
+      "example-tag"
+    ],
+    "reserve": false,
+    "n": 66
+  },
+  {
+    "slice": "fog",
+    "angle": "template-preview",
+    "headline": "Brain Fog Life Admin: The Five-Line Note to Write Before You Stop",
+    "sub": "Write this before you stop, and you won't have to rebuild anything tomorrow.",
+    "items": [
+      "Where I stopped: Form filled to page 2. Page 3 needs the policy number.",
+      "Who I spoke to: Priya, claims desk, Monday at 11.",
+      "Reference: Claim number ending 4471.",
+      "What I already tried: Website login failed twice. Phone line was faster.",
+      "Next physical action: Find the policy letter in the blue folder."
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "life-admin-with-brain-fog"
+    },
+    "proof": [
+      "Write this before you stop, and you won't have to rebuild anything tomorrow.",
+      "Where I stopped",
+      "Form filled to page 2. Page 3 needs the policy number.",
+      "Who I spoke to",
+      "Priya, claims desk, Monday at 11.",
+      "Claim number ending 4471.",
+      "What I already tried",
+      "Website login failed twice. Phone line was faster.",
+      "Next physical action",
+      "Find the policy letter in the blue folder."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "brain fog notes template",
+    "board": "Brain Fog Life Admin",
+    "when": "evergreen",
+    "visual": "template-preview: one cream index card (or half a notepad page) in handwriting, five labelled rows filled in with the guide's example (Where I stopped, Who I spoke to, Reference, What I already tried, Next physical action), the last row ringed in mulberry; a blue folder and a pen at the edge. Small caption 'An illustration, not a real account'.",
+    "flags": [
+      "example-tag"
+    ],
+    "reserve": false,
+    "n": 67
+  },
+  {
+    "slice": "systems",
+    "angle": "comparison",
+    "headline": "Weekly Reset Templates: One Needs a Good Week, One Survives a Bad One",
+    "sub": null,
+    "items": [
+      "Needs a good week: Reviews everything that happened",
+      "Needs a good week: Plans the whole week",
+      "Needs a good week: Breaks after one missed day",
+      "Needs a good week: Leaves a catch-up job",
+      "Survives a bad one: Looks at what's in front of you",
+      "Survives a bad one: Picks one thing",
+      "Survives a bad one: Reads the same after a missed week",
+      "Survives a bad one: Leaves nothing to catch up on"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "a-weekly-reset-that-survives-a-bad-week"
+    },
+    "proof": [
+      "Needs a good week",
+      "Reviews everything that happened",
+      "Plans the whole week",
+      "Breaks after one missed day",
+      "Leaves a catch-up job",
+      "Survives a bad one",
+      "Looks at what's in front of you",
+      "Picks one thing",
+      "Reads the same after a missed week",
+      "Leaves nothing to catch up on"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "weekly reset template adhd",
+    "board": "ADHD Planning Systems",
+    "when": "evergreen",
+    "visual": "this-not-that archetype: two columns side by side. Left is a long, crowded printed template sheet with the four 'needs a good week' lines struck through; right is a single cream index card with the four 'survives a bad one' lines, circled in mulberry. Small headers: a full planner page vs one sticky note.",
+    "flags": [],
+    "reserve": false,
+    "n": 68
+  },
+  {
+    "slice": "overdue",
+    "angle": "before-after",
+    "headline": "How to Change Bill Due Dates to Match Payday: One Month, Before and After",
+    "sub": "Each bill's due date can often be moved, but you have to ask, and some companies won't.",
+    "items": [
+      "Card: due the 25th, asked to move to the 6th, paid from the 5th paycheck",
+      "Phone: due the 12th, asked to move to the 21st, paid from the 20th paycheck",
+      "Electric: due the 18th, asked to move to the 21st, paid from the 20th paycheck"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "why-you-keep-missing-bill-due-dates"
+    },
+    "proof": [
+      "Say you're paid on the 5th and the 20th.",
+      "Each bill's due date can often be moved, but you have to ask, and some companies won't.",
+      "Card\", \"25th\", \"6th\", \"5th paycheck",
+      "Phone\", \"12th\", \"21st\", \"20th paycheck",
+      "Electric\", \"18th\", \"21st\", \"20th paycheck"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "how to change bill due dates to match payday",
+    "board": "ADHD Life Admin",
+    "when": "evergreen",
+    "visual": "Before-after table card: two month strips, 'Due now' above and 'Asked to move to' below, with a mulberry arrow from each bill to its new date and the two payday dates (5th, 20th) marked with a small envelope. Only the guide's three example rows; a small 'An illustration' stamp.",
+    "flags": [
+      "example-tag"
+    ],
+    "reserve": false,
+    "n": 69
+  },
+  {
+    "slice": "systems",
+    "angle": "question",
+    "headline": "Missed a Week of Your Reset? Do This Week's Ten Minutes and Nothing Else",
+    "sub": "A missed week doesn't need reviewing or catching up.",
+    "items": [
+      "Do this week's ten minutes and nothing else.",
+      "Treat it as though it hadn't been on the calendar."
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "a-weekly-reset-that-survives-a-bad-week"
+    },
+    "proof": [
+      "Do this week's ten minutes and nothing else.",
+      "A missed week doesn't need reviewing or catching up.",
+      "Treat it as though it hadn't been on the calendar."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "what to do if you miss a weekly reset",
+    "board": "ADHD Planning Systems",
+    "when": "evergreen; peaks in January and after holidays",
+    "visual": "question archetype: a wall calendar with one week left completely blank and a gentle page curl, the question 'What if I miss a week of my reset?' on a cream index card pinned above it, and the answer in large handwriting on a butter sticky note stuck to the following week. No red marks, no crossed-out days.",
+    "flags": [],
+    "reserve": false,
+    "n": 70
+  },
+  {
+    "slice": "fog",
+    "angle": "comparison",
+    "headline": "Brain Fog Task List: What Needs a Clear Head and What Is Fine on a Foggy Day",
+    "sub": "Some jobs need a clear head, and some don't.",
+    "items": [
+      "Needs a clear head: A call with a stranger",
+      "Needs a clear head: A form with numbers on it",
+      "Needs a clear head: A decision with money in it",
+      "Needs a clear head: Anything you'll have to explain",
+      "Fine on a foggy day: Open one envelope",
+      "Fine on a foggy day: Copy a number onto the page",
+      "Fine on a foggy day: Put the letter by the phone",
+      "Fine on a foggy day: Write today's stopping note"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "life-admin-with-brain-fog"
+    },
+    "proof": [
+      "Some jobs need a clear head, and some don't.",
+      "Needs a clear head",
+      "A call with a stranger",
+      "A form with numbers on it",
+      "A decision with money in it",
+      "Anything you'll have to explain",
+      "Fine on a foggy day",
+      "Open one envelope",
+      "Copy a number onto the page",
+      "Put the letter by the phone",
+      "Write today's stopping note"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "brain fog daily tasks list",
+    "board": "Brain Fog Life Admin",
+    "when": "evergreen",
+    "visual": "comparison: two tall columns on a blush ground; left a heavy kraft folder and a phone stack, 'Needs a clear head' with four lines; right a single opened envelope and a sticky note, 'Fine on a foggy day' with four lines, the right column ringed in mulberry. No faces, no weather clip art.",
+    "flags": [],
+    "reserve": false,
+    "n": 71
+  },
+  {
+    "slice": "systems",
+    "angle": "scenario",
+    "headline": "Why You Stop Using Planners: A Blank Thursday and a Book Under the Post",
+    "sub": "Say it's the third week.",
+    "items": [
+      "Monday to Wednesday are full: neat handwriting, colors, a plan for Thursday.",
+      "Then Thursday was a bad day, and you skipped it.",
+      "Friday you opened the book, saw the blank Thursday sitting there, and closed it.",
+      "It's now the following Tuesday and the book is under a pile of post."
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "why-you-abandon-planners-and-how-to-come-back"
+    },
+    "proof": [
+      "Say it's the third week",
+      "Monday to Wednesday are full: neat handwriting, colors, a plan for Thursday.",
+      "Then Thursday was a bad day, and you skipped it.",
+      "Friday you opened the book, saw the blank Thursday sitting there, and closed it.",
+      "It's now the following Tuesday and the book is under a pile of post."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "why do i keep abandoning planners",
+    "board": "ADHD Planning Systems",
+    "when": "evergreen; peaks in January",
+    "visual": "pov-desk-scene archetype, seen from above and wordless: an open planner, Monday to Wednesday filled in neat handwriting, Thursday visibly blank, and a pile of post sliding over one corner of the book. Headline in a speech-bubble-free caption above. No people, no marks of failure.",
+    "flags": [
+      "example-tag"
+    ],
+    "reserve": false,
+    "n": 72
+  },
+  {
+    "slice": "fog",
+    "angle": "script-card",
+    "headline": "Phone Calls With Brain Fog: Five Lines for When You Lose the Thread",
+    "sub": "Put these at the bottom of your page.",
+    "items": [
+      "You lost the thread: Sorry, I lost my place. Can you repeat the last part?",
+      "They're going too fast: Could you slow down? I'm writing this down.",
+      "You want it in writing: Can you send that to me in writing, so I can go through it after we hang up?",
+      "Asked the same thing again: I gave those details to your colleague. Can you see the notes on the account?",
+      "You need to stop: I need to stop here. Can I call back, and who should I ask for?"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "life-admin-with-brain-fog"
+    },
+    "proof": [
+      "Put these at the bottom of your page.",
+      "Sorry, I lost my place. Can you repeat the last part?",
+      "Could you slow down? I'm writing this down.",
+      "Can you send that to me in writing, so I can go through it after we hang up?",
+      "I gave those details to your colleague. Can you see the notes on the account?",
+      "I need to stop here. Can I call back, and who should I ask for?"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "what to say when you lose your train of thought on a phone call",
+    "board": "Phone Call Anxiety Scripts",
+    "when": "evergreen",
+    "visual": "opening-line-card variant: a recipe-box style stack of five cream index cards fanned on a desk, each with its situation as a small tab and the line in large handwriting inside mulberry quote marks; a phone face down and a pen beside them.",
+    "flags": [],
+    "reserve": false,
+    "n": 73
+  },
+  {
+    "slice": "systems",
+    "angle": "checklist",
+    "headline": "Choosing a Planner for ADHD: Five Checks to Run Before You Commit",
+    "sub": "Whether it's paper or an app, run it past these before you commit.",
+    "items": [
+      "It survives a missed week without extra work from you.",
+      "It doesn't count or display what you didn't do, so a gap is invisible.",
+      "It asks for very little to start, and you can be using it in five minutes.",
+      "You can put it down halfway and pick it up again where you stopped.",
+      "It's somewhere you'll pass without deciding to look."
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "why-you-abandon-planners-and-how-to-come-back"
+    },
+    "proof": [
+      "Whether it's paper or an app, run it past these before you commit.",
+      "It survives a missed week without extra work from you.",
+      "It doesn't count or display what you didn't do, so a gap is invisible.",
+      "It asks for very little to start, and you can be using it in five minutes.",
+      "You can put it down halfway and pick it up again where you stopped.",
+      "It's somewhere you'll pass without deciding to look."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "adhd planner what to look for",
+    "board": "ADHD Planning Systems",
+    "when": "evergreen; peaks in January and August",
+    "visual": "notepad-checklist archetype: a spiral notepad with five handwritten rows, each with a ticked box in mulberry; a closed plain planner and a phone lie at the pad's edge to say 'paper or an app'. Light ground, kraft envelope corner for warmth.",
+    "flags": [],
+    "reserve": false,
+    "n": 74
+  },
+  {
+    "slice": "fog",
+    "angle": "quote-card",
+    "headline": "Brain Fog Admin: On a Bad Day the Only Job Is the Stopping Note",
+    "sub": "Write where you are and the next physical action, and close the folder.",
+    "items": [
+      "On a bad day, the only job is the stopping note."
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "life-admin-with-brain-fog"
+    },
+    "proof": [
+      "On a bad day, the only job is the stopping note. Write where you are and the next physical action, and close the folder."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "brain fog bad day what to do",
+    "board": "Brain Fog Life Admin",
+    "when": "evergreen",
+    "visual": "quote-card: one large cream card centred on a blush ground, the sentence in big serif with 'the stopping note' in mulberry; underneath, a closed kraft folder with a single butter sticky note on its cover. Very quiet, lots of space.",
+    "flags": [],
+    "reserve": false,
+    "n": 75
+  },
+  {
+    "slice": "systems",
+    "angle": "how-to-steps",
+    "headline": "How to Get Back Into a Planner After Missing Days Without Starting Over",
+    "sub": "Do this in one sitting of about fifteen minutes. Don't buy or set up anything first.",
+    "items": [
+      "Don't reset it",
+      "Find the one page",
+      "Write where you got to",
+      "Pick one item",
+      "Put it where you'll pass it",
+      "Stop there"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "why-you-abandon-planners-and-how-to-come-back"
+    },
+    "proof": [
+      "Do this in one sitting of about fifteen minutes. Don't buy or set up anything first.",
+      "Don't reset it",
+      "Find the one page",
+      "Write where you got to",
+      "Pick one item",
+      "Put it where you'll pass it",
+      "Stop there",
+      "I stopped after the school form, next is the dentist call."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "how to get back into a planner",
+    "board": "ADHD Planning Systems",
+    "when": "evergreen; peaks in January",
+    "visual": "how-to-steps layout: six numbered steps down the left on a pale card; on the right a single planner page torn free and clipped, with a cream index card at its top reading 'I stopped after the school form, next is the dentist call.' (the guide's own example sentence) and the page set on a set of keys by the door. The rest of the planner, gaps and all, stays closed in the background.",
+    "flags": [
+      "example-tag"
+    ],
+    "reserve": false,
+    "n": 76
+  },
+  {
+    "slice": "fog",
+    "angle": "scenario",
+    "headline": "Brain Fog Planning: The Plan You Made on a Good Tuesday Meets Thursday",
+    "sub": "So treat a good day as a bonus, not the baseline.",
+    "items": [
+      "A plan made on a good Tuesday assumes a version of you that may not turn up on Thursday."
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "life-admin-with-brain-fog"
+    },
+    "proof": [
+      "A plan made on a good Tuesday assumes a version of you that may not turn up on Thursday.",
+      "So treat a good day as a bonus, not the baseline."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "brain fog planning bad days",
+    "board": "Brain Fog Life Admin",
+    "when": "evergreen",
+    "visual": "pov-desk-scene: an open planner seen from above, the Tuesday page full of neat confident writing with ticked boxes, the Thursday page blank with a mug and an unopened envelope on it; the guide sentence as the headline caption. No product, no timer.",
+    "flags": [],
+    "reserve": false,
+    "n": 77
+  },
+  {
+    "slice": "systems",
+    "angle": "myth-vs-truth",
+    "headline": "Stopped Using Your Planner? A More Useful Reading Than Lost Motivation",
+    "sub": null,
+    "items": [
+      "The easy reading is that you lost motivation.",
+      "A more useful one is that the book had a rule in it: every day gets an entry.",
+      "Once a day is blank, the rule is broken, and every page after that shows you the break."
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "why-you-abandon-planners-and-how-to-come-back"
+    },
+    "proof": [
+      "The easy reading is that you lost motivation.",
+      "A more useful one is that the book had a rule in it: every day gets an entry.",
+      "Once a day is blank, the rule is broken, and every page after that shows you the break."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "why i stop using planners adhd",
+    "board": "ADHD Planning Systems",
+    "when": "evergreen; peaks in January",
+    "visual": "myth-vs-truth layout: the top half is a faded sticky note reading 'You lost motivation' set aside with a light line through it; the bottom half is a cream index card with the rule in handwriting ('every day gets an entry'), a planner page with one blank day under it and a mulberry circle around the word 'rule'. Calm, never shaming.",
+    "flags": [],
+    "reserve": false,
+    "n": 78
+  },
+  {
+    "slice": "fog",
+    "angle": "before-after",
+    "headline": "Brain Fog Systems: What Happens After Three Weeks of Ignoring It",
+    "sub": "Test a system by asking what happens after three weeks of ignoring it.",
+    "items": [
+      "Some stay roughly right.",
+      "Others turn misleading and want an hour before they help again."
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "life-admin-with-brain-fog"
+    },
+    "proof": [
+      "Test a system by asking what happens after three weeks of ignoring it.",
+      "Some stay roughly right.",
+      "Others turn misleading and want an hour before they help again.",
+      "Anything that needs daily upkeep to stay accurate will fail during the stretch you need it most"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "life admin system when you stop using it",
+    "board": "Brain Fog Life Admin",
+    "when": "evergreen",
+    "visual": "before-after: top half a single page of notes left alone for three weeks, still readable ('stays roughly right'); bottom half a crowded daily tracker page with crossed-out entries and a stale date ('turns misleading'); a plain wall calendar with three weeks of untouched squares between them. Mulberry ring on the top page only.",
+    "flags": [],
+    "reserve": false,
+    "n": 79
+  },
+  {
+    "slice": "systems",
+    "angle": "template-preview",
+    "headline": "How to Restart a Half-Finished Project: A Four-Line Restart Note",
+    "sub": "An illustration, not a real case. Say you started a warranty claim on a dishwasher six weeks ago and stopped.",
+    "items": [
+      "Where did I get to? Form filled in to page 2. Receipt photographed but not attached.",
+      "Was anything missing? The serial number. It's on a sticker inside the door.",
+      "Smallest next piece: Open the door and photograph the serial number sticker.",
+      "Still needed? Yes. The claim window closes on the 30th."
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "how-to-restart-a-project-you-gave-up-on"
+    },
+    "proof": [
+      "An illustration, not a real case. Say you started a warranty claim on a dishwasher six weeks ago and stopped.",
+      "Where did I get to?",
+      "Form filled in to page 2. Receipt photographed but not attached.",
+      "Was anything missing?",
+      "The serial number. It's on a sticker inside the door.",
+      "Smallest next piece",
+      "Open the door and photograph the serial number sticker.",
+      "Still needed?",
+      "Yes. The claim window closes on the 30th."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "how to restart a project you stopped",
+    "board": "Overwhelm and Overdue",
+    "when": "evergreen; peaks in January",
+    "visual": "template-preview: one large cream index card on a desk, four ruled lines, each with its question printed small and the guide's example answer in handwriting, the smallest-next-piece line circled in mulberry. A half-filled warranty form with a paperclip and a receipt tucked under the card.",
+    "flags": [
+      "example-tag"
+    ],
+    "reserve": false,
+    "n": 80
+  },
+  {
+    "slice": "fog",
+    "angle": "how-to-steps",
+    "headline": "After an Adult ADHD Diagnosis: The First Month of Admin, in Order",
+    "sub": "Nothing here is a deadline set by anyone. It's an order that keeps the costly steps early.",
+    "items": [
+      "Before you leave the visit: Ask how follow-ups and refills work, and when the next visit is.",
+      "The same day: Put the next appointment in your calendar with the time you have to leave, not just the time it starts.",
+      "Within a week: Fill in the one page below.",
+      "Within two weeks: Ask your insurer how visits and prescriptions are covered.",
+      "Within a month: Decide who you want to tell, and how."
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "diagnosed-with-adhd-as-an-adult"
+    },
+    "proof": [
+      "Nothing here is a deadline set by anyone. It's an order that keeps the costly steps early.",
+      "Before you leave the visit",
+      "Ask how follow-ups and refills work, and when the next visit is.",
+      "The same day",
+      "Put the next appointment in your calendar with the time you have to leave, not just the time it starts.",
+      "Within a week",
+      "Fill in the one page below.",
+      "Within two weeks",
+      "Ask your insurer how visits and prescriptions are covered.",
+      "Within a month",
+      "Decide who you want to tell, and how."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "diagnosed with adhd as an adult what now",
+    "board": "ADHD Life Admin",
+    "when": "evergreen",
+    "visual": "how-to-steps: five stepping-stone index cards laid in a gentle diagonal from a clinic appointment card to a small wall calendar, each with its 'when' as a tab in mulberry; no dates, no countdown. Headline in serif at the top, 'Free guide' tag.",
+    "flags": [],
+    "reserve": false,
+    "n": 81
+  },
+  {
+    "slice": "systems",
+    "angle": "infographic",
+    "headline": "Restarting After a Week, a Month or Longer: What to Add to the First Step",
+    "sub": null,
+    "items": [
+      "A week or two: Read your last note and go straight to the next piece.",
+      "A month or so: As above, and leave yourself a note at the end of the sitting so next time starts from it.",
+      "Longer than that: Do the still-needed check before you spend any effort. Dates may have passed."
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "how-to-restart-a-project-you-gave-up-on"
+    },
+    "proof": [
+      "A week or two",
+      "Read your last note and go straight to the next piece.",
+      "A month or so",
+      "As above, and leave yourself a note at the end of the sitting so next time starts from it.",
+      "Longer than that",
+      "Do the still-needed check before you spend any effort. Dates may have passed."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "how to restart a project after a long break",
+    "board": "ADHD Life Admin",
+    "when": "evergreen; peaks in January",
+    "visual": "infographic: a horizontal strip of three paper tags on a string, each a different length of gap (one thin, one wider, one widest) with the time away as the heading and the line to add beneath it; small wall calendar with a page torn off at the third tag. Mulberry only on the 'still needed' check.",
+    "flags": [],
+    "reserve": false,
+    "n": 82
+  },
+  {
+    "slice": "fog",
+    "angle": "template-preview",
+    "headline": "ADHD Diagnosis Admin: The One Page to Fill In After the Appointment",
+    "sub": "An illustration, not a real account.",
+    "items": [
+      "Next appointment: October 14, 9:30. Leave by 8:45. Bring the current list of questions.",
+      "Prescriber's office: Phone number and hours. Patient number, from the portal or the card.",
+      "Pharmacy: Name, phone and hours, and the one person you asked about refills.",
+      "Reference numbers: One line per office: clinic, pharmacy, insurer.",
+      "Who I've told so far: Names only. Add to it if you decide to tell more people."
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "diagnosed-with-adhd-as-an-adult"
+    },
+    "proof": [
+      "An illustration, not a real account.",
+      "Next appointment",
+      "October 14, 9:30. Leave by 8:45. Bring the current list of questions.",
+      "Phone number and hours. Patient number, from the portal or the card.",
+      "Name, phone and hours, and the one person you asked about refills.",
+      "One line per office: clinic, pharmacy, insurer.",
+      "Names only. Add to it if you decide to tell more people."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "adhd diagnosis paperwork template",
+    "board": "ADHD Life Admin",
+    "when": "evergreen",
+    "visual": "template-preview: one ruled page, tilted on a desk next to a kraft envelope, six labelled rows handwritten in the guide's example wording, 'Reference numbers' row ringed in mulberry; handwriting face, no real names or numbers beyond the guide's own example.",
+    "flags": [
+      "example-tag"
+    ],
+    "reserve": false,
+    "n": 83
+  },
+  {
+    "slice": "systems",
+    "angle": "comparison",
+    "headline": "ADHD Time Blindness: Vague Plans and the Exact Time That Replaces Them",
+    "sub": null,
+    "items": [
+      "I'll call later / I'll call at 3:30",
+      "This afternoon / After lunch, at 2:00",
+      "Sometime this week / Thursday at 10:00",
+      "When I have a minute / Right after this meeting ends",
+      "Before it closes / Call by 3:30. The office closes at 4:30."
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "time-blindness-planning"
+    },
+    "proof": [
+      "Vague versus exact",
+      "I'll call later",
+      "I'll call at 3:30",
+      "This afternoon",
+      "After lunch, at 2:00",
+      "Sometime this week",
+      "Thursday at 10:00",
+      "When I have a minute",
+      "Right after this meeting ends",
+      "Before it closes",
+      "Call by 3:30. The office closes at 4:30."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "adhd time blindness planning tips",
+    "board": "ADHD Planning Systems",
+    "when": "evergreen",
+    "visual": "comparison with a clock motif: left column is five torn, grey sticky notes with the vague lines, right column five crisp cream cards each with a small clock face set to the exact time, joined by thin arrows. Mulberry only on the circled times. Wall clock at 3:30 at the top.",
+    "flags": [],
+    "reserve": false,
+    "n": 84
+  },
+  {
+    "slice": "fog",
+    "angle": "checklist",
+    "headline": "After an ADHD Diagnosis: Questions to Ask Before You Leave the Appointment",
+    "sub": "Logistics only. Your prescriber can answer these.",
+    "items": [
+      "When is the next visit, and how do I book it?",
+      "How do refills work for what I've been prescribed, and how far ahead should I ask?",
+      "Who do I contact between visits, and how?",
+      "What happens if the pharmacy doesn't have my prescription in stock?"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "diagnosed-with-adhd-as-an-adult"
+    },
+    "proof": [
+      "Logistics only. Your prescriber can answer these",
+      "When is the next visit, and how do I book it?",
+      "How do refills work for what I've been prescribed, and how far ahead should I ask?",
+      "Who do I contact between visits, and how?",
+      "What happens if the pharmacy doesn't have my prescription in stock?"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "questions to ask after adhd diagnosis",
+    "board": "ADHD Life Admin",
+    "when": "evergreen",
+    "visual": "notepad-checklist: a spiral pad held on a clipboard-sized desk scene, four unticked handwritten questions with empty boxes, a pen across them; small line 'Not medical advice'.",
+    "flags": [],
+    "reserve": false,
+    "n": 85
+  },
+  {
+    "slice": "systems",
+    "angle": "infographic",
+    "headline": "How to Stop Being Late: Plan From the Leave Time, Not the Appointment",
+    "sub": "Say the appointment is at 10:00 and each line is your own estimate.",
+    "items": [
+      "Appointment starts: 10:00",
+      "Walk in from the parking lot: 9:50",
+      "Drive there: 9:25",
+      "Shoes, keys, papers: 9:10",
+      "Spare for the thing you didn't count: 9:00 alarm"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "time-blindness-planning"
+    },
+    "proof": [
+      "Say the appointment is at 10:00 and each line is your own estimate.",
+      "Appointment starts",
+      "Walk in from the parking lot",
+      "Drive there",
+      "Shoes, keys, papers",
+      "Spare for the thing you didn't count",
+      "9:00 alarm"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "how to stop being late adhd",
+    "board": "ADHD Life Admin",
+    "when": "evergreen; peaks at back-to-routine times",
+    "visual": "infographic: a vertical stepping chain on a clean card, 10:00 at the top working backwards down to a 9:00 alarm at the bottom, each step on a cream tag with its clock time; small keys, shoes and a papers folder drawn at the Shoes, keys, papers step. A clock at the side; no timers, no countdowns on the pin.",
+    "flags": [
+      "example-tag"
+    ],
+    "reserve": false,
+    "n": 86
+  },
+  {
+    "slice": "fog",
+    "angle": "quote-card",
+    "headline": "ADHD Diagnosed, Still Behind: A Diagnosis Can Explain the Pile Without Removing It",
+    "sub": "What tends to change is the approach: less trying harder, more building around the difficulty.",
+    "items": [
+      "A diagnosis can explain the pile without removing it",
+      "less trying harder, more building around the difficulty"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "diagnosed-with-adhd-as-an-adult"
+    },
+    "proof": [
+      "A diagnosis can explain the pile without removing it",
+      "What tends to change is the approach: less trying harder, more building around the difficulty."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "adhd diagnosis still overwhelmed",
+    "board": "ADHD Life Admin",
+    "when": "evergreen",
+    "visual": "pile-sort quote: top, a wide cropped pile of unopened mail on a blush ground; across it a cream card carrying the sentence in serif with 'explain' and 'building around' in mulberry. No sorting arrow, no after state.",
+    "flags": [],
+    "reserve": false,
+    "n": 87
+  },
+  {
+    "slice": "systems",
+    "angle": "before-after",
+    "headline": "ADHD Alarm Label That Gets Done: Find the Number, Phone on the Desk",
+    "sub": "A label that says Call the dentist gets swiped away. One that says Find the number, phone on the desk gets done.",
+    "items": [
+      "Call the dentist",
+      "Find the number, phone on the desk"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "time-blindness-planning"
+    },
+    "proof": [
+      "A label that says Call the dentist gets swiped away. One that says Find the number, phone on the desk gets done.",
+      "Set an alarm for that time, and put the first physical step in its label."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "adhd alarm label first step",
+    "board": "ADHD Task Paralysis",
+    "when": "evergreen",
+    "visual": "before-after: two plain phone screens side by side, the left alarm label reading Call the dentist with a swipe-away arrow, the right reading Find the number, phone on the desk with a mulberry ring. A small sticky note on the phone's edge. Not the Companion's screens: ordinary phone alarm shapes drawn flat.",
+    "flags": [],
+    "reserve": false,
+    "n": 88
+  },
+  {
+    "slice": "fog",
+    "angle": "scenario",
+    "headline": "Write Your ADHD History Once So You Do Not Rebuild It in Every Waiting Room",
+    "sub": "Keep it to facts.",
+    "items": [
+      "the year, the clinician or clinic, what was assessed, and what happened"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "diagnosed-with-adhd-as-an-adult"
+    },
+    "proof": [
+      "Written down once, it stops being something you reconstruct while sitting in front of someone.",
+      "Keep it to facts: the year, the clinician or clinic, what was assessed, and what happened.",
+      "the page gets you started when your mind goes blank."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "how to explain your adhd history to a new doctor",
+    "board": "ADHD Life Admin",
+    "when": "evergreen",
+    "visual": "pov-desk-scene: a hand holding one folded page over the lap in a waiting-room chair, seen from above with only knees and a tote bag, the page showing four short handwritten lines (year, clinic, assessed, what happened); calm blush palette.",
+    "flags": [],
+    "reserve": false,
+    "n": 89
+  },
+  {
+    "slice": "timely",
+    "angle": "question",
+    "headline": "Another New Planner This January? Try the One Page of the One You Own First",
+    "sub": "If it still doesn't fit, you've learned what to look for, which is a better reason to buy.",
+    "items": [
+      "A new planner is exciting because it's new, and buying one is easier than sorting the old pile.",
+      "Try the one page with the planner you already own for two weeks first."
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "why-you-abandon-planners-and-how-to-come-back"
+    },
+    "proof": [
+      "A new planner is exciting because it's new, and buying one is easier than sorting the old pile.",
+      "Try the one page with the planner you already own for two weeks first.",
+      "If it still doesn't fit, you've learned what to look for, which is a better reason to buy."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "why do i keep buying planners adhd",
+    "board": "ADHD Planning Systems",
+    "when": "December to January",
+    "visual": "pov-desk-scene from above: a stack of unopened new-year planners with cellophane and a ribbon on the left, the old planner open to a single page on the right with one line circled in mulberry; a butter sticky note between them carries the question in handwriting. Clutter at the edges, calm in the middle.",
+    "flags": [],
+    "reserve": false,
+    "n": 90
+  },
+  {
+    "slice": "timely",
+    "angle": "myth-vs-truth",
+    "headline": "Missed a Day of Your New Routine? One Gap Is Not a Reason to Start Again",
+    "sub": "The researchers reported that missing one opportunity did not materially affect the habit forming process.",
+    "items": [
+      "Does missing a day really wreck it",
+      "Less than it feels like.",
+      "The behaviors were small daily ones, not planners, and the study can't say how a planner behaves.",
+      "It does back the idea that one gap isn't the end."
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "why-you-abandon-planners-and-how-to-come-back"
+    },
+    "proof": [
+      "Does missing a day really wreck it",
+      "Less than it feels like.",
+      "The researchers reported that missing one opportunity did not materially affect the habit forming process.",
+      "The behaviors were small daily ones, not planners, and the study can't say how a planner behaves.",
+      "It does back the idea that one gap isn't the end.",
+      "one gap is not a reason to start again"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "does missing a day break a habit",
+    "board": "ADHD Planning Systems",
+    "when": "January",
+    "visual": "myth-vs-truth split on a blush ground: left, a wall calendar with one blank square struck through in a hard ink line labelled as the myth; right, the same calendar with the blank square left alone and a small mulberry tick on the next day. Quiet, no streak counter, no numbers on the squares beyond the weekday letters.",
+    "flags": [],
+    "reserve": false,
+    "n": 91
+  },
+  {
+    "slice": "timely",
+    "angle": "quote-card",
+    "headline": "New Year Clear-Out: Close a Project on Purpose So It Stops Nagging You",
+    "sub": "Three no answers mean you can close it on purpose.",
+    "items": [
+      "Write down what you decided and why, so it stops nagging as an open question.",
+      "dropped on [date], because [reason]"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "how-to-restart-a-project-you-gave-up-on"
+    },
+    "proof": [
+      "Three no answers mean you can close it on purpose.",
+      "Write down what you decided and why, so it stops nagging as an open question.",
+      "dropped on [date], because [reason]"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "how to let go of an unfinished project",
+    "board": "ADHD Planning Systems",
+    "when": "December to January",
+    "visual": "quote-card: one cream index card centered, the pattern 'Dropped on ____, because ____' handwritten with the blanks left as underlines for the viewer to fill, a closed manila folder with a paper clip behind it and a small bookmark ribbon at the corner; mostly empty blush ground.",
+    "flags": [],
+    "reserve": false,
+    "n": 92
+  },
+  {
+    "slice": "timely",
+    "angle": "template-preview",
+    "headline": "After the Holidays: A Late List Sorted in Two Minutes, Returns and Thank-Yous Included",
+    "sub": "The last column is the only thing you write next to each one.",
+    "items": [
+      "Return the package: The return window is open for 9 more days (A date)",
+      "Thank-you note: Someone will be glad of it, no rush (A person)",
+      "Phone bill, 12 days past due: A late fee is probably already added (A date)",
+      "Book the dentist: Nothing (No one)"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "how-to-start-when-everything-is-overdue"
+    },
+    "proof": [
+      "The last column is the only thing you write next to each one.",
+      "\"Return the package\", \"The return window is open for 9 more days\", \"A date\"",
+      "\"Thank-you note\", \"Someone will be glad of it, no rush\", \"A person\"",
+      "\"Phone bill, 12 days past due\", \"A late fee is probably already added\", \"A date\"",
+      "\"Book the dentist\", \"Nothing\", \"No one\""
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "late list sorted adhd after holidays",
+    "board": "Overwhelm and Overdue",
+    "when": "December to January",
+    "visual": "template-preview: a single ruled page with three columns (the thing, what is waiting on it, pile) and four filled rows in the handwriting face, the pile column in mulberry; a returns label and a boxed gift sit at the page edge. Shows four rows only, not the full table. Example data, not a real account.",
+    "flags": [
+      "example-tag"
+    ],
+    "reserve": false,
+    "n": 93
+  },
+  {
+    "slice": "timely",
+    "angle": "script-card",
+    "headline": "Bill Slipped Over the Holidays? What to Say When You Notice It Is Late",
+    "sub": "Find the bill, pay it if you can, and contact them without an essay of explanation.",
+    "items": [
+      "Hi, I see my payment was due on the 12th and I missed it. I can pay it now. Could you confirm the total, and whether the late fee can be reviewed?",
+      "Thanks. Can you give me a reference number for this call, and your name, so I can write it down?"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "why-you-keep-missing-bill-due-dates"
+    },
+    "proof": [
+      "Find the bill, pay it if you can, and contact them without an essay of explanation.",
+      "Hi, I see my payment was due on the 12th and I missed it. I can pay it now. Could you confirm the total, and whether the late fee can be reviewed?",
+      "Thanks. Can you give me a reference number for this call, and your name, so I can write it down?"
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "what to say when you missed a bill payment",
+    "board": "ADHD Life Admin",
+    "when": "December to January",
+    "visual": "opening-line-card: two stacked cream index cards at a small tilt, the first line large in mulberry quote marks, the reference-number line smaller on the second; a phone lies beside a single bill slip clipped to a pen. Example date is the guide's own.",
+    "flags": [
+      "example-tag"
+    ],
+    "reserve": false,
+    "n": 94
+  },
+  {
+    "slice": "timely",
+    "angle": "checklist",
+    "headline": "Scary Letter in the Holiday Post Pile? Read Only Three Things and Decide Nothing",
+    "sub": "If you can't make yourself open it, hand it to someone you trust and ask them to read you those three things.",
+    "items": [
+      "Who sent it",
+      "What it asks",
+      "By what date"
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "paperwork-pile-where-to-start"
+    },
+    "proof": [
+      "read only who sent it, what it asks and by what date, and put it in Act",
+      "You're not deciding anything.",
+      "If you can't make yourself open it, hand it to someone you trust and ask them to read you those three things."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "afraid to open mail adhd",
+    "board": "Paperwork Organization",
+    "when": "November to January",
+    "visual": "notepad-checklist: a spiral pad with three handwritten tick-box lines, the first ticked in mulberry; a single window envelope lies at the pad's edge with the flap half open, a pen across it. No readable text on the letter itself.",
+    "flags": [],
+    "reserve": false,
+    "n": 95
+  },
+  {
+    "slice": "timely",
+    "angle": "question",
+    "headline": "Pre-Approved Credit Offers Piling Up in the Post? You Can Cut Most of Them (US)",
+    "sub": "That's a job for a later day, not for the ten minutes.",
+    "items": [
+      "You can opt out at optoutprescreen.com or by phone, either for five years or permanently with a form.",
+      "It asks for your name, address, birth date and Social Security number.",
+      "It only stops offers built from lists at Equifax, Experian and TransUnion.",
+      "It can take weeks for the mail to thin out."
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "paperwork-pile-where-to-start"
+    },
+    "proof": [
+      "If a lot of the pile is pre-approved credit card and insurance offers, you can cut most of them.",
+      "you can opt out at optoutprescreen.com or by phone, either for five years or permanently with a form",
+      "It asks for your name, address, birth date and Social Security number",
+      "it only stops offers built from lists at Equifax, Experian and TransUnion",
+      "it can take weeks for the mail to thin out",
+      "That's a job for a later day, not for the ten minutes."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "how to stop pre approved credit card offers",
+    "board": "Paperwork Organization",
+    "when": "November to January",
+    "visual": "question-card: a kraft envelope marked as an offer with its window flap open next to a cream index card holding the question in Newsreader and the four short answers in Plex Sans; one small mulberry tick. United States only is printed on the card. No logos of the bureaus.",
+    "flags": [],
+    "reserve": false,
+    "n": 96
+  },
+  {
+    "slice": "timely",
+    "angle": "infographic",
+    "headline": "Sunday Reset: A Floor You Can Do on Your Worst Day and a Ceiling for a Good One",
+    "sub": "On a bad week, do the floor. On a good week, the ceiling is allowed. Either one is a full reset.",
+    "items": [
+      "The floor: open the pile and pick one thing.",
+      "Add a day and the first physical step, and you're at the middle.",
+      "The ceiling: also glance at the dates in the next seven days, for bills, appointments and anything that expires.",
+      "Stop at the ceiling."
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "a-weekly-reset-that-survives-a-bad-week"
+    },
+    "proof": [
+      "On a bad week, do the floor. On a good week, the ceiling is allowed. Either one is a full reset.",
+      "The floor: open the pile and pick one thing.",
+      "Add a day and the first physical step, and you're at the middle.",
+      "The ceiling: also glance at the dates in the next seven days, for bills, appointments and anything that expires.",
+      "Stop at the ceiling."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "sunday reset routine adhd",
+    "board": "ADHD Planning Systems",
+    "when": "November to January; Sundays",
+    "visual": "infographic: three low steps drawn as stacked paper slabs (floor, middle, ceiling), labels in Plex Sans, the first step filled mulberry; a wall calendar corner with one Sunday square circled. Diagram only, no timer UI.",
+    "flags": [],
+    "reserve": false,
+    "n": 97
+  },
+  {
+    "slice": "timely",
+    "angle": "quote-card",
+    "headline": "Quiet Week, Nothing Left in the Tank? The Next Smaller Reset Is One Minute",
+    "sub": "A reset that needs you to feel capable isn't a reset you can rely on.",
+    "items": [
+      "The next smaller version is a single minute: open the pile, look at it, close it.",
+      "If that's too much, do nothing, and try again next week without a word about it."
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "a-weekly-reset-that-survives-a-bad-week"
+    },
+    "proof": [
+      "The next smaller version is a single minute: open the pile, look at it, close it.",
+      "If that's too much, do nothing, and try again next week without a word about it.",
+      "A reset that needs you to feel capable isn't a reset you can rely on."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "adhd low energy week routine",
+    "board": "ADHD Planning Systems",
+    "when": "late December; any quiet week",
+    "visual": "quote-card: one very large Newsreader line on a blush ground with the three verbs open, look, close picked out in mulberry, a single closed folder lying flat under a glass of water as the only props; maximum white space for a thumbnail read.",
+    "flags": [],
+    "reserve": false,
+    "n": 98
+  },
+  {
+    "slice": "timely",
+    "angle": "how-to-steps",
+    "headline": "Holiday Plans Always Take Longer? Time Three Ordinary Tasks and Use Your Own Numbers",
+    "sub": "Nearly everyone also misjudges how long tasks will take.",
+    "items": [
+      "Write down the start and end time of three ordinary tasks this week, such as a phone call, a form, and a load of laundry",
+      "Use those numbers next time",
+      "One common rule of thumb is to double your first estimate for anything you haven't timed."
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "time-blindness-planning"
+    },
+    "proof": [
+      "Nearly everyone also misjudges how long tasks will take.",
+      "Write down the start and end time of three ordinary tasks this week, such as a phone call, a form, and a load of laundry, and use those numbers next time.",
+      "one common rule of thumb is to double your first estimate for anything you haven't timed",
+      "It's a rule of thumb, not a proven fix."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "adhd time blindness how long tasks take",
+    "board": "ADHD Planning Systems",
+    "when": "November to January",
+    "visual": "how-to-steps: three cream index cards in a row on a desk each with a task name and a pencilled start and end time in the handwriting face (a call, a form, a load of laundry), a pen and a plain wall clock above; the rule of thumb is a small note at the bottom marked 'a rule of thumb, not a proven fix'. No stopwatch UI.",
+    "flags": [],
+    "reserve": false,
+    "n": 99
+  },
+  {
+    "slice": "timely",
+    "angle": "checklist",
+    "headline": "Holiday Refund or Return Call: The Two-Minute Note to Write Straight After Hanging Up",
+    "sub": "Two minutes. It's the note you'll want if you have to call again.",
+    "items": [
+      "Date and time of the call, and the number you dialed.",
+      "Name of the person, and the reference number.",
+      "What was agreed, in their words if you can.",
+      "What they said happens next, and the date you'll check if it hasn't.",
+      "Anything you need to send or do, with a day."
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "scripts-for-the-admin-calls-everyone-dreads"
+    },
+    "proof": [
+      "Two minutes. It's the note you'll want if you have to call again.",
+      "Date and time of the call, and the number you dialed.",
+      "Name of the person, and the reference number.",
+      "What was agreed, in their words if you can.",
+      "What they said happens next, and the date you'll check if it hasn't.",
+      "Anything you need to send or do, with a day."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "what to write down after a customer service call",
+    "board": "Paperwork Organization",
+    "when": "December to January",
+    "visual": "notepad-checklist variant as a filled-in call note: a lined page with five handwriting lines and a mulberry underline on the reference number line, a phone face down on the page's corner and a returns box cropped at the edge.",
+    "flags": [],
+    "reserve": false,
+    "n": 100
+  },
+  {
+    "slice": "timely",
+    "angle": "scenario",
+    "headline": "How to Say No to a Holiday Ask: Ask for a Minute, Do Not Say Yes to End the Call",
+    "sub": "You're allowed to ask for a minute to think. You're allowed to say you'll call back.",
+    "items": [
+      "You say yes to end the discomfort.",
+      "Let me get back to you on that",
+      "A yes you regret is harder to undo than a pause."
+    ],
+    "link": {
+      "kind": "guide",
+      "slug": "how-to-say-no-or-give-bad-news-on-the-phone"
+    },
+    "proof": [
+      "You say yes to end the discomfort.",
+      "say \"Let me get back to you on that\" and hang up",
+      "A yes you regret is harder to undo than a pause.",
+      "You're allowed to ask for a minute to think. You're allowed to say you'll call back."
+    ],
+    "proofFile": "src/content/guides.ts",
+    "query": "how to say no on the phone",
+    "board": "Phone Call Anxiety Scripts",
+    "when": "November to December",
+    "visual": "pov-desk-scene: a phone on speaker lying beside an invitation card and a glass of water, one butter sticky note on the phone with the pause line in handwriting; a pen resting on a blank page. No names and no people, the card's text is not legible.",
+    "flags": [],
+    "reserve": false,
+    "n": 101
+  }
+]
