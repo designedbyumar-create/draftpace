@@ -188,7 +188,7 @@ function spines(x0, x1, base, hmin, hmax, seed) {
 function p04() {
   const n = 4;
   const i = idea(n);
-  const { css: fc, html: fh } = frame(i, { paper: "#f1e8d4", sub: i.sub, textTop: 58 });
+  const { css: fc, html: fh } = frame(i, { paper: "#f1e8d4", sub: i.sub, textTop: 58, size: 92 });
 
   const wall = `<div style="${abs(0, SCENE_TOP, 1000, 982, "background:linear-gradient(180deg,#3d2a1b,#2a1b11)")}"></div>
   <div style="${abs(0, SCENE_TOP, 1000, 982, "background:radial-gradient(70% 55% at 62% 40%,rgba(255,214,140,.22),transparent 70%)")}"></div>`;
@@ -198,16 +198,16 @@ function p04() {
   const side = `<div style="${abs(0, SCENE_TOP, 22, 982, "background:linear-gradient(90deg,#1c120a,#3b2615);z-index:3")}"></div><div style="${abs(978, SCENE_TOP, 22, 982, "background:linear-gradient(90deg,#3b2615,#1c120a);z-index:3")}"></div>`;
 
   const items = i.items;
-  const rows = items.map((t, k) => `<div style="display:flex;align-items:center;gap:6px;height:${k === 4 ? 160 : 136}px;border-bottom:3px solid rgba(58,110,88,.28)">${box(64, k === 0)}<div class="hand" style="font:600 52px/1.0 'Hand',cursive;color:${G.ink}">${esc(t)}</div></div>`).join("");
+  const rows = items.map((t, k) => `<div style="display:flex;align-items:center;gap:6px;height:${k === 4 ? 150 : 124}px;border-bottom:3px solid rgba(58,110,88,.28)">${box(64, k === 0)}<div class="hand" style="font:600 52px/1.0 'Hand',cursive;color:${G.ink}">${esc(t)}</div></div>`).join("");
 
   const clip = `
   <div style="${abs(214, 420, 580, 900, `transform:rotate(-2.5deg);transform-origin:50% 0;z-index:10;filter:drop-shadow(12px 22px 18px rgba(0,0,0,.55))`)}">
     <div style="position:absolute;inset:0;border-radius:18px;background:linear-gradient(140deg,${G.leatherLight},${G.leather} 50%,${G.leatherDeep});box-shadow:inset 0 0 0 4px rgba(0,0,0,.18),inset 0 3px 0 rgba(255,255,255,.18)"></div>
     <div style="position:absolute;inset:12px;border-radius:12px;border:3px dashed rgba(244,236,216,.35)"></div>
-    <div style="${abs(34, 96, 512, 770, `background:${G.cream};box-shadow:0 2px 4px rgba(0,0,0,.35);padding:8px 26px 0 22px`)}" data-check="items">
+    <div style="${abs(34, 96, 512, 780, `background:${G.cream};box-shadow:0 2px 4px rgba(0,0,0,.35);padding:8px 26px 0 22px`)}" data-check="items">
       <div style="position:absolute;left:0;right:0;top:0;height:14px;background:linear-gradient(180deg,rgba(0,0,0,.12),transparent)"></div>
       <div style="position:absolute;left:92px;top:0;bottom:0;border-left:3px solid rgba(190,90,90,.35)"></div>
-      <div style="position:relative;padding-top:6px">${rows}</div>
+      <div style="position:relative;padding-top:52px">${rows}</div>
     </div>
     <div style="${abs(170, 44, 240, 92, "border-radius:10px 10px 6px 6px;background:linear-gradient(90deg,#8d6526,#e6c274 40%,#a8792f);box-shadow:0 5px 7px rgba(0,0,0,.45)")}"></div>
     <div style="${abs(204, 28, 172, 36, "border-radius:18px 18px 0 0;background:linear-gradient(90deg,#9a7230,#f0d38c 45%,#9a7230);box-shadow:0 -1px 3px rgba(0,0,0,.4)")}"></div>
@@ -244,8 +244,6 @@ function p12() {
       <div style="position:absolute;left:400px;top:0;bottom:0;border-left:2px solid rgba(58,110,88,.3)"></div>
     </div>
     <div style="${abs(526, 26, 540, 880, `background:${G.cream};border-radius:0 4px 4px 0;box-shadow:inset 22px 0 24px -12px rgba(60,40,10,.4),0 0 0 1px rgba(0,0,0,.1);${ruled(52, "rgba(58,110,88,.32)", 20)}`)}">
-      <div style="position:absolute;left:112px;top:0;bottom:0;border-left:3px double rgba(190,90,90,.45)"></div>
-      <div style="position:absolute;left:44px;right:30px;top:60px;bottom:40px;background:${G.cream};box-shadow:0 0 0 12px ${G.cream}"></div>
       <div style="position:absolute;left:44px;right:30px;top:62px" data-check="items">${rows}</div>
     </div>
     <div style="position:absolute;left:500px;top:20px;width:52px;height:892px;background:linear-gradient(90deg,rgba(0,0,0,0),rgba(40,25,5,.4) 50%,rgba(0,0,0,0))"></div>
@@ -297,7 +295,7 @@ function p14() {
       <div style="position:absolute;left:28px;top:14px;display:flex;align-items:center;gap:12px">
         <div style="width:44px;height:44px;border-radius:50%;background:${C.mulberry};color:#fff;display:grid;place-items:center;font:600 26px 'Plex',sans-serif">${k + 1}</div>
         <div style="font:600 25px 'Plex',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:${G.shadeDeep}">${esc(s.stage)}</div></div>
-      <div class="hand" style="position:absolute;left:30px;right:28px;top:62px;font:600 35px/1.05 'Hand',cursive;color:${G.ink}" data-check="step">${esc(s.text)}</div>
+      <div class="hand" style="position:absolute;left:30px;right:28px;top:60px;padding-bottom:6px;font:600 40px/1.08 'Hand',cursive;color:${G.ink}" data-check="step">${esc(s.text)}</div>
       ${k === 0 ? exTag(590, 14, 2) : ""}
     </div>`;
   }).join("");
@@ -310,7 +308,7 @@ function p14() {
 function p48() {
   const n = 48;
   const i = idea(n);
-  const { css: fc, html: fh } = frame(i, { paper: "#dfe6d9", sub: i.sub, textTop: 58 });
+  const { css: fc, html: fh } = frame(i, { paper: "#dfe6d9", sub: i.sub, textTop: 58, size: 88 });
 
   const wall = `<div style="${abs(0, SCENE_TOP, 1000, 330, "background:linear-gradient(180deg,#1a2a22,#243d31)")}"></div>
   <div style="${abs(0, SCENE_TOP, 1000, 330, "background-image:repeating-linear-gradient(90deg,rgba(255,255,255,.035) 0 3px,transparent 3px 180px)")}"></div>`;
@@ -337,13 +335,13 @@ function p48() {
       ${[["#e8b43a", 0, 0], ["#e0553f", 1, 0], ["#3fae7a", 2, 0], ["#e0553f", 0, 1], ["#7a5bd0", 1, 1], ["#e8b43a", 2, 1], ["#3fae7a", 0, 2], ["#3fae7a", 1, 2], ["#e0553f", 2, 2], ["#e8b43a", 1, 3]].map(([c, a, b]) => `<div style="${abs(8 + a * 36, 70 + b * 36, 32, 32, `background:${c};border-radius:8px;box-shadow:inset 0 -4px 0 rgba(0,0,0,.25)`)}"></div>`).join("")}
       <div style="${abs(8, 12, 100, 14, "border-radius:7px;background:rgba(255,255,255,.55)")}"></div></div>
     <div style="${abs(40, 12, 48, 10, "border-radius:5px;background:#05080a")}"></div></div>`;
-  const downPhone = `<div style="${abs(826, 800, 128, 252, "transform:rotate(-7deg);z-index:6;filter:drop-shadow(8px 14px 10px rgba(0,0,0,.6))")}">
+  const downPhone = `<div style="${abs(838, 900, 128, 252, "transform:rotate(-7deg);z-index:6;filter:drop-shadow(8px 14px 10px rgba(0,0,0,.6))")}">
     <div style="position:absolute;inset:0;border-radius:26px;background:linear-gradient(140deg,#4a4f58,#23262c)"></div>
     <div style="position:absolute;inset:0;border-radius:26px;background:linear-gradient(120deg,rgba(255,255,255,.14),transparent 45%)"></div>
     <div style="${abs(14, 14, 56, 56, "border-radius:16px;background:#14161a;box-shadow:inset 0 0 0 2px rgba(255,255,255,.1)")}"><div style="${abs(8, 8, 18, 18, "border-radius:50%;background:radial-gradient(circle at 35% 30%,#3a4a68,#06090e)")}"></div><div style="${abs(30, 28, 18, 18, "border-radius:50%;background:radial-gradient(circle at 35% 30%,#3a4a68,#06090e)")}"></div></div>
     <div style="${abs(44, 120, 40, 40, "border-radius:50%;background:rgba(255,255,255,.1)")}"></div></div>`;
 
-  const cap = (x, label, text) => `<div style="${abs(x, 1118, 438, 230, "z-index:6")}"><div class="hand" style="font:700 54px/1 'Hand',cursive;color:${G.brassLight}">${label}</div><div class="hand" style="font:600 29px/1.08 'Hand',cursive;color:${G.cream};margin-top:6px" data-check="items">${esc(text)}</div></div>`;
+  const cap = (x, label, text) => `<div style="${abs(x, 1118, 438, 230, "z-index:6")}"><div class="hand" style="font:700 54px/1 'Hand',cursive;color:${G.brassLight}">${label}</div><div class="hand" style="font:600 30px/1.1 'Hand',cursive;color:${G.cream};margin-top:6px;padding-bottom:6px" data-check="items">${esc(text)}</div></div>`;
 
   const body = `${wall}${cone}${deskTop}${pad(18, ["#2c5f48", "#1b4130"])}${pad(512, ["#7b4a2a", "#4f2d19"])}
   ${lamp({ x: 355, y: 396, w: 290, z: 3 })}
@@ -357,7 +355,7 @@ function p48() {
 function p62() {
   const n = 62;
   const i = idea(n);
-  const { css: fc, html: fh } = frame(i, { paper: "#e9eee2", size: 72, textTop: 54 });
+  const { css: fc, html: fh } = frame(i, { paper: "#e9eee2", size: 84, textTop: 54 });
 
   const wall = `<div style="${abs(0, SCENE_TOP, 1000, 800, "background:linear-gradient(180deg,#dbe3cf,#c8d3bb)")}"></div>
   <div style="${abs(0, SCENE_TOP, 1000, 800, "background:radial-gradient(60% 50% at 70% 10%,rgba(255,240,190,.55),transparent 70%)")}"></div>`;
@@ -366,31 +364,31 @@ function p62() {
   <div style="${abs(0, 1140, 1000, 10, "background:linear-gradient(180deg,rgba(0,0,0,.4),transparent)")}"></div>`;
 
   // Fading rows below the one row, scribbles not words.
-  const fade = [0.5, 0.36, 0.24, 0.13].map((op, k) => `<div style="${abs(96, 372 + k * 62, 580, 56, `opacity:${op}`)}">${scribSvg(580, 56, 20 + k, { rows: 1, y0: 0.55, span: 0, x0: 0.02, maxLen: 0.95, color: G.ink, op: 1 })}<div style="${abs(500, 6, 44, 44, `border:3px solid ${G.ink};border-radius:8px;opacity:.7`)}"></div></div>`).join("");
+  const fade = [0.5, 0.36, 0.24, 0.13].map((op, k) => `<div style="${abs(96, 320 + k * 66, 520, 56, `opacity:${op}`)}">${scribSvg(520, 56, 20 + k, { rows: 1, y0: 0.55, span: 0, x0: 0.02, maxLen: 0.95, color: G.ink, op: 1 })}<div style="${abs(470, 6, 44, 44, `border:3px solid ${G.ink};border-radius:8px;opacity:.7`)}"></div></div>`).join("");
 
-  const pageEl = `<div style="${abs(130, 440, 740, 700, "transform-origin:50% 100%;transform:perspective(1600px) rotateX(5deg);z-index:6;background:#fbf6e8;box-shadow:0 2px 4px rgba(0,0,0,.3),0 16px 26px rgba(0,0,0,.4)")}">
+  const pageEl = `<div style="${abs(70, 440, 660, 700, "transform-origin:50% 100%;transform:perspective(1600px) rotateX(5deg);z-index:6;background:#fbf6e8;box-shadow:0 2px 4px rgba(0,0,0,.3),0 16px 26px rgba(0,0,0,.4)")}">
     <div style="position:absolute;inset:0;${ruled(62, "rgba(58,110,88,.3)", 40)}"></div>
     <div style="position:absolute;left:78px;top:0;bottom:0;border-left:3px solid rgba(190,90,90,.4)"></div>
-    <div class="hand" style="position:absolute;left:104px;top:38px;font:700 104px/1 'Hand',cursive;color:${G.ink}">Airline refund</div>
-    <div style="${abs(592, 40, 108, 108, "border:5px solid rgba(36,27,20,.75);border-radius:12px;background:rgba(255,255,255,.5)")}"><div class="hand" style="position:absolute;inset:0;display:grid;place-items:center;font:700 110px/1 'Hand',cursive;color:${C.mulberry};padding-bottom:12px">?</div></div>
-    <div class="hand" style="position:absolute;left:104px;top:172px;width:560px;font:600 40px/1.08 'Hand',cursive;color:#3b4a40" data-check="items">${esc(i.items[0])}</div>
+    <div class="hand" style="position:absolute;left:104px;top:38px;font:700 92px/1 'Hand',cursive;color:${G.ink}">Airline refund</div>
+    <div style="${abs(540, 40, 100, 100, "border:5px solid rgba(36,27,20,.75);border-radius:12px;background:rgba(255,255,255,.5)")}"><div class="hand" style="position:absolute;inset:0;display:grid;place-items:center;font:700 110px/1 'Hand',cursive;color:${C.mulberry};padding-bottom:12px">?</div></div>
+    <div class="hand" style="position:absolute;left:104px;top:172px;width:520px;font:600 40px/1.1 'Hand',cursive;color:#3b4a40;padding-bottom:6px" data-check="items">${esc(i.items[0])}</div>
     ${fade}
-    ${exTag(574, 156, 2, 8).replace("top:156px", "top:156px")}
+    ${exTag(420, -30, 2, 8)}
   </div>`;
 
   // The reading stand: a wooden back, side struts, a ledge in front.
-  const stand = `<div style="${abs(96, 418, 808, 760, "z-index:2;filter:drop-shadow(16px 24px 18px rgba(30,15,5,.5))")}">
+  const stand = `<div style="${abs(36, 418, 728, 760, "z-index:2;filter:drop-shadow(16px 24px 18px rgba(30,15,5,.5))")}">
     <div style="position:absolute;inset:0;border-radius:26px 26px 6px 6px;background:linear-gradient(150deg,#8a5b34,#5a3720 70%,#43271a)"></div>
     <div style="position:absolute;left:16px;right:16px;top:16px;bottom:50px;border-radius:16px 16px 0 0;border:3px solid rgba(255,214,150,.18)"></div>
     <div style="${abs(380, 6, 48, 12, "border-radius:6px;background:rgba(0,0,0,.2)")}"></div></div>
-  <div style="${abs(76, 1096, 848, 62, "z-index:8;border-radius:8px;background:linear-gradient(180deg,#b07a46,#7a4c28 55%,#4f2d19);box-shadow:0 12px 18px rgba(0,0,0,.5)")}"></div>
-  <div style="${abs(130, 1130, 740, 34, "z-index:9;background:linear-gradient(180deg,#6f4424,#43271a);border-radius:0 0 8px 8px")}"></div>`;
+  <div style="${abs(16, 1096, 768, 62, "z-index:8;border-radius:8px;background:linear-gradient(180deg,#b07a46,#7a4c28 55%,#4f2d19);box-shadow:0 12px 18px rgba(0,0,0,.5)")}"></div>
+  <div style="${abs(70, 1130, 660, 34, "z-index:9;background:linear-gradient(180deg,#6f4424,#43271a);border-radius:0 0 8px 8px")}"></div>`;
 
   // The other half of the idea on a cream card leaning on the desk.
-  const card = `<div style="${abs(40, 1178, 640, 150, "transform:rotate(-1.5deg);z-index:11;background:linear-gradient(180deg,#fbf5e4,#f4ecd8);border-radius:6px;box-shadow:0 10px 16px rgba(0,0,0,.45)")}">
-    <div class="hand" style="position:absolute;left:26px;right:24px;top:16px;font:600 37px/1.06 'Hand',cursive;color:${G.ink}" data-check="items">${esc(i.items[1])}</div></div>`;
+  const card = `<div style="${abs(40, 1178, 600, 158, "transform:rotate(-1.5deg);z-index:11;background:linear-gradient(180deg,#fbf5e4,#f4ecd8);border-radius:6px;box-shadow:0 10px 16px rgba(0,0,0,.45)")}">
+    <div class="hand" style="position:absolute;left:26px;right:24px;top:16px;padding-bottom:6px;font:600 35px/1.08 'Hand',cursive;color:${G.ink}" data-check="items">${esc(i.items[1])}</div></div>`;
 
-  const body = `${wall}${lamp({ x: 700, y: 392, w: 260, flip: true, z: 3 })}${deskTop}${stand}${pageEl}${card}${pencilCup({ x: 790, y: 1062, s: 0.9, z: 12 })}${fh}`;
+  const body = `${wall}${lamp({ x: 770, y: 840, w: 240, flip: true, z: 3 })}${deskTop}${stand}${pageEl}${card}${pencilCup({ x: 664, y: 1156, s: 0.6, z: 12 })}${fh}`;
   return { n, id: "why-to-do-lists-do-not-work", html: page(pObj(), { body, css: fc, paper: "#e9eee2" }) };
 }
 
@@ -406,10 +404,10 @@ function p80() {
 
   // The fan of notebooks, pinned at bottom right.
   const fan = [
-    notebook({ x: 560, y: 940, w: 290, h: 400, rot: -64, color: G.shade, deep: G.shadeDeep, band: G.cream, z: 2, origin: "20px 380px" }),
-    notebook({ x: 560, y: 940, w: 290, h: 400, rot: -42, color: G.cream, deep: G.creamDeep, band: G.leather, z: 3, origin: "20px 380px" }),
-    notebook({ x: 560, y: 940, w: 290, h: 400, rot: -20, color: G.leatherLight, deep: G.leatherDeep, band: G.cream, z: 4, origin: "20px 380px" }),
-    notebook({ x: 560, y: 940, w: 290, h: 400, rot: 2, color: G.leather, deep: G.leatherDeep, band: G.brassLight, z: 5, origin: "20px 380px" }),
+    notebook({ x: 540, y: 940, w: 290, h: 400, rot: 62, color: G.shade, deep: G.shadeDeep, band: G.cream, z: 2, origin: "20px 380px" }),
+    notebook({ x: 540, y: 940, w: 290, h: 400, rot: 40, color: G.cream, deep: G.creamDeep, band: G.leather, z: 3, origin: "20px 380px" }),
+    notebook({ x: 540, y: 940, w: 290, h: 400, rot: 20, color: G.leatherLight, deep: G.leatherDeep, band: G.cream, z: 4, origin: "20px 380px" }),
+    notebook({ x: 540, y: 940, w: 290, h: 400, rot: 0, color: G.leather, deep: G.leatherDeep, band: G.brassLight, z: 5, origin: "20px 380px" }),
   ].join("");
 
   // Half-filled form under the card, a receipt tucked under it, a paperclip.
@@ -417,13 +415,13 @@ function p80() {
     <div style="position:absolute;left:30px;top:30px;width:200px;height:16px;border-radius:8px;background:rgba(36,27,20,.5)"></div>
     ${[0, 1, 2, 3, 4, 5].map((k) => `<div style="${abs(30, 86 + k * 58, 360, 38, "border:3px solid rgba(36,27,20,.3);border-radius:6px")}">${k < 3 ? scribSvg(360, 38, 40 + k, { rows: 1, y0: 0.5, span: 0, x0: 0.04, maxLen: 0.8, color: G.pen, op: 0.65 }) : ""}</div>`).join("")}
   </div>
-  <div style="${abs(280, 1120, 150, 250, "transform:rotate(-8deg);z-index:5;background:#f6f1e4;clip-path:polygon(0 0,100% 0,100% 94%,90% 100%,80% 94%,70% 100%,60% 94%,50% 100%,40% 94%,30% 100%,20% 94%,10% 100%,0 94%);box-shadow:0 8px 14px rgba(0,0,0,.3)")}">${scribSvg(150, 250, 77, { rows: 8, x0: 0.12, y0: 0.08, span: 0.82, maxLen: 0.8, color: "#4a4034", op: 0.5 })}</div>`;
+  <div style="${abs(400, 950, 140, 250, "transform:rotate(-6deg);z-index:9;background:#f6f1e4;clip-path:polygon(0 0,100% 0,100% 94%,90% 100%,80% 94%,70% 100%,60% 94%,50% 100%,40% 94%,30% 100%,20% 94%,10% 100%,0 94%);box-shadow:0 8px 14px rgba(0,0,0,.3)")}">${scribSvg(150, 250, 77, { rows: 8, x0: 0.12, y0: 0.08, span: 0.82, maxLen: 0.8, color: "#4a4034", op: 0.5 })}</div>`;
   const clip = `<svg style="${abs(70, 800, 70, 160, "z-index:12;transform:rotate(6deg);filter:drop-shadow(3px 5px 3px rgba(0,0,0,.4))")}" viewBox="0 0 70 160" aria-hidden="true"><path d="M20 130 V40 a18 18 0 0 1 36 0 V120 a12 12 0 0 1 -24 0 V50" fill="none" stroke="#a5a8b0" stroke-width="5" stroke-linecap="round"/></svg>`;
 
   const parts = i.items.map((t) => { const m = t.match(/^(.*?[?:])\s+(.*)$/); return { q: m[1].replace(/:$/, ""), a: m[2] }; });
   const lines = parts.map((s, k) => {
     const hot = k === 2;
-    return `<div style="position:relative;padding:10px 0 12px;border-bottom:3px solid rgba(58,110,88,.3);min-height:116px"><div style="font:600 22px 'Plex',sans-serif;letter-spacing:.06em;color:#6b5a44">${esc(s.q)}</div><div class="hand" style="font:600 38px/1.02 'Hand',cursive;color:${G.ink};margin-top:3px;position:relative;display:inline-block">${esc(s.a)}${hot ? ring(600, 104, { seed: 11, sw: 7, sq: 3.4 }).replace("left:0px;top:0px", "left:-20px;top:-6px") : ""}</div></div>`;
+    return `<div style="position:relative;padding:10px 0 12px;border-bottom:3px solid rgba(58,110,88,.3);min-height:116px"><div style="font:600 22px 'Plex',sans-serif;letter-spacing:.06em;color:#6b5a44">${esc(s.q)}</div><div class="hand" style="font:600 38px/1.02 'Hand',cursive;color:${G.ink};margin-top:3px;position:relative;display:inline-block">${esc(s.a)}${hot ? ring(690, 104, { seed: 11, sw: 7, sq: 3.4 }).replace("left:0px;top:0px", "left:-24px;top:0px") : ""}</div></div>`;
   }).join("");
   const card = `<div style="${abs(110, 398, 790, 560, "transform:rotate(-2deg);z-index:10;background:linear-gradient(180deg,#fdf8ea,#f4ecd8);border-radius:8px;box-shadow:0 2px 3px rgba(60,30,5,.3),0 24px 36px rgba(60,30,5,.45)")}">
     <div style="position:absolute;left:0;right:0;top:0;height:22px;background:rgba(190,90,90,.18);border-radius:8px 8px 0 0"></div>
