@@ -40,7 +40,7 @@ for (let n = 1; n <= 101; n++) if (!have.has(n)) throw new Error(`no copy or ren
 
 // 2. The priority tiers (by idea number, in the order they should be tried).
 const T1 = [101, 95, 5, 96, 99, 97, 93, 94, 100, 98, 92, 90, 63, 61, 1];
-const T2 = [91, 70, 72, 76, 78, 80, 82, 74, 64, 66, 86, 23, 19, 11, 29];
+const T2 = [91, 70, 72, 76, 78, 80, 82, 64, 66, 86, 23, 19, 11, 29];
 const T4 = [];
 const T3 = bank.map((i) => i.n).filter((n) => ![...T1, ...T2, ...T4].includes(n));
 const tiers = [T1, T2, T3, T4];
@@ -89,7 +89,7 @@ const clash = (i) => i > 0 && i < order.length && key(order[i]) === key(order[i 
 for (let pass = 0; pass < 6; pass++) {
   for (let i = 1; i < order.length; i++) {
     if (!clash(i)) continue;
-    for (let d = 2; d <= 45; d++) for (const j of [i + d, i - d]) {
+    for (let d = 2; d <= 90; d++) for (const j of [i + d, i - d]) {
       if (j < 1 || j >= order.length || tierOf.get(order[j]) !== tierOf.get(order[i])) continue;
       [order[i], order[j]] = [order[j], order[i]];
       const near = [i, i + 1, j, j + 1];
