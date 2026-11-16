@@ -421,7 +421,7 @@ function p80() {
   const parts = i.items.map((t) => { const m = t.match(/^(.*?[?:])\s+(.*)$/); return { q: m[1].replace(/:$/, ""), a: m[2] }; });
   const lines = parts.map((s, k) => {
     const hot = k === 2;
-    return `<div style="position:relative;padding:10px 0 12px;border-bottom:3px solid rgba(58,110,88,.3);min-height:116px"><div style="font:600 22px 'Plex',sans-serif;letter-spacing:.06em;color:#6b5a44">${esc(s.q)}</div><div class="hand" style="font:600 38px/1.02 'Hand',cursive;color:${G.ink};margin-top:3px;position:relative;display:inline-block">${esc(s.a)}${hot ? ring(690, 104, { seed: 11, sw: 7, sq: 3.4 }).replace("left:0px;top:0px", "left:-24px;top:0px") : ""}</div></div>`;
+    return `<div style="position:relative;padding:10px 0 12px;border-bottom:3px solid rgba(58,110,88,.3);min-height:116px"><div style="font:600 22px 'Plex',sans-serif;letter-spacing:.06em;color:#6b5a44">${esc(s.q)}</div><div class="hand" style="font:600 38px/1.02 'Hand',cursive;color:${G.ink};margin-top:3px;position:relative;display:inline-block">${esc(s.a)}${hot ? ring(700, 164, { seed: 11, sw: 7, sq: 3.2 }).replace("left:0px;top:0px", "left:-26px;top:-56px") : ""}</div></div>`;
   }).join("");
   const card = `<div style="${abs(110, 398, 790, 560, "transform:rotate(-2deg);z-index:10;background:linear-gradient(180deg,#fdf8ea,#f4ecd8);border-radius:8px;box-shadow:0 2px 3px rgba(60,30,5,.3),0 24px 36px rgba(60,30,5,.45)")}">
     <div style="position:absolute;left:0;right:0;top:0;height:22px;background:rgba(190,90,90,.18);border-radius:8px 8px 0 0"></div>
