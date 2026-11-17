@@ -22,7 +22,7 @@ export const personalFinanceCompanionShopProduct: ShopProductInput = {
   publicationStatus: "published",
   title: "Personal Finance Companion",
   promise:
-    "One always-current picture of your accounts, income, bills, subscriptions, transactions, debt, and savings, with exactly one useful next move at a time.",
+    "One Available Money figure that says what's actually safe to spend right now, worked out from your accounts, income, bills, subscriptions, transactions, debt and savings together, with exactly one useful next move waiting each time you open it.",
   problem:
     "Money information is scattered across bank apps, statements, memory, and habit. Nothing tells you, in one place, what is actually available to spend right now, what is coming due, or what quietly changed. A spreadsheet only knows what you remembered to update.",
   audience: [

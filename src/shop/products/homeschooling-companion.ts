@@ -32,7 +32,7 @@ export const homeschoolingCompanionShopProduct: ShopProductInput = {
   publicationStatus: "published",
   title: "Homeschooling Companion",
   promise:
-    "A printed handbook and an app that remembers. You decide what your children learn; this keeps track of what you actually did, tells you the next useful thing, and helps you check whether it landed.",
+    "A printed handbook and an app that remembers, each child kept entirely separate. You decide what your children learn; this keeps track of what each one actually did, tells you the next useful thing per child, and helps you check whether it landed, never compared to anyone else's pace.",
   problem:
     "The teaching is not usually the hard part. The hard part is that by March you cannot remember what you covered in October, you are not sure the fractions ever stuck, and if somebody asked you to account for the year you would be reconstructing it from memory and a pile of undated worksheets. Most homeschool record keeping fails in one of two directions: nothing at all, or a system so heavy it is abandoned by half term.",
   audience: [
