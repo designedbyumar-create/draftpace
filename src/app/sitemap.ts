@@ -66,6 +66,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { route: "/careers", changeFrequency: "monthly", priority: 0.4 },
     { route: "/privacy", changeFrequency: "yearly", priority: 0.3 },
     { route: "/terms", changeFrequency: "yearly", priority: 0.3 },
+    { route: "/returns", changeFrequency: "yearly", priority: 0.3 },
     { route: "/cookies", changeFrequency: "yearly", priority: 0.3 },
   ];
 

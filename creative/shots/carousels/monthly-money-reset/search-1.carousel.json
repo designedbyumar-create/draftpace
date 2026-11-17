@@ -1,0 +1,262 @@
+{
+  "id": "car-monthly-money-reset-search-1",
+  "product": "monthly-money-reset",
+  "guide": "how-to-budget-for-beginners",
+  "situation": "searchedProblems[0].phrase",
+  "slides": [
+    {
+      "kind": "cover",
+      "quote": {
+        "text": "I hate budgeting and I've tried everything",
+        "source": "searchedProblems[0].phrase"
+      },
+      "emphasis": [
+        "budgeting"
+      ],
+      "promise": {
+        "text": "How to make a monthly budget for the first time",
+        "source": "guide:how-to-budget-for-beginners/title"
+      },
+      "art": {
+        "motif": "wallet",
+        "why": "the carousel's topic: the moment and its guide name \"budget\"",
+        "also": "clock"
+      }
+    },
+    {
+      "kind": "answer",
+      "eyebrow": {
+        "text": "In short",
+        "source": "micro"
+      },
+      "lines": [
+        {
+          "text": "Take-home pay, every bill, real spending from your statements, then subtract.",
+          "source": "guide:how-to-budget-for-beginners/dek#0"
+        },
+        {
+          "text": "A $3,240 example month, a fix for a negative number, a weekly check.",
+          "source": "guide:how-to-budget-for-beginners/dek#1"
+        }
+      ],
+      "art": {
+        "motif": "receipt",
+        "why": "the slide names \"statement\", \"spending\""
+      }
+    },
+    {
+      "kind": "step",
+      "eyebrow": {
+        "text": "How to build yours in about an hour",
+        "source": "guide:how-to-budget-for-beginners/body[4].heading"
+      },
+      "number": {
+        "text": "1",
+        "source": "micro"
+      },
+      "head": {
+        "text": "Find your take-home pay.",
+        "source": "guide:how-to-budget-for-beginners/body[4].items[0]#0"
+      },
+      "body": [
+        {
+          "text": "Use what lands in your account after tax and deductions, not your salary.",
+          "source": "guide:how-to-budget-for-beginners/body[4].items[0]#1"
+        },
+        {
+          "text": "Paid every two weeks, multiply one paycheck by 26 and divide by 12.",
+          "source": "guide:how-to-budget-for-beginners/body[4].items[0]#2"
+        },
+        {
+          "text": "Paid weekly, multiply by 52 and divide by 12.",
+          "source": "guide:how-to-budget-for-beginners/body[4].items[0]#3"
+        }
+      ],
+      "emphasis": [
+        "Find"
+      ],
+      "art": {
+        "motif": "wallet",
+        "why": "the slide names \"paycheck\", \"pay\", \"take-home\", \"salary\""
+      }
+    },
+    {
+      "kind": "step",
+      "eyebrow": {
+        "text": "How to build yours in about an hour",
+        "source": "guide:how-to-budget-for-beginners/body[4].heading"
+      },
+      "number": {
+        "text": "2",
+        "source": "micro"
+      },
+      "head": {
+        "text": "List every bill with its due date.",
+        "source": "guide:how-to-budget-for-beginners/body[4].items[1]#0"
+      },
+      "body": [
+        {
+          "text": "Open last month's statements and write down rent, utilities, phone, insurance, loan payments and card minimums.",
+          "source": "guide:how-to-budget-for-beginners/body[4].items[1]#1"
+        }
+      ],
+      "emphasis": [
+        "bill"
+      ],
+      "art": {
+        "motif": "calendar",
+        "why": "the slide names \"date\", \"month\", \"due\""
+      }
+    },
+    {
+      "kind": "step",
+      "eyebrow": {
+        "text": "How to build yours in about an hour",
+        "source": "guide:how-to-budget-for-beginners/body[4].heading"
+      },
+      "number": {
+        "text": "3",
+        "source": "micro"
+      },
+      "head": {
+        "text": "Estimate the rest from real statements.",
+        "source": "guide:how-to-budget-for-beginners/body[4].items[2]#0"
+      },
+      "body": [
+        {
+          "text": "Add up groceries, fuel and eating out for each of the last two or three months and use the average, not what you think you spend.",
+          "source": "guide:how-to-budget-for-beginners/body[4].items[2]#1"
+        },
+        {
+          "text": "A guess almost always runs low.",
+          "source": "guide:how-to-budget-for-beginners/body[4].items[2]#2"
+        }
+      ],
+      "emphasis": [
+        "statements"
+      ],
+      "art": {
+        "motif": "receipt",
+        "why": "the slide names \"statement\", \"groceries\""
+      }
+    },
+    {
+      "kind": "step",
+      "eyebrow": {
+        "text": "How to build yours in about an hour",
+        "source": "guide:how-to-budget-for-beginners/body[4].heading"
+      },
+      "number": {
+        "text": "4",
+        "source": "micro"
+      },
+      "head": {
+        "text": "Put savings and debt payments in before the extras.",
+        "source": "guide:how-to-budget-for-beginners/body[4].items[3]#0"
+      },
+      "body": [
+        {
+          "text": "Even $25 a paycheck counts.",
+          "source": "guide:how-to-budget-for-beginners/body[4].items[3]#1"
+        }
+      ],
+      "emphasis": [
+        "payments"
+      ],
+      "art": {
+        "motif": "piggy",
+        "why": "the slide names \"sav\""
+      }
+    },
+    {
+      "kind": "checklist",
+      "eyebrow": {
+        "text": "The five minute weekly check-in",
+        "source": "guide:how-to-budget-for-beginners/body[5].heading"
+      },
+      "items": [
+        {
+          "text": "Has any income come in or changed?",
+          "source": "guide:how-to-budget-for-beginners/body[5].items[0]#0"
+        },
+        {
+          "text": "Has a bill changed or been paid?",
+          "source": "guide:how-to-budget-for-beginners/body[5].items[1]#0"
+        },
+        {
+          "text": "Is there spending you haven't added?",
+          "source": "guide:how-to-budget-for-beginners/body[5].items[2]#0"
+        },
+        {
+          "text": "Does your savings or cushion need adjusting?",
+          "source": "guide:how-to-budget-for-beginners/body[5].items[3]#0"
+        }
+      ],
+      "ticks": false,
+      "art": {
+        "motif": "wallet",
+        "why": "the slide names \"spend\", \"income\""
+      }
+    },
+    {
+      "kind": "help",
+      "eyebrow": {
+        "text": "How it helps",
+        "source": "micro"
+      },
+      "name": {
+        "text": "Monthly Money Reset",
+        "source": "title"
+      },
+      "line": {
+        "text": "This is not a budget. It is one number for what is safe to spend, with nothing to categorise and no plan to stick to.",
+        "source": "searchedProblems[0].answer"
+      },
+      "ui": {
+        "kind": "live",
+        "live": "safeToSpendCard"
+      }
+    },
+    {
+      "kind": "close",
+      "eyebrow": {
+        "text": "The full guide",
+        "source": "micro"
+      },
+      "title": {
+        "text": "How to make a monthly budget for the first time",
+        "source": "guide:how-to-budget-for-beginners/title"
+      },
+      "url": {
+        "text": "draftpace.com/guides/how-to-budget-for-beginners",
+        "source": "guide:how-to-budget-for-beginners/url"
+      },
+      "link": {
+        "text": "Free to read. Link in bio.",
+        "source": "micro"
+      },
+      "save": {
+        "text": "Save this for later.",
+        "source": "micro"
+      },
+      "art": {
+        "motif": "wallet",
+        "why": "the carousel's topic: the moment and its guide name \"budget\""
+      }
+    }
+  ],
+  "notes": [
+    "Cover: \"I hate budgeting and I've tried everything\" (searchedProblems[0].phrase), as people search it.",
+    "Steps: 4 of 6 from the guide's numbered steps \"How to build yours in about an hour\", one per slide, each with the guide's own explanation.",
+    "Checklist: 4 items from \"The five minute weekly check-in\".",
+    "Help: \"This is not a budget. It is one number for what is safe to spend, with nothing to categorise and no plan to stick to.\" (searchedProblems[0].answer), on the live safeToSpendCard computing a real number.",
+    "Illustration on the cover: wallet with clock, because the carousel's topic: the moment and its guide name \"budget\".",
+    "Illustration on the answer: receipt, because the slide names \"statement\", \"spending\".",
+    "Illustration on the step: wallet, because the slide names \"paycheck\", \"pay\", \"take-home\", \"salary\".",
+    "Illustration on the step: calendar, because the slide names \"date\", \"month\", \"due\".",
+    "Illustration on the step: receipt, because the slide names \"statement\", \"groceries\".",
+    "Illustration on the step: piggy, because the slide names \"sav\".",
+    "Illustration on the checklist: wallet, because the slide names \"spend\", \"income\".",
+    "Illustration on the close: wallet, because the carousel's topic: the moment and its guide name \"budget\"."
+  ]
+}

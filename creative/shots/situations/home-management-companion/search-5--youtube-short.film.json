@@ -1,0 +1,280 @@
+{
+  "id": "sit-home-management-companion-search-5--youtube-short",
+  "product": "home-management-companion",
+  "guide": "how-to-find-the-model-number-on-any-appliance",
+  "situation": "searchedProblems[4].phrase",
+  "runtime": {
+    "min": 15,
+    "max": 40
+  },
+  "platform": "youtube-short",
+  "goal": "awareness",
+  "width": 1080,
+  "height": 1920,
+  "fps": 30,
+  "durationInFrames": 835,
+  "structure": "situationChecklist",
+  "angle": {
+    "text": "I don't know which filter or part my appliance takes",
+    "source": "searchedProblems[4].phrase"
+  },
+  "treatment": {
+    "voice": "editorial",
+    "camera": "dolly",
+    "transitions": [
+      "slideUp",
+      "cardSlide",
+      "slideUp"
+    ],
+    "motif": "tag",
+    "grounds": [
+      "light",
+      "accent",
+      "light",
+      "ink"
+    ],
+    "pace": 1
+  },
+  "music": {
+    "bed": "audio/bed-relaxation-05.mp3",
+    "level": 0.2,
+    "energy": "mid"
+  },
+  "scenes": [
+    {
+      "id": "moment",
+      "kind": "title",
+      "variant": "label",
+      "copy": [
+        {
+          "text": "I don't know which filter or part my appliance takes",
+          "source": "searchedProblems[4].phrase"
+        }
+      ],
+      "emphasis": [
+        "appliance"
+      ],
+      "why": "Opens on the moment in the person's own words, as the listing records people searching it.",
+      "from": 0,
+      "dur": 99,
+      "ground": "light",
+      "transition": "cut",
+      "sfx": [],
+      "lines": [
+        [
+          "I don't know which",
+          "filter or part my",
+          "appliance takes"
+        ]
+      ]
+    },
+    {
+      "id": "what-to-do",
+      "kind": "list",
+      "variant": "checklist",
+      "copy": [
+        {
+          "text": "The original receipt or order confirmation email.",
+          "source": "guide:how-to-find-the-model-number-on-any-appliance/body[7].items[0]#0"
+        },
+        {
+          "text": "The manual or the box, if either survived.",
+          "source": "guide:how-to-find-the-model-number-on-any-appliance/body[7].items[1]#0"
+        },
+        {
+          "text": "A past repair invoice.",
+          "source": "guide:how-to-find-the-model-number-on-any-appliance/body[7].items[2]#0"
+        },
+        {
+          "text": "The retailer's account or the maker's registration, if you registered the product.",
+          "source": "guide:how-to-find-the-model-number-on-any-appliance/body[7].items[3]#0"
+        }
+      ],
+      "eyebrow": {
+        "text": "When the label is gone or unreadable",
+        "source": "guide:how-to-find-the-model-number-on-any-appliance/body[7].heading"
+      },
+      "why": "What to do about it, from the guide \"How to find the model number on any appliance\": its own checklist, the first sentence of each item.",
+      "from": 87,
+      "dur": 437,
+      "ground": "accent",
+      "transition": "slideUp",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "swish",
+          "volume": 0.32
+        },
+        {
+          "at": 10,
+          "cue": "pop",
+          "volume": 0.45
+        },
+        {
+          "at": 97,
+          "cue": "pop",
+          "volume": 0.45
+        },
+        {
+          "at": 184,
+          "cue": "pop",
+          "volume": 0.45
+        },
+        {
+          "at": 271,
+          "cue": "pop",
+          "volume": 0.45
+        }
+      ]
+    },
+    {
+      "id": "help",
+      "kind": "phone",
+      "variant": "proof",
+      "copy": [],
+      "caption": {
+        "text": "A what-to-buy line on each thing, printable as a single Item Card you can take to the counter.",
+        "source": "searchedProblems[4].answer"
+      },
+      "screen": {
+        "src": "screens/home-management-companion-workspace.png",
+        "pose": "tiltLeft",
+        "focus": {
+          "at": 0.45,
+          "y": 222,
+          "h": 25,
+          "region": "status"
+        }
+      },
+      "why": "How Home Base helps with this moment, in the listing's own words, on the real screen that shows it. Screen: \"A couple of things need a look\" (Your home now: what's wrong, what to care for, what's coming up and what's handled, with the fridge and a dripping tap flagged.) chosen because it is the real screen closest to \"A what-to-buy line on each thing, printable as a single Item Card you can take t\"; focus on \"Wrong, To care for, Coming up, Handled\".",
+      "eyebrow": {
+        "text": "Home Base",
+        "source": "title"
+      },
+      "from": 512,
+      "dur": 225,
+      "ground": "light",
+      "transition": "cardSlide",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "swish",
+          "volume": 0.32
+        },
+        {
+          "at": 12,
+          "cue": "pop",
+          "volume": 0.42
+        },
+        {
+          "at": 101,
+          "cue": "tap",
+          "volume": 0.55
+        }
+      ]
+    },
+    {
+      "id": "cta",
+      "kind": "cta",
+      "variant": "guide",
+      "copy": [
+        {
+          "text": "Home Base",
+          "source": "title"
+        },
+        {
+          "text": "draftpace.com/guides/how-to-find-the-model-number-on-any-appliance",
+          "source": "guide:how-to-find-the-model-number-on-any-appliance/url"
+        }
+      ],
+      "eyebrow": {
+        "text": "The full guide",
+        "source": "micro"
+      },
+      "why": "Ends on where to read the whole guide, with the product beneath it: the viewer leaves with the next step, not only a pitch.",
+      "from": 725,
+      "dur": 110,
+      "ground": "ink",
+      "transition": "blurDissolve",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "whoosh",
+          "volume": 0.32
+        },
+        {
+          "at": 8,
+          "cue": "settle",
+          "volume": 0.5
+        }
+      ]
+    }
+  ],
+  "reasoning": [
+    {
+      "topic": "Placement",
+      "decision": "YouTube Short, 1080×1920, 15–40s, hook by 1.2s, sound on",
+      "because": "Search-adjacent audience that will watch a slightly longer explanation if it starts strong. Loops by default."
+    },
+    {
+      "topic": "Product",
+      "decision": "Home Base: $49 (list $99), motif \"tag\", calm personality, cool accent #4f7a5c",
+      "because": "From its definition and Shop listing. 3 real screens to show."
+    },
+    {
+      "topic": "Situation",
+      "decision": "\"I don't know which filter or part my appliance takes\"",
+      "because": "One real moment from Home Base's listing (searchedProblems[4].phrase). The film is about this moment and how the product helps with it: \"A what-to-buy line on each thing, printable as a single Item Card you can take to the counter.\""
+    },
+    {
+      "topic": "Guide",
+      "decision": "\"How to find the model number on any appliance\" (draftpace.com/guides/how-to-find-the-model-number-on-any-appliance)",
+      "because": "The guide that covers this moment: what to do comes from it, and the film ends on it."
+    },
+    {
+      "topic": "Stage",
+      "decision": "Before launch: helpful and relatable only",
+      "because": "Nobody knows Draftpace yet, so films show how it helps with real moments. Who it is not for, questions before buying, what you get and the price wait until there are users to sell to."
+    },
+    {
+      "topic": "Audience",
+      "decision": "You own or rent a home and would rather be told what needs you this week than keep a mental list you know is incomplete. / You want the boring, expensive things caught early: the water heater, the gutters, the outside tap before the first freeze.",
+      "because": "The listing's own audience lines; the director writes for them."
+    },
+    {
+      "topic": "Structure",
+      "decision": "What to do first: The moment, the guide's own checklist for it, then the product that keeps track of it.",
+      "because": "Best fit for a awareness film on YouTube Short (platform fit 3, goal fit 3, already used on YouTube Short ×1). Other candidates: Inside the tool (-6.0), The moment (-7.7)."
+    },
+    {
+      "topic": "Angle",
+      "decision": "\"I don't know which filter or part my appliance takes\"",
+      "because": "The moment \"I don't know which filter or part my appliance takes\", the checklist from \"How to find the model number on any appliance\", then how Home Base helps."
+    },
+    {
+      "topic": "Transitions",
+      "decision": "Transitions follow the product's own identity motif, \"tag\"",
+      "because": "Transitions follow the product's own identity motif, \"tag\": things in the home are tagged, so scenes rise like a tag being lifted."
+    },
+    {
+      "topic": "Camera",
+      "decision": "Camera \"dolly\"",
+      "because": "Camera \"dolly\": constant forward movement for a high-energy feed."
+    },
+    {
+      "topic": "Colour",
+      "decision": "Grounds light → accent → light → ink",
+      "because": "Grounds light → accent → light → ink: a cool accent, so a darker ground is used for contrast at a turn."
+    },
+    {
+      "topic": "Sound",
+      "decision": "Full sound design, mid-energy bed",
+      "because": "Sound-on placement: every transition, landing and reveal has a cue, and the bed ducks under the brand moment."
+    },
+    {
+      "topic": "Length",
+      "decision": "27.8s, 4 scenes",
+      "because": "Each scene is held for the time its words take to read on YouTube Short (0.26s a word), inside 15–40s."
+    }
+  ]
+}

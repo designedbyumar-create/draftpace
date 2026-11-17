@@ -2,6 +2,7 @@
   "id": "feature-spotlight-personal-finance-companion",
   "product": "personal-finance-companion",
   "themeSlug": "personal-finance-companion",
+  "problem": 0,
   "format": "feature-spotlight",
   "fps": 30,
   "width": 1080,
@@ -17,6 +18,9 @@
           "Your money is",
           "scattered across",
           "five different apps."
+        ],
+        "emphasis": [
+          "scattered"
         ]
       },
       "camera": {
@@ -103,10 +107,10 @@
       "id": "cta",
       "kind": "cta",
       "startFrame": 430,
-      "durationFrames": 50,
+      "durationFrames": 90,
       "typography": {
         "headline": "Available now.",
-        "sub": "draftpace.com/shop · $49"
+        "sub": "draftpace.com/shop · {price}"
       },
       "camera": {
         "move": "static"

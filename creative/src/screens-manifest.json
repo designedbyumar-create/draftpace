@@ -1,0 +1,110 @@
+{
+  "screens/alongside-help.png": {
+    "width": 390,
+    "height": 1068
+  },
+  "screens/alongside-life.png": {
+    "width": 390,
+    "height": 1224
+  },
+  "screens/alongside-workspace.png": {
+    "width": 390,
+    "height": 844
+  },
+  "screens/family-health-binder-members.png": {
+    "width": 390,
+    "height": 1295
+  },
+  "screens/family-health-binder-printables.png": {
+    "width": 390,
+    "height": 1161
+  },
+  "screens/family-health-binder-workspace.png": {
+    "width": 390,
+    "height": 844
+  },
+  "screens/home-management-companion-history.png": {
+    "width": 390,
+    "height": 844
+  },
+  "screens/home-management-companion-seasons.png": {
+    "width": 390,
+    "height": 844
+  },
+  "screens/home-management-companion-workspace.png": {
+    "width": 390,
+    "height": 1691
+  },
+  "screens/homeschooling-companion-kids.png": {
+    "width": 390,
+    "height": 844
+  },
+  "screens/homeschooling-companion-record.png": {
+    "width": 390,
+    "height": 1331
+  },
+  "screens/homeschooling-companion-workspace.png": {
+    "width": 390,
+    "height": 879
+  },
+  "screens/monthly-money-reset-progress.png": {
+    "width": 390,
+    "height": 929
+  },
+  "screens/personal-finance-companion-bills.png": {
+    "width": 390,
+    "height": 1015
+  },
+  "screens/personal-finance-companion-debt.png": {
+    "width": 390,
+    "height": 1238
+  },
+  "screens/personal-finance-companion-printables.png": {
+    "width": 390,
+    "height": 897
+  },
+  "screens/personal-finance-companion-records.png": {
+    "width": 390,
+    "height": 1293
+  },
+  "screens/personal-life-affairs-companion-affairs.png": {
+    "width": 390,
+    "height": 1184
+  },
+  "screens/personal-life-affairs-companion-printables.png": {
+    "width": 390,
+    "height": 1790
+  },
+  "screens/personal-life-affairs-companion-workspace.png": {
+    "width": 390,
+    "height": 844
+  },
+  "screens/travel-companion-itinerary.png": {
+    "width": 390,
+    "height": 2548
+  },
+  "screens/travel-companion-printables.png": {
+    "width": 390,
+    "height": 844
+  },
+  "screens/travel-companion-trip.png": {
+    "width": 390,
+    "height": 3304
+  },
+  "screens/travel-companion-workspace.png": {
+    "width": 390,
+    "height": 844
+  },
+  "screens/vehicle-maintenance-companion-history.png": {
+    "width": 390,
+    "height": 978
+  },
+  "screens/vehicle-maintenance-companion-printables.png": {
+    "width": 390,
+    "height": 1581
+  },
+  "screens/vehicle-maintenance-companion-vehicles.png": {
+    "width": 390,
+    "height": 1335
+  }
+}

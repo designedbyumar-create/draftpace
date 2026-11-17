@@ -1,0 +1,365 @@
+{
+  "id": "guide-financial-binder-what-to-include--pinterest-video",
+  "product": "personal-finance-companion",
+  "guide": "financial-binder-what-to-include",
+  "runtime": {
+    "min": 12,
+    "max": 35
+  },
+  "platform": "pinterest-video",
+  "goal": "awareness",
+  "width": 1000,
+  "height": 1500,
+  "fps": 30,
+  "durationInFrames": 961,
+  "structure": "guideSteps",
+  "angle": {
+    "text": "financial binder what to include",
+    "source": "guide:financial-binder-what-to-include/primaryQuery"
+  },
+  "treatment": {
+    "voice": "editorial",
+    "camera": "float",
+    "transitions": [
+      "cardSlide",
+      "wipe",
+      "cardSlide"
+    ],
+    "motif": "index",
+    "grounds": [
+      "ink",
+      "light",
+      "light",
+      "accent"
+    ],
+    "pace": 1.15
+  },
+  "music": {
+    "bed": "audio/bed-relaxation-05.mp3",
+    "level": 0.16,
+    "energy": "low"
+  },
+  "scenes": [
+    {
+      "id": "hook",
+      "kind": "title",
+      "variant": "quote",
+      "copy": [
+        {
+          "text": "financial binder what to include",
+          "source": "guide:financial-binder-what-to-include/primaryQuery"
+        }
+      ],
+      "why": "Opens on the exact phrase the guide is written to win, typed out the way it is typed into a search box.",
+      "from": 0,
+      "dur": 79,
+      "ground": "ink",
+      "transition": "cut",
+      "sfx": [],
+      "lines": [
+        [
+          "financial binder",
+          "what to include"
+        ]
+      ]
+    },
+    {
+      "id": "step-1",
+      "kind": "title",
+      "variant": "editorial",
+      "copy": [
+        {
+          "text": "List your accounts and rough balances.",
+          "source": "guide:financial-binder-what-to-include/body[4].items[0]#0"
+        }
+      ],
+      "eyebrow": {
+        "text": "1",
+        "source": "micro"
+      },
+      "emphasis": [
+        "accounts"
+      ],
+      "why": "Step 1 of the guide's numbered list, numbered as the guide numbers it, its first sentence: the instruction itself.",
+      "from": 67,
+      "dur": 126,
+      "ground": "light",
+      "transition": "cardSlide",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "swish",
+          "volume": 0.192
+        }
+      ],
+      "lines": [
+        [
+          "List your accounts",
+          "and rough balances."
+        ]
+      ]
+    },
+    {
+      "id": "step-2",
+      "kind": "title",
+      "variant": "editorial",
+      "copy": [
+        {
+          "text": "Note your income and when it next arrives.",
+          "source": "guide:financial-binder-what-to-include/body[4].items[1]#0"
+        }
+      ],
+      "eyebrow": {
+        "text": "2",
+        "source": "micro"
+      },
+      "emphasis": [
+        "arrives"
+      ],
+      "why": "Step 2 of the guide's numbered list, numbered as the guide numbers it, its first sentence: the instruction itself.",
+      "from": 181,
+      "dur": 148,
+      "ground": "light",
+      "transition": "wipe",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "swish",
+          "volume": 0.192
+        }
+      ],
+      "lines": [
+        [
+          "Note your income",
+          "and when it next",
+          "arrives."
+        ]
+      ]
+    },
+    {
+      "id": "step-3",
+      "kind": "title",
+      "variant": "editorial",
+      "copy": [
+        {
+          "text": "Write down the required bills and their due rules.",
+          "source": "guide:financial-binder-what-to-include/body[4].items[2]#0"
+        }
+      ],
+      "eyebrow": {
+        "text": "3",
+        "source": "micro"
+      },
+      "emphasis": [
+        "required"
+      ],
+      "why": "Step 3 of the guide's numbered list, numbered as the guide numbers it, its first sentence: the instruction itself.",
+      "from": 317,
+      "dur": 159,
+      "ground": "accent",
+      "transition": "cardSlide",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "swish",
+          "volume": 0.192
+        }
+      ],
+      "lines": [
+        [
+          "Write down the",
+          "required bills and",
+          "their due rules."
+        ]
+      ]
+    },
+    {
+      "id": "step-4",
+      "kind": "title",
+      "variant": "editorial",
+      "copy": [
+        {
+          "text": "List your subscriptions and give each one a decision.",
+          "source": "guide:financial-binder-what-to-include/body[4].items[3]#0"
+        }
+      ],
+      "eyebrow": {
+        "text": "4",
+        "source": "micro"
+      },
+      "emphasis": [
+        "one"
+      ],
+      "why": "Step 4 of the guide's numbered list, numbered as the guide numbers it, its first sentence: the instruction itself.",
+      "from": 464,
+      "dur": 159,
+      "ground": "ink",
+      "transition": "cardSlide",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "swish",
+          "volume": 0.192
+        }
+      ],
+      "lines": [
+        [
+          "List your",
+          "subscriptions and",
+          "give each one a",
+          "decision."
+        ]
+      ]
+    },
+    {
+      "id": "tool",
+      "kind": "phone",
+      "variant": "proof",
+      "copy": [],
+      "caption": {
+        "text": "A complete, always-current financial picture across all seven areas",
+        "source": "expectedOutputs[4]"
+      },
+      "screen": {
+        "src": "screens/personal-finance-companion-printables.png",
+        "pose": "tiltLeft",
+        "focus": {
+          "at": 0.45,
+          "y": 369,
+          "h": 287,
+          "region": "printables"
+        },
+        "scroll": []
+      },
+      "why": "The turn: the product the guide itself hands over to, named and shown on its real screen, captioned with its listing's line closest to what the guide teaches. Screen: \"Printable Finance Companion\" (The paper version: printable finance companion in US Letter and A4, and a shared responsibility statement.) chosen because it is the real screen closest to \"A complete, always-current financial picture across all seven areas Financial bi\"; focus on \"Printable Finance Companion\".",
+      "eyebrow": {
+        "text": "Personal Finance Companion",
+        "source": "title"
+      },
+      "from": 611,
+      "dur": 212,
+      "ground": "light",
+      "transition": "wipe",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "swish",
+          "volume": 0.192
+        },
+        {
+          "at": 12,
+          "cue": "pop",
+          "volume": 0.252
+        },
+        {
+          "at": 95,
+          "cue": "tap",
+          "volume": 0.33
+        }
+      ]
+    },
+    {
+      "id": "cta",
+      "kind": "cta",
+      "variant": "guide",
+      "copy": [
+        {
+          "text": "Personal Finance Companion",
+          "source": "title"
+        },
+        {
+          "text": "draftpace.com/guides/financial-binder-what-to-include",
+          "source": "guide:financial-binder-what-to-include/url"
+        }
+      ],
+      "eyebrow": {
+        "text": "The full guide",
+        "source": "micro"
+      },
+      "why": "Ends on where to read the whole guide, with the product beneath it: the viewer leaves with the next step, not only a pitch.",
+      "from": 811,
+      "dur": 150,
+      "ground": "light",
+      "transition": "blurDissolve",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "whoosh",
+          "volume": 0.192
+        },
+        {
+          "at": 8,
+          "cue": "settle",
+          "volume": 0.3
+        }
+      ]
+    }
+  ],
+  "reasoning": [
+    {
+      "topic": "Placement",
+      "decision": "Pinterest video pin, 1000×1500, 12–35s, hook by 1s, sound off",
+      "because": "People are planning, not scrolling: idea-led, calm and save-worthy, worded like what they searched for. Muted, looping, slow; a hard sell reads as an ad and loses the save."
+    },
+    {
+      "topic": "Product",
+      "decision": "Personal Finance Companion: $49 (list $99), motif \"index\", calm personality, cool accent #0d3b2e",
+      "because": "From its definition and Shop listing. 4 real screens to show."
+    },
+    {
+      "topic": "Guide",
+      "decision": "\"Financial binder: what to include and how often to update\" (draftpace.com/guides/financial-binder-what-to-include)",
+      "because": "Teaches from the guide first; Personal Finance Companion is the product the guide hands over to. 3 lists and timelines, 5 questions to draw from."
+    },
+    {
+      "topic": "Stage",
+      "decision": "Before launch: helpful and relatable only",
+      "because": "Nobody knows Draftpace yet, so films show how it helps with real moments. Who it is not for, questions before buying, what you get and the price wait until there are users to sell to."
+    },
+    {
+      "topic": "Audience",
+      "decision": "You have more than one account, bill, or income source and want them tracked in one real place, not five apps. / You want a next step handed to you, not a dashboard you have to interpret yourself every time.",
+      "because": "The listing's own audience lines; the director writes for them."
+    },
+    {
+      "topic": "Material",
+      "decision": "Allowed real lines up to 4 words longer",
+      "because": "Every structure Personal Finance Companion's copy supports at Pinterest video pin's normal line length is already used by its other films; a longer real line beats telling the same story twice."
+    },
+    {
+      "topic": "Structure",
+      "decision": "Do this: Open on the search itself, then the guide's own numbered steps, then the product.",
+      "because": "Best fit for a awareness film on Pinterest video pin (platform fit 3, goal fit 3, already used for this product ×1, already used on Pinterest video pin ×2). Other candidates: In order (-6.5), The checklist (-8.4)."
+    },
+    {
+      "topic": "Angle",
+      "decision": "\"financial binder what to include\"",
+      "because": "Search-led: \"financial binder what to include\", answered by 4 of the guide's numbered steps (\"A ten minute starting path\")."
+    },
+    {
+      "topic": "Transitions",
+      "decision": "Transitions follow the product's own identity motif, \"index\"",
+      "because": "Transitions follow the product's own identity motif, \"index\": an index of tabs, so scenes slide in like the next tab."
+    },
+    {
+      "topic": "Camera",
+      "decision": "Camera \"float\"",
+      "because": "Camera \"float\": a gentle float that keeps a held frame alive without demanding attention."
+    },
+    {
+      "topic": "Colour",
+      "decision": "Grounds ink → light → light → accent",
+      "because": "Grounds ink → light → light → accent: a cool accent, so a darker ground is used for contrast at a turn."
+    },
+    {
+      "topic": "Sound",
+      "decision": "Light sound design, low-energy bed",
+      "because": "Most of this audience never unmutes, so nothing depends on sound; cues are kept quieter and sparser for those who do."
+    },
+    {
+      "topic": "Length",
+      "decision": "32.0s, 7 scenes",
+      "because": "Each scene is held for the time its words take to read on Pinterest video pin (0.32s a word), inside 12–35s."
+    }
+  ]
+}

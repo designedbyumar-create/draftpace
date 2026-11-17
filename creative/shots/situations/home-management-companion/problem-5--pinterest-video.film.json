@@ -1,0 +1,227 @@
+{
+  "id": "sit-home-management-companion-problem-5--pinterest-video",
+  "product": "home-management-companion",
+  "guide": "where-is-my-water-shutoff",
+  "situation": "problemsSolved[4].problem",
+  "runtime": {
+    "min": 10,
+    "max": 32
+  },
+  "platform": "pinterest-video",
+  "goal": "awareness",
+  "width": 1000,
+  "height": 1500,
+  "fps": 30,
+  "durationInFrames": 682,
+  "structure": "situationMoment",
+  "angle": {
+    "text": "At two in the morning nobody can find the water shutoff, let alone remember which way it turns.",
+    "source": "problemsSolved[4].problem"
+  },
+  "treatment": {
+    "voice": "editorial",
+    "camera": "float",
+    "transitions": [
+      "slideUp",
+      "cardSlide",
+      "slideUp"
+    ],
+    "motif": "tag",
+    "grounds": [
+      "light",
+      "light",
+      "ink",
+      "accent"
+    ],
+    "pace": 1.15
+  },
+  "music": {
+    "bed": "audio/bed-relaxation-05.mp3",
+    "level": 0.16,
+    "energy": "low"
+  },
+  "scenes": [
+    {
+      "id": "moment",
+      "kind": "title",
+      "variant": "editorial",
+      "copy": [
+        {
+          "text": "At two in the morning nobody can find the water shutoff, let alone remember which way it turns.",
+          "source": "problemsSolved[4].problem"
+        }
+      ],
+      "emphasis": [
+        "two"
+      ],
+      "why": "Opens on the moment as the listing describes it: the situation the viewer is in right now.",
+      "from": 0,
+      "dur": 223,
+      "ground": "light",
+      "transition": "cut",
+      "sfx": [],
+      "lines": [
+        [
+          "At two in the morning nobody",
+          "can find the water shutoff,",
+          "let alone remember which",
+          "way it turns."
+        ]
+      ]
+    },
+    {
+      "id": "help",
+      "kind": "phone",
+      "variant": "proof",
+      "copy": [],
+      "caption": {
+        "text": "The facts that only matter in an emergency, written down once, on a page you can print and leave by the door.",
+        "source": "problemsSolved[4].solution"
+      },
+      "screen": {
+        "src": "screens/home-management-companion-workspace.png",
+        "pose": "tiltRight",
+        "focus": {
+          "at": 0.45,
+          "y": 222,
+          "h": 25,
+          "region": "status"
+        }
+      },
+      "why": "How Home Base helps with this moment, in the listing's own words, on the real screen that shows it. Screen: \"A couple of things need a look\" (Your home now: what's wrong, what to care for, what's coming up and what's handled, with the fridge and a dripping tap flagged.) chosen because it is the real screen closest to \"The facts that only matter in an emergency, written down once, on a page you can\"; focus on \"Wrong, To care for, Coming up, Handled\".",
+      "eyebrow": {
+        "text": "Home Base",
+        "source": "title"
+      },
+      "from": 211,
+      "dur": 344,
+      "ground": "ink",
+      "transition": "slideUp",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "swish",
+          "volume": 0.192
+        },
+        {
+          "at": 12,
+          "cue": "pop",
+          "volume": 0.252
+        },
+        {
+          "at": 155,
+          "cue": "tap",
+          "volume": 0.33
+        }
+      ]
+    },
+    {
+      "id": "cta",
+      "kind": "cta",
+      "variant": "guide",
+      "copy": [
+        {
+          "text": "Home Base",
+          "source": "title"
+        },
+        {
+          "text": "draftpace.com/guides/where-is-my-water-shutoff",
+          "source": "guide:where-is-my-water-shutoff/url"
+        }
+      ],
+      "eyebrow": {
+        "text": "The full guide",
+        "source": "micro"
+      },
+      "why": "Ends on where to read the whole guide, with the product beneath it: the viewer leaves with the next step, not only a pitch.",
+      "from": 543,
+      "dur": 139,
+      "ground": "ink",
+      "transition": "blurDissolve",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "whoosh",
+          "volume": 0.192
+        },
+        {
+          "at": 8,
+          "cue": "settle",
+          "volume": 0.3
+        }
+      ]
+    }
+  ],
+  "reasoning": [
+    {
+      "topic": "Placement",
+      "decision": "Pinterest video pin, 1000×1500, 10–32s, hook by 1s, sound off",
+      "because": "People are planning, not scrolling: idea-led, calm and save-worthy, worded like what they searched for. Muted, looping, slow; a hard sell reads as an ad and loses the save."
+    },
+    {
+      "topic": "Product",
+      "decision": "Home Base: $49 (list $99), motif \"tag\", calm personality, cool accent #4f7a5c",
+      "because": "From its definition and Shop listing. 3 real screens to show."
+    },
+    {
+      "topic": "Situation",
+      "decision": "\"At two in the morning nobody can find the water shutoff, let alone remember which way it turns.\"",
+      "because": "One real moment from Home Base's listing (problemsSolved[4].problem). The film is about this moment and how the product helps with it: \"The facts that only matter in an emergency, written down once, on a page you can print and leave by the door.\""
+    },
+    {
+      "topic": "Guide",
+      "decision": "\"Where is your main water shutoff? Find it before you need it\" (draftpace.com/guides/where-is-my-water-shutoff)",
+      "because": "The guide that covers this moment: what to do comes from it, and the film ends on it."
+    },
+    {
+      "topic": "Stage",
+      "decision": "Before launch: helpful and relatable only",
+      "because": "Nobody knows Draftpace yet, so films show how it helps with real moments. Who it is not for, questions before buying, what you get and the price wait until there are users to sell to."
+    },
+    {
+      "topic": "Audience",
+      "decision": "You own or rent a home and would rather be told what needs you this week than keep a mental list you know is incomplete. / You want the boring, expensive things caught early: the water heater, the gutters, the outside tap before the first freeze.",
+      "because": "The listing's own audience lines; the director writes for them."
+    },
+    {
+      "topic": "Structure",
+      "decision": "The moment: The moment as it feels, set dark, then the help in the light, then what to do next.",
+      "because": "Best fit for a awareness film on Pinterest video pin (platform fit 1, goal fit 3, already used for this product ×3). Other candidates: Inside the tool (-21.0)."
+    },
+    {
+      "topic": "Angle",
+      "decision": "\"At two in the morning nobody can find the water shutoff, let alone remember which way it turns.\"",
+      "because": "The moment \"At two in the morning nobody can find the water shutoff, let alone remember which way it turns.\", then how Home Base helps, then what the guide \"Where is your main water shutoff? Find it before you need it\" says to do."
+    },
+    {
+      "topic": "Transitions",
+      "decision": "Transitions follow the product's own identity motif, \"tag\"",
+      "because": "Transitions follow the product's own identity motif, \"tag\": things in the home are tagged, so scenes rise like a tag being lifted."
+    },
+    {
+      "topic": "Camera",
+      "decision": "Camera \"float\"",
+      "because": "Camera \"float\": a gentle float that keeps a held frame alive without demanding attention."
+    },
+    {
+      "topic": "Colour",
+      "decision": "Grounds light → light → ink → accent",
+      "because": "Grounds light → light → ink → accent: a cool accent, so a darker ground is used for contrast at a turn."
+    },
+    {
+      "topic": "Variation",
+      "decision": "Rotated the ground rhythm",
+      "because": "Its shape was 0.88 similar to sit-home-management-companion-search-2--instagram-feed; a different film, not the same one re-coloured."
+    },
+    {
+      "topic": "Sound",
+      "decision": "Light sound design, low-energy bed",
+      "because": "Most of this audience never unmutes, so nothing depends on sound; cues are kept quieter and sparser for those who do."
+    },
+    {
+      "topic": "Length",
+      "decision": "22.7s, 3 scenes",
+      "because": "Each scene is held for the time its words take to read on Pinterest video pin (0.32s a word), inside 10–32s."
+    }
+  ]
+}

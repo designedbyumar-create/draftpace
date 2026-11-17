@@ -1,0 +1,256 @@
+{
+  "id": "sit-personal-finance-companion-problem-7--tiktok",
+  "product": "personal-finance-companion",
+  "situation": "problemsSolved[6].problem",
+  "runtime": {
+    "min": 12,
+    "max": 35
+  },
+  "platform": "tiktok",
+  "goal": "awareness",
+  "width": 1080,
+  "height": 1920,
+  "fps": 30,
+  "durationInFrames": 431,
+  "structure": "situationInside",
+  "angle": {
+    "text": "Reviewing a statement means re-entering everything by hand.",
+    "source": "problemsSolved[6].problem"
+  },
+  "treatment": {
+    "voice": "native",
+    "camera": "dolly",
+    "transitions": [
+      "cut",
+      "whip",
+      "cardSlide"
+    ],
+    "motif": "index",
+    "grounds": [
+      "light",
+      "light",
+      "ink",
+      "accent"
+    ],
+    "pace": 0.85
+  },
+  "music": {
+    "bed": "audio/bed-relaxation-05.mp3",
+    "level": 0.24,
+    "energy": "high"
+  },
+  "scenes": [
+    {
+      "id": "moment",
+      "kind": "title",
+      "variant": "label",
+      "copy": [
+        {
+          "text": "Reviewing a statement means re-entering everything by hand.",
+          "source": "problemsSolved[6].problem"
+        }
+      ],
+      "emphasis": [
+        "re-entering"
+      ],
+      "why": "Opens on the moment as the listing describes it: the situation the viewer is in right now.",
+      "from": 0,
+      "dur": 79,
+      "ground": "light",
+      "transition": "cut",
+      "sfx": [],
+      "lines": [
+        [
+          "Reviewing a",
+          "statement means",
+          "re-entering",
+          "everything by",
+          "hand."
+        ]
+      ]
+    },
+    {
+      "id": "help",
+      "kind": "phone",
+      "variant": "proof",
+      "copy": [],
+      "caption": {
+        "text": "Import a bank statement, a note, or a CSV, and review what changed before it becomes part of your picture.",
+        "source": "problemsSolved[6].solution"
+      },
+      "screen": {
+        "src": "screens/personal-finance-companion-records.png",
+        "pose": "tiltLeft",
+        "focus": {
+          "at": 0.45,
+          "y": 222,
+          "h": 119,
+          "region": "accounts"
+        }
+      },
+      "why": "How Personal Finance Companion helps with this moment, in the listing's own words, on the real screen that shows it. Screen: \"Records\" (What's actually true right now, area by area: accounts, income, bills, subscriptions, transactions, debt.) chosen because it is the real screen closest to \"Import a bank statement, a note, or a CSV, and review what changed before it bec\"; focus on \"Accounts\".",
+      "eyebrow": {
+        "text": "Personal Finance Companion",
+        "source": "title"
+      },
+      "from": 73,
+      "dur": 208,
+      "ground": "light",
+      "transition": "cut",
+      "sfx": [
+        {
+          "at": 12,
+          "cue": "pop",
+          "volume": 0.42
+        },
+        {
+          "at": 94,
+          "cue": "tap",
+          "volume": 0.55
+        }
+      ]
+    },
+    {
+      "id": "also",
+      "kind": "phone",
+      "variant": "proof",
+      "copy": [],
+      "caption": {
+        "text": "Print what we have and haven't settled",
+        "source": "tasks[5].label"
+      },
+      "screen": {
+        "src": "screens/personal-finance-companion-printables.png",
+        "pose": "flat",
+        "focus": {
+          "at": 0.45,
+          "y": 369,
+          "h": 287,
+          "region": "printables"
+        },
+        "scroll": []
+      },
+      "why": "One more real thing an owner does here, in the listing's own task wording, on the screen it happens on. Screen: \"Printable Finance Companion\" (The paper version: printable finance companion in US Letter and A4, and a shared responsibility statement.) chosen because it is the real screen closest to \"Print what we have and haven't settled\"; focus on \"Printable Finance Companion\".",
+      "from": 275,
+      "dur": 84,
+      "ground": "accent",
+      "transition": "whip",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "swish",
+          "volume": 0.32
+        },
+        {
+          "at": 12,
+          "cue": "pop",
+          "volume": 0.42
+        },
+        {
+          "at": 38,
+          "cue": "tap",
+          "volume": 0.55
+        }
+      ]
+    },
+    {
+      "id": "cta",
+      "kind": "cta",
+      "variant": "soft",
+      "copy": [
+        {
+          "text": "Personal Finance Companion",
+          "source": "title"
+        },
+        {
+          "text": "Available now.",
+          "source": "micro"
+        }
+      ],
+      "why": "TikTok punishes an obvious ad; a soft close names the product and where to find it.",
+      "from": 353,
+      "dur": 78,
+      "ground": "accent",
+      "transition": "blurDissolve",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "whoosh",
+          "volume": 0.32
+        },
+        {
+          "at": 8,
+          "cue": "settle",
+          "volume": 0.5
+        }
+      ]
+    }
+  ],
+  "reasoning": [
+    {
+      "topic": "Placement",
+      "decision": "TikTok, 1080×1920, 12–35s, hook by 0.8s, sound on",
+      "because": "Native, fast and plain-spoken; polish that looks like an ad gets skipped. Sound-on. Hook inside a second. The deepest bottom and right overlays of any placement."
+    },
+    {
+      "topic": "Product",
+      "decision": "Personal Finance Companion: $49 (list $99), motif \"index\", calm personality, cool accent #0d3b2e",
+      "because": "From its definition and Shop listing. 4 real screens to show."
+    },
+    {
+      "topic": "Situation",
+      "decision": "\"Reviewing a statement means re-entering everything by hand.\"",
+      "because": "One real moment from Personal Finance Companion's listing (problemsSolved[6].problem). The film is about this moment and how the product helps with it: \"Import a bank statement, a note, or a CSV, and review what changed before it becomes part of your picture.\""
+    },
+    {
+      "topic": "Stage",
+      "decision": "Before launch: helpful and relatable only",
+      "because": "Nobody knows Draftpace yet, so films show how it helps with real moments. Who it is not for, questions before buying, what you get and the price wait until there are users to sell to."
+    },
+    {
+      "topic": "Audience",
+      "decision": "You have more than one account, bill, or income source and want them tracked in one real place, not five apps. / You want a next step handed to you, not a dashboard you have to interpret yourself every time.",
+      "because": "The listing's own audience lines; the director writes for them."
+    },
+    {
+      "topic": "Structure",
+      "decision": "Inside the tool: The moment, then how the product helps on its real screen, then one more real thing an owner does in it.",
+      "because": "Best fit for a awareness film on TikTok (platform fit 2, goal fit 2, already used for this product ×4, already used on TikTok ×3). Other candidates: The moment (-33.9)."
+    },
+    {
+      "topic": "Angle",
+      "decision": "\"Reviewing a statement means re-entering everything by hand.\"",
+      "because": "The moment \"Reviewing a statement means re-entering everything by hand.\", how Personal Finance Companion helps, and one more real thing it does: \"Print what we have and haven't settled\"."
+    },
+    {
+      "topic": "Transitions",
+      "decision": "Transitions follow the product's own identity motif, \"index\"",
+      "because": "Transitions follow the product's own identity motif, \"index\": an index of tabs, so scenes slide in like the next tab. TikTok wants native editing, so hard cuts and whips lead."
+    },
+    {
+      "topic": "Camera",
+      "decision": "Camera \"dolly\"",
+      "because": "Camera \"dolly\": constant forward movement for a high-energy feed."
+    },
+    {
+      "topic": "Colour",
+      "decision": "Grounds light → light → ink → accent",
+      "because": "Grounds light → light → ink → accent: a cool accent, so a darker ground is used for contrast at a turn."
+    },
+    {
+      "topic": "Variation",
+      "decision": "Rotated the ground rhythm",
+      "because": "Its shape was 0.74 similar to sit-home-management-companion-problem-1--tiktok; a different film, not the same one re-coloured."
+    },
+    {
+      "topic": "Sound",
+      "decision": "Full sound design, high-energy bed",
+      "because": "Sound-on placement: every transition, landing and reveal has a cue, and the bed ducks under the brand moment."
+    },
+    {
+      "topic": "Length",
+      "decision": "14.4s, 4 scenes",
+      "because": "Each scene is held for the time its words take to read on TikTok (0.24s a word), inside 12–35s."
+    }
+  ]
+}

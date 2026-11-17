@@ -1,0 +1,227 @@
+{
+  "id": "sit-personal-life-affairs-companion-search-5--tiktok",
+  "product": "personal-life-affairs-companion",
+  "guide": "talking-to-your-parents-about-their-affairs",
+  "situation": "searchedProblems[4].phrase",
+  "runtime": {
+    "min": 12,
+    "max": 35
+  },
+  "platform": "tiktok",
+  "goal": "awareness",
+  "width": 1080,
+  "height": 1920,
+  "fps": 30,
+  "durationInFrames": 460,
+  "structure": "situationMoment",
+  "angle": {
+    "text": "How do I talk to my parents about their affairs",
+    "source": "searchedProblems[4].phrase"
+  },
+  "treatment": {
+    "voice": "native",
+    "camera": "float",
+    "transitions": [
+      "cut",
+      "whip",
+      "pageTurn"
+    ],
+    "motif": "book",
+    "grounds": [
+      "light",
+      "accent",
+      "light",
+      "ink"
+    ],
+    "pace": 0.85
+  },
+  "music": {
+    "bed": "audio/bed-relaxation-05.mp3",
+    "level": 0.24,
+    "energy": "high"
+  },
+  "scenes": [
+    {
+      "id": "moment",
+      "kind": "title",
+      "variant": "native",
+      "copy": [
+        {
+          "text": "How do I talk to my parents about their affairs",
+          "source": "searchedProblems[4].phrase"
+        }
+      ],
+      "emphasis": [
+        "parents"
+      ],
+      "why": "Opens on the moment in the person's own words, as the listing records people searching it.",
+      "from": 0,
+      "dur": 93,
+      "ground": "light",
+      "transition": "cut",
+      "sfx": [],
+      "lines": [
+        [
+          "How do I talk to",
+          "my parents about",
+          "their affairs"
+        ]
+      ]
+    },
+    {
+      "id": "help",
+      "kind": "phone",
+      "variant": "proof",
+      "copy": [],
+      "caption": {
+        "text": "Give them something with a first step small enough to take. One question at a time, and everything that does not apply to them never appears.",
+        "source": "searchedProblems[4].answer"
+      },
+      "screen": {
+        "src": "screens/personal-life-affairs-companion-workspace.png",
+        "pose": "float",
+        "focus": {
+          "at": 0.45,
+          "y": 82,
+          "h": 427,
+          "region": "question"
+        },
+        "scroll": []
+      },
+      "why": "How Personal Life Affairs Companion helps with this moment, in the listing's own words, on the real screen that shows it. Screen: \"Write down who should be called first.\" (One question at a time: write down who should be called first, with Start, Not relevant to me and Later.) chosen because it is the real screen closest to \"Give them something with a first step small enough to take. One question at a ti\"; focus on \"Write down who should be called first.\".",
+      "eyebrow": {
+        "text": "Personal Life Affairs Companion",
+        "source": "title"
+      },
+      "from": 87,
+      "dur": 258,
+      "ground": "light",
+      "transition": "cut",
+      "sfx": [
+        {
+          "at": 12,
+          "cue": "pop",
+          "volume": 0.42
+        },
+        {
+          "at": 116,
+          "cue": "tap",
+          "volume": 0.55
+        }
+      ]
+    },
+    {
+      "id": "cta",
+      "kind": "cta",
+      "variant": "guide",
+      "copy": [
+        {
+          "text": "Personal Life Affairs Companion",
+          "source": "title"
+        },
+        {
+          "text": "draftpace.com/guides/talking-to-your-parents-about-their-affairs",
+          "source": "guide:talking-to-your-parents-about-their-affairs/url"
+        }
+      ],
+      "eyebrow": {
+        "text": "The full guide",
+        "source": "micro"
+      },
+      "why": "Ends on where to read the whole guide, with the product beneath it: the viewer leaves with the next step, not only a pitch.",
+      "from": 339,
+      "dur": 121,
+      "ground": "ink",
+      "transition": "blurDissolve",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "whoosh",
+          "volume": 0.32
+        },
+        {
+          "at": 8,
+          "cue": "settle",
+          "volume": 0.5
+        }
+      ]
+    }
+  ],
+  "reasoning": [
+    {
+      "topic": "Placement",
+      "decision": "TikTok, 1080×1920, 12–35s, hook by 0.8s, sound on",
+      "because": "Native, fast and plain-spoken; polish that looks like an ad gets skipped. Sound-on. Hook inside a second. The deepest bottom and right overlays of any placement."
+    },
+    {
+      "topic": "Product",
+      "decision": "Personal Life Affairs Companion: $49 (list $99), motif \"book\", calm personality, cool accent #26374f",
+      "because": "From its definition and Shop listing. 3 real screens to show."
+    },
+    {
+      "topic": "Situation",
+      "decision": "\"How do I talk to my parents about their affairs\"",
+      "because": "One real moment from Personal Life Affairs Companion's listing (searchedProblems[4].phrase). The film is about this moment and how the product helps with it: \"Give them something with a first step small enough to take. One question at a time, and everything that does not apply to them never appears.\""
+    },
+    {
+      "topic": "Guide",
+      "decision": "\"How to talk to your parents about their will and finances\" (draftpace.com/guides/talking-to-your-parents-about-their-affairs)",
+      "because": "The guide that covers this moment: what to do comes from it, and the film ends on it."
+    },
+    {
+      "topic": "Stage",
+      "decision": "Before launch: helpful and relatable only",
+      "because": "Nobody knows Draftpace yet, so films show how it helps with real moments. Who it is not for, questions before buying, what you get and the price wait until there are users to sell to."
+    },
+    {
+      "topic": "Audience",
+      "decision": "You have been meaning to sort this out for a while and have never found a first step small enough to take. / You would rather be asked one question at a time than handed a folder and told to fill it in.",
+      "because": "The listing's own audience lines; the director writes for them."
+    },
+    {
+      "topic": "Structure",
+      "decision": "The moment: The moment as it feels, set dark, then the help in the light, then what to do next.",
+      "because": "Best fit for a awareness film on TikTok (platform fit 3, goal fit 3, already used on TikTok ×4). Other candidates: In their words (-12.6), Inside the tool (-17.3)."
+    },
+    {
+      "topic": "Angle",
+      "decision": "\"How do I talk to my parents about their affairs\"",
+      "because": "The moment \"How do I talk to my parents about their affairs\", then how Personal Life Affairs Companion helps, then what the guide \"How to talk to your parents about their will and finances\" says to do."
+    },
+    {
+      "topic": "Transitions",
+      "decision": "Transitions follow the product's own identity motif, \"book\"",
+      "because": "Transitions follow the product's own identity motif, \"book\": a handoff book, so scenes turn like pages. TikTok wants native editing, so hard cuts and whips lead."
+    },
+    {
+      "topic": "Camera",
+      "decision": "Camera \"dolly\"",
+      "because": "Camera \"dolly\": constant forward movement for a high-energy feed."
+    },
+    {
+      "topic": "Colour",
+      "decision": "Grounds light → accent → light → ink",
+      "because": "Grounds light → accent → light → ink: a cool accent, so a darker ground is used for contrast at a turn."
+    },
+    {
+      "topic": "Variation",
+      "decision": "Rotated the ground rhythm",
+      "because": "Its shape was 0.78 similar to sit-alongside-problem-3--tiktok; a different film, not the same one re-coloured."
+    },
+    {
+      "topic": "Variation",
+      "decision": "Changed the camera",
+      "because": "Its shape was 0.78 similar to sit-family-health-binder-problem-2--tiktok; a different film, not the same one re-coloured."
+    },
+    {
+      "topic": "Sound",
+      "decision": "Full sound design, high-energy bed",
+      "because": "Sound-on placement: every transition, landing and reveal has a cue, and the bed ducks under the brand moment."
+    },
+    {
+      "topic": "Length",
+      "decision": "15.3s, 3 scenes",
+      "because": "Each scene is held for the time its words take to read on TikTok (0.24s a word), inside 12–35s."
+    }
+  ]
+}

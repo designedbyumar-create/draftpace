@@ -4,6 +4,7 @@
     {
       "id": "01-alongside",
       "themeSlug": "alongside",
+      "problem": 0,
       "layout": "tilt",
       "eyebrow": "ADHD LIFE COMPANION",
       "headline": [
@@ -15,14 +16,14 @@
         "kind": "screen",
         "src": "screens/alongside-workspace.png"
       },
-      "product": {
-        "name": "ADHD Life Companion",
-        "price": "$49"
-      }
+      "emphasis": [
+        "three weeks"
+      ]
     },
     {
       "id": "02-alongside",
       "themeSlug": "alongside",
+      "problem": 1,
       "layout": "window",
       "eyebrow": "ADHD LIFE COMPANION",
       "headline": [
@@ -34,14 +35,14 @@
         "kind": "screen",
         "src": "screens/alongside-life.png"
       },
-      "product": {
-        "name": "ADHD Life Companion",
-        "price": "$49"
-      }
+      "emphasis": [
+        "behind"
+      ]
     },
     {
       "id": "03-alongside",
       "themeSlug": "alongside",
+      "problem": 2,
       "layout": "tilt",
       "eyebrow": "ADHD LIFE COMPANION",
       "headline": [
@@ -53,15 +54,15 @@
         "kind": "screen",
         "src": "screens/alongside-help.png"
       },
-      "product": {
-        "name": "ADHD Life Companion",
-        "price": "$49"
-      }
+      "emphasis": [
+        "lost"
+      ]
     },
     {
       "id": "04-alongside",
       "themeSlug": "alongside",
-      "layout": "window",
+      "problem": 3,
+      "layout": "fan",
       "eyebrow": "ADHD LIFE COMPANION",
       "headline": [
         "Every system tells",
@@ -70,12 +71,15 @@
       ],
       "ui": {
         "kind": "screen",
-        "src": "screens/alongside-life.png"
+        "src": "screens/alongside-life.png",
+        "also": [
+          "screens/alongside-help.png",
+          "screens/alongside-workspace.png"
+        ]
       },
-      "product": {
-        "name": "ADHD Life Companion",
-        "price": "$49"
-      }
+      "emphasis": [
+        "failed"
+      ]
     }
   ]
 }

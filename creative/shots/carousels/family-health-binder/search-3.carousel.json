@@ -1,0 +1,255 @@
+{
+  "id": "car-family-health-binder-search-3",
+  "product": "family-health-binder",
+  "guide": "school-and-camp-health-forms-what-to-have-ready",
+  "situation": "searchedProblems[2].phrase",
+  "slides": [
+    {
+      "kind": "cover",
+      "quote": {
+        "text": "Camp and school health forms every year",
+        "source": "searchedProblems[2].phrase"
+      },
+      "emphasis": [
+        "health"
+      ],
+      "promise": {
+        "text": "Camp and school health forms: what to have ready",
+        "source": "guide:school-and-camp-health-forms-what-to-have-ready/title"
+      },
+      "art": {
+        "motif": "books",
+        "why": "the carousel's topic: the moment and its guide name \"school\", \"camp\"",
+        "also": "document"
+      }
+    },
+    {
+      "kind": "answer",
+      "eyebrow": {
+        "text": "In short",
+        "source": "micro"
+      },
+      "lines": [
+        {
+          "text": "Camp, school and sports forms ask for the same things every year.",
+          "source": "guide:school-and-camp-health-forms-what-to-have-ready/dek#0"
+        },
+        {
+          "text": "Have your answers on one page, and know which part only the doctor can fill in.",
+          "source": "guide:school-and-camp-health-forms-what-to-have-ready/dek#1"
+        }
+      ],
+      "art": {
+        "motif": "books",
+        "why": "the slide names \"school\", \"camp\""
+      }
+    },
+    {
+      "kind": "step",
+      "eyebrow": {
+        "text": "Work through it in this order",
+        "source": "guide:school-and-camp-health-forms-what-to-have-ready/body[5].heading"
+      },
+      "number": {
+        "text": "1",
+        "source": "micro"
+      },
+      "head": {
+        "text": "Get this year's forms and read the instructions before you write anything.",
+        "source": "guide:school-and-camp-health-forms-what-to-have-ready/body[5].items[0]#0"
+      },
+      "body": [
+        {
+          "text": "Find the return date and mark which pages are yours and which are for the provider.",
+          "source": "guide:school-and-camp-health-forms-what-to-have-ready/body[5].items[0]#1"
+        }
+      ],
+      "emphasis": [
+        "instructions"
+      ],
+      "art": {
+        "motif": "calendar",
+        "why": "the slide names \"date\", \"year\""
+      }
+    },
+    {
+      "kind": "step",
+      "eyebrow": {
+        "text": "Work through it in this order",
+        "source": "guide:school-and-camp-health-forms-what-to-have-ready/body[5].heading"
+      },
+      "number": {
+        "text": "2",
+        "source": "micro"
+      },
+      "head": {
+        "text": "Book the provider's visit first, since it depends on someone else's calendar.",
+        "source": "guide:school-and-camp-health-forms-what-to-have-ready/body[5].items[1]#0"
+      },
+      "body": [
+        {
+          "text": "The ACA form's instructions are to give the provider a copy of your completed parent pages along with their own page.",
+          "source": "guide:school-and-camp-health-forms-what-to-have-ready/body[5].items[1]#1"
+        }
+      ],
+      "emphasis": [
+        "calendar"
+      ],
+      "art": {
+        "motif": "doctor",
+        "why": "the slide names \"visit\""
+      }
+    },
+    {
+      "kind": "step",
+      "eyebrow": {
+        "text": "Work through it in this order",
+        "source": "guide:school-and-camp-health-forms-what-to-have-ready/body[5].heading"
+      },
+      "number": {
+        "text": "3",
+        "source": "micro"
+      },
+      "head": {
+        "text": "Fill in your pages by copying from your one page, not from memory.",
+        "source": "guide:school-and-camp-health-forms-what-to-have-ready/body[5].items[2]#0"
+      },
+      "body": [
+        {
+          "text": "Where the form asks something your page doesn't hold, write it on your page too, so next year it's there.",
+          "source": "guide:school-and-camp-health-forms-what-to-have-ready/body[5].items[2]#1"
+        }
+      ],
+      "emphasis": [
+        "copying"
+      ],
+      "art": {
+        "motif": "notebook",
+        "why": "the slide names \"write\", \"page\""
+      }
+    },
+    {
+      "kind": "step",
+      "eyebrow": {
+        "text": "Work through it in this order",
+        "source": "guide:school-and-camp-health-forms-what-to-have-ready/body[5].heading"
+      },
+      "number": {
+        "text": "4",
+        "source": "micro"
+      },
+      "head": {
+        "text": "For vaccines, attach a copy of the record.",
+        "source": "guide:school-and-camp-health-forms-what-to-have-ready/body[5].items[3]#0"
+      },
+      "body": [
+        {
+          "text": "The ACA form says copies from a health-care provider or a state or local government are acceptable, and asks for the month and year of each dose.",
+          "source": "guide:school-and-camp-health-forms-what-to-have-ready/body[5].items[3]#1"
+        },
+        {
+          "text": "Ask your provider's office for the record if you don't have it.",
+          "source": "guide:school-and-camp-health-forms-what-to-have-ready/body[5].items[3]#2"
+        }
+      ],
+      "emphasis": [
+        "vaccines"
+      ],
+      "art": {
+        "motif": "health",
+        "why": "the slide names \"health\", \"vaccin\", \"care\""
+      }
+    },
+    {
+      "kind": "step",
+      "eyebrow": {
+        "text": "Work through it in this order",
+        "source": "guide:school-and-camp-health-forms-what-to-have-ready/body[5].heading"
+      },
+      "number": {
+        "text": "5",
+        "source": "micro"
+      },
+      "head": {
+        "text": "List every medicine, including vitamins and natural remedies.",
+        "source": "guide:school-and-camp-health-forms-what-to-have-ready/body[5].items[4]#0"
+      },
+      "body": [
+        {
+          "text": "The ACA form defines medication that broadly.",
+          "source": "guide:school-and-camp-health-forms-what-to-have-ready/body[5].items[4]#1"
+        },
+        {
+          "text": "Check the camp's rules on packaging: the form notes that many states require original pharmacy containers with labels, and a sample ACA camp policy says the same and has a nurse handle them.",
+          "source": "guide:school-and-camp-health-forms-what-to-have-ready/body[5].items[4]#2"
+        }
+      ],
+      "emphasis": [
+        "including"
+      ],
+      "art": {
+        "motif": "pills",
+        "why": "the slide names \"medicine\", \"medication\", \"pharmac\", \"vitamin\""
+      }
+    },
+    {
+      "kind": "help",
+      "eyebrow": {
+        "text": "How it helps",
+        "source": "micro"
+      },
+      "name": {
+        "text": "Family Health Binder",
+        "source": "title"
+      },
+      "line": {
+        "text": "A Forms sheet with the answers those forms ask for, in the order they ask, so you copy from one page instead of finding each fact again.",
+        "source": "searchedProblems[2].answer"
+      },
+      "ui": {
+        "kind": "screen",
+        "src": "screens/family-health-binder-workspace.png"
+      }
+    },
+    {
+      "kind": "close",
+      "eyebrow": {
+        "text": "The full guide",
+        "source": "micro"
+      },
+      "title": {
+        "text": "Camp and school health forms: what to have ready",
+        "source": "guide:school-and-camp-health-forms-what-to-have-ready/title"
+      },
+      "url": {
+        "text": "draftpace.com/guides/school-and-camp-health-forms-what-to-have-ready",
+        "source": "guide:school-and-camp-health-forms-what-to-have-ready/url"
+      },
+      "link": {
+        "text": "Free to read. Link in bio.",
+        "source": "micro"
+      },
+      "save": {
+        "text": "Save this for later.",
+        "source": "micro"
+      },
+      "art": {
+        "motif": "books",
+        "why": "the carousel's topic: the moment and its guide name \"school\", \"camp\""
+      }
+    }
+  ],
+  "notes": [
+    "Cover: \"Camp and school health forms every year\" (searchedProblems[2].phrase), as people search it.",
+    "Steps: 5 of 8 from the guide's numbered steps \"Work through it in this order\", one per slide, each with the guide's own explanation.",
+    "Help: \"A Forms sheet with the answers those forms ask for, in the order they ask, so you copy from one page instead of finding each fact again.\" (searchedProblems[2].answer), on screens/family-health-binder-workspace.png (\"Overview\").",
+    "Illustration on the cover: books with document, because the carousel's topic: the moment and its guide name \"school\", \"camp\".",
+    "Illustration on the answer: books, because the slide names \"school\", \"camp\".",
+    "Illustration on the step: calendar, because the slide names \"date\", \"year\".",
+    "Illustration on the step: doctor, because the slide names \"visit\".",
+    "Illustration on the step: notebook, because the slide names \"write\", \"page\".",
+    "Illustration on the step: health, because the slide names \"health\", \"vaccin\", \"care\".",
+    "Illustration on the step: pills, because the slide names \"medicine\", \"medication\", \"pharmac\", \"vitamin\".",
+    "Illustration on the close: books, because the carousel's topic: the moment and its guide name \"school\", \"camp\"."
+  ]
+}

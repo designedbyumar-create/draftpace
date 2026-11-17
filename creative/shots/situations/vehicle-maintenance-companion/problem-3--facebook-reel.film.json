@@ -1,0 +1,254 @@
+{
+  "id": "sit-vehicle-maintenance-companion-problem-3--facebook-reel",
+  "product": "vehicle-maintenance-companion",
+  "situation": "problemsSolved[2].problem",
+  "runtime": {
+    "min": 12,
+    "max": 35
+  },
+  "platform": "facebook-reel",
+  "goal": "awareness",
+  "width": 1080,
+  "height": 1920,
+  "fps": 30,
+  "durationInFrames": 567,
+  "structure": "situationInside",
+  "angle": {
+    "text": "\"While we had it up on the lift\" turns a routine visit into a much larger bill.",
+    "source": "problemsSolved[2].problem"
+  },
+  "treatment": {
+    "voice": "editorial",
+    "camera": "float",
+    "transitions": [
+      "radial",
+      "zoomThrough",
+      "radial"
+    ],
+    "motif": "gauge",
+    "grounds": [
+      "light",
+      "light",
+      "accent",
+      "light"
+    ],
+    "pace": 1
+  },
+  "music": {
+    "bed": "audio/bed-relaxation-05.mp3",
+    "level": 0.2,
+    "energy": "mid"
+  },
+  "scenes": [
+    {
+      "id": "moment",
+      "kind": "title",
+      "variant": "label",
+      "copy": [
+        {
+          "text": "\"While we had it up on the lift\" turns a routine visit into a much larger bill.",
+          "source": "problemsSolved[2].problem"
+        }
+      ],
+      "emphasis": [
+        "routine"
+      ],
+      "why": "Opens on the moment as the listing describes it: the situation the viewer is in right now.",
+      "from": 0,
+      "dur": 174,
+      "ground": "accent",
+      "transition": "cut",
+      "sfx": [],
+      "lines": [
+        [
+          "\"While we had it up on the",
+          "lift\" turns a routine visit",
+          "into a much larger bill."
+        ]
+      ]
+    },
+    {
+      "id": "help",
+      "kind": "phone",
+      "variant": "proof",
+      "copy": [],
+      "caption": {
+        "text": "A dated, mileage-stamped Service Boundary stating what is requested today and what is not authorized.",
+        "source": "problemsSolved[2].solution"
+      },
+      "screen": {
+        "src": "screens/vehicle-maintenance-companion-printables.png",
+        "pose": "tiltRight",
+        "focus": {
+          "at": 0.45,
+          "y": 516,
+          "h": 140,
+          "region": "request"
+        }
+      },
+      "why": "How Vehicle Maintenance Companion helps with this moment, in the listing's own words, on the real screen that shows it. Screen: \"Print\" (The Service Boundary: a dated, mileage-stamped page you hand over before a shop touches the car, with what you're asking for and a limit.) chosen because it is the real screen closest to \"A dated, mileage-stamped Service Boundary stating what is requested today and wh\"; focus on \"What are you requesting today?\".",
+      "eyebrow": {
+        "text": "Vehicle Maintenance Companion",
+        "source": "title"
+      },
+      "from": 162,
+      "dur": 231,
+      "ground": "light",
+      "transition": "radial",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "swish",
+          "volume": 0.192
+        },
+        {
+          "at": 12,
+          "cue": "pop",
+          "volume": 0.252
+        },
+        {
+          "at": 104,
+          "cue": "tap",
+          "volume": 0.33
+        }
+      ]
+    },
+    {
+      "id": "also",
+      "kind": "phone",
+      "variant": "proof",
+      "copy": [],
+      "caption": {
+        "text": "Print my service history for a buyer",
+        "source": "tasks[5].label"
+      },
+      "screen": {
+        "src": "screens/vehicle-maintenance-companion-history.png",
+        "pose": "tiltLeft",
+        "focus": {
+          "at": 0.45,
+          "y": 236,
+          "h": 364,
+          "region": "log"
+        },
+        "scroll": []
+      },
+      "why": "One more real thing an owner does here, in the listing's own task wording, on the screen it happens on. Screen: \"History\" (What has been done and when: each service dated, with the mileage, the shop and the cost.) chosen because it is the real screen closest to \"Print my service history for a buyer\"; focus on \"Oil and filter change\".",
+      "from": 381,
+      "dur": 111,
+      "ground": "light",
+      "transition": "zoomThrough",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "whoosh",
+          "volume": 0.192
+        },
+        {
+          "at": 12,
+          "cue": "pop",
+          "volume": 0.252
+        },
+        {
+          "at": 50,
+          "cue": "tap",
+          "volume": 0.33
+        }
+      ]
+    },
+    {
+      "id": "cta",
+      "kind": "cta",
+      "variant": "soft",
+      "copy": [
+        {
+          "text": "Vehicle Maintenance Companion",
+          "source": "title"
+        },
+        {
+          "text": "Available now.",
+          "source": "micro"
+        }
+      ],
+      "why": "Facebook Reel punishes an obvious ad; a soft close names the product and where to find it.",
+      "from": 480,
+      "dur": 87,
+      "ground": "light",
+      "transition": "radial",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "swish",
+          "volume": 0.192
+        },
+        {
+          "at": 8,
+          "cue": "settle",
+          "volume": 0.3
+        }
+      ]
+    }
+  ],
+  "reasoning": [
+    {
+      "topic": "Placement",
+      "decision": "Facebook Reel, 1080×1920, 12–35s, hook by 1.5s, sound off",
+      "because": "An older, sound-off-leaning audience: every point on screen, held long enough to read, plainly worded."
+    },
+    {
+      "topic": "Product",
+      "decision": "Vehicle Maintenance Companion: $34 (list $69), motif \"gauge\", calm personality, warm accent #b45309",
+      "because": "From its definition and Shop listing. 3 real screens to show."
+    },
+    {
+      "topic": "Situation",
+      "decision": "\"\"While we had it up on the lift\" turns a routine visit into a much larger bill.\"",
+      "because": "One real moment from Vehicle Maintenance Companion's listing (problemsSolved[2].problem). The film is about this moment and how the product helps with it: \"A dated, mileage-stamped Service Boundary stating what is requested today and what is not authorized.\""
+    },
+    {
+      "topic": "Stage",
+      "decision": "Before launch: helpful and relatable only",
+      "because": "Nobody knows Draftpace yet, so films show how it helps with real moments. Who it is not for, questions before buying, what you get and the price wait until there are users to sell to."
+    },
+    {
+      "topic": "Audience",
+      "decision": "You own more than one vehicle, or a vehicle with a maintenance history you already know by heart but have never written down anywhere. / You have bought a used car or inherited one, and its real service history is genuinely unknown to you.",
+      "because": "The listing's own audience lines; the director writes for them."
+    },
+    {
+      "topic": "Structure",
+      "decision": "Inside the tool: The moment, then how the product helps on its real screen, then one more real thing an owner does in it.",
+      "because": "Best fit for a awareness film on Facebook Reel (platform fit 2, goal fit 2, already used for this product ×2, already used on Facebook Reel ×2). Other candidates: The moment (-23.1)."
+    },
+    {
+      "topic": "Angle",
+      "decision": "\"\"While we had it up on the lift\" turns a routine visit into a much larger bill.\"",
+      "because": "The moment \"\"While we had it up on the lift\" turns a routine visit into a much larger bill.\", how Vehicle Maintenance Companion helps, and one more real thing it does: \"Print my service history for a buyer\"."
+    },
+    {
+      "topic": "Transitions",
+      "decision": "Transitions follow the product's own identity motif, \"gauge\"",
+      "because": "Transitions follow the product's own identity motif, \"gauge\": a gauge sweeps, so scenes are revealed by a radial sweep."
+    },
+    {
+      "topic": "Camera",
+      "decision": "Camera \"float\"",
+      "because": "Camera \"float\": a gentle float that keeps a held frame alive without demanding attention."
+    },
+    {
+      "topic": "Colour",
+      "decision": "Grounds light → light → accent → light",
+      "because": "Grounds light → light → accent → light: a warm accent, so light grounds lead and the accent is saved for the turns."
+    },
+    {
+      "topic": "Sound",
+      "decision": "Light sound design, mid-energy bed",
+      "because": "Most of this audience never unmutes, so nothing depends on sound; cues are kept quieter and sparser for those who do."
+    },
+    {
+      "topic": "Length",
+      "decision": "18.9s, 4 scenes",
+      "because": "Each scene is held for the time its words take to read on Facebook Reel (0.3s a word), inside 12–35s."
+    }
+  ]
+}

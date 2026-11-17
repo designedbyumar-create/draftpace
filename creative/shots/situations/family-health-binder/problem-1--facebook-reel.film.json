@@ -1,0 +1,263 @@
+{
+  "id": "sit-family-health-binder-problem-1--facebook-reel",
+  "product": "family-health-binder",
+  "guide": "questions-to-bring-to-the-doctor",
+  "situation": "problemsSolved[0].problem",
+  "runtime": {
+    "min": 12,
+    "max": 35
+  },
+  "platform": "facebook-reel",
+  "goal": "awareness",
+  "width": 1080,
+  "height": 1920,
+  "fps": 30,
+  "durationInFrames": 783,
+  "structure": "situationMoment",
+  "angle": {
+    "text": "Every form asks for the same answers, and you rebuild them from memory each time.",
+    "source": "problemsSolved[0].problem"
+  },
+  "treatment": {
+    "voice": "editorial",
+    "camera": "float",
+    "transitions": [
+      "cardSlide",
+      "blurDissolve",
+      "cardSlide"
+    ],
+    "motif": "card",
+    "grounds": [
+      "light",
+      "ink",
+      "light",
+      "accent"
+    ],
+    "pace": 1
+  },
+  "music": {
+    "bed": "audio/bed-relaxation-05.mp3",
+    "level": 0.2,
+    "energy": "mid"
+  },
+  "scenes": [
+    {
+      "id": "moment",
+      "kind": "title",
+      "variant": "editorial",
+      "copy": [
+        {
+          "text": "Every form asks for the same answers, and you rebuild them from memory each time.",
+          "source": "problemsSolved[0].problem"
+        }
+      ],
+      "emphasis": [
+        "Every"
+      ],
+      "why": "Opens on the moment as the listing describes it: the situation the viewer is in right now.",
+      "from": 0,
+      "dur": 156,
+      "ground": "ink",
+      "transition": "cut",
+      "sfx": [],
+      "lines": [
+        [
+          "Every form asks for the same",
+          "answers, and you rebuild them",
+          "from memory each time."
+        ]
+      ]
+    },
+    {
+      "id": "help",
+      "kind": "phone",
+      "variant": "proof",
+      "copy": [],
+      "caption": {
+        "text": "One card per person holds them, and the Forms sheet prints them in the order forms ask, with anything missing said plainly.",
+        "source": "problemsSolved[0].solution"
+      },
+      "screen": {
+        "src": "screens/family-health-binder-workspace.png",
+        "pose": "tiltLeft",
+        "focus": {
+          "at": 0.45,
+          "y": 498,
+          "h": 48,
+          "region": "missing"
+        },
+        "scroll": []
+      },
+      "why": "How Family Health Binder helps with this moment, in the listing's own words, on the real screen that shows it. Screen: \"Overview\" (Everyone at a glance: each person's card with allergies, the latest symptom, and what the forms sheet is missing.) chosen because it is the real screen closest to \"One card per person holds them, and the Forms sheet prints them in the order for\"; focus on \"Forms sheet is missing\".",
+      "eyebrow": {
+        "text": "Family Health Binder",
+        "source": "title"
+      },
+      "from": 144,
+      "dur": 294,
+      "ground": "light",
+      "transition": "cardSlide",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "swish",
+          "volume": 0.192
+        },
+        {
+          "at": 12,
+          "cue": "pop",
+          "volume": 0.252
+        },
+        {
+          "at": 132,
+          "cue": "tap",
+          "volume": 0.33
+        }
+      ]
+    },
+    {
+      "id": "what-to-do",
+      "kind": "list",
+      "variant": "checklist",
+      "copy": [
+        {
+          "text": "\"What is my main problem?\"",
+          "source": "guide:questions-to-bring-to-the-doctor/body[5].items[0]#0"
+        },
+        {
+          "text": "\"What do I need to do?\"",
+          "source": "guide:questions-to-bring-to-the-doctor/body[5].items[1]#0"
+        }
+      ],
+      "eyebrow": {
+        "text": "If you don't know what to ask",
+        "source": "guide:questions-to-bring-to-the-doctor/body[5].heading"
+      },
+      "why": "What to do about it, from the guide \"Questions to ask the doctor: how to write them down\": its own checklist.",
+      "from": 426,
+      "dur": 243,
+      "ground": "light",
+      "transition": "blurDissolve",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "whoosh",
+          "volume": 0.192
+        },
+        {
+          "at": 10,
+          "cue": "pop",
+          "volume": 0.27
+        },
+        {
+          "at": 91,
+          "cue": "pop",
+          "volume": 0.27
+        }
+      ]
+    },
+    {
+      "id": "cta",
+      "kind": "cta",
+      "variant": "guide",
+      "copy": [
+        {
+          "text": "Family Health Binder",
+          "source": "title"
+        },
+        {
+          "text": "draftpace.com/guides/questions-to-bring-to-the-doctor",
+          "source": "guide:questions-to-bring-to-the-doctor/url"
+        }
+      ],
+      "eyebrow": {
+        "text": "The full guide",
+        "source": "micro"
+      },
+      "why": "Ends on where to read the whole guide, with the product beneath it: the viewer leaves with the next step, not only a pitch.",
+      "from": 657,
+      "dur": 126,
+      "ground": "accent",
+      "transition": "cardSlide",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "swish",
+          "volume": 0.192
+        },
+        {
+          "at": 8,
+          "cue": "settle",
+          "volume": 0.3
+        }
+      ]
+    }
+  ],
+  "reasoning": [
+    {
+      "topic": "Placement",
+      "decision": "Facebook Reel, 1080×1920, 12–35s, hook by 1.5s, sound off",
+      "because": "An older, sound-off-leaning audience: every point on screen, held long enough to read, plainly worded."
+    },
+    {
+      "topic": "Product",
+      "decision": "Family Health Binder: $34 (list $69), motif \"card\", calm personality, warm accent #b23a5b",
+      "because": "From its definition and Shop listing. 3 real screens to show."
+    },
+    {
+      "topic": "Situation",
+      "decision": "\"Every form asks for the same answers, and you rebuild them from memory each time.\"",
+      "because": "One real moment from Family Health Binder's listing (problemsSolved[0].problem). The film is about this moment and how the product helps with it: \"One card per person holds them, and the Forms sheet prints them in the order forms ask, with anything missing said plainly.\""
+    },
+    {
+      "topic": "Guide",
+      "decision": "\"Questions to ask the doctor: how to write them down\" (draftpace.com/guides/questions-to-bring-to-the-doctor)",
+      "because": "The guide that covers this moment: what to do comes from it, and the film ends on it."
+    },
+    {
+      "topic": "Stage",
+      "decision": "Before launch: helpful and relatable only",
+      "because": "Nobody knows Draftpace yet, so films show how it helps with real moments. Who it is not for, questions before buying, what you get and the price wait until there are users to sell to."
+    },
+    {
+      "topic": "Audience",
+      "decision": "You are the one who fills in every form, and everyone's allergies, medications and insurance number live only in your head. / You have more than one child, or a child and an aging parent, whose facts you are both responsible for.",
+      "because": "The listing's own audience lines; the director writes for them."
+    },
+    {
+      "topic": "Structure",
+      "decision": "The moment: The moment as it feels, set dark, then the help in the light, then what to do next.",
+      "because": "Best fit for a awareness film on Facebook Reel (platform fit 3, goal fit 3, already used for this product ×1). Other candidates: What to do first (-6.6), Inside the tool (-11.3)."
+    },
+    {
+      "topic": "Angle",
+      "decision": "\"Every form asks for the same answers, and you rebuild them from memory each time.\"",
+      "because": "The moment \"Every form asks for the same answers, and you rebuild them from memory each time.\", then how Family Health Binder helps, then what the guide \"Questions to ask the doctor: how to write them down\" says to do."
+    },
+    {
+      "topic": "Transitions",
+      "decision": "Transitions follow the product's own identity motif, \"card\"",
+      "because": "Transitions follow the product's own identity motif, \"card\": a binder of cards, so scenes slide in like the next card."
+    },
+    {
+      "topic": "Camera",
+      "decision": "Camera \"float\"",
+      "because": "Camera \"float\": a gentle float that keeps a held frame alive without demanding attention."
+    },
+    {
+      "topic": "Colour",
+      "decision": "Grounds light → ink → light → accent",
+      "because": "Grounds light → ink → light → accent: a warm accent, so light grounds lead and the accent is saved for the turns."
+    },
+    {
+      "topic": "Sound",
+      "decision": "Light sound design, mid-energy bed",
+      "because": "Most of this audience never unmutes, so nothing depends on sound; cues are kept quieter and sparser for those who do."
+    },
+    {
+      "topic": "Length",
+      "decision": "26.1s, 4 scenes",
+      "because": "Each scene is held for the time its words take to read on Facebook Reel (0.3s a word), inside 12–35s."
+    }
+  ]
+}

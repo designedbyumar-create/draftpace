@@ -4,6 +4,7 @@
     {
       "id": "01-travel-companion",
       "themeSlug": "travel-companion",
+      "problem": 0,
       "layout": "tilt",
       "eyebrow": "TRAVEL COMPANION",
       "headline": [
@@ -15,14 +16,14 @@
         "kind": "screen",
         "src": "screens/travel-companion-itinerary.png"
       },
-      "product": {
-        "name": "Travel Companion",
-        "price": "$34"
-      }
+      "emphasis": [
+        "six"
+      ]
     },
     {
       "id": "02-travel-companion",
       "themeSlug": "travel-companion",
+      "problem": 1,
       "layout": "window",
       "eyebrow": "TRAVEL COMPANION",
       "headline": [
@@ -34,14 +35,14 @@
         "kind": "screen",
         "src": "screens/travel-companion-trip.png"
       },
-      "product": {
-        "name": "Travel Companion",
-        "price": "$34"
-      }
+      "emphasis": [
+        "moved"
+      ]
     },
     {
       "id": "03-travel-companion",
       "themeSlug": "travel-companion",
+      "problem": 2,
       "layout": "tilt",
       "eyebrow": "TRAVEL COMPANION",
       "headline": [
@@ -53,15 +54,15 @@
         "kind": "screen",
         "src": "screens/travel-companion-printables.png"
       },
-      "product": {
-        "name": "Travel Companion",
-        "price": "$34"
-      }
+      "emphasis": [
+        "4%"
+      ]
     },
     {
       "id": "04-travel-companion",
       "themeSlug": "travel-companion",
-      "layout": "window",
+      "problem": 3,
+      "layout": "fan",
       "eyebrow": "TRAVEL COMPANION",
       "headline": [
         "What's actually",
@@ -70,12 +71,15 @@
       ],
       "ui": {
         "kind": "screen",
-        "src": "screens/travel-companion-workspace.png"
+        "src": "screens/travel-companion-workspace.png",
+        "also": [
+          "screens/travel-companion-itinerary.png",
+          "screens/travel-companion-printables.png"
+        ]
       },
-      "product": {
-        "name": "Travel Companion",
-        "price": "$34"
-      }
+      "emphasis": [
+        "today"
+      ]
     }
   ]
 }

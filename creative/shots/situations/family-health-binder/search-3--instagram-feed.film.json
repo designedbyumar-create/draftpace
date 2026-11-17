@@ -1,0 +1,273 @@
+{
+  "id": "sit-family-health-binder-search-3--instagram-feed",
+  "product": "family-health-binder",
+  "guide": "school-and-camp-health-forms-what-to-have-ready",
+  "situation": "searchedProblems[2].phrase",
+  "runtime": {
+    "min": 10,
+    "max": 30
+  },
+  "platform": "instagram-feed",
+  "goal": "awareness",
+  "width": 1080,
+  "height": 1350,
+  "fps": 30,
+  "durationInFrames": 703,
+  "structure": "situationInside",
+  "angle": {
+    "text": "Camp and school health forms every year",
+    "source": "searchedProblems[2].phrase"
+  },
+  "treatment": {
+    "voice": "editorial",
+    "camera": "dolly",
+    "transitions": [
+      "cardSlide",
+      "blurDissolve",
+      "cardSlide"
+    ],
+    "motif": "card",
+    "grounds": [
+      "light",
+      "light",
+      "accent",
+      "light"
+    ],
+    "pace": 1.15
+  },
+  "music": {
+    "bed": "audio/bed-relaxation-05.mp3",
+    "level": 0.16,
+    "energy": "low"
+  },
+  "scenes": [
+    {
+      "id": "moment",
+      "kind": "title",
+      "variant": "label",
+      "copy": [
+        {
+          "text": "Camp and school health forms every year",
+          "source": "searchedProblems[2].phrase"
+        }
+      ],
+      "emphasis": [
+        "every"
+      ],
+      "why": "Opens on the moment in the person's own words, as the listing records people searching it.",
+      "from": 0,
+      "dur": 97,
+      "ground": "light",
+      "transition": "cut",
+      "sfx": [],
+      "lines": [
+        [
+          "Camp and school health",
+          "forms every year"
+        ]
+      ]
+    },
+    {
+      "id": "help",
+      "kind": "phone",
+      "variant": "proof",
+      "copy": [],
+      "caption": {
+        "text": "A Forms sheet with the answers those forms ask for, in the order they ask, so you copy from one page instead of finding each fact again.",
+        "source": "searchedProblems[2].answer"
+      },
+      "screen": {
+        "src": "screens/family-health-binder-printables.png",
+        "pose": "float",
+        "focus": {
+          "at": 0.45,
+          "y": 294,
+          "h": 150,
+          "region": "forms-sheet"
+        }
+      },
+      "why": "How Family Health Binder helps with this moment, in the listing's own words, on the real screen that shows it. Screen: \"Print\" (The pages that leave the house: forms sheet, caregiver sheet, emergency card, visit page, intake summary, each with Make it.) chosen because it is the real screen closest to \"A Forms sheet with the answers those forms ask for, in the order they ask, so yo\"; focus on \"Forms sheet\".",
+      "eyebrow": {
+        "text": "Family Health Binder",
+        "source": "title"
+      },
+      "from": 85,
+      "dur": 390,
+      "ground": "light",
+      "transition": "cardSlide",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "swish",
+          "volume": 0.192
+        },
+        {
+          "at": 12,
+          "cue": "pop",
+          "volume": 0.252
+        },
+        {
+          "at": 176,
+          "cue": "tap",
+          "volume": 0.33
+        }
+      ]
+    },
+    {
+      "id": "also",
+      "kind": "phone",
+      "variant": "proof",
+      "copy": [],
+      "caption": {
+        "text": "See everyone at a glance",
+        "source": "tasks[0].label"
+      },
+      "screen": {
+        "src": "screens/family-health-binder-workspace.png",
+        "pose": "tiltLeft",
+        "focus": {
+          "at": 0.45,
+          "y": 156,
+          "h": 336,
+          "region": "people"
+        },
+        "scroll": []
+      },
+      "why": "One more real thing an owner does here, in the listing's own task wording, on the screen it happens on. Screen: \"Overview\" (Everyone at a glance: each person's card with allergies, the latest symptom, and what the forms sheet is missing.) chosen because it is the real screen closest to \"See everyone at a glance\"; focus on \"Sam (example), Mia (example)\".",
+      "from": 463,
+      "dur": 107,
+      "ground": "light",
+      "transition": "blurDissolve",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "whoosh",
+          "volume": 0.192
+        },
+        {
+          "at": 12,
+          "cue": "pop",
+          "volume": 0.252
+        },
+        {
+          "at": 48,
+          "cue": "tap",
+          "volume": 0.33
+        }
+      ]
+    },
+    {
+      "id": "cta",
+      "kind": "cta",
+      "variant": "guide",
+      "copy": [
+        {
+          "text": "Family Health Binder",
+          "source": "title"
+        },
+        {
+          "text": "draftpace.com/guides/school-and-camp-health-forms-what-to-have-ready",
+          "source": "guide:school-and-camp-health-forms-what-to-have-ready/url"
+        }
+      ],
+      "eyebrow": {
+        "text": "The full guide",
+        "source": "micro"
+      },
+      "why": "Ends on where to read the whole guide, with the product beneath it: the viewer leaves with the next step, not only a pitch.",
+      "from": 558,
+      "dur": 145,
+      "ground": "accent",
+      "transition": "blurDissolve",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "whoosh",
+          "volume": 0.192
+        },
+        {
+          "at": 8,
+          "cue": "settle",
+          "volume": 0.3
+        }
+      ]
+    }
+  ],
+  "reasoning": [
+    {
+      "topic": "Placement",
+      "decision": "Instagram feed video, 1080×1350, 10–30s, hook by 1.2s, sound off",
+      "because": "A 4:5 card in the grid of a feed, autoplayed muted. Craft and composition carry it; text is short and sits well inside the frame."
+    },
+    {
+      "topic": "Product",
+      "decision": "Family Health Binder: $34 (list $69), motif \"card\", calm personality, warm accent #b23a5b",
+      "because": "From its definition and Shop listing. 3 real screens to show."
+    },
+    {
+      "topic": "Situation",
+      "decision": "\"Camp and school health forms every year\"",
+      "because": "One real moment from Family Health Binder's listing (searchedProblems[2].phrase). The film is about this moment and how the product helps with it: \"A Forms sheet with the answers those forms ask for, in the order they ask, so you copy from one page instead of finding each fact again.\""
+    },
+    {
+      "topic": "Guide",
+      "decision": "\"Camp and school health forms: what to have ready\" (draftpace.com/guides/school-and-camp-health-forms-what-to-have-ready)",
+      "because": "The guide that covers this moment: what to do comes from it, and the film ends on it."
+    },
+    {
+      "topic": "Stage",
+      "decision": "Before launch: helpful and relatable only",
+      "because": "Nobody knows Draftpace yet, so films show how it helps with real moments. Who it is not for, questions before buying, what you get and the price wait until there are users to sell to."
+    },
+    {
+      "topic": "Audience",
+      "decision": "You are the one who fills in every form, and everyone's allergies, medications and insurance number live only in your head. / You have more than one child, or a child and an aging parent, whose facts you are both responsible for.",
+      "because": "The listing's own audience lines; the director writes for them."
+    },
+    {
+      "topic": "Structure",
+      "decision": "Inside the tool: The moment, then how the product helps on its real screen, then one more real thing an owner does in it.",
+      "because": "Best fit for a awareness film on Instagram feed video (platform fit 3, goal fit 2, already used on Instagram feed video ×2). Other candidates: In their words (-0.8), The moment (-1.6)."
+    },
+    {
+      "topic": "Angle",
+      "decision": "\"Camp and school health forms every year\"",
+      "because": "The moment \"Camp and school health forms every year\", how Family Health Binder helps, and one more real thing it does: \"See everyone at a glance\"."
+    },
+    {
+      "topic": "Transitions",
+      "decision": "Transitions follow the product's own identity motif, \"card\"",
+      "because": "Transitions follow the product's own identity motif, \"card\": a binder of cards, so scenes slide in like the next card."
+    },
+    {
+      "topic": "Camera",
+      "decision": "Camera \"locked\"",
+      "because": "Camera \"locked\": still and precise, so a slow, reading audience is never chasing the frame."
+    },
+    {
+      "topic": "Colour",
+      "decision": "Grounds light → light → accent → light",
+      "because": "Grounds light → light → accent → light: a warm accent, so light grounds lead and the accent is saved for the turns."
+    },
+    {
+      "topic": "Variation",
+      "decision": "Rotated the ground rhythm",
+      "because": "Its shape was 0.74 similar to sit-alongside-search-4--instagram-feed; a different film, not the same one re-coloured."
+    },
+    {
+      "topic": "Variation",
+      "decision": "Changed the camera",
+      "because": "Its shape was 0.74 similar to sit-alongside-search-4--instagram-feed; a different film, not the same one re-coloured."
+    },
+    {
+      "topic": "Sound",
+      "decision": "Light sound design, low-energy bed",
+      "because": "Most of this audience never unmutes, so nothing depends on sound; cues are kept quieter and sparser for those who do."
+    },
+    {
+      "topic": "Length",
+      "decision": "23.4s, 4 scenes",
+      "because": "Each scene is held for the time its words take to read on Instagram feed video (0.3s a word), inside 10–30s."
+    }
+  ]
+}

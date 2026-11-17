@@ -1,0 +1,259 @@
+{
+  "id": "car-travel-companion-search-5",
+  "product": "travel-companion",
+  "guide": "how-to-plan-a-group-trip",
+  "situation": "searchedProblems[4].phrase",
+  "slides": [
+    {
+      "kind": "cover",
+      "quote": {
+        "text": "I'm the one everybody asks what happens next",
+        "source": "searchedProblems[4].phrase"
+      },
+      "emphasis": [
+        "everybody"
+      ],
+      "promise": {
+        "text": "How to plan a group trip (without being the organizer)",
+        "source": "guide:how-to-plan-a-group-trip/title"
+      },
+      "art": {
+        "motif": "suitcase",
+        "why": "the carousel's topic: the moment and its guide name \"trip\", \"group\"",
+        "also": "people"
+      }
+    },
+    {
+      "kind": "answer",
+      "eyebrow": {
+        "text": "In short",
+        "source": "micro"
+      },
+      "lines": [
+        {
+          "text": "Group trips go wrong when one person holds everything in their head.",
+          "source": "guide:how-to-plan-a-group-trip/dek#0"
+        },
+        {
+          "text": "Decide who books what, who is on each booking and where the answers live.",
+          "source": "guide:how-to-plan-a-group-trip/dek#1"
+        }
+      ],
+      "art": {
+        "motif": "people",
+        "why": "the slide names \"person\", \"who\""
+      }
+    },
+    {
+      "kind": "step",
+      "eyebrow": {
+        "text": "The method",
+        "source": "guide:how-to-plan-a-group-trip/body[3].heading"
+      },
+      "number": {
+        "text": "1",
+        "source": "micro"
+      },
+      "head": {
+        "text": "List everyone who is definitely in, and everyone who is a maybe with a date you'll stop waiting.",
+        "source": "guide:how-to-plan-a-group-trip/body[3].items[0]#0"
+      },
+      "body": [
+        {
+          "text": "A maybe with no deadline holds up every booking.",
+          "source": "guide:how-to-plan-a-group-trip/body[3].items[0]#1"
+        }
+      ],
+      "emphasis": [
+        "definitely"
+      ],
+      "art": {
+        "motif": "people",
+        "why": "the slide names \"everyone\", \"who\""
+      }
+    },
+    {
+      "kind": "step",
+      "eyebrow": {
+        "text": "The method",
+        "source": "guide:how-to-plan-a-group-trip/body[3].heading"
+      },
+      "number": {
+        "text": "2",
+        "source": "micro"
+      },
+      "head": {
+        "text": "List what needs booking: transport, lodging, anything with a reserved time.",
+        "source": "guide:how-to-plan-a-group-trip/body[3].items[1]#0"
+      },
+      "body": [
+        {
+          "text": "For each, name one person who makes the booking.",
+          "source": "guide:how-to-plan-a-group-trip/body[3].items[1]#1"
+        },
+        {
+          "text": "Not who pays, who makes it.",
+          "source": "guide:how-to-plan-a-group-trip/body[3].items[1]#2"
+        }
+      ],
+      "emphasis": [
+        "transport"
+      ],
+      "art": {
+        "motif": "ticket",
+        "why": "the slide names \"booking\""
+      }
+    },
+    {
+      "kind": "step",
+      "eyebrow": {
+        "text": "The method",
+        "source": "guide:how-to-plan-a-group-trip/body[3].heading"
+      },
+      "number": {
+        "text": "3",
+        "source": "micro"
+      },
+      "head": {
+        "text": "Mark each item fixed or optional.",
+        "source": "guide:how-to-plan-a-group-trip/body[3].items[2]#0"
+      },
+      "body": [
+        {
+          "text": "Flights and lodging are usually fixed.",
+          "source": "guide:how-to-plan-a-group-trip/body[3].items[2]#1"
+        },
+        {
+          "text": "Everything else should be optional in plain words, so nobody feels obliged to join the museum.",
+          "source": "guide:how-to-plan-a-group-trip/body[3].items[2]#2"
+        }
+      ],
+      "emphasis": [
+        "optional"
+      ],
+      "art": {
+        "motif": "toolbox",
+        "why": "the slide names \"fix\""
+      }
+    },
+    {
+      "kind": "step",
+      "eyebrow": {
+        "text": "The method",
+        "source": "guide:how-to-plan-a-group-trip/body[3].heading"
+      },
+      "number": {
+        "text": "4",
+        "source": "micro"
+      },
+      "head": {
+        "text": "Write down who is on each booking.",
+        "source": "guide:how-to-plan-a-group-trip/body[3].items[3]#0"
+      },
+      "body": [
+        {
+          "text": "Four on the flight, three in the car, five at the dinner.",
+          "source": "guide:how-to-plan-a-group-trip/body[3].items[3]#1"
+        },
+        {
+          "text": "This is the step people skip, and it's the one that stops someone discovering at the airport that they were never on a booking.",
+          "source": "guide:how-to-plan-a-group-trip/body[3].items[3]#2"
+        }
+      ],
+      "emphasis": [
+        "booking"
+      ],
+      "art": {
+        "motif": "ticket",
+        "why": "the slide names \"booking\""
+      }
+    },
+    {
+      "kind": "step",
+      "eyebrow": {
+        "text": "The method",
+        "source": "guide:how-to-plan-a-group-trip/body[3].heading"
+      },
+      "number": {
+        "text": "5",
+        "source": "micro"
+      },
+      "head": {
+        "text": "Note what each person needs once: meals, a seat, mobility, medication that changes timing.",
+        "source": "guide:how-to-plan-a-group-trip/body[3].items[4]#0"
+      },
+      "body": [
+        {
+          "text": "Recorded against the person, it's there when a booking is made, not remembered afterward.",
+          "source": "guide:how-to-plan-a-group-trip/body[3].items[4]#1"
+        }
+      ],
+      "emphasis": [
+        "medication"
+      ],
+      "art": {
+        "motif": "clock",
+        "why": "the slide names \"timing\""
+      }
+    },
+    {
+      "kind": "help",
+      "eyebrow": {
+        "text": "How it helps",
+        "source": "micro"
+      },
+      "name": {
+        "text": "Travel Companion",
+        "source": "title"
+      },
+      "line": {
+        "text": "Today shows the current state of the trip in plain sentences, each tracing to something somebody recorded, so the answer is not in your head alone.",
+        "source": "searchedProblems[4].answer"
+      },
+      "ui": {
+        "kind": "screen",
+        "src": "screens/travel-companion-trip.png"
+      }
+    },
+    {
+      "kind": "close",
+      "eyebrow": {
+        "text": "The full guide",
+        "source": "micro"
+      },
+      "title": {
+        "text": "How to plan a group trip (without being the organizer)",
+        "source": "guide:how-to-plan-a-group-trip/title"
+      },
+      "url": {
+        "text": "draftpace.com/guides/how-to-plan-a-group-trip",
+        "source": "guide:how-to-plan-a-group-trip/url"
+      },
+      "link": {
+        "text": "Free to read. Link in bio.",
+        "source": "micro"
+      },
+      "save": {
+        "text": "Save this for later.",
+        "source": "micro"
+      },
+      "art": {
+        "motif": "suitcase",
+        "why": "the carousel's topic: the moment and its guide name \"trip\", \"group\""
+      }
+    }
+  ],
+  "notes": [
+    "Cover: \"I'm the one everybody asks what happens next\" (searchedProblems[4].phrase), as people search it.",
+    "Steps: 5 of 6 from the guide's numbered steps \"The method\", one per slide, each with the guide's own explanation.",
+    "Help: \"Today shows the current state of the trip in plain sentences, each tracing to something somebody recorded, so the answer is not in your head alone.\" (searchedProblems[4].answer), on screens/travel-companion-trip.png (\"Lisbon and Porto\").",
+    "Illustration on the cover: suitcase with people, because the carousel's topic: the moment and its guide name \"trip\", \"group\".",
+    "Illustration on the answer: people, because the slide names \"person\", \"who\".",
+    "Illustration on the step: people, because the slide names \"everyone\", \"who\".",
+    "Illustration on the step: ticket, because the slide names \"booking\".",
+    "Illustration on the step: toolbox, because the slide names \"fix\".",
+    "Illustration on the step: ticket, because the slide names \"booking\".",
+    "Illustration on the step: clock, because the slide names \"timing\".",
+    "Illustration on the close: suitcase, because the carousel's topic: the moment and its guide name \"trip\", \"group\"."
+  ]
+}

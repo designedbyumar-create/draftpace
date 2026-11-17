@@ -1,0 +1,271 @@
+{
+  "id": "car-alongside-search-2",
+  "product": "alongside",
+  "guide": "task-paralysis-what-to-do-in-the-next-ten-minutes",
+  "situation": "searchedProblems[1].phrase",
+  "slides": [
+    {
+      "kind": "cover",
+      "quote": {
+        "text": "I know exactly what I need to do and still can't start",
+        "source": "searchedProblems[1].phrase"
+      },
+      "emphasis": [
+        "start"
+      ],
+      "promise": {
+        "text": "ADHD task paralysis: what to do in the next ten minutes",
+        "source": "guide:task-paralysis-what-to-do-in-the-next-ten-minutes/title"
+      },
+      "art": {
+        "motif": "steps",
+        "why": "the carousel's topic: the moment and its guide name \"start\", \"next\"",
+        "also": "clock"
+      }
+    },
+    {
+      "kind": "answer",
+      "eyebrow": {
+        "text": "In short",
+        "source": "micro"
+      },
+      "lines": [
+        {
+          "text": "You know what needs doing and cannot begin.",
+          "source": "guide:task-paralysis-what-to-do-in-the-next-ten-minutes/dek#0"
+        },
+        {
+          "text": "A ten minute way out that shrinks the first step until it needs no decision and no motivation.",
+          "source": "guide:task-paralysis-what-to-do-in-the-next-ten-minutes/dek#1"
+        }
+      ],
+      "art": {
+        "motif": "steps",
+        "why": "the slide names \"step\", \"first\", \"begin\", \"shrink\""
+      }
+    },
+    {
+      "kind": "step",
+      "eyebrow": {
+        "text": "Minute 0 to 1: choose",
+        "source": "guide:task-paralysis-what-to-do-in-the-next-ten-minutes/body[3].steps[0].when"
+      },
+      "head": {
+        "text": "Pick one task.",
+        "source": "guide:task-paralysis-what-to-do-in-the-next-ten-minutes/body[3].steps[0].what#0"
+      },
+      "body": [
+        {
+          "text": "Not the most important, just the one you keep looking at.",
+          "source": "guide:task-paralysis-what-to-do-in-the-next-ten-minutes/body[3].steps[0].what#1"
+        },
+        {
+          "text": "If two are close, take the one whose paper or screen is nearer.",
+          "source": "guide:task-paralysis-what-to-do-in-the-next-ten-minutes/body[3].steps[0].what#2"
+        },
+        {
+          "text": "Choosing well isn't the point.",
+          "source": "guide:task-paralysis-what-to-do-in-the-next-ten-minutes/body[3].steps[0].what#3"
+        },
+        {
+          "text": "Choosing is.",
+          "source": "guide:task-paralysis-what-to-do-in-the-next-ten-minutes/body[3].steps[0].what#4"
+        }
+      ],
+      "emphasis": [
+        "task"
+      ],
+      "art": {
+        "motif": "notebook",
+        "why": "the slide names \"paper\""
+      }
+    },
+    {
+      "kind": "step",
+      "eyebrow": {
+        "text": "Minute 1 to 2: say where it ends",
+        "source": "guide:task-paralysis-what-to-do-in-the-next-ten-minutes/body[3].steps[1].when"
+      },
+      "head": {
+        "text": "Finish this sentence in a few words: \"It's done when...\".",
+        "source": "guide:task-paralysis-what-to-do-in-the-next-ten-minutes/body[3].steps[1].what#0"
+      },
+      "body": [
+        {
+          "text": "For the claim, that might be \"the insurer has my claim number and knows I called\".",
+          "source": "guide:task-paralysis-what-to-do-in-the-next-ten-minutes/body[3].steps[1].what#1"
+        },
+        {
+          "text": "A task with no end feels endless, and that's part of the weight.",
+          "source": "guide:task-paralysis-what-to-do-in-the-next-ten-minutes/body[3].steps[1].what#2"
+        }
+      ],
+      "emphasis": [
+        "sentence"
+      ],
+      "art": {
+        "motif": "speech",
+        "why": "the slide names \"sentence\", \"words\""
+      }
+    },
+    {
+      "kind": "step",
+      "eyebrow": {
+        "text": "Minute 2 to 4: find the first step",
+        "source": "guide:task-paralysis-what-to-do-in-the-next-ten-minutes/body[3].steps[2].when"
+      },
+      "head": {
+        "text": "Write the first physical step on paper or a note.",
+        "source": "guide:task-paralysis-what-to-do-in-the-next-ten-minutes/body[3].steps[2].what#0"
+      },
+      "body": [
+        {
+          "text": "Physical means someone watching could see it.",
+          "source": "guide:task-paralysis-what-to-do-in-the-next-ten-minutes/body[3].steps[2].what#1"
+        },
+        {
+          "text": "Find the letter.",
+          "source": "guide:task-paralysis-what-to-do-in-the-next-ten-minutes/body[3].steps[2].what#2"
+        },
+        {
+          "text": "Open the form.",
+          "source": "guide:task-paralysis-what-to-do-in-the-next-ten-minutes/body[3].steps[2].what#3"
+        },
+        {
+          "text": "Write the first line.",
+          "source": "guide:task-paralysis-what-to-do-in-the-next-ten-minutes/body[3].steps[2].what#4"
+        },
+        {
+          "text": "If you wrote \"think about\", \"plan\" or \"decide\", cross it out and try again.",
+          "source": "guide:task-paralysis-what-to-do-in-the-next-ten-minutes/body[3].steps[2].what#5"
+        }
+      ],
+      "emphasis": [
+        "physical"
+      ],
+      "art": {
+        "motif": "notebook",
+        "why": "the slide names \"write\", \"note\", \"paper\", \"line\""
+      }
+    },
+    {
+      "kind": "step",
+      "eyebrow": {
+        "text": "Minute 4 to 5: check the size",
+        "source": "guide:task-paralysis-what-to-do-in-the-next-ten-minutes/body[3].steps[3].when"
+      },
+      "head": {
+        "text": "Ask whether you could do it right now, in under three minutes, without deciding anything.",
+        "source": "guide:task-paralysis-what-to-do-in-the-next-ten-minutes/body[3].steps[3].what#0"
+      },
+      "body": [
+        {
+          "text": "If yes, go.",
+          "source": "guide:task-paralysis-what-to-do-in-the-next-ten-minutes/body[3].steps[3].what#1"
+        },
+        {
+          "text": "If not, shrink it again.",
+          "source": "guide:task-paralysis-what-to-do-in-the-next-ten-minutes/body[3].steps[3].what#2"
+        }
+      ],
+      "emphasis": [
+        "deciding"
+      ],
+      "art": {
+        "motif": "clock",
+        "why": "the slide names \"minute\""
+      }
+    },
+    {
+      "kind": "step",
+      "eyebrow": {
+        "text": "Minute 5 to 9: do only that",
+        "source": "guide:task-paralysis-what-to-do-in-the-next-ten-minutes/body[3].steps[4].when"
+      },
+      "head": {
+        "text": "Do the step and nothing past it.",
+        "source": "guide:task-paralysis-what-to-do-in-the-next-ten-minutes/body[3].steps[4].what#0"
+      },
+      "body": [
+        {
+          "text": "If you find the letter, you may stop there.",
+          "source": "guide:task-paralysis-what-to-do-in-the-next-ten-minutes/body[3].steps[4].what#1"
+        },
+        {
+          "text": "If momentum shows up, keep going.",
+          "source": "guide:task-paralysis-what-to-do-in-the-next-ten-minutes/body[3].steps[4].what#2"
+        },
+        {
+          "text": "If it doesn't, you've still moved a task that was stuck.",
+          "source": "guide:task-paralysis-what-to-do-in-the-next-ten-minutes/body[3].steps[4].what#3"
+        }
+      ],
+      "emphasis": [
+        "past"
+      ],
+      "art": {
+        "motif": "steps",
+        "why": "the slide names \"step\""
+      }
+    },
+    {
+      "kind": "help",
+      "eyebrow": {
+        "text": "How it helps",
+        "source": "micro"
+      },
+      "name": {
+        "text": "ADHD Life Companion",
+        "source": "title"
+      },
+      "line": {
+        "text": "A walked-through version of the hard thing, one step on screen at a time, so starting is not a decision you have to make alone.",
+        "source": "searchedProblems[1].answer"
+      },
+      "ui": {
+        "kind": "screen",
+        "src": "screens/alongside-help.png"
+      }
+    },
+    {
+      "kind": "close",
+      "eyebrow": {
+        "text": "The full guide",
+        "source": "micro"
+      },
+      "title": {
+        "text": "ADHD task paralysis: what to do in the next ten minutes",
+        "source": "guide:task-paralysis-what-to-do-in-the-next-ten-minutes/title"
+      },
+      "url": {
+        "text": "draftpace.com/guides/task-paralysis-what-to-do-in-the-next-ten-minutes",
+        "source": "guide:task-paralysis-what-to-do-in-the-next-ten-minutes/url"
+      },
+      "link": {
+        "text": "Free to read. Link in bio.",
+        "source": "micro"
+      },
+      "save": {
+        "text": "Save this for later.",
+        "source": "micro"
+      },
+      "art": {
+        "motif": "steps",
+        "why": "the carousel's topic: the moment and its guide name \"start\", \"next\""
+      }
+    }
+  ],
+  "notes": [
+    "Cover: \"I know exactly what I need to do and still can't start\" (searchedProblems[1].phrase), as people search it.",
+    "Steps: 5 of 6 from the guide's timeline \"The next ten minutes, minute by minute\", one per slide, each with the guide's own explanation.",
+    "Help: \"A walked-through version of the hard thing, one step on screen at a time, so starting is not a decision you have to make alone.\" (searchedProblems[1].answer), on screens/alongside-help.png (\"What do you need to do?\").",
+    "Illustration on the cover: steps with clock, because the carousel's topic: the moment and its guide name \"start\", \"next\".",
+    "Illustration on the answer: steps, because the slide names \"step\", \"first\", \"begin\", \"shrink\".",
+    "Illustration on the step: notebook, because the slide names \"paper\".",
+    "Illustration on the step: speech, because the slide names \"sentence\", \"words\".",
+    "Illustration on the step: notebook, because the slide names \"write\", \"note\", \"paper\", \"line\".",
+    "Illustration on the step: clock, because the slide names \"minute\".",
+    "Illustration on the step: steps, because the slide names \"step\".",
+    "Illustration on the close: steps, because the carousel's topic: the moment and its guide name \"start\", \"next\"."
+  ]
+}

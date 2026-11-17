@@ -1,0 +1,251 @@
+{
+  "id": "guide-moving-into-a-rental-what-to-document--pinterest-video",
+  "product": "home-management-companion",
+  "guide": "moving-into-a-rental-what-to-document",
+  "runtime": {
+    "min": 12,
+    "max": 35
+  },
+  "platform": "pinterest-video",
+  "goal": "awareness",
+  "width": 1000,
+  "height": 1500,
+  "fps": 30,
+  "durationInFrames": 596,
+  "structure": "guideQuestion",
+  "angle": {
+    "text": "What counts as normal wear and tear versus damage?",
+    "source": "guide:moving-into-a-rental-what-to-document/body[8].items[1].q"
+  },
+  "treatment": {
+    "voice": "editorial",
+    "camera": "locked",
+    "transitions": [
+      "slideUp",
+      "cardSlide",
+      "slideUp"
+    ],
+    "motif": "tag",
+    "grounds": [
+      "light",
+      "accent",
+      "light",
+      "ink"
+    ],
+    "pace": 1.15
+  },
+  "music": {
+    "bed": "audio/bed-relaxation-05.mp3",
+    "level": 0.16,
+    "energy": "low"
+  },
+  "scenes": [
+    {
+      "id": "q",
+      "kind": "title",
+      "variant": "quote",
+      "copy": [
+        {
+          "text": "What counts as normal wear and tear versus damage?",
+          "source": "guide:moving-into-a-rental-what-to-document/body[8].items[1].q"
+        }
+      ],
+      "why": "The question as people ask it; the guide carries it because people search it.",
+      "from": 0,
+      "dur": 124,
+      "ground": "light",
+      "transition": "cut",
+      "sfx": [],
+      "lines": [
+        [
+          "What counts as",
+          "normal wear and tear",
+          "versus damage?"
+        ]
+      ]
+    },
+    {
+      "id": "a",
+      "kind": "title",
+      "variant": "label",
+      "copy": [
+        {
+          "text": "Normal wear is what ordinary living causes over time: light carpet wear, small nail holes, faded paint.",
+          "source": "guide:moving-into-a-rental-what-to-document/body[8].items[1].a#0"
+        }
+      ],
+      "emphasis": [
+        "ordinary"
+      ],
+      "why": "The guide's answer, its first sentence: the plain answer before any detail.",
+      "from": 112,
+      "dur": 212,
+      "ground": "accent",
+      "transition": "slideUp",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "swish",
+          "volume": 0.192
+        }
+      ],
+      "lines": [
+        [
+          "Normal wear is what ordinary",
+          "living causes over time:",
+          "light carpet wear, small",
+          "nail holes, faded paint."
+        ]
+      ]
+    },
+    {
+      "id": "tool",
+      "kind": "phone",
+      "variant": "proof",
+      "copy": [],
+      "caption": {
+        "text": "Something broken rather than due?",
+        "source": "howItWorks[5]#0"
+      },
+      "screen": {
+        "src": "screens/home-management-companion-workspace.png",
+        "pose": "float",
+        "focus": {
+          "at": 0.45,
+          "y": 222,
+          "h": 25,
+          "region": "status"
+        }
+      },
+      "why": "The turn: the product the guide itself hands over to, named and shown on its real screen, captioned with its listing's line closest to what the guide teaches. Screen: \"A couple of things need a look\" (Your home now: what's wrong, what to care for, what's coming up and what's handled, with the fridge and a dripping tap flagged.) chosen because it is the real screen closest to \"Something broken rather than due? Moving into a rental: what to document on day \"; focus on \"Wrong, To care for, Coming up, Handled\".",
+      "eyebrow": {
+        "text": "Home Base",
+        "source": "title"
+      },
+      "from": 312,
+      "dur": 157,
+      "ground": "light",
+      "transition": "cardSlide",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "swish",
+          "volume": 0.192
+        },
+        {
+          "at": 12,
+          "cue": "pop",
+          "volume": 0.252
+        },
+        {
+          "at": 71,
+          "cue": "tap",
+          "volume": 0.33
+        }
+      ]
+    },
+    {
+      "id": "cta",
+      "kind": "cta",
+      "variant": "guide",
+      "copy": [
+        {
+          "text": "Home Base",
+          "source": "title"
+        },
+        {
+          "text": "draftpace.com/guides/moving-into-a-rental-what-to-document",
+          "source": "guide:moving-into-a-rental-what-to-document/url"
+        }
+      ],
+      "eyebrow": {
+        "text": "The full guide",
+        "source": "micro"
+      },
+      "why": "Ends on where to read the whole guide, with the product beneath it: the viewer leaves with the next step, not only a pitch.",
+      "from": 457,
+      "dur": 139,
+      "ground": "ink",
+      "transition": "blurDissolve",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "whoosh",
+          "volume": 0.192
+        },
+        {
+          "at": 8,
+          "cue": "settle",
+          "volume": 0.3
+        }
+      ]
+    }
+  ],
+  "reasoning": [
+    {
+      "topic": "Placement",
+      "decision": "Pinterest video pin, 1000×1500, 12–35s, hook by 1s, sound off",
+      "because": "People are planning, not scrolling: idea-led, calm and save-worthy, worded like what they searched for. Muted, looping, slow; a hard sell reads as an ad and loses the save."
+    },
+    {
+      "topic": "Product",
+      "decision": "Home Base: $49 (list $99), motif \"tag\", calm personality, cool accent #4f7a5c",
+      "because": "From its definition and Shop listing. 3 real screens to show."
+    },
+    {
+      "topic": "Guide",
+      "decision": "\"Moving into a rental: what to document on day one\" (draftpace.com/guides/moving-into-a-rental-what-to-document)",
+      "because": "Teaches from the guide first; Home Base is the product the guide hands over to. 1 lists and timelines, 5 questions to draw from."
+    },
+    {
+      "topic": "Stage",
+      "decision": "Before launch: helpful and relatable only",
+      "because": "Nobody knows Draftpace yet, so films show how it helps with real moments. Who it is not for, questions before buying, what you get and the price wait until there are users to sell to."
+    },
+    {
+      "topic": "Audience",
+      "decision": "You own or rent a home and would rather be told what needs you this week than keep a mental list you know is incomplete. / You want the boring, expensive things caught early: the water heater, the gutters, the outside tap before the first freeze.",
+      "because": "The listing's own audience lines; the director writes for them."
+    },
+    {
+      "topic": "Material",
+      "decision": "Allowed real lines up to 4 words longer",
+      "because": "Every structure Home Base's copy supports at Pinterest video pin's normal line length is already used by its other films; a longer real line beats telling the same story twice."
+    },
+    {
+      "topic": "Structure",
+      "decision": "The question people ask: One of the guide's own questions, its plain answer, then the product.",
+      "because": "Best fit for a awareness film on Pinterest video pin (platform fit 2, goal fit 2, already used for this product ×2, already used on Pinterest video pin ×5). Other candidates: ."
+    },
+    {
+      "topic": "Angle",
+      "decision": "\"What counts as normal wear and tear versus damage?\"",
+      "because": "A question from the guide's FAQ, \"What counts as normal wear and tear versus damage?\", and the first sentence of its answer."
+    },
+    {
+      "topic": "Transitions",
+      "decision": "Transitions follow the product's own identity motif, \"tag\"",
+      "because": "Transitions follow the product's own identity motif, \"tag\": things in the home are tagged, so scenes rise like a tag being lifted."
+    },
+    {
+      "topic": "Camera",
+      "decision": "Camera \"locked\"",
+      "because": "Camera \"locked\": still and precise, so a slow, reading audience is never chasing the frame."
+    },
+    {
+      "topic": "Colour",
+      "decision": "Grounds light → accent → light → ink",
+      "because": "Grounds light → accent → light → ink: a cool accent, so a darker ground is used for contrast at a turn."
+    },
+    {
+      "topic": "Sound",
+      "decision": "Light sound design, low-energy bed",
+      "because": "Most of this audience never unmutes, so nothing depends on sound; cues are kept quieter and sparser for those who do."
+    },
+    {
+      "topic": "Length",
+      "decision": "19.9s, 4 scenes",
+      "because": "Each scene is held for the time its words take to read on Pinterest video pin (0.32s a word), inside 12–35s."
+    }
+  ]
+}

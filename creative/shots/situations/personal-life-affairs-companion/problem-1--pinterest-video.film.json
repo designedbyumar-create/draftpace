@@ -1,0 +1,255 @@
+{
+  "id": "sit-personal-life-affairs-companion-problem-1--pinterest-video",
+  "product": "personal-life-affairs-companion",
+  "situation": "problemsSolved[0].problem",
+  "runtime": {
+    "min": 10,
+    "max": 32
+  },
+  "platform": "pinterest-video",
+  "goal": "awareness",
+  "width": 1000,
+  "height": 1500,
+  "fps": 30,
+  "durationInFrames": 778,
+  "structure": "situationInside",
+  "angle": {
+    "text": "You've meant to sort this out for years and never found a first step small enough to take.",
+    "source": "problemsSolved[0].problem"
+  },
+  "treatment": {
+    "voice": "editorial",
+    "camera": "float",
+    "transitions": [
+      "pageTurn",
+      "blurDissolve",
+      "pageTurn"
+    ],
+    "motif": "book",
+    "grounds": [
+      "ink",
+      "light",
+      "light",
+      "accent"
+    ],
+    "pace": 1.15
+  },
+  "music": {
+    "bed": "audio/bed-relaxation-05.mp3",
+    "level": 0.16,
+    "energy": "low"
+  },
+  "scenes": [
+    {
+      "id": "moment",
+      "kind": "title",
+      "variant": "label",
+      "copy": [
+        {
+          "text": "You've meant to sort this out for years and never found a first step small enough to take.",
+          "source": "problemsSolved[0].problem"
+        }
+      ],
+      "emphasis": [
+        "never"
+      ],
+      "why": "Opens on the moment as the listing describes it: the situation the viewer is in right now.",
+      "from": 0,
+      "dur": 223,
+      "ground": "accent",
+      "transition": "cut",
+      "sfx": [],
+      "lines": [
+        [
+          "You've meant to sort this",
+          "out for years and never",
+          "found a first step small",
+          "enough to take."
+        ]
+      ]
+    },
+    {
+      "id": "help",
+      "kind": "phone",
+      "variant": "proof",
+      "copy": [],
+      "caption": {
+        "text": "One question on screen at a time, chosen for you, instead of a blank folder to organise yourself.",
+        "source": "problemsSolved[0].solution"
+      },
+      "screen": {
+        "src": "screens/personal-life-affairs-companion-workspace.png",
+        "pose": "tiltRight",
+        "focus": {
+          "at": 0.45,
+          "y": 82,
+          "h": 427,
+          "region": "question"
+        },
+        "scroll": []
+      },
+      "why": "How Personal Life Affairs Companion helps with this moment, in the listing's own words, on the real screen that shows it. Screen: \"Write down who should be called first.\" (One question at a time: write down who should be called first, with Start, Not relevant to me and Later.) chosen because it is the real screen closest to \"One question on screen at a time, chosen for you, instead of a blank folder to o\"; focus on \"Write down who should be called first.\".",
+      "eyebrow": {
+        "text": "Personal Life Affairs Companion",
+        "source": "title"
+      },
+      "from": 211,
+      "dur": 322,
+      "ground": "light",
+      "transition": "pageTurn",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "page",
+          "volume": 0.192
+        },
+        {
+          "at": 12,
+          "cue": "pop",
+          "volume": 0.252
+        },
+        {
+          "at": 145,
+          "cue": "tap",
+          "volume": 0.33
+        }
+      ]
+    },
+    {
+      "id": "also",
+      "kind": "phone",
+      "variant": "proof",
+      "copy": [],
+      "caption": {
+        "text": "Look at everything I've recorded so far",
+        "source": "tasks[1].label"
+      },
+      "screen": {
+        "src": "screens/personal-life-affairs-companion-affairs.png",
+        "pose": "flat",
+        "focus": {
+          "at": 0.45,
+          "y": 264,
+          "h": 462,
+          "region": "documents"
+        }
+      },
+      "why": "One more real thing an owner does here, in the listing's own task wording, on the screen it happens on. Screen: \"What you have established so far.\" (Important documents, each with where it is kept: the will, lasting power of attorney, passports, insurance, deeds.) chosen because it is the real screen closest to \"Look at everything I've recorded so far\"; focus on \"Important documents\".",
+      "from": 521,
+      "dur": 132,
+      "ground": "light",
+      "transition": "blurDissolve",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "whoosh",
+          "volume": 0.192
+        },
+        {
+          "at": 12,
+          "cue": "pop",
+          "volume": 0.252
+        },
+        {
+          "at": 59,
+          "cue": "tap",
+          "volume": 0.33
+        }
+      ]
+    },
+    {
+      "id": "cta",
+      "kind": "cta",
+      "variant": "save",
+      "copy": [
+        {
+          "text": "Personal Life Affairs Companion",
+          "source": "title"
+        },
+        {
+          "text": "Save this for later.",
+          "source": "micro"
+        }
+      ],
+      "why": "Pinterest video pin is a planning surface; the close asks for the save, the price stays quiet.",
+      "from": 641,
+      "dur": 137,
+      "ground": "accent",
+      "transition": "blurDissolve",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "whoosh",
+          "volume": 0.192
+        },
+        {
+          "at": 8,
+          "cue": "settle",
+          "volume": 0.3
+        }
+      ]
+    }
+  ],
+  "reasoning": [
+    {
+      "topic": "Placement",
+      "decision": "Pinterest video pin, 1000×1500, 10–32s, hook by 1s, sound off",
+      "because": "People are planning, not scrolling: idea-led, calm and save-worthy, worded like what they searched for. Muted, looping, slow; a hard sell reads as an ad and loses the save."
+    },
+    {
+      "topic": "Product",
+      "decision": "Personal Life Affairs Companion: $49 (list $99), motif \"book\", calm personality, cool accent #26374f",
+      "because": "From its definition and Shop listing. 3 real screens to show."
+    },
+    {
+      "topic": "Situation",
+      "decision": "\"You've meant to sort this out for years and never found a first step small enough to take.\"",
+      "because": "One real moment from Personal Life Affairs Companion's listing (problemsSolved[0].problem). The film is about this moment and how the product helps with it: \"One question on screen at a time, chosen for you, instead of a blank folder to organise yourself.\""
+    },
+    {
+      "topic": "Stage",
+      "decision": "Before launch: helpful and relatable only",
+      "because": "Nobody knows Draftpace yet, so films show how it helps with real moments. Who it is not for, questions before buying, what you get and the price wait until there are users to sell to."
+    },
+    {
+      "topic": "Audience",
+      "decision": "You have been meaning to sort this out for a while and have never found a first step small enough to take. / You would rather be asked one question at a time than handed a folder and told to fill it in.",
+      "because": "The listing's own audience lines; the director writes for them."
+    },
+    {
+      "topic": "Structure",
+      "decision": "Inside the tool: The moment, then how the product helps on its real screen, then one more real thing an owner does in it.",
+      "because": "Best fit for a awareness film on Pinterest video pin (platform fit 2, goal fit 2, already used for this product ×1, already used on Pinterest video pin ×4). Other candidates: The moment (-21.8)."
+    },
+    {
+      "topic": "Angle",
+      "decision": "\"You've meant to sort this out for years and never found a first step small enough to take.\"",
+      "because": "The moment \"You've meant to sort this out for years and never found a first step small enough to take.\", how Personal Life Affairs Companion helps, and one more real thing it does: \"Look at everything I've recorded so far\"."
+    },
+    {
+      "topic": "Transitions",
+      "decision": "Transitions follow the product's own identity motif, \"book\"",
+      "because": "Transitions follow the product's own identity motif, \"book\": a handoff book, so scenes turn like pages."
+    },
+    {
+      "topic": "Camera",
+      "decision": "Camera \"float\"",
+      "because": "Camera \"float\": a gentle float that keeps a held frame alive without demanding attention."
+    },
+    {
+      "topic": "Colour",
+      "decision": "Grounds ink → light → light → accent",
+      "because": "Grounds ink → light → light → accent: a cool accent, so a darker ground is used for contrast at a turn."
+    },
+    {
+      "topic": "Sound",
+      "decision": "Light sound design, low-energy bed",
+      "because": "Most of this audience never unmutes, so nothing depends on sound; cues are kept quieter and sparser for those who do."
+    },
+    {
+      "topic": "Length",
+      "decision": "25.9s, 4 scenes",
+      "because": "Each scene is held for the time its words take to read on Pinterest video pin (0.32s a word), inside 10–32s."
+    }
+  ]
+}

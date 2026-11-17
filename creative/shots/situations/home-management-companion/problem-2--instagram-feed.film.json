@@ -1,0 +1,218 @@
+{
+  "id": "sit-home-management-companion-problem-2--instagram-feed",
+  "product": "home-management-companion",
+  "situation": "problemsSolved[1].problem",
+  "runtime": {
+    "min": 10,
+    "max": 30
+  },
+  "platform": "instagram-feed",
+  "goal": "awareness",
+  "width": 1080,
+  "height": 1350,
+  "fps": 30,
+  "durationInFrames": 497,
+  "structure": "situationMoment",
+  "angle": {
+    "text": "The expensive stuff, the water heater, the gutters, the outside tap, gets caught too late, as a repair.",
+    "source": "problemsSolved[1].problem"
+  },
+  "treatment": {
+    "voice": "editorial",
+    "camera": "locked",
+    "transitions": [
+      "slideUp",
+      "cardSlide",
+      "slideUp"
+    ],
+    "motif": "tag",
+    "grounds": [
+      "light",
+      "light",
+      "ink",
+      "accent"
+    ],
+    "pace": 1.15
+  },
+  "music": {
+    "bed": "audio/bed-relaxation-05.mp3",
+    "level": 0.16,
+    "energy": "low"
+  },
+  "scenes": [
+    {
+      "id": "moment",
+      "kind": "title",
+      "variant": "editorial",
+      "copy": [
+        {
+          "text": "The expensive stuff, the water heater, the gutters, the outside tap, gets caught too late, as a repair.",
+          "source": "problemsSolved[1].problem"
+        }
+      ],
+      "emphasis": [
+        "expensive"
+      ],
+      "why": "Opens on the moment as the listing describes it: the situation the viewer is in right now.",
+      "from": 0,
+      "dur": 210,
+      "ground": "light",
+      "transition": "cut",
+      "sfx": [],
+      "lines": [
+        [
+          "The expensive stuff, the",
+          "water heater, the gutters,",
+          "the outside tap, gets caught",
+          "too late, as a repair."
+        ]
+      ]
+    },
+    {
+      "id": "help",
+      "kind": "phone",
+      "variant": "proof",
+      "copy": [],
+      "caption": {
+        "text": "The boring, expensive jobs raised before they become repairs, not after.",
+        "source": "problemsSolved[1].solution"
+      },
+      "screen": {
+        "src": "screens/home-management-companion-seasons.png",
+        "pose": "tiltLeft",
+        "focus": {
+          "at": 0.45,
+          "y": 82,
+          "h": 210,
+          "region": "season"
+        },
+        "scroll": []
+      },
+      "why": "How Home Base helps with this moment, in the listing's own words, on the real screen that shows it. Screen: \"Fall home maintenance checklist\" (This season's checklist: the jobs best done from September to November, by month.) chosen because it is the real screen closest to \"The boring, expensive jobs raised before they become repairs, not after. The exp\"; focus on \"Fall home maintenance checklist\".",
+      "eyebrow": {
+        "text": "Home Base",
+        "source": "title"
+      },
+      "from": 198,
+      "dur": 214,
+      "ground": "ink",
+      "transition": "slideUp",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "swish",
+          "volume": 0.192
+        },
+        {
+          "at": 12,
+          "cue": "pop",
+          "volume": 0.252
+        },
+        {
+          "at": 96,
+          "cue": "tap",
+          "volume": 0.33
+        }
+      ]
+    },
+    {
+      "id": "cta",
+      "kind": "cta",
+      "variant": "soft",
+      "copy": [
+        {
+          "text": "Home Base",
+          "source": "title"
+        },
+        {
+          "text": "Available now.",
+          "source": "micro"
+        }
+      ],
+      "why": "Instagram feed video punishes an obvious ad; a soft close names the product and where to find it.",
+      "from": 400,
+      "dur": 97,
+      "ground": "ink",
+      "transition": "blurDissolve",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "whoosh",
+          "volume": 0.192
+        },
+        {
+          "at": 8,
+          "cue": "settle",
+          "volume": 0.3
+        }
+      ]
+    }
+  ],
+  "reasoning": [
+    {
+      "topic": "Placement",
+      "decision": "Instagram feed video, 1080×1350, 10–30s, hook by 1.2s, sound off",
+      "because": "A 4:5 card in the grid of a feed, autoplayed muted. Craft and composition carry it; text is short and sits well inside the frame."
+    },
+    {
+      "topic": "Product",
+      "decision": "Home Base: $49 (list $99), motif \"tag\", calm personality, cool accent #4f7a5c",
+      "because": "From its definition and Shop listing. 3 real screens to show."
+    },
+    {
+      "topic": "Situation",
+      "decision": "\"The expensive stuff, the water heater, the gutters, the outside tap, gets caught too late, as a repair.\"",
+      "because": "One real moment from Home Base's listing (problemsSolved[1].problem). The film is about this moment and how the product helps with it: \"The boring, expensive jobs raised before they become repairs, not after.\""
+    },
+    {
+      "topic": "Stage",
+      "decision": "Before launch: helpful and relatable only",
+      "because": "Nobody knows Draftpace yet, so films show how it helps with real moments. Who it is not for, questions before buying, what you get and the price wait until there are users to sell to."
+    },
+    {
+      "topic": "Audience",
+      "decision": "You own or rent a home and would rather be told what needs you this week than keep a mental list you know is incomplete. / You want the boring, expensive things caught early: the water heater, the gutters, the outside tap before the first freeze.",
+      "because": "The listing's own audience lines; the director writes for them."
+    },
+    {
+      "topic": "Structure",
+      "decision": "The moment: The moment as it feels, set dark, then the help in the light, then what to do next.",
+      "because": "Best fit for a awareness film on Instagram feed video (platform fit 2, goal fit 3, already used for this product ×1, already used on Instagram feed video ×2). Other candidates: Inside the tool (-15.6)."
+    },
+    {
+      "topic": "Angle",
+      "decision": "\"The expensive stuff, the water heater, the gutters, the outside tap, gets caught too late, as a repair.\"",
+      "because": "The moment \"The expensive stuff, the water heater, the gutters, the outside tap, gets caught too late, as a repair.\", then how Home Base helps."
+    },
+    {
+      "topic": "Transitions",
+      "decision": "Transitions follow the product's own identity motif, \"tag\"",
+      "because": "Transitions follow the product's own identity motif, \"tag\": things in the home are tagged, so scenes rise like a tag being lifted."
+    },
+    {
+      "topic": "Camera",
+      "decision": "Camera \"locked\"",
+      "because": "Camera \"locked\": still and precise, so a slow, reading audience is never chasing the frame."
+    },
+    {
+      "topic": "Colour",
+      "decision": "Grounds light → light → ink → accent",
+      "because": "Grounds light → light → ink → accent: a cool accent, so a darker ground is used for contrast at a turn."
+    },
+    {
+      "topic": "Variation",
+      "decision": "Rotated the ground rhythm",
+      "because": "Its shape was 0.78 similar to sit-home-management-companion-search-2--instagram-feed; a different film, not the same one re-coloured."
+    },
+    {
+      "topic": "Sound",
+      "decision": "Light sound design, low-energy bed",
+      "because": "Most of this audience never unmutes, so nothing depends on sound; cues are kept quieter and sparser for those who do."
+    },
+    {
+      "topic": "Length",
+      "decision": "16.6s, 3 scenes",
+      "because": "Each scene is held for the time its words take to read on Instagram feed video (0.3s a word), inside 10–30s."
+    }
+  ]
+}

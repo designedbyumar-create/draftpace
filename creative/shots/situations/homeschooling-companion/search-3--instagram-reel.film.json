@@ -1,0 +1,280 @@
+{
+  "id": "sit-homeschooling-companion-search-3--instagram-reel",
+  "product": "homeschooling-companion",
+  "guide": "how-to-check-if-your-child-learned-something",
+  "situation": "searchedProblems[2].phrase",
+  "runtime": {
+    "min": 12,
+    "max": 35
+  },
+  "platform": "instagram-reel",
+  "goal": "awareness",
+  "width": 1080,
+  "height": 1920,
+  "fps": 30,
+  "durationInFrames": 796,
+  "structure": "situationChecklist",
+  "angle": {
+    "text": "How do I know if my child actually learned something",
+    "source": "searchedProblems[2].phrase"
+  },
+  "treatment": {
+    "voice": "editorial",
+    "camera": "float",
+    "transitions": [
+      "lineWipe",
+      "slideUp",
+      "lineWipe"
+    ],
+    "motif": "register",
+    "grounds": [
+      "ink",
+      "light",
+      "light",
+      "accent"
+    ],
+    "pace": 1
+  },
+  "music": {
+    "bed": "audio/bed-relaxation-05.mp3",
+    "level": 0.2,
+    "energy": "mid"
+  },
+  "scenes": [
+    {
+      "id": "moment",
+      "kind": "title",
+      "variant": "label",
+      "copy": [
+        {
+          "text": "How do I know if my child actually learned something",
+          "source": "searchedProblems[2].phrase"
+        }
+      ],
+      "emphasis": [
+        "something"
+      ],
+      "why": "Opens on the moment in the person's own words, as the listing records people searching it.",
+      "from": 0,
+      "dur": 99,
+      "ground": "ink",
+      "transition": "cut",
+      "sfx": [],
+      "lines": [
+        [
+          "How do I know if",
+          "my child actually",
+          "learned something"
+        ]
+      ]
+    },
+    {
+      "id": "what-to-do",
+      "kind": "list",
+      "variant": "checklist",
+      "copy": [
+        {
+          "text": "Asking right after the lesson.",
+          "source": "guide:how-to-check-if-your-child-learned-something/body[5].items[0]#0"
+        },
+        {
+          "text": "Asking one question.",
+          "source": "guide:how-to-check-if-your-child-learned-something/body[5].items[1]#0"
+        },
+        {
+          "text": "Turning three answers into a percentage.",
+          "source": "guide:how-to-check-if-your-child-learned-something/body[5].items[2]#0"
+        },
+        {
+          "text": "Making it feel like a test.",
+          "source": "guide:how-to-check-if-your-child-learned-something/body[5].items[3]#0"
+        }
+      ],
+      "eyebrow": {
+        "text": "What throws off a check",
+        "source": "guide:how-to-check-if-your-child-learned-something/body[5].heading"
+      },
+      "why": "What to do about it, from the guide \"How to tell if your homeschooler actually learned it\": its own checklist, the first sentence of each item.",
+      "from": 87,
+      "dur": 336,
+      "ground": "light",
+      "transition": "lineWipe",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "tick",
+          "volume": 0.6
+        },
+        {
+          "at": 10,
+          "cue": "tick",
+          "volume": 0.45
+        },
+        {
+          "at": 77,
+          "cue": "tick",
+          "volume": 0.45
+        },
+        {
+          "at": 144,
+          "cue": "tick",
+          "volume": 0.45
+        },
+        {
+          "at": 211,
+          "cue": "tick",
+          "volume": 0.45
+        }
+      ]
+    },
+    {
+      "id": "help",
+      "kind": "phone",
+      "variant": "proof",
+      "copy": [],
+      "caption": {
+        "text": "A check of eight questions you supply and mark, reported one topic at a time, including the honest answer that there is not enough to say.",
+        "source": "searchedProblems[2].answer"
+      },
+      "screen": {
+        "src": "screens/homeschooling-companion-record.png",
+        "pose": "flat",
+        "focus": {
+          "at": 0.45,
+          "y": 320,
+          "h": 406,
+          "region": "record"
+        }
+      },
+      "why": "How Homeschooling Companion helps with this moment, in the listing's own words, on the real screen that shows it. Screen: \"What has happened.\" (The record: sessions across subjects, a printable homeschool record, and dated notes of what was done.) chosen because it is the real screen closest to \"A check of eight questions you supply and mark, reported one topic at a time, in\"; focus on \"My Homeschool Record\".",
+      "eyebrow": {
+        "text": "Homeschooling Companion",
+        "source": "title"
+      },
+      "from": 411,
+      "dur": 287,
+      "ground": "light",
+      "transition": "slideUp",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "swish",
+          "volume": 0.32
+        },
+        {
+          "at": 12,
+          "cue": "pop",
+          "volume": 0.42
+        },
+        {
+          "at": 129,
+          "cue": "tap",
+          "volume": 0.55
+        }
+      ]
+    },
+    {
+      "id": "cta",
+      "kind": "cta",
+      "variant": "guide",
+      "copy": [
+        {
+          "text": "Homeschooling Companion",
+          "source": "title"
+        },
+        {
+          "text": "draftpace.com/guides/how-to-check-if-your-child-learned-something",
+          "source": "guide:how-to-check-if-your-child-learned-something/url"
+        }
+      ],
+      "eyebrow": {
+        "text": "The full guide",
+        "source": "micro"
+      },
+      "why": "Ends on where to read the whole guide, with the product beneath it: the viewer leaves with the next step, not only a pitch.",
+      "from": 686,
+      "dur": 110,
+      "ground": "accent",
+      "transition": "lineWipe",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "tick",
+          "volume": 0.6
+        },
+        {
+          "at": 8,
+          "cue": "settle",
+          "volume": 0.5
+        }
+      ]
+    }
+  ],
+  "reasoning": [
+    {
+      "topic": "Placement",
+      "decision": "Instagram Reel, 1080×1920, 12–35s, hook by 1.2s, sound on",
+      "because": "Full-screen and swipeable: the first second decides whether anyone stays. Mostly watched with sound, but captions still carry every point. The right edge holds like/comment buttons and the bottom holds the caption, so text lives in the middle band."
+    },
+    {
+      "topic": "Product",
+      "decision": "Homeschooling Companion: $34 (list $69), motif \"register\", calm personality, cool accent #6a4a72",
+      "because": "From its definition and Shop listing. 3 real screens to show."
+    },
+    {
+      "topic": "Situation",
+      "decision": "\"How do I know if my child actually learned something\"",
+      "because": "One real moment from Homeschooling Companion's listing (searchedProblems[2].phrase). The film is about this moment and how the product helps with it: \"A check of eight questions you supply and mark, reported one topic at a time, including the honest answer that there is not enough to say.\""
+    },
+    {
+      "topic": "Guide",
+      "decision": "\"How to tell if your homeschooler actually learned it\" (draftpace.com/guides/how-to-check-if-your-child-learned-something)",
+      "because": "The guide that covers this moment: what to do comes from it, and the film ends on it."
+    },
+    {
+      "topic": "Stage",
+      "decision": "Before launch: helpful and relatable only",
+      "because": "Nobody knows Draftpace yet, so films show how it helps with real moments. Who it is not for, questions before buying, what you get and the price wait until there are users to sell to."
+    },
+    {
+      "topic": "Audience",
+      "decision": "You already have a curriculum you chose on purpose and you want something that follows it rather than replacing it. / You teach more than one child and keeping their records separate in your head has stopped working.",
+      "because": "The listing's own audience lines; the director writes for them."
+    },
+    {
+      "topic": "Structure",
+      "decision": "What to do first: The moment, the guide's own checklist for it, then the product that keeps track of it.",
+      "because": "Best fit for a awareness film on Instagram Reel (platform fit 2, goal fit 3, already used on Instagram Reel ×1). Other candidates: Inside the tool (-0.9), In their words (-4.1)."
+    },
+    {
+      "topic": "Angle",
+      "decision": "\"How do I know if my child actually learned something\"",
+      "because": "The moment \"How do I know if my child actually learned something\", the checklist from \"How to tell if your homeschooler actually learned it\", then how Homeschooling Companion helps."
+    },
+    {
+      "topic": "Transitions",
+      "decision": "Transitions follow the product's own identity motif, \"register\"",
+      "because": "Transitions follow the product's own identity motif, \"register\": a register is filled line by line, so scenes are written in from the top."
+    },
+    {
+      "topic": "Camera",
+      "decision": "Camera \"float\"",
+      "because": "Camera \"float\": a gentle float that keeps a held frame alive without demanding attention."
+    },
+    {
+      "topic": "Colour",
+      "decision": "Grounds ink → light → light → accent",
+      "because": "Grounds ink → light → light → accent: a cool accent, so a darker ground is used for contrast at a turn."
+    },
+    {
+      "topic": "Sound",
+      "decision": "Full sound design, mid-energy bed",
+      "because": "Sound-on placement: every transition, landing and reveal has a cue, and the bed ducks under the brand moment."
+    },
+    {
+      "topic": "Length",
+      "decision": "26.5s, 4 scenes",
+      "because": "Each scene is held for the time its words take to read on Instagram Reel (0.26s a word), inside 12–35s."
+    }
+  ]
+}

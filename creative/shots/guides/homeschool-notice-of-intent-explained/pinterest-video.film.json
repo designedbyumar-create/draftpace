@@ -1,0 +1,291 @@
+{
+  "id": "guide-homeschool-notice-of-intent-explained--pinterest-video",
+  "product": "homeschooling-companion",
+  "guide": "homeschool-notice-of-intent-explained",
+  "runtime": {
+    "min": 12,
+    "max": 35
+  },
+  "platform": "pinterest-video",
+  "goal": "awareness",
+  "width": 1000,
+  "height": 1500,
+  "fps": 30,
+  "durationInFrames": 942,
+  "structure": "guideChecklist",
+  "angle": {
+    "text": "Homeschool notice of intent: what it is, how to find yours",
+    "source": "guide:homeschool-notice-of-intent-explained/title"
+  },
+  "treatment": {
+    "voice": "editorial",
+    "camera": "locked",
+    "transitions": [
+      "lineWipe",
+      "slideUp",
+      "lineWipe"
+    ],
+    "motif": "register",
+    "grounds": [
+      "light",
+      "light",
+      "ink",
+      "accent"
+    ],
+    "pace": 1.15
+  },
+  "music": {
+    "bed": "audio/bed-relaxation-05.mp3",
+    "level": 0.16,
+    "energy": "low"
+  },
+  "scenes": [
+    {
+      "id": "hook",
+      "kind": "title",
+      "variant": "editorial",
+      "copy": [
+        {
+          "text": "Homeschool notice of intent: what it is, how to find yours",
+          "source": "guide:homeschool-notice-of-intent-explained/title"
+        }
+      ],
+      "emphasis": [
+        "Homeschool"
+      ],
+      "why": "The hook is the guide's own title: the question it answers, as a person would put it.",
+      "from": 0,
+      "dur": 146,
+      "ground": "light",
+      "transition": "cut",
+      "sfx": [],
+      "lines": [
+        [
+          "Homeschool notice of",
+          "intent: what it is,",
+          "how to find yours"
+        ]
+      ]
+    },
+    {
+      "id": "list",
+      "kind": "list",
+      "variant": "checklist",
+      "copy": [
+        {
+          "text": "The child's full legal name, spelled exactly as on their birth certificate.",
+          "source": "guide:homeschool-notice-of-intent-explained/body[3].items[0]#0"
+        },
+        {
+          "text": "The family's home address.",
+          "source": "guide:homeschool-notice-of-intent-explained/body[3].items[2]#0"
+        },
+        {
+          "text": "The parent or instructor's name.",
+          "source": "guide:homeschool-notice-of-intent-explained/body[3].items[3]#0"
+        }
+      ],
+      "eyebrow": {
+        "text": "What to have ready before you fill one out",
+        "source": "guide:homeschool-notice-of-intent-explained/body[3].heading"
+      },
+      "why": "The guide's own checklist, the first sentence of each item, ticked in as it is read.",
+      "from": 134,
+      "dur": 459,
+      "ground": "ink",
+      "transition": "slideUp",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "swish",
+          "volume": 0.192
+        },
+        {
+          "at": 10,
+          "cue": "tick",
+          "volume": 0.27
+        },
+        {
+          "at": 125,
+          "cue": "tick",
+          "volume": 0.27
+        },
+        {
+          "at": 240,
+          "cue": "tick",
+          "volume": 0.27
+        }
+      ]
+    },
+    {
+      "id": "tool",
+      "kind": "phone",
+      "variant": "proof",
+      "copy": [],
+      "caption": {
+        "text": "What your state asks you to keep, beside what you have got",
+        "source": "expectedOutputs[4]"
+      },
+      "screen": {
+        "src": "screens/homeschooling-companion-kids.png",
+        "pose": "float",
+        "focus": {
+          "at": 0.45,
+          "y": 159,
+          "h": 126,
+          "region": "state"
+        },
+        "scroll": []
+      },
+      "why": "The turn: the product the guide itself hands over to, named and shown on its real screen, captioned with its listing's line closest to what the guide teaches. Screen: \"Your children.\" (Each child with their age and subjects, and the state's homeschool requirements kept alongside.) chosen because it is the real screen closest to \"What your state asks you to keep, beside what you have got Homeschool notice of \"; focus on \"Oregon · Moderate regulation\".",
+      "eyebrow": {
+        "text": "Homeschooling Companion",
+        "source": "title"
+      },
+      "from": 581,
+      "dur": 234,
+      "ground": "accent",
+      "transition": "blurDissolve",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "whoosh",
+          "volume": 0.192
+        },
+        {
+          "at": 12,
+          "cue": "pop",
+          "volume": 0.252
+        },
+        {
+          "at": 105,
+          "cue": "tap",
+          "volume": 0.33
+        }
+      ]
+    },
+    {
+      "id": "cta",
+      "kind": "cta",
+      "variant": "guide",
+      "copy": [
+        {
+          "text": "Homeschooling Companion",
+          "source": "title"
+        },
+        {
+          "text": "draftpace.com/guides/homeschool-notice-of-intent-explained",
+          "source": "guide:homeschool-notice-of-intent-explained/url"
+        }
+      ],
+      "eyebrow": {
+        "text": "The full guide",
+        "source": "micro"
+      },
+      "why": "Ends on where to read the whole guide, with the product beneath it: the viewer leaves with the next step, not only a pitch.",
+      "from": 803,
+      "dur": 139,
+      "ground": "light",
+      "transition": "lineWipe",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "tick",
+          "volume": 0.36
+        },
+        {
+          "at": 8,
+          "cue": "settle",
+          "volume": 0.3
+        }
+      ]
+    }
+  ],
+  "reasoning": [
+    {
+      "topic": "Placement",
+      "decision": "Pinterest video pin, 1000×1500, 12–35s, hook by 1s, sound off",
+      "because": "People are planning, not scrolling: idea-led, calm and save-worthy, worded like what they searched for. Muted, looping, slow; a hard sell reads as an ad and loses the save."
+    },
+    {
+      "topic": "Product",
+      "decision": "Homeschooling Companion: $34 (list $69), motif \"register\", calm personality, cool accent #6a4a72",
+      "because": "From its definition and Shop listing. 3 real screens to show."
+    },
+    {
+      "topic": "Guide",
+      "decision": "\"Homeschool notice of intent: what it is, how to find yours\" (draftpace.com/guides/homeschool-notice-of-intent-explained)",
+      "because": "Teaches from the guide first; Homeschooling Companion is the product the guide hands over to. 2 lists and timelines, 5 questions to draw from."
+    },
+    {
+      "topic": "Stage",
+      "decision": "Before launch: helpful and relatable only",
+      "because": "Nobody knows Draftpace yet, so films show how it helps with real moments. Who it is not for, questions before buying, what you get and the price wait until there are users to sell to."
+    },
+    {
+      "topic": "Audience",
+      "decision": "You already have a curriculum you chose on purpose and you want something that follows it rather than replacing it. / You teach more than one child and keeping their records separate in your head has stopped working.",
+      "because": "The listing's own audience lines; the director writes for them."
+    },
+    {
+      "topic": "Material",
+      "decision": "Allowed real lines up to 4 words longer",
+      "because": "Every structure Homeschooling Companion's copy supports at Pinterest video pin's normal line length is already used by its other films; a longer real line beats telling the same story twice."
+    },
+    {
+      "topic": "Structure",
+      "decision": "The checklist: The guide's checklist on one screen, item by item, then the product that holds it.",
+      "because": "Best fit for a awareness film on Pinterest video pin (platform fit 3, goal fit 3, already used for this product ×1, already used on Pinterest video pin ×6). Other candidates: The question people ask (-46.4)."
+    },
+    {
+      "topic": "Angle",
+      "decision": "\"Homeschool notice of intent: what it is, how to find yours\"",
+      "because": "A checklist from the guide, \"What to have ready before you fill one out\": 4 of its 5 items."
+    },
+    {
+      "topic": "Transitions",
+      "decision": "Transitions follow the product's own identity motif, \"register\"",
+      "because": "Transitions follow the product's own identity motif, \"register\": a register is filled line by line, so scenes are written in from the top."
+    },
+    {
+      "topic": "Camera",
+      "decision": "Camera \"float\"",
+      "because": "Camera \"float\": a gentle float that keeps a held frame alive without demanding attention."
+    },
+    {
+      "topic": "Colour",
+      "decision": "Grounds light → light → ink → accent",
+      "because": "Grounds light → light → ink → accent: a cool accent, so a darker ground is used for contrast at a turn."
+    },
+    {
+      "topic": "Edit",
+      "decision": "Trimmed \"list\" to 3 items",
+      "because": "Fewer items read properly beats more items skimmed."
+    },
+    {
+      "topic": "Variation",
+      "decision": "Rotated the ground rhythm",
+      "because": "Its shape was 0.74 similar to guide-homeschool-weekly-plan-with-a-spare-day--pinterest-video; a different film, not the same one re-coloured."
+    },
+    {
+      "topic": "Variation",
+      "decision": "Changed the camera",
+      "because": "Its shape was 0.74 similar to guide-subscription-tracker-what-to-track--youtube-short; a different film, not the same one re-coloured."
+    },
+    {
+      "topic": "Variation",
+      "decision": "Reordered the transitions",
+      "because": "Its shape was 0.82 similar to guide-homeschool-weekly-plan-with-a-spare-day--pinterest-video; a different film, not the same one re-coloured."
+    },
+    {
+      "topic": "Sound",
+      "decision": "Light sound design, low-energy bed",
+      "because": "Most of this audience never unmutes, so nothing depends on sound; cues are kept quieter and sparser for those who do."
+    },
+    {
+      "topic": "Length",
+      "decision": "31.4s, 4 scenes",
+      "because": "Each scene is held for the time its words take to read on Pinterest video pin (0.32s a word), inside 12–35s."
+    }
+  ]
+}

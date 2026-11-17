@@ -1,0 +1,362 @@
+{
+  "id": "guide-how-to-deal-with-something-you-have-put-off--youtube-short",
+  "product": "alongside",
+  "guide": "how-to-deal-with-something-you-have-put-off",
+  "runtime": {
+    "min": 18,
+    "max": 45
+  },
+  "platform": "youtube-short",
+  "goal": "awareness",
+  "width": 1080,
+  "height": 1920,
+  "fps": 30,
+  "durationInFrames": 772,
+  "structure": "guideSteps",
+  "angle": {
+    "text": "deal with something you have put off",
+    "source": "guide:how-to-deal-with-something-you-have-put-off/primaryQuery"
+  },
+  "treatment": {
+    "voice": "editorial",
+    "camera": "dolly",
+    "transitions": [
+      "iris",
+      "blurDissolve",
+      "iris"
+    ],
+    "motif": "focus",
+    "grounds": [
+      "light",
+      "light",
+      "accent",
+      "light"
+    ],
+    "pace": 1
+  },
+  "music": {
+    "bed": "audio/bed-relaxation-05.mp3",
+    "level": 0.2,
+    "energy": "mid"
+  },
+  "scenes": [
+    {
+      "id": "hook",
+      "kind": "title",
+      "variant": "quote",
+      "copy": [
+        {
+          "text": "deal with something you have put off",
+          "source": "guide:how-to-deal-with-something-you-have-put-off/primaryQuery"
+        }
+      ],
+      "why": "Opens on the exact phrase the guide is written to win, typed out the way it is typed into a search box.",
+      "from": 0,
+      "dur": 76,
+      "ground": "light",
+      "transition": "cut",
+      "sfx": [],
+      "lines": [
+        [
+          "deal with something",
+          "you have put off"
+        ]
+      ]
+    },
+    {
+      "id": "step-1",
+      "kind": "title",
+      "variant": "editorial",
+      "copy": [
+        {
+          "text": "Open everything in the pile once, and do nothing else.",
+          "source": "guide:how-to-deal-with-something-you-have-put-off/body[3].items[0]#0"
+        }
+      ],
+      "eyebrow": {
+        "text": "1",
+        "source": "micro"
+      },
+      "emphasis": [
+        "nothing"
+      ],
+      "why": "Step 1 of the guide's numbered list, numbered as the guide numbers it, its first sentence: the instruction itself.",
+      "from": 64,
+      "dur": 128,
+      "ground": "light",
+      "transition": "iris",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "whoosh",
+          "volume": 0.32
+        }
+      ],
+      "lines": [
+        [
+          "Open everything in",
+          "the pile once, and",
+          "do nothing else."
+        ]
+      ]
+    },
+    {
+      "id": "step-2",
+      "kind": "title",
+      "variant": "editorial",
+      "copy": [
+        {
+          "text": "Read the date first, then the ask.",
+          "source": "guide:how-to-deal-with-something-you-have-put-off/body[3].items[1]#0"
+        }
+      ],
+      "eyebrow": {
+        "text": "2",
+        "source": "micro"
+      },
+      "emphasis": [
+        "first"
+      ],
+      "why": "Step 2 of the guide's numbered list, numbered as the guide numbers it, its first sentence: the instruction itself.",
+      "from": 180,
+      "dur": 104,
+      "ground": "accent",
+      "transition": "blurDissolve",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "whoosh",
+          "volume": 0.32
+        }
+      ],
+      "lines": [
+        [
+          "Read the date first,",
+          "then the ask."
+        ]
+      ]
+    },
+    {
+      "id": "step-3",
+      "kind": "title",
+      "variant": "editorial",
+      "copy": [
+        {
+          "text": "Write the practical question on one line.",
+          "source": "guide:how-to-deal-with-something-you-have-put-off/body[3].items[2]#0"
+        }
+      ],
+      "eyebrow": {
+        "text": "3",
+        "source": "micro"
+      },
+      "emphasis": [
+        "one"
+      ],
+      "why": "Step 3 of the guide's numbered list, numbered as the guide numbers it, its first sentence: the instruction itself.",
+      "from": 272,
+      "dur": 104,
+      "ground": "light",
+      "transition": "iris",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "whoosh",
+          "volume": 0.32
+        }
+      ],
+      "lines": [
+        [
+          "Write the practical",
+          "question on one line."
+        ]
+      ]
+    },
+    {
+      "id": "step-4",
+      "kind": "title",
+      "variant": "editorial",
+      "copy": [
+        {
+          "text": "Write one sentence about the gap, from the lines below.",
+          "source": "guide:how-to-deal-with-something-you-have-put-off/body[3].items[3]#0"
+        }
+      ],
+      "eyebrow": {
+        "text": "4",
+        "source": "micro"
+      },
+      "emphasis": [
+        "one"
+      ],
+      "why": "Step 4 of the guide's numbered list, numbered as the guide numbers it, its first sentence: the instruction itself.",
+      "from": 364,
+      "dur": 128,
+      "ground": "light",
+      "transition": "iris",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "whoosh",
+          "volume": 0.32
+        }
+      ],
+      "lines": [
+        [
+          "Write one sentence",
+          "about the gap, from",
+          "the lines below."
+        ]
+      ]
+    },
+    {
+      "id": "tool",
+      "kind": "phone",
+      "variant": "proof",
+      "copy": [],
+      "caption": {
+        "text": "Write something down, or open the Companion straight away with nothing recorded.",
+        "source": "howItWorks[0]#0"
+      },
+      "screen": {
+        "src": "screens/alongside-life.png",
+        "pose": "flat",
+        "focus": {
+          "at": 0.45,
+          "y": 192,
+          "h": 330,
+          "region": "to-do"
+        }
+      },
+      "why": "The turn: the product the guide itself hands over to, named and shown on its real screen, captioned with its listing's line closest to what the guide teaches. Screen: \"Everything you are holding\" (Everything being held, sorted into something to do, waiting on someone, something ongoing, each with Do this with me.) chosen because it is the real screen closest to \"Write something down, or open the Companion straight away with nothing recorded.\"; focus on \"Something to do\".",
+      "eyebrow": {
+        "text": "ADHD Life Companion",
+        "source": "title"
+      },
+      "from": 480,
+      "dur": 186,
+      "ground": "light",
+      "transition": "blurDissolve",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "whoosh",
+          "volume": 0.32
+        },
+        {
+          "at": 12,
+          "cue": "pop",
+          "volume": 0.42
+        },
+        {
+          "at": 84,
+          "cue": "tap",
+          "volume": 0.55
+        }
+      ]
+    },
+    {
+      "id": "cta",
+      "kind": "cta",
+      "variant": "guide",
+      "copy": [
+        {
+          "text": "ADHD Life Companion",
+          "source": "title"
+        },
+        {
+          "text": "draftpace.com/guides/how-to-deal-with-something-you-have-put-off",
+          "source": "guide:how-to-deal-with-something-you-have-put-off/url"
+        }
+      ],
+      "eyebrow": {
+        "text": "The full guide",
+        "source": "micro"
+      },
+      "why": "Ends on where to read the whole guide, with the product beneath it: the viewer leaves with the next step, not only a pitch.",
+      "from": 654,
+      "dur": 118,
+      "ground": "accent",
+      "transition": "blurDissolve",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "whoosh",
+          "volume": 0.32
+        },
+        {
+          "at": 8,
+          "cue": "settle",
+          "volume": 0.5
+        }
+      ]
+    }
+  ],
+  "reasoning": [
+    {
+      "topic": "Placement",
+      "decision": "YouTube Short, 1080×1920, 18–45s, hook by 1.2s, sound on",
+      "because": "Search-adjacent audience that will watch a slightly longer explanation if it starts strong. Loops by default."
+    },
+    {
+      "topic": "Product",
+      "decision": "ADHD Life Companion: $49 (list $99), motif \"focus\", calm personality, warm accent #86586a",
+      "because": "From its definition and Shop listing. 3 real screens to show."
+    },
+    {
+      "topic": "Guide",
+      "decision": "\"How to deal with something you have put off for months\" (draftpace.com/guides/how-to-deal-with-something-you-have-put-off)",
+      "because": "Teaches from the guide first; ADHD Life Companion is the product the guide hands over to. 1 lists and timelines, 5 questions to draw from."
+    },
+    {
+      "topic": "Stage",
+      "decision": "Before launch: helpful and relatable only",
+      "because": "Nobody knows Draftpace yet, so films show how it helps with real moments. Who it is not for, questions before buying, what you get and the price wait until there are users to sell to."
+    },
+    {
+      "topic": "Audience",
+      "decision": "You have ADHD, or executive function that works like it does, and most productivity tools have made that worse rather than better. / You are dealing with brain fog from long covid, a concussion, chronic illness, grief, new parenthood, menopause, or depression, and holding a plan in your head has stopped being reliable.",
+      "because": "The listing's own audience lines; the director writes for them."
+    },
+    {
+      "topic": "Material",
+      "decision": "Allowed real lines up to 4 words longer",
+      "because": "Every structure ADHD Life Companion's copy supports at YouTube Short's normal line length is already used by its other films; a longer real line beats telling the same story twice."
+    },
+    {
+      "topic": "Structure",
+      "decision": "Do this: Open on the search itself, then the guide's own numbered steps, then the product.",
+      "because": "Best fit for a awareness film on YouTube Short (platform fit 3, goal fit 3, already used for this product ×1). Other candidates: The question people ask (-27.3)."
+    },
+    {
+      "topic": "Angle",
+      "decision": "\"deal with something you have put off\"",
+      "because": "Search-led: \"deal with something you have put off\", answered by 4 of the guide's numbered steps (\"The order that works\")."
+    },
+    {
+      "topic": "Transitions",
+      "decision": "Transitions follow the product's own identity motif, \"focus\"",
+      "because": "Transitions follow the product's own identity motif, \"focus\": it is about one thing at a time, so scenes open like an iris onto one thing."
+    },
+    {
+      "topic": "Camera",
+      "decision": "Camera \"dolly\"",
+      "because": "Camera \"dolly\": constant forward movement for a high-energy feed."
+    },
+    {
+      "topic": "Colour",
+      "decision": "Grounds light → light → accent → light",
+      "because": "Grounds light → light → accent → light: a warm accent, so light grounds lead and the accent is saved for the turns."
+    },
+    {
+      "topic": "Sound",
+      "decision": "Full sound design, mid-energy bed",
+      "because": "Sound-on placement: every transition, landing and reveal has a cue, and the bed ducks under the brand moment."
+    },
+    {
+      "topic": "Length",
+      "decision": "25.7s, 7 scenes",
+      "because": "Each scene is held for the time its words take to read on YouTube Short (0.26s a word), inside 18–45s."
+    }
+  ]
+}

@@ -1,0 +1,250 @@
+{
+  "id": "car-alongside-search-4",
+  "product": "alongside",
+  "guide": "executive-dysfunction-is-not-procrastination",
+  "situation": "searchedProblems[3].phrase",
+  "slides": [
+    {
+      "kind": "cover",
+      "quote": {
+        "text": "This isn't procrastination and to-do lists make it worse",
+        "source": "searchedProblems[3].phrase"
+      },
+      "emphasis": [
+        "procrastination"
+      ],
+      "promise": {
+        "text": "Executive dysfunction vs procrastination: the difference",
+        "source": "guide:executive-dysfunction-is-not-procrastination/title"
+      },
+      "art": {
+        "motif": "mind",
+        "why": "the carousel's topic: the moment and its guide name \"procrastinat\", \"executive\"",
+        "also": "scale"
+      }
+    },
+    {
+      "kind": "answer",
+      "eyebrow": {
+        "text": "In short",
+        "source": "micro"
+      },
+      "lines": [
+        {
+          "text": "They can look identical from outside, and they can overlap.",
+          "source": "guide:executive-dysfunction-is-not-procrastination/dek#0"
+        },
+        {
+          "text": "How to tell which one you're in today, and what lowers the cost of starting.",
+          "source": "guide:executive-dysfunction-is-not-procrastination/dek#1"
+        }
+      ],
+      "art": {
+        "motif": "scale",
+        "why": "the slide names nothing drawable; the carousel's topic (the moment and its guide name \"vs\")"
+      }
+    },
+    {
+      "kind": "step",
+      "eyebrow": {
+        "text": "Five questions to ask yourself about today",
+        "source": "guide:executive-dysfunction-is-not-procrastination/body[4].heading"
+      },
+      "number": {
+        "text": "1",
+        "source": "micro"
+      },
+      "head": {
+        "text": "Is there something you'd rather be doing?",
+        "source": "guide:executive-dysfunction-is-not-procrastination/body[4].items[0]#0"
+      },
+      "body": [
+        {
+          "text": "If yes, you're probably choosing.",
+          "source": "guide:executive-dysfunction-is-not-procrastination/body[4].items[0]#1"
+        },
+        {
+          "text": "If you're doing nothing, or something you don't enjoy, starting itself may be the wall.",
+          "source": "guide:executive-dysfunction-is-not-procrastination/body[4].items[0]#2"
+        }
+      ],
+      "emphasis": [
+        "rather"
+      ],
+      "art": {
+        "motif": "mind",
+        "why": "the slide names nothing drawable; the carousel's topic (the moment and its guide name \"procrastinat\", \"executive\")"
+      }
+    },
+    {
+      "kind": "step",
+      "eyebrow": {
+        "text": "Five questions to ask yourself about today",
+        "source": "guide:executive-dysfunction-is-not-procrastination/body[4].heading"
+      },
+      "number": {
+        "text": "2",
+        "source": "micro"
+      },
+      "head": {
+        "text": "Could you say the first physical action out loud, such as open the form or find the account number?",
+        "source": "guide:executive-dysfunction-is-not-procrastination/body[4].items[1]#0"
+      },
+      "body": [
+        {
+          "text": "If you can't, the task hasn't been broken down yet.",
+          "source": "guide:executive-dysfunction-is-not-procrastination/body[4].items[1]#1"
+        }
+      ],
+      "emphasis": [
+        "physical"
+      ],
+      "art": {
+        "motif": "document",
+        "why": "the slide names \"form\""
+      }
+    },
+    {
+      "kind": "step",
+      "eyebrow": {
+        "text": "Five questions to ask yourself about today",
+        "source": "guide:executive-dysfunction-is-not-procrastination/body[4].heading"
+      },
+      "number": {
+        "text": "3",
+        "source": "micro"
+      },
+      "head": {
+        "text": "Would a deadline in an hour get you moving?",
+        "source": "guide:executive-dysfunction-is-not-procrastination/body[4].items[2]#0"
+      },
+      "body": [
+        {
+          "text": "If it would, delay is more likely.",
+          "source": "guide:executive-dysfunction-is-not-procrastination/body[4].items[2]#1"
+        },
+        {
+          "text": "If you'd sit there looking at it anyway, more pressure probably isn't the missing piece.",
+          "source": "guide:executive-dysfunction-is-not-procrastination/body[4].items[2]#2"
+        }
+      ],
+      "emphasis": [
+        "deadline"
+      ],
+      "art": {
+        "motif": "clock",
+        "why": "the slide names \"hour\", \"delay\""
+      }
+    },
+    {
+      "kind": "step",
+      "eyebrow": {
+        "text": "Five questions to ask yourself about today",
+        "source": "guide:executive-dysfunction-is-not-procrastination/body[4].heading"
+      },
+      "number": {
+        "text": "4",
+        "source": "micro"
+      },
+      "head": {
+        "text": "Is it one task, or a pile?",
+        "source": "guide:executive-dysfunction-is-not-procrastination/body[4].items[3]#0"
+      },
+      "body": [],
+      "emphasis": [
+        "pile"
+      ],
+      "art": {
+        "motif": "mind",
+        "why": "the slide names nothing drawable; the carousel's topic (the moment and its guide name \"procrastinat\", \"executive\")"
+      }
+    },
+    {
+      "kind": "step",
+      "eyebrow": {
+        "text": "Five questions to ask yourself about today",
+        "source": "guide:executive-dysfunction-is-not-procrastination/body[4].heading"
+      },
+      "number": {
+        "text": "5",
+        "source": "micro"
+      },
+      "head": {
+        "text": "Are you also short on sleep, ill, grieving or flat?",
+        "source": "guide:executive-dysfunction-is-not-procrastination/body[4].items[4]#0"
+      },
+      "body": [
+        {
+          "text": "Those change how much capacity you have on any given day, and a smaller first step is a fair response to all of them.",
+          "source": "guide:executive-dysfunction-is-not-procrastination/body[4].items[4]#1"
+        }
+      ],
+      "emphasis": [
+        "grieving"
+      ],
+      "art": {
+        "motif": "health",
+        "why": "the slide names \"ill\""
+      }
+    },
+    {
+      "kind": "help",
+      "eyebrow": {
+        "text": "How it helps",
+        "source": "micro"
+      },
+      "name": {
+        "text": "ADHD Life Companion",
+        "source": "title"
+      },
+      "line": {
+        "text": "One thing at a time, chosen for you from what you already said mattered, and a plain \"nothing needs you\" on the days that is true.",
+        "source": "searchedProblems[3].answer"
+      },
+      "ui": {
+        "kind": "screen",
+        "src": "screens/alongside-workspace.png"
+      }
+    },
+    {
+      "kind": "close",
+      "eyebrow": {
+        "text": "The full guide",
+        "source": "micro"
+      },
+      "title": {
+        "text": "Executive dysfunction vs procrastination: the difference",
+        "source": "guide:executive-dysfunction-is-not-procrastination/title"
+      },
+      "url": {
+        "text": "draftpace.com/guides/executive-dysfunction-is-not-procrastination",
+        "source": "guide:executive-dysfunction-is-not-procrastination/url"
+      },
+      "link": {
+        "text": "Free to read. Link in bio.",
+        "source": "micro"
+      },
+      "save": {
+        "text": "Save this for later.",
+        "source": "micro"
+      },
+      "art": {
+        "motif": "mind",
+        "why": "the carousel's topic: the moment and its guide name \"procrastinat\", \"executive\""
+      }
+    }
+  ],
+  "notes": [
+    "Cover: \"This isn't procrastination and to-do lists make it worse\" (searchedProblems[3].phrase), as people search it.",
+    "Steps: 5 of 5 from the guide's numbered steps \"Five questions to ask yourself about today\", one per slide, each with the guide's own explanation.",
+    "Help: \"One thing at a time, chosen for you from what you already said mattered, and a plain \"nothing needs you\" on the days that is true.\" (searchedProblems[3].answer), on screens/alongside-workspace.png (\"Book the six-month dental check\").",
+    "Illustration on the cover: mind with scale, because the carousel's topic: the moment and its guide name \"procrastinat\", \"executive\".",
+    "Illustration on the answer: scale, because the slide names nothing drawable; the carousel's topic (the moment and its guide name \"vs\").",
+    "Illustration on the step: mind, because the slide names nothing drawable; the carousel's topic (the moment and its guide name \"procrastinat\", \"executive\").",
+    "Illustration on the step: document, because the slide names \"form\".",
+    "Illustration on the step: clock, because the slide names \"hour\", \"delay\".",
+    "Illustration on the step: mind, because the slide names nothing drawable; the carousel's topic (the moment and its guide name \"procrastinat\", \"executive\").",
+    "Illustration on the step: health, because the slide names \"ill\".",
+    "Illustration on the close: mind, because the carousel's topic: the moment and its guide name \"procrastinat\", \"executive\"."
+  ]
+}

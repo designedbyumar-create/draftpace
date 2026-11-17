@@ -1,0 +1,222 @@
+{
+  "id": "sit-travel-companion-search-6--pinterest-video",
+  "product": "travel-companion",
+  "guide": "what-to-keep-on-paper-when-you-travel",
+  "situation": "searchedProblems[5].phrase",
+  "runtime": {
+    "min": 10,
+    "max": 32
+  },
+  "platform": "pinterest-video",
+  "goal": "awareness",
+  "width": 1000,
+  "height": 1500,
+  "fps": 30,
+  "durationInFrames": 550,
+  "structure": "situationMoment",
+  "angle": {
+    "text": "What should I keep on paper when I travel",
+    "source": "searchedProblems[5].phrase"
+  },
+  "treatment": {
+    "voice": "editorial",
+    "camera": "locked",
+    "transitions": [
+      "slideLeft",
+      "whip",
+      "slideLeft"
+    ],
+    "motif": "timeline",
+    "grounds": [
+      "ink",
+      "light",
+      "light",
+      "accent"
+    ],
+    "pace": 1.15
+  },
+  "music": {
+    "bed": "audio/bed-relaxation-05.mp3",
+    "level": 0.16,
+    "energy": "low"
+  },
+  "scenes": [
+    {
+      "id": "moment",
+      "kind": "title",
+      "variant": "editorial",
+      "copy": [
+        {
+          "text": "What should I keep on paper when I travel",
+          "source": "searchedProblems[5].phrase"
+        }
+      ],
+      "emphasis": [
+        "should"
+      ],
+      "why": "Opens on the moment in the person's own words, as the listing records people searching it.",
+      "from": 0,
+      "dur": 124,
+      "ground": "ink",
+      "transition": "cut",
+      "sfx": [],
+      "lines": [
+        [
+          "What should I",
+          "keep on paper",
+          "when I travel"
+        ]
+      ]
+    },
+    {
+      "id": "help",
+      "kind": "phone",
+      "variant": "proof",
+      "copy": [],
+      "caption": {
+        "text": "My Trip Book prints exactly that: the whole trip, structured, as long as your trip needs and no longer.",
+        "source": "searchedProblems[5].answer"
+      },
+      "screen": {
+        "src": "screens/travel-companion-printables.png",
+        "pose": "tiltLeft",
+        "focus": {
+          "at": 0.45,
+          "y": 292,
+          "h": 161,
+          "region": "trip-book"
+        },
+        "scroll": []
+      },
+      "why": "How Travel Companion helps with this moment, in the listing's own words, on the real screen that shows it. Screen: \"My Trip Book\" (My Trip Book: a blank, printable travel planner, generated fresh each time.) chosen because it is the real screen closest to \"My Trip Book prints exactly that: the whole trip, structured, as long as your tr\"; focus on \"My Trip Book\".",
+      "eyebrow": {
+        "text": "Travel Companion",
+        "source": "title"
+      },
+      "from": 112,
+      "dur": 311,
+      "ground": "light",
+      "transition": "slideLeft",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "swish",
+          "volume": 0.192
+        },
+        {
+          "at": 12,
+          "cue": "pop",
+          "volume": 0.252
+        },
+        {
+          "at": 140,
+          "cue": "tap",
+          "volume": 0.33
+        }
+      ]
+    },
+    {
+      "id": "cta",
+      "kind": "cta",
+      "variant": "guide",
+      "copy": [
+        {
+          "text": "Travel Companion",
+          "source": "title"
+        },
+        {
+          "text": "draftpace.com/guides/what-to-keep-on-paper-when-you-travel",
+          "source": "guide:what-to-keep-on-paper-when-you-travel/url"
+        }
+      ],
+      "eyebrow": {
+        "text": "The full guide",
+        "source": "micro"
+      },
+      "why": "Ends on where to read the whole guide, with the product beneath it: the viewer leaves with the next step, not only a pitch.",
+      "from": 411,
+      "dur": 139,
+      "ground": "light",
+      "transition": "blurDissolve",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "whoosh",
+          "volume": 0.192
+        },
+        {
+          "at": 8,
+          "cue": "settle",
+          "volume": 0.3
+        }
+      ]
+    }
+  ],
+  "reasoning": [
+    {
+      "topic": "Placement",
+      "decision": "Pinterest video pin, 1000×1500, 10–32s, hook by 1s, sound off",
+      "because": "People are planning, not scrolling: idea-led, calm and save-worthy, worded like what they searched for. Muted, looping, slow; a hard sell reads as an ad and loses the save."
+    },
+    {
+      "topic": "Product",
+      "decision": "Travel Companion: $34 (list $69), motif \"timeline\", calm personality, cool accent #00626f",
+      "because": "From its definition and Shop listing. 4 real screens to show."
+    },
+    {
+      "topic": "Situation",
+      "decision": "\"What should I keep on paper when I travel\"",
+      "because": "One real moment from Travel Companion's listing (searchedProblems[5].phrase). The film is about this moment and how the product helps with it: \"My Trip Book prints exactly that: the whole trip, structured, as long as your trip needs and no longer.\""
+    },
+    {
+      "topic": "Guide",
+      "decision": "\"What to print before you travel: a one-page paper list\" (draftpace.com/guides/what-to-keep-on-paper-when-you-travel)",
+      "because": "The guide that covers this moment: what to do comes from it, and the film ends on it."
+    },
+    {
+      "topic": "Stage",
+      "decision": "Before launch: helpful and relatable only",
+      "because": "Nobody knows Draftpace yet, so films show how it helps with real moments. Who it is not for, questions before buying, what you get and the price wait until there are users to sell to."
+    },
+    {
+      "topic": "Audience",
+      "decision": "You are travelling with other people, and you are the one everybody asks what happens next. / Your trip has more than three moving parts: flights, transfers, stays and reservations that were booked around each other.",
+      "because": "The listing's own audience lines; the director writes for them."
+    },
+    {
+      "topic": "Structure",
+      "decision": "The moment: The moment as it feels, set dark, then the help in the light, then what to do next.",
+      "because": "Best fit for a awareness film on Pinterest video pin (platform fit 1, goal fit 3, already used on Pinterest video pin ×5). Other candidates: In their words (-19.0), Inside the tool (-21.0)."
+    },
+    {
+      "topic": "Angle",
+      "decision": "\"What should I keep on paper when I travel\"",
+      "because": "The moment \"What should I keep on paper when I travel\", then how Travel Companion helps, then what the guide \"What to print before you travel: a one-page paper list\" says to do."
+    },
+    {
+      "topic": "Transitions",
+      "decision": "Transitions follow the product's own identity motif, \"timeline\"",
+      "because": "Transitions follow the product's own identity motif, \"timeline\": a trip is a line through time, so scenes travel left to right along it."
+    },
+    {
+      "topic": "Camera",
+      "decision": "Camera \"locked\"",
+      "because": "Camera \"locked\": still and precise, so a slow, reading audience is never chasing the frame."
+    },
+    {
+      "topic": "Colour",
+      "decision": "Grounds ink → light → light → accent",
+      "because": "Grounds ink → light → light → accent: a cool accent, so a darker ground is used for contrast at a turn."
+    },
+    {
+      "topic": "Sound",
+      "decision": "Light sound design, low-energy bed",
+      "because": "Most of this audience never unmutes, so nothing depends on sound; cues are kept quieter and sparser for those who do."
+    },
+    {
+      "topic": "Length",
+      "decision": "18.3s, 3 scenes",
+      "because": "Each scene is held for the time its words take to read on Pinterest video pin (0.32s a word), inside 10–32s."
+    }
+  ]
+}

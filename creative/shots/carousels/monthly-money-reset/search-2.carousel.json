@@ -1,0 +1,250 @@
+{
+  "id": "car-monthly-money-reset-search-2",
+  "product": "monthly-money-reset",
+  "guide": "how-to-start-over-after-budget-failure",
+  "situation": "searchedProblems[1].phrase",
+  "slides": [
+    {
+      "kind": "cover",
+      "quote": {
+        "text": "I tried YNAB or Mint and gave up",
+        "source": "searchedProblems[1].phrase"
+      },
+      "emphasis": [
+        "YNAB"
+      ],
+      "promise": {
+        "text": "You fell off your budget: how to restart this month",
+        "source": "guide:how-to-start-over-after-budget-failure/title"
+      },
+      "art": {
+        "motif": "calendar",
+        "why": "the carousel's topic: the moment and its guide name \"month\"",
+        "also": "wallet"
+      }
+    },
+    {
+      "kind": "answer",
+      "eyebrow": {
+        "text": "In short",
+        "source": "micro"
+      },
+      "lines": [
+        {
+          "text": "You do not need to catch up on six weeks of receipts.",
+          "source": "guide:how-to-start-over-after-budget-failure/dek#0"
+        },
+        {
+          "text": "You need today's balance, the bills still coming, and one clear number.",
+          "source": "guide:how-to-start-over-after-budget-failure/dek#1"
+        }
+      ],
+      "art": {
+        "motif": "receipt",
+        "why": "the slide names \"receipt\""
+      }
+    },
+    {
+      "kind": "step",
+      "eyebrow": {
+        "text": "The restart, step by step",
+        "source": "guide:how-to-start-over-after-budget-failure/body[3].heading"
+      },
+      "number": {
+        "text": "1",
+        "source": "micro"
+      },
+      "head": {
+        "text": "Decide that today is day one.",
+        "source": "guide:how-to-start-over-after-budget-failure/body[3].items[0]#0"
+      },
+      "body": [
+        {
+          "text": "Don't open old statements yet.",
+          "source": "guide:how-to-start-over-after-budget-failure/body[3].items[0]#1"
+        },
+        {
+          "text": "The point is to get a working number before you feel behind again.",
+          "source": "guide:how-to-start-over-after-budget-failure/body[3].items[0]#2"
+        }
+      ],
+      "emphasis": [
+        "Decide"
+      ],
+      "art": {
+        "motif": "calendar",
+        "why": "the slide names \"day\", \"today\""
+      }
+    },
+    {
+      "kind": "step",
+      "eyebrow": {
+        "text": "The restart, step by step",
+        "source": "guide:how-to-start-over-after-budget-failure/body[3].heading"
+      },
+      "number": {
+        "text": "2",
+        "source": "micro"
+      },
+      "head": {
+        "text": "Look up the balance in every account you spend from, as it stands right now.",
+        "source": "guide:how-to-start-over-after-budget-failure/body[3].items[1]#0"
+      },
+      "body": [],
+      "emphasis": [
+        "balance"
+      ],
+      "art": {
+        "motif": "bank",
+        "why": "the slide names \"account\", \"balance\""
+      }
+    },
+    {
+      "kind": "step",
+      "eyebrow": {
+        "text": "The restart, step by step",
+        "source": "guide:how-to-start-over-after-budget-failure/body[3].heading"
+      },
+      "number": {
+        "text": "3",
+        "source": "micro"
+      },
+      "head": {
+        "text": "Look up what you owe on each credit card.",
+        "source": "guide:how-to-start-over-after-budget-failure/body[3].items[2]#0"
+      },
+      "body": [
+        {
+          "text": "Use the amount you plan to pay this month.",
+          "source": "guide:how-to-start-over-after-budget-failure/body[3].items[2]#1"
+        },
+        {
+          "text": "If you carry a balance from month to month, note that as a debt to look at separately, and only count the payment you'll make now.",
+          "source": "guide:how-to-start-over-after-budget-failure/body[3].items[2]#2"
+        }
+      ],
+      "emphasis": [
+        "credit"
+      ],
+      "art": {
+        "motif": "card",
+        "why": "the slide names \"card\", \"credit\""
+      }
+    },
+    {
+      "kind": "step",
+      "eyebrow": {
+        "text": "The restart, step by step",
+        "source": "guide:how-to-start-over-after-budget-failure/body[3].heading"
+      },
+      "number": {
+        "text": "4",
+        "source": "micro"
+      },
+      "head": {
+        "text": "List the bills due before your next paycheck, with the date and the amount.",
+        "source": "guide:how-to-start-over-after-budget-failure/body[3].items[3]#0"
+      },
+      "body": [
+        {
+          "text": "For a bill that changes, use last month's amount.",
+          "source": "guide:how-to-start-over-after-budget-failure/body[3].items[3]#1"
+        }
+      ],
+      "emphasis": [
+        "paycheck"
+      ],
+      "art": {
+        "motif": "calendar",
+        "why": "the slide names \"date\", \"month\", \"due\""
+      }
+    },
+    {
+      "kind": "step",
+      "eyebrow": {
+        "text": "The restart, step by step",
+        "source": "guide:how-to-start-over-after-budget-failure/body[3].heading"
+      },
+      "number": {
+        "text": "5",
+        "source": "micro"
+      },
+      "head": {
+        "text": "Pick a cushion, a sum you'd like to leave alone for surprises.",
+        "source": "guide:how-to-start-over-after-budget-failure/body[3].items[4]#0"
+      },
+      "body": [
+        {
+          "text": "A small number you'll keep beats a big one you'll ignore.",
+          "source": "guide:how-to-start-over-after-budget-failure/body[3].items[4]#1"
+        }
+      ],
+      "emphasis": [
+        "surprises"
+      ],
+      "art": {
+        "motif": "piggy",
+        "why": "the slide names \"cushion\""
+      }
+    },
+    {
+      "kind": "help",
+      "eyebrow": {
+        "text": "How it helps",
+        "source": "micro"
+      },
+      "name": {
+        "text": "Monthly Money Reset",
+        "source": "title"
+      },
+      "line": {
+        "text": "Those ask you to keep a whole system current. This asks for a few figures and does the keeping-up itself, so there is nothing to fall behind on.",
+        "source": "searchedProblems[1].answer"
+      },
+      "ui": {
+        "kind": "screen",
+        "src": "screens/monthly-money-reset-progress.png"
+      }
+    },
+    {
+      "kind": "close",
+      "eyebrow": {
+        "text": "The full guide",
+        "source": "micro"
+      },
+      "title": {
+        "text": "You fell off your budget: how to restart this month",
+        "source": "guide:how-to-start-over-after-budget-failure/title"
+      },
+      "url": {
+        "text": "draftpace.com/guides/how-to-start-over-after-budget-failure",
+        "source": "guide:how-to-start-over-after-budget-failure/url"
+      },
+      "link": {
+        "text": "Free to read. Link in bio.",
+        "source": "micro"
+      },
+      "save": {
+        "text": "Save this for later.",
+        "source": "micro"
+      },
+      "art": {
+        "motif": "calendar",
+        "why": "the carousel's topic: the moment and its guide name \"month\""
+      }
+    }
+  ],
+  "notes": [
+    "Cover: \"I tried YNAB or Mint and gave up\" (searchedProblems[1].phrase), as people search it.",
+    "Steps: 5 of 7 from the guide's numbered steps \"The restart, step by step\", one per slide, each with the guide's own explanation.",
+    "Help: \"Those ask you to keep a whole system current. This asks for a few figures and does the keeping-up itself, so there is nothing to fall behind on.\" (searchedProblems[1].answer), on screens/monthly-money-reset-progress.png (\"Start\").",
+    "Illustration on the cover: calendar with wallet, because the carousel's topic: the moment and its guide name \"month\".",
+    "Illustration on the answer: receipt, because the slide names \"receipt\".",
+    "Illustration on the step: calendar, because the slide names \"day\", \"today\".",
+    "Illustration on the step: bank, because the slide names \"account\", \"balance\".",
+    "Illustration on the step: card, because the slide names \"card\", \"credit\".",
+    "Illustration on the step: calendar, because the slide names \"date\", \"month\", \"due\".",
+    "Illustration on the step: piggy, because the slide names \"cushion\".",
+    "Illustration on the close: calendar, because the carousel's topic: the moment and its guide name \"month\"."
+  ]
+}

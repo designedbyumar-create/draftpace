@@ -1,0 +1,294 @@
+{
+  "id": "guide-credit-card-minimum-payments-how-long--pinterest-video",
+  "product": "personal-finance-companion",
+  "guide": "credit-card-minimum-payments-how-long",
+  "runtime": {
+    "min": 12,
+    "max": 35
+  },
+  "platform": "pinterest-video",
+  "goal": "awareness",
+  "width": 1000,
+  "height": 1500,
+  "fps": 30,
+  "durationInFrames": 932,
+  "structure": "guideChecklist",
+  "angle": {
+    "text": "How long paying only the minimum takes on credit card debt",
+    "source": "guide:credit-card-minimum-payments-how-long/title"
+  },
+  "treatment": {
+    "voice": "editorial",
+    "camera": "locked",
+    "transitions": [
+      "cardSlide",
+      "wipe",
+      "cardSlide"
+    ],
+    "motif": "index",
+    "grounds": [
+      "ink",
+      "light",
+      "light",
+      "accent"
+    ],
+    "pace": 1.15
+  },
+  "music": {
+    "bed": "audio/bed-relaxation-05.mp3",
+    "level": 0.16,
+    "energy": "low"
+  },
+  "scenes": [
+    {
+      "id": "hook",
+      "kind": "title",
+      "variant": "editorial",
+      "copy": [
+        {
+          "text": "How long paying only the minimum takes on credit card debt",
+          "source": "guide:credit-card-minimum-payments-how-long/title"
+        }
+      ],
+      "emphasis": [
+        "only"
+      ],
+      "why": "The hook is the guide's own title: the question it answers, as a person would put it.",
+      "from": 0,
+      "dur": 146,
+      "ground": "light",
+      "transition": "cut",
+      "sfx": [],
+      "lines": [
+        [
+          "How long paying only",
+          "the minimum takes on",
+          "credit card debt"
+        ]
+      ]
+    },
+    {
+      "id": "list",
+      "kind": "list",
+      "variant": "checklist",
+      "copy": [
+        {
+          "text": "A promotional rate ends.",
+          "source": "guide:credit-card-minimum-payments-how-long/body[6].items[0]#0"
+        },
+        {
+          "text": "You keep using the card.",
+          "source": "guide:credit-card-minimum-payments-how-long/body[6].items[1]#0"
+        },
+        {
+          "text": "The payment is late.",
+          "source": "guide:credit-card-minimum-payments-how-long/body[6].items[2]#0"
+        },
+        {
+          "text": "You have more than one card.",
+          "source": "guide:credit-card-minimum-payments-how-long/body[6].items[3]#0"
+        }
+      ],
+      "eyebrow": {
+        "text": "When the numbers don't hold",
+        "source": "guide:credit-card-minimum-payments-how-long/body[6].heading"
+      },
+      "why": "The guide's own checklist, the first sentence of each item, ticked in as it is read.",
+      "from": 134,
+      "dur": 427,
+      "ground": "light",
+      "transition": "wipe",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "swish",
+          "volume": 0.192
+        },
+        {
+          "at": 10,
+          "cue": "pop",
+          "volume": 0.27
+        },
+        {
+          "at": 95,
+          "cue": "pop",
+          "volume": 0.27
+        },
+        {
+          "at": 180,
+          "cue": "pop",
+          "volume": 0.27
+        },
+        {
+          "at": 265,
+          "cue": "pop",
+          "volume": 0.27
+        }
+      ]
+    },
+    {
+      "id": "tool",
+      "kind": "phone",
+      "variant": "proof",
+      "copy": [],
+      "caption": {
+        "text": "The month you could be debt-free, and the order your debts clear",
+        "source": "expectedOutputs[1]"
+      },
+      "screen": {
+        "src": "screens/personal-finance-companion-debt.png",
+        "pose": "tiltRight",
+        "focus": {
+          "at": 0.45,
+          "y": 208,
+          "h": 154,
+          "region": "totals"
+        }
+      },
+      "why": "The turn: the product the guide itself hands over to, named and shown on its real screen, captioned with its listing's line closest to what the guide teaches. Screen: \"Debt\" (What you owe and when it could be gone: totals, a payoff plan worked out from your own numbers, and the debt-free date.) chosen because it is the real screen closest to \"The month you could be debt-free, and the order your debts clear How long paying\"; focus on \"Total balance, Minimum payments\".",
+      "eyebrow": {
+        "text": "Personal Finance Companion",
+        "source": "title"
+      },
+      "from": 549,
+      "dur": 245,
+      "ground": "accent",
+      "transition": "blurDissolve",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "whoosh",
+          "volume": 0.192
+        },
+        {
+          "at": 12,
+          "cue": "pop",
+          "volume": 0.252
+        },
+        {
+          "at": 110,
+          "cue": "tap",
+          "volume": 0.33
+        }
+      ]
+    },
+    {
+      "id": "cta",
+      "kind": "cta",
+      "variant": "guide",
+      "copy": [
+        {
+          "text": "Personal Finance Companion",
+          "source": "title"
+        },
+        {
+          "text": "draftpace.com/guides/credit-card-minimum-payments-how-long",
+          "source": "guide:credit-card-minimum-payments-how-long/url"
+        }
+      ],
+      "eyebrow": {
+        "text": "The full guide",
+        "source": "micro"
+      },
+      "why": "Ends on where to read the whole guide, with the product beneath it: the viewer leaves with the next step, not only a pitch.",
+      "from": 782,
+      "dur": 150,
+      "ground": "ink",
+      "transition": "cardSlide",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "swish",
+          "volume": 0.192
+        },
+        {
+          "at": 8,
+          "cue": "settle",
+          "volume": 0.3
+        }
+      ]
+    }
+  ],
+  "reasoning": [
+    {
+      "topic": "Placement",
+      "decision": "Pinterest video pin, 1000×1500, 12–35s, hook by 1s, sound off",
+      "because": "People are planning, not scrolling: idea-led, calm and save-worthy, worded like what they searched for. Muted, looping, slow; a hard sell reads as an ad and loses the save."
+    },
+    {
+      "topic": "Product",
+      "decision": "Personal Finance Companion: $49 (list $99), motif \"index\", calm personality, cool accent #0d3b2e",
+      "because": "From its definition and Shop listing. 4 real screens to show."
+    },
+    {
+      "topic": "Guide",
+      "decision": "\"How long paying only the minimum takes on credit card debt\" (draftpace.com/guides/credit-card-minimum-payments-how-long)",
+      "because": "Teaches from the guide first; Personal Finance Companion is the product the guide hands over to. 2 lists and timelines, 5 questions to draw from."
+    },
+    {
+      "topic": "Stage",
+      "decision": "Before launch: helpful and relatable only",
+      "because": "Nobody knows Draftpace yet, so films show how it helps with real moments. Who it is not for, questions before buying, what you get and the price wait until there are users to sell to."
+    },
+    {
+      "topic": "Audience",
+      "decision": "You have more than one account, bill, or income source and want them tracked in one real place, not five apps. / You want a next step handed to you, not a dashboard you have to interpret yourself every time.",
+      "because": "The listing's own audience lines; the director writes for them."
+    },
+    {
+      "topic": "Material",
+      "decision": "Allowed real lines up to 4 words longer",
+      "because": "Every structure Personal Finance Companion's copy supports at Pinterest video pin's normal line length is already used by its other films; a longer real line beats telling the same story twice."
+    },
+    {
+      "topic": "Structure",
+      "decision": "The checklist: The guide's checklist on one screen, item by item, then the product that holds it.",
+      "because": "Best fit for a awareness film on Pinterest video pin (platform fit 3, goal fit 3, already used for this product ×1, already used on Pinterest video pin ×3). Other candidates: The question people ask (-28.3)."
+    },
+    {
+      "topic": "Angle",
+      "decision": "\"How long paying only the minimum takes on credit card debt\"",
+      "because": "A checklist from the guide, \"When the numbers don't hold\": 4 of its 5 items."
+    },
+    {
+      "topic": "Transitions",
+      "decision": "Transitions follow the product's own identity motif, \"index\"",
+      "because": "Transitions follow the product's own identity motif, \"index\": an index of tabs, so scenes slide in like the next tab."
+    },
+    {
+      "topic": "Camera",
+      "decision": "Camera \"float\"",
+      "because": "Camera \"float\": a gentle float that keeps a held frame alive without demanding attention."
+    },
+    {
+      "topic": "Colour",
+      "decision": "Grounds ink → light → light → accent",
+      "because": "Grounds ink → light → light → accent: a cool accent, so a darker ground is used for contrast at a turn."
+    },
+    {
+      "topic": "Variation",
+      "decision": "Rotated the ground rhythm",
+      "because": "Its shape was 0.74 similar to guide-home-maintenance-log-template--pinterest-video; a different film, not the same one re-coloured."
+    },
+    {
+      "topic": "Variation",
+      "decision": "Changed the camera",
+      "because": "Its shape was 0.82 similar to guide-subscription-tracker-what-to-track--youtube-short; a different film, not the same one re-coloured."
+    },
+    {
+      "topic": "Variation",
+      "decision": "Reordered the transitions",
+      "because": "Its shape was 0.74 similar to guide-subscription-tracker-what-to-track--youtube-short; a different film, not the same one re-coloured."
+    },
+    {
+      "topic": "Sound",
+      "decision": "Light sound design, low-energy bed",
+      "because": "Most of this audience never unmutes, so nothing depends on sound; cues are kept quieter and sparser for those who do."
+    },
+    {
+      "topic": "Length",
+      "decision": "31.1s, 4 scenes",
+      "because": "Each scene is held for the time its words take to read on Pinterest video pin (0.32s a word), inside 12–35s."
+    }
+  ]
+}

@@ -1,0 +1,333 @@
+{
+  "id": "guide-first-car-checklist-for-new-drivers--pinterest-video",
+  "product": "vehicle-maintenance-companion",
+  "guide": "first-car-checklist-for-new-drivers",
+  "runtime": {
+    "min": 12,
+    "max": 35
+  },
+  "platform": "pinterest-video",
+  "goal": "awareness",
+  "width": 1000,
+  "height": 1500,
+  "fps": 30,
+  "durationInFrames": 969,
+  "structure": "guideTimeline",
+  "angle": {
+    "text": "First car checklist: what to do in the first week",
+    "source": "guide:first-car-checklist-for-new-drivers/title"
+  },
+  "treatment": {
+    "voice": "editorial",
+    "camera": "locked",
+    "transitions": [
+      "radial",
+      "zoomThrough",
+      "radial"
+    ],
+    "motif": "gauge",
+    "grounds": [
+      "light",
+      "light",
+      "accent",
+      "light"
+    ],
+    "pace": 1.15
+  },
+  "music": {
+    "bed": "audio/bed-relaxation-05.mp3",
+    "level": 0.16,
+    "energy": "low"
+  },
+  "scenes": [
+    {
+      "id": "hook",
+      "kind": "title",
+      "variant": "editorial",
+      "copy": [
+        {
+          "text": "First car checklist: what to do in the first week",
+          "source": "guide:first-car-checklist-for-new-drivers/title"
+        }
+      ],
+      "emphasis": [
+        "checklist"
+      ],
+      "why": "The hook is the guide's own title: the question it answers, as a person would put it.",
+      "from": 0,
+      "dur": 135,
+      "ground": "light",
+      "transition": "cut",
+      "sfx": [],
+      "lines": [
+        [
+          "First car checklist:",
+          "what to do in the",
+          "first week"
+        ]
+      ]
+    },
+    {
+      "id": "when-1",
+      "kind": "title",
+      "variant": "label",
+      "copy": [
+        {
+          "text": "Call your insurer.",
+          "source": "guide:first-car-checklist-for-new-drivers/body[1].steps[0].what#0"
+        }
+      ],
+      "eyebrow": {
+        "text": "Before you drive it home",
+        "source": "guide:first-car-checklist-for-new-drivers/body[1].steps[0].when"
+      },
+      "emphasis": [
+        "insurer"
+      ],
+      "why": "Marker 1: \"Before you drive it home\", with the first sentence of what the guide says to do then.",
+      "from": 123,
+      "dur": 137,
+      "ground": "light",
+      "transition": "radial",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "swish",
+          "volume": 0.192
+        }
+      ],
+      "lines": [
+        [
+          "Call your insurer."
+        ]
+      ]
+    },
+    {
+      "id": "when-2",
+      "kind": "title",
+      "variant": "label",
+      "copy": [
+        {
+          "text": "Handle title and registration.",
+          "source": "guide:first-car-checklist-for-new-drivers/body[1].steps[2].what#0"
+        }
+      ],
+      "eyebrow": {
+        "text": "Days 2 and 3",
+        "source": "guide:first-car-checklist-for-new-drivers/body[1].steps[2].when"
+      },
+      "emphasis": [
+        "registration"
+      ],
+      "why": "Marker 2: \"Days 2 and 3\", with the first sentence of what the guide says to do then.",
+      "from": 248,
+      "dur": 137,
+      "ground": "accent",
+      "transition": "zoomThrough",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "whoosh",
+          "volume": 0.192
+        }
+      ],
+      "lines": [
+        [
+          "Handle title and",
+          "registration."
+        ]
+      ]
+    },
+    {
+      "id": "when-3",
+      "kind": "title",
+      "variant": "label",
+      "copy": [
+        {
+          "text": "Write the first record entry, check tire pressure, set up the glove box.",
+          "source": "guide:first-car-checklist-for-new-drivers/body[1].steps[3].what#0"
+        }
+      ],
+      "eyebrow": {
+        "text": "Days 4 to 7",
+        "source": "guide:first-car-checklist-for-new-drivers/body[1].steps[3].when"
+      },
+      "emphasis": [
+        "pressure"
+      ],
+      "why": "Marker 3: \"Days 4 to 7\", with the first sentence of what the guide says to do then.",
+      "from": 373,
+      "dur": 236,
+      "ground": "light",
+      "transition": "radial",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "swish",
+          "volume": 0.192
+        }
+      ],
+      "lines": [
+        [
+          "Write the first record",
+          "entry, check tire pressure,",
+          "set up the glove box."
+        ]
+      ]
+    },
+    {
+      "id": "tool",
+      "kind": "phone",
+      "variant": "proof",
+      "copy": [],
+      "caption": {
+        "text": "A glove box card with the details and dates you recorded",
+        "source": "expectedOutputs[4]"
+      },
+      "screen": {
+        "src": "screens/vehicle-maintenance-companion-printables.png",
+        "pose": "float",
+        "focus": {
+          "at": 0.45,
+          "y": 299,
+          "h": 91,
+          "region": "boundary"
+        }
+      },
+      "why": "The turn: the product the guide itself hands over to, named and shown on its real screen, captioned with its listing's line closest to what the guide teaches. Screen: \"Print\" (The Service Boundary: a dated, mileage-stamped page you hand over before a shop touches the car, with what you're asking for and a limit.) chosen because it is the real screen closest to \"A glove box card with the details and dates you recorded First car checklist: wh\"; focus on \"Service Boundary\".",
+      "eyebrow": {
+        "text": "Vehicle Maintenance Companion",
+        "source": "title"
+      },
+      "from": 597,
+      "dur": 234,
+      "ground": "light",
+      "transition": "radial",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "swish",
+          "volume": 0.192
+        },
+        {
+          "at": 12,
+          "cue": "pop",
+          "volume": 0.252
+        },
+        {
+          "at": 105,
+          "cue": "tap",
+          "volume": 0.33
+        }
+      ]
+    },
+    {
+      "id": "cta",
+      "kind": "cta",
+      "variant": "guide",
+      "copy": [
+        {
+          "text": "Vehicle Maintenance Companion",
+          "source": "title"
+        },
+        {
+          "text": "draftpace.com/guides/first-car-checklist-for-new-drivers",
+          "source": "guide:first-car-checklist-for-new-drivers/url"
+        }
+      ],
+      "eyebrow": {
+        "text": "The full guide",
+        "source": "micro"
+      },
+      "why": "Ends on where to read the whole guide, with the product beneath it: the viewer leaves with the next step, not only a pitch.",
+      "from": 819,
+      "dur": 150,
+      "ground": "light",
+      "transition": "blurDissolve",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "whoosh",
+          "volume": 0.192
+        },
+        {
+          "at": 8,
+          "cue": "settle",
+          "volume": 0.3
+        }
+      ]
+    }
+  ],
+  "reasoning": [
+    {
+      "topic": "Placement",
+      "decision": "Pinterest video pin, 1000×1500, 12–35s, hook by 1s, sound off",
+      "because": "People are planning, not scrolling: idea-led, calm and save-worthy, worded like what they searched for. Muted, looping, slow; a hard sell reads as an ad and loses the save."
+    },
+    {
+      "topic": "Product",
+      "decision": "Vehicle Maintenance Companion: $34 (list $69), motif \"gauge\", calm personality, warm accent #b45309",
+      "because": "From its definition and Shop listing. 3 real screens to show."
+    },
+    {
+      "topic": "Guide",
+      "decision": "\"First car checklist: what to do in the first week\" (draftpace.com/guides/first-car-checklist-for-new-drivers)",
+      "because": "Teaches from the guide first; Vehicle Maintenance Companion is the product the guide hands over to. 2 lists and timelines, 5 questions to draw from."
+    },
+    {
+      "topic": "Stage",
+      "decision": "Before launch: helpful and relatable only",
+      "because": "Nobody knows Draftpace yet, so films show how it helps with real moments. Who it is not for, questions before buying, what you get and the price wait until there are users to sell to."
+    },
+    {
+      "topic": "Audience",
+      "decision": "You own more than one vehicle, or a vehicle with a maintenance history you already know by heart but have never written down anywhere. / You have bought a used car or inherited one, and its real service history is genuinely unknown to you.",
+      "because": "The listing's own audience lines; the director writes for them."
+    },
+    {
+      "topic": "Material",
+      "decision": "Allowed real lines up to 4 words longer",
+      "because": "Every structure Vehicle Maintenance Companion's copy supports at Pinterest video pin's normal line length is already used by its other films; a longer real line beats telling the same story twice."
+    },
+    {
+      "topic": "Structure",
+      "decision": "In order: Walk the guide's own timeline, one marker at a time, then show the product that keeps it.",
+      "because": "Best fit for a awareness film on Pinterest video pin (platform fit 2, goal fit 3, already used for this product ×1, already used on Pinterest video pin ×3). Other candidates: The checklist (-28.9), The question people ask (-39.6)."
+    },
+    {
+      "topic": "Angle",
+      "decision": "\"First car checklist: what to do in the first week\"",
+      "because": "The guide's timeline \"The first week, in order\": 4 of its 5 markers, in order."
+    },
+    {
+      "topic": "Transitions",
+      "decision": "Transitions follow the product's own identity motif, \"gauge\"",
+      "because": "Transitions follow the product's own identity motif, \"gauge\": a gauge sweeps, so scenes are revealed by a radial sweep."
+    },
+    {
+      "topic": "Camera",
+      "decision": "Camera \"locked\"",
+      "because": "Camera \"locked\": still and precise, so a slow, reading audience is never chasing the frame."
+    },
+    {
+      "topic": "Colour",
+      "decision": "Grounds light → light → accent → light",
+      "because": "Grounds light → light → accent → light: a warm accent, so light grounds lead and the accent is saved for the turns."
+    },
+    {
+      "topic": "Edit",
+      "decision": "Cut \"when-4\"",
+      "because": "It would run past 35s, the most Pinterest video pin holds attention for."
+    },
+    {
+      "topic": "Sound",
+      "decision": "Light sound design, low-energy bed",
+      "because": "Most of this audience never unmutes, so nothing depends on sound; cues are kept quieter and sparser for those who do."
+    },
+    {
+      "topic": "Length",
+      "decision": "32.3s, 6 scenes",
+      "because": "Each scene is held for the time its words take to read on Pinterest video pin (0.32s a word), inside 12–35s."
+    }
+  ]
+}

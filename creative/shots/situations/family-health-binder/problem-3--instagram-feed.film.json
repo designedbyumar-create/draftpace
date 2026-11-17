@@ -1,0 +1,213 @@
+{
+  "id": "sit-family-health-binder-problem-3--instagram-feed",
+  "product": "family-health-binder",
+  "situation": "problemsSolved[2].problem",
+  "runtime": {
+    "min": 10,
+    "max": 30
+  },
+  "platform": "instagram-feed",
+  "goal": "awareness",
+  "width": 1080,
+  "height": 1350,
+  "fps": 30,
+  "durationInFrames": 511,
+  "structure": "situationMoment",
+  "angle": {
+    "text": "At an intake desk, you're reconstructing when a symptom started from memory, under pressure.",
+    "source": "problemsSolved[2].problem"
+  },
+  "treatment": {
+    "voice": "editorial",
+    "camera": "locked",
+    "transitions": [
+      "cardSlide",
+      "blurDissolve",
+      "cardSlide"
+    ],
+    "motif": "card",
+    "grounds": [
+      "light",
+      "light",
+      "accent",
+      "light"
+    ],
+    "pace": 1.15
+  },
+  "music": {
+    "bed": "audio/bed-relaxation-05.mp3",
+    "level": 0.16,
+    "energy": "low"
+  },
+  "scenes": [
+    {
+      "id": "moment",
+      "kind": "title",
+      "variant": "editorial",
+      "copy": [
+        {
+          "text": "At an intake desk, you're reconstructing when a symptom started from memory, under pressure.",
+          "source": "problemsSolved[2].problem"
+        }
+      ],
+      "emphasis": [
+        "reconstructing"
+      ],
+      "why": "Opens on the moment as the listing describes it: the situation the viewer is in right now.",
+      "from": 0,
+      "dur": 169,
+      "ground": "ink",
+      "transition": "cut",
+      "sfx": [],
+      "lines": [
+        [
+          "At an intake desk, you're",
+          "reconstructing when a symptom",
+          "started from memory, under",
+          "pressure."
+        ]
+      ]
+    },
+    {
+      "id": "help",
+      "kind": "phone",
+      "variant": "proof",
+      "copy": [],
+      "caption": {
+        "text": "A structured symptom timeline: onset, duration and severity as real fields, recorded as it happens.",
+        "source": "problemsSolved[2].solution"
+      },
+      "screen": {
+        "src": "screens/family-health-binder-workspace.png",
+        "pose": "flat",
+        "focus": {
+          "at": 0.45,
+          "y": 498,
+          "h": 48,
+          "region": "missing"
+        },
+        "scroll": []
+      },
+      "why": "How Family Health Binder helps with this moment, in the listing's own words, on the real screen that shows it. Screen: \"Overview\" (Everyone at a glance: each person's card with allergies, the latest symptom, and what the forms sheet is missing.) chosen because it is the real screen closest to \"A structured symptom timeline: onset, duration and severity as real fields, reco\"; focus on \"Forms sheet is missing\".",
+      "eyebrow": {
+        "text": "Family Health Binder",
+        "source": "title"
+      },
+      "from": 157,
+      "dur": 266,
+      "ground": "light",
+      "transition": "cardSlide",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "swish",
+          "volume": 0.192
+        },
+        {
+          "at": 12,
+          "cue": "pop",
+          "volume": 0.252
+        },
+        {
+          "at": 120,
+          "cue": "tap",
+          "volume": 0.33
+        }
+      ]
+    },
+    {
+      "id": "cta",
+      "kind": "cta",
+      "variant": "soft",
+      "copy": [
+        {
+          "text": "Family Health Binder",
+          "source": "title"
+        },
+        {
+          "text": "Available now.",
+          "source": "micro"
+        }
+      ],
+      "why": "Instagram feed video punishes an obvious ad; a soft close names the product and where to find it.",
+      "from": 411,
+      "dur": 100,
+      "ground": "accent",
+      "transition": "blurDissolve",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "whoosh",
+          "volume": 0.192
+        },
+        {
+          "at": 8,
+          "cue": "settle",
+          "volume": 0.3
+        }
+      ]
+    }
+  ],
+  "reasoning": [
+    {
+      "topic": "Placement",
+      "decision": "Instagram feed video, 1080×1350, 10–30s, hook by 1.2s, sound off",
+      "because": "A 4:5 card in the grid of a feed, autoplayed muted. Craft and composition carry it; text is short and sits well inside the frame."
+    },
+    {
+      "topic": "Product",
+      "decision": "Family Health Binder: $34 (list $69), motif \"card\", calm personality, warm accent #b23a5b",
+      "because": "From its definition and Shop listing. 3 real screens to show."
+    },
+    {
+      "topic": "Situation",
+      "decision": "\"At an intake desk, you're reconstructing when a symptom started from memory, under pressure.\"",
+      "because": "One real moment from Family Health Binder's listing (problemsSolved[2].problem). The film is about this moment and how the product helps with it: \"A structured symptom timeline: onset, duration and severity as real fields, recorded as it happens.\""
+    },
+    {
+      "topic": "Stage",
+      "decision": "Before launch: helpful and relatable only",
+      "because": "Nobody knows Draftpace yet, so films show how it helps with real moments. Who it is not for, questions before buying, what you get and the price wait until there are users to sell to."
+    },
+    {
+      "topic": "Audience",
+      "decision": "You are the one who fills in every form, and everyone's allergies, medications and insurance number live only in your head. / You have more than one child, or a child and an aging parent, whose facts you are both responsible for.",
+      "because": "The listing's own audience lines; the director writes for them."
+    },
+    {
+      "topic": "Structure",
+      "decision": "The moment: The moment as it feels, set dark, then the help in the light, then what to do next.",
+      "because": "Best fit for a awareness film on Instagram feed video (platform fit 2, goal fit 3, already used for this product ×3). Other candidates: Inside the tool (-14.7)."
+    },
+    {
+      "topic": "Angle",
+      "decision": "\"At an intake desk, you're reconstructing when a symptom started from memory, under pressure.\"",
+      "because": "The moment \"At an intake desk, you're reconstructing when a symptom started from memory, under pressure.\", then how Family Health Binder helps."
+    },
+    {
+      "topic": "Transitions",
+      "decision": "Transitions follow the product's own identity motif, \"card\"",
+      "because": "Transitions follow the product's own identity motif, \"card\": a binder of cards, so scenes slide in like the next card."
+    },
+    {
+      "topic": "Camera",
+      "decision": "Camera \"locked\"",
+      "because": "Camera \"locked\": still and precise, so a slow, reading audience is never chasing the frame."
+    },
+    {
+      "topic": "Colour",
+      "decision": "Grounds light → light → accent → light",
+      "because": "Grounds light → light → accent → light: a warm accent, so light grounds lead and the accent is saved for the turns."
+    },
+    {
+      "topic": "Sound",
+      "decision": "Light sound design, low-energy bed",
+      "because": "Most of this audience never unmutes, so nothing depends on sound; cues are kept quieter and sparser for those who do."
+    },
+    {
+      "topic": "Length",
+      "decision": "17.0s, 3 scenes",
+      "because": "Each scene is held for the time its words take to read on Instagram feed video (0.3s a word), inside 10–30s."
+    }
+  ]
+}

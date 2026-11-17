@@ -1,0 +1,4 @@
+/* Studio-only additions. Everything else is the website's own tokens (src/app/globals.css). */
+.studio-scroll::-webkit-scrollbar { height: 8px; width: 8px; }
+.studio-scroll::-webkit-scrollbar-thumb { background: var(--border-strong); border-radius: 8px; }
+.tabular { font-variant-numeric: tabular-nums; }

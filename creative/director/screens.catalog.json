@@ -1,0 +1,243 @@
+{
+  "$comment": "What each real captured screen shows, read off the capture itself. Regions are in capture pixels at the 390px viewport width (y = top, h = height), and every label is a heading or text visible in that region. The director chooses shots by this; a region that no longer matches its capture is a guard failure, not a style choice.",
+  "screens/alongside-help.png": {
+    "heading": "What do you need to do?",
+    "shows": "The help picker: plain-language situations to choose from, like a call that has been sitting there or something too big to start.",
+    "mood": "gentle",
+    "regions": [
+      { "id": "question", "label": "What do you need to do?", "y": 84, "h": 50 },
+      { "id": "situations", "label": "There is a call to make and it has been sitting there", "y": 288, "h": 420 }
+    ]
+  },
+  "screens/alongside-life.png": {
+    "heading": "Everything you are holding",
+    "shows": "Everything being held, sorted into something to do, waiting on someone, something ongoing, each with Do this with me.",
+    "mood": "organised",
+    "regions": [
+      { "id": "to-do", "label": "Something to do", "y": 192, "h": 330 },
+      { "id": "waiting", "label": "Waiting on someone", "y": 552, "h": 186 }
+    ]
+  },
+  "screens/alongside-workspace.png": {
+    "heading": "Book the six-month dental check",
+    "shows": "One thing at a time: a single next step, Book the six-month dental check, with Do this with me, Not now and It is sorted.",
+    "mood": "calm",
+    "regions": [
+      { "id": "one-thing", "label": "Book the six-month dental check", "y": 222, "h": 294 }
+    ]
+  },
+  "screens/family-health-binder-members.png": {
+    "heading": "Family",
+    "shows": "One person's card: age, allergies, medications, and tabs for health, vaccines and care team.",
+    "mood": "organised",
+    "regions": [
+      { "id": "person", "label": "Sam (example)", "y": 216, "h": 180 },
+      { "id": "health", "label": "Allergies, Conditions, Medications", "y": 528, "h": 258 }
+    ]
+  },
+  "screens/family-health-binder-printables.png": {
+    "heading": "Print",
+    "shows": "The pages that leave the house: forms sheet, caregiver sheet, emergency card, visit page, intake summary, each with Make it.",
+    "mood": "practical",
+    "regions": [
+      { "id": "forms-sheet", "label": "Forms sheet", "y": 294, "h": 150 },
+      { "id": "caregiver-sheet", "label": "Caregiver sheet", "y": 462, "h": 138 },
+      { "id": "emergency-card", "label": "Emergency card", "y": 636, "h": 96 }
+    ]
+  },
+  "screens/family-health-binder-workspace.png": {
+    "heading": "Overview",
+    "shows": "Everyone at a glance: each person's card with allergies, the latest symptom, and what the forms sheet is missing.",
+    "mood": "calm",
+    "regions": [
+      { "id": "people", "label": "Sam (example), Mia (example)", "y": 156, "h": 336 },
+      { "id": "missing", "label": "Forms sheet is missing", "y": 498, "h": 48 }
+    ]
+  },
+  "screens/home-management-companion-history.png": {
+    "heading": "What's been done",
+    "shows": "Your home's memory: what was taken care of, when, who did it and what it cost.",
+    "mood": "settled",
+    "regions": [
+      { "id": "log", "label": "Annual service and safety check", "y": 180, "h": 200 }
+    ]
+  },
+  "screens/home-management-companion-seasons.png": {
+    "heading": "Fall home maintenance checklist",
+    "shows": "This season's checklist: the jobs best done from September to November, by month.",
+    "mood": "seasonal",
+    "regions": [
+      { "id": "season", "label": "Fall home maintenance checklist", "y": 82, "h": 210 },
+      { "id": "october", "label": "Annual boiler service", "y": 425, "h": 126 }
+    ]
+  },
+  "screens/home-management-companion-workspace.png": {
+    "heading": "A couple of things need a look",
+    "shows": "Your home now: what's wrong, what to care for, what's coming up and what's handled, with the fridge and a dripping tap flagged.",
+    "mood": "alert-but-calm",
+    "regions": [
+      { "id": "status", "label": "Wrong, To care for, Coming up, Handled", "y": 222, "h": 25 },
+      { "id": "wrong", "label": "Fridge humming louder at night", "y": 306, "h": 294 },
+      { "id": "care", "label": "Clean the condenser coils", "y": 628, "h": 252 }
+    ]
+  },
+  "screens/homeschooling-companion-kids.png": {
+    "heading": "Your children.",
+    "shows": "Each child with their age and subjects, and the state's homeschool requirements kept alongside.",
+    "mood": "organised",
+    "regions": [
+      { "id": "state", "label": "Oregon · Moderate regulation", "y": 159, "h": 126 },
+      { "id": "children", "label": "Ava, Leo", "y": 313, "h": 217 }
+    ]
+  },
+  "screens/homeschooling-companion-record.png": {
+    "heading": "What has happened.",
+    "shows": "The record: sessions across subjects, a printable homeschool record, and dated notes of what was done.",
+    "mood": "proud",
+    "regions": [
+      { "id": "record", "label": "My Homeschool Record", "y": 320, "h": 406 },
+      { "id": "log", "label": "Monday, 5 October 2026", "y": 754, "h": 346 }
+    ]
+  },
+  "screens/homeschooling-companion-workspace.png": {
+    "heading": "What we are doing today.",
+    "shows": "Today, per child: each lesson in the plan, and what is worth going over again.",
+    "mood": "focused",
+    "regions": [
+      { "id": "ava", "label": "Ava", "y": 166, "h": 364 }
+    ]
+  },
+  "screens/monthly-money-reset-progress.png": {
+    "heading": "Start",
+    "shows": "Progress this month: bills handled, check-ins, the reserve kept, and spending against your own guide.",
+    "mood": "steady",
+    "regions": [
+      { "id": "bills", "label": "2 of 4", "y": 138, "h": 126 },
+      { "id": "guide", "label": "Spending against your own guide", "y": 650, "h": 160 }
+    ]
+  },
+  "screens/personal-finance-companion-bills.png": {
+    "heading": "Bills",
+    "shows": "What's owed on a schedule: the monthly total, what's left to pay, and each bill marked ready or essential.",
+    "mood": "clear",
+    "regions": [
+      { "id": "totals", "label": "Monthly total, Left to pay this month", "y": 229, "h": 224 },
+      { "id": "records", "label": "Rent, Electricity, Mobile phone", "y": 523, "h": 371 }
+    ]
+  },
+  "screens/personal-finance-companion-debt.png": {
+    "heading": "Debt",
+    "shows": "What you owe and when it could be gone: totals, a payoff plan worked out from your own numbers, and the debt-free date.",
+    "mood": "hopeful",
+    "regions": [
+      { "id": "totals", "label": "Total balance, Minimum payments", "y": 208, "h": 154 },
+      { "id": "plan", "label": "Payoff plan", "y": 579, "h": 175 },
+      { "id": "debt-free", "label": "Debt-free in September 2030", "y": 950, "h": 91 }
+    ]
+  },
+  "screens/personal-finance-companion-printables.png": {
+    "heading": "Printable Finance Companion",
+    "shows": "The paper version: printable finance companion in US Letter and A4, and a shared responsibility statement.",
+    "mood": "practical",
+    "regions": [
+      { "id": "printables", "label": "Printable Finance Companion", "y": 369, "h": 287 }
+    ]
+  },
+  "screens/personal-finance-companion-records.png": {
+    "heading": "Records",
+    "shows": "What's actually true right now, area by area: accounts, income, bills, subscriptions, transactions, debt.",
+    "mood": "clear",
+    "regions": [
+      { "id": "accounts", "label": "Accounts", "y": 222, "h": 119 },
+      { "id": "income", "label": "Income", "y": 369, "h": 112 },
+      { "id": "bills", "label": "Bills", "y": 502, "h": 119 }
+    ]
+  },
+  "screens/personal-life-affairs-companion-affairs.png": {
+    "heading": "What you have established so far.",
+    "shows": "Important documents, each with where it is kept: the will, lasting power of attorney, passports, insurance, deeds.",
+    "mood": "secure",
+    "regions": [
+      { "id": "documents", "label": "Important documents", "y": 264, "h": 462 }
+    ]
+  },
+  "screens/personal-life-affairs-companion-printables.png": {
+    "heading": "Nothing in it yet, and you can still print it.",
+    "shows": "My Affairs book: a printable handoff book that says where the paperwork is.",
+    "mood": "secure",
+    "regions": [
+      { "id": "book", "label": "My Affairs", "y": 264, "h": 168 },
+      { "id": "paperwork", "label": "Where the paperwork is", "y": 502, "h": 448 }
+    ]
+  },
+  "screens/personal-life-affairs-companion-workspace.png": {
+    "heading": "Write down who should be called first.",
+    "shows": "One question at a time: write down who should be called first, with Start, Not relevant to me and Later.",
+    "mood": "gentle",
+    "regions": [
+      { "id": "question", "label": "Write down who should be called first.", "y": 82, "h": 427 }
+    ]
+  },
+  "screens/travel-companion-itinerary.png": {
+    "heading": "Itinerary",
+    "shows": "The whole trip day by day: Lisbon and Porto, a flight and a hotel on day one, and days with nothing on them said plainly.",
+    "mood": "orderly",
+    "regions": [
+      { "id": "day-one", "label": "Mon 2 Nov", "y": 194, "h": 266 },
+      { "id": "flight", "label": "Flight to Lisbon", "y": 264, "h": 77 }
+    ]
+  },
+  "screens/travel-companion-printables.png": {
+    "heading": "My Trip Book",
+    "shows": "My Trip Book: a blank, printable travel planner, generated fresh each time.",
+    "mood": "practical",
+    "regions": [
+      { "id": "trip-book", "label": "My Trip Book", "y": 292, "h": 161 }
+    ]
+  },
+  "screens/travel-companion-trip.png": {
+    "heading": "Lisbon and Porto",
+    "shows": "The trip: where you are now, destinations, and every booking with its reference, with Record a change on each.",
+    "mood": "in-control",
+    "regions": [
+      { "id": "status", "label": "Not currently at a recorded destination", "y": 187, "h": 126 },
+      { "id": "flight", "label": "Flight to Lisbon", "y": 509, "h": 266 }
+    ]
+  },
+  "screens/travel-companion-workspace.png": {
+    "heading": "Today",
+    "shows": "Today: nothing scheduled right now, the trip starts Monday 2 November.",
+    "mood": "calm",
+    "regions": [
+      { "id": "today", "label": "Today", "y": 103, "h": 189 }
+    ]
+  },
+  "screens/vehicle-maintenance-companion-history.png": {
+    "heading": "History",
+    "shows": "What has been done and when: each service dated, with the mileage, the shop and the cost.",
+    "mood": "settled",
+    "regions": [
+      { "id": "log", "label": "Oil and filter change", "y": 236, "h": 364 }
+    ]
+  },
+  "screens/vehicle-maintenance-companion-printables.png": {
+    "heading": "Print",
+    "shows": "The Service Boundary: a dated, mileage-stamped page you hand over before a shop touches the car, with what you're asking for and a limit.",
+    "mood": "protected",
+    "regions": [
+      { "id": "boundary", "label": "Service Boundary", "y": 299, "h": 91 },
+      { "id": "request", "label": "What are you requesting today?", "y": 516, "h": 140 },
+      { "id": "limit", "label": "Do not go over this without calling", "y": 852, "h": 84 }
+    ]
+  },
+  "screens/vehicle-maintenance-companion-vehicles.png": {
+    "heading": "Vehicles",
+    "shows": "What you own and what you track on it: each car with its intervals, when it was last done, and a commuter with history unknown.",
+    "mood": "organised",
+    "regions": [
+      { "id": "car", "label": "Family car", "y": 187, "h": 77 },
+      { "id": "intervals", "label": "Oil and filter change, every 5,000 miles", "y": 271, "h": 525 },
+      { "id": "unknown", "label": "History unknown", "y": 922, "h": 70 }
+    ]
+  }
+}

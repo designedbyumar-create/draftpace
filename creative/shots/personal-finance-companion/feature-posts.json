@@ -4,6 +4,7 @@
     {
       "id": "01-personal-finance-companion",
       "themeSlug": "personal-finance-companion",
+      "problem": 0,
       "layout": "tilt",
       "eyebrow": "PERSONAL FINANCE COMPANION",
       "headline": [
@@ -15,14 +16,14 @@
         "kind": "screen",
         "src": "screens/personal-finance-companion-records.png"
       },
-      "product": {
-        "name": "Personal Finance Companion",
-        "price": "$49"
-      }
+      "emphasis": [
+        "scattered"
+      ]
     },
     {
       "id": "02-personal-finance-companion",
       "themeSlug": "personal-finance-companion",
+      "problem": 1,
       "layout": "window",
       "eyebrow": "PERSONAL FINANCE COMPANION",
       "headline": [
@@ -34,14 +35,14 @@
         "kind": "screen",
         "src": "screens/personal-finance-companion-debt.png"
       },
-      "product": {
-        "name": "Personal Finance Companion",
-        "price": "$49"
-      }
+      "emphasis": [
+        "gone"
+      ]
     },
     {
       "id": "03-personal-finance-companion",
       "themeSlug": "personal-finance-companion",
+      "problem": 2,
       "layout": "tilt",
       "eyebrow": "PERSONAL FINANCE COMPANION",
       "headline": [
@@ -53,15 +54,15 @@
         "kind": "screen",
         "src": "screens/personal-finance-companion-bills.png"
       },
-      "product": {
-        "name": "Personal Finance Companion",
-        "price": "$49"
-      }
+      "emphasis": [
+        "paid"
+      ]
     },
     {
       "id": "04-personal-finance-companion",
       "themeSlug": "personal-finance-companion",
-      "layout": "window",
+      "problem": 3,
+      "layout": "fan",
       "eyebrow": "PERSONAL FINANCE COMPANION",
       "headline": [
         "What does a normal",
@@ -70,12 +71,15 @@
       ],
       "ui": {
         "kind": "screen",
-        "src": "screens/personal-finance-companion-printables.png"
+        "src": "screens/personal-finance-companion-printables.png",
+        "also": [
+          "screens/personal-finance-companion-bills.png",
+          "screens/personal-finance-companion-debt.png"
+        ]
       },
-      "product": {
-        "name": "Personal Finance Companion",
-        "price": "$49"
-      }
+      "emphasis": [
+        "normal"
+      ]
     }
   ]
 }

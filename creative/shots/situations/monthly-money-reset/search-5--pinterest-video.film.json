@@ -1,0 +1,273 @@
+{
+  "id": "sit-monthly-money-reset-search-5--pinterest-video",
+  "product": "monthly-money-reset",
+  "guide": "why-budgeting-apps-stop-working-after-two-months",
+  "situation": "searchedProblems[4].phrase",
+  "runtime": {
+    "min": 10,
+    "max": 32
+  },
+  "platform": "pinterest-video",
+  "goal": "awareness",
+  "width": 1000,
+  "height": 1500,
+  "fps": 30,
+  "durationInFrames": 885,
+  "structure": "situationChecklist",
+  "angle": {
+    "text": "Why do budgeting apps stop working after two months",
+    "source": "searchedProblems[4].phrase"
+  },
+  "treatment": {
+    "voice": "editorial",
+    "camera": "locked",
+    "transitions": [
+      "lineWipe",
+      "blurDissolve",
+      "lineWipe"
+    ],
+    "motif": "ledger",
+    "grounds": [
+      "light",
+      "accent",
+      "light",
+      "ink"
+    ],
+    "pace": 1.15
+  },
+  "music": {
+    "bed": "audio/bed-relaxation-05.mp3",
+    "level": 0.16,
+    "energy": "low"
+  },
+  "scenes": [
+    {
+      "id": "moment",
+      "kind": "title",
+      "variant": "label",
+      "copy": [
+        {
+          "text": "Why do budgeting apps stop working after two months",
+          "source": "searchedProblems[4].phrase"
+        }
+      ],
+      "emphasis": [
+        "two"
+      ],
+      "why": "Opens on the moment in the person's own words, as the listing records people searching it.",
+      "from": 0,
+      "dur": 124,
+      "ground": "accent",
+      "transition": "cut",
+      "sfx": [],
+      "lines": [
+        [
+          "Why do budgeting",
+          "apps stop working",
+          "after two months"
+        ]
+      ]
+    },
+    {
+      "id": "what-to-do",
+      "kind": "list",
+      "variant": "checklist",
+      "copy": [
+        {
+          "text": "The number is negative most months.",
+          "source": "guide:why-budgeting-apps-stop-working-after-two-months/body[7].items[0]#0"
+        },
+        {
+          "text": "Your pay swings.",
+          "source": "guide:why-budgeting-apps-stop-working-after-two-months/body[7].items[1]#0"
+        }
+      ],
+      "eyebrow": {
+        "text": "When the tool isn't the reason",
+        "source": "guide:why-budgeting-apps-stop-working-after-two-months/body[7].heading"
+      },
+      "why": "What to do about it, from the guide \"Why budgets get dropped, and what one that lasts needs\": its own checklist, the first sentence of each item.",
+      "from": 112,
+      "dur": 259,
+      "ground": "light",
+      "transition": "lineWipe",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "tick",
+          "volume": 0.36
+        },
+        {
+          "at": 10,
+          "cue": "tick",
+          "volume": 0.27
+        },
+        {
+          "at": 96,
+          "cue": "tick",
+          "volume": 0.27
+        }
+      ]
+    },
+    {
+      "id": "help",
+      "kind": "phone",
+      "variant": "proof",
+      "copy": [],
+      "caption": {
+        "text": "Because they need daily upkeep. This one has a short weekly check-in and a quiet way back in when you have been away for weeks.",
+        "source": "searchedProblems[4].answer"
+      },
+      "screen": {
+        "src": "screens/monthly-money-reset-progress.png",
+        "pose": "float",
+        "focus": {
+          "at": 0.45,
+          "y": 138,
+          "h": 126,
+          "region": "bills"
+        },
+        "scroll": []
+      },
+      "why": "How Monthly Money Reset helps with this moment, in the listing's own words, on the real screen that shows it. Screen: \"Start\" (Progress this month: bills handled, check-ins, the reserve kept, and spending against your own guide.) chosen because it is the real screen closest to \"Because they need daily upkeep. This one has a short weekly check-in and a quiet\"; focus on \"2 of 4\".",
+      "eyebrow": {
+        "text": "Monthly Money Reset",
+        "source": "title"
+      },
+      "from": 359,
+      "dur": 388,
+      "ground": "ink",
+      "transition": "blurDissolve",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "whoosh",
+          "volume": 0.192
+        },
+        {
+          "at": 12,
+          "cue": "pop",
+          "volume": 0.252
+        },
+        {
+          "at": 175,
+          "cue": "tap",
+          "volume": 0.33
+        }
+      ]
+    },
+    {
+      "id": "cta",
+      "kind": "cta",
+      "variant": "guide",
+      "copy": [
+        {
+          "text": "Monthly Money Reset",
+          "source": "title"
+        },
+        {
+          "text": "draftpace.com/guides/why-budgeting-apps-stop-working-after-two-months",
+          "source": "guide:why-budgeting-apps-stop-working-after-two-months/url"
+        }
+      ],
+      "eyebrow": {
+        "text": "The full guide",
+        "source": "micro"
+      },
+      "why": "Ends on where to read the whole guide, with the product beneath it: the viewer leaves with the next step, not only a pitch.",
+      "from": 735,
+      "dur": 150,
+      "ground": "light",
+      "transition": "blurDissolve",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "whoosh",
+          "volume": 0.192
+        },
+        {
+          "at": 8,
+          "cue": "settle",
+          "volume": 0.3
+        }
+      ]
+    }
+  ],
+  "reasoning": [
+    {
+      "topic": "Placement",
+      "decision": "Pinterest video pin, 1000×1500, 10–32s, hook by 1s, sound off",
+      "because": "People are planning, not scrolling: idea-led, calm and save-worthy, worded like what they searched for. Muted, looping, slow; a hard sell reads as an ad and loses the save."
+    },
+    {
+      "topic": "Product",
+      "decision": "Monthly Money Reset: free, motif \"ledger\", calm personality, cool accent #214b3e",
+      "because": "From its definition and Shop listing. 1 real screens and live components (safeToSpendCard, nextActionCard) to show."
+    },
+    {
+      "topic": "Situation",
+      "decision": "\"Why do budgeting apps stop working after two months\"",
+      "because": "One real moment from Monthly Money Reset's listing (searchedProblems[4].phrase). The film is about this moment and how the product helps with it: \"Because they need daily upkeep. This one has a short weekly check-in and a quiet way back in when you have been away for weeks.\""
+    },
+    {
+      "topic": "Guide",
+      "decision": "\"Why budgets get dropped, and what one that lasts needs\" (draftpace.com/guides/why-budgeting-apps-stop-working-after-two-months)",
+      "because": "The guide that covers this moment: what to do comes from it, and the film ends on it."
+    },
+    {
+      "topic": "Stage",
+      "decision": "Before launch: helpful and relatable only",
+      "because": "Nobody knows Draftpace yet, so films show how it helps with real moments. Who it is not for, questions before buying, what you get and the price wait until there are users to sell to."
+    },
+    {
+      "topic": "Audience",
+      "decision": "You want one clear number for what's actually safe to spend, not a full budget system. / You have a mix of bills, some paid automatically and some not, that you'd rather not accidentally spend past.",
+      "because": "The listing's own audience lines; the director writes for them."
+    },
+    {
+      "topic": "Structure",
+      "decision": "What to do first: The moment, the guide's own checklist for it, then the product that keeps track of it.",
+      "because": "Best fit for a awareness film on Pinterest video pin (platform fit 3, goal fit 3, already used for this product ×1, already used on Pinterest video pin ×2). Other candidates: In their words (-12.0), The moment (-14.0)."
+    },
+    {
+      "topic": "Angle",
+      "decision": "\"Why do budgeting apps stop working after two months\"",
+      "because": "The moment \"Why do budgeting apps stop working after two months\", the checklist from \"Why budgets get dropped, and what one that lasts needs\", then how Monthly Money Reset helps."
+    },
+    {
+      "topic": "Transitions",
+      "decision": "Transitions follow the product's own identity motif, \"ledger\"",
+      "because": "Transitions follow the product's own identity motif, \"ledger\": a ledger is ruled lines, so scenes are revealed row by row."
+    },
+    {
+      "topic": "Camera",
+      "decision": "Camera \"locked\"",
+      "because": "Camera \"locked\": still and precise, so a slow, reading audience is never chasing the frame."
+    },
+    {
+      "topic": "Colour",
+      "decision": "Grounds light → accent → light → ink",
+      "because": "Grounds light → accent → light → ink: a cool accent, so a darker ground is used for contrast at a turn."
+    },
+    {
+      "topic": "Edit",
+      "decision": "Trimmed \"what-to-do\" to 2 items",
+      "because": "Fewer items read properly beats more items skimmed."
+    },
+    {
+      "topic": "Variation",
+      "decision": "Rotated the ground rhythm",
+      "because": "Its shape was 0.74 similar to sit-family-health-binder-search-6--youtube-short; a different film, not the same one re-coloured."
+    },
+    {
+      "topic": "Sound",
+      "decision": "Light sound design, low-energy bed",
+      "because": "Most of this audience never unmutes, so nothing depends on sound; cues are kept quieter and sparser for those who do."
+    },
+    {
+      "topic": "Length",
+      "decision": "29.5s, 4 scenes",
+      "because": "Each scene is held for the time its words take to read on Pinterest video pin (0.32s a word), inside 10–32s."
+    }
+  ]
+}

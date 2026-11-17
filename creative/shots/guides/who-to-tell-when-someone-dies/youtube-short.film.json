@@ -1,0 +1,285 @@
+{
+  "id": "guide-who-to-tell-when-someone-dies--youtube-short",
+  "product": "personal-life-affairs-companion",
+  "guide": "who-to-tell-when-someone-dies",
+  "runtime": {
+    "min": 18,
+    "max": 45
+  },
+  "platform": "youtube-short",
+  "goal": "awareness",
+  "width": 1080,
+  "height": 1920,
+  "fps": 30,
+  "durationInFrames": 688,
+  "structure": "guideChecklist",
+  "angle": {
+    "text": "Who to notify when someone dies, in order",
+    "source": "guide:who-to-tell-when-someone-dies/title"
+  },
+  "treatment": {
+    "voice": "editorial",
+    "camera": "float",
+    "transitions": [
+      "pageTurn",
+      "blurDissolve",
+      "pageTurn"
+    ],
+    "motif": "book",
+    "grounds": [
+      "ink",
+      "light",
+      "light",
+      "accent"
+    ],
+    "pace": 1
+  },
+  "music": {
+    "bed": "audio/bed-relaxation-05.mp3",
+    "level": 0.2,
+    "energy": "mid"
+  },
+  "scenes": [
+    {
+      "id": "hook",
+      "kind": "title",
+      "variant": "editorial",
+      "copy": [
+        {
+          "text": "Who to notify when someone dies, in order",
+          "source": "guide:who-to-tell-when-someone-dies/title"
+        }
+      ],
+      "emphasis": [
+        "someone"
+      ],
+      "why": "The hook is the guide's own title: the question it answers, as a person would put it.",
+      "from": 0,
+      "dur": 83,
+      "ground": "light",
+      "transition": "cut",
+      "sfx": [],
+      "lines": [
+        [
+          "Who to notify when",
+          "someone dies, in order"
+        ]
+      ]
+    },
+    {
+      "id": "list",
+      "kind": "list",
+      "variant": "checklist",
+      "copy": [
+        {
+          "text": "Canceling the main email or phone.",
+          "source": "guide:who-to-tell-when-someone-dies/body[3].items[1]#0"
+        },
+        {
+          "text": "Deciding what happens to the house, the car or anything of value.",
+          "source": "guide:who-to-tell-when-someone-dies/body[3].items[3]#0"
+        },
+        {
+          "text": "Telling every single person yourself.",
+          "source": "guide:who-to-tell-when-someone-dies/body[3].items[4]#0"
+        }
+      ],
+      "eyebrow": {
+        "text": "What can actually wait",
+        "source": "guide:who-to-tell-when-someone-dies/body[3].heading"
+      },
+      "why": "The guide's own checklist, the first sentence of each item, ticked in as it is read.",
+      "from": 71,
+      "dur": 322,
+      "ground": "light",
+      "transition": "blurDissolve",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "whoosh",
+          "volume": 0.32
+        },
+        {
+          "at": 10,
+          "cue": "pop",
+          "volume": 0.45
+        },
+        {
+          "at": 91,
+          "cue": "pop",
+          "volume": 0.45
+        },
+        {
+          "at": 172,
+          "cue": "pop",
+          "volume": 0.45
+        }
+      ]
+    },
+    {
+      "id": "tool",
+      "kind": "phone",
+      "variant": "proof",
+      "copy": [],
+      "caption": {
+        "text": "A record of what changed, and when, and what it said before",
+        "source": "expectedOutputs[3]"
+      },
+      "screen": {
+        "src": "screens/personal-life-affairs-companion-workspace.png",
+        "pose": "tiltLeft",
+        "focus": {
+          "at": 0.45,
+          "y": 82,
+          "h": 427,
+          "region": "question"
+        },
+        "scroll": []
+      },
+      "why": "The turn: the product the guide itself hands over to, named and shown on its real screen, captioned with its listing's line closest to what the guide teaches. Screen: \"Write down who should be called first.\" (One question at a time: write down who should be called first, with Start, Not relevant to me and Later.) chosen because it is the real screen closest to \"A record of what changed, and when, and what it said before Who to notify when s\"; focus on \"Write down who should be called first.\".",
+      "eyebrow": {
+        "text": "Personal Life Affairs Companion",
+        "source": "title"
+      },
+      "from": 381,
+      "dur": 194,
+      "ground": "accent",
+      "transition": "blurDissolve",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "whoosh",
+          "volume": 0.32
+        },
+        {
+          "at": 12,
+          "cue": "pop",
+          "volume": 0.42
+        },
+        {
+          "at": 87,
+          "cue": "tap",
+          "volume": 0.55
+        }
+      ]
+    },
+    {
+      "id": "cta",
+      "kind": "cta",
+      "variant": "guide",
+      "copy": [
+        {
+          "text": "Personal Life Affairs Companion",
+          "source": "title"
+        },
+        {
+          "text": "draftpace.com/guides/who-to-tell-when-someone-dies",
+          "source": "guide:who-to-tell-when-someone-dies/url"
+        }
+      ],
+      "eyebrow": {
+        "text": "The full guide",
+        "source": "micro"
+      },
+      "why": "Ends on where to read the whole guide, with the product beneath it: the viewer leaves with the next step, not only a pitch.",
+      "from": 563,
+      "dur": 125,
+      "ground": "ink",
+      "transition": "pageTurn",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "page",
+          "volume": 0.32
+        },
+        {
+          "at": 8,
+          "cue": "settle",
+          "volume": 0.5
+        }
+      ]
+    }
+  ],
+  "reasoning": [
+    {
+      "topic": "Placement",
+      "decision": "YouTube Short, 1080×1920, 18–45s, hook by 1.2s, sound on",
+      "because": "Search-adjacent audience that will watch a slightly longer explanation if it starts strong. Loops by default."
+    },
+    {
+      "topic": "Product",
+      "decision": "Personal Life Affairs Companion: $49 (list $99), motif \"book\", calm personality, cool accent #26374f",
+      "because": "From its definition and Shop listing. 3 real screens to show."
+    },
+    {
+      "topic": "Guide",
+      "decision": "\"Who to notify when someone dies, in order\" (draftpace.com/guides/who-to-tell-when-someone-dies)",
+      "because": "Teaches from the guide first; Personal Life Affairs Companion is the product the guide hands over to. 1 lists and timelines, 5 questions to draw from."
+    },
+    {
+      "topic": "Stage",
+      "decision": "Before launch: helpful and relatable only",
+      "because": "Nobody knows Draftpace yet, so films show how it helps with real moments. Who it is not for, questions before buying, what you get and the price wait until there are users to sell to."
+    },
+    {
+      "topic": "Audience",
+      "decision": "You have been meaning to sort this out for a while and have never found a first step small enough to take. / You would rather be asked one question at a time than handed a folder and told to fill it in.",
+      "because": "The listing's own audience lines; the director writes for them."
+    },
+    {
+      "topic": "Material",
+      "decision": "Allowed real lines up to 4 words longer",
+      "because": "Every structure Personal Life Affairs Companion's copy supports at YouTube Short's normal line length is already used by its other films; a longer real line beats telling the same story twice."
+    },
+    {
+      "topic": "Structure",
+      "decision": "The checklist: The guide's checklist on one screen, item by item, then the product that holds it.",
+      "because": "Best fit for a awareness film on YouTube Short (platform fit 2, goal fit 3, already used for this product ×2, already used on YouTube Short ×8). Other candidates: The question people ask (-42.6)."
+    },
+    {
+      "topic": "Angle",
+      "decision": "\"Who to notify when someone dies, in order\"",
+      "because": "A checklist from the guide, \"What can actually wait\": 3 of its 5 items."
+    },
+    {
+      "topic": "Transitions",
+      "decision": "Transitions follow the product's own identity motif, \"book\"",
+      "because": "Transitions follow the product's own identity motif, \"book\": a handoff book, so scenes turn like pages."
+    },
+    {
+      "topic": "Camera",
+      "decision": "Camera \"dolly\"",
+      "because": "Camera \"dolly\": constant forward movement for a high-energy feed."
+    },
+    {
+      "topic": "Colour",
+      "decision": "Grounds ink → light → light → accent",
+      "because": "Grounds ink → light → light → accent: a cool accent, so a darker ground is used for contrast at a turn."
+    },
+    {
+      "topic": "Variation",
+      "decision": "Rotated the ground rhythm",
+      "because": "Its shape was 0.74 similar to guide-what-to-do-when-a-parent-dies--youtube-short; a different film, not the same one re-coloured."
+    },
+    {
+      "topic": "Variation",
+      "decision": "Changed the camera",
+      "because": "Its shape was 0.74 similar to guide-what-to-do-when-a-parent-dies--youtube-short; a different film, not the same one re-coloured."
+    },
+    {
+      "topic": "Variation",
+      "decision": "Reordered the transitions",
+      "because": "Its shape was 0.74 similar to guide-digital-accounts-after-a-death--youtube-short; a different film, not the same one re-coloured."
+    },
+    {
+      "topic": "Sound",
+      "decision": "Full sound design, mid-energy bed",
+      "because": "Sound-on placement: every transition, landing and reveal has a cue, and the bed ducks under the brand moment."
+    },
+    {
+      "topic": "Length",
+      "decision": "22.9s, 4 scenes",
+      "because": "Each scene is held for the time its words take to read on YouTube Short (0.26s a word), inside 18–45s."
+    }
+  ]
+}

@@ -2,3 +2,6 @@ node_modules/
 out/
 .remotion/
 *.log
+# Voice-over recordings are yours, not the repo's: the planner records their length in voiceover/<name>/voiceover.json.
+voiceover/*/voice.*
+public/voiceover/

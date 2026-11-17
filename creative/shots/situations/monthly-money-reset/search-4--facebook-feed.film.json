@@ -1,0 +1,207 @@
+{
+  "id": "sit-monthly-money-reset-search-4--facebook-feed",
+  "product": "monthly-money-reset",
+  "guide": "available-balance-vs-current-balance",
+  "situation": "searchedProblems[3].phrase",
+  "runtime": {
+    "min": 10,
+    "max": 30
+  },
+  "platform": "facebook-feed",
+  "goal": "awareness",
+  "width": 1080,
+  "height": 1350,
+  "fps": 30,
+  "durationInFrames": 638,
+  "structure": "situationWords",
+  "angle": {
+    "text": "My balance says I have money but a bill is coming",
+    "source": "searchedProblems[3].phrase"
+  },
+  "treatment": {
+    "voice": "editorial",
+    "camera": "locked",
+    "transitions": [
+      "lineWipe",
+      "blurDissolve",
+      "lineWipe"
+    ],
+    "motif": "ledger",
+    "grounds": [
+      "ink",
+      "light",
+      "light",
+      "accent"
+    ],
+    "pace": 1.15
+  },
+  "music": {
+    "bed": "audio/bed-relaxation-05.mp3",
+    "level": 0.16,
+    "energy": "low"
+  },
+  "scenes": [
+    {
+      "id": "moment",
+      "kind": "title",
+      "variant": "quote",
+      "copy": [
+        {
+          "text": "My balance says I have money but a bill is coming",
+          "source": "searchedProblems[3].phrase"
+        }
+      ],
+      "emphasis": [
+        "balance"
+      ],
+      "why": "Opens on the moment in the person's own words, as the listing records people searching it.",
+      "from": 0,
+      "dur": 146,
+      "ground": "ink",
+      "transition": "cut",
+      "sfx": [],
+      "lines": [
+        [
+          "My balance says I",
+          "have money but a",
+          "bill is coming"
+        ]
+      ]
+    },
+    {
+      "id": "help",
+      "kind": "live",
+      "variant": "after",
+      "copy": [],
+      "caption": {
+        "text": "Bills you protect are held back whether they are paid yet or not, so the figure never counts money you already owe.",
+        "source": "searchedProblems[3].answer"
+      },
+      "live": "safeToSpendCard",
+      "eyebrow": {
+        "text": "Monthly Money Reset",
+        "source": "title"
+      },
+      "why": "How Monthly Money Reset helps, in the listing's own words, as the real component computing a real number.",
+      "from": 134,
+      "dur": 366,
+      "ground": "light",
+      "transition": "lineWipe",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "tick",
+          "volume": 0.36
+        },
+        {
+          "at": 12,
+          "cue": "pop",
+          "volume": 0.252
+        }
+      ]
+    },
+    {
+      "id": "cta",
+      "kind": "cta",
+      "variant": "guide",
+      "copy": [
+        {
+          "text": "Monthly Money Reset",
+          "source": "title"
+        },
+        {
+          "text": "draftpace.com/guides/available-balance-vs-current-balance",
+          "source": "guide:available-balance-vs-current-balance/url"
+        }
+      ],
+      "eyebrow": {
+        "text": "The full guide",
+        "source": "micro"
+      },
+      "why": "Ends on where to read the whole guide, with the product beneath it: the viewer leaves with the next step, not only a pitch.",
+      "from": 488,
+      "dur": 150,
+      "ground": "light",
+      "transition": "blurDissolve",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "whoosh",
+          "volume": 0.192
+        },
+        {
+          "at": 8,
+          "cue": "settle",
+          "volume": 0.3
+        }
+      ]
+    }
+  ],
+  "reasoning": [
+    {
+      "topic": "Placement",
+      "decision": "Facebook feed video, 1080×1350, 10–30s, hook by 1.5s, sound off",
+      "because": "Scrolled past in a feed with sound off: say who it is for in the first seconds, name the product early, keep every point on screen and readable at a glance."
+    },
+    {
+      "topic": "Product",
+      "decision": "Monthly Money Reset: free, motif \"ledger\", calm personality, cool accent #214b3e",
+      "because": "From its definition and Shop listing. 1 real screens and live components (safeToSpendCard, nextActionCard) to show."
+    },
+    {
+      "topic": "Situation",
+      "decision": "\"My balance says I have money but a bill is coming\"",
+      "because": "One real moment from Monthly Money Reset's listing (searchedProblems[3].phrase). The film is about this moment and how the product helps with it: \"Bills you protect are held back whether they are paid yet or not, so the figure never counts money you already owe.\""
+    },
+    {
+      "topic": "Guide",
+      "decision": "\"Available vs current balance: which one can you spend?\" (draftpace.com/guides/available-balance-vs-current-balance)",
+      "because": "The guide that covers this moment: what to do comes from it, and the film ends on it."
+    },
+    {
+      "topic": "Stage",
+      "decision": "Before launch: helpful and relatable only",
+      "because": "Nobody knows Draftpace yet, so films show how it helps with real moments. Who it is not for, questions before buying, what you get and the price wait until there are users to sell to."
+    },
+    {
+      "topic": "Audience",
+      "decision": "You want one clear number for what's actually safe to spend, not a full budget system. / You have a mix of bills, some paid automatically and some not, that you'd rather not accidentally spend past.",
+      "because": "The listing's own audience lines; the director writes for them."
+    },
+    {
+      "topic": "Structure",
+      "decision": "In their words: The moment typed the way a person searches it, then what to do about it, then the product doing it.",
+      "because": "Best fit for a awareness film on Facebook feed video (platform fit 2, goal fit 3, already used for this product ×1). Other candidates: The moment (-10.1)."
+    },
+    {
+      "topic": "Angle",
+      "decision": "\"My balance says I have money but a bill is coming\"",
+      "because": "A situation people search for, \"My balance says I have money but a bill is coming\", with the steps from \"Available vs current balance: which one can you spend?\", and how Monthly Money Reset helps."
+    },
+    {
+      "topic": "Transitions",
+      "decision": "Transitions follow the product's own identity motif, \"ledger\"",
+      "because": "Transitions follow the product's own identity motif, \"ledger\": a ledger is ruled lines, so scenes are revealed row by row."
+    },
+    {
+      "topic": "Camera",
+      "decision": "Camera \"locked\"",
+      "because": "Camera \"locked\": still and precise, so a slow, reading audience is never chasing the frame."
+    },
+    {
+      "topic": "Colour",
+      "decision": "Grounds ink → light → light → accent",
+      "because": "Grounds ink → light → light → accent: a cool accent, so a darker ground is used for contrast at a turn."
+    },
+    {
+      "topic": "Sound",
+      "decision": "Light sound design, low-energy bed",
+      "because": "Most of this audience never unmutes, so nothing depends on sound; cues are kept quieter and sparser for those who do."
+    },
+    {
+      "topic": "Length",
+      "decision": "21.3s, 3 scenes",
+      "because": "Each scene is held for the time its words take to read on Facebook feed video (0.32s a word), inside 10–30s."
+    }
+  ]
+}

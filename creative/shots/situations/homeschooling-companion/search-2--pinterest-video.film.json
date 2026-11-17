@@ -1,0 +1,222 @@
+{
+  "id": "sit-homeschooling-companion-search-2--pinterest-video",
+  "product": "homeschooling-companion",
+  "guide": "how-to-catch-up-on-homeschool-records",
+  "situation": "searchedProblems[1].phrase",
+  "runtime": {
+    "min": 10,
+    "max": 32
+  },
+  "platform": "pinterest-video",
+  "goal": "awareness",
+  "width": 1000,
+  "height": 1500,
+  "fps": 30,
+  "durationInFrames": 694,
+  "structure": "situationMoment",
+  "angle": {
+    "text": "I have not kept any records and need to catch up",
+    "source": "searchedProblems[1].phrase"
+  },
+  "treatment": {
+    "voice": "editorial",
+    "camera": "float",
+    "transitions": [
+      "lineWipe",
+      "slideUp",
+      "lineWipe"
+    ],
+    "motif": "register",
+    "grounds": [
+      "light",
+      "accent",
+      "light",
+      "ink"
+    ],
+    "pace": 1.15
+  },
+  "music": {
+    "bed": "audio/bed-relaxation-05.mp3",
+    "level": 0.16,
+    "energy": "low"
+  },
+  "scenes": [
+    {
+      "id": "moment",
+      "kind": "title",
+      "variant": "editorial",
+      "copy": [
+        {
+          "text": "I have not kept any records and need to catch up",
+          "source": "searchedProblems[1].phrase"
+        }
+      ],
+      "emphasis": [
+        "records"
+      ],
+      "why": "Opens on the moment in the person's own words, as the listing records people searching it.",
+      "from": 0,
+      "dur": 146,
+      "ground": "ink",
+      "transition": "cut",
+      "sfx": [],
+      "lines": [
+        [
+          "I have not kept",
+          "any records and",
+          "need to catch up"
+        ]
+      ]
+    },
+    {
+      "id": "help",
+      "kind": "phone",
+      "variant": "proof",
+      "copy": [],
+      "caption": {
+        "text": "It works from whatever you give it. Record what you did, when you can remember it, and the record builds from there rather than demanding a full year up front.",
+        "source": "searchedProblems[1].answer"
+      },
+      "screen": {
+        "src": "screens/homeschooling-companion-workspace.png",
+        "pose": "float",
+        "focus": {
+          "at": 0.45,
+          "y": 166,
+          "h": 364,
+          "region": "ava"
+        },
+        "scroll": []
+      },
+      "why": "How Homeschooling Companion helps with this moment, in the listing's own words, on the real screen that shows it. Screen: \"What we are doing today.\" (Today, per child: each lesson in the plan, and what is worth going over again.) chosen because it is the real screen closest to \"It works from whatever you give it. Record what you did, when you can remember i\"; focus on \"Ava\".",
+      "eyebrow": {
+        "text": "Homeschooling Companion",
+        "source": "title"
+      },
+      "from": 134,
+      "dur": 433,
+      "ground": "light",
+      "transition": "lineWipe",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "tick",
+          "volume": 0.36
+        },
+        {
+          "at": 12,
+          "cue": "pop",
+          "volume": 0.252
+        },
+        {
+          "at": 195,
+          "cue": "tap",
+          "volume": 0.33
+        }
+      ]
+    },
+    {
+      "id": "cta",
+      "kind": "cta",
+      "variant": "guide",
+      "copy": [
+        {
+          "text": "Homeschooling Companion",
+          "source": "title"
+        },
+        {
+          "text": "draftpace.com/guides/how-to-catch-up-on-homeschool-records",
+          "source": "guide:how-to-catch-up-on-homeschool-records/url"
+        }
+      ],
+      "eyebrow": {
+        "text": "The full guide",
+        "source": "micro"
+      },
+      "why": "Ends on where to read the whole guide, with the product beneath it: the viewer leaves with the next step, not only a pitch.",
+      "from": 555,
+      "dur": 139,
+      "ground": "light",
+      "transition": "blurDissolve",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "whoosh",
+          "volume": 0.192
+        },
+        {
+          "at": 8,
+          "cue": "settle",
+          "volume": 0.3
+        }
+      ]
+    }
+  ],
+  "reasoning": [
+    {
+      "topic": "Placement",
+      "decision": "Pinterest video pin, 1000×1500, 10–32s, hook by 1s, sound off",
+      "because": "People are planning, not scrolling: idea-led, calm and save-worthy, worded like what they searched for. Muted, looping, slow; a hard sell reads as an ad and loses the save."
+    },
+    {
+      "topic": "Product",
+      "decision": "Homeschooling Companion: $34 (list $69), motif \"register\", calm personality, cool accent #6a4a72",
+      "because": "From its definition and Shop listing. 3 real screens to show."
+    },
+    {
+      "topic": "Situation",
+      "decision": "\"I have not kept any records and need to catch up\"",
+      "because": "One real moment from Homeschooling Companion's listing (searchedProblems[1].phrase). The film is about this moment and how the product helps with it: \"It works from whatever you give it. Record what you did, when you can remember it, and the record builds from there rather than demanding a full year up front.\""
+    },
+    {
+      "topic": "Guide",
+      "decision": "\"How to catch up on homeschool records you did not keep\" (draftpace.com/guides/how-to-catch-up-on-homeschool-records)",
+      "because": "The guide that covers this moment: what to do comes from it, and the film ends on it."
+    },
+    {
+      "topic": "Stage",
+      "decision": "Before launch: helpful and relatable only",
+      "because": "Nobody knows Draftpace yet, so films show how it helps with real moments. Who it is not for, questions before buying, what you get and the price wait until there are users to sell to."
+    },
+    {
+      "topic": "Audience",
+      "decision": "You already have a curriculum you chose on purpose and you want something that follows it rather than replacing it. / You teach more than one child and keeping their records separate in your head has stopped working.",
+      "because": "The listing's own audience lines; the director writes for them."
+    },
+    {
+      "topic": "Structure",
+      "decision": "The moment: The moment as it feels, set dark, then the help in the light, then what to do next.",
+      "because": "Best fit for a awareness film on Pinterest video pin (platform fit 1, goal fit 3, already used on Pinterest video pin ×1). Other candidates: Inside the tool (-3.4), In their words (-5.0)."
+    },
+    {
+      "topic": "Angle",
+      "decision": "\"I have not kept any records and need to catch up\"",
+      "because": "The moment \"I have not kept any records and need to catch up\", then how Homeschooling Companion helps, then what the guide \"How to catch up on homeschool records you did not keep\" says to do."
+    },
+    {
+      "topic": "Transitions",
+      "decision": "Transitions follow the product's own identity motif, \"register\"",
+      "because": "Transitions follow the product's own identity motif, \"register\": a register is filled line by line, so scenes are written in from the top."
+    },
+    {
+      "topic": "Camera",
+      "decision": "Camera \"float\"",
+      "because": "Camera \"float\": a gentle float that keeps a held frame alive without demanding attention."
+    },
+    {
+      "topic": "Colour",
+      "decision": "Grounds light → accent → light → ink",
+      "because": "Grounds light → accent → light → ink: a cool accent, so a darker ground is used for contrast at a turn."
+    },
+    {
+      "topic": "Sound",
+      "decision": "Light sound design, low-energy bed",
+      "because": "Most of this audience never unmutes, so nothing depends on sound; cues are kept quieter and sparser for those who do."
+    },
+    {
+      "topic": "Length",
+      "decision": "23.1s, 3 scenes",
+      "because": "Each scene is held for the time its words take to read on Pinterest video pin (0.32s a word), inside 10–32s."
+    }
+  ]
+}

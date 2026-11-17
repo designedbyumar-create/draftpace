@@ -1,0 +1,264 @@
+{
+  "id": "sit-personal-life-affairs-companion-search-2--facebook-feed",
+  "product": "personal-life-affairs-companion",
+  "guide": "the-if-something-happens-to-me-file",
+  "situation": "searchedProblems[1].phrase",
+  "runtime": {
+    "min": 10,
+    "max": 30
+  },
+  "platform": "facebook-feed",
+  "goal": "awareness",
+  "width": 1080,
+  "height": 1350,
+  "fps": 30,
+  "durationInFrames": 736,
+  "structure": "situationInside",
+  "angle": {
+    "text": "How do I make an if-something-happens-to-me file",
+    "source": "searchedProblems[1].phrase"
+  },
+  "treatment": {
+    "voice": "editorial",
+    "camera": "locked",
+    "transitions": [
+      "pageTurn",
+      "blurDissolve",
+      "pageTurn"
+    ],
+    "motif": "book",
+    "grounds": [
+      "light",
+      "light",
+      "ink",
+      "accent"
+    ],
+    "pace": 1.15
+  },
+  "music": {
+    "bed": "audio/bed-relaxation-05.mp3",
+    "level": 0.16,
+    "energy": "low"
+  },
+  "scenes": [
+    {
+      "id": "moment",
+      "kind": "title",
+      "variant": "label",
+      "copy": [
+        {
+          "text": "How do I make an if-something-happens-to-me file",
+          "source": "searchedProblems[1].phrase"
+        }
+      ],
+      "emphasis": [
+        "if-something-happens-to-me"
+      ],
+      "why": "Opens on the moment in the person's own words, as the listing records people searching it.",
+      "from": 0,
+      "dur": 101,
+      "ground": "accent",
+      "transition": "cut",
+      "sfx": [],
+      "lines": [
+        [
+          "How do I make an",
+          "if-something-happens-to-me",
+          "file"
+        ]
+      ]
+    },
+    {
+      "id": "help",
+      "kind": "phone",
+      "variant": "proof",
+      "copy": [],
+      "caption": {
+        "text": "This is that file, kept current rather than written once, and printable as a book somebody could pick up and use.",
+        "source": "searchedProblems[1].answer"
+      },
+      "screen": {
+        "src": "screens/personal-life-affairs-companion-affairs.png",
+        "pose": "float",
+        "focus": {
+          "at": 0.45,
+          "y": 264,
+          "h": 462,
+          "region": "documents"
+        }
+      },
+      "why": "How Personal Life Affairs Companion helps with this moment, in the listing's own words, on the real screen that shows it. Screen: \"What you have established so far.\" (Important documents, each with where it is kept: the will, lasting power of attorney, passports, insurance, deeds.) chosen because it is the real screen closest to \"This is that file, kept current rather than written once, and printable as a boo\"; focus on \"Important documents\".",
+      "eyebrow": {
+        "text": "Personal Life Affairs Companion",
+        "source": "title"
+      },
+      "from": 89,
+      "dur": 355,
+      "ground": "light",
+      "transition": "pageTurn",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "page",
+          "volume": 0.192
+        },
+        {
+          "at": 12,
+          "cue": "pop",
+          "volume": 0.252
+        },
+        {
+          "at": 160,
+          "cue": "tap",
+          "volume": 0.33
+        }
+      ]
+    },
+    {
+      "id": "also",
+      "kind": "phone",
+      "variant": "proof",
+      "copy": [],
+      "caption": {
+        "text": "Do the next thing without deciding what it is",
+        "source": "tasks[0].label"
+      },
+      "screen": {
+        "src": "screens/personal-life-affairs-companion-workspace.png",
+        "pose": "float",
+        "focus": {
+          "at": 0.45,
+          "y": 82,
+          "h": 427,
+          "region": "question"
+        },
+        "scroll": []
+      },
+      "why": "One more real thing an owner does here, in the listing's own task wording, on the screen it happens on. Screen: \"Write down who should be called first.\" (One question at a time: write down who should be called first, with Start, Not relevant to me and Later.) chosen because it is the real screen closest to \"Do the next thing without deciding what it is\"; focus on \"Write down who should be called first.\".",
+      "from": 432,
+      "dur": 155,
+      "ground": "light",
+      "transition": "blurDissolve",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "whoosh",
+          "volume": 0.192
+        },
+        {
+          "at": 12,
+          "cue": "pop",
+          "volume": 0.252
+        },
+        {
+          "at": 70,
+          "cue": "tap",
+          "volume": 0.33
+        }
+      ]
+    },
+    {
+      "id": "cta",
+      "kind": "cta",
+      "variant": "guide",
+      "copy": [
+        {
+          "text": "Personal Life Affairs Companion",
+          "source": "title"
+        },
+        {
+          "text": "draftpace.com/guides/the-if-something-happens-to-me-file",
+          "source": "guide:the-if-something-happens-to-me-file/url"
+        }
+      ],
+      "eyebrow": {
+        "text": "The full guide",
+        "source": "micro"
+      },
+      "why": "Ends on where to read the whole guide, with the product beneath it: the viewer leaves with the next step, not only a pitch.",
+      "from": 575,
+      "dur": 161,
+      "ground": "accent",
+      "transition": "pageTurn",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "page",
+          "volume": 0.192
+        },
+        {
+          "at": 8,
+          "cue": "settle",
+          "volume": 0.3
+        }
+      ]
+    }
+  ],
+  "reasoning": [
+    {
+      "topic": "Placement",
+      "decision": "Facebook feed video, 1080×1350, 10–30s, hook by 1.5s, sound off",
+      "because": "Scrolled past in a feed with sound off: say who it is for in the first seconds, name the product early, keep every point on screen and readable at a glance."
+    },
+    {
+      "topic": "Product",
+      "decision": "Personal Life Affairs Companion: $49 (list $99), motif \"book\", calm personality, cool accent #26374f",
+      "because": "From its definition and Shop listing. 3 real screens to show."
+    },
+    {
+      "topic": "Situation",
+      "decision": "\"How do I make an if-something-happens-to-me file\"",
+      "because": "One real moment from Personal Life Affairs Companion's listing (searchedProblems[1].phrase). The film is about this moment and how the product helps with it: \"This is that file, kept current rather than written once, and printable as a book somebody could pick up and use.\""
+    },
+    {
+      "topic": "Guide",
+      "decision": "\"The if-something-happens-to-me file: what goes in it\" (draftpace.com/guides/the-if-something-happens-to-me-file)",
+      "because": "The guide that covers this moment: what to do comes from it, and the film ends on it."
+    },
+    {
+      "topic": "Stage",
+      "decision": "Before launch: helpful and relatable only",
+      "because": "Nobody knows Draftpace yet, so films show how it helps with real moments. Who it is not for, questions before buying, what you get and the price wait until there are users to sell to."
+    },
+    {
+      "topic": "Audience",
+      "decision": "You have been meaning to sort this out for a while and have never found a first step small enough to take. / You would rather be asked one question at a time than handed a folder and told to fill it in.",
+      "because": "The listing's own audience lines; the director writes for them."
+    },
+    {
+      "topic": "Structure",
+      "decision": "Inside the tool: The moment, then how the product helps on its real screen, then one more real thing an owner does in it.",
+      "because": "Best fit for a awareness film on Facebook feed video (platform fit 3, goal fit 2, already used on Facebook feed video ×2). Other candidates: In their words (-6.2), The moment (-9.2)."
+    },
+    {
+      "topic": "Angle",
+      "decision": "\"How do I make an if-something-happens-to-me file\"",
+      "because": "The moment \"How do I make an if-something-happens-to-me file\", how Personal Life Affairs Companion helps, and one more real thing it does: \"Do the next thing without deciding what it is\"."
+    },
+    {
+      "topic": "Transitions",
+      "decision": "Transitions follow the product's own identity motif, \"book\"",
+      "because": "Transitions follow the product's own identity motif, \"book\": a handoff book, so scenes turn like pages."
+    },
+    {
+      "topic": "Camera",
+      "decision": "Camera \"locked\"",
+      "because": "Camera \"locked\": still and precise, so a slow, reading audience is never chasing the frame."
+    },
+    {
+      "topic": "Colour",
+      "decision": "Grounds light → light → ink → accent",
+      "because": "Grounds light → light → ink → accent: a cool accent, so a darker ground is used for contrast at a turn."
+    },
+    {
+      "topic": "Sound",
+      "decision": "Light sound design, low-energy bed",
+      "because": "Most of this audience never unmutes, so nothing depends on sound; cues are kept quieter and sparser for those who do."
+    },
+    {
+      "topic": "Length",
+      "decision": "24.5s, 4 scenes",
+      "because": "Each scene is held for the time its words take to read on Facebook feed video (0.32s a word), inside 10–30s."
+    }
+  ]
+}

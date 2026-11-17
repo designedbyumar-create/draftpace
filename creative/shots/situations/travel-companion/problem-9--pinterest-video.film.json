@@ -1,0 +1,254 @@
+{
+  "id": "sit-travel-companion-problem-9--pinterest-video",
+  "product": "travel-companion",
+  "situation": "problemsSolved[8].problem",
+  "runtime": {
+    "min": 10,
+    "max": 32
+  },
+  "platform": "pinterest-video",
+  "goal": "awareness",
+  "width": 1000,
+  "height": 1500,
+  "fps": 30,
+  "durationInFrames": 657,
+  "structure": "situationInside",
+  "angle": {
+    "text": "The trip is over, but it's still cluttering the screen you want for the next one.",
+    "source": "problemsSolved[8].problem"
+  },
+  "treatment": {
+    "voice": "editorial",
+    "camera": "float",
+    "transitions": [
+      "slideLeft",
+      "whip",
+      "slideLeft"
+    ],
+    "motif": "timeline",
+    "grounds": [
+      "ink",
+      "light",
+      "light",
+      "accent"
+    ],
+    "pace": 1.15
+  },
+  "music": {
+    "bed": "audio/bed-relaxation-05.mp3",
+    "level": 0.16,
+    "energy": "low"
+  },
+  "scenes": [
+    {
+      "id": "moment",
+      "kind": "title",
+      "variant": "label",
+      "copy": [
+        {
+          "text": "The trip is over, but it's still cluttering the screen you want for the next one.",
+          "source": "problemsSolved[8].problem"
+        }
+      ],
+      "emphasis": [
+        "one"
+      ],
+      "why": "Opens on the moment as the listing describes it: the situation the viewer is in right now.",
+      "from": 0,
+      "dur": 201,
+      "ground": "accent",
+      "transition": "cut",
+      "sfx": [],
+      "lines": [
+        [
+          "The trip is over, but it's",
+          "still cluttering the screen",
+          "you want for the next one."
+        ]
+      ]
+    },
+    {
+      "id": "help",
+      "kind": "phone",
+      "variant": "proof",
+      "copy": [],
+      "caption": {
+        "text": "Mark it done and it moves to Travel history: still readable, still printable, never deleted.",
+        "source": "problemsSolved[8].solution"
+      },
+      "screen": {
+        "src": "screens/travel-companion-trip.png",
+        "pose": "flat",
+        "focus": {
+          "at": 0.45,
+          "y": 187,
+          "h": 126,
+          "region": "status"
+        }
+      },
+      "why": "How Travel Companion helps with this moment, in the listing's own words, on the real screen that shows it. Screen: \"Lisbon and Porto\" (The trip: where you are now, destinations, and every booking with its reference, with Record a change on each.) chosen because it is the real screen closest to \"Mark it done and it moves to Travel history: still readable, still printable, ne\"; focus on \"Not currently at a recorded destination\".",
+      "eyebrow": {
+        "text": "Travel Companion",
+        "source": "title"
+      },
+      "from": 189,
+      "dur": 267,
+      "ground": "light",
+      "transition": "slideLeft",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "swish",
+          "volume": 0.192
+        },
+        {
+          "at": 12,
+          "cue": "pop",
+          "volume": 0.252
+        },
+        {
+          "at": 120,
+          "cue": "tap",
+          "volume": 0.33
+        }
+      ]
+    },
+    {
+      "id": "also",
+      "kind": "phone",
+      "variant": "proof",
+      "copy": [],
+      "caption": {
+        "text": "Print the trip to carry",
+        "source": "tasks[6].label"
+      },
+      "screen": {
+        "src": "screens/travel-companion-printables.png",
+        "pose": "float",
+        "focus": {
+          "at": 0.45,
+          "y": 292,
+          "h": 161,
+          "region": "trip-book"
+        },
+        "scroll": []
+      },
+      "why": "One more real thing an owner does here, in the listing's own task wording, on the screen it happens on. Screen: \"My Trip Book\" (My Trip Book: a blank, printable travel planner, generated fresh each time.) chosen because it is the real screen closest to \"Print the trip to carry\"; focus on \"My Trip Book\".",
+      "from": 444,
+      "dur": 110,
+      "ground": "light",
+      "transition": "whip",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "swish",
+          "volume": 0.192
+        },
+        {
+          "at": 12,
+          "cue": "pop",
+          "volume": 0.252
+        },
+        {
+          "at": 50,
+          "cue": "tap",
+          "volume": 0.33
+        }
+      ]
+    },
+    {
+      "id": "cta",
+      "kind": "cta",
+      "variant": "save",
+      "copy": [
+        {
+          "text": "Travel Companion",
+          "source": "title"
+        },
+        {
+          "text": "Save this for later.",
+          "source": "micro"
+        }
+      ],
+      "why": "Pinterest video pin is a planning surface; the close asks for the save, the price stays quiet.",
+      "from": 542,
+      "dur": 115,
+      "ground": "accent",
+      "transition": "blurDissolve",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "whoosh",
+          "volume": 0.192
+        },
+        {
+          "at": 8,
+          "cue": "settle",
+          "volume": 0.3
+        }
+      ]
+    }
+  ],
+  "reasoning": [
+    {
+      "topic": "Placement",
+      "decision": "Pinterest video pin, 1000×1500, 10–32s, hook by 1s, sound off",
+      "because": "People are planning, not scrolling: idea-led, calm and save-worthy, worded like what they searched for. Muted, looping, slow; a hard sell reads as an ad and loses the save."
+    },
+    {
+      "topic": "Product",
+      "decision": "Travel Companion: $34 (list $69), motif \"timeline\", calm personality, cool accent #00626f",
+      "because": "From its definition and Shop listing. 4 real screens to show."
+    },
+    {
+      "topic": "Situation",
+      "decision": "\"The trip is over, but it's still cluttering the screen you want for the next one.\"",
+      "because": "One real moment from Travel Companion's listing (problemsSolved[8].problem). The film is about this moment and how the product helps with it: \"Mark it done and it moves to Travel history: still readable, still printable, never deleted.\""
+    },
+    {
+      "topic": "Stage",
+      "decision": "Before launch: helpful and relatable only",
+      "because": "Nobody knows Draftpace yet, so films show how it helps with real moments. Who it is not for, questions before buying, what you get and the price wait until there are users to sell to."
+    },
+    {
+      "topic": "Audience",
+      "decision": "You are travelling with other people, and you are the one everybody asks what happens next. / Your trip has more than three moving parts: flights, transfers, stays and reservations that were booked around each other.",
+      "because": "The listing's own audience lines; the director writes for them."
+    },
+    {
+      "topic": "Structure",
+      "decision": "Inside the tool: The moment, then how the product helps on its real screen, then one more real thing an owner does in it.",
+      "because": "Best fit for a awareness film on Pinterest video pin (platform fit 2, goal fit 2, already used for this product ×5, already used on Pinterest video pin ×5). Other candidates: The moment (-50.5)."
+    },
+    {
+      "topic": "Angle",
+      "decision": "\"The trip is over, but it's still cluttering the screen you want for the next one.\"",
+      "because": "The moment \"The trip is over, but it's still cluttering the screen you want for the next one.\", how Travel Companion helps, and one more real thing it does: \"Print the trip to carry\"."
+    },
+    {
+      "topic": "Transitions",
+      "decision": "Transitions follow the product's own identity motif, \"timeline\"",
+      "because": "Transitions follow the product's own identity motif, \"timeline\": a trip is a line through time, so scenes travel left to right along it."
+    },
+    {
+      "topic": "Camera",
+      "decision": "Camera \"float\"",
+      "because": "Camera \"float\": a gentle float that keeps a held frame alive without demanding attention."
+    },
+    {
+      "topic": "Colour",
+      "decision": "Grounds ink → light → light → accent",
+      "because": "Grounds ink → light → light → accent: a cool accent, so a darker ground is used for contrast at a turn."
+    },
+    {
+      "topic": "Sound",
+      "decision": "Light sound design, low-energy bed",
+      "because": "Most of this audience never unmutes, so nothing depends on sound; cues are kept quieter and sparser for those who do."
+    },
+    {
+      "topic": "Length",
+      "decision": "21.9s, 4 scenes",
+      "because": "Each scene is held for the time its words take to read on Pinterest video pin (0.32s a word), inside 10–32s."
+    }
+  ]
+}

@@ -1,0 +1,306 @@
+{
+  "id": "guide-you-missed-a-payment-what-to-do-next--youtube-short",
+  "product": "monthly-money-reset",
+  "guide": "you-missed-a-payment-what-to-do-next",
+  "runtime": {
+    "min": 18,
+    "max": 45
+  },
+  "platform": "youtube-short",
+  "goal": "awareness",
+  "width": 1080,
+  "height": 1920,
+  "fps": 30,
+  "durationInFrames": 612,
+  "structure": "guideTimeline",
+  "angle": {
+    "text": "You missed a payment. What to do in the next 48 hours",
+    "source": "guide:you-missed-a-payment-what-to-do-next/title"
+  },
+  "treatment": {
+    "voice": "editorial",
+    "camera": "dolly",
+    "transitions": [
+      "lineWipe",
+      "blurDissolve",
+      "lineWipe"
+    ],
+    "motif": "ledger",
+    "grounds": [
+      "light",
+      "light",
+      "ink",
+      "accent"
+    ],
+    "pace": 1
+  },
+  "music": {
+    "bed": "audio/bed-relaxation-05.mp3",
+    "level": 0.2,
+    "energy": "mid"
+  },
+  "scenes": [
+    {
+      "id": "hook",
+      "kind": "title",
+      "variant": "editorial",
+      "copy": [
+        {
+          "text": "You missed a payment. What to do in the next 48 hours",
+          "source": "guide:you-missed-a-payment-what-to-do-next/title"
+        }
+      ],
+      "emphasis": [
+        "48"
+      ],
+      "why": "The hook is the guide's own title: the question it answers, as a person would put it.",
+      "from": 0,
+      "dur": 115,
+      "ground": "light",
+      "transition": "cut",
+      "sfx": [],
+      "lines": [
+        [
+          "You missed a payment.",
+          "What to do in the",
+          "next 48 hours"
+        ]
+      ]
+    },
+    {
+      "id": "when-1",
+      "kind": "title",
+      "variant": "label",
+      "copy": [
+        {
+          "text": "Confirm it failed.",
+          "source": "guide:you-missed-a-payment-what-to-do-next/body[2].steps[0].what#0"
+        }
+      ],
+      "eyebrow": {
+        "text": "Right now",
+        "source": "guide:you-missed-a-payment-what-to-do-next/body[2].steps[0].when"
+      },
+      "emphasis": [
+        "Confirm"
+      ],
+      "why": "Marker 1: \"Right now\", with the first sentence of what the guide says to do then.",
+      "from": 103,
+      "dur": 81,
+      "ground": "light",
+      "transition": "lineWipe",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "tick",
+          "volume": 0.6
+        }
+      ],
+      "lines": [
+        [
+          "Confirm it failed."
+        ]
+      ]
+    },
+    {
+      "id": "when-2",
+      "kind": "title",
+      "variant": "label",
+      "copy": [
+        {
+          "text": "Call the lender.",
+          "source": "guide:you-missed-a-payment-what-to-do-next/body[2].steps[3].what#0"
+        }
+      ],
+      "eyebrow": {
+        "text": "Day 1, if you can't pay",
+        "source": "guide:you-missed-a-payment-what-to-do-next/body[2].steps[3].when"
+      },
+      "emphasis": [
+        "lender"
+      ],
+      "why": "Marker 2: \"Day 1, if you can't pay\", with the first sentence of what the guide says to do then.",
+      "from": 172,
+      "dur": 112,
+      "ground": "ink",
+      "transition": "blurDissolve",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "whoosh",
+          "volume": 0.32
+        }
+      ],
+      "lines": [
+        [
+          "Call the lender."
+        ]
+      ]
+    },
+    {
+      "id": "when-3",
+      "kind": "title",
+      "variant": "label",
+      "copy": [
+        {
+          "text": "Log in again.",
+          "source": "guide:you-missed-a-payment-what-to-do-next/body[2].steps[5].what#0"
+        }
+      ],
+      "eyebrow": {
+        "text": "Day 2",
+        "source": "guide:you-missed-a-payment-what-to-do-next/body[2].steps[5].when"
+      },
+      "emphasis": [
+        "again"
+      ],
+      "why": "Marker 3: \"Day 2\", with the first sentence of what the guide says to do then.",
+      "from": 272,
+      "dur": 81,
+      "ground": "accent",
+      "transition": "lineWipe",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "tick",
+          "volume": 0.6
+        }
+      ],
+      "lines": [
+        [
+          "Log in again."
+        ]
+      ]
+    },
+    {
+      "id": "tool",
+      "kind": "live",
+      "variant": "after",
+      "copy": [],
+      "caption": {
+        "text": "One recommended next action at a time",
+        "source": "expectedOutputs[3]"
+      },
+      "live": "nextActionCard",
+      "eyebrow": {
+        "text": "Monthly Money Reset",
+        "source": "title"
+      },
+      "why": "The turn: the product the guide hands over to, as its real component computing a real number, captioned with its listing's line closest to what the guide teaches.",
+      "from": 341,
+      "dur": 165,
+      "ground": "light",
+      "transition": "lineWipe",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "tick",
+          "volume": 0.6
+        },
+        {
+          "at": 12,
+          "cue": "pop",
+          "volume": 0.42
+        }
+      ]
+    },
+    {
+      "id": "cta",
+      "kind": "cta",
+      "variant": "guide",
+      "copy": [
+        {
+          "text": "Monthly Money Reset",
+          "source": "title"
+        },
+        {
+          "text": "draftpace.com/guides/you-missed-a-payment-what-to-do-next",
+          "source": "guide:you-missed-a-payment-what-to-do-next/url"
+        }
+      ],
+      "eyebrow": {
+        "text": "The full guide",
+        "source": "micro"
+      },
+      "why": "Ends on where to read the whole guide, with the product beneath it: the viewer leaves with the next step, not only a pitch.",
+      "from": 494,
+      "dur": 118,
+      "ground": "light",
+      "transition": "blurDissolve",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "whoosh",
+          "volume": 0.32
+        },
+        {
+          "at": 8,
+          "cue": "settle",
+          "volume": 0.5
+        }
+      ]
+    }
+  ],
+  "reasoning": [
+    {
+      "topic": "Placement",
+      "decision": "YouTube Short, 1080×1920, 18–45s, hook by 1.2s, sound on",
+      "because": "Search-adjacent audience that will watch a slightly longer explanation if it starts strong. Loops by default."
+    },
+    {
+      "topic": "Product",
+      "decision": "Monthly Money Reset: free, motif \"ledger\", calm personality, cool accent #214b3e",
+      "because": "From its definition and Shop listing. 1 real screens and live components (safeToSpendCard, nextActionCard) to show."
+    },
+    {
+      "topic": "Guide",
+      "decision": "\"You missed a payment. What to do in the next 48 hours\" (draftpace.com/guides/you-missed-a-payment-what-to-do-next)",
+      "because": "Teaches from the guide first; Monthly Money Reset is the product the guide hands over to. 2 lists and timelines, 5 questions to draw from."
+    },
+    {
+      "topic": "Stage",
+      "decision": "Before launch: helpful and relatable only",
+      "because": "Nobody knows Draftpace yet, so films show how it helps with real moments. Who it is not for, questions before buying, what you get and the price wait until there are users to sell to."
+    },
+    {
+      "topic": "Audience",
+      "decision": "You want one clear number for what's actually safe to spend, not a full budget system. / You have a mix of bills, some paid automatically and some not, that you'd rather not accidentally spend past.",
+      "because": "The listing's own audience lines; the director writes for them."
+    },
+    {
+      "topic": "Structure",
+      "decision": "In order: Walk the guide's own timeline, one marker at a time, then show the product that keeps it.",
+      "because": "Best fit for a awareness film on YouTube Short (platform fit 3, goal fit 3). Other candidates: The checklist (6.0), The question people ask (5.0)."
+    },
+    {
+      "topic": "Angle",
+      "decision": "\"You missed a payment. What to do in the next 48 hours\"",
+      "because": "The guide's timeline \"The first 48 hours, in order\": 3 of its 6 markers, in order."
+    },
+    {
+      "topic": "Transitions",
+      "decision": "Transitions follow the product's own identity motif, \"ledger\"",
+      "because": "Transitions follow the product's own identity motif, \"ledger\": a ledger is ruled lines, so scenes are revealed row by row."
+    },
+    {
+      "topic": "Camera",
+      "decision": "Camera \"dolly\"",
+      "because": "Camera \"dolly\": constant forward movement for a high-energy feed."
+    },
+    {
+      "topic": "Colour",
+      "decision": "Grounds light → light → ink → accent",
+      "because": "Grounds light → light → ink → accent: a cool accent, so a darker ground is used for contrast at a turn."
+    },
+    {
+      "topic": "Sound",
+      "decision": "Full sound design, mid-energy bed",
+      "because": "Sound-on placement: every transition, landing and reveal has a cue, and the bed ducks under the brand moment."
+    },
+    {
+      "topic": "Length",
+      "decision": "20.4s, 6 scenes",
+      "because": "Each scene is held for the time its words take to read on YouTube Short (0.26s a word), inside 18–45s."
+    }
+  ]
+}

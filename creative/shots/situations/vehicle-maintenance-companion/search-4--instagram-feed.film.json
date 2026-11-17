@@ -1,0 +1,267 @@
+{
+  "id": "sit-vehicle-maintenance-companion-search-4--instagram-feed",
+  "product": "vehicle-maintenance-companion",
+  "guide": "car-maintenance-log-what-to-write-down",
+  "situation": "searchedProblems[3].phrase",
+  "runtime": {
+    "min": 10,
+    "max": 30
+  },
+  "platform": "instagram-feed",
+  "goal": "awareness",
+  "width": 1080,
+  "height": 1350,
+  "fps": 30,
+  "durationInFrames": 823,
+  "structure": "situationWords",
+  "angle": {
+    "text": "I can't remember what interval the mechanic quoted me",
+    "source": "searchedProblems[3].phrase"
+  },
+  "treatment": {
+    "voice": "editorial",
+    "camera": "float",
+    "transitions": [
+      "radial",
+      "zoomThrough",
+      "radial"
+    ],
+    "motif": "gauge",
+    "grounds": [
+      "accent",
+      "light",
+      "light",
+      "accent"
+    ],
+    "pace": 1.15
+  },
+  "music": {
+    "bed": "audio/bed-relaxation-05.mp3",
+    "level": 0.16,
+    "energy": "low"
+  },
+  "scenes": [
+    {
+      "id": "moment",
+      "kind": "title",
+      "variant": "quote",
+      "copy": [
+        {
+          "text": "I can't remember what interval the mechanic quoted me",
+          "source": "searchedProblems[3].phrase"
+        }
+      ],
+      "emphasis": [
+        "remember"
+      ],
+      "why": "Opens on the moment in the person's own words, as the listing records people searching it.",
+      "from": 0,
+      "dur": 117,
+      "ground": "accent",
+      "transition": "cut",
+      "sfx": [],
+      "lines": [
+        [
+          "I can't remember what",
+          "interval the mechanic",
+          "quoted me"
+        ]
+      ]
+    },
+    {
+      "id": "what-to-do",
+      "kind": "list",
+      "variant": "checklist",
+      "copy": [
+        {
+          "text": "A guess about the past.",
+          "source": "guide:car-maintenance-log-what-to-write-down/body[5].items[0]#0"
+        },
+        {
+          "text": "Things you meant to do.",
+          "source": "guide:car-maintenance-log-what-to-write-down/body[5].items[1]#0"
+        }
+      ],
+      "eyebrow": {
+        "text": "What to leave off",
+        "source": "guide:car-maintenance-log-what-to-write-down/body[5].heading"
+      },
+      "why": "What to do about it, from the guide \"Car maintenance log: what to write down\": its own checklist.",
+      "from": 105,
+      "dur": 238,
+      "ground": "light",
+      "transition": "radial",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "swish",
+          "volume": 0.192
+        },
+        {
+          "at": 10,
+          "cue": "pop",
+          "volume": 0.27
+        },
+        {
+          "at": 89,
+          "cue": "pop",
+          "volume": 0.27
+        }
+      ]
+    },
+    {
+      "id": "help",
+      "kind": "phone",
+      "variant": "proof",
+      "copy": [],
+      "caption": {
+        "text": "Type it in once against that vehicle. It is kept, editable, and it is what the due date is computed from from then on.",
+        "source": "searchedProblems[3].answer"
+      },
+      "screen": {
+        "src": "screens/vehicle-maintenance-companion-vehicles.png",
+        "pose": "flat",
+        "focus": {
+          "at": 0.45,
+          "y": 922,
+          "h": 70,
+          "region": "unknown"
+        }
+      },
+      "why": "How Vehicle Maintenance Companion helps with this moment, in the listing's own words, on the real screen that shows it. Screen: \"Vehicles\" (What you own and what you track on it: each car with its intervals, when it was last done, and a commuter with history unknown.) chosen because it is the real screen closest to \"Type it in once against that vehicle. It is kept, editable, and it is what the d\"; focus on \"History unknown\".",
+      "eyebrow": {
+        "text": "Vehicle Maintenance Companion",
+        "source": "title"
+      },
+      "from": 331,
+      "dur": 359,
+      "ground": "light",
+      "transition": "zoomThrough",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "whoosh",
+          "volume": 0.192
+        },
+        {
+          "at": 12,
+          "cue": "pop",
+          "volume": 0.252
+        },
+        {
+          "at": 162,
+          "cue": "tap",
+          "volume": 0.33
+        }
+      ]
+    },
+    {
+      "id": "cta",
+      "kind": "cta",
+      "variant": "guide",
+      "copy": [
+        {
+          "text": "Vehicle Maintenance Companion",
+          "source": "title"
+        },
+        {
+          "text": "draftpace.com/guides/car-maintenance-log-what-to-write-down",
+          "source": "guide:car-maintenance-log-what-to-write-down/url"
+        }
+      ],
+      "eyebrow": {
+        "text": "The full guide",
+        "source": "micro"
+      },
+      "why": "Ends on where to read the whole guide, with the product beneath it: the viewer leaves with the next step, not only a pitch.",
+      "from": 678,
+      "dur": 145,
+      "ground": "accent",
+      "transition": "blurDissolve",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "whoosh",
+          "volume": 0.192
+        },
+        {
+          "at": 8,
+          "cue": "settle",
+          "volume": 0.3
+        }
+      ]
+    }
+  ],
+  "reasoning": [
+    {
+      "topic": "Placement",
+      "decision": "Instagram feed video, 1080×1350, 10–30s, hook by 1.2s, sound off",
+      "because": "A 4:5 card in the grid of a feed, autoplayed muted. Craft and composition carry it; text is short and sits well inside the frame."
+    },
+    {
+      "topic": "Product",
+      "decision": "Vehicle Maintenance Companion: $34 (list $69), motif \"gauge\", calm personality, warm accent #b45309",
+      "because": "From its definition and Shop listing. 3 real screens to show."
+    },
+    {
+      "topic": "Situation",
+      "decision": "\"I can't remember what interval the mechanic quoted me\"",
+      "because": "One real moment from Vehicle Maintenance Companion's listing (searchedProblems[3].phrase). The film is about this moment and how the product helps with it: \"Type it in once against that vehicle. It is kept, editable, and it is what the due date is computed from from then on.\""
+    },
+    {
+      "topic": "Guide",
+      "decision": "\"Car maintenance log: what to write down\" (draftpace.com/guides/car-maintenance-log-what-to-write-down)",
+      "because": "The guide that covers this moment: what to do comes from it, and the film ends on it."
+    },
+    {
+      "topic": "Stage",
+      "decision": "Before launch: helpful and relatable only",
+      "because": "Nobody knows Draftpace yet, so films show how it helps with real moments. Who it is not for, questions before buying, what you get and the price wait until there are users to sell to."
+    },
+    {
+      "topic": "Audience",
+      "decision": "You own more than one vehicle, or a vehicle with a maintenance history you already know by heart but have never written down anywhere. / You have bought a used car or inherited one, and its real service history is genuinely unknown to you.",
+      "because": "The listing's own audience lines; the director writes for them."
+    },
+    {
+      "topic": "Structure",
+      "decision": "In their words: The moment typed the way a person searches it, then what to do about it, then the product doing it.",
+      "because": "Best fit for a awareness film on Instagram feed video (platform fit 2, goal fit 3, already used for this product ×1, already used on Instagram feed video ×2). Other candidates: Inside the tool (-12.7), What to do first (-14.5)."
+    },
+    {
+      "topic": "Angle",
+      "decision": "\"I can't remember what interval the mechanic quoted me\"",
+      "because": "A situation people search for, \"I can't remember what interval the mechanic quoted me\", with the steps from \"Car maintenance log: what to write down\", and how Vehicle Maintenance Companion helps."
+    },
+    {
+      "topic": "Transitions",
+      "decision": "Transitions follow the product's own identity motif, \"gauge\"",
+      "because": "Transitions follow the product's own identity motif, \"gauge\": a gauge sweeps, so scenes are revealed by a radial sweep."
+    },
+    {
+      "topic": "Camera",
+      "decision": "Camera \"float\"",
+      "because": "Camera \"float\": a gentle float that keeps a held frame alive without demanding attention."
+    },
+    {
+      "topic": "Colour",
+      "decision": "Grounds accent → light → light → accent",
+      "because": "Grounds accent → light → light → accent: a warm accent, so light grounds lead and the accent is saved for the turns."
+    },
+    {
+      "topic": "Edit",
+      "decision": "Trimmed \"what-to-do\" to 2 items",
+      "because": "Fewer items read properly beats more items skimmed."
+    },
+    {
+      "topic": "Sound",
+      "decision": "Light sound design, low-energy bed",
+      "because": "Most of this audience never unmutes, so nothing depends on sound; cues are kept quieter and sparser for those who do."
+    },
+    {
+      "topic": "Length",
+      "decision": "27.4s, 4 scenes",
+      "because": "Each scene is held for the time its words take to read on Instagram feed video (0.3s a word), inside 10–30s."
+    }
+  ]
+}

@@ -1,0 +1,269 @@
+{
+  "id": "sit-family-health-binder-problem-5--youtube-short",
+  "product": "family-health-binder",
+  "situation": "problemsSolved[4].problem",
+  "runtime": {
+    "min": 15,
+    "max": 40
+  },
+  "platform": "youtube-short",
+  "goal": "awareness",
+  "width": 1080,
+  "height": 1920,
+  "fps": 30,
+  "durationInFrames": 607,
+  "structure": "situationInside",
+  "angle": {
+    "text": "A medication that was stopped in the spring is still on the list you hand over in the fall.",
+    "source": "problemsSolved[4].problem"
+  },
+  "treatment": {
+    "voice": "editorial",
+    "camera": "float",
+    "transitions": [
+      "cardSlide",
+      "blurDissolve",
+      "cardSlide"
+    ],
+    "motif": "card",
+    "grounds": [
+      "accent",
+      "light",
+      "light",
+      "accent"
+    ],
+    "pace": 1
+  },
+  "music": {
+    "bed": "audio/bed-relaxation-05.mp3",
+    "level": 0.2,
+    "energy": "mid"
+  },
+  "scenes": [
+    {
+      "id": "moment",
+      "kind": "title",
+      "variant": "label",
+      "copy": [
+        {
+          "text": "A medication that was stopped in the spring is still on the list you hand over in the fall.",
+          "source": "problemsSolved[4].problem"
+        }
+      ],
+      "emphasis": [
+        "medication"
+      ],
+      "why": "Opens on the moment as the listing describes it: the situation the viewer is in right now.",
+      "from": 0,
+      "dur": 169,
+      "ground": "light",
+      "transition": "cut",
+      "sfx": [],
+      "lines": [
+        [
+          "A medication that was",
+          "stopped in the spring",
+          "is still on the list you",
+          "hand over in the fall."
+        ]
+      ]
+    },
+    {
+      "id": "help",
+      "kind": "phone",
+      "variant": "proof",
+      "copy": [],
+      "caption": {
+        "text": "Mark it stopped. It stays in the record and leaves every printed page. The list also says when you last checked it.",
+        "source": "problemsSolved[4].solution"
+      },
+      "screen": {
+        "src": "screens/family-health-binder-members.png",
+        "pose": "float",
+        "focus": {
+          "at": 0.45,
+          "y": 528,
+          "h": 258,
+          "region": "health"
+        }
+      },
+      "why": "How Family Health Binder helps with this moment, in the listing's own words, on the real screen that shows it. Screen: \"Family\" (One person's card: age, allergies, medications, and tabs for health, vaccines and care team.) chosen because it is the real screen closest to \"Mark it stopped. It stays in the record and leaves every printed page. The list \"; focus on \"Allergies, Conditions, Medications\".",
+      "eyebrow": {
+        "text": "Family Health Binder",
+        "source": "title"
+      },
+      "from": 157,
+      "dur": 264,
+      "ground": "light",
+      "transition": "blurDissolve",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "whoosh",
+          "volume": 0.32
+        },
+        {
+          "at": 12,
+          "cue": "pop",
+          "volume": 0.42
+        },
+        {
+          "at": 119,
+          "cue": "tap",
+          "volume": 0.55
+        }
+      ]
+    },
+    {
+      "id": "also",
+      "kind": "phone",
+      "variant": "proof",
+      "copy": [],
+      "caption": {
+        "text": "Print a page for school, a sitter or an appointment",
+        "source": "tasks[7].label"
+      },
+      "screen": {
+        "src": "screens/family-health-binder-printables.png",
+        "pose": "tiltLeft",
+        "focus": {
+          "at": 0.45,
+          "y": 294,
+          "h": 150,
+          "region": "forms-sheet"
+        }
+      },
+      "why": "One more real thing an owner does here, in the listing's own task wording, on the screen it happens on. Screen: \"Print\" (The pages that leave the house: forms sheet, caregiver sheet, emergency card, visit page, intake summary, each with Make it.) chosen because it is the real screen closest to \"Print a page for school, a sitter or an appointment\"; focus on \"Forms sheet\".",
+      "from": 409,
+      "dur": 126,
+      "ground": "accent",
+      "transition": "blurDissolve",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "whoosh",
+          "volume": 0.32
+        },
+        {
+          "at": 12,
+          "cue": "pop",
+          "volume": 0.42
+        },
+        {
+          "at": 57,
+          "cue": "tap",
+          "volume": 0.55
+        }
+      ]
+    },
+    {
+      "id": "cta",
+      "kind": "cta",
+      "variant": "soft",
+      "copy": [
+        {
+          "text": "Family Health Binder",
+          "source": "title"
+        },
+        {
+          "text": "Available now.",
+          "source": "micro"
+        }
+      ],
+      "why": "YouTube Short punishes an obvious ad; a soft close names the product and where to find it.",
+      "from": 523,
+      "dur": 84,
+      "ground": "accent",
+      "transition": "cardSlide",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "swish",
+          "volume": 0.32
+        },
+        {
+          "at": 8,
+          "cue": "settle",
+          "volume": 0.5
+        }
+      ]
+    }
+  ],
+  "reasoning": [
+    {
+      "topic": "Placement",
+      "decision": "YouTube Short, 1080×1920, 15–40s, hook by 1.2s, sound on",
+      "because": "Search-adjacent audience that will watch a slightly longer explanation if it starts strong. Loops by default."
+    },
+    {
+      "topic": "Product",
+      "decision": "Family Health Binder: $34 (list $69), motif \"card\", calm personality, warm accent #b23a5b",
+      "because": "From its definition and Shop listing. 3 real screens to show."
+    },
+    {
+      "topic": "Situation",
+      "decision": "\"A medication that was stopped in the spring is still on the list you hand over in the fall.\"",
+      "because": "One real moment from Family Health Binder's listing (problemsSolved[4].problem). The film is about this moment and how the product helps with it: \"Mark it stopped. It stays in the record and leaves every printed page. The list also says when you last checked it.\""
+    },
+    {
+      "topic": "Stage",
+      "decision": "Before launch: helpful and relatable only",
+      "because": "Nobody knows Draftpace yet, so films show how it helps with real moments. Who it is not for, questions before buying, what you get and the price wait until there are users to sell to."
+    },
+    {
+      "topic": "Audience",
+      "decision": "You are the one who fills in every form, and everyone's allergies, medications and insurance number live only in your head. / You have more than one child, or a child and an aging parent, whose facts you are both responsible for.",
+      "because": "The listing's own audience lines; the director writes for them."
+    },
+    {
+      "topic": "Structure",
+      "decision": "Inside the tool: The moment, then how the product helps on its real screen, then one more real thing an owner does in it.",
+      "because": "Best fit for a awareness film on YouTube Short (platform fit 2, goal fit 2, already used for this product ×2). Other candidates: The moment (-25.5)."
+    },
+    {
+      "topic": "Angle",
+      "decision": "\"A medication that was stopped in the spring is still on the list you hand over in the fall.\"",
+      "because": "The moment \"A medication that was stopped in the spring is still on the list you hand over in the fall.\", how Family Health Binder helps, and one more real thing it does: \"Print a page for school, a sitter or an appointment\"."
+    },
+    {
+      "topic": "Transitions",
+      "decision": "Transitions follow the product's own identity motif, \"card\"",
+      "because": "Transitions follow the product's own identity motif, \"card\": a binder of cards, so scenes slide in like the next card."
+    },
+    {
+      "topic": "Camera",
+      "decision": "Camera \"dolly\"",
+      "because": "Camera \"dolly\": constant forward movement for a high-energy feed."
+    },
+    {
+      "topic": "Colour",
+      "decision": "Grounds accent → light → light → accent",
+      "because": "Grounds accent → light → light → accent: a warm accent, so light grounds lead and the accent is saved for the turns."
+    },
+    {
+      "topic": "Variation",
+      "decision": "Rotated the ground rhythm",
+      "because": "Its shape was 0.82 similar to sit-family-health-binder-search-3--instagram-feed; a different film, not the same one re-coloured."
+    },
+    {
+      "topic": "Variation",
+      "decision": "Changed the camera",
+      "because": "Its shape was 0.82 similar to sit-family-health-binder-search-3--instagram-feed; a different film, not the same one re-coloured."
+    },
+    {
+      "topic": "Variation",
+      "decision": "Reordered the transitions",
+      "because": "Its shape was 0.74 similar to sit-family-health-binder-search-3--instagram-feed; a different film, not the same one re-coloured."
+    },
+    {
+      "topic": "Sound",
+      "decision": "Full sound design, mid-energy bed",
+      "because": "Sound-on placement: every transition, landing and reveal has a cue, and the bed ducks under the brand moment."
+    },
+    {
+      "topic": "Length",
+      "decision": "20.2s, 4 scenes",
+      "because": "Each scene is held for the time its words take to read on YouTube Short (0.26s a word), inside 15–40s."
+    }
+  ]
+}

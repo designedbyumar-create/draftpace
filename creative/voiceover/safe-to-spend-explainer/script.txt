@@ -1,0 +1,9 @@
+How much money is safe to spend after your bills?
+Open the account you pay bills from and write down the available balance, not the current one.
+Write down your next payday, then list every bill, subscription and card payment that leaves before it.
+Subtract them.
+Subtract what you're holding back: tax money, a deposit, the cushion you don't want to touch.
+Write the result at the top of a note and date it.
+Monthly Money Reset does this sum for you from numbers you type.
+It works on the month rather than to payday, and it can go negative and says so.
+It's only as current as your last update, and it doesn't connect to your bank.

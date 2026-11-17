@@ -1,0 +1,211 @@
+{
+  "id": "sit-personal-finance-companion-problem-2--pinterest-video",
+  "product": "personal-finance-companion",
+  "situation": "problemsSolved[1].problem",
+  "runtime": {
+    "min": 10,
+    "max": 32
+  },
+  "platform": "pinterest-video",
+  "goal": "awareness",
+  "width": 1000,
+  "height": 1500,
+  "fps": 30,
+  "durationInFrames": 802,
+  "structure": "situationMoment",
+  "angle": {
+    "text": "You have no idea when a debt will actually be gone.",
+    "source": "problemsSolved[1].problem"
+  },
+  "treatment": {
+    "voice": "editorial",
+    "camera": "locked",
+    "transitions": [
+      "cardSlide",
+      "wipe",
+      "cardSlide"
+    ],
+    "motif": "index",
+    "grounds": [
+      "ink",
+      "light",
+      "light",
+      "accent"
+    ],
+    "pace": 1.15
+  },
+  "music": {
+    "bed": "audio/bed-relaxation-05.mp3",
+    "level": 0.16,
+    "energy": "low"
+  },
+  "scenes": [
+    {
+      "id": "moment",
+      "kind": "title",
+      "variant": "editorial",
+      "copy": [
+        {
+          "text": "You have no idea when a debt will actually be gone.",
+          "source": "problemsSolved[1].problem"
+        }
+      ],
+      "emphasis": [
+        "actually"
+      ],
+      "why": "Opens on the moment as the listing describes it: the situation the viewer is in right now.",
+      "from": 0,
+      "dur": 146,
+      "ground": "ink",
+      "transition": "cut",
+      "sfx": [],
+      "lines": [
+        [
+          "You have no idea",
+          "when a debt will",
+          "actually be gone."
+        ]
+      ]
+    },
+    {
+      "id": "help",
+      "kind": "phone",
+      "variant": "proof",
+      "copy": [],
+      "caption": {
+        "text": "A payoff plan from your own balances, rates and minimum payments: the month you are debt-free, the order the debts clear, and what the cheaper method saves. A debt with no rate is named as left out, never guessed at.",
+        "source": "problemsSolved[1].solution"
+      },
+      "screen": {
+        "src": "screens/personal-finance-companion-debt.png",
+        "pose": "float",
+        "focus": {
+          "at": 0.45,
+          "y": 208,
+          "h": 154,
+          "region": "totals"
+        }
+      },
+      "why": "How Personal Finance Companion helps with this moment, in the listing's own words, on the real screen that shows it. Screen: \"Debt\" (What you owe and when it could be gone: totals, a payoff plan worked out from your own numbers, and the debt-free date.) chosen because it is the real screen closest to \"A payoff plan from your own balances, rates and minimum payments: the month you \"; focus on \"Total balance, Minimum payments\".",
+      "eyebrow": {
+        "text": "Personal Finance Companion",
+        "source": "title"
+      },
+      "from": 134,
+      "dur": 554,
+      "ground": "light",
+      "transition": "cardSlide",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "swish",
+          "volume": 0.192
+        },
+        {
+          "at": 12,
+          "cue": "pop",
+          "volume": 0.252
+        },
+        {
+          "at": 249,
+          "cue": "tap",
+          "volume": 0.33
+        }
+      ]
+    },
+    {
+      "id": "cta",
+      "kind": "cta",
+      "variant": "save",
+      "copy": [
+        {
+          "text": "Personal Finance Companion",
+          "source": "title"
+        },
+        {
+          "text": "Save this for later.",
+          "source": "micro"
+        }
+      ],
+      "why": "Pinterest video pin is a planning surface; the close asks for the save, the price stays quiet.",
+      "from": 676,
+      "dur": 126,
+      "ground": "light",
+      "transition": "blurDissolve",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "whoosh",
+          "volume": 0.192
+        },
+        {
+          "at": 8,
+          "cue": "settle",
+          "volume": 0.3
+        }
+      ]
+    }
+  ],
+  "reasoning": [
+    {
+      "topic": "Placement",
+      "decision": "Pinterest video pin, 1000×1500, 10–32s, hook by 1s, sound off",
+      "because": "People are planning, not scrolling: idea-led, calm and save-worthy, worded like what they searched for. Muted, looping, slow; a hard sell reads as an ad and loses the save."
+    },
+    {
+      "topic": "Product",
+      "decision": "Personal Finance Companion: $49 (list $99), motif \"index\", calm personality, cool accent #0d3b2e",
+      "because": "From its definition and Shop listing. 4 real screens to show."
+    },
+    {
+      "topic": "Situation",
+      "decision": "\"You have no idea when a debt will actually be gone.\"",
+      "because": "One real moment from Personal Finance Companion's listing (problemsSolved[1].problem). The film is about this moment and how the product helps with it: \"A payoff plan from your own balances, rates and minimum payments: the month you are debt-free, the order the debts clear, and what the cheaper method saves. A debt with no rate is named as left out, never guessed at.\""
+    },
+    {
+      "topic": "Stage",
+      "decision": "Before launch: helpful and relatable only",
+      "because": "Nobody knows Draftpace yet, so films show how it helps with real moments. Who it is not for, questions before buying, what you get and the price wait until there are users to sell to."
+    },
+    {
+      "topic": "Audience",
+      "decision": "You have more than one account, bill, or income source and want them tracked in one real place, not five apps. / You want a next step handed to you, not a dashboard you have to interpret yourself every time.",
+      "because": "The listing's own audience lines; the director writes for them."
+    },
+    {
+      "topic": "Structure",
+      "decision": "The moment: The moment as it feels, set dark, then the help in the light, then what to do next.",
+      "because": "Best fit for a awareness film on Pinterest video pin (platform fit 1, goal fit 3, already used for this product ×1, already used on Pinterest video pin ×4). Other candidates: Inside the tool (-22.3)."
+    },
+    {
+      "topic": "Angle",
+      "decision": "\"You have no idea when a debt will actually be gone.\"",
+      "because": "The moment \"You have no idea when a debt will actually be gone.\", then how Personal Finance Companion helps."
+    },
+    {
+      "topic": "Transitions",
+      "decision": "Transitions follow the product's own identity motif, \"index\"",
+      "because": "Transitions follow the product's own identity motif, \"index\": an index of tabs, so scenes slide in like the next tab."
+    },
+    {
+      "topic": "Camera",
+      "decision": "Camera \"locked\"",
+      "because": "Camera \"locked\": still and precise, so a slow, reading audience is never chasing the frame."
+    },
+    {
+      "topic": "Colour",
+      "decision": "Grounds ink → light → light → accent",
+      "because": "Grounds ink → light → light → accent: a cool accent, so a darker ground is used for contrast at a turn."
+    },
+    {
+      "topic": "Sound",
+      "decision": "Light sound design, low-energy bed",
+      "because": "Most of this audience never unmutes, so nothing depends on sound; cues are kept quieter and sparser for those who do."
+    },
+    {
+      "topic": "Length",
+      "decision": "26.7s, 3 scenes",
+      "because": "Each scene is held for the time its words take to read on Pinterest video pin (0.32s a word), inside 10–32s."
+    }
+  ]
+}

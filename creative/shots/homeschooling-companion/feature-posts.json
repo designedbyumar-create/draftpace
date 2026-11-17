@@ -4,6 +4,7 @@
     {
       "id": "01-homeschooling-companion",
       "themeSlug": "homeschooling-companion",
+      "problem": 0,
       "layout": "tilt",
       "eyebrow": "HOMESCHOOLING COMPANION",
       "headline": [
@@ -15,14 +16,14 @@
         "kind": "screen",
         "src": "screens/homeschooling-companion-record.png"
       },
-      "product": {
-        "name": "Homeschooling Companion",
-        "price": "$34"
-      }
+      "emphasis": [
+        "October"
+      ]
     },
     {
       "id": "02-homeschooling-companion",
       "themeSlug": "homeschooling-companion",
+      "problem": 1,
       "layout": "window",
       "eyebrow": "HOMESCHOOLING COMPANION",
       "headline": [
@@ -34,14 +35,14 @@
         "kind": "screen",
         "src": "screens/homeschooling-companion-workspace.png"
       },
-      "product": {
-        "name": "Homeschooling Companion",
-        "price": "$34"
-      }
+      "emphasis": [
+        "land"
+      ]
     },
     {
       "id": "03-homeschooling-companion",
       "themeSlug": "homeschooling-companion",
+      "problem": 2,
       "layout": "tilt",
       "eyebrow": "HOMESCHOOLING COMPANION",
       "headline": [
@@ -53,15 +54,15 @@
         "kind": "screen",
         "src": "screens/homeschooling-companion-kids.png"
       },
-      "product": {
-        "name": "Homeschooling Companion",
-        "price": "$34"
-      }
+      "emphasis": [
+        "stopped"
+      ]
     },
     {
       "id": "04-homeschooling-companion",
       "themeSlug": "homeschooling-companion",
-      "layout": "window",
+      "problem": 3,
+      "layout": "fan",
       "eyebrow": "HOMESCHOOLING COMPANION",
       "headline": [
         "Something to show.",
@@ -70,12 +71,15 @@
       ],
       "ui": {
         "kind": "screen",
-        "src": "screens/homeschooling-companion-record.png"
+        "src": "screens/homeschooling-companion-record.png",
+        "also": [
+          "screens/homeschooling-companion-kids.png",
+          "screens/homeschooling-companion-workspace.png"
+        ]
       },
-      "product": {
-        "name": "Homeschooling Companion",
-        "price": "$34"
-      }
+      "emphasis": [
+        "abandoned"
+      ]
     }
   ]
 }

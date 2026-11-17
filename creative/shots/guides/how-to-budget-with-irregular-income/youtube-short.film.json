@@ -1,0 +1,344 @@
+{
+  "id": "guide-how-to-budget-with-irregular-income--youtube-short",
+  "product": "monthly-money-reset",
+  "guide": "how-to-budget-with-irregular-income",
+  "runtime": {
+    "min": 18,
+    "max": 45
+  },
+  "platform": "youtube-short",
+  "goal": "awareness",
+  "width": 1080,
+  "height": 1920,
+  "fps": 30,
+  "durationInFrames": 743,
+  "structure": "guideSteps",
+  "angle": {
+    "text": "how to budget with irregular income",
+    "source": "guide:how-to-budget-with-irregular-income/primaryQuery"
+  },
+  "treatment": {
+    "voice": "editorial",
+    "camera": "float",
+    "transitions": [
+      "lineWipe",
+      "blurDissolve",
+      "lineWipe"
+    ],
+    "motif": "ledger",
+    "grounds": [
+      "light",
+      "accent",
+      "light",
+      "ink"
+    ],
+    "pace": 1
+  },
+  "music": {
+    "bed": "audio/bed-relaxation-05.mp3",
+    "level": 0.2,
+    "energy": "mid"
+  },
+  "scenes": [
+    {
+      "id": "hook",
+      "kind": "title",
+      "variant": "quote",
+      "copy": [
+        {
+          "text": "how to budget with irregular income",
+          "source": "guide:how-to-budget-with-irregular-income/primaryQuery"
+        }
+      ],
+      "why": "Opens on the exact phrase the guide is written to win, typed out the way it is typed into a search box.",
+      "from": 0,
+      "dur": 68,
+      "ground": "light",
+      "transition": "cut",
+      "sfx": [],
+      "lines": [
+        [
+          "how to budget with",
+          "irregular income"
+        ]
+      ]
+    },
+    {
+      "id": "step-1",
+      "kind": "title",
+      "variant": "editorial",
+      "copy": [
+        {
+          "text": "Pull 6 to 12 months of deposits.",
+          "source": "guide:how-to-budget-with-irregular-income/body[4].items[0]#0"
+        }
+      ],
+      "eyebrow": {
+        "text": "1",
+        "source": "micro"
+      },
+      "emphasis": [
+        "6"
+      ],
+      "why": "Step 1 of the guide's numbered list, numbered as the guide numbers it, its first sentence: the instruction itself.",
+      "from": 56,
+      "dur": 104,
+      "ground": "accent",
+      "transition": "lineWipe",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "tick",
+          "volume": 0.6
+        }
+      ],
+      "lines": [
+        [
+          "Pull 6 to 12 months",
+          "of deposits."
+        ]
+      ]
+    },
+    {
+      "id": "step-2",
+      "kind": "title",
+      "variant": "editorial",
+      "copy": [
+        {
+          "text": "Set your pay near your low, not your average.",
+          "source": "guide:how-to-budget-with-irregular-income/body[4].items[1]#0"
+        }
+      ],
+      "eyebrow": {
+        "text": "2",
+        "source": "micro"
+      },
+      "emphasis": [
+        "average"
+      ],
+      "why": "Step 2 of the guide's numbered list, numbered as the guide numbers it, its first sentence: the instruction itself.",
+      "from": 148,
+      "dur": 120,
+      "ground": "light",
+      "transition": "blurDissolve",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "whoosh",
+          "volume": 0.32
+        }
+      ],
+      "lines": [
+        [
+          "Set your pay near",
+          "your low, not your",
+          "average."
+        ]
+      ]
+    },
+    {
+      "id": "step-3",
+      "kind": "title",
+      "variant": "editorial",
+      "copy": [
+        {
+          "text": "Move your tax share aside the day a deposit lands.",
+          "source": "guide:how-to-budget-with-irregular-income/body[4].items[2]#0"
+        }
+      ],
+      "eyebrow": {
+        "text": "3",
+        "source": "micro"
+      },
+      "emphasis": [
+        "deposit"
+      ],
+      "why": "Step 3 of the guide's numbered list, numbered as the guide numbers it, its first sentence: the instruction itself.",
+      "from": 256,
+      "dur": 128,
+      "ground": "ink",
+      "transition": "lineWipe",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "tick",
+          "volume": 0.6
+        }
+      ],
+      "lines": [
+        [
+          "Move your tax share",
+          "aside the day a",
+          "deposit lands."
+        ]
+      ]
+    },
+    {
+      "id": "step-4",
+      "kind": "title",
+      "variant": "editorial",
+      "copy": [
+        {
+          "text": "Open a holding account and send every deposit there.",
+          "source": "guide:how-to-budget-with-irregular-income/body[4].items[3]#0"
+        }
+      ],
+      "eyebrow": {
+        "text": "4",
+        "source": "micro"
+      },
+      "emphasis": [
+        "every"
+      ],
+      "why": "Step 4 of the guide's numbered list, numbered as the guide numbers it, its first sentence: the instruction itself.",
+      "from": 372,
+      "dur": 120,
+      "ground": "light",
+      "transition": "lineWipe",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "tick",
+          "volume": 0.6
+        }
+      ],
+      "lines": [
+        [
+          "Open a holding account",
+          "and send every deposit",
+          "there."
+        ]
+      ]
+    },
+    {
+      "id": "tool",
+      "kind": "live",
+      "variant": "after",
+      "copy": [],
+      "caption": {
+        "text": "Close the month when you're ready.",
+        "source": "howItWorks[4]#0"
+      },
+      "live": "safeToSpendCard",
+      "eyebrow": {
+        "text": "Monthly Money Reset",
+        "source": "title"
+      },
+      "why": "The turn: the product the guide hands over to, as its real component computing a real number, captioned with its listing's line closest to what the guide teaches.",
+      "from": 480,
+      "dur": 157,
+      "ground": "accent",
+      "transition": "blurDissolve",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "whoosh",
+          "volume": 0.32
+        },
+        {
+          "at": 12,
+          "cue": "pop",
+          "volume": 0.42
+        }
+      ]
+    },
+    {
+      "id": "cta",
+      "kind": "cta",
+      "variant": "guide",
+      "copy": [
+        {
+          "text": "Monthly Money Reset",
+          "source": "title"
+        },
+        {
+          "text": "draftpace.com/guides/how-to-budget-with-irregular-income",
+          "source": "guide:how-to-budget-with-irregular-income/url"
+        }
+      ],
+      "eyebrow": {
+        "text": "The full guide",
+        "source": "micro"
+      },
+      "why": "Ends on where to read the whole guide, with the product beneath it: the viewer leaves with the next step, not only a pitch.",
+      "from": 625,
+      "dur": 118,
+      "ground": "light",
+      "transition": "blurDissolve",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "whoosh",
+          "volume": 0.32
+        },
+        {
+          "at": 8,
+          "cue": "settle",
+          "volume": 0.5
+        }
+      ]
+    }
+  ],
+  "reasoning": [
+    {
+      "topic": "Placement",
+      "decision": "YouTube Short, 1080×1920, 18–45s, hook by 1.2s, sound on",
+      "because": "Search-adjacent audience that will watch a slightly longer explanation if it starts strong. Loops by default."
+    },
+    {
+      "topic": "Product",
+      "decision": "Monthly Money Reset: free, motif \"ledger\", calm personality, cool accent #214b3e",
+      "because": "From its definition and Shop listing. 1 real screens and live components (safeToSpendCard, nextActionCard) to show."
+    },
+    {
+      "topic": "Guide",
+      "decision": "\"How to budget with irregular income: count what has landed\" (draftpace.com/guides/how-to-budget-with-irregular-income)",
+      "because": "Teaches from the guide first; Monthly Money Reset is the product the guide hands over to. 1 lists and timelines, 5 questions to draw from."
+    },
+    {
+      "topic": "Stage",
+      "decision": "Before launch: helpful and relatable only",
+      "because": "Nobody knows Draftpace yet, so films show how it helps with real moments. Who it is not for, questions before buying, what you get and the price wait until there are users to sell to."
+    },
+    {
+      "topic": "Audience",
+      "decision": "You want one clear number for what's actually safe to spend, not a full budget system. / You have a mix of bills, some paid automatically and some not, that you'd rather not accidentally spend past.",
+      "because": "The listing's own audience lines; the director writes for them."
+    },
+    {
+      "topic": "Structure",
+      "decision": "Do this: Open on the search itself, then the guide's own numbered steps, then the product.",
+      "because": "Best fit for a awareness film on YouTube Short (platform fit 3, goal fit 3, already used on YouTube Short ×1). Other candidates: The question people ask (-15.0)."
+    },
+    {
+      "topic": "Angle",
+      "decision": "\"how to budget with irregular income\"",
+      "because": "Search-led: \"how to budget with irregular income\", answered by 4 of the guide's numbered steps (\"Set it up in six steps\")."
+    },
+    {
+      "topic": "Transitions",
+      "decision": "Transitions follow the product's own identity motif, \"ledger\"",
+      "because": "Transitions follow the product's own identity motif, \"ledger\": a ledger is ruled lines, so scenes are revealed row by row."
+    },
+    {
+      "topic": "Camera",
+      "decision": "Camera \"float\"",
+      "because": "Camera \"float\": a gentle float that keeps a held frame alive without demanding attention."
+    },
+    {
+      "topic": "Colour",
+      "decision": "Grounds light → accent → light → ink",
+      "because": "Grounds light → accent → light → ink: a cool accent, so a darker ground is used for contrast at a turn."
+    },
+    {
+      "topic": "Sound",
+      "decision": "Full sound design, mid-energy bed",
+      "because": "Sound-on placement: every transition, landing and reveal has a cue, and the bed ducks under the brand moment."
+    },
+    {
+      "topic": "Length",
+      "decision": "24.8s, 7 scenes",
+      "because": "Each scene is held for the time its words take to read on YouTube Short (0.26s a word), inside 18–45s."
+    }
+  ]
+}

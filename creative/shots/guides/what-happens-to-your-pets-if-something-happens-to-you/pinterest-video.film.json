@@ -1,0 +1,326 @@
+{
+  "id": "guide-what-happens-to-your-pets-if-something-happens-to-you--pinterest-video",
+  "product": "personal-life-affairs-companion",
+  "guide": "what-happens-to-your-pets-if-something-happens-to-you",
+  "runtime": {
+    "min": 12,
+    "max": 35
+  },
+  "platform": "pinterest-video",
+  "goal": "awareness",
+  "width": 1000,
+  "height": 1500,
+  "fps": 30,
+  "durationInFrames": 999,
+  "structure": "guideChecklist",
+  "angle": {
+    "text": "Who will take care of your pets if something happens to you",
+    "source": "guide:what-happens-to-your-pets-if-something-happens-to-you/title"
+  },
+  "treatment": {
+    "voice": "editorial",
+    "camera": "float",
+    "transitions": [
+      "pageTurn",
+      "blurDissolve",
+      "pageTurn"
+    ],
+    "motif": "book",
+    "grounds": [
+      "light",
+      "light",
+      "ink",
+      "accent"
+    ],
+    "pace": 1.15
+  },
+  "music": {
+    "bed": "audio/bed-relaxation-05.mp3",
+    "level": 0.16,
+    "energy": "low"
+  },
+  "scenes": [
+    {
+      "id": "hook",
+      "kind": "title",
+      "variant": "editorial",
+      "copy": [
+        {
+          "text": "Who will take care of your pets if something happens to you",
+          "source": "guide:what-happens-to-your-pets-if-something-happens-to-you/title"
+        }
+      ],
+      "emphasis": [
+        "something"
+      ],
+      "why": "The hook is the guide's own title: the question it answers, as a person would put it.",
+      "from": 0,
+      "dur": 157,
+      "ground": "light",
+      "transition": "cut",
+      "sfx": [],
+      "lines": [
+        [
+          "Who will take care",
+          "of your pets if",
+          "something happens to",
+          "you"
+        ]
+      ]
+    },
+    {
+      "id": "list",
+      "kind": "list",
+      "variant": "checklist",
+      "copy": [
+        {
+          "text": "Who would take them, and whether you've asked.",
+          "source": "guide:what-happens-to-your-pets-if-something-happens-to-you/body[2].items[0]#0"
+        },
+        {
+          "text": "What they need: food, medication, routine, quirks.",
+          "source": "guide:what-happens-to-your-pets-if-something-happens-to-you/body[2].items[1]#0"
+        },
+        {
+          "text": "The vet's name and where the records are.",
+          "source": "guide:what-happens-to-your-pets-if-something-happens-to-you/body[2].items[2]#0"
+        },
+        {
+          "text": "Where papers are kept: registration, insurance, microchip number.",
+          "source": "guide:what-happens-to-your-pets-if-something-happens-to-you/body[2].items[3]#0"
+        }
+      ],
+      "eyebrow": {
+        "text": "What to write for each animal",
+        "source": "guide:what-happens-to-your-pets-if-something-happens-to-you/body[2].heading"
+      },
+      "why": "The guide's own checklist, the first sentence of each item, ticked in as it is read.",
+      "from": 145,
+      "dur": 571,
+      "ground": "accent",
+      "transition": "blurDissolve",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "whoosh",
+          "volume": 0.192
+        },
+        {
+          "at": 10,
+          "cue": "pop",
+          "volume": 0.27
+        },
+        {
+          "at": 124,
+          "cue": "pop",
+          "volume": 0.27
+        },
+        {
+          "at": 238,
+          "cue": "pop",
+          "volume": 0.27
+        },
+        {
+          "at": 352,
+          "cue": "pop",
+          "volume": 0.27
+        }
+      ]
+    },
+    {
+      "id": "tool",
+      "kind": "phone",
+      "variant": "proof",
+      "copy": [],
+      "caption": {
+        "text": "Something changed?",
+        "source": "howItWorks[6]#0"
+      },
+      "screen": {
+        "src": "screens/personal-life-affairs-companion-workspace.png",
+        "pose": "tiltLeft",
+        "focus": {
+          "at": 0.45,
+          "y": 82,
+          "h": 427,
+          "region": "question"
+        },
+        "scroll": []
+      },
+      "why": "The turn: the product the guide itself hands over to, named and shown on its real screen, captioned with its listing's line closest to what the guide teaches. Screen: \"Write down who should be called first.\" (One question at a time: write down who should be called first, with Start, Not relevant to me and Later.) chosen because it is the real screen closest to \"Something changed? Who will take care of your pets if something happens to you\"; focus on \"Write down who should be called first.\".",
+      "eyebrow": {
+        "text": "Personal Life Affairs Companion",
+        "source": "title"
+      },
+      "from": 704,
+      "dur": 146,
+      "ground": "accent",
+      "transition": "pageTurn",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "page",
+          "volume": 0.192
+        },
+        {
+          "at": 12,
+          "cue": "pop",
+          "volume": 0.252
+        },
+        {
+          "at": 66,
+          "cue": "tap",
+          "volume": 0.33
+        }
+      ]
+    },
+    {
+      "id": "cta",
+      "kind": "cta",
+      "variant": "guide",
+      "copy": [
+        {
+          "text": "Personal Life Affairs Companion",
+          "source": "title"
+        },
+        {
+          "text": "draftpace.com/guides/what-happens-to-your-pets-if-something-happens-to-you",
+          "source": "guide:what-happens-to-your-pets-if-something-happens-to-you/url"
+        }
+      ],
+      "eyebrow": {
+        "text": "The full guide",
+        "source": "micro"
+      },
+      "why": "Ends on where to read the whole guide, with the product beneath it: the viewer leaves with the next step, not only a pitch.",
+      "from": 838,
+      "dur": 161,
+      "ground": "light",
+      "transition": "blurDissolve",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "whoosh",
+          "volume": 0.192
+        },
+        {
+          "at": 8,
+          "cue": "settle",
+          "volume": 0.3
+        }
+      ]
+    }
+  ],
+  "reasoning": [
+    {
+      "topic": "Placement",
+      "decision": "Pinterest video pin, 1000×1500, 12–35s, hook by 1s, sound off",
+      "because": "People are planning, not scrolling: idea-led, calm and save-worthy, worded like what they searched for. Muted, looping, slow; a hard sell reads as an ad and loses the save."
+    },
+    {
+      "topic": "Product",
+      "decision": "Personal Life Affairs Companion: $49 (list $99), motif \"book\", calm personality, cool accent #26374f",
+      "because": "From its definition and Shop listing. 3 real screens to show."
+    },
+    {
+      "topic": "Guide",
+      "decision": "\"Who will take care of your pets if something happens to you\" (draftpace.com/guides/what-happens-to-your-pets-if-something-happens-to-you)",
+      "because": "Teaches from the guide first; Personal Life Affairs Companion is the product the guide hands over to. 2 lists and timelines, 4 questions to draw from."
+    },
+    {
+      "topic": "Stage",
+      "decision": "Before launch: helpful and relatable only",
+      "because": "Nobody knows Draftpace yet, so films show how it helps with real moments. Who it is not for, questions before buying, what you get and the price wait until there are users to sell to."
+    },
+    {
+      "topic": "Audience",
+      "decision": "You have been meaning to sort this out for a while and have never found a first step small enough to take. / You would rather be asked one question at a time than handed a folder and told to fill it in.",
+      "because": "The listing's own audience lines; the director writes for them."
+    },
+    {
+      "topic": "Material",
+      "decision": "Allowed real lines up to 4 words longer",
+      "because": "Every structure Personal Life Affairs Companion's copy supports at Pinterest video pin's normal line length is already used by its other films; a longer real line beats telling the same story twice."
+    },
+    {
+      "topic": "Structure",
+      "decision": "The checklist: The guide's checklist on one screen, item by item, then the product that holds it.",
+      "because": "Best fit for a awareness film on Pinterest video pin (platform fit 3, goal fit 3, already used for this product ×3, already used on Pinterest video pin ×7). Other candidates: ."
+    },
+    {
+      "topic": "Angle",
+      "decision": "\"Who will take care of your pets if something happens to you\"",
+      "because": "A checklist from the guide, \"What to write for each animal\": 4 of its 5 items."
+    },
+    {
+      "topic": "Transitions",
+      "decision": "Transitions follow the product's own identity motif, \"book\"",
+      "because": "Transitions follow the product's own identity motif, \"book\": a handoff book, so scenes turn like pages."
+    },
+    {
+      "topic": "Camera",
+      "decision": "Camera \"locked\"",
+      "because": "Camera \"locked\": still and precise, so a slow, reading audience is never chasing the frame."
+    },
+    {
+      "topic": "Colour",
+      "decision": "Grounds light → light → ink → accent",
+      "because": "Grounds light → light → ink → accent: a cool accent, so a darker ground is used for contrast at a turn."
+    },
+    {
+      "topic": "Variation",
+      "decision": "Rotated the ground rhythm",
+      "because": "Its shape was 0.82 similar to guide-what-to-do-when-a-parent-dies--youtube-short; a different film, not the same one re-coloured."
+    },
+    {
+      "topic": "Variation",
+      "decision": "Changed the camera",
+      "because": "Its shape was 0.82 similar to guide-homeschool-notice-of-intent-explained--pinterest-video; a different film, not the same one re-coloured."
+    },
+    {
+      "topic": "Variation",
+      "decision": "Reordered the transitions",
+      "because": "Its shape was 0.74 similar to guide-what-to-keep-after-a-home-repair--youtube-short; a different film, not the same one re-coloured."
+    },
+    {
+      "topic": "Variation",
+      "decision": "Switched the brand reveal",
+      "because": "Its shape was 0.74 similar to guide-what-to-check-before-each-direct-debit-date--pinterest-video; a different film, not the same one re-coloured."
+    },
+    {
+      "topic": "Variation",
+      "decision": "Re-posed the phones",
+      "because": "Its shape was 0.74 similar to guide-what-to-check-before-each-direct-debit-date--pinterest-video; a different film, not the same one re-coloured."
+    },
+    {
+      "topic": "Variation",
+      "decision": "Set the grounds against the accent",
+      "because": "Its shape was 0.74 similar to guide-what-to-check-before-each-direct-debit-date--pinterest-video; a different film, not the same one re-coloured."
+    },
+    {
+      "topic": "Variation",
+      "decision": "Rotated the ground rhythm",
+      "because": "Its shape was 0.82 similar to guide-who-to-tell-when-someone-dies--youtube-short; a different film, not the same one re-coloured."
+    },
+    {
+      "topic": "Variation",
+      "decision": "Changed the camera",
+      "because": "Its shape was 0.74 similar to guide-who-to-tell-when-someone-dies--youtube-short; a different film, not the same one re-coloured."
+    },
+    {
+      "topic": "Variation",
+      "decision": "Reordered the transitions",
+      "because": "Its shape was 0.82 similar to guide-who-to-tell-when-someone-dies--youtube-short; a different film, not the same one re-coloured."
+    },
+    {
+      "topic": "Sound",
+      "decision": "Light sound design, low-energy bed",
+      "because": "Most of this audience never unmutes, so nothing depends on sound; cues are kept quieter and sparser for those who do."
+    },
+    {
+      "topic": "Length",
+      "decision": "33.3s, 4 scenes",
+      "because": "Each scene is held for the time its words take to read on Pinterest video pin (0.32s a word), inside 12–35s."
+    }
+  ]
+}

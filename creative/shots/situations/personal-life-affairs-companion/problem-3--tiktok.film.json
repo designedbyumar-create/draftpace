@@ -1,0 +1,264 @@
+{
+  "id": "sit-personal-life-affairs-companion-problem-3--tiktok",
+  "product": "personal-life-affairs-companion",
+  "situation": "problemsSolved[2].problem",
+  "runtime": {
+    "min": 12,
+    "max": 35
+  },
+  "platform": "tiktok",
+  "goal": "awareness",
+  "width": 1080,
+  "height": 1920,
+  "fps": 30,
+  "durationInFrames": 394,
+  "structure": "situationInside",
+  "angle": {
+    "text": "Things written down once quietly stop being true.",
+    "source": "problemsSolved[2].problem"
+  },
+  "treatment": {
+    "voice": "native",
+    "camera": "float",
+    "transitions": [
+      "cut",
+      "whip",
+      "pageTurn"
+    ],
+    "motif": "book",
+    "grounds": [
+      "light",
+      "light",
+      "ink",
+      "accent"
+    ],
+    "pace": 0.85
+  },
+  "music": {
+    "bed": "audio/bed-relaxation-05.mp3",
+    "level": 0.24,
+    "energy": "high"
+  },
+  "scenes": [
+    {
+      "id": "moment",
+      "kind": "title",
+      "variant": "label",
+      "copy": [
+        {
+          "text": "Things written down once quietly stop being true.",
+          "source": "problemsSolved[2].problem"
+        }
+      ],
+      "emphasis": [
+        "written"
+      ],
+      "why": "Opens on the moment as the listing describes it: the situation the viewer is in right now.",
+      "from": 0,
+      "dur": 79,
+      "ground": "light",
+      "transition": "cut",
+      "sfx": [],
+      "lines": [
+        [
+          "Things written",
+          "down once quietly",
+          "stop being true."
+        ]
+      ]
+    },
+    {
+      "id": "help",
+      "kind": "phone",
+      "variant": "proof",
+      "copy": [],
+      "caption": {
+        "text": "A record that comes back years later and asks whether it's still true.",
+        "source": "problemsSolved[2].solution"
+      },
+      "screen": {
+        "src": "screens/personal-life-affairs-companion-workspace.png",
+        "pose": "tiltRight",
+        "focus": {
+          "at": 0.45,
+          "y": 82,
+          "h": 427,
+          "region": "question"
+        },
+        "scroll": []
+      },
+      "why": "How Personal Life Affairs Companion helps with this moment, in the listing's own words, on the real screen that shows it. Screen: \"Write down who should be called first.\" (One question at a time: write down who should be called first, with Start, Not relevant to me and Later.) chosen because it is the real screen closest to \"A record that comes back years later and asks whether it's still true. Things wr\"; focus on \"Write down who should be called first.\".",
+      "eyebrow": {
+        "text": "Personal Life Affairs Companion",
+        "source": "title"
+      },
+      "from": 73,
+      "dur": 164,
+      "ground": "light",
+      "transition": "whip",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "swish",
+          "volume": 0.32
+        },
+        {
+          "at": 12,
+          "cue": "pop",
+          "volume": 0.42
+        },
+        {
+          "at": 74,
+          "cue": "tap",
+          "volume": 0.55
+        }
+      ]
+    },
+    {
+      "id": "also",
+      "kind": "phone",
+      "variant": "proof",
+      "copy": [],
+      "caption": {
+        "text": "Check whether somebody else could actually manage",
+        "source": "tasks[5].label"
+      },
+      "screen": {
+        "src": "screens/personal-life-affairs-companion-affairs.png",
+        "pose": "tiltLeft",
+        "focus": {
+          "at": 0.45,
+          "y": 264,
+          "h": 462,
+          "region": "documents"
+        }
+      },
+      "why": "One more real thing an owner does here, in the listing's own task wording, on the screen it happens on. Screen: \"What you have established so far.\" (Important documents, each with where it is kept: the will, lasting power of attorney, passports, insurance, deeds.) chosen because it is the real screen closest to \"Check whether somebody else could actually manage\"; focus on \"Important documents\".",
+      "from": 231,
+      "dur": 84,
+      "ground": "accent",
+      "transition": "blurDissolve",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "whoosh",
+          "volume": 0.32
+        },
+        {
+          "at": 12,
+          "cue": "pop",
+          "volume": 0.42
+        },
+        {
+          "at": 38,
+          "cue": "tap",
+          "volume": 0.55
+        }
+      ]
+    },
+    {
+      "id": "cta",
+      "kind": "cta",
+      "variant": "soft",
+      "copy": [
+        {
+          "text": "Personal Life Affairs Companion",
+          "source": "title"
+        },
+        {
+          "text": "Available now.",
+          "source": "micro"
+        }
+      ],
+      "why": "TikTok punishes an obvious ad; a soft close names the product and where to find it.",
+      "from": 309,
+      "dur": 85,
+      "ground": "accent",
+      "transition": "cut",
+      "sfx": [
+        {
+          "at": 8,
+          "cue": "settle",
+          "volume": 0.5
+        }
+      ]
+    }
+  ],
+  "reasoning": [
+    {
+      "topic": "Placement",
+      "decision": "TikTok, 1080×1920, 12–35s, hook by 0.8s, sound on",
+      "because": "Native, fast and plain-spoken; polish that looks like an ad gets skipped. Sound-on. Hook inside a second. The deepest bottom and right overlays of any placement."
+    },
+    {
+      "topic": "Product",
+      "decision": "Personal Life Affairs Companion: $49 (list $99), motif \"book\", calm personality, cool accent #26374f",
+      "because": "From its definition and Shop listing. 3 real screens to show."
+    },
+    {
+      "topic": "Situation",
+      "decision": "\"Things written down once quietly stop being true.\"",
+      "because": "One real moment from Personal Life Affairs Companion's listing (problemsSolved[2].problem). The film is about this moment and how the product helps with it: \"A record that comes back years later and asks whether it's still true.\""
+    },
+    {
+      "topic": "Stage",
+      "decision": "Before launch: helpful and relatable only",
+      "because": "Nobody knows Draftpace yet, so films show how it helps with real moments. Who it is not for, questions before buying, what you get and the price wait until there are users to sell to."
+    },
+    {
+      "topic": "Audience",
+      "decision": "You have been meaning to sort this out for a while and have never found a first step small enough to take. / You would rather be asked one question at a time than handed a folder and told to fill it in.",
+      "because": "The listing's own audience lines; the director writes for them."
+    },
+    {
+      "topic": "Structure",
+      "decision": "Inside the tool: The moment, then how the product helps on its real screen, then one more real thing an owner does in it.",
+      "because": "Best fit for a awareness film on TikTok (platform fit 2, goal fit 2, already used for this product ×2, already used on TikTok ×4). Other candidates: The moment (-25.1)."
+    },
+    {
+      "topic": "Angle",
+      "decision": "\"Things written down once quietly stop being true.\"",
+      "because": "The moment \"Things written down once quietly stop being true.\", how Personal Life Affairs Companion helps, and one more real thing it does: \"Check whether somebody else could actually manage\"."
+    },
+    {
+      "topic": "Transitions",
+      "decision": "Transitions follow the product's own identity motif, \"book\"",
+      "because": "Transitions follow the product's own identity motif, \"book\": a handoff book, so scenes turn like pages. TikTok wants native editing, so hard cuts and whips lead."
+    },
+    {
+      "topic": "Camera",
+      "decision": "Camera \"dolly\"",
+      "because": "Camera \"dolly\": constant forward movement for a high-energy feed."
+    },
+    {
+      "topic": "Colour",
+      "decision": "Grounds light → light → ink → accent",
+      "because": "Grounds light → light → ink → accent: a cool accent, so a darker ground is used for contrast at a turn."
+    },
+    {
+      "topic": "Variation",
+      "decision": "Rotated the ground rhythm",
+      "because": "Its shape was 0.90 similar to sit-home-management-companion-problem-1--tiktok; a different film, not the same one re-coloured."
+    },
+    {
+      "topic": "Variation",
+      "decision": "Changed the camera",
+      "because": "Its shape was 0.82 similar to sit-homeschooling-companion-problem-6--tiktok; a different film, not the same one re-coloured."
+    },
+    {
+      "topic": "Variation",
+      "decision": "Reordered the transitions",
+      "because": "Its shape was 0.90 similar to sit-homeschooling-companion-problem-6--tiktok; a different film, not the same one re-coloured."
+    },
+    {
+      "topic": "Sound",
+      "decision": "Full sound design, high-energy bed",
+      "because": "Sound-on placement: every transition, landing and reveal has a cue, and the bed ducks under the brand moment."
+    },
+    {
+      "topic": "Length",
+      "decision": "13.1s, 4 scenes",
+      "because": "Each scene is held for the time its words take to read on TikTok (0.24s a word), inside 12–35s."
+    }
+  ]
+}

@@ -6,15 +6,15 @@
  */
 import { staticFile } from "remotion";
 
-export type SfxCueId = "click-settle" | "whoosh-sweep" | "chime-reveal";
+import { SFX_CUES, BED } from "./sound-cues";
 
-export const SFX_FILES: Record<SfxCueId, string> = {
-  "click-settle": staticFile("audio/click-settle.wav"),
-  "whoosh-sweep": staticFile("audio/whoosh-sweep.wav"),
-  "chime-reveal": staticFile("audio/chime-reveal.wav"),
-};
+export type SfxCueId = keyof typeof SFX_CUES;
 
-export const BED_FILE = staticFile("audio/bed-relaxation-05.mp3");
+export const SFX_FILES = Object.fromEntries(
+  Object.entries(SFX_CUES).map(([cue, file]) => [cue, staticFile(file)]),
+) as Record<SfxCueId, string>;
+
+export const BED_FILE = staticFile(BED);
 
 export function hasAudioAsset(cue: string | null | undefined): cue is SfxCueId {
   return Boolean(cue && cue in SFX_FILES);

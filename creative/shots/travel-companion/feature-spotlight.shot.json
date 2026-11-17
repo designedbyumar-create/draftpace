@@ -2,6 +2,7 @@
   "id": "feature-spotlight-travel-companion",
   "product": "travel-companion",
   "themeSlug": "travel-companion",
+  "problem": 0,
   "format": "feature-spotlight",
   "fps": 30,
   "width": 1080,
@@ -17,6 +18,9 @@
           "Confirmation numbers live",
           "in six different",
           "inboxes."
+        ],
+        "emphasis": [
+          "six"
         ]
       },
       "camera": {
@@ -103,10 +107,10 @@
       "id": "cta",
       "kind": "cta",
       "startFrame": 430,
-      "durationFrames": 50,
+      "durationFrames": 90,
       "typography": {
         "headline": "Available now.",
-        "sub": "draftpace.com/shop · $34"
+        "sub": "draftpace.com/shop · {price}"
       },
       "camera": {
         "move": "static"

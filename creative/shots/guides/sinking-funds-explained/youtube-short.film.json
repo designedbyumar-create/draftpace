@@ -1,0 +1,326 @@
+{
+  "id": "guide-sinking-funds-explained--youtube-short",
+  "product": "personal-finance-companion",
+  "guide": "sinking-funds-explained",
+  "runtime": {
+    "min": 18,
+    "max": 45
+  },
+  "platform": "youtube-short",
+  "goal": "awareness",
+  "width": 1080,
+  "height": 1920,
+  "fps": 30,
+  "durationInFrames": 696,
+  "structure": "guideSteps",
+  "angle": {
+    "text": "sinking funds explained",
+    "source": "guide:sinking-funds-explained/primaryQuery"
+  },
+  "treatment": {
+    "voice": "editorial",
+    "camera": "dolly",
+    "transitions": [
+      "cardSlide",
+      "wipe",
+      "cardSlide"
+    ],
+    "motif": "index",
+    "grounds": [
+      "ink",
+      "light",
+      "light",
+      "accent"
+    ],
+    "pace": 1
+  },
+  "music": {
+    "bed": "audio/bed-relaxation-05.mp3",
+    "level": 0.2,
+    "energy": "mid"
+  },
+  "scenes": [
+    {
+      "id": "hook",
+      "kind": "title",
+      "variant": "quote",
+      "copy": [
+        {
+          "text": "sinking funds explained",
+          "source": "guide:sinking-funds-explained/primaryQuery"
+        }
+      ],
+      "why": "Opens on the exact phrase the guide is written to win, typed out the way it is typed into a search box.",
+      "from": 0,
+      "dur": 44,
+      "ground": "ink",
+      "transition": "cut",
+      "sfx": [],
+      "lines": [
+        [
+          "sinking funds",
+          "explained"
+        ]
+      ]
+    },
+    {
+      "id": "step-1",
+      "kind": "title",
+      "variant": "editorial",
+      "copy": [
+        {
+          "text": "List the costs you can name and the month each lands.",
+          "source": "guide:sinking-funds-explained/body[4].items[0]#0"
+        }
+      ],
+      "eyebrow": {
+        "text": "1",
+        "source": "micro"
+      },
+      "emphasis": [
+        "costs"
+      ],
+      "why": "Step 1 of the guide's numbered list, numbered as the guide numbers it, its first sentence: the instruction itself.",
+      "from": 32,
+      "dur": 136,
+      "ground": "light",
+      "transition": "cardSlide",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "swish",
+          "volume": 0.32
+        }
+      ],
+      "lines": [
+        [
+          "List the costs you",
+          "can name and the month",
+          "each lands."
+        ]
+      ]
+    },
+    {
+      "id": "step-2",
+      "kind": "title",
+      "variant": "editorial",
+      "copy": [
+        {
+          "text": "Give each a target and a date, then divide as above.",
+          "source": "guide:sinking-funds-explained/body[4].items[1]#0"
+        }
+      ],
+      "eyebrow": {
+        "text": "2",
+        "source": "micro"
+      },
+      "emphasis": [
+        "target"
+      ],
+      "why": "Step 2 of the guide's numbered list, numbered as the guide numbers it, its first sentence: the instruction itself.",
+      "from": 156,
+      "dur": 136,
+      "ground": "light",
+      "transition": "wipe",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "swish",
+          "volume": 0.32
+        }
+      ],
+      "lines": [
+        [
+          "Give each a target",
+          "and a date, then",
+          "divide as above."
+        ]
+      ]
+    },
+    {
+      "id": "step-3",
+      "kind": "title",
+      "variant": "editorial",
+      "copy": [
+        {
+          "text": "Add the monthly figures.",
+          "source": "guide:sinking-funds-explained/body[4].items[2]#0"
+        }
+      ],
+      "eyebrow": {
+        "text": "3",
+        "source": "micro"
+      },
+      "emphasis": [
+        "monthly"
+      ],
+      "why": "Step 3 of the guide's numbered list, numbered as the guide numbers it, its first sentence: the instruction itself.",
+      "from": 280,
+      "dur": 81,
+      "ground": "accent",
+      "transition": "cardSlide",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "swish",
+          "volume": 0.32
+        }
+      ],
+      "lines": [
+        [
+          "Add the monthly",
+          "figures."
+        ]
+      ]
+    },
+    {
+      "id": "tool",
+      "kind": "phone",
+      "variant": "proof",
+      "copy": [],
+      "caption": {
+        "text": "An Available Money figure, explained line by line, with a bar showing where the rest of your balance goes",
+        "source": "expectedOutputs[0]"
+      },
+      "screen": {
+        "src": "screens/personal-finance-companion-debt.png",
+        "pose": "tiltRight",
+        "focus": {
+          "at": 0.45,
+          "y": 208,
+          "h": 154,
+          "region": "totals"
+        }
+      },
+      "why": "The turn: the product the guide itself hands over to, named and shown on its real screen, captioned with its listing's line closest to what the guide teaches. Screen: \"Debt\" (What you owe and when it could be gone: totals, a payoff plan worked out from your own numbers, and the debt-free date.) chosen because it is the real screen closest to \"An Available Money figure, explained line by line, with a bar showing where the \"; focus on \"Total balance, Minimum payments\".",
+      "eyebrow": {
+        "text": "Personal Finance Companion",
+        "source": "title"
+      },
+      "from": 349,
+      "dur": 241,
+      "ground": "ink",
+      "transition": "cardSlide",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "swish",
+          "volume": 0.32
+        },
+        {
+          "at": 12,
+          "cue": "pop",
+          "volume": 0.42
+        },
+        {
+          "at": 108,
+          "cue": "tap",
+          "volume": 0.55
+        }
+      ]
+    },
+    {
+      "id": "cta",
+      "kind": "cta",
+      "variant": "guide",
+      "copy": [
+        {
+          "text": "Personal Finance Companion",
+          "source": "title"
+        },
+        {
+          "text": "draftpace.com/guides/sinking-funds-explained",
+          "source": "guide:sinking-funds-explained/url"
+        }
+      ],
+      "eyebrow": {
+        "text": "The full guide",
+        "source": "micro"
+      },
+      "why": "Ends on where to read the whole guide, with the product beneath it: the viewer leaves with the next step, not only a pitch.",
+      "from": 578,
+      "dur": 118,
+      "ground": "light",
+      "transition": "blurDissolve",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "whoosh",
+          "volume": 0.32
+        },
+        {
+          "at": 8,
+          "cue": "settle",
+          "volume": 0.5
+        }
+      ]
+    }
+  ],
+  "reasoning": [
+    {
+      "topic": "Placement",
+      "decision": "YouTube Short, 1080×1920, 18–45s, hook by 1.2s, sound on",
+      "because": "Search-adjacent audience that will watch a slightly longer explanation if it starts strong. Loops by default."
+    },
+    {
+      "topic": "Product",
+      "decision": "Personal Finance Companion: $49 (list $99), motif \"index\", calm personality, cool accent #0d3b2e",
+      "because": "From its definition and Shop listing. 4 real screens to show."
+    },
+    {
+      "topic": "Guide",
+      "decision": "\"Sinking funds explained: save for costs you can see coming\" (draftpace.com/guides/sinking-funds-explained)",
+      "because": "Teaches from the guide first; Personal Finance Companion is the product the guide hands over to. 2 lists and timelines, 5 questions to draw from."
+    },
+    {
+      "topic": "Stage",
+      "decision": "Before launch: helpful and relatable only",
+      "because": "Nobody knows Draftpace yet, so films show how it helps with real moments. Who it is not for, questions before buying, what you get and the price wait until there are users to sell to."
+    },
+    {
+      "topic": "Audience",
+      "decision": "You have more than one account, bill, or income source and want them tracked in one real place, not five apps. / You want a next step handed to you, not a dashboard you have to interpret yourself every time.",
+      "because": "The listing's own audience lines; the director writes for them."
+    },
+    {
+      "topic": "Material",
+      "decision": "Allowed real lines up to 4 words longer",
+      "because": "Every structure Personal Finance Companion's copy supports at YouTube Short's normal line length is already used by its other films; a longer real line beats telling the same story twice."
+    },
+    {
+      "topic": "Structure",
+      "decision": "Do this: Open on the search itself, then the guide's own numbered steps, then the product.",
+      "because": "Best fit for a awareness film on YouTube Short (platform fit 3, goal fit 3, already used for this product ×2, already used on YouTube Short ×2). Other candidates: The checklist (-17.1), The question people ask (-24.4)."
+    },
+    {
+      "topic": "Angle",
+      "decision": "\"sinking funds explained\"",
+      "because": "Search-led: \"sinking funds explained\", answered by 3 of the guide's numbered steps (\"Set one up in five steps\")."
+    },
+    {
+      "topic": "Transitions",
+      "decision": "Transitions follow the product's own identity motif, \"index\"",
+      "because": "Transitions follow the product's own identity motif, \"index\": an index of tabs, so scenes slide in like the next tab."
+    },
+    {
+      "topic": "Camera",
+      "decision": "Camera \"dolly\"",
+      "because": "Camera \"dolly\": constant forward movement for a high-energy feed."
+    },
+    {
+      "topic": "Colour",
+      "decision": "Grounds ink → light → light → accent",
+      "because": "Grounds ink → light → light → accent: a cool accent, so a darker ground is used for contrast at a turn."
+    },
+    {
+      "topic": "Sound",
+      "decision": "Full sound design, mid-energy bed",
+      "because": "Sound-on placement: every transition, landing and reveal has a cue, and the bed ducks under the brand moment."
+    },
+    {
+      "topic": "Length",
+      "decision": "23.2s, 6 scenes",
+      "because": "Each scene is held for the time its words take to read on YouTube Short (0.26s a word), inside 18–45s."
+    }
+  ]
+}

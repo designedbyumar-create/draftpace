@@ -1,0 +1,292 @@
+{
+  "id": "sit-personal-finance-companion-search-1--instagram-reel",
+  "product": "personal-finance-companion",
+  "guide": "organize-your-finances-from-scratch",
+  "situation": "searchedProblems[0].phrase",
+  "runtime": {
+    "min": 12,
+    "max": 35
+  },
+  "platform": "instagram-reel",
+  "goal": "awareness",
+  "width": 1080,
+  "height": 1920,
+  "fps": 30,
+  "durationInFrames": 626,
+  "structure": "situationWords",
+  "angle": {
+    "text": "My finances are scattered across too many apps",
+    "source": "searchedProblems[0].phrase"
+  },
+  "treatment": {
+    "voice": "editorial",
+    "camera": "float",
+    "transitions": [
+      "cardSlide",
+      "wipe",
+      "cardSlide"
+    ],
+    "motif": "index",
+    "grounds": [
+      "light",
+      "accent",
+      "light",
+      "ink"
+    ],
+    "pace": 1
+  },
+  "music": {
+    "bed": "audio/bed-relaxation-05.mp3",
+    "level": 0.2,
+    "energy": "mid"
+  },
+  "scenes": [
+    {
+      "id": "moment",
+      "kind": "title",
+      "variant": "quote",
+      "copy": [
+        {
+          "text": "My finances are scattered across too many apps",
+          "source": "searchedProblems[0].phrase"
+        }
+      ],
+      "emphasis": [
+        "scattered"
+      ],
+      "why": "Opens on the moment in the person's own words, as the listing records people searching it.",
+      "from": 0,
+      "dur": 83,
+      "ground": "light",
+      "transition": "cut",
+      "sfx": [],
+      "lines": [
+        [
+          "My finances are",
+          "scattered across",
+          "too many apps"
+        ]
+      ]
+    },
+    {
+      "id": "step-1",
+      "kind": "title",
+      "variant": "label",
+      "copy": [
+        {
+          "text": "Fill in the six areas from memory.",
+          "source": "guide:organize-your-finances-from-scratch/body[3].steps[1].what#0"
+        }
+      ],
+      "eyebrow": {
+        "text": "Minutes 2 to 6",
+        "source": "guide:organize-your-finances-from-scratch/body[3].steps[1].when"
+      },
+      "emphasis": [
+        "six"
+      ],
+      "why": "What to do, in order, from the guide \"How to organize your finances when everything is scattered\": \"Minutes 2 to 6\".",
+      "from": 71,
+      "dur": 128,
+      "ground": "accent",
+      "transition": "cardSlide",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "swish",
+          "volume": 0.32
+        }
+      ],
+      "lines": [
+        [
+          "Fill in the six areas",
+          "from memory."
+        ]
+      ]
+    },
+    {
+      "id": "step-2",
+      "kind": "title",
+      "variant": "label",
+      "copy": [
+        {
+          "text": "Close one gap.",
+          "source": "guide:organize-your-finances-from-scratch/body[3].steps[3].what#0"
+        }
+      ],
+      "eyebrow": {
+        "text": "Minutes 7 to 9",
+        "source": "guide:organize-your-finances-from-scratch/body[3].steps[3].when"
+      },
+      "emphasis": [
+        "one"
+      ],
+      "why": "What to do, in order, from the guide \"How to organize your finances when everything is scattered\": \"Minutes 7 to 9\".",
+      "from": 187,
+      "dur": 97,
+      "ground": "light",
+      "transition": "wipe",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "swish",
+          "volume": 0.32
+        }
+      ],
+      "lines": [
+        [
+          "Close one gap."
+        ]
+      ]
+    },
+    {
+      "id": "help",
+      "kind": "phone",
+      "variant": "proof",
+      "copy": [],
+      "caption": {
+        "text": "One place holding accounts, income, bills, subscriptions, transactions, debt and savings, with a single figure for what is actually available.",
+        "source": "searchedProblems[0].answer"
+      },
+      "screen": {
+        "src": "screens/personal-finance-companion-records.png",
+        "pose": "float",
+        "focus": {
+          "at": 0.45,
+          "y": 222,
+          "h": 119,
+          "region": "accounts"
+        }
+      },
+      "why": "How Personal Finance Companion helps with this moment, in the listing's own words, on the real screen that shows it. Screen: \"Records\" (What's actually true right now, area by area: accounts, income, bills, subscriptions, transactions, debt.) chosen because it is the real screen closest to \"One place holding accounts, income, bills, subscriptions, transactions, debt and\"; focus on \"Accounts\".",
+      "eyebrow": {
+        "text": "Personal Finance Companion",
+        "source": "title"
+      },
+      "from": 272,
+      "dur": 248,
+      "ground": "ink",
+      "transition": "cardSlide",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "swish",
+          "volume": 0.32
+        },
+        {
+          "at": 12,
+          "cue": "pop",
+          "volume": 0.42
+        },
+        {
+          "at": 112,
+          "cue": "tap",
+          "volume": 0.55
+        }
+      ]
+    },
+    {
+      "id": "cta",
+      "kind": "cta",
+      "variant": "guide",
+      "copy": [
+        {
+          "text": "Personal Finance Companion",
+          "source": "title"
+        },
+        {
+          "text": "draftpace.com/guides/organize-your-finances-from-scratch",
+          "source": "guide:organize-your-finances-from-scratch/url"
+        }
+      ],
+      "eyebrow": {
+        "text": "The full guide",
+        "source": "micro"
+      },
+      "why": "Ends on where to read the whole guide, with the product beneath it: the viewer leaves with the next step, not only a pitch.",
+      "from": 508,
+      "dur": 118,
+      "ground": "light",
+      "transition": "cardSlide",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "swish",
+          "volume": 0.32
+        },
+        {
+          "at": 8,
+          "cue": "settle",
+          "volume": 0.5
+        }
+      ]
+    }
+  ],
+  "reasoning": [
+    {
+      "topic": "Placement",
+      "decision": "Instagram Reel, 1080×1920, 12–35s, hook by 1.2s, sound on",
+      "because": "Full-screen and swipeable: the first second decides whether anyone stays. Mostly watched with sound, but captions still carry every point. The right edge holds like/comment buttons and the bottom holds the caption, so text lives in the middle band."
+    },
+    {
+      "topic": "Product",
+      "decision": "Personal Finance Companion: $49 (list $99), motif \"index\", calm personality, cool accent #0d3b2e",
+      "because": "From its definition and Shop listing. 4 real screens to show."
+    },
+    {
+      "topic": "Situation",
+      "decision": "\"My finances are scattered across too many apps\"",
+      "because": "One real moment from Personal Finance Companion's listing (searchedProblems[0].phrase). The film is about this moment and how the product helps with it: \"One place holding accounts, income, bills, subscriptions, transactions, debt and savings, with a single figure for what is actually available.\""
+    },
+    {
+      "topic": "Guide",
+      "decision": "\"How to organize your finances when everything is scattered\" (draftpace.com/guides/organize-your-finances-from-scratch)",
+      "because": "The guide that covers this moment: what to do comes from it, and the film ends on it."
+    },
+    {
+      "topic": "Stage",
+      "decision": "Before launch: helpful and relatable only",
+      "because": "Nobody knows Draftpace yet, so films show how it helps with real moments. Who it is not for, questions before buying, what you get and the price wait until there are users to sell to."
+    },
+    {
+      "topic": "Audience",
+      "decision": "You have more than one account, bill, or income source and want them tracked in one real place, not five apps. / You want a next step handed to you, not a dashboard you have to interpret yourself every time.",
+      "because": "The listing's own audience lines; the director writes for them."
+    },
+    {
+      "topic": "Structure",
+      "decision": "In their words: The moment typed the way a person searches it, then what to do about it, then the product doing it.",
+      "because": "Best fit for a awareness film on Instagram Reel (platform fit 2, goal fit 3, already used on Instagram Reel ×2). Other candidates: What to do first (-1.6), Inside the tool (-4.7)."
+    },
+    {
+      "topic": "Angle",
+      "decision": "\"My finances are scattered across too many apps\"",
+      "because": "A situation people search for, \"My finances are scattered across too many apps\", with the steps from \"How to organize your finances when everything is scattered\", and how Personal Finance Companion helps."
+    },
+    {
+      "topic": "Transitions",
+      "decision": "Transitions follow the product's own identity motif, \"index\"",
+      "because": "Transitions follow the product's own identity motif, \"index\": an index of tabs, so scenes slide in like the next tab."
+    },
+    {
+      "topic": "Camera",
+      "decision": "Camera \"float\"",
+      "because": "Camera \"float\": a gentle float that keeps a held frame alive without demanding attention."
+    },
+    {
+      "topic": "Colour",
+      "decision": "Grounds light → accent → light → ink",
+      "because": "Grounds light → accent → light → ink: a cool accent, so a darker ground is used for contrast at a turn."
+    },
+    {
+      "topic": "Sound",
+      "decision": "Full sound design, mid-energy bed",
+      "because": "Sound-on placement: every transition, landing and reveal has a cue, and the bed ducks under the brand moment."
+    },
+    {
+      "topic": "Length",
+      "decision": "20.9s, 5 scenes",
+      "because": "Each scene is held for the time its words take to read on Instagram Reel (0.26s a word), inside 12–35s."
+    }
+  ]
+}

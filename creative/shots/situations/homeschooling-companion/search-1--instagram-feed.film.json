@@ -1,0 +1,222 @@
+{
+  "id": "sit-homeschooling-companion-search-1--instagram-feed",
+  "product": "homeschooling-companion",
+  "guide": "homeschool-record-keeping-requirements-by-state",
+  "situation": "searchedProblems[0].phrase",
+  "runtime": {
+    "min": 10,
+    "max": 30
+  },
+  "platform": "instagram-feed",
+  "goal": "awareness",
+  "width": 1080,
+  "height": 1350,
+  "fps": 30,
+  "durationInFrames": 545,
+  "structure": "situationWords",
+  "angle": {
+    "text": "What homeschool records am I actually required to keep",
+    "source": "searchedProblems[0].phrase"
+  },
+  "treatment": {
+    "voice": "editorial",
+    "camera": "float",
+    "transitions": [
+      "lineWipe",
+      "slideUp",
+      "lineWipe"
+    ],
+    "motif": "register",
+    "grounds": [
+      "light",
+      "accent",
+      "light",
+      "ink"
+    ],
+    "pace": 1.15
+  },
+  "music": {
+    "bed": "audio/bed-relaxation-05.mp3",
+    "level": 0.16,
+    "energy": "low"
+  },
+  "scenes": [
+    {
+      "id": "moment",
+      "kind": "title",
+      "variant": "quote",
+      "copy": [
+        {
+          "text": "What homeschool records am I actually required to keep",
+          "source": "searchedProblems[0].phrase"
+        }
+      ],
+      "emphasis": [
+        "homeschool"
+      ],
+      "why": "Opens on the moment in the person's own words, as the listing records people searching it.",
+      "from": 0,
+      "dur": 117,
+      "ground": "light",
+      "transition": "cut",
+      "sfx": [],
+      "lines": [
+        [
+          "What homeschool",
+          "records am I actually",
+          "required to keep"
+        ]
+      ]
+    },
+    {
+      "id": "help",
+      "kind": "phone",
+      "variant": "proof",
+      "copy": [],
+      "caption": {
+        "text": "Name your state and the printed record carries what it asks for, each line set against what you have already recorded.",
+        "source": "searchedProblems[0].answer"
+      },
+      "screen": {
+        "src": "screens/homeschooling-companion-kids.png",
+        "pose": "tiltLeft",
+        "focus": {
+          "at": 0.45,
+          "y": 313,
+          "h": 217,
+          "region": "children"
+        },
+        "scroll": []
+      },
+      "why": "How Homeschooling Companion helps with this moment, in the listing's own words, on the real screen that shows it. Screen: \"Your children.\" (Each child with their age and subjects, and the state's homeschool requirements kept alongside.) chosen because it is the real screen closest to \"Name your state and the printed record carries what it asks for, each line set a\"; focus on \"Ava, Leo\".",
+      "eyebrow": {
+        "text": "Homeschooling Companion",
+        "source": "title"
+      },
+      "from": 105,
+      "dur": 317,
+      "ground": "accent",
+      "transition": "lineWipe",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "tick",
+          "volume": 0.36
+        },
+        {
+          "at": 12,
+          "cue": "pop",
+          "volume": 0.252
+        },
+        {
+          "at": 143,
+          "cue": "tap",
+          "volume": 0.33
+        }
+      ]
+    },
+    {
+      "id": "cta",
+      "kind": "cta",
+      "variant": "guide",
+      "copy": [
+        {
+          "text": "Homeschooling Companion",
+          "source": "title"
+        },
+        {
+          "text": "draftpace.com/guides/homeschool-record-keeping-requirements-by-state",
+          "source": "guide:homeschool-record-keeping-requirements-by-state/url"
+        }
+      ],
+      "eyebrow": {
+        "text": "The full guide",
+        "source": "micro"
+      },
+      "why": "Ends on where to read the whole guide, with the product beneath it: the viewer leaves with the next step, not only a pitch.",
+      "from": 410,
+      "dur": 135,
+      "ground": "light",
+      "transition": "blurDissolve",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "whoosh",
+          "volume": 0.192
+        },
+        {
+          "at": 8,
+          "cue": "settle",
+          "volume": 0.3
+        }
+      ]
+    }
+  ],
+  "reasoning": [
+    {
+      "topic": "Placement",
+      "decision": "Instagram feed video, 1080×1350, 10–30s, hook by 1.2s, sound off",
+      "because": "A 4:5 card in the grid of a feed, autoplayed muted. Craft and composition carry it; text is short and sits well inside the frame."
+    },
+    {
+      "topic": "Product",
+      "decision": "Homeschooling Companion: $34 (list $69), motif \"register\", calm personality, cool accent #6a4a72",
+      "because": "From its definition and Shop listing. 3 real screens to show."
+    },
+    {
+      "topic": "Situation",
+      "decision": "\"What homeschool records am I actually required to keep\"",
+      "because": "One real moment from Homeschooling Companion's listing (searchedProblems[0].phrase). The film is about this moment and how the product helps with it: \"Name your state and the printed record carries what it asks for, each line set against what you have already recorded.\""
+    },
+    {
+      "topic": "Guide",
+      "decision": "\"Homeschool requirements by state: what records to keep\" (draftpace.com/guides/homeschool-record-keeping-requirements-by-state)",
+      "because": "The guide that covers this moment: what to do comes from it, and the film ends on it."
+    },
+    {
+      "topic": "Stage",
+      "decision": "Before launch: helpful and relatable only",
+      "because": "Nobody knows Draftpace yet, so films show how it helps with real moments. Who it is not for, questions before buying, what you get and the price wait until there are users to sell to."
+    },
+    {
+      "topic": "Audience",
+      "decision": "You already have a curriculum you chose on purpose and you want something that follows it rather than replacing it. / You teach more than one child and keeping their records separate in your head has stopped working.",
+      "because": "The listing's own audience lines; the director writes for them."
+    },
+    {
+      "topic": "Structure",
+      "decision": "In their words: The moment typed the way a person searches it, then what to do about it, then the product doing it.",
+      "because": "Best fit for a awareness film on Instagram feed video (platform fit 2, goal fit 3). Other candidates: Inside the tool (-4.2), The moment (-5.1)."
+    },
+    {
+      "topic": "Angle",
+      "decision": "\"What homeschool records am I actually required to keep\"",
+      "because": "A situation people search for, \"What homeschool records am I actually required to keep\", with the steps from \"Homeschool requirements by state: what records to keep\", and how Homeschooling Companion helps."
+    },
+    {
+      "topic": "Transitions",
+      "decision": "Transitions follow the product's own identity motif, \"register\"",
+      "because": "Transitions follow the product's own identity motif, \"register\": a register is filled line by line, so scenes are written in from the top."
+    },
+    {
+      "topic": "Camera",
+      "decision": "Camera \"float\"",
+      "because": "Camera \"float\": a gentle float that keeps a held frame alive without demanding attention."
+    },
+    {
+      "topic": "Colour",
+      "decision": "Grounds light → accent → light → ink",
+      "because": "Grounds light → accent → light → ink: a cool accent, so a darker ground is used for contrast at a turn."
+    },
+    {
+      "topic": "Sound",
+      "decision": "Light sound design, low-energy bed",
+      "because": "Most of this audience never unmutes, so nothing depends on sound; cues are kept quieter and sparser for those who do."
+    },
+    {
+      "topic": "Length",
+      "decision": "18.2s, 3 scenes",
+      "because": "Each scene is held for the time its words take to read on Instagram feed video (0.3s a word), inside 10–30s."
+    }
+  ]
+}

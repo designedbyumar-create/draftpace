@@ -15,6 +15,9 @@
         "lines": [
           "Every month,",
           "the same question."
+        ],
+        "emphasis": [
+          "same question"
         ]
       },
       "camera": {
@@ -129,7 +132,7 @@
       "id": "cta",
       "kind": "cta",
       "startFrame": 510,
-      "durationFrames": 50,
+      "durationFrames": 90,
       "typography": {
         "headline": "Start free.",
         "sub": "draftpace.com/free"
@@ -150,5 +153,6 @@
       }
     }
   ],
-  "themeSlug": "monthly-money-reset"
+  "themeSlug": "monthly-money-reset",
+  "problem": 0
 }

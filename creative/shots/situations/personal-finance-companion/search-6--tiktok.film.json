@@ -1,0 +1,267 @@
+{
+  "id": "sit-personal-finance-companion-search-6--tiktok",
+  "product": "personal-finance-companion",
+  "guide": "split-bills-with-a-partner-or-roommate",
+  "situation": "searchedProblems[5].phrase",
+  "runtime": {
+    "min": 12,
+    "max": 35
+  },
+  "platform": "tiktok",
+  "goal": "awareness",
+  "width": 1080,
+  "height": 1920,
+  "fps": 30,
+  "durationInFrames": 739,
+  "structure": "situationChecklist",
+  "angle": {
+    "text": "How do couples split bills without arguing about it",
+    "source": "searchedProblems[5].phrase"
+  },
+  "treatment": {
+    "voice": "native",
+    "camera": "dolly",
+    "transitions": [
+      "cut",
+      "whip",
+      "cardSlide"
+    ],
+    "motif": "index",
+    "grounds": [
+      "ink",
+      "light",
+      "light",
+      "accent"
+    ],
+    "pace": 0.85
+  },
+  "music": {
+    "bed": "audio/bed-relaxation-05.mp3",
+    "level": 0.24,
+    "energy": "high"
+  },
+  "scenes": [
+    {
+      "id": "moment",
+      "kind": "title",
+      "variant": "label",
+      "copy": [
+        {
+          "text": "How do couples split bills without arguing about it",
+          "source": "searchedProblems[5].phrase"
+        }
+      ],
+      "emphasis": [
+        "couples"
+      ],
+      "why": "Opens on the moment in the person's own words, as the listing records people searching it.",
+      "from": 0,
+      "dur": 86,
+      "ground": "ink",
+      "transition": "cut",
+      "sfx": [],
+      "lines": [
+        [
+          "How do couples",
+          "split bills",
+          "without arguing",
+          "about it"
+        ]
+      ]
+    },
+    {
+      "id": "what-to-do",
+      "kind": "list",
+      "variant": "checklist",
+      "copy": [
+        {
+          "text": "Which bills count as shared, written as a list.",
+          "source": "guide:split-bills-with-a-partner-or-roommate/body[6].items[0]#0"
+        },
+        {
+          "text": "Each person's share as a percentage.",
+          "source": "guide:split-bills-with-a-partner-or-roommate/body[6].items[2]#0"
+        },
+        {
+          "text": "Where the record lives, and who can see it.",
+          "source": "guide:split-bills-with-a-partner-or-roommate/body[6].items[6]#0"
+        }
+      ],
+      "eyebrow": {
+        "text": "Agree these before the first payment",
+        "source": "guide:split-bills-with-a-partner-or-roommate/body[6].heading"
+      },
+      "why": "What to do about it, from the guide \"How to split bills with a partner or roommate: 3 methods\": its own checklist, the first sentence of each item.",
+      "from": 80,
+      "dur": 300,
+      "ground": "light",
+      "transition": "cut",
+      "sfx": [
+        {
+          "at": 10,
+          "cue": "pop",
+          "volume": 0.45
+        },
+        {
+          "at": 85,
+          "cue": "pop",
+          "volume": 0.45
+        },
+        {
+          "at": 160,
+          "cue": "pop",
+          "volume": 0.45
+        }
+      ]
+    },
+    {
+      "id": "help",
+      "kind": "phone",
+      "variant": "proof",
+      "copy": [],
+      "caption": {
+        "text": "A shared flag and your share on each bill, a settled tick you control, and a statement you can both read that says what is squared up.",
+        "source": "searchedProblems[5].answer"
+      },
+      "screen": {
+        "src": "screens/personal-finance-companion-bills.png",
+        "pose": "flat",
+        "focus": {
+          "at": 0.45,
+          "y": 229,
+          "h": 224,
+          "region": "totals"
+        }
+      },
+      "why": "How Personal Finance Companion helps with this moment, in the listing's own words, on the real screen that shows it. Screen: \"Bills\" (What's owed on a schedule: the monthly total, what's left to pay, and each bill marked ready or essential.) chosen because it is the real screen closest to \"A shared flag and your share on each bill, a settled tick you control, and a sta\"; focus on \"Monthly total, Left to pay this month\".",
+      "eyebrow": {
+        "text": "Personal Finance Companion",
+        "source": "title"
+      },
+      "from": 374,
+      "dur": 258,
+      "ground": "light",
+      "transition": "whip",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "swish",
+          "volume": 0.32
+        },
+        {
+          "at": 12,
+          "cue": "pop",
+          "volume": 0.42
+        },
+        {
+          "at": 116,
+          "cue": "tap",
+          "volume": 0.55
+        }
+      ]
+    },
+    {
+      "id": "cta",
+      "kind": "cta",
+      "variant": "guide",
+      "copy": [
+        {
+          "text": "Personal Finance Companion",
+          "source": "title"
+        },
+        {
+          "text": "draftpace.com/guides/split-bills-with-a-partner-or-roommate",
+          "source": "guide:split-bills-with-a-partner-or-roommate/url"
+        }
+      ],
+      "eyebrow": {
+        "text": "The full guide",
+        "source": "micro"
+      },
+      "why": "Ends on where to read the whole guide, with the product beneath it: the viewer leaves with the next step, not only a pitch.",
+      "from": 626,
+      "dur": 113,
+      "ground": "accent",
+      "transition": "blurDissolve",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "whoosh",
+          "volume": 0.32
+        },
+        {
+          "at": 8,
+          "cue": "settle",
+          "volume": 0.5
+        }
+      ]
+    }
+  ],
+  "reasoning": [
+    {
+      "topic": "Placement",
+      "decision": "TikTok, 1080×1920, 12–35s, hook by 0.8s, sound on",
+      "because": "Native, fast and plain-spoken; polish that looks like an ad gets skipped. Sound-on. Hook inside a second. The deepest bottom and right overlays of any placement."
+    },
+    {
+      "topic": "Product",
+      "decision": "Personal Finance Companion: $49 (list $99), motif \"index\", calm personality, cool accent #0d3b2e",
+      "because": "From its definition and Shop listing. 4 real screens to show."
+    },
+    {
+      "topic": "Situation",
+      "decision": "\"How do couples split bills without arguing about it\"",
+      "because": "One real moment from Personal Finance Companion's listing (searchedProblems[5].phrase). The film is about this moment and how the product helps with it: \"A shared flag and your share on each bill, a settled tick you control, and a statement you can both read that says what is squared up.\""
+    },
+    {
+      "topic": "Guide",
+      "decision": "\"How to split bills with a partner or roommate: 3 methods\" (draftpace.com/guides/split-bills-with-a-partner-or-roommate)",
+      "because": "The guide that covers this moment: what to do comes from it, and the film ends on it."
+    },
+    {
+      "topic": "Stage",
+      "decision": "Before launch: helpful and relatable only",
+      "because": "Nobody knows Draftpace yet, so films show how it helps with real moments. Who it is not for, questions before buying, what you get and the price wait until there are users to sell to."
+    },
+    {
+      "topic": "Audience",
+      "decision": "You have more than one account, bill, or income source and want them tracked in one real place, not five apps. / You want a next step handed to you, not a dashboard you have to interpret yourself every time.",
+      "because": "The listing's own audience lines; the director writes for them."
+    },
+    {
+      "topic": "Structure",
+      "decision": "What to do first: The moment, the guide's own checklist for it, then the product that keeps track of it.",
+      "because": "Best fit for a awareness film on TikTok (platform fit 1, goal fit 3, already used for this product ×1). Other candidates: In their words (-11.6), The moment (-12.5)."
+    },
+    {
+      "topic": "Angle",
+      "decision": "\"How do couples split bills without arguing about it\"",
+      "because": "The moment \"How do couples split bills without arguing about it\", the checklist from \"How to split bills with a partner or roommate: 3 methods\", then how Personal Finance Companion helps."
+    },
+    {
+      "topic": "Transitions",
+      "decision": "Transitions follow the product's own identity motif, \"index\"",
+      "because": "Transitions follow the product's own identity motif, \"index\": an index of tabs, so scenes slide in like the next tab. TikTok wants native editing, so hard cuts and whips lead."
+    },
+    {
+      "topic": "Camera",
+      "decision": "Camera \"dolly\"",
+      "because": "Camera \"dolly\": constant forward movement for a high-energy feed."
+    },
+    {
+      "topic": "Colour",
+      "decision": "Grounds ink → light → light → accent",
+      "because": "Grounds ink → light → light → accent: a cool accent, so a darker ground is used for contrast at a turn."
+    },
+    {
+      "topic": "Sound",
+      "decision": "Full sound design, high-energy bed",
+      "because": "Sound-on placement: every transition, landing and reveal has a cue, and the bed ducks under the brand moment."
+    },
+    {
+      "topic": "Length",
+      "decision": "24.6s, 4 scenes",
+      "because": "Each scene is held for the time its words take to read on TikTok (0.24s a word), inside 12–35s."
+    }
+  ]
+}

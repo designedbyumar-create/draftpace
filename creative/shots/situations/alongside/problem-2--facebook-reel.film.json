@@ -1,0 +1,254 @@
+{
+  "id": "sit-alongside-problem-2--facebook-reel",
+  "product": "alongside",
+  "situation": "problemsSolved[1].problem",
+  "runtime": {
+    "min": 12,
+    "max": 35
+  },
+  "platform": "facebook-reel",
+  "goal": "awareness",
+  "width": 1080,
+  "height": 1920,
+  "fps": 30,
+  "durationInFrames": 558,
+  "structure": "situationInside",
+  "angle": {
+    "text": "A to-do list just becomes a longer thing to feel behind on.",
+    "source": "problemsSolved[1].problem"
+  },
+  "treatment": {
+    "voice": "editorial",
+    "camera": "float",
+    "transitions": [
+      "iris",
+      "blurDissolve",
+      "iris"
+    ],
+    "motif": "focus",
+    "grounds": [
+      "accent",
+      "light",
+      "light",
+      "accent"
+    ],
+    "pace": 1
+  },
+  "music": {
+    "bed": "audio/bed-relaxation-05.mp3",
+    "level": 0.2,
+    "energy": "mid"
+  },
+  "scenes": [
+    {
+      "id": "moment",
+      "kind": "title",
+      "variant": "label",
+      "copy": [
+        {
+          "text": "A to-do list just becomes a longer thing to feel behind on.",
+          "source": "problemsSolved[1].problem"
+        }
+      ],
+      "emphasis": [
+        "becomes"
+      ],
+      "why": "Opens on the moment as the listing describes it: the situation the viewer is in right now.",
+      "from": 0,
+      "dur": 129,
+      "ground": "accent",
+      "transition": "cut",
+      "sfx": [],
+      "lines": [
+        [
+          "A to-do list just",
+          "becomes a longer thing",
+          "to feel behind on."
+        ]
+      ]
+    },
+    {
+      "id": "help",
+      "kind": "phone",
+      "variant": "proof",
+      "copy": [],
+      "caption": {
+        "text": "Nothing needs you right now, said plainly, on the days that's true, instead of a list filling the space anyway.",
+        "source": "problemsSolved[1].solution"
+      },
+      "screen": {
+        "src": "screens/alongside-workspace.png",
+        "pose": "float",
+        "focus": {
+          "at": 0.45,
+          "y": 222,
+          "h": 294,
+          "region": "one-thing"
+        },
+        "scroll": []
+      },
+      "why": "How ADHD Life Companion helps with this moment, in the listing's own words, on the real screen that shows it. Screen: \"Book the six-month dental check\" (One thing at a time: a single next step, Book the six-month dental check, with Do this with me, Not now and It is sorted.) chosen because it is the real screen closest to \"Nothing needs you right now, said plainly, on the days that's true, instead of a\"; focus on \"Book the six-month dental check\".",
+      "eyebrow": {
+        "text": "ADHD Life Companion",
+        "source": "title"
+      },
+      "from": 117,
+      "dur": 276,
+      "ground": "light",
+      "transition": "iris",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "whoosh",
+          "volume": 0.192
+        },
+        {
+          "at": 12,
+          "cue": "pop",
+          "volume": 0.252
+        },
+        {
+          "at": 124,
+          "cue": "tap",
+          "volume": 0.33
+        }
+      ]
+    },
+    {
+      "id": "also",
+      "kind": "phone",
+      "variant": "proof",
+      "copy": [],
+      "caption": {
+        "text": "Get through a call I'm dreading",
+        "source": "tasks[1].label"
+      },
+      "screen": {
+        "src": "screens/alongside-help.png",
+        "pose": "tiltLeft",
+        "focus": {
+          "at": 0.45,
+          "y": 84,
+          "h": 50,
+          "region": "question"
+        }
+      },
+      "why": "One more real thing an owner does here, in the listing's own task wording, on the screen it happens on. Screen: \"What do you need to do?\" (The help picker: plain-language situations to choose from, like a call that has been sitting there or something too big to start.) chosen because it is the real screen closest to \"Get through a call I'm dreading\"; focus on \"What do you need to do?\".",
+      "from": 381,
+      "dur": 102,
+      "ground": "light",
+      "transition": "blurDissolve",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "whoosh",
+          "volume": 0.192
+        },
+        {
+          "at": 12,
+          "cue": "pop",
+          "volume": 0.252
+        },
+        {
+          "at": 46,
+          "cue": "tap",
+          "volume": 0.33
+        }
+      ]
+    },
+    {
+      "id": "cta",
+      "kind": "cta",
+      "variant": "soft",
+      "copy": [
+        {
+          "text": "ADHD Life Companion",
+          "source": "title"
+        },
+        {
+          "text": "Available now.",
+          "source": "micro"
+        }
+      ],
+      "why": "Facebook Reel punishes an obvious ad; a soft close names the product and where to find it.",
+      "from": 471,
+      "dur": 87,
+      "ground": "accent",
+      "transition": "iris",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "whoosh",
+          "volume": 0.192
+        },
+        {
+          "at": 8,
+          "cue": "settle",
+          "volume": 0.3
+        }
+      ]
+    }
+  ],
+  "reasoning": [
+    {
+      "topic": "Placement",
+      "decision": "Facebook Reel, 1080×1920, 12–35s, hook by 1.5s, sound off",
+      "because": "An older, sound-off-leaning audience: every point on screen, held long enough to read, plainly worded."
+    },
+    {
+      "topic": "Product",
+      "decision": "ADHD Life Companion: $49 (list $99), motif \"focus\", calm personality, warm accent #86586a",
+      "because": "From its definition and Shop listing. 3 real screens to show."
+    },
+    {
+      "topic": "Situation",
+      "decision": "\"A to-do list just becomes a longer thing to feel behind on.\"",
+      "because": "One real moment from ADHD Life Companion's listing (problemsSolved[1].problem). The film is about this moment and how the product helps with it: \"Nothing needs you right now, said plainly, on the days that's true, instead of a list filling the space anyway.\""
+    },
+    {
+      "topic": "Stage",
+      "decision": "Before launch: helpful and relatable only",
+      "because": "Nobody knows Draftpace yet, so films show how it helps with real moments. Who it is not for, questions before buying, what you get and the price wait until there are users to sell to."
+    },
+    {
+      "topic": "Audience",
+      "decision": "You have ADHD, or executive function that works like it does, and most productivity tools have made that worse rather than better. / You are dealing with brain fog from long covid, a concussion, chronic illness, grief, new parenthood, menopause, or depression, and holding a plan in your head has stopped being reliable.",
+      "because": "The listing's own audience lines; the director writes for them."
+    },
+    {
+      "topic": "Structure",
+      "decision": "Inside the tool: The moment, then how the product helps on its real screen, then one more real thing an owner does in it.",
+      "because": "Best fit for a awareness film on Facebook Reel (platform fit 2, goal fit 2, already used for this product ×2). Other candidates: The moment (-11.3)."
+    },
+    {
+      "topic": "Angle",
+      "decision": "\"A to-do list just becomes a longer thing to feel behind on.\"",
+      "because": "The moment \"A to-do list just becomes a longer thing to feel behind on.\", how ADHD Life Companion helps, and one more real thing it does: \"Get through a call I'm dreading\"."
+    },
+    {
+      "topic": "Transitions",
+      "decision": "Transitions follow the product's own identity motif, \"focus\"",
+      "because": "Transitions follow the product's own identity motif, \"focus\": it is about one thing at a time, so scenes open like an iris onto one thing."
+    },
+    {
+      "topic": "Camera",
+      "decision": "Camera \"float\"",
+      "because": "Camera \"float\": a gentle float that keeps a held frame alive without demanding attention."
+    },
+    {
+      "topic": "Colour",
+      "decision": "Grounds accent → light → light → accent",
+      "because": "Grounds accent → light → light → accent: a warm accent, so light grounds lead and the accent is saved for the turns."
+    },
+    {
+      "topic": "Sound",
+      "decision": "Light sound design, mid-energy bed",
+      "because": "Most of this audience never unmutes, so nothing depends on sound; cues are kept quieter and sparser for those who do."
+    },
+    {
+      "topic": "Length",
+      "decision": "18.6s, 4 scenes",
+      "because": "Each scene is held for the time its words take to read on Facebook Reel (0.3s a word), inside 12–35s."
+    }
+  ]
+}

@@ -1,0 +1,216 @@
+{
+  "id": "car-travel-companion-search-1",
+  "product": "travel-companion",
+  "guide": "flight-changed-what-else-is-affected",
+  "situation": "searchedProblems[0].phrase",
+  "slides": [
+    {
+      "kind": "cover",
+      "quote": {
+        "text": "My flight changed and I don't know what else is affected",
+        "source": "searchedProblems[0].phrase"
+      },
+      "emphasis": [
+        "changed"
+      ],
+      "promise": {
+        "text": "Flight schedule changed? What else in your trip to check",
+        "source": "guide:flight-changed-what-else-is-affected/title"
+      },
+      "art": {
+        "motif": "plane",
+        "why": "the carousel's topic: the moment and its guide name \"flight\"",
+        "also": "calendar"
+      }
+    },
+    {
+      "kind": "answer",
+      "eyebrow": {
+        "text": "In short",
+        "source": "micro"
+      },
+      "lines": [
+        {
+          "text": "An airline moved your flight.",
+          "source": "guide:flight-changed-what-else-is-affected/dek#0"
+        },
+        {
+          "text": "Decide about the flight first, then check the transfer, hotel check-in and dinner that were booked around it, one at a time.",
+          "source": "guide:flight-changed-what-else-is-affected/dek#1"
+        }
+      ],
+      "art": {
+        "motif": "hotel",
+        "why": "the slide names \"hotel\", \"check-in\""
+      }
+    },
+    {
+      "kind": "step",
+      "number": {
+        "text": "1",
+        "source": "micro"
+      },
+      "head": {
+        "text": "Write the old time and the new time, side by side, with the booking reference and the name it's under.",
+        "source": "guide:flight-changed-what-else-is-affected/body[4].items[0]#0"
+      },
+      "body": [],
+      "emphasis": [
+        "reference"
+      ],
+      "art": {
+        "motif": "ticket",
+        "why": "the slide names \"booking\", \"reference\""
+      }
+    },
+    {
+      "kind": "step",
+      "number": {
+        "text": "2",
+        "source": "micro"
+      },
+      "head": {
+        "text": "List everything you booked that comes after the flight in time: the transfer, the check-in, the first night's dinner, a pickup, a rental car.",
+        "source": "guide:flight-changed-what-else-is-affected/body[4].items[1]#0"
+      },
+      "body": [],
+      "emphasis": [
+        "transfer"
+      ],
+      "art": {
+        "motif": "checklist",
+        "why": "the slide names \"list\", \"check-in\""
+      }
+    },
+    {
+      "kind": "step",
+      "number": {
+        "text": "3",
+        "source": "micro"
+      },
+      "head": {
+        "text": "For each item, write the one thing it was built on.",
+        "source": "guide:flight-changed-what-else-is-affected/body[4].items[2]#0"
+      },
+      "body": [
+        {
+          "text": "A check-in is usually built on a transfer, and a transfer on a flight.",
+          "source": "guide:flight-changed-what-else-is-affected/body[4].items[2]#1"
+        }
+      ],
+      "emphasis": [
+        "built"
+      ],
+      "art": {
+        "motif": "route",
+        "why": "the slide names \"transfer\""
+      }
+    },
+    {
+      "kind": "step",
+      "number": {
+        "text": "4",
+        "source": "micro"
+      },
+      "head": {
+        "text": "Go down the list in order.",
+        "source": "guide:flight-changed-what-else-is-affected/body[4].items[3]#0"
+      },
+      "body": [
+        {
+          "text": "For each item ask whether it still works with the new time.",
+          "source": "guide:flight-changed-what-else-is-affected/body[4].items[3]#1"
+        },
+        {
+          "text": "Often two of five are fine.",
+          "source": "guide:flight-changed-what-else-is-affected/body[4].items[3]#2"
+        }
+      ],
+      "emphasis": [
+        "order"
+      ],
+      "art": {
+        "motif": "checklist",
+        "why": "the slide names \"list\""
+      }
+    },
+    {
+      "kind": "step",
+      "number": {
+        "text": "5",
+        "source": "micro"
+      },
+      "head": {
+        "text": "Fix one item, write the new fact beside it, and only then move to the next.",
+        "source": "guide:flight-changed-what-else-is-affected/body[4].items[4]#0"
+      },
+      "body": [],
+      "emphasis": [
+        "beside"
+      ],
+      "art": {
+        "motif": "notebook",
+        "why": "the slide names \"write\""
+      }
+    },
+    {
+      "kind": "help",
+      "eyebrow": {
+        "text": "How it helps",
+        "source": "micro"
+      },
+      "name": {
+        "text": "Travel Companion",
+        "source": "title"
+      },
+      "line": {
+        "text": "Record the change and it walks down everything you said was booked around it, one booking at a time, editing nothing for you.",
+        "source": "searchedProblems[0].answer"
+      },
+      "ui": {
+        "kind": "screen",
+        "src": "screens/travel-companion-trip.png"
+      }
+    },
+    {
+      "kind": "close",
+      "eyebrow": {
+        "text": "The full guide",
+        "source": "micro"
+      },
+      "title": {
+        "text": "Flight schedule changed? What else in your trip to check",
+        "source": "guide:flight-changed-what-else-is-affected/title"
+      },
+      "url": {
+        "text": "draftpace.com/guides/flight-changed-what-else-is-affected",
+        "source": "guide:flight-changed-what-else-is-affected/url"
+      },
+      "link": {
+        "text": "Free to read. Link in bio.",
+        "source": "micro"
+      },
+      "save": {
+        "text": "Save this for later.",
+        "source": "micro"
+      },
+      "art": {
+        "motif": "plane",
+        "why": "the carousel's topic: the moment and its guide name \"flight\""
+      }
+    }
+  ],
+  "notes": [
+    "Cover: \"My flight changed and I don't know what else is affected\" (searchedProblems[0].phrase), as people search it.",
+    "Steps: 5 of 6 from the guide's numbered steps \"Step two: walk downward through what depends on it\", one per slide, each with the guide's own explanation.",
+    "Help: \"Record the change and it walks down everything you said was booked around it, one booking at a time, editing nothing for you.\" (searchedProblems[0].answer), on screens/travel-companion-trip.png (\"Lisbon and Porto\").",
+    "Illustration on the cover: plane with calendar, because the carousel's topic: the moment and its guide name \"flight\".",
+    "Illustration on the answer: hotel, because the slide names \"hotel\", \"check-in\".",
+    "Illustration on the step: ticket, because the slide names \"booking\", \"reference\".",
+    "Illustration on the step: checklist, because the slide names \"list\", \"check-in\".",
+    "Illustration on the step: route, because the slide names \"transfer\".",
+    "Illustration on the step: checklist, because the slide names \"list\".",
+    "Illustration on the step: notebook, because the slide names \"write\".",
+    "Illustration on the close: plane, because the carousel's topic: the moment and its guide name \"flight\"."
+  ]
+}

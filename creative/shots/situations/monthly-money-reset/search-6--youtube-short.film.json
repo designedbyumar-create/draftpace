@@ -1,0 +1,271 @@
+{
+  "id": "sit-monthly-money-reset-search-6--youtube-short",
+  "product": "monthly-money-reset",
+  "guide": "can-you-afford-it-before-you-buy-it",
+  "situation": "searchedProblems[5].phrase",
+  "runtime": {
+    "min": 15,
+    "max": 40
+  },
+  "platform": "youtube-short",
+  "goal": "awareness",
+  "width": 1080,
+  "height": 1920,
+  "fps": 30,
+  "durationInFrames": 799,
+  "structure": "situationChecklist",
+  "angle": {
+    "text": "I don't know if I can afford this before I buy it",
+    "source": "searchedProblems[5].phrase"
+  },
+  "treatment": {
+    "voice": "editorial",
+    "camera": "dolly",
+    "transitions": [
+      "lineWipe",
+      "blurDissolve",
+      "lineWipe"
+    ],
+    "motif": "ledger",
+    "grounds": [
+      "light",
+      "light",
+      "ink",
+      "accent"
+    ],
+    "pace": 1
+  },
+  "music": {
+    "bed": "audio/bed-relaxation-05.mp3",
+    "level": 0.2,
+    "energy": "mid"
+  },
+  "scenes": [
+    {
+      "id": "moment",
+      "kind": "title",
+      "variant": "label",
+      "copy": [
+        {
+          "text": "I don't know if I can afford this before I buy it",
+          "source": "searchedProblems[5].phrase"
+        }
+      ],
+      "emphasis": [
+        "afford"
+      ],
+      "why": "Opens on the moment in the person's own words, as the listing records people searching it.",
+      "from": 0,
+      "dur": 115,
+      "ground": "light",
+      "transition": "cut",
+      "sfx": [],
+      "lines": [
+        [
+          "I don't know if I",
+          "can afford this before",
+          "I buy it"
+        ]
+      ]
+    },
+    {
+      "id": "what-to-do",
+      "kind": "list",
+      "variant": "checklist",
+      "copy": [
+        {
+          "text": "Your safe-to-spend figure is old.",
+          "source": "guide:can-you-afford-it-before-you-buy-it/body[7].items[0]#0"
+        },
+        {
+          "text": "You forgot a bill.",
+          "source": "guide:can-you-afford-it-before-you-buy-it/body[7].items[1]#0"
+        },
+        {
+          "text": "Your pay isn't steady.",
+          "source": "guide:can-you-afford-it-before-you-buy-it/body[7].items[2]#0"
+        },
+        {
+          "text": "You're paying with a credit card.",
+          "source": "guide:can-you-afford-it-before-you-buy-it/body[7].items[4]#0"
+        }
+      ],
+      "eyebrow": {
+        "text": "When the number misleads",
+        "source": "guide:can-you-afford-it-before-you-buy-it/body[7].heading"
+      },
+      "why": "What to do about it, from the guide \"How to know if you can afford something before you buy it\": its own checklist, the first sentence of each item.",
+      "from": 103,
+      "dur": 320,
+      "ground": "ink",
+      "transition": "lineWipe",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "tick",
+          "volume": 0.6
+        },
+        {
+          "at": 10,
+          "cue": "tick",
+          "volume": 0.45
+        },
+        {
+          "at": 74,
+          "cue": "tick",
+          "volume": 0.45
+        },
+        {
+          "at": 138,
+          "cue": "tick",
+          "volume": 0.45
+        },
+        {
+          "at": 202,
+          "cue": "tick",
+          "volume": 0.45
+        }
+      ]
+    },
+    {
+      "id": "help",
+      "kind": "live",
+      "variant": "after",
+      "copy": [],
+      "caption": {
+        "text": "Safe-to-Spend answers exactly that, and the tightest day this cycle tells you whether the money is really there or just there today.",
+        "source": "searchedProblems[5].answer"
+      },
+      "live": "safeToSpendCard",
+      "eyebrow": {
+        "text": "Monthly Money Reset",
+        "source": "title"
+      },
+      "why": "How Monthly Money Reset helps, in the listing's own words, as the real component computing a real number.",
+      "from": 411,
+      "dur": 282,
+      "ground": "accent",
+      "transition": "blurDissolve",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "whoosh",
+          "volume": 0.32
+        },
+        {
+          "at": 12,
+          "cue": "pop",
+          "volume": 0.42
+        }
+      ]
+    },
+    {
+      "id": "cta",
+      "kind": "cta",
+      "variant": "guide",
+      "copy": [
+        {
+          "text": "Monthly Money Reset",
+          "source": "title"
+        },
+        {
+          "text": "draftpace.com/guides/can-you-afford-it-before-you-buy-it",
+          "source": "guide:can-you-afford-it-before-you-buy-it/url"
+        }
+      ],
+      "eyebrow": {
+        "text": "The full guide",
+        "source": "micro"
+      },
+      "why": "Ends on where to read the whole guide, with the product beneath it: the viewer leaves with the next step, not only a pitch.",
+      "from": 681,
+      "dur": 118,
+      "ground": "light",
+      "transition": "blurDissolve",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "whoosh",
+          "volume": 0.32
+        },
+        {
+          "at": 8,
+          "cue": "settle",
+          "volume": 0.5
+        }
+      ]
+    }
+  ],
+  "reasoning": [
+    {
+      "topic": "Placement",
+      "decision": "YouTube Short, 1080×1920, 15–40s, hook by 1.2s, sound on",
+      "because": "Search-adjacent audience that will watch a slightly longer explanation if it starts strong. Loops by default."
+    },
+    {
+      "topic": "Product",
+      "decision": "Monthly Money Reset: free, motif \"ledger\", calm personality, cool accent #214b3e",
+      "because": "From its definition and Shop listing. 1 real screens and live components (safeToSpendCard, nextActionCard) to show."
+    },
+    {
+      "topic": "Situation",
+      "decision": "\"I don't know if I can afford this before I buy it\"",
+      "because": "One real moment from Monthly Money Reset's listing (searchedProblems[5].phrase). The film is about this moment and how the product helps with it: \"Safe-to-Spend answers exactly that, and the tightest day this cycle tells you whether the money is really there or just there today.\""
+    },
+    {
+      "topic": "Guide",
+      "decision": "\"How to know if you can afford something before you buy it\" (draftpace.com/guides/can-you-afford-it-before-you-buy-it)",
+      "because": "The guide that covers this moment: what to do comes from it, and the film ends on it."
+    },
+    {
+      "topic": "Stage",
+      "decision": "Before launch: helpful and relatable only",
+      "because": "Nobody knows Draftpace yet, so films show how it helps with real moments. Who it is not for, questions before buying, what you get and the price wait until there are users to sell to."
+    },
+    {
+      "topic": "Audience",
+      "decision": "You want one clear number for what's actually safe to spend, not a full budget system. / You have a mix of bills, some paid automatically and some not, that you'd rather not accidentally spend past.",
+      "because": "The listing's own audience lines; the director writes for them."
+    },
+    {
+      "topic": "Structure",
+      "decision": "What to do first: The moment, the guide's own checklist for it, then the product that keeps track of it.",
+      "because": "Best fit for a awareness film on YouTube Short (platform fit 3, goal fit 3, already used for this product ×2, already used on YouTube Short ×2). Other candidates: In their words (-12.0), The moment (-12.4)."
+    },
+    {
+      "topic": "Angle",
+      "decision": "\"I don't know if I can afford this before I buy it\"",
+      "because": "The moment \"I don't know if I can afford this before I buy it\", the checklist from \"How to know if you can afford something before you buy it\", then how Monthly Money Reset helps."
+    },
+    {
+      "topic": "Transitions",
+      "decision": "Transitions follow the product's own identity motif, \"ledger\"",
+      "because": "Transitions follow the product's own identity motif, \"ledger\": a ledger is ruled lines, so scenes are revealed row by row."
+    },
+    {
+      "topic": "Camera",
+      "decision": "Camera \"dolly\"",
+      "because": "Camera \"dolly\": constant forward movement for a high-energy feed."
+    },
+    {
+      "topic": "Colour",
+      "decision": "Grounds light → light → ink → accent",
+      "because": "Grounds light → light → ink → accent: a cool accent, so a darker ground is used for contrast at a turn."
+    },
+    {
+      "topic": "Variation",
+      "decision": "Rotated the ground rhythm",
+      "because": "Its shape was 0.90 similar to sit-monthly-money-reset-search-1--pinterest-video; a different film, not the same one re-coloured."
+    },
+    {
+      "topic": "Sound",
+      "decision": "Full sound design, mid-energy bed",
+      "because": "Sound-on placement: every transition, landing and reveal has a cue, and the bed ducks under the brand moment."
+    },
+    {
+      "topic": "Length",
+      "decision": "26.6s, 4 scenes",
+      "because": "Each scene is held for the time its words take to read on YouTube Short (0.26s a word), inside 15–40s."
+    }
+  ]
+}

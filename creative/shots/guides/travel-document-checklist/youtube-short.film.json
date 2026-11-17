@@ -1,0 +1,359 @@
+{
+  "id": "guide-travel-document-checklist--youtube-short",
+  "product": "travel-companion",
+  "guide": "travel-document-checklist",
+  "runtime": {
+    "min": 18,
+    "max": 45
+  },
+  "platform": "youtube-short",
+  "goal": "awareness",
+  "width": 1080,
+  "height": 1920,
+  "fps": 30,
+  "durationInFrames": 694,
+  "structure": "guideTimeline",
+  "angle": {
+    "text": "Travel document checklist: what to carry and where",
+    "source": "guide:travel-document-checklist/title"
+  },
+  "treatment": {
+    "voice": "editorial",
+    "camera": "dolly",
+    "transitions": [
+      "slideLeft",
+      "whip",
+      "slideLeft"
+    ],
+    "motif": "timeline",
+    "grounds": [
+      "light",
+      "accent",
+      "light",
+      "ink"
+    ],
+    "pace": 1
+  },
+  "music": {
+    "bed": "audio/bed-relaxation-05.mp3",
+    "level": 0.2,
+    "energy": "mid"
+  },
+  "scenes": [
+    {
+      "id": "hook",
+      "kind": "title",
+      "variant": "editorial",
+      "copy": [
+        {
+          "text": "Travel document checklist: what to carry and where",
+          "source": "guide:travel-document-checklist/title"
+        }
+      ],
+      "emphasis": [
+        "checklist"
+      ],
+      "why": "The hook is the guide's own title: the question it answers, as a person would put it.",
+      "from": 0,
+      "dur": 83,
+      "ground": "light",
+      "transition": "cut",
+      "sfx": [],
+      "lines": [
+        [
+          "Travel document",
+          "checklist: what to",
+          "carry and where"
+        ]
+      ]
+    },
+    {
+      "id": "when-1",
+      "kind": "title",
+      "variant": "label",
+      "copy": [
+        {
+          "text": "Read each passport's expiry.",
+          "source": "guide:travel-document-checklist/body[4].steps[0].what#0"
+        }
+      ],
+      "eyebrow": {
+        "text": "6 months before",
+        "source": "guide:travel-document-checklist/body[4].steps[0].when"
+      },
+      "emphasis": [
+        "passport's"
+      ],
+      "why": "Marker 1: \"6 months before\", with the first sentence of what the guide says to do then.",
+      "from": 71,
+      "dur": 97,
+      "ground": "accent",
+      "transition": "slideLeft",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "swish",
+          "volume": 0.32
+        }
+      ],
+      "lines": [
+        [
+          "Read each passport's",
+          "expiry."
+        ]
+      ]
+    },
+    {
+      "id": "when-2",
+      "kind": "title",
+      "variant": "label",
+      "copy": [
+        {
+          "text": "Start any renewal, visa or authorization.",
+          "source": "guide:travel-document-checklist/body[4].steps[1].what#0"
+        }
+      ],
+      "eyebrow": {
+        "text": "3 months before",
+        "source": "guide:travel-document-checklist/body[4].steps[1].when"
+      },
+      "emphasis": [
+        "authorization"
+      ],
+      "why": "Marker 2: \"3 months before\", with the first sentence of what the guide says to do then.",
+      "from": 156,
+      "dur": 112,
+      "ground": "light",
+      "transition": "whip",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "swish",
+          "volume": 0.32
+        }
+      ],
+      "lines": [
+        [
+          "Start any renewal,",
+          "visa or authorization."
+        ]
+      ]
+    },
+    {
+      "id": "when-3",
+      "kind": "title",
+      "variant": "label",
+      "copy": [
+        {
+          "text": "Confirm names on tickets.",
+          "source": "guide:travel-document-checklist/body[4].steps[2].what#0"
+        }
+      ],
+      "eyebrow": {
+        "text": "1 month before",
+        "source": "guide:travel-document-checklist/body[4].steps[2].when"
+      },
+      "emphasis": [
+        "Confirm"
+      ],
+      "why": "Marker 3: \"1 month before\", with the first sentence of what the guide says to do then.",
+      "from": 256,
+      "dur": 97,
+      "ground": "ink",
+      "transition": "slideLeft",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "swish",
+          "volume": 0.32
+        }
+      ],
+      "lines": [
+        [
+          "Confirm names",
+          "on tickets."
+        ]
+      ]
+    },
+    {
+      "id": "when-4",
+      "kind": "title",
+      "variant": "label",
+      "copy": [
+        {
+          "text": "Print the page.",
+          "source": "guide:travel-document-checklist/body[4].steps[3].what#0"
+        }
+      ],
+      "eyebrow": {
+        "text": "Night before",
+        "source": "guide:travel-document-checklist/body[4].steps[3].when"
+      },
+      "emphasis": [
+        "Print"
+      ],
+      "why": "Marker 4: \"Night before\", with the first sentence of what the guide says to do then.",
+      "from": 341,
+      "dur": 81,
+      "ground": "light",
+      "transition": "slideLeft",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "swish",
+          "volume": 0.32
+        }
+      ],
+      "lines": [
+        [
+          "Print the page."
+        ]
+      ]
+    },
+    {
+      "id": "tool",
+      "kind": "phone",
+      "variant": "proof",
+      "copy": [],
+      "caption": {
+        "text": "A printable trip book, as long as your trip needs and no longer",
+        "source": "expectedOutputs[7]"
+      },
+      "screen": {
+        "src": "screens/travel-companion-printables.png",
+        "pose": "tiltLeft",
+        "focus": {
+          "at": 0.45,
+          "y": 292,
+          "h": 161,
+          "region": "trip-book"
+        },
+        "scroll": []
+      },
+      "why": "The turn: the product the guide itself hands over to, named and shown on its real screen, captioned with its listing's line closest to what the guide teaches. Screen: \"My Trip Book\" (My Trip Book: a blank, printable travel planner, generated fresh each time.) chosen because it is the real screen closest to \"A printable trip book, as long as your trip needs and no longer Travel document \"; focus on \"My Trip Book\".",
+      "eyebrow": {
+        "text": "Travel Companion",
+        "source": "title"
+      },
+      "from": 410,
+      "dur": 186,
+      "ground": "accent",
+      "transition": "whip",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "swish",
+          "volume": 0.32
+        },
+        {
+          "at": 12,
+          "cue": "pop",
+          "volume": 0.42
+        },
+        {
+          "at": 84,
+          "cue": "tap",
+          "volume": 0.55
+        }
+      ]
+    },
+    {
+      "id": "cta",
+      "kind": "cta",
+      "variant": "guide",
+      "copy": [
+        {
+          "text": "Travel Companion",
+          "source": "title"
+        },
+        {
+          "text": "draftpace.com/guides/travel-document-checklist",
+          "source": "guide:travel-document-checklist/url"
+        }
+      ],
+      "eyebrow": {
+        "text": "The full guide",
+        "source": "micro"
+      },
+      "why": "Ends on where to read the whole guide, with the product beneath it: the viewer leaves with the next step, not only a pitch.",
+      "from": 584,
+      "dur": 110,
+      "ground": "light",
+      "transition": "blurDissolve",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "whoosh",
+          "volume": 0.32
+        },
+        {
+          "at": 8,
+          "cue": "settle",
+          "volume": 0.5
+        }
+      ]
+    }
+  ],
+  "reasoning": [
+    {
+      "topic": "Placement",
+      "decision": "YouTube Short, 1080×1920, 18–45s, hook by 1.2s, sound on",
+      "because": "Search-adjacent audience that will watch a slightly longer explanation if it starts strong. Loops by default."
+    },
+    {
+      "topic": "Product",
+      "decision": "Travel Companion: $34 (list $69), motif \"timeline\", calm personality, cool accent #00626f",
+      "because": "From its definition and Shop listing. 4 real screens to show."
+    },
+    {
+      "topic": "Guide",
+      "decision": "\"Travel document checklist: what to carry and where\" (draftpace.com/guides/travel-document-checklist)",
+      "because": "Teaches from the guide first; Travel Companion is the product the guide hands over to. 3 lists and timelines, 5 questions to draw from."
+    },
+    {
+      "topic": "Stage",
+      "decision": "Before launch: helpful and relatable only",
+      "because": "Nobody knows Draftpace yet, so films show how it helps with real moments. Who it is not for, questions before buying, what you get and the price wait until there are users to sell to."
+    },
+    {
+      "topic": "Audience",
+      "decision": "You are travelling with other people, and you are the one everybody asks what happens next. / Your trip has more than three moving parts: flights, transfers, stays and reservations that were booked around each other.",
+      "because": "The listing's own audience lines; the director writes for them."
+    },
+    {
+      "topic": "Structure",
+      "decision": "In order: Walk the guide's own timeline, one marker at a time, then show the product that keeps it.",
+      "because": "Best fit for a awareness film on YouTube Short (platform fit 3, goal fit 3, already used on YouTube Short ×1). Other candidates: The checklist (3.4), The question people ask (-2.9)."
+    },
+    {
+      "topic": "Angle",
+      "decision": "\"Travel document checklist: what to carry and where\"",
+      "because": "The guide's timeline \"When to do it\": 4 of its 4 markers, in order."
+    },
+    {
+      "topic": "Transitions",
+      "decision": "Transitions follow the product's own identity motif, \"timeline\"",
+      "because": "Transitions follow the product's own identity motif, \"timeline\": a trip is a line through time, so scenes travel left to right along it."
+    },
+    {
+      "topic": "Camera",
+      "decision": "Camera \"dolly\"",
+      "because": "Camera \"dolly\": constant forward movement for a high-energy feed."
+    },
+    {
+      "topic": "Colour",
+      "decision": "Grounds light → accent → light → ink",
+      "because": "Grounds light → accent → light → ink: a cool accent, so a darker ground is used for contrast at a turn."
+    },
+    {
+      "topic": "Sound",
+      "decision": "Full sound design, mid-energy bed",
+      "because": "Sound-on placement: every transition, landing and reveal has a cue, and the bed ducks under the brand moment."
+    },
+    {
+      "topic": "Length",
+      "decision": "23.1s, 7 scenes",
+      "because": "Each scene is held for the time its words take to read on YouTube Short (0.26s a word), inside 18–45s."
+    }
+  ]
+}

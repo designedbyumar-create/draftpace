@@ -1,0 +1,257 @@
+{
+  "id": "guide-who-would-raise-your-children-guardian-checklist--pinterest-video",
+  "product": "personal-life-affairs-companion",
+  "guide": "who-would-raise-your-children-guardian-checklist",
+  "runtime": {
+    "min": 12,
+    "max": 35
+  },
+  "platform": "pinterest-video",
+  "goal": "awareness",
+  "width": 1000,
+  "height": 1500,
+  "fps": 30,
+  "durationInFrames": 596,
+  "structure": "guideQuestion",
+  "angle": {
+    "text": "Is naming a guardian in my will legally binding?",
+    "source": "guide:who-would-raise-your-children-guardian-checklist/body[11].items[0].q"
+  },
+  "treatment": {
+    "voice": "editorial",
+    "camera": "float",
+    "transitions": [
+      "pageTurn",
+      "blurDissolve",
+      "pageTurn"
+    ],
+    "motif": "book",
+    "grounds": [
+      "light",
+      "light",
+      "ink",
+      "accent"
+    ],
+    "pace": 1.15
+  },
+  "music": {
+    "bed": "audio/bed-relaxation-05.mp3",
+    "level": 0.16,
+    "energy": "low"
+  },
+  "scenes": [
+    {
+      "id": "q",
+      "kind": "title",
+      "variant": "quote",
+      "copy": [
+        {
+          "text": "Is naming a guardian in my will legally binding?",
+          "source": "guide:who-would-raise-your-children-guardian-checklist/body[11].items[0].q"
+        }
+      ],
+      "why": "The question as people ask it; the guide carries it because people search it.",
+      "from": 0,
+      "dur": 124,
+      "ground": "light",
+      "transition": "cut",
+      "sfx": [],
+      "lines": [
+        [
+          "Is naming a guardian",
+          "in my will legally",
+          "binding?"
+        ]
+      ]
+    },
+    {
+      "id": "a",
+      "kind": "title",
+      "variant": "label",
+      "copy": [
+        {
+          "text": "It's the nomination a court will almost always follow, but it doesn't hand over custody automatically.",
+          "source": "guide:who-would-raise-your-children-guardian-checklist/body[11].items[0].a#0"
+        }
+      ],
+      "emphasis": [
+        "automatically"
+      ],
+      "why": "The guide's answer, its first sentence: the plain answer before any detail.",
+      "from": 112,
+      "dur": 201,
+      "ground": "ink",
+      "transition": "pageTurn",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "page",
+          "volume": 0.192
+        }
+      ],
+      "lines": [
+        [
+          "It's the nomination a court",
+          "will almost always follow,",
+          "but it doesn't hand over",
+          "custody automatically."
+        ]
+      ]
+    },
+    {
+      "id": "tool",
+      "kind": "phone",
+      "variant": "proof",
+      "copy": [],
+      "caption": {
+        "text": "Something changed?",
+        "source": "howItWorks[6]#0"
+      },
+      "screen": {
+        "src": "screens/personal-life-affairs-companion-workspace.png",
+        "pose": "float",
+        "focus": {
+          "at": 0.45,
+          "y": 82,
+          "h": 427,
+          "region": "question"
+        },
+        "scroll": []
+      },
+      "why": "The turn: the product the guide itself hands over to, named and shown on its real screen, captioned with its listing's line closest to what the guide teaches. Screen: \"Write down who should be called first.\" (One question at a time: write down who should be called first, with Start, Not relevant to me and Later.) chosen because it is the real screen closest to \"Something changed? Who would raise your children? A guardian checklist\"; focus on \"Write down who should be called first.\".",
+      "eyebrow": {
+        "text": "Personal Life Affairs Companion",
+        "source": "title"
+      },
+      "from": 301,
+      "dur": 146,
+      "ground": "accent",
+      "transition": "blurDissolve",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "whoosh",
+          "volume": 0.192
+        },
+        {
+          "at": 12,
+          "cue": "pop",
+          "volume": 0.252
+        },
+        {
+          "at": 66,
+          "cue": "tap",
+          "volume": 0.33
+        }
+      ]
+    },
+    {
+      "id": "cta",
+      "kind": "cta",
+      "variant": "guide",
+      "copy": [
+        {
+          "text": "Personal Life Affairs Companion",
+          "source": "title"
+        },
+        {
+          "text": "draftpace.com/guides/who-would-raise-your-children-guardian-checklist",
+          "source": "guide:who-would-raise-your-children-guardian-checklist/url"
+        }
+      ],
+      "eyebrow": {
+        "text": "The full guide",
+        "source": "micro"
+      },
+      "why": "Ends on where to read the whole guide, with the product beneath it: the viewer leaves with the next step, not only a pitch.",
+      "from": 435,
+      "dur": 161,
+      "ground": "light",
+      "transition": "blurDissolve",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "whoosh",
+          "volume": 0.192
+        },
+        {
+          "at": 8,
+          "cue": "settle",
+          "volume": 0.3
+        }
+      ]
+    }
+  ],
+  "reasoning": [
+    {
+      "topic": "Placement",
+      "decision": "Pinterest video pin, 1000×1500, 12–35s, hook by 1s, sound off",
+      "because": "People are planning, not scrolling: idea-led, calm and save-worthy, worded like what they searched for. Muted, looping, slow; a hard sell reads as an ad and loses the save."
+    },
+    {
+      "topic": "Product",
+      "decision": "Personal Life Affairs Companion: $49 (list $99), motif \"book\", calm personality, cool accent #26374f",
+      "because": "From its definition and Shop listing. 3 real screens to show."
+    },
+    {
+      "topic": "Guide",
+      "decision": "\"Who would raise your children? A guardian checklist\" (draftpace.com/guides/who-would-raise-your-children-guardian-checklist)",
+      "because": "Teaches from the guide first; Personal Life Affairs Companion is the product the guide hands over to. 2 lists and timelines, 5 questions to draw from."
+    },
+    {
+      "topic": "Stage",
+      "decision": "Before launch: helpful and relatable only",
+      "because": "Nobody knows Draftpace yet, so films show how it helps with real moments. Who it is not for, questions before buying, what you get and the price wait until there are users to sell to."
+    },
+    {
+      "topic": "Audience",
+      "decision": "You have been meaning to sort this out for a while and have never found a first step small enough to take. / You would rather be asked one question at a time than handed a folder and told to fill it in.",
+      "because": "The listing's own audience lines; the director writes for them."
+    },
+    {
+      "topic": "Material",
+      "decision": "Allowed real lines up to 4 words longer",
+      "because": "Every structure Personal Life Affairs Companion's copy supports at Pinterest video pin's normal line length is already used by its other films; a longer real line beats telling the same story twice."
+    },
+    {
+      "topic": "Structure",
+      "decision": "The question people ask: One of the guide's own questions, its plain answer, then the product.",
+      "because": "Best fit for a awareness film on Pinterest video pin (platform fit 2, goal fit 2, already used for this product ×2, already used on Pinterest video pin ×8). Other candidates: ."
+    },
+    {
+      "topic": "Angle",
+      "decision": "\"Is naming a guardian in my will legally binding?\"",
+      "because": "A question from the guide's FAQ, \"Is naming a guardian in my will legally binding?\", and the first sentence of its answer."
+    },
+    {
+      "topic": "Transitions",
+      "decision": "Transitions follow the product's own identity motif, \"book\"",
+      "because": "Transitions follow the product's own identity motif, \"book\": a handoff book, so scenes turn like pages."
+    },
+    {
+      "topic": "Camera",
+      "decision": "Camera \"float\"",
+      "because": "Camera \"float\": a gentle float that keeps a held frame alive without demanding attention."
+    },
+    {
+      "topic": "Colour",
+      "decision": "Grounds light → light → ink → accent",
+      "because": "Grounds light → light → ink → accent: a cool accent, so a darker ground is used for contrast at a turn."
+    },
+    {
+      "topic": "Variation",
+      "decision": "Rotated the ground rhythm",
+      "because": "Its shape was 0.90 similar to guide-how-to-find-someones-accounts-after-they-die--youtube-short; a different film, not the same one re-coloured."
+    },
+    {
+      "topic": "Sound",
+      "decision": "Light sound design, low-energy bed",
+      "because": "Most of this audience never unmutes, so nothing depends on sound; cues are kept quieter and sparser for those who do."
+    },
+    {
+      "topic": "Length",
+      "decision": "19.9s, 4 scenes",
+      "because": "Each scene is held for the time its words take to read on Pinterest video pin (0.32s a word), inside 12–35s."
+    }
+  ]
+}

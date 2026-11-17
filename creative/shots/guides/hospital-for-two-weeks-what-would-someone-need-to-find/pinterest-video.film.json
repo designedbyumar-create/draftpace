@@ -1,0 +1,334 @@
+{
+  "id": "guide-hospital-for-two-weeks-what-would-someone-need-to-find--pinterest-video",
+  "product": "personal-life-affairs-companion",
+  "guide": "hospital-for-two-weeks-what-would-someone-need-to-find",
+  "runtime": {
+    "min": 12,
+    "max": 35
+  },
+  "platform": "pinterest-video",
+  "goal": "awareness",
+  "width": 1000,
+  "height": 1500,
+  "fps": 30,
+  "durationInFrames": 1046,
+  "structure": "guideSteps",
+  "angle": {
+    "text": "if i was hospitalized who will pay my bills",
+    "source": "guide:hospital-for-two-weeks-what-would-someone-need-to-find/primaryQuery"
+  },
+  "treatment": {
+    "voice": "editorial",
+    "camera": "float",
+    "transitions": [
+      "pageTurn",
+      "blurDissolve",
+      "pageTurn"
+    ],
+    "motif": "book",
+    "grounds": [
+      "ink",
+      "light",
+      "light",
+      "accent"
+    ],
+    "pace": 1.15
+  },
+  "music": {
+    "bed": "audio/bed-relaxation-05.mp3",
+    "level": 0.16,
+    "energy": "low"
+  },
+  "scenes": [
+    {
+      "id": "hook",
+      "kind": "title",
+      "variant": "quote",
+      "copy": [
+        {
+          "text": "if i was hospitalized who will pay my bills",
+          "source": "guide:hospital-for-two-weeks-what-would-someone-need-to-find/primaryQuery"
+        }
+      ],
+      "why": "Opens on the exact phrase the guide is written to win, typed out the way it is typed into a search box.",
+      "from": 0,
+      "dur": 124,
+      "ground": "ink",
+      "transition": "cut",
+      "sfx": [],
+      "lines": [
+        [
+          "if i was",
+          "hospitalized who",
+          "will pay my bills"
+        ]
+      ]
+    },
+    {
+      "id": "step-1",
+      "kind": "title",
+      "variant": "editorial",
+      "copy": [
+        {
+          "text": "Who should be called first, and how would they be reached?",
+          "source": "guide:hospital-for-two-weeks-what-would-someone-need-to-find/body[4].items[0]#0"
+        }
+      ],
+      "eyebrow": {
+        "text": "1",
+        "source": "micro"
+      },
+      "emphasis": [
+        "reached"
+      ],
+      "why": "Step 1 of the guide's numbered list, numbered as the guide numbers it, its first sentence: the instruction itself.",
+      "from": 112,
+      "dur": 181,
+      "ground": "light",
+      "transition": "pageTurn",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "page",
+          "volume": 0.192
+        }
+      ],
+      "lines": [
+        [
+          "Who should be called",
+          "first, and how would",
+          "they be reached?"
+        ]
+      ]
+    },
+    {
+      "id": "step-2",
+      "kind": "title",
+      "variant": "editorial",
+      "copy": [
+        {
+          "text": "Where is the important paperwork, and who knows that?",
+          "source": "guide:hospital-for-two-weeks-what-would-someone-need-to-find/body[4].items[1]#0"
+        }
+      ],
+      "eyebrow": {
+        "text": "2",
+        "source": "micro"
+      },
+      "emphasis": [
+        "important"
+      ],
+      "why": "Step 2 of the guide's numbered list, numbered as the guide numbers it, its first sentence: the instruction itself.",
+      "from": 281,
+      "dur": 159,
+      "ground": "light",
+      "transition": "blurDissolve",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "whoosh",
+          "volume": 0.192
+        }
+      ],
+      "lines": [
+        [
+          "Where is the",
+          "important paperwork,",
+          "and who knows that?"
+        ]
+      ]
+    },
+    {
+      "id": "step-3",
+      "kind": "title",
+      "variant": "editorial",
+      "copy": [
+        {
+          "text": "How would someone get help getting into your accounts and phone?",
+          "source": "guide:hospital-for-two-weeks-what-would-someone-need-to-find/body[4].items[2]#0"
+        }
+      ],
+      "eyebrow": {
+        "text": "3",
+        "source": "micro"
+      },
+      "emphasis": [
+        "accounts"
+      ],
+      "why": "Step 3 of the guide's numbered list, numbered as the guide numbers it, its first sentence: the instruction itself.",
+      "from": 428,
+      "dur": 181,
+      "ground": "accent",
+      "transition": "pageTurn",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "page",
+          "volume": 0.192
+        }
+      ],
+      "lines": [
+        [
+          "How would someone",
+          "get help getting",
+          "into your accounts",
+          "and phone?"
+        ]
+      ]
+    },
+    {
+      "id": "tool",
+      "kind": "phone",
+      "variant": "proof",
+      "copy": [],
+      "caption": {
+        "text": "My Affairs, a printable book somebody who has never used this could pick up and use",
+        "source": "expectedOutputs[2]"
+      },
+      "screen": {
+        "src": "screens/personal-life-affairs-companion-printables.png",
+        "pose": "float",
+        "focus": {
+          "at": 0.45,
+          "y": 264,
+          "h": 168,
+          "region": "book"
+        }
+      },
+      "why": "The turn: the product the guide itself hands over to, named and shown on its real screen, captioned with its listing's line closest to what the guide teaches. Screen: \"Nothing in it yet, and you can still print it.\" (My Affairs book: a printable handoff book that says where the paperwork is.) chosen because it is the real screen closest to \"My Affairs, a printable book somebody who has never used this could pick up and \"; focus on \"My Affairs\".",
+      "eyebrow": {
+        "text": "Personal Life Affairs Companion",
+        "source": "title"
+      },
+      "from": 597,
+      "dur": 300,
+      "ground": "ink",
+      "transition": "pageTurn",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "page",
+          "volume": 0.192
+        },
+        {
+          "at": 12,
+          "cue": "pop",
+          "volume": 0.252
+        },
+        {
+          "at": 135,
+          "cue": "tap",
+          "volume": 0.33
+        }
+      ]
+    },
+    {
+      "id": "cta",
+      "kind": "cta",
+      "variant": "guide",
+      "copy": [
+        {
+          "text": "Personal Life Affairs Companion",
+          "source": "title"
+        },
+        {
+          "text": "draftpace.com/guides/hospital-for-two-weeks-what-would-someone-need-to-find",
+          "source": "guide:hospital-for-two-weeks-what-would-someone-need-to-find/url"
+        }
+      ],
+      "eyebrow": {
+        "text": "The full guide",
+        "source": "micro"
+      },
+      "why": "Ends on where to read the whole guide, with the product beneath it: the viewer leaves with the next step, not only a pitch.",
+      "from": 885,
+      "dur": 161,
+      "ground": "light",
+      "transition": "blurDissolve",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "whoosh",
+          "volume": 0.192
+        },
+        {
+          "at": 8,
+          "cue": "settle",
+          "volume": 0.3
+        }
+      ]
+    }
+  ],
+  "reasoning": [
+    {
+      "topic": "Placement",
+      "decision": "Pinterest video pin, 1000×1500, 12–35s, hook by 1s, sound off",
+      "because": "People are planning, not scrolling: idea-led, calm and save-worthy, worded like what they searched for. Muted, looping, slow; a hard sell reads as an ad and loses the save."
+    },
+    {
+      "topic": "Product",
+      "decision": "Personal Life Affairs Companion: $49 (list $99), motif \"book\", calm personality, cool accent #26374f",
+      "because": "From its definition and Shop listing. 3 real screens to show."
+    },
+    {
+      "topic": "Guide",
+      "decision": "\"If you were hospitalized, what would someone need to find?\" (draftpace.com/guides/hospital-for-two-weeks-what-would-someone-need-to-find)",
+      "because": "Teaches from the guide first; Personal Life Affairs Companion is the product the guide hands over to. 2 lists and timelines, 5 questions to draw from."
+    },
+    {
+      "topic": "Stage",
+      "decision": "Before launch: helpful and relatable only",
+      "because": "Nobody knows Draftpace yet, so films show how it helps with real moments. Who it is not for, questions before buying, what you get and the price wait until there are users to sell to."
+    },
+    {
+      "topic": "Audience",
+      "decision": "You have been meaning to sort this out for a while and have never found a first step small enough to take. / You would rather be asked one question at a time than handed a folder and told to fill it in.",
+      "because": "The listing's own audience lines; the director writes for them."
+    },
+    {
+      "topic": "Material",
+      "decision": "Allowed real lines up to 4 words longer",
+      "because": "Every structure Personal Life Affairs Companion's copy supports at Pinterest video pin's normal line length is already used by its other films; a longer real line beats telling the same story twice."
+    },
+    {
+      "topic": "Structure",
+      "decision": "Do this: Open on the search itself, then the guide's own numbered steps, then the product.",
+      "because": "Best fit for a awareness film on Pinterest video pin (platform fit 3, goal fit 3, already used on Pinterest video pin ×4). Other candidates: In order (-9.9), The question people ask (-31.5)."
+    },
+    {
+      "topic": "Angle",
+      "decision": "\"if i was hospitalized who will pay my bills\"",
+      "because": "Search-led: \"if i was hospitalized who will pay my bills\", answered by 4 of the guide's numbered steps (\"Answer the six questions, one sentence each\")."
+    },
+    {
+      "topic": "Transitions",
+      "decision": "Transitions follow the product's own identity motif, \"book\"",
+      "because": "Transitions follow the product's own identity motif, \"book\": a handoff book, so scenes turn like pages."
+    },
+    {
+      "topic": "Camera",
+      "decision": "Camera \"float\"",
+      "because": "Camera \"float\": a gentle float that keeps a held frame alive without demanding attention."
+    },
+    {
+      "topic": "Colour",
+      "decision": "Grounds ink → light → light → accent",
+      "because": "Grounds ink → light → light → accent: a cool accent, so a darker ground is used for contrast at a turn."
+    },
+    {
+      "topic": "Edit",
+      "decision": "Cut \"step-4\"",
+      "because": "It would run past 35s, the most Pinterest video pin holds attention for."
+    },
+    {
+      "topic": "Sound",
+      "decision": "Light sound design, low-energy bed",
+      "because": "Most of this audience never unmutes, so nothing depends on sound; cues are kept quieter and sparser for those who do."
+    },
+    {
+      "topic": "Length",
+      "decision": "34.9s, 6 scenes",
+      "because": "Each scene is held for the time its words take to read on Pinterest video pin (0.32s a word), inside 12–35s."
+    }
+  ]
+}

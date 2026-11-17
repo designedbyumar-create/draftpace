@@ -92,6 +92,11 @@ import {
   WifiHigh as PhosphorWifiHigh,
   WifiX as PhosphorWifiX,
   Wrench as PhosphorWrench,
+  FilmStrip as PhosphorFilmStrip,
+  Microphone as PhosphorMicrophone,
+  UploadSimple as PhosphorUploadSimple,
+  PaperPlaneTilt as PhosphorPaperPlaneTilt,
+  Eye as PhosphorEye,
   X as PhosphorX,
 } from "@phosphor-icons/react";
 
@@ -204,6 +209,12 @@ export const WarningCircle = createIcon(PhosphorWarningCircle, "WarningCircle");
 export const Wifi = createIcon(PhosphorWifiHigh, "Wifi");
 export const WifiOff = createIcon(PhosphorWifiX, "WifiOff");
 export const Wrench = createIcon(PhosphorWrench, "Wrench");
+// Draftpace Studio (studio/): film, voice-over, upload, send, preview.
+export const FilmStrip = createIcon(PhosphorFilmStrip, "FilmStrip");
+export const Microphone = createIcon(PhosphorMicrophone, "Microphone");
+export const UploadSimple = createIcon(PhosphorUploadSimple, "UploadSimple");
+export const PaperPlaneTilt = createIcon(PhosphorPaperPlaneTilt, "PaperPlaneTilt");
+export const Eye = createIcon(PhosphorEye, "Eye");
 export const X = createIcon(PhosphorX, "X");
 export const Bug = createIcon(PhosphorBug, "Bug");
 export const CookingPot = createIcon(PhosphorCookingPot, "CookingPot");

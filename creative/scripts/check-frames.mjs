@@ -27,6 +27,7 @@ import path from "node:path";
 import { mkdtemp, rm } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import { webpackOverride } from "../webpack-override.mjs";
+import { browserExecutable } from "./browser.mjs";
 
 const EVERY = Number(process.argv.includes("--every") ? process.argv[process.argv.indexOf("--every") + 1] : 10);
 const COMPOSITION_ID = process.argv[2] && !process.argv[2].startsWith("--") ? process.argv[2] : "MonthlyMoneyReset-FeatureSpotlight";
@@ -36,7 +37,7 @@ async function main() {
   console.log(`Bundling for frame gate on ${COMPOSITION_ID} (sampling every ${EVERY} frames)...`);
   const entry = path.resolve(process.cwd(), "src/index.ts");
   const bundled = await bundle({ entryPoint: entry, webpackOverride });
-  const composition = await selectComposition({ serveUrl: bundled, id: COMPOSITION_ID });
+  const composition = await selectComposition({ browserExecutable, serveUrl: bundled, id: COMPOSITION_ID });
 
   const tmp = await mkdtemp(path.join(tmpdir(), "mmr-frame-gate-"));
   const frames = [];
@@ -53,7 +54,7 @@ async function main() {
   for (const frame of frames) {
     const outPath = path.join(tmp, `frame-${frame}.png`);
     try {
-      await renderStill({ composition, serveUrl: bundled, output: outPath, frame });
+      await renderStill({ browserExecutable, composition, serveUrl: bundled, output: outPath, frame });
     } catch (err) {
       findings.push({ frame, issue: "render-failed", detail: String(err.message ?? err).slice(0, 200) });
       continue;
@@ -91,7 +92,9 @@ async function main() {
   process.exit(1);
 }
 
-main().catch((err) => {
+// Exit explicitly: a pending per-phase timeout timer would otherwise keep
+// the process alive for its full length after the work is done.
+main().then(() => process.exit(0)).catch((err) => {
   console.error("Frame gate crashed:", err);
   process.exit(1);
 });

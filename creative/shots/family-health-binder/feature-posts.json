@@ -4,6 +4,7 @@
     {
       "id": "01-family-health-binder",
       "themeSlug": "family-health-binder",
+      "problem": 0,
       "layout": "tilt",
       "eyebrow": "FAMILY HEALTH BINDER",
       "headline": [
@@ -15,14 +16,14 @@
         "kind": "screen",
         "src": "screens/family-health-binder-members.png"
       },
-      "product": {
-        "name": "Family Health Binder",
-        "price": "$34"
-      }
+      "emphasis": [
+        "memory"
+      ]
     },
     {
       "id": "02-family-health-binder",
       "themeSlug": "family-health-binder",
+      "problem": 1,
       "layout": "window",
       "eyebrow": "FAMILY HEALTH BINDER",
       "headline": [
@@ -34,14 +35,14 @@
         "kind": "screen",
         "src": "screens/family-health-binder-printables.png"
       },
-      "product": {
-        "name": "Family Health Binder",
-        "price": "$34"
-      }
+      "emphasis": [
+        "enough"
+      ]
     },
     {
       "id": "03-family-health-binder",
       "themeSlug": "family-health-binder",
+      "problem": 2,
       "layout": "tilt",
       "eyebrow": "FAMILY HEALTH BINDER",
       "headline": [
@@ -53,15 +54,15 @@
         "kind": "screen",
         "src": "screens/family-health-binder-workspace.png"
       },
-      "product": {
-        "name": "Family Health Binder",
-        "price": "$34"
-      }
+      "emphasis": [
+        "guessing"
+      ]
     },
     {
       "id": "04-family-health-binder",
       "themeSlug": "family-health-binder",
-      "layout": "window",
+      "problem": 3,
+      "layout": "fan",
       "eyebrow": "FAMILY HEALTH BINDER",
       "headline": [
         "The questions vanish",
@@ -70,12 +71,15 @@
       ],
       "ui": {
         "kind": "screen",
-        "src": "screens/family-health-binder-printables.png"
+        "src": "screens/family-health-binder-printables.png",
+        "also": [
+          "screens/family-health-binder-members.png",
+          "screens/family-health-binder-workspace.png"
+        ]
       },
-      "product": {
-        "name": "Family Health Binder",
-        "price": "$34"
-      }
+      "emphasis": [
+        "vanish"
+      ]
     }
   ]
 }

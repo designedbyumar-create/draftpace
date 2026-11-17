@@ -1,0 +1,236 @@
+{
+  "id": "sit-personal-finance-companion-search-3--facebook-feed",
+  "product": "personal-finance-companion",
+  "guide": "debt-snowball-vs-avalanche",
+  "situation": "searchedProblems[2].phrase",
+  "runtime": {
+    "min": 10,
+    "max": 30
+  },
+  "platform": "facebook-feed",
+  "goal": "awareness",
+  "width": 1080,
+  "height": 1350,
+  "fps": 30,
+  "durationInFrames": 672,
+  "structure": "situationChecklist",
+  "angle": {
+    "text": "Debt snowball or avalanche, which is better for me",
+    "source": "searchedProblems[2].phrase"
+  },
+  "treatment": {
+    "voice": "editorial",
+    "camera": "locked",
+    "transitions": [
+      "cardSlide",
+      "wipe",
+      "cardSlide"
+    ],
+    "motif": "index",
+    "grounds": [
+      "light",
+      "light",
+      "ink",
+      "accent"
+    ],
+    "pace": 1.15
+  },
+  "music": {
+    "bed": "audio/bed-relaxation-05.mp3",
+    "level": 0.16,
+    "energy": "low"
+  },
+  "scenes": [
+    {
+      "id": "moment",
+      "kind": "title",
+      "variant": "label",
+      "copy": [
+        {
+          "text": "Debt snowball or avalanche, which is better for me",
+          "source": "searchedProblems[2].phrase"
+        }
+      ],
+      "emphasis": [
+        "avalanche"
+      ],
+      "why": "Opens on the moment in the person's own words, as the listing records people searching it.",
+      "from": 0,
+      "dur": 124,
+      "ground": "light",
+      "transition": "cut",
+      "sfx": [],
+      "lines": [
+        [
+          "Debt snowball or",
+          "avalanche, which",
+          "is better for me"
+        ]
+      ]
+    },
+    {
+      "id": "help",
+      "kind": "phone",
+      "variant": "proof",
+      "copy": [],
+      "caption": {
+        "text": "The payoff plan runs both on your own balances, rates and minimums and says which costs less in interest, with the month you would be debt-free either way.",
+        "source": "searchedProblems[2].answer"
+      },
+      "screen": {
+        "src": "screens/personal-finance-companion-debt.png",
+        "pose": "float",
+        "focus": {
+          "at": 0.45,
+          "y": 208,
+          "h": 154,
+          "region": "totals"
+        }
+      },
+      "why": "How Personal Finance Companion helps with this moment, in the listing's own words, on the real screen that shows it. Screen: \"Debt\" (What you owe and when it could be gone: totals, a payoff plan worked out from your own numbers, and the debt-free date.) chosen because it is the real screen closest to \"The payoff plan runs both on your own balances, rates and minimums and says whic\"; focus on \"Total balance, Minimum payments\".",
+      "eyebrow": {
+        "text": "Personal Finance Companion",
+        "source": "title"
+      },
+      "from": 112,
+      "dur": 422,
+      "ground": "light",
+      "transition": "cardSlide",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "swish",
+          "volume": 0.192
+        },
+        {
+          "at": 12,
+          "cue": "pop",
+          "volume": 0.252
+        },
+        {
+          "at": 190,
+          "cue": "tap",
+          "volume": 0.33
+        }
+      ]
+    },
+    {
+      "id": "cta",
+      "kind": "cta",
+      "variant": "guide",
+      "copy": [
+        {
+          "text": "Personal Finance Companion",
+          "source": "title"
+        },
+        {
+          "text": "draftpace.com/guides/debt-snowball-vs-avalanche",
+          "source": "guide:debt-snowball-vs-avalanche/url"
+        }
+      ],
+      "eyebrow": {
+        "text": "The full guide",
+        "source": "micro"
+      },
+      "why": "Ends on where to read the whole guide, with the product beneath it: the viewer leaves with the next step, not only a pitch.",
+      "from": 522,
+      "dur": 150,
+      "ground": "ink",
+      "transition": "wipe",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "swish",
+          "volume": 0.192
+        },
+        {
+          "at": 8,
+          "cue": "settle",
+          "volume": 0.3
+        }
+      ]
+    }
+  ],
+  "reasoning": [
+    {
+      "topic": "Placement",
+      "decision": "Facebook feed video, 1080×1350, 10–30s, hook by 1.5s, sound off",
+      "because": "Scrolled past in a feed with sound off: say who it is for in the first seconds, name the product early, keep every point on screen and readable at a glance."
+    },
+    {
+      "topic": "Product",
+      "decision": "Personal Finance Companion: $49 (list $99), motif \"index\", calm personality, cool accent #0d3b2e",
+      "because": "From its definition and Shop listing. 4 real screens to show."
+    },
+    {
+      "topic": "Situation",
+      "decision": "\"Debt snowball or avalanche, which is better for me\"",
+      "because": "One real moment from Personal Finance Companion's listing (searchedProblems[2].phrase). The film is about this moment and how the product helps with it: \"The payoff plan runs both on your own balances, rates and minimums and says which costs less in interest, with the month you would be debt-free either way.\""
+    },
+    {
+      "topic": "Guide",
+      "decision": "\"Debt snowball vs avalanche: which costs less, which sticks\" (draftpace.com/guides/debt-snowball-vs-avalanche)",
+      "because": "The guide that covers this moment: what to do comes from it, and the film ends on it."
+    },
+    {
+      "topic": "Stage",
+      "decision": "Before launch: helpful and relatable only",
+      "because": "Nobody knows Draftpace yet, so films show how it helps with real moments. Who it is not for, questions before buying, what you get and the price wait until there are users to sell to."
+    },
+    {
+      "topic": "Audience",
+      "decision": "You have more than one account, bill, or income source and want them tracked in one real place, not five apps. / You want a next step handed to you, not a dashboard you have to interpret yourself every time.",
+      "because": "The listing's own audience lines; the director writes for them."
+    },
+    {
+      "topic": "Structure",
+      "decision": "What to do first: The moment, the guide's own checklist for it, then the product that keeps track of it.",
+      "because": "Best fit for a awareness film on Facebook feed video (platform fit 3, goal fit 3, already used on Facebook feed video ×2). Other candidates: Inside the tool (-3.3), The moment (-7.8)."
+    },
+    {
+      "topic": "Angle",
+      "decision": "\"Debt snowball or avalanche, which is better for me\"",
+      "because": "The moment \"Debt snowball or avalanche, which is better for me\", the checklist from \"Debt snowball vs avalanche: which costs less, which sticks\", then how Personal Finance Companion helps."
+    },
+    {
+      "topic": "Transitions",
+      "decision": "Transitions follow the product's own identity motif, \"index\"",
+      "because": "Transitions follow the product's own identity motif, \"index\": an index of tabs, so scenes slide in like the next tab."
+    },
+    {
+      "topic": "Camera",
+      "decision": "Camera \"locked\"",
+      "because": "Camera \"locked\": still and precise, so a slow, reading audience is never chasing the frame."
+    },
+    {
+      "topic": "Colour",
+      "decision": "Grounds light → light → ink → accent",
+      "because": "Grounds light → light → ink → accent: a cool accent, so a darker ground is used for contrast at a turn."
+    },
+    {
+      "topic": "Edit",
+      "decision": "Trimmed \"what-to-do\" to 3 items",
+      "because": "Fewer items read properly beats more items skimmed."
+    },
+    {
+      "topic": "Edit",
+      "decision": "Trimmed \"what-to-do\" to 2 items",
+      "because": "Fewer items read properly beats more items skimmed."
+    },
+    {
+      "topic": "Edit",
+      "decision": "Cut \"what-to-do\"",
+      "because": "It would run past 30s, the most Facebook feed video holds attention for."
+    },
+    {
+      "topic": "Sound",
+      "decision": "Light sound design, low-energy bed",
+      "because": "Most of this audience never unmutes, so nothing depends on sound; cues are kept quieter and sparser for those who do."
+    },
+    {
+      "topic": "Length",
+      "decision": "22.4s, 3 scenes",
+      "because": "Each scene is held for the time its words take to read on Facebook feed video (0.32s a word), inside 10–30s."
+    }
+  ]
+}

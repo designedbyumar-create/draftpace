@@ -1,0 +1,164 @@
+{
+  "id": "car-travel-companion-search-3",
+  "product": "travel-companion",
+  "guide": "organising-a-multi-stop-trip-without-a-spreadsheet",
+  "situation": "searchedProblems[2].phrase",
+  "slides": [
+    {
+      "kind": "cover",
+      "quote": {
+        "text": "How do I organise a multi-stop trip without a spreadsheet",
+        "source": "searchedProblems[2].phrase"
+      },
+      "emphasis": [
+        "spreadsheet"
+      ],
+      "promise": {
+        "text": "Multi-stop trip planner: organize it without a spreadsheet",
+        "source": "guide:organising-a-multi-stop-trip-without-a-spreadsheet/title"
+      },
+      "art": {
+        "motif": "suitcase",
+        "why": "the carousel's topic: the moment and its guide name \"trip\", \"stop\"",
+        "also": "binder"
+      }
+    },
+    {
+      "kind": "answer",
+      "eyebrow": {
+        "text": "In short",
+        "source": "micro"
+      },
+      "lines": [
+        {
+          "text": "Many stops mean many bookings that rest on each other.",
+          "source": "guide:organising-a-multi-stop-trip-without-a-spreadsheet/dek#0"
+        },
+        {
+          "text": "Record four things per booking, in time order, and skip the rebuild after every change.",
+          "source": "guide:organising-a-multi-stop-trip-without-a-spreadsheet/dek#1"
+        }
+      ],
+      "art": {
+        "motif": "ticket",
+        "why": "the slide names \"booking\""
+      }
+    },
+    {
+      "kind": "step",
+      "eyebrow": {
+        "text": "The method",
+        "source": "guide:organising-a-multi-stop-trip-without-a-spreadsheet/body[3].heading"
+      },
+      "number": {
+        "text": "1",
+        "source": "micro"
+      },
+      "head": {
+        "text": "List the fixed points first: anything with a reference and a time.",
+        "source": "guide:organising-a-multi-stop-trip-without-a-spreadsheet/body[3].items[0]#0"
+      },
+      "body": [
+        {
+          "text": "Flights, trains, stays, tours and reserved dinners.",
+          "source": "guide:organising-a-multi-stop-trip-without-a-spreadsheet/body[3].items[0]#1"
+        },
+        {
+          "text": "Leave the open days open.",
+          "source": "guide:organising-a-multi-stop-trip-without-a-spreadsheet/body[3].items[0]#2"
+        }
+      ],
+      "emphasis": [
+        "reference"
+      ],
+      "art": {
+        "motif": "ticket",
+        "why": "the slide names \"reference\""
+      }
+    },
+    {
+      "kind": "step",
+      "eyebrow": {
+        "text": "The method",
+        "source": "guide:organising-a-multi-stop-trip-without-a-spreadsheet/body[3].heading"
+      },
+      "number": {
+        "text": "2",
+        "source": "micro"
+      },
+      "head": {
+        "text": "Put them in time order, not by stop.",
+        "source": "guide:organising-a-multi-stop-trip-without-a-spreadsheet/body[3].items[1]#0"
+      },
+      "body": [
+        {
+          "text": "The order you'll live them in is the order you'll need them.",
+          "source": "guide:organising-a-multi-stop-trip-without-a-spreadsheet/body[3].items[1]#1"
+        }
+      ],
+      "emphasis": [
+        "order"
+      ],
+      "art": {
+        "motif": "route",
+        "why": "the slide names \"order\""
+      }
+    },
+    {
+      "kind": "help",
+      "eyebrow": {
+        "text": "How it helps",
+        "source": "micro"
+      },
+      "name": {
+        "text": "Travel Companion",
+        "source": "title"
+      },
+      "line": {
+        "text": "Destinations, bookings, travellers and documents in one place, with the shape of the trip held for you rather than in your head.",
+        "source": "searchedProblems[2].answer"
+      },
+      "ui": {
+        "kind": "screen",
+        "src": "screens/travel-companion-trip.png"
+      }
+    },
+    {
+      "kind": "close",
+      "eyebrow": {
+        "text": "The full guide",
+        "source": "micro"
+      },
+      "title": {
+        "text": "Multi-stop trip planner: organize it without a spreadsheet",
+        "source": "guide:organising-a-multi-stop-trip-without-a-spreadsheet/title"
+      },
+      "url": {
+        "text": "draftpace.com/guides/organising-a-multi-stop-trip-without-a-spreadsheet",
+        "source": "guide:organising-a-multi-stop-trip-without-a-spreadsheet/url"
+      },
+      "link": {
+        "text": "Free to read. Link in bio.",
+        "source": "micro"
+      },
+      "save": {
+        "text": "Save this for later.",
+        "source": "micro"
+      },
+      "art": {
+        "motif": "suitcase",
+        "why": "the carousel's topic: the moment and its guide name \"trip\", \"stop\""
+      }
+    }
+  ],
+  "notes": [
+    "Cover: \"How do I organise a multi-stop trip without a spreadsheet\" (searchedProblems[2].phrase), as people search it.",
+    "Steps: 2 of 6 from the guide's numbered steps \"The method\", one per slide, each with the guide's own explanation.",
+    "Help: \"Destinations, bookings, travellers and documents in one place, with the shape of the trip held for you rather than in your head.\" (searchedProblems[2].answer), on screens/travel-companion-trip.png (\"Lisbon and Porto\").",
+    "Illustration on the cover: suitcase with binder, because the carousel's topic: the moment and its guide name \"trip\", \"stop\".",
+    "Illustration on the answer: ticket, because the slide names \"booking\".",
+    "Illustration on the step: ticket, because the slide names \"reference\".",
+    "Illustration on the step: route, because the slide names \"order\".",
+    "Illustration on the close: suitcase, because the carousel's topic: the moment and its guide name \"trip\", \"stop\"."
+  ]
+}
