@@ -1,0 +1,235 @@
+{
+  "slug": "night-before-you-travel-checklist",
+  "title": "Night before travel: the essential final checks",
+  "dek": "Check documents, accessible essentials, current departure details, the ride and home responsibilities, then leave a short morning-only list.",
+  "metaDescription": "Check documents, accessible essentials, current departure details, the ride and home responsibilities, then leave a short morning-only list.",
+  "updatedAt": "2026-11-17",
+  "body": [
+    {
+      "kind": "paragraphs",
+      "paragraphs": [
+        "The night before travel, check required documents, accessible health and payment essentials, current departure and check-in instructions, the journey to the terminal and the home handoff. Put still-in-use items on a short morning list. This final check should confirm an existing plan, not assume an unresolved entry requirement can be fixed overnight.",
+        "The suitcase may already be closed while the important items are still beside the bed. That is why the last check works best as a small physical inspection: see the document, locate the medicine and know who is collecting the keys. This guide covers the last evening, not the earlier work of obtaining passports, visas or required permissions."
+      ]
+    },
+    {
+      "kind": "list",
+      "heading": "Do the final checks in order",
+      "checkable": true,
+      "items": [
+        "Open the current booking or operator app and check the local date, departure place, check-in process, boarding or bag-drop deadlines and any changes.",
+        "Physically locate the required travel documents for each traveler. Confirm who carries them and keep them accessible rather than in checked luggage.",
+        "Check required medicines, aids, payment access and arrival information. List anything still being used overnight or in the morning.",
+        "Charge necessary devices and pack the correct cables. Check any power bank rating and cabin rules before assuming it can travel.",
+        "Work backward from the required terminal arrival and cutoff conditions, adding transport, parking, access and a realistic delay margin.",
+        "Confirm the ride, home security and agreed care for dependents or animals. Leave a concise morning list and the current plan where it can be used."
+      ]
+    },
+    {
+      "kind": "table",
+      "heading": "Example: work backward from a chosen arrival target",
+      "columns": [
+        "Time",
+        "Invented plan",
+        "Calculation or basis"
+      ],
+      "rows": [
+        [
+          "09:10",
+          "Scheduled flight departure",
+          "Current booking."
+        ],
+        [
+          "07:10",
+          "Chosen airport arrival target",
+          "Illustrative planning assumption, not universal advice."
+        ],
+        [
+          "06:25",
+          "Leave home",
+          "45-minute journey before any additional margin."
+        ],
+        [
+          "06:10",
+          "Revised leave time",
+          "Adds a chosen 15-minute journey margin."
+        ],
+        [
+          "05:20",
+          "Wake-up time",
+          "Allows 50 minutes before leaving."
+        ]
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "The arithmetic is only as good as the inputs",
+      "paragraphs": [
+        "The example is invented and uses consistent times. The chosen airport target, journey duration and buffers are not a recommendation for your airport or flight. Check the actual operator deadlines and your needs, including assistance, baggage or document checks. A delay to the flight does not necessarily move every cutoff or mean you should arrive later.",
+        "Check the route to the terminal, not just the flight time. A parking transfer, early-morning transit gap or road closure can consume a margin you thought you had. If a ride is essential, confirm the booking and a realistic fallback rather than relying on an old message."
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "Separate in-bag from still-in-use",
+      "paragraphs": [
+        "Use two statuses: packed and to collect in the morning. The second list should name the item and its location, such as glasses on the bedside table or medication in its appropriate overnight storage. Do not tick something packed while it is still charging elsewhere.",
+        "Invented example: Lee leaves the phone charging and writes \"phone, charging cable, glasses\" on the morning list. The passport is checked and already in the accessible bag. At departure, Lee checks the three remaining items instead of opening the entire suitcase and restarting the clothing decision."
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "Restrictions are not all the same",
+      "paragraphs": [
+        "The [FAA battery guidance](https://www.faa.gov/hazmat/packsafe/airline-passengers-and-batteries) distinguishes power banks and spare lithium batteries, which stay in the cabin, from installed-device rules. Check your actual battery and airline restrictions. If a bag is gate checked, remove cabin-only items before handover.",
+        "The [TSA checklist](https://www.tsa.gov/sites/default/files/tsa-travel-checklist.pdf) covers ordinary US carry-on liquid limits. Required medicines, specialist equipment, infant supplies and departures from other countries need their own current checks. This article does not claim that a domestic identification issue or a missing passport can always be resolved at the airport."
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "Leave the house in the state it actually needs",
+      "paragraphs": [
+        "Confirm doors and windows, safe appliance settings, waste that cannot wait and any agreed sitter access. Keep heating, cooling, alarms or water arrangements appropriate for the property, climate and systems. Do not switch off a critical system solely because a generic checklist says empty house.",
+        "Give the helper the information needed for their task, not your entire private file. Check who is covering the first visit and how they report a problem. A message saying \"the neighbor knows\" is not the same as an agreed date, working key and backup contact."
+      ]
+    },
+    {
+      "kind": "scripts",
+      "heading": "Resolve the last dependency",
+      "items": [
+        {
+          "situation": "Ride confirmation",
+          "line": "Please confirm the pickup date, time, address and destination terminal, plus how I should contact you if the driver has not arrived."
+        },
+        {
+          "situation": "Home handoff",
+          "line": "Can you confirm the first visit and that the key works? Here is the task list and backup contact if something prevents you coming."
+        }
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "If something important is wrong tonight",
+      "paragraphs": [
+        "Prioritize a missing required document, unconfirmed necessary assistance, inaccessible medicine or changed departure over cosmetic packing. Contact the relevant official provider and ask what options remain. Do not rely on a photocopy, workaround or expired instruction without verifying it.",
+        "For a moved flight, inspect connected transfers and lodging arrival, not just the alarm. [The flight-change guide](/guides/flight-changed-what-else-is-affected) explains that chain. Once essentials and the morning list are settled, stop adding optional tasks that undermine the rest needed for the journey."
+      ]
+    },
+    {
+      "kind": "faq",
+      "items": [
+        {
+          "q": "Should I repack everything the night before?",
+          "a": "Usually a targeted check is more useful than restarting the whole list. Verify essentials, restrictions and still-in-use items, then change only what a real problem requires. A forecast change or new baggage rule may justify an edit; general uncertainty does not require reconsidering every shirt."
+        },
+        {
+          "q": "How early should I leave for the airport?",
+          "a": "Work backward from the operator's actual cutoff and recommended arrival instructions, then add your transport, access needs and realistic uncertainty. There is no single number for every trip. Recheck the departure location and date, and do not assume a flight delay automatically changes check-in deadlines."
+        },
+        {
+          "q": "What if a required document is missing tonight?",
+          "a": "Contact the relevant issuing authority or travel provider promptly and explain the departure date. Ask what lawful options remain and what evidence is accepted. Do not assume a photograph or an airport identity process replaces every document. If travel is not possible, check affected bookings and change terms."
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "name": "FAA: airline passengers and batteries",
+      "url": "https://www.faa.gov/hazmat/packsafe/airline-passengers-and-batteries",
+      "retrieved": "2026-11-17",
+      "note": "Official text returned through search: spare lithium batteries and power banks are carry-on only; installed-device rules differ; airline limits may be stricter."
+    },
+    {
+      "name": "TSA: travel checklist",
+      "url": "https://www.tsa.gov/sites/default/files/tsa-travel-checklist.pdf",
+      "retrieved": "2026-11-17",
+      "note": "Official PDF search text: ordinary carry-on liquids limited to 3.4-ounce containers, one quart bag, one per passenger. HTML liquids page returned 403."
+    }
+  ],
+  "visuals": [
+    {
+      "title": "Packed versus morning collection",
+      "kicker": "Final item status",
+      "kind": "compare",
+      "steps": [
+        {
+          "label": "Packed",
+          "detail": "The item is physically in the accessible or main bag."
+        },
+        {
+          "label": "Still in use",
+          "detail": "The item has a named location and morning action."
+        },
+        {
+          "label": "Unresolved",
+          "detail": "A missing requirement has an owner and provider contact."
+        }
+      ],
+      "caption": "A tick should describe the item's real status.",
+      "alt": "Three final-check statuses distinguish packed items, morning collection and unresolved travel requirements."
+    },
+    {
+      "title": "Work backward with real inputs",
+      "kicker": "Departure timing",
+      "kind": "timeline",
+      "steps": [
+        {
+          "label": "Cutoffs",
+          "detail": "Check the actual operator requirements."
+        },
+        {
+          "label": "Arrival",
+          "detail": "Set a terminal target that fits the trip."
+        },
+        {
+          "label": "Journey",
+          "detail": "Allow transport, access and realistic uncertainty."
+        },
+        {
+          "label": "Morning",
+          "detail": "Set the leave and wake-up times from those inputs."
+        }
+      ],
+      "caption": "The example times are not universal airport-arrival advice.",
+      "alt": "A backward timing plan starts with operator cutoffs and ends with realistic leave and wake-up times."
+    }
+  ],
+  "worksheet": {
+    "title": "Final evening and morning departure check",
+    "prompt": "Confirm essentials and record only what remains to collect or resolve.",
+    "fields": [
+      "Current local departure and location",
+      "Operator cutoffs and arrival target",
+      "Required documents and carrier",
+      "Accessible health and payment essentials",
+      "Still-in-use item and location",
+      "Ride, route and fallback",
+      "Home care confirmation",
+      "Unresolved issue and official contact"
+    ]
+  },
+  "research": {
+    "primaryQuery": "night before travel checklist",
+    "supportingQueries": [
+      "night before flight checklist",
+      "morning travel essentials list",
+      "work backward airport leave time"
+    ],
+    "intent": "Perform a final operational check with correct arithmetic and explicit unresolved requirements.",
+    "sourceChecks": [
+      {
+        "url": "https://www.faa.gov/hazmat/packsafe/airline-passengers-and-batteries",
+        "verified": "Official text returned through search: spare lithium batteries and power banks are carry-on only; installed-device rules differ; airline limits may be stricter."
+      },
+      {
+        "url": "https://www.tsa.gov/sites/default/files/tsa-travel-checklist.pdf",
+        "verified": "Official PDF search text: ordinary carry-on liquids limited to 3.4-ounce containers, one quart bag, one per passenger. HTML liquids page returned 403."
+      }
+    ],
+    "limitations": [
+      "No airline cutoff, identification rule, flight status or property-specific system setting was verified. TSA HTML remained restricted.",
+      "Saved search leads were reviewed for reader language only, not authority or prevalence. Quora was blocked in saved research. No search-volume or ranking estimate is available."
+    ]
+  }
+}

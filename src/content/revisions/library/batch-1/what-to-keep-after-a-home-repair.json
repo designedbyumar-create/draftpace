@@ -1,0 +1,252 @@
+{
+  "slug": "what-to-keep-after-a-home-repair",
+  "title": "Home repair records: keep more than the invoice",
+  "dek": "Save the fault, actual work, parts, warranty and unresolved follow-up together, with photos and payment evidence that explain the repair later.",
+  "metaDescription": "Save the fault, actual work, parts, warranty and unresolved follow-up together, with photos and payment evidence that explain the repair later.",
+  "updatedAt": "2026-11-17",
+  "body": [
+    {
+      "kind": "paragraphs",
+      "paragraphs": [
+        "After a home repair, keep the itemized invoice, your original symptom, the technician's findings, the work and parts supplied, warranty terms and any remaining action. Save supporting photos and payment evidence with that record. If the fault returns, the next person should be able to see what actually happened.",
+        "A paid invoice can be detailed or very brief. Neither the amount nor 'service call completed' necessarily tells you whether the original problem was resolved. This guide helps homeowners and renters document a visit. It does not diagnose equipment or decide whether a charge is reasonable."
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "Separate what you saw from what you were told",
+      "paragraphs": [
+        "Write the symptom in observable terms: 'water under the sink after running the dishwasher' rather than 'pump failed.' Record a diagnosis as the technician's finding, especially when it remains uncertain. Save a test result or written service note where available.",
+        "Then distinguish work completed from work proposed. 'Replaced the hose' is not the same as 'recommended replacement.' If the provider could not reproduce an intermittent fault, preserve that conclusion instead of recording the visit as a confirmed repair."
+      ]
+    },
+    {
+      "kind": "list",
+      "heading": "Capture the completed visit",
+      "checkable": true,
+      "items": [
+        "Identify the equipment, location, model and serial where relevant.",
+        "Save visit date, provider, job reference and technician details offered.",
+        "Record the original symptom and any relevant photos taken safely.",
+        "Ask for findings and actual work in writing, including part identifiers where useful.",
+        "Save the accepted estimate, approved changes, itemized invoice and payment proof.",
+        "Confirm any parts, labor or workmanship warranty and its claims process.",
+        "List unresolved faults, restrictions on use and promised return visits.",
+        "Set a follow-up date for each open item rather than closing the whole job."
+      ]
+    },
+    {
+      "kind": "table",
+      "heading": "Invented example: an intermittent dishwasher leak",
+      "columns": [
+        "Record field",
+        "Entry"
+      ],
+      "rows": [
+        [
+          "Observed symptom",
+          "Water appeared near the front after two cycles"
+        ],
+        [
+          "Provider finding",
+          "Technician reports worn door seal; no internal leak observed during test"
+        ],
+        [
+          "Work completed",
+          "Door seal replaced; service invoice identifies the part"
+        ],
+        [
+          "Outcome",
+          "Test cycle completed without visible leakage"
+        ],
+        [
+          "Still open",
+          "Monitor under normal use; contact provider if water returns"
+        ],
+        [
+          "Evidence",
+          "Invoice, payment record and safely taken photos saved together"
+        ]
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "Ask before the visit ends",
+      "paragraphs": [
+        "Ask what was checked, what was not checked and whether normal use is appropriate. A technician may have resolved one fault but identified another unrelated concern. Confirm which matters are included in the price and which need a separate approval.",
+        "The [FTC contractor guidance](https://consumer.ftc.gov/articles/how-avoid-home-improvement-scam) recommends written estimates and contracts and keeping the relevant records. For a substantial project, include change orders, completion documents and any permits or inspection approvals that apply. A personal note cannot replace required paperwork."
+      ]
+    },
+    {
+      "kind": "scripts",
+      "heading": "Questions that improve the record",
+      "items": [
+        {
+          "situation": "Findings",
+          "line": "Please put the fault you found and the tests you performed on the service record."
+        },
+        {
+          "situation": "Scope",
+          "line": "Which work is completed, and what is only a recommendation or a separate quote?"
+        },
+        {
+          "situation": "Return of the problem",
+          "line": "If the same symptom returns, who should I contact and what does the repair warranty cover?"
+        },
+        {
+          "situation": "Safety",
+          "line": "Is normal use appropriate now, or are there any restrictions I need in writing?"
+        }
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "Check warranty terms before authorizing more work",
+      "paragraphs": [
+        "If a failure may be covered, use the actual warranty claim route before agreeing to an independent paid repair. Ask about required authorization, covered parts, labor, call-out fees and evidence. Do not assume the repair is free simply because the appliance is within a broad warranty date.",
+        "At the same time, do not assume any outside work automatically voids all warranty coverage. The [FTC warranty guidance](https://consumer.ftc.gov/articles/warranties) explains limits on requirements for specified parts or services. Coverage questions depend on the terms, the cause and applicable law. For a dispute, ask for the reason and seek appropriate consumer advice."
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "Keep the tax question separate",
+      "paragraphs": [
+        "Do not classify work by everyday language alone. [IRS Publication 523](https://www.irs.gov/publications/p523) distinguishes repairs from improvements and gives examples. A replacement system can be an improvement even if you called the job a repair because the old one broke.",
+        "Keep invoices with a description of the scope, particularly where a repair becomes part of a larger renovation. Ask a tax professional about basis, rental use or another relevant issue. Do not assume every invoice increases home basis, or that every replacement after failure is excluded."
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "Renters need a different responsibility note",
+      "paragraphs": [
+        "Record who reported the problem, who authorized entry or work and which landlord or manager is handling payment. Do not commission chargeable work in someone else's name or assume reimbursement without checking the lease and applicable process. Preserve communications about the fault and access.",
+        "If a safety issue remains or the property cannot be used normally, contact the responsible person promptly and seek local advice where necessary. The service ticket should not be treated as proof that a housing or safety obligation has been satisfied."
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "If the problem returns",
+      "paragraphs": [
+        "Refer to the original symptom, job reference and outcome rather than starting with an unverified diagnosis. Describe what changed and ask whether the provider treats this as a return visit, warranty claim or new fault. Confirm any charge before authorizing work.",
+        "Stop using equipment if the provider directs you to or if there is an immediate hazard. Do not continue test cycles around dangerous water or electricity to obtain better evidence. For routine future service, carry the relevant note into [your maintenance log](/guides/home-maintenance-log-template)."
+      ]
+    },
+    {
+      "kind": "faq",
+      "items": [
+        {
+          "q": "Is a receipt enough?",
+          "a": "It may prove payment but omit the diagnosis, scope or warranty. Keep it together with the accepted work description, invoice and any service notes. Ask for missing details while the visit is recent, and label your own recollection separately from the provider's written findings."
+        },
+        {
+          "q": "How long should I keep the record?",
+          "a": "Use its purpose: equipment history, warranty, insurance, tax, property work or an unresolved dispute may need different retention. There is no single destruction date for every repair. Preserve records while a claim or other relevant issue remains open and seek advice before discarding uncertain documents."
+        },
+        {
+          "q": "Should I keep a replaced part?",
+          "a": "Ask the provider whether there is a safety, warranty-return or disposal reason affecting it. Do not keep hazardous material or interfere with a required return simply for an archive. A written part identifier and suitable photograph may be more useful, but claim requirements vary."
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "name": "FTC: Avoid home improvement scams",
+      "url": "https://consumer.ftc.gov/articles/how-avoid-home-improvement-scam",
+      "retrieved": "2026-11-17",
+      "note": "Written contracts and estimates, licensing checks and transaction records."
+    },
+    {
+      "name": "FTC: Warranties",
+      "url": "https://consumer.ftc.gov/articles/warranties",
+      "retrieved": "2026-11-17",
+      "note": "Written terms, receipts, service contracts and claim procedures."
+    },
+    {
+      "name": "IRS Publication 523: Selling your home",
+      "url": "https://www.irs.gov/publications/p523",
+      "retrieved": "2026-11-17",
+      "note": "Repairs and improvements require correct classification; replacing a water heater can be an improvement."
+    }
+  ],
+  "visuals": [
+    {
+      "title": "A repair has several records",
+      "kicker": "Keep the links between them",
+      "steps": [
+        {
+          "label": "Symptom",
+          "detail": "Your observation before diagnosis."
+        },
+        {
+          "label": "Finding",
+          "detail": "The provider's conclusion and uncertainty."
+        },
+        {
+          "label": "Work",
+          "detail": "What was actually supplied or changed."
+        },
+        {
+          "label": "Outcome",
+          "detail": "Test result and unresolved follow-up."
+        }
+      ],
+      "caption": "A paid invoice does not by itself describe the repair outcome.",
+      "alt": "Four fields distinguish observed symptoms, findings, actual work and outcome.",
+      "kind": "record"
+    },
+    {
+      "title": "Completed or still open?",
+      "kicker": "Close each item separately",
+      "steps": [
+        {
+          "label": "Completed",
+          "detail": "Save evidence of the agreed work."
+        },
+        {
+          "label": "Recommended",
+          "detail": "Record a proposed action without calling it done."
+        },
+        {
+          "label": "Unresolved",
+          "detail": "Assign a contact and follow-up date."
+        }
+      ],
+      "caption": "A completed visit can still leave an unresolved fault.",
+      "alt": "Three statuses separate completed work, recommendations and unresolved issues.",
+      "kind": "compare"
+    }
+  ],
+  "worksheet": {
+    "title": "Completed repair and follow-up record",
+    "prompt": "Document one visit using observations and the provider's actual findings.",
+    "fields": [
+      "Item and identifiers",
+      "Original symptom",
+      "Provider and job reference",
+      "Written findings",
+      "Work and parts supplied",
+      "Invoice and payment location",
+      "Warranty or use restriction",
+      "Open action and follow-up"
+    ]
+  },
+  "research": {
+    "primaryQuery": "home repair record",
+    "supportingQueries": [
+      "what documents to keep after repairs",
+      "home repair service record"
+    ],
+    "intent": "Post-repair evidence and follow-up record rather than a general maintenance log.",
+    "sourceChecks": [
+      "https://consumer.ftc.gov/articles/how-avoid-home-improvement-scam - Written contracts and estimates, licensing checks and transaction records.",
+      "https://consumer.ftc.gov/articles/warranties - Written terms, receipts, service contracts and claim procedures.",
+      "https://www.irs.gov/publications/p523 - Repairs and improvements require correct classification; replacing a water heater can be an improvement."
+    ],
+    "limitations": [
+      "No diagnosis, repair-price assessment or universal retention period is provided.",
+      "Tax classification depends on the work and context, not the label repair on an invoice.",
+      "No keyword-volume dataset was available. Saved Reddit leads were qualitative only; Quora was blocked in the saved research."
+    ]
+  }
+}

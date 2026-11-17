@@ -1,0 +1,227 @@
+{
+  "slug": "home-maintenance-you-skip-that-costs-the-most",
+  "title": "Home maintenance jobs that matter most to check",
+  "dek": "Prioritize fire safety, active leaks and weather exposure before routine servicing, then use your equipment manuals to set the next real due date.",
+  "metaDescription": "Prioritize fire safety, active leaks and weather exposure before routine servicing, then use your equipment manuals to set the next real due date.",
+  "updatedAt": "2026-11-17",
+  "body": [
+    {
+      "kind": "paragraphs",
+      "paragraphs": [
+        "The most important home maintenance tasks are the ones that protect people and catch damage before it spreads: working alarms, safe heating and dryer systems, visible leaks, roof drainage and freeze protection where relevant. There is no defensible universal ranking by repair cost. Start with the condition of your home, then the consequences of delay.",
+        "If several jobs are overdue, a long annual checklist can hide the one problem that needs attention today. This is a priority-setting guide for a typical US household, not a repair manual. Renters should report building-system problems through their landlord's maintenance route and retain the report."
+      ]
+    },
+    {
+      "kind": "table",
+      "heading": "Choose the next job by consequence",
+      "columns": [
+        "What you find",
+        "Next useful action",
+        "Do not substitute"
+      ],
+      "rows": [
+        [
+          "An alarm sounding, smoke, gas smell or immediate electrical danger",
+          "Move to safety and contact the appropriate emergency service.",
+          "A routine appointment or an attempt to diagnose it yourself."
+        ],
+        [
+          "An active leak or water near electrics",
+          "Keep away from electrical hazards and arrange urgent qualified help.",
+          "A reminder for next month."
+        ],
+        [
+          "Overflowing gutters, displaced roof materials or damp patches",
+          "Document safely from ground level and arrange inspection.",
+          "Climbing onto the roof to prove where the leak starts."
+        ],
+        [
+          "No symptoms but service history is unknown",
+          "Find the model instructions and establish a baseline check.",
+          "Assuming every system needs the same annual procedure."
+        ]
+      ]
+    },
+    {
+      "kind": "list",
+      "heading": "A safe first sweep",
+      "checkable": true,
+      "items": [
+        "Test household smoke alarms according to their instructions and record the manufacture or replacement date. USFA recommends monthly testing and replacement at ten years for household smoke alarms. Check CO alarm instructions separately; do not assume an identical lifespan.",
+        "Look for water staining, dripping supply connections and damp around appliances without moving heavy equipment or opening electrical covers. Photograph the location and date, not just a close-up of the stain.",
+        "Check gutters and downspout discharge from a safe position. Arrange clearing or repairs if drainage is obstructed; the right frequency depends on debris, trees, storms and access.",
+        "Check the dryer lint filter and accessible exhaust arrangements using the manual. Slow drying, heat or suspected blockage needs attention rather than simply running another cycle.",
+        "Identify the heating or cooling filter and its specified type, size and inspection instructions. Book professional servicing appropriate to the equipment and season.",
+        "Before forecast freezing conditions, check the instructions for exterior taps, connected hoses and exposed lines. Do not assume all frost-resistant fittings use the same shutoff arrangement."
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "Use published guidance without turning it into universal intervals",
+      "paragraphs": [
+        "[ENERGY STAR's maintenance checklist](https://www.energystar.gov/saveathome/heating-cooling/maintenance-checklist) recommends annual pre-season contractor checkups and monthly filter inspection, cleaning or replacement as appropriate. Your exact filter and equipment instructions decide what needs changing and when. A thick media filter should not be judged solely by whether light passes through it.",
+        "The [US Fire Administration identifies appliance and dryer fire hazards](https://www.usfa.fema.gov/prevention/home-fires/prevent-fires/appliance-and-electrical/). That supports taking lint, restricted exhaust and electrical defects seriously; it does not establish one universal annual vent-cleaning interval for every installation. Record what the installer or manufacturer specifies and any earlier warning signs.",
+        "Water heaters, washing-machine hoses and roofing also vary. Do not begin flushing an unfamiliar water heater because a generic list says it is overdue. Identify the equipment and maintenance procedure, then ask a qualified technician where age, condition, hot water, pressure, gas or electrical work makes self-service inappropriate."
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "Invented example: the gutter job is no longer only cleaning",
+      "paragraphs": [
+        "After rain, a homeowner sees water spill over one gutter and notices a new stain inside an upstairs room. They record both observations and ask a contractor to inspect drainage and the possible leak. They do not assume that clearing leaves will repair already damaged material, or that the gutter is definitely the sole cause.",
+        "By contrast, another gutter looks clear from the ground and has no known symptoms. Its next check can be scheduled around local leaf fall and weather exposure. Two similar-looking houses can therefore have different first priorities. Neither observation supports a promised repair saving."
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "Book a defined inspection",
+      "paragraphs": [
+        "You can say: I have water overflowing at this location after rain and a new interior stain. Please inspect the cause and describe urgent work separately from preventive work. I would like the findings and quote in writing before repairs start."
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "Make the reminder follow the evidence",
+      "paragraphs": [
+        "Record the last confirmed service date, what was actually done, the manual or contractor's basis for the interval, and the next check. Mark unknown history as unknown, not completed today. Seasonal tasks belong before the relevant weather, rather than a fixed number of days after an arbitrary entry. Use [the service-schedule guide](/guides/how-often-home-systems-need-servicing) to build that record.",
+        "Stop at unsafe access, gas, combustion, live electrical work, unstable surfaces or structural damage. A maintenance budget changes how work is arranged, not whether an immediate hazard is safe to leave. Ask for a written distinction between urgent safety work, damage prevention and work that can be planned."
+      ]
+    },
+    {
+      "kind": "faq",
+      "items": [
+        {
+          "q": "Which task should I do first when everything is overdue?",
+          "a": "First rule out immediate hazards and active damage. Working alarms, a current leak or a heating fault can matter more than an otherwise routine job with an old date. If there is no urgent symptom, choose one system, establish its history and manual requirements, and arrange its next appropriate check."
+        },
+        {
+          "q": "Should I clean gutters twice a year?",
+          "a": "That can be a planning starting point, not a guarantee. Trees, roof layout, storms and drainage symptoms affect how often attention is needed. Check safely after relevant weather and arrange access with a suitable contractor where necessary. A visible overflow or leak should not wait for the next seasonal reminder."
+        },
+        {
+          "q": "Do smoke and carbon monoxide alarms expire together?",
+          "a": "Not necessarily. USFA gives a ten-year replacement message for household smoke alarms, but CO and combined units require their own manufacturer instructions. Record the model, manufacture date and end-of-life guidance. An alarm that fails a test or signals a problem needs action even before its expected replacement date."
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "name": "ENERGY STAR: maintenance checklist",
+      "url": "https://www.energystar.gov/saveathome/heating-cooling/maintenance-checklist",
+      "retrieved": "2026-11-17",
+      "note": "Opened: annual pre-season professional checks and monthly filter attention; technical work separated from owner checks."
+    },
+    {
+      "name": "USFA: appliance and electrical fire safety",
+      "url": "https://www.usfa.fema.gov/prevention/home-fires/prevent-fires/appliance-and-electrical/",
+      "retrieved": "2026-11-17",
+      "note": "Opened: dryer cleaning and electrical safety risks; no universal vent cleaning interval inferred."
+    },
+    {
+      "name": "USFA: smoke alarm pictographs",
+      "url": "https://www.usfa.fema.gov/gallery/pictographs/smoke-alarms.html",
+      "retrieved": "2026-11-17",
+      "note": "Official search excerpt checked: monthly test and ten-year household smoke alarm replacement message."
+    },
+    {
+      "name": "EPA: CO detector placement",
+      "url": "https://www.epa.gov/indoor-air-quality-iaq/where-should-i-place-carbon-monoxide-detector",
+      "retrieved": "2026-11-17",
+      "note": "Official search excerpt checked: follow the manufacturer use-and-care instructions; no shared CO lifespan asserted."
+    }
+  ],
+  "visuals": [
+    {
+      "title": "Hazard, damage or routine",
+      "kicker": "Order the work by consequence",
+      "kind": "sequence",
+      "steps": [
+        {
+          "label": "Immediate danger",
+          "detail": "Move to safety and use emergency help when necessary."
+        },
+        {
+          "label": "Active damage",
+          "detail": "Arrange prompt inspection of leaks or system faults."
+        },
+        {
+          "label": "Unknown history",
+          "detail": "Find the equipment instructions and establish a baseline."
+        },
+        {
+          "label": "Routine care",
+          "detail": "Schedule the next check using condition, season and evidence."
+        }
+      ],
+      "caption": "An old service date is not the only reason a job moves to the top.",
+      "alt": "A home maintenance priority sequence separates immediate danger, active damage, unknown history and routine care."
+    },
+    {
+      "title": "A useful maintenance entry",
+      "kicker": "Evidence behind the reminder",
+      "kind": "record",
+      "steps": [
+        {
+          "label": "Last done",
+          "detail": "Record the confirmed service and what work it included."
+        },
+        {
+          "label": "Rule",
+          "detail": "Keep the manual or contractor guidance used for timing."
+        },
+        {
+          "label": "Next check",
+          "detail": "Set the condition or date that triggers another look."
+        }
+      ],
+      "caption": "An unknown service history should stay unknown until it is established.",
+      "alt": "Three maintenance fields connect the last completed work, timing guidance and next check."
+    }
+  ],
+  "worksheet": {
+    "title": "Home maintenance consequence check",
+    "prompt": "Choose the next action from actual observations rather than an assumed cost ranking.",
+    "fields": [
+      "System and location",
+      "Observed symptom or unknown history",
+      "Immediate safety concern",
+      "Last confirmed service",
+      "Manual or contractor timing guidance",
+      "Action and responsible person",
+      "Next check date or weather trigger"
+    ]
+  },
+  "research": {
+    "primaryQuery": "most important home maintenance tasks",
+    "supportingQueries": [
+      "most important home maintenance tasks when behind",
+      "home maintenance active leak priorities"
+    ],
+    "intent": "Prioritize consequential maintenance without invented cost rankings or universal intervals.",
+    "sourceChecks": [
+      {
+        "url": "https://www.energystar.gov/saveathome/heating-cooling/maintenance-checklist",
+        "verified": "Opened: annual pre-season professional checks and monthly filter attention; technical work separated from owner checks."
+      },
+      {
+        "url": "https://www.usfa.fema.gov/prevention/home-fires/prevent-fires/appliance-and-electrical/",
+        "verified": "Opened: dryer cleaning and electrical safety risks; no universal vent cleaning interval inferred."
+      },
+      {
+        "url": "https://www.usfa.fema.gov/gallery/pictographs/smoke-alarms.html",
+        "verified": "Official search excerpt checked: monthly test and ten-year household smoke alarm replacement message."
+      },
+      {
+        "url": "https://www.epa.gov/indoor-air-quality-iaq/where-should-i-place-carbon-monoxide-detector",
+        "verified": "Official search excerpt checked: follow the manufacturer use-and-care instructions; no shared CO lifespan asserted."
+      }
+    ],
+    "limitations": [
+      "No quantified repair savings or national task ranking is claimed.",
+      "Roof, gutter, hose and water-heater intervals depend on actual equipment and conditions.",
+      "Old USFA smoke-alarm URL returned 404; a current official pictograph source was checked."
+    ]
+  }
+}

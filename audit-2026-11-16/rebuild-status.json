@@ -1,0 +1,829 @@
+{
+  "scope": 137,
+  "localPreviews": 137,
+  "publishedRewrites": 0,
+  "entries": [
+    {
+      "slug": "what-to-do-when-a-parent-dies",
+      "url": "https://draftpace.com/guides/what-to-do-when-a-parent-dies",
+      "status": "local-preview-complete",
+      "deployed": false
+    },
+    {
+      "slug": "what-to-do-when-a-parent-dies-uk",
+      "url": "https://draftpace.com/guides/what-to-do-when-a-parent-dies-uk",
+      "status": "local-preview-complete",
+      "deployed": false
+    },
+    {
+      "slug": "how-to-find-someones-accounts-after-they-die",
+      "url": "https://draftpace.com/guides/how-to-find-someones-accounts-after-they-die",
+      "status": "local-preview-complete",
+      "deployed": false
+    },
+    {
+      "slug": "homeschool-record-keeping-requirements-by-state",
+      "url": "https://draftpace.com/guides/homeschool-record-keeping-requirements-by-state",
+      "status": "local-preview-complete",
+      "deployed": false
+    },
+    {
+      "slug": "home-maintenance-you-skip-that-costs-the-most",
+      "url": "https://draftpace.com/guides/home-maintenance-you-skip-that-costs-the-most",
+      "status": "local-preview-complete",
+      "deployed": false
+    },
+    {
+      "slug": "flight-changed-what-else-is-affected",
+      "url": "https://draftpace.com/guides/flight-changed-what-else-is-affected",
+      "status": "local-preview-complete",
+      "deployed": false
+    },
+    {
+      "slug": "flight-delayed-with-a-connection-what-to-do-first",
+      "url": "https://draftpace.com/guides/flight-delayed-with-a-connection-what-to-do-first",
+      "status": "local-preview-complete",
+      "deployed": false
+    },
+    {
+      "slug": "how-to-make-a-phone-call-you-have-been-avoiding",
+      "url": "https://draftpace.com/guides/how-to-make-a-phone-call-you-have-been-avoiding",
+      "status": "local-preview-complete",
+      "deployed": false
+    },
+    {
+      "slug": "how-to-restart-a-project-you-gave-up-on",
+      "url": "https://draftpace.com/guides/how-to-restart-a-project-you-gave-up-on",
+      "status": "local-preview-complete",
+      "deployed": false
+    },
+    {
+      "slug": "how-much-of-your-money-is-actually-safe-to-spend",
+      "url": "https://draftpace.com/guides/how-much-of-your-money-is-actually-safe-to-spend",
+      "status": "local-preview-complete",
+      "deployed": false
+    },
+    {
+      "slug": "how-to-find-every-subscription-you-are-paying-for",
+      "url": "https://draftpace.com/guides/how-to-find-every-subscription-you-are-paying-for",
+      "status": "local-preview-complete",
+      "deployed": false
+    },
+    {
+      "slug": "how-often-home-systems-need-servicing",
+      "url": "https://draftpace.com/guides/how-often-home-systems-need-servicing",
+      "status": "local-preview-complete",
+      "deployed": false
+    },
+    {
+      "slug": "what-to-record-when-you-buy-an-appliance",
+      "url": "https://draftpace.com/guides/what-to-record-when-you-buy-an-appliance",
+      "status": "local-preview-complete",
+      "deployed": false
+    },
+    {
+      "slug": "where-to-look-for-a-will",
+      "url": "https://draftpace.com/guides/where-to-look-for-a-will",
+      "status": "local-preview-complete",
+      "deployed": false
+    },
+    {
+      "slug": "named-executor-what-you-agreed-to",
+      "url": "https://draftpace.com/guides/named-executor-what-you-agreed-to",
+      "status": "local-preview-complete",
+      "deployed": false
+    },
+    {
+      "slug": "named-executor-what-you-agreed-to-uk",
+      "url": "https://draftpace.com/guides/named-executor-what-you-agreed-to-uk",
+      "status": "local-preview-complete",
+      "deployed": false
+    },
+    {
+      "slug": "the-if-something-happens-to-me-file",
+      "url": "https://draftpace.com/guides/the-if-something-happens-to-me-file",
+      "status": "local-preview-complete",
+      "deployed": false
+    },
+    {
+      "slug": "hotel-cannot-find-your-reservation",
+      "url": "https://draftpace.com/guides/hotel-cannot-find-your-reservation",
+      "status": "local-preview-complete",
+      "deployed": false
+    },
+    {
+      "slug": "homeschool-record-keeping-template",
+      "url": "https://draftpace.com/guides/homeschool-record-keeping-template",
+      "status": "local-preview-complete",
+      "deployed": false
+    },
+    {
+      "slug": "what-goes-in-a-homeschool-portfolio",
+      "url": "https://draftpace.com/guides/what-goes-in-a-homeschool-portfolio",
+      "status": "local-preview-complete",
+      "deployed": false
+    },
+    {
+      "slug": "why-to-do-lists-make-it-worse",
+      "url": "https://draftpace.com/guides/why-to-do-lists-make-it-worse",
+      "status": "local-preview-complete",
+      "deployed": false
+    },
+    {
+      "slug": "available-balance-vs-current-balance",
+      "url": "https://draftpace.com/guides/available-balance-vs-current-balance",
+      "status": "local-preview-complete",
+      "deployed": false
+    },
+    {
+      "slug": "why-budgeting-apps-stop-working-after-two-months",
+      "url": "https://draftpace.com/guides/why-budgeting-apps-stop-working-after-two-months",
+      "status": "local-preview-complete",
+      "deployed": false
+    },
+    {
+      "slug": "why-you-keep-thinking-about-a-task-and-not-doing-it",
+      "url": "https://draftpace.com/guides/why-you-keep-thinking-about-a-task-and-not-doing-it",
+      "status": "local-preview-complete",
+      "deployed": false
+    },
+    {
+      "slug": "task-paralysis-what-to-do-in-the-next-ten-minutes",
+      "url": "https://draftpace.com/guides/task-paralysis-what-to-do-in-the-next-ten-minutes",
+      "status": "local-preview-complete",
+      "deployed": false
+    },
+    {
+      "slug": "first-week-after-buying-a-house",
+      "url": "https://draftpace.com/guides/first-week-after-buying-a-house",
+      "status": "local-preview-complete",
+      "deployed": false
+    },
+    {
+      "slug": "home-maintenance-checklist-by-month",
+      "url": "https://draftpace.com/guides/home-maintenance-checklist-by-month",
+      "status": "local-preview-complete",
+      "deployed": false
+    },
+    {
+      "slug": "beneficiary-forms-override-your-will",
+      "url": "https://draftpace.com/guides/beneficiary-forms-override-your-will",
+      "status": "local-preview-complete",
+      "deployed": false
+    },
+    {
+      "slug": "how-to-catch-up-on-homeschool-records",
+      "url": "https://draftpace.com/guides/how-to-catch-up-on-homeschool-records",
+      "status": "local-preview-complete",
+      "deployed": false
+    },
+    {
+      "slug": "how-to-check-if-your-child-learned-something",
+      "url": "https://draftpace.com/guides/how-to-check-if-your-child-learned-something",
+      "status": "local-preview-complete",
+      "deployed": false
+    },
+    {
+      "slug": "organising-a-multi-stop-trip-without-a-spreadsheet",
+      "url": "https://draftpace.com/guides/organising-a-multi-stop-trip-without-a-spreadsheet",
+      "status": "local-preview-complete",
+      "deployed": false
+    },
+    {
+      "slug": "travel-document-checklist",
+      "url": "https://draftpace.com/guides/travel-document-checklist",
+      "status": "local-preview-complete",
+      "deployed": false
+    },
+    {
+      "slug": "you-missed-a-payment-what-to-do-next",
+      "url": "https://draftpace.com/guides/you-missed-a-payment-what-to-do-next",
+      "status": "local-preview-complete",
+      "deployed": false
+    },
+    {
+      "slug": "what-to-write-down-in-case-something-happens-to-you",
+      "url": "https://draftpace.com/guides/what-to-write-down-in-case-something-happens-to-you",
+      "status": "local-preview-complete",
+      "deployed": false
+    },
+    {
+      "slug": "digital-accounts-after-a-death",
+      "url": "https://draftpace.com/guides/digital-accounts-after-a-death",
+      "status": "local-preview-complete",
+      "deployed": false
+    },
+    {
+      "slug": "which-documents-to-keep-and-where-to-put-them",
+      "url": "https://draftpace.com/guides/which-documents-to-keep-and-where-to-put-them",
+      "status": "local-preview-complete",
+      "deployed": false
+    },
+    {
+      "slug": "what-to-keep-after-a-home-repair",
+      "url": "https://draftpace.com/guides/what-to-keep-after-a-home-repair",
+      "status": "local-preview-complete",
+      "deployed": false
+    },
+    {
+      "slug": "appliance-warranties-what-to-track",
+      "url": "https://draftpace.com/guides/appliance-warranties-what-to-track",
+      "status": "local-preview-complete",
+      "deployed": false
+    },
+    {
+      "slug": "scripts-for-the-admin-calls-everyone-dreads",
+      "url": "https://draftpace.com/guides/scripts-for-the-admin-calls-everyone-dreads",
+      "status": "local-preview-complete",
+      "deployed": false
+    },
+    {
+      "slug": "how-to-deal-with-something-you-have-put-off",
+      "url": "https://draftpace.com/guides/how-to-deal-with-something-you-have-put-off",
+      "status": "local-preview-complete",
+      "deployed": false
+    },
+    {
+      "slug": "preparing-for-a-homeschool-evaluation",
+      "url": "https://draftpace.com/guides/preparing-for-a-homeschool-evaluation",
+      "status": "local-preview-complete",
+      "deployed": false
+    },
+    {
+      "slug": "how-to-plan-a-group-trip",
+      "url": "https://draftpace.com/guides/how-to-plan-a-group-trip",
+      "status": "local-preview-complete",
+      "deployed": false
+    },
+    {
+      "slug": "sort-out-your-finances-after-a-life-change",
+      "url": "https://draftpace.com/guides/sort-out-your-finances-after-a-life-change",
+      "status": "local-preview-complete",
+      "deployed": false
+    },
+    {
+      "slug": "talking-to-your-parents-about-their-affairs",
+      "url": "https://draftpace.com/guides/talking-to-your-parents-about-their-affairs",
+      "status": "local-preview-complete",
+      "deployed": false
+    },
+    {
+      "slug": "inherited-a-house-where-to-start",
+      "url": "https://draftpace.com/guides/inherited-a-house-where-to-start",
+      "status": "local-preview-complete",
+      "deployed": false
+    },
+    {
+      "slug": "how-to-find-the-model-number-on-any-appliance",
+      "url": "https://draftpace.com/guides/how-to-find-the-model-number-on-any-appliance",
+      "status": "local-preview-complete",
+      "deployed": false
+    },
+    {
+      "slug": "homeschool-attendance-what-to-track",
+      "url": "https://draftpace.com/guides/homeschool-attendance-what-to-track",
+      "status": "local-preview-complete",
+      "deployed": false
+    },
+    {
+      "slug": "simple-homeschool-record-keeping-system",
+      "url": "https://draftpace.com/guides/simple-homeschool-record-keeping-system",
+      "status": "local-preview-complete",
+      "deployed": false
+    },
+    {
+      "slug": "life-admin-with-brain-fog",
+      "url": "https://draftpace.com/guides/life-admin-with-brain-fog",
+      "status": "local-preview-complete",
+      "deployed": false
+    },
+    {
+      "slug": "executive-dysfunction-is-not-procrastination",
+      "url": "https://draftpace.com/guides/executive-dysfunction-is-not-procrastination",
+      "status": "local-preview-complete",
+      "deployed": false
+    },
+    {
+      "slug": "what-to-keep-on-paper-when-you-travel",
+      "url": "https://draftpace.com/guides/what-to-keep-on-paper-when-you-travel",
+      "status": "local-preview-complete",
+      "deployed": false
+    },
+    {
+      "slug": "what-to-check-before-each-direct-debit-date",
+      "url": "https://draftpace.com/guides/what-to-check-before-each-direct-debit-date",
+      "status": "local-preview-complete",
+      "deployed": false
+    },
+    {
+      "slug": "can-you-afford-it-before-you-buy-it",
+      "url": "https://draftpace.com/guides/can-you-afford-it-before-you-buy-it",
+      "status": "local-preview-complete",
+      "deployed": false
+    },
+    {
+      "slug": "how-long-to-keep-homeschool-records",
+      "url": "https://draftpace.com/guides/how-long-to-keep-homeschool-records",
+      "status": "local-preview-complete",
+      "deployed": false
+    },
+    {
+      "slug": "diagnosed-with-adhd-as-an-adult",
+      "url": "https://draftpace.com/guides/diagnosed-with-adhd-as-an-adult",
+      "status": "local-preview-complete",
+      "deployed": false
+    },
+    {
+      "slug": "life-admin-the-work-nobody-teaches-you",
+      "url": "https://draftpace.com/guides/life-admin-the-work-nobody-teaches-you",
+      "status": "local-preview-complete",
+      "deployed": false
+    },
+    {
+      "slug": "why-productivity-tools-fail-at-life-admin",
+      "url": "https://draftpace.com/guides/why-productivity-tools-fail-at-life-admin",
+      "status": "local-preview-complete",
+      "deployed": false
+    },
+    {
+      "slug": "how-to-budget-for-beginners",
+      "url": "https://draftpace.com/guides/how-to-budget-for-beginners",
+      "status": "local-preview-complete",
+      "deployed": false
+    },
+    {
+      "slug": "how-to-budget-with-irregular-income",
+      "url": "https://draftpace.com/guides/how-to-budget-with-irregular-income",
+      "status": "local-preview-complete",
+      "deployed": false
+    },
+    {
+      "slug": "how-to-build-a-first-1000-emergency-fund",
+      "url": "https://draftpace.com/guides/how-to-build-a-first-1000-emergency-fund",
+      "status": "local-preview-complete",
+      "deployed": false
+    },
+    {
+      "slug": "how-to-save-money-fast",
+      "url": "https://draftpace.com/guides/how-to-save-money-fast",
+      "status": "local-preview-complete",
+      "deployed": false
+    },
+    {
+      "slug": "how-to-start-over-after-budget-failure",
+      "url": "https://draftpace.com/guides/how-to-start-over-after-budget-failure",
+      "status": "local-preview-complete",
+      "deployed": false
+    },
+    {
+      "slug": "end-of-month-money-review",
+      "url": "https://draftpace.com/guides/end-of-month-money-review",
+      "status": "local-preview-complete",
+      "deployed": false
+    },
+    {
+      "slug": "how-to-cancel-subscriptions",
+      "url": "https://draftpace.com/guides/how-to-cancel-subscriptions",
+      "status": "local-preview-complete",
+      "deployed": false
+    },
+    {
+      "slug": "fall-home-maintenance-checklist",
+      "url": "https://draftpace.com/guides/fall-home-maintenance-checklist",
+      "status": "local-preview-complete",
+      "deployed": false
+    },
+    {
+      "slug": "winterize-your-house-checklist",
+      "url": "https://draftpace.com/guides/winterize-your-house-checklist",
+      "status": "local-preview-complete",
+      "deployed": false
+    },
+    {
+      "slug": "home-maintenance-log-template",
+      "url": "https://draftpace.com/guides/home-maintenance-log-template",
+      "status": "local-preview-complete",
+      "deployed": false
+    },
+    {
+      "slug": "how-often-change-furnace-filter",
+      "url": "https://draftpace.com/guides/how-often-change-furnace-filter",
+      "status": "local-preview-complete",
+      "deployed": false
+    },
+    {
+      "slug": "where-is-my-water-shutoff",
+      "url": "https://draftpace.com/guides/where-is-my-water-shutoff",
+      "status": "local-preview-complete",
+      "deployed": false
+    },
+    {
+      "slug": "how-to-make-a-home-binder",
+      "url": "https://draftpace.com/guides/how-to-make-a-home-binder",
+      "status": "local-preview-complete",
+      "deployed": false
+    },
+    {
+      "slug": "moving-into-a-rental-what-to-document",
+      "url": "https://draftpace.com/guides/moving-into-a-rental-what-to-document",
+      "status": "local-preview-complete",
+      "deployed": false
+    },
+    {
+      "slug": "debt-snowball-vs-avalanche",
+      "url": "https://draftpace.com/guides/debt-snowball-vs-avalanche",
+      "status": "local-preview-complete",
+      "deployed": false
+    },
+    {
+      "slug": "monthly-bills-list",
+      "url": "https://draftpace.com/guides/monthly-bills-list",
+      "status": "local-preview-complete",
+      "deployed": false
+    },
+    {
+      "slug": "organize-your-finances-from-scratch",
+      "url": "https://draftpace.com/guides/organize-your-finances-from-scratch",
+      "status": "local-preview-complete",
+      "deployed": false
+    },
+    {
+      "slug": "split-bills-with-a-partner-or-roommate",
+      "url": "https://draftpace.com/guides/split-bills-with-a-partner-or-roommate",
+      "status": "local-preview-complete",
+      "deployed": false
+    },
+    {
+      "slug": "subscription-tracker-what-to-track",
+      "url": "https://draftpace.com/guides/subscription-tracker-what-to-track",
+      "status": "local-preview-complete",
+      "deployed": false
+    },
+    {
+      "slug": "bank-statement-csv-to-budget",
+      "url": "https://draftpace.com/guides/bank-statement-csv-to-budget",
+      "status": "local-preview-complete",
+      "deployed": false
+    },
+    {
+      "slug": "financial-binder-what-to-include",
+      "url": "https://draftpace.com/guides/financial-binder-what-to-include",
+      "status": "local-preview-complete",
+      "deployed": false
+    },
+    {
+      "slug": "sinking-funds-explained",
+      "url": "https://draftpace.com/guides/sinking-funds-explained",
+      "status": "local-preview-complete",
+      "deployed": false
+    },
+    {
+      "slug": "50-30-20-rule-where-it-breaks",
+      "url": "https://draftpace.com/guides/50-30-20-rule-where-it-breaks",
+      "status": "local-preview-complete",
+      "deployed": false
+    },
+    {
+      "slug": "budget-for-variable-bills",
+      "url": "https://draftpace.com/guides/budget-for-variable-bills",
+      "status": "local-preview-complete",
+      "deployed": false
+    },
+    {
+      "slug": "credit-card-minimum-payments-how-long",
+      "url": "https://draftpace.com/guides/credit-card-minimum-payments-how-long",
+      "status": "local-preview-complete",
+      "deployed": false
+    },
+    {
+      "slug": "how-to-start-when-everything-is-overdue",
+      "url": "https://draftpace.com/guides/how-to-start-when-everything-is-overdue",
+      "status": "local-preview-complete",
+      "deployed": false
+    },
+    {
+      "slug": "paperwork-pile-where-to-start",
+      "url": "https://draftpace.com/guides/paperwork-pile-where-to-start",
+      "status": "local-preview-complete",
+      "deployed": false
+    },
+    {
+      "slug": "how-to-say-no-or-give-bad-news-on-the-phone",
+      "url": "https://draftpace.com/guides/how-to-say-no-or-give-bad-news-on-the-phone",
+      "status": "local-preview-complete",
+      "deployed": false
+    },
+    {
+      "slug": "the-email-you-keep-not-sending-and-how-to-chase-a-reply",
+      "url": "https://draftpace.com/guides/the-email-you-keep-not-sending-and-how-to-chase-a-reply",
+      "status": "local-preview-complete",
+      "deployed": false
+    },
+    {
+      "slug": "first-physical-step-20-examples",
+      "url": "https://draftpace.com/guides/first-physical-step-20-examples",
+      "status": "local-preview-complete",
+      "deployed": false
+    },
+    {
+      "slug": "a-weekly-reset-that-survives-a-bad-week",
+      "url": "https://draftpace.com/guides/a-weekly-reset-that-survives-a-bad-week",
+      "status": "local-preview-complete",
+      "deployed": false
+    },
+    {
+      "slug": "why-you-abandon-planners-and-how-to-come-back",
+      "url": "https://draftpace.com/guides/why-you-abandon-planners-and-how-to-come-back",
+      "status": "local-preview-complete",
+      "deployed": false
+    },
+    {
+      "slug": "why-you-keep-missing-bill-due-dates",
+      "url": "https://draftpace.com/guides/why-you-keep-missing-bill-due-dates",
+      "status": "local-preview-complete",
+      "deployed": false
+    },
+    {
+      "slug": "time-blindness-planning",
+      "url": "https://draftpace.com/guides/time-blindness-planning",
+      "status": "local-preview-complete",
+      "deployed": false
+    },
+    {
+      "slug": "homeschool-weekly-plan-with-a-spare-day",
+      "url": "https://draftpace.com/guides/homeschool-weekly-plan-with-a-spare-day",
+      "status": "local-preview-complete",
+      "deployed": false
+    },
+    {
+      "slug": "four-day-homeschool-week",
+      "url": "https://draftpace.com/guides/four-day-homeschool-week",
+      "status": "local-preview-complete",
+      "deployed": false
+    },
+    {
+      "slug": "homeschool-notice-of-intent-explained",
+      "url": "https://draftpace.com/guides/homeschool-notice-of-intent-explained",
+      "status": "local-preview-complete",
+      "deployed": false
+    },
+    {
+      "slug": "do-you-have-to-count-homeschool-days-or-hours",
+      "url": "https://draftpace.com/guides/do-you-have-to-count-homeschool-days-or-hours",
+      "status": "local-preview-complete",
+      "deployed": false
+    },
+    {
+      "slug": "how-to-start-homeschooling-first-month-paperwork",
+      "url": "https://draftpace.com/guides/how-to-start-homeschooling-first-month-paperwork",
+      "status": "local-preview-complete",
+      "deployed": false
+    },
+    {
+      "slug": "homeschool-record-keeping-for-multiple-children",
+      "url": "https://draftpace.com/guides/homeschool-record-keeping-for-multiple-children",
+      "status": "local-preview-complete",
+      "deployed": false
+    },
+    {
+      "slug": "homeschool-reading-log",
+      "url": "https://draftpace.com/guides/homeschool-reading-log",
+      "status": "local-preview-complete",
+      "deployed": false
+    },
+    {
+      "slug": "homeschool-subject-not-working-what-to-change-first",
+      "url": "https://draftpace.com/guides/homeschool-subject-not-working-what-to-change-first",
+      "status": "local-preview-complete",
+      "deployed": false
+    },
+    {
+      "slug": "life-admin-binder-what-goes-in-it",
+      "url": "https://draftpace.com/guides/life-admin-binder-what-goes-in-it",
+      "status": "local-preview-complete",
+      "deployed": false
+    },
+    {
+      "slug": "hospital-for-two-weeks-what-would-someone-need-to-find",
+      "url": "https://draftpace.com/guides/hospital-for-two-weeks-what-would-someone-need-to-find",
+      "status": "local-preview-complete",
+      "deployed": false
+    },
+    {
+      "slug": "emergency-contact-and-medical-decision-maker",
+      "url": "https://draftpace.com/guides/emergency-contact-and-medical-decision-maker",
+      "status": "local-preview-complete",
+      "deployed": false
+    },
+    {
+      "slug": "who-would-raise-your-children-guardian-checklist",
+      "url": "https://draftpace.com/guides/who-would-raise-your-children-guardian-checklist",
+      "status": "local-preview-complete",
+      "deployed": false
+    },
+    {
+      "slug": "who-to-tell-when-someone-dies",
+      "url": "https://draftpace.com/guides/who-to-tell-when-someone-dies",
+      "status": "local-preview-complete",
+      "deployed": false
+    },
+    {
+      "slug": "update-your-paperwork-after-a-life-change",
+      "url": "https://draftpace.com/guides/update-your-paperwork-after-a-life-change",
+      "status": "local-preview-complete",
+      "deployed": false
+    },
+    {
+      "slug": "safe-deposit-box-and-spare-keys-who-can-open-it",
+      "url": "https://draftpace.com/guides/safe-deposit-box-and-spare-keys-who-can-open-it",
+      "status": "local-preview-complete",
+      "deployed": false
+    },
+    {
+      "slug": "what-happens-to-your-pets-if-something-happens-to-you",
+      "url": "https://draftpace.com/guides/what-happens-to-your-pets-if-something-happens-to-you",
+      "status": "local-preview-complete",
+      "deployed": false
+    },
+    {
+      "slug": "how-to-write-a-one-page-trip-itinerary",
+      "url": "https://draftpace.com/guides/how-to-write-a-one-page-trip-itinerary",
+      "status": "local-preview-complete",
+      "deployed": false
+    },
+    {
+      "slug": "packing-list-for-a-week-away",
+      "url": "https://draftpace.com/guides/packing-list-for-a-week-away",
+      "status": "local-preview-complete",
+      "deployed": false
+    },
+    {
+      "slug": "carry-on-only-packing-list",
+      "url": "https://draftpace.com/guides/carry-on-only-packing-list",
+      "status": "local-preview-complete",
+      "deployed": false
+    },
+    {
+      "slug": "packing-and-planning-for-a-trip-with-kids-or-a-baby",
+      "url": "https://draftpace.com/guides/packing-and-planning-for-a-trip-with-kids-or-a-baby",
+      "status": "local-preview-complete",
+      "deployed": false
+    },
+    {
+      "slug": "lost-passport-wallet-or-phone-abroad-what-to-have-ready",
+      "url": "https://draftpace.com/guides/lost-passport-wallet-or-phone-abroad-what-to-have-ready",
+      "status": "local-preview-complete",
+      "deployed": false
+    },
+    {
+      "slug": "first-international-trip-checklist",
+      "url": "https://draftpace.com/guides/first-international-trip-checklist",
+      "status": "local-preview-complete",
+      "deployed": false
+    },
+    {
+      "slug": "road-trip-planning-checklist",
+      "url": "https://draftpace.com/guides/road-trip-planning-checklist",
+      "status": "local-preview-complete",
+      "deployed": false
+    },
+    {
+      "slug": "night-before-you-travel-checklist",
+      "url": "https://draftpace.com/guides/night-before-you-travel-checklist",
+      "status": "local-preview-complete",
+      "deployed": false
+    },
+    {
+      "slug": "what-is-due-on-my-car-right-now",
+      "url": "https://draftpace.com/guides/what-is-due-on-my-car-right-now",
+      "status": "local-preview-complete",
+      "deployed": false
+    },
+    {
+      "slug": "what-to-tell-a-mechanic-before-work-starts",
+      "url": "https://draftpace.com/guides/what-to-tell-a-mechanic-before-work-starts",
+      "status": "local-preview-complete",
+      "deployed": false
+    },
+    {
+      "slug": "used-car-no-service-records-what-to-do",
+      "url": "https://draftpace.com/guides/used-car-no-service-records-what-to-do",
+      "status": "local-preview-complete",
+      "deployed": false
+    },
+    {
+      "slug": "car-maintenance-log-what-to-write-down",
+      "url": "https://draftpace.com/guides/car-maintenance-log-what-to-write-down",
+      "status": "local-preview-complete",
+      "deployed": false
+    },
+    {
+      "slug": "selling-your-car-with-a-service-history",
+      "url": "https://draftpace.com/guides/selling-your-car-with-a-service-history",
+      "status": "local-preview-complete",
+      "deployed": false
+    },
+    {
+      "slug": "car-maintenance-by-mileage-start-with-your-manual",
+      "url": "https://draftpace.com/guides/car-maintenance-by-mileage-start-with-your-manual",
+      "status": "local-preview-complete",
+      "deployed": false
+    },
+    {
+      "slug": "winter-car-prep-checklist",
+      "url": "https://draftpace.com/guides/winter-car-prep-checklist",
+      "status": "local-preview-complete",
+      "deployed": false
+    },
+    {
+      "slug": "two-cars-one-household-maintenance",
+      "url": "https://draftpace.com/guides/two-cars-one-household-maintenance",
+      "status": "local-preview-complete",
+      "deployed": false
+    },
+    {
+      "slug": "glove-box-checklist-what-to-keep",
+      "url": "https://draftpace.com/guides/glove-box-checklist-what-to-keep",
+      "status": "local-preview-complete",
+      "deployed": false
+    },
+    {
+      "slug": "car-paperwork-dates-organizer",
+      "url": "https://draftpace.com/guides/car-paperwork-dates-organizer",
+      "status": "local-preview-complete",
+      "deployed": false
+    },
+    {
+      "slug": "first-car-checklist-for-new-drivers",
+      "url": "https://draftpace.com/guides/first-car-checklist-for-new-drivers",
+      "status": "local-preview-complete",
+      "deployed": false
+    },
+    {
+      "slug": "what-goes-in-a-family-health-binder",
+      "url": "https://draftpace.com/guides/what-goes-in-a-family-health-binder",
+      "status": "local-preview-complete",
+      "deployed": false
+    },
+    {
+      "slug": "school-and-camp-health-forms-what-to-have-ready",
+      "url": "https://draftpace.com/guides/school-and-camp-health-forms-what-to-have-ready",
+      "status": "local-preview-complete",
+      "deployed": false
+    },
+    {
+      "slug": "babysitter-and-grandparent-info-sheet",
+      "url": "https://draftpace.com/guides/babysitter-and-grandparent-info-sheet",
+      "status": "local-preview-complete",
+      "deployed": false
+    },
+    {
+      "slug": "doctor-appointment-prep-checklist",
+      "url": "https://draftpace.com/guides/doctor-appointment-prep-checklist",
+      "status": "local-preview-complete",
+      "deployed": false
+    },
+    {
+      "slug": "questions-to-bring-to-the-doctor",
+      "url": "https://draftpace.com/guides/questions-to-bring-to-the-doctor",
+      "status": "local-preview-complete",
+      "deployed": false
+    },
+    {
+      "slug": "medication-list-what-to-write-down",
+      "url": "https://draftpace.com/guides/medication-list-what-to-write-down",
+      "status": "local-preview-complete",
+      "deployed": false
+    },
+    {
+      "slug": "symptom-notes-for-a-doctor-visit",
+      "url": "https://draftpace.com/guides/symptom-notes-for-a-doctor-visit",
+      "status": "local-preview-complete",
+      "deployed": false
+    },
+    {
+      "slug": "emergency-contact-information-sheet",
+      "url": "https://draftpace.com/guides/emergency-contact-information-sheet",
+      "status": "local-preview-complete",
+      "deployed": false
+    },
+    {
+      "slug": "new-doctor-intake-what-to-bring",
+      "url": "https://draftpace.com/guides/new-doctor-intake-what-to-bring",
+      "status": "local-preview-complete",
+      "deployed": false
+    },
+    {
+      "slug": "what-to-leave-off-a-health-page-you-hand-over",
+      "url": "https://draftpace.com/guides/what-to-leave-off-a-health-page-you-hand-over",
+      "status": "local-preview-complete",
+      "deployed": false
+    },
+    {
+      "slug": "caring-for-a-parent-and-kids-one-place",
+      "url": "https://draftpace.com/guides/caring-for-a-parent-and-kids-one-place",
+      "status": "local-preview-complete",
+      "deployed": false
+    }
+  ]
+}

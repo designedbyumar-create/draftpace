@@ -1,0 +1,212 @@
+{
+  "slug": "travel-document-checklist",
+  "title": "Travel document checklist: verify each traveler",
+  "dek": "Check passports, entry permissions, children's paperwork and booking names, then record who carries each original and where the backups are kept.",
+  "metaDescription": "Check passports, entry permissions, children's paperwork and booking names, then record who carries each original and where the backups are kept.",
+  "updatedAt": "2026-11-17",
+  "body": [
+    {
+      "kind": "paragraphs",
+      "paragraphs": [
+        "For an international trip, check each traveler's passport, destination and transit permissions, booking names and any child-specific documents. Record the rule you checked, its official source and who carries the original. A passport photo helps with reference information; it does not replace the required document.",
+        "One person can have every ticket saved while another person's passport is still in a drawer. The useful checklist is therefore per traveler, not simply 'passports packed.' This guide is for US citizens preparing an international air trip. Other nationalities and land or sea travel may need different checks."
+      ]
+    },
+    {
+      "kind": "list",
+      "heading": "Verify before making inflexible bookings",
+      "checkable": true,
+      "items": [
+        "Open every traveler's passport and record its exact name, expiry and relevant condition.",
+        "Check the destination's official entry requirements and the State Department country information.",
+        "Check transit points, return travel and any relevant residency or dual-nationality requirements.",
+        "Verify visa or electronic authorization needs through official channels and track application status.",
+        "Confirm child documentation, custody-related requirements and consent needs with the relevant authorities.",
+        "Compare booking names with the travel documents and ask the carrier about any discrepancy.",
+        "Record the date checked and repeat the review before departure."
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "Do not use a universal validity rule",
+      "paragraphs": [
+        "Some destinations require passport validity beyond the visit, and rules may also address blank pages or particular passport types. Write the actual requirement for your route instead of assuming 'six months everywhere.' Check the relevant government's instructions and ask the carrier about boarding requirements if the position is unclear.",
+        "The [State Department international checklist](https://travel.state.gov/en/international-travel/planning/checklist.html) points travelers toward destination research, required documents and insurance. Processing times and authorization systems change. Use current official information rather than a fixed renewal timeline copied from an old article."
+      ]
+    },
+    {
+      "kind": "table",
+      "heading": "Invented example: one family's document record",
+      "columns": [
+        "Traveler or item",
+        "Verified status",
+        "Carrying plan"
+      ],
+      "rows": [
+        [
+          "Avery's passport",
+          "Expiry checked against route rules",
+          "Avery's carry-on document pocket"
+        ],
+        [
+          "Child's passport",
+          "Name and entry requirements checked",
+          "Responsible adult's document folder"
+        ],
+        [
+          "Consent documentation",
+          "Embassy guidance reviewed; needed documents obtained",
+          "With child's original paperwork"
+        ],
+        [
+          "Insurance and bookings",
+          "Assistance number and references saved",
+          "Offline copy plus separate paper record"
+        ]
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "Children need a separate check",
+      "paragraphs": [
+        "Do not assume an adult's documents cover an accompanying child. [USAGov](https://www.usa.gov/travel-documents-children) explains that consent letters may be needed when a child travels alone or with one parent, and directs families to the destination embassy or consulate for entry and exit requirements.",
+        "A consent letter is not a universal substitute for custody orders or other required evidence. Where family circumstances are disputed or an order restricts travel, get appropriate legal guidance. Confirm any airline rules for an unaccompanied minor directly with that airline."
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "Separate originals, useful copies and private data",
+      "paragraphs": [
+        "Keep required originals accessible during the journey, not in a checked bag that may be unavailable at the desk. Make secure copies and keep a backup separate from the originals. Avoid posting passport numbers and full document scans in a broad group chat.",
+        "For each item, write who carries it and its location. A shared checklist can say 'passport verified; carried by Avery' without exposing all identifiers. Booking references may also allow access to personal trip details, so share them deliberately."
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "Add the records that solve a desk problem",
+      "paragraphs": [
+        "Keep flight and lodging confirmations, onward arrangements where relevant, insurance details and assistance contacts findable offline. Check destination rules for medicines and supporting documentation through official guidance; do not assume original packaging alone makes every medicine lawful to carry.",
+        "For domestic travel, use the current authority and carrier instructions rather than transferring international rules. This page does not list every accepted domestic ID or alternative process. For paper records that support the trip, see [what to keep on paper](/guides/what-to-keep-on-paper-when-you-travel)."
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "Stop if eligibility is unresolved",
+      "paragraphs": [
+        "An authorization still pending, damaged passport, name mismatch or unclear entry rule is not a box to tick optimistically. Contact the issuing authority, destination officials or carrier as appropriate before departure. Do not treat an agent's informal reassurance as a substitute for an official requirement.",
+        "If a required passport is lost abroad, use [the lost-passport preparation guide](/guides/lost-passport-wallet-or-phone-abroad-what-to-have-ready). Preserve copies and reference details, but follow the actual replacement process rather than expecting a scan to board you."
+      ]
+    },
+    {
+      "kind": "faq",
+      "items": [
+        {
+          "q": "Does every passport need six months left?",
+          "a": "No universal six-month rule applies to every international route. Requirements depend on destination, nationality, passport type and sometimes transit or residence status. Check official information for your actual journey and record the rule beside the expiry date rather than relying on the expiry alone."
+        },
+        {
+          "q": "Should one adult carry all the documents?",
+          "a": "Assign responsibility deliberately and tell the relevant travelers where their documents are. Consider separation, access and the risk of losing one folder. There is no single best arrangement for every group; the important thing is knowing who has each original when it is needed."
+        },
+        {
+          "q": "Is a consent letter always mandatory for a child?",
+          "a": "Requirements vary by country, travel arrangement and family circumstances. USAGov says such letters may be needed and recommends checking with the destination embassy or consulate. Ask about language, notarization and any additional evidence rather than assuming a generic letter meets all requirements."
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "name": "U.S. Department of State: International travel checklist",
+      "url": "https://travel.state.gov/en/international-travel/planning/checklist.html",
+      "retrieved": "2026-11-17",
+      "note": "Destination research, required documents and insurance; specific entry rules need separate checks."
+    },
+    {
+      "name": "USAGov: Children's international travel documents",
+      "url": "https://www.usa.gov/travel-documents-children",
+      "retrieved": "2026-11-17",
+      "note": "Consent documents and entry/exit rules vary; confirm with the destination embassy."
+    }
+  ],
+  "visuals": [
+    {
+      "title": "Four document checks",
+      "kicker": "Repeat for each traveler",
+      "steps": [
+        {
+          "label": "Identity",
+          "detail": "Check passport name, expiry and condition."
+        },
+        {
+          "label": "Permission",
+          "detail": "Verify destination and transit requirements."
+        },
+        {
+          "label": "Family documents",
+          "detail": "Confirm any child or custody-related paperwork."
+        },
+        {
+          "label": "Carrying plan",
+          "detail": "Assign the original and secure backup."
+        }
+      ],
+      "caption": "Verification and packing are separate jobs.",
+      "alt": "Four checks cover identity, entry permission, child documents and who carries originals.",
+      "kind": "sequence"
+    },
+    {
+      "title": "Original, copy and index",
+      "kicker": "Different roles",
+      "steps": [
+        {
+          "label": "Original",
+          "detail": "Meets the actual document requirement."
+        },
+        {
+          "label": "Secure copy",
+          "detail": "Preserves details for a loss or replacement request."
+        },
+        {
+          "label": "Short index",
+          "detail": "Shows status, owner and location without every identifier."
+        }
+      ],
+      "caption": "A copy supports recovery; it does not replace the required original.",
+      "alt": "Three record types distinguish required originals, secure copies and a low-detail index.",
+      "kind": "compare"
+    }
+  ],
+  "worksheet": {
+    "title": "Per-traveler document verification record",
+    "prompt": "Check one person against every country and transit point on the route.",
+    "fields": [
+      "Traveler and exact booking name",
+      "Passport expiry and condition",
+      "Official requirement and URL",
+      "Authorization status",
+      "Child documentation if applicable",
+      "Original carrier and location",
+      "Backup location",
+      "Date checked and unresolved issue"
+    ]
+  },
+  "research": {
+    "primaryQuery": "travel document checklist",
+    "supportingQueries": [
+      "international travel paperwork checklist",
+      "travel documents for each family member"
+    ],
+    "intent": "US-citizen international-trip document verification and carrying record.",
+    "sourceChecks": [
+      "https://travel.state.gov/en/international-travel/planning/checklist.html - Destination research, required documents and insurance; specific entry rules need separate checks.",
+      "https://www.usa.gov/travel-documents-children - Consent documents and entry/exit rules vary; confirm with the destination embassy."
+    ],
+    "limitations": [
+      "International air-travel starter for US citizens, not a rulebook for every nationality or travel mode.",
+      "No current destination-specific validity rule, visa requirement or passport processing time is asserted.",
+      "TSA page fetch was blocked; no ConfirmID price or domestic-ID exception is stated.",
+      "No keyword-volume dataset was available. Saved Reddit leads were qualitative only; Quora was blocked in the saved research."
+    ]
+  }
+}

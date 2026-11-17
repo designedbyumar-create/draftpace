@@ -1,0 +1,219 @@
+{
+  "slug": "flight-changed-what-else-is-affected",
+  "title": "Flight schedule changed? Check the rest of your trip",
+  "dek": "Compare the new itinerary before accepting it, then check airport transport, connections, hotel arrival and other bookings against the revised times.",
+  "metaDescription": "Compare the new itinerary before accepting it, then check airport transport, connections, hotel arrival and other bookings against the revised times.",
+  "updatedAt": "2026-11-17",
+  "body": [
+    {
+      "kind": "paragraphs",
+      "paragraphs": [
+        "When a flight schedule changes, compare the whole revised itinerary before accepting it. Decide whether to travel, request another option or pursue an applicable refund. Then check every booking that depends on the affected departure or arrival, including transport before the flight. A change can move obligations in both directions.",
+        "The airline email may describe a minor adjustment while your airport ride, check-in time or separate onward ticket no longer works. This guide is about that planning sweep, not disruption compensation. The US refund guidance cited here applies to flights to, from or within the United States; other jurisdictions and contracts can differ."
+      ]
+    },
+    {
+      "kind": "list",
+      "heading": "Check the changed flight first",
+      "checkable": true,
+      "items": [
+        "Save the original and revised itinerary, notification time, booking reference and any response deadline. Confirm that the message matches the booking on the airline's official site.",
+        "Compare dates, local times, airports, connections, operating carriers and cabin, not only the departure hour. A midnight crossing can change the hotel night you need.",
+        "Check whether the itinerary is actually ticketed and whether connections are on one ticket or separate tickets. One email containing several bookings does not prove a protected connection.",
+        "Ask about alternatives and applicable refund options before selecting accept, credit or cancellation. Do not ignore a response deadline while deciding.",
+        "Once your flight decision is confirmed, record the new facts and work through transport, accommodation, activities and people relying on the old plan."
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "The refund question is separate from the planning question",
+      "paragraphs": [
+        "[US DOT's current refund guidance](https://www.transportation.gov/individuals/aviation-consumer-protection/refunds) identifies cancellation and significant itinerary changes as refund situations when the passenger declines travel and relevant alternatives. Its significant-change categories include specified early-departure or late-arrival thresholds, airport changes, added connections and other conditions. A schedule change does not automatically create reimbursement for every independent hotel or transfer.",
+        "Ask the airline or ticket agent to identify the available options for your booking and which entity is responsible for the refund. Accepting travel or a voucher can change the position. For UK-covered flights, start with the [CAA disruption guidance](https://www.caa.co.uk/air-passengers/travel-problems-and-rights/flight-delays-and-cancellations/) instead of importing US thresholds."
+      ]
+    },
+    {
+      "kind": "table",
+      "heading": "Walk the trip in both directions",
+      "columns": [
+        "Booking",
+        "A later arrival may affect",
+        "An earlier departure may affect"
+      ],
+      "rows": [
+        [
+          "Airport transport",
+          "Pickup window, last shuttle or car-rental desk hours.",
+          "The ride from home and how early the driver must arrive."
+        ],
+        [
+          "Accommodation",
+          "Late-arrival guarantee, overnight date or missed first night.",
+          "Checkout, luggage storage or the previous night's stay."
+        ],
+        [
+          "Other travel",
+          "Separate tickets, train departures and ferry cutoffs.",
+          "The incoming service used to reach the airport."
+        ],
+        [
+          "People and activities",
+          "Host pickup, childcare handover, dinner or a tour.",
+          "Work departure time, pet care and anyone sharing the airport ride."
+        ]
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "Invented example: arrival moves from 14:10 to 17:25",
+      "paragraphs": [
+        "A traveler chooses to keep the changed flight after reviewing the options. Their 14:45 shuttle no longer fits. They request a later pickup, then ask the hotel to confirm a later arrival and whether the room remains guaranteed. Only after the transport estimate is clear do they decide whether the 19:30 restaurant booking still works.",
+        "The next morning's tour may need no change. The traveler marks it checked rather than cancelling everything. On another trip, an earlier outbound flight would require checking the ride to the airport and previous-night accommodation as well. The useful list follows dependencies, not a rule that everything before the flight is safe."
+      ]
+    },
+    {
+      "kind": "scripts",
+      "heading": "Get a specific confirmation",
+      "items": [
+        {
+          "situation": "Hotel",
+          "line": "My revised flight arrives at [local time and date]. I expect to reach you at [time]. Please confirm the booking dates, room guarantee and late check-in arrangement in writing."
+        },
+        {
+          "situation": "Transfer provider",
+          "line": "My flight number and arrival are now [details]. Can you move this pickup, what waiting policy applies, and what happens if the flight changes again?"
+        },
+        {
+          "situation": "Airline",
+          "line": "Before I accept this itinerary, please explain the available alternative flights and refund options, and confirm whether the revised connection remains valid on my ticket."
+        }
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "Do not create a second problem while fixing the first",
+      "paragraphs": [
+        "Check cancellation and amendment terms before paying for replacements. If the trip is a package, contact the organizer before changing individual components yourself. Keep receipts, screenshots and written confirmations, but do not assume a receipt guarantees insurance or airline reimbursement. Ask the relevant provider about authorization and coverage.",
+        "Reconfirm seats, assistance, baggage arrangements and any special service affected by aircraft or routing changes. For international itineraries, check whether the revised connection adds entry, transit or overnight requirements. Stop and ask the airline or relevant official authority if those requirements are uncertain. A workable timetable is not enough if you cannot use the new route.",
+        "If the change is happening now and the connection is at risk, switch to [the missed-connection guide](/guides/flight-delayed-with-a-connection-what-to-do-first). After the plan is stable, send one updated itinerary to anyone meeting you and mark old versions superseded."
+      ]
+    },
+    {
+      "kind": "faq",
+      "items": [
+        {
+          "q": "Should I cancel my hotel as soon as my flight changes?",
+          "a": "No. First establish whether you will take the new flight, an alternative or no trip at all. Ask the hotel about amendment terms and holding the room for a late arrival. A flight change does not automatically cancel a separate hotel contract or make a nonrefundable booking refundable."
+        },
+        {
+          "q": "Can an earlier flight affect bookings before it?",
+          "a": "Yes. An earlier departure can break your incoming train, airport ride, checkout or previous-night accommodation plan. Check both the arrangements needed to reach the flight and those that follow arrival. The direction of a booking dependency matters more than whether it appears earlier or later on the page."
+        },
+        {
+          "q": "Does a flight change mean I can claim all extra costs?",
+          "a": "Not automatically. Refund rights, airline assistance, package protections and insurance coverage are different questions with different conditions. Ask the responsible provider before making a costly replacement purchase where possible. Preserve evidence of the change and your attempts to resolve it, without treating reimbursement as guaranteed."
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "name": "US DOT: refunds",
+      "url": "https://www.transportation.gov/individuals/aviation-consumer-protection/refunds",
+      "retrieved": "2026-11-17",
+      "note": "Opened: qualifying itinerary changes, declining alternatives, ancillary services and merchant-of-record refund responsibilities."
+    },
+    {
+      "name": "UK CAA: flight delays and cancellations",
+      "url": "https://www.caa.co.uk/air-passengers/travel-problems-and-rights/flight-delays-and-cancellations/",
+      "retrieved": "2026-11-17",
+      "note": "Opened current official overview and jurisdiction-specific routes; no UK compensation amount inferred."
+    }
+  ],
+  "visuals": [
+    {
+      "title": "Check both sides of the flight",
+      "kicker": "A schedule change can move more than arrival",
+      "kind": "compare",
+      "steps": [
+        {
+          "label": "Before departure",
+          "detail": "Check incoming transport, checkout and the airport arrival plan."
+        },
+        {
+          "label": "The flight",
+          "detail": "Confirm dates, airports, connection and ticket status."
+        },
+        {
+          "label": "After arrival",
+          "detail": "Recheck transfers, hotel arrival and timed onward bookings."
+        }
+      ],
+      "caption": "Earlier departures can break upstream arrangements as well as later arrivals breaking downstream ones.",
+      "alt": "A changed flight sits between checks for reaching the airport and bookings after arrival."
+    },
+    {
+      "title": "From notice to confirmed plan",
+      "kicker": "Avoid cancelling the wrong booking",
+      "kind": "timeline",
+      "steps": [
+        {
+          "label": "Save the change",
+          "detail": "Keep both itineraries and the response deadline."
+        },
+        {
+          "label": "Choose the flight",
+          "detail": "Clarify travel, alternative and applicable refund options."
+        },
+        {
+          "label": "Update dependencies",
+          "detail": "Get new provider confirmations before marking each booking resolved."
+        },
+        {
+          "label": "Tell the people",
+          "detail": "Send the revised dates and times to those relying on them."
+        }
+      ],
+      "caption": "A checked booking does not always need to be changed.",
+      "alt": "A four-stage timeline moves from a schedule-change notice to provider confirmations and updated traveler contacts."
+    }
+  ],
+  "worksheet": {
+    "title": "Flight-change dependency sweep",
+    "prompt": "Record old and new local dates and check bookings before and after the flight.",
+    "fields": [
+      "Booking reference and response deadline",
+      "Original and revised flight details",
+      "Travel decision and written confirmation",
+      "Transport before departure",
+      "Transfer and onward travel after arrival",
+      "Hotel date and late-arrival confirmation",
+      "People and activities affected",
+      "Costs, evidence and unresolved follow-up"
+    ]
+  },
+  "research": {
+    "primaryQuery": "flight schedule change what else to check",
+    "supportingQueries": [
+      "airline changed flight check hotel transfer",
+      "flight moved earlier airport transport",
+      "changed arrival date hotel booking"
+    ],
+    "intent": "Trip-dependency review after an airline schedule change, distinct from live missed-connection triage.",
+    "sourceChecks": [
+      {
+        "url": "https://www.transportation.gov/individuals/aviation-consumer-protection/refunds",
+        "verified": "Opened: qualifying itinerary changes, declining alternatives, ancillary services and merchant-of-record refund responsibilities."
+      },
+      {
+        "url": "https://www.caa.co.uk/air-passengers/travel-problems-and-rights/flight-delays-and-cancellations/",
+        "verified": "Opened current official overview and jurisdiction-specific routes; no UK compensation amount inferred."
+      }
+    ],
+    "limitations": [
+      "Rights depend on jurisdiction, itinerary and acceptance decisions; no universal reimbursement promise.",
+      "Provider amendment, package and insurance terms require individual checks.",
+      "Saved Quora was blocked; social posts are not used to establish passenger rights."
+    ]
+  }
+}

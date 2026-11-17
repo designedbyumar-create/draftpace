@@ -1,0 +1,198 @@
+{
+  "slug": "why-you-keep-thinking-about-a-task-and-not-doing-it",
+  "title": "Why you keep thinking about a task but never start",
+  "dek": "Turn a recurring admin thought into one visible action, identify what is missing, and leave a restart note without making another long list.",
+  "metaDescription": "Turn a recurring admin thought into one visible action, identify what is missing, and leave a restart note without making another long list.",
+  "updatedAt": "2026-11-17",
+  "body": [
+    {
+      "kind": "paragraphs",
+      "paragraphs": [
+        "If you keep thinking about a task but not doing it, write the next observable action and the thing you need to do it. Then either make that move or give it a specific return point. Repeating the task's name is a reminder; it is not yet a workable start.",
+        "The insurance renewal can turn up in the shower, at dinner and just as you switch off the light. You have not forgotten it. What is missing may be a decision, a document, an uncomfortable conversation or enough energy. This guide investigates one stalled admin task, not the psychological cause of recurring thoughts."
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "Find the unanswered question",
+      "paragraphs": [
+        "Write the thought in your own words: 'I need to sort the insurance.' Ask what information would change your next move. If you do not know the renewal date, finding it comes before comparing policies. If you cannot choose cover, the missing piece is a decision rather than another reminder.",
+        "Do not assume every delay needs a smaller task. Sometimes you need an answer from another person, accessible paperwork, money or permission to stop pursuing it. Name that constraint. A well-worded action will not supply a missing resource."
+      ]
+    },
+    {
+      "kind": "list",
+      "heading": "Make a one-task record",
+      "checkable": true,
+      "items": [
+        "Write the unfinished outcome without adding the other jobs it reminds you of.",
+        "Check the actual deadline or consequence before choosing when to return.",
+        "Name the next visible move: open the letter, copy the number or draft one question.",
+        "Put the necessary document, contact or decision beside that move.",
+        "Choose to act now, schedule a realistic return, request help or deliberately drop the task.",
+        "After acting, record what changed and what remains unresolved."
+      ]
+    },
+    {
+      "kind": "table",
+      "heading": "Invented example: a renewal that keeps returning",
+      "columns": [
+        "What is known",
+        "What is missing",
+        "Next action"
+      ],
+      "rows": [
+        [
+          "The renewal email exists",
+          "The date and price are unread",
+          "Copy those two facts"
+        ],
+        [
+          "The price increased",
+          "Whether the cover changed",
+          "Ask for a comparison"
+        ],
+        [
+          "A reply is expected",
+          "Whether to renew or switch",
+          "Set a decision appointment"
+        ]
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "Keep the record outside the worry",
+      "paragraphs": [
+        "Suppose the renewal is in three weeks. Reading it does not finish the insurance job, but it replaces an unknown date with a real one. Your note could say: 'Renewal email saved in Insurance; compare the excess tomorrow after lunch.' That is useful movement even if it still feels unpleasant.",
+        "If the thought returns tonight, check whether it contains new information. A newly remembered claim matters. Repeating 'I must do this' does not require another planning session. Point yourself back to the saved step instead of rebuilding the plan."
+      ]
+    },
+    {
+      "kind": "scripts",
+      "heading": "Ask for the missing piece",
+      "items": [
+        {
+          "situation": "A decision needs help",
+          "line": "I am choosing between these two options. Could you help me compare the differences, without deciding for me?"
+        },
+        {
+          "situation": "Someone else holds the information",
+          "line": "I need the reference number before I can continue. Can you send it, or tell me who holds it?"
+        }
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "When to change the approach",
+      "paragraphs": [
+        "If you can name the step but cannot begin it, use [the ten-minute sequence](/guides/task-paralysis-what-to-do-in-the-next-ten-minutes). If the difficulty is admitting a long delay, use [dealing with something you have put off](/guides/how-to-deal-with-something-you-have-put-off). Those are different jobs even when they concern the same letter.",
+        "The [CCI resources](https://www.cci.health.wa.gov.au/Resources/Looking-After-Yourself/Procrastination) offer practical self-help, not an explanation of your particular difficulty. If thoughts disrupt sleep or starting difficulties persist across daily life, discuss them with a clinician. [NIMH's adult ADHD information](https://www.nimh.nih.gov/health/publications/adhd-what-you-need-to-know) describes assessment; one stalled task is not a diagnosis."
+      ]
+    },
+    {
+      "kind": "faq",
+      "items": [
+        {
+          "q": "Should I write it down every time?",
+          "a": "Usually one reliable record is enough for the admin job. Add a note when you remember a relevant fact, not simply because the same concern returns. If repeated checking itself becomes distressing or difficult to control, seek professional advice rather than adding more reminders."
+        },
+        {
+          "q": "What if the next action is a decision?",
+          "a": "Name the options, the information still needed and when an answer is required. You may need to read one comparison or ask one question first. Do not disguise an unresolved choice as 'just make the call' if the call depends on it."
+        },
+        {
+          "q": "Does this mean I have ADHD?",
+          "a": "No. Thinking about unfinished work without starting can occur for many reasons. Look at the wider pattern and its effect on your life. A clinician can assess persistent difficulties; the record here is simply a way to make one admin task easier to resume."
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "name": "Centre for Clinical Interventions: Procrastination",
+      "url": "https://www.cci.health.wa.gov.au/Resources/Looking-After-Yourself/Procrastination",
+      "retrieved": "2026-11-17",
+      "note": "Practical self-help strategies, not diagnosis or guaranteed relief."
+    },
+    {
+      "name": "NIMH: ADHD in adults",
+      "url": "https://www.nimh.nih.gov/health/publications/adhd-what-you-need-to-know",
+      "retrieved": "2026-11-17",
+      "note": "Functional difficulties and assessment; trouble starting alone does not establish ADHD."
+    }
+  ],
+  "visuals": [
+    {
+      "title": "From thought to action",
+      "kicker": "One renewal task",
+      "steps": [
+        {
+          "label": "Thought",
+          "detail": "Sort the insurance names an outcome."
+        },
+        {
+          "label": "Missing fact",
+          "detail": "Read the renewal date and current price."
+        },
+        {
+          "label": "Action",
+          "detail": "Save the facts and choose the next comparison."
+        }
+      ],
+      "caption": "Identify missing information before adding another reminder.",
+      "alt": "Three steps convert an insurance worry into a dated, observable action.",
+      "kind": "sequence"
+    },
+    {
+      "title": "A useful restart note",
+      "kicker": "Keep what changes the next move",
+      "steps": [
+        {
+          "label": "Location",
+          "detail": "Record where the letter or email is saved."
+        },
+        {
+          "label": "Progress",
+          "detail": "State what you checked or completed."
+        },
+        {
+          "label": "Next move",
+          "detail": "Name one action and its return point."
+        }
+      ],
+      "caption": "A restart note preserves your place without reproducing the project.",
+      "alt": "A note records document location, completed work and the next action.",
+      "kind": "record"
+    }
+  ],
+  "worksheet": {
+    "title": "One recurring task record",
+    "prompt": "Choose one thought and identify the missing piece.",
+    "fields": [
+      "Unfinished outcome",
+      "Actual deadline",
+      "Missing fact or decision",
+      "Next visible action",
+      "Material or contact needed",
+      "Return point",
+      "Restart note"
+    ]
+  },
+  "research": {
+    "primaryQuery": "keep thinking about a task",
+    "supportingQueries": [
+      "thinking about tasks instead of doing them",
+      "stop mentally rehearsing admin"
+    ],
+    "intent": "Convert a recurring thought about one unfinished task into a concrete action, distinct from immediate task paralysis.",
+    "sourceChecks": [
+      "https://www.cci.health.wa.gov.au/Resources/Looking-After-Yourself/Procrastination - Practical self-help strategies, not diagnosis or guaranteed relief.",
+      "https://www.nimh.nih.gov/health/publications/adhd-what-you-need-to-know - Functional difficulties and assessment; trouble starting alone does not establish ADHD."
+    ],
+    "limitations": [
+      "No individual psychological cause is inferred.",
+      "The record is an editorial aid, not a validated intervention.",
+      "No keyword-volume dataset was available. Saved Reddit leads were qualitative only; Quora was blocked in the saved research."
+    ]
+  }
+}

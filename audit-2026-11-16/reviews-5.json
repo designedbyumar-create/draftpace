@@ -1,0 +1,517 @@
+[
+  {
+    "url": "https://draftpace.com/guides/what-is-due-on-my-car-right-now",
+    "title": "How to know what maintenance your car is due for",
+    "intent": "Determine which service is due now from the correct manufacturer schedule and service evidence.",
+    "verdict": "partial",
+    "priority": "P1",
+    "findings": [
+      {
+        "type": "problem",
+        "evidence": "Five-step method says 'If both are past, it's due now', despite opening/FAQ correctly saying either limit triggers service.",
+        "fix": "Replace with 'If either limit is reached, it is due'; show one example already overdue by time only."
+      },
+      {
+        "type": "problem",
+        "evidence": "Intro allows a rough date labeled rough; later instructions reject memory dates. FAQ says a job with no date cannot be overdue.",
+        "fix": "Separate unknown from not due. Preserve estimates as unverified history, and ask a mechanic to assess unknown safety-critical jobs rather than waiting indefinitely for a new service date."
+      },
+      {
+        "type": "strength",
+        "evidence": "Four-job example distinguishes mileage-only rotation, time-only brake fluid and dual-limit oil; calculations are explicitly illustrative.",
+        "fix": "Keep this worked example, but show both remaining thresholds rather than treating percentage elapsed as a forecast of which will be reached first."
+      }
+    ],
+    "research": {
+      "general_web": [
+        {
+          "url": "https://www.bar.ca.gov/auto-repairs",
+          "note": "Verified official guidance prioritizes manufacturer schedules and records."
+        }
+      ],
+      "reddit": [
+        {
+          "url": "https://www.reddit.com/r/rav4club/comments/1k7fmcx",
+          "note": "Users track both elapsed months and mileage, particularly for low-mileage vehicles."
+        }
+      ],
+      "users_need": [
+        "An actionable due/soon/unknown list without false reassurance.",
+        "A way to handle missing history and dashboard maintenance reminders."
+      ],
+      "quora": "Blocked by robots.txt in stored research; no Quora evidence claimed.",
+      "search_volume": "unknown"
+    },
+    "suggested_title": "How to know what maintenance your car is due for",
+    "proposed_outline": [
+      "Find the correct schedule",
+      "Record current date and odometer",
+      "Calculate both remaining limits",
+      "Due if either limit is reached",
+      "Unknown history requires assessment",
+      "Worked examples and recording the result"
+    ],
+    "image_assessment": {
+      "inspection": "Metadata and alt text only; no visual or AI-origin claim.",
+      "assessment": "Alt describes a four-job table with an unknown-date row. Useful subject, but confirm the figure uses the corrected either-limit rule."
+    },
+    "recommendation": "improve",
+    "limitations": [
+      "Search volume unknown; parent will join GSC. Full stored article and research read; external leads are not independently established facts. Images not visually inspected in this review. Quora blocked by robots.txt. Product behavior not tested."
+    ]
+  },
+  {
+    "url": "https://draftpace.com/guides/what-to-tell-a-mechanic-before-work-starts",
+    "title": "What to tell a mechanic before the work starts",
+    "intent": "Describe a problem and authorize a clearly bounded repair without surprise work.",
+    "verdict": "fulfilled",
+    "priority": "P2",
+    "findings": [
+      {
+        "type": "strength",
+        "evidence": "Six ready-to-say scripts cover drop-off, spending limit, diagnosis, extras, deferral and old parts; diagnostic fees are explicitly discussed.",
+        "fix": "Retain the scripts and the instruction to wait for the owner's answer."
+      },
+      {
+        "type": "problem",
+        "evidence": "Symptom script only gives squealing during slowing; most of the article focuses on authorization rather than the diagnostic information implied by its broad title.",
+        "fix": "Add onset, speed/temperature conditions, warning-light photo, recent work, and safe-to-drive question in a short intake block."
+      },
+      {
+        "type": "problem",
+        "evidence": "Budget script gives $250 but does not explicitly establish whether tax, supplies, diagnosis and teardown/reassembly are included.",
+        "fix": "Add an all-in scope/fee confirmation and ask about storage or reassembly costs before declining work after diagnosis."
+      },
+      {
+        "type": "strength",
+        "evidence": "State variation, California example, escalation to manager/consumer agency and warning against simply taking the car are carefully scoped.",
+        "fix": "Keep legal boundaries and link directly to the regulator; add exceptions for parts that must be returned for warranty/core exchange."
+      }
+    ],
+    "research": {
+      "general_web": [
+        {
+          "url": "https://consumer.ftc.gov/articles/0211-auto-repair-basics",
+          "note": "Verified FTC page supports written estimates, diagnosis fees and approval boundaries."
+        },
+        {
+          "url": "https://www.bar.ca.gov/auto-repairs",
+          "note": "Verified California regulator page, not a nationwide rule."
+        },
+        {
+          "url": "https://abqmechanic.com/blog/prepare-for-auto-repair-appointment-albuquerque",
+          "note": "Stored search lead frames the additional need to explain symptom onset and conditions; not a legal authority."
+        }
+      ],
+      "reddit": [
+        {
+          "url": "https://www.reddit.com/r/askcarguys/comments/1kxmyi3",
+          "note": "Adjacent user problem: uncertainty about prior work makes communicating missing history important; not direct evidence of estimate law."
+        }
+      ],
+      "users_need": [
+        "A symptom description plus written authorization, total cost and contact arrangements."
+      ],
+      "quora": "Blocked by robots.txt in stored research; no Quora evidence claimed.",
+      "search_volume": "unknown"
+    },
+    "suggested_title": "What to tell a mechanic before the work starts",
+    "proposed_outline": [
+      "Copyable drop-off note",
+      "Describe symptoms without diagnosing",
+      "Agree diagnosis and all-in limits",
+      "Approve or decline extras",
+      "Parts and pickup",
+      "State-specific disputes"
+    ],
+    "image_assessment": {
+      "inspection": "Metadata and alt text only; no visual or AI-origin claim.",
+      "assessment": "Alt describes a three-sentence repair-shop card. Matches authorization intent; no readability assessment made."
+    },
+    "recommendation": "improve",
+    "limitations": [
+      "Search volume unknown; parent will join GSC. Full stored article and research read; external leads are not independently established facts. Images not visually inspected in this review. Quora blocked by robots.txt. Product behavior not tested."
+    ]
+  },
+  {
+    "url": "https://draftpace.com/guides/used-car-no-service-records-what-to-do",
+    "title": "Bought a used car with no service records? What to do",
+    "intent": "Recover available service evidence and establish a safe maintenance baseline without unnecessary replacement.",
+    "verdict": "partial",
+    "priority": "P1",
+    "findings": [
+      {
+        "type": "factual error",
+        "evidence": "Table and FAQ say vehicle-history reports cannot show oil changes/routine maintenance; 'What can go wrong' says they record title and insurance events, not oil changes.",
+        "fix": "Correct to: reports may include reported services, including oil changes, but are incomplete and cannot establish mechanical condition. Distinguish NMVTIS-style title data from CARFAX service data."
+      },
+      {
+        "type": "problem",
+        "evidence": "First-week advice allows 'wait for a real date' and 'do nothing' if recorded; example notes tires at wear limit but emphasizes changing oil/coolant and leaves timing belt unknown.",
+        "fix": "Make inspection findings drive a dated safety-priority plan; explicitly resolve wear-limit tires and manufacturer timing-belt requirements rather than making recordkeeping seem sufficient."
+      },
+      {
+        "type": "strength",
+        "evidence": "Seller statements are labeled separately from receipts, and inspection is recommended before purchase or as a post-purchase baseline.",
+        "fix": "Preserve the provenance distinction and pre-/post-purchase branches."
+      },
+      {
+        "type": "problem",
+        "evidence": "Related-link text suggests calculating what is due from purchase date, which does not establish last service.",
+        "fix": "Say purchase date starts ownership records, not a fresh maintenance interval."
+      }
+    ],
+    "research": {
+      "general_web": [
+        {
+          "url": "https://www.carfax.com/buying/how-to-read-a-carfax-report",
+          "note": "Verified CARFAX description explicitly lists reported oil changes and tire rotations."
+        },
+        {
+          "url": "https://consumer.ftc.gov/articles/buying-used-car-dealer",
+          "note": "Article cites FTC inspection guidance; retained as source lead pending any vehicle-specific decision."
+        }
+      ],
+      "reddit": [
+        {
+          "url": "https://www.reddit.com/r/UsedCars/comments/1sfxs39/ysk_vehicle_history_reports_carfaxequifaxetc_do/",
+          "note": "Owner reports substantial shop work missing from CARFAX: evidence of user uncertainty, not proof all reports omit services."
+        },
+        {
+          "url": "https://www.reddit.com/r/askcarguys/comments/1kxmyi3",
+          "note": "Buyer asks how to discover fluid-service timing after a seller cannot provide useful details."
+        }
+      ],
+      "users_need": [
+        "Recover records, judge their reliability, and decide what must be inspected or serviced now."
+      ],
+      "quora": "Blocked by robots.txt in stored research; no Quora evidence claimed.",
+      "search_volume": "unknown"
+    },
+    "suggested_title": "Bought a used car with no service records? What to do",
+    "proposed_outline": [
+      "Before buying versus already bought",
+      "Seller, shops, manufacturer and reports",
+      "What a missing record does not prove",
+      "Inspection and safety priorities",
+      "Manufacturer-specific unknown-service plan",
+      "Start a dated evidence-backed log"
+    ],
+    "image_assessment": {
+      "inspection": "Metadata and alt text only; no visual or AI-origin claim.",
+      "assessment": "Alt describes five steps for absent records; ensure its revised sequence emphasizes safety assessment, not only administration."
+    },
+    "recommendation": "improve",
+    "limitations": [
+      "Search volume unknown; parent will join GSC. Full stored article and research read; external leads are not independently established facts. Images not visually inspected in this review. Quora blocked by robots.txt. Product behavior not tested."
+    ]
+  },
+  {
+    "url": "https://draftpace.com/guides/car-maintenance-log-what-to-write-down",
+    "title": "Car maintenance log: what to write down",
+    "intent": "Create a simple, maintainable service record in paper or spreadsheet form.",
+    "verdict": "fulfilled",
+    "priority": "P2",
+    "findings": [
+      {
+        "type": "strength",
+        "evidence": "Five sample entries cover scheduled work, repairs and DIY, with specific descriptions such as rear pads and oil grade.",
+        "fix": "Keep the varied examples and minimum three-field approach."
+      },
+      {
+        "type": "problem",
+        "evidence": "Every example uses month/day without a year, while article presents each as a complete entry and recommends a log lasting years.",
+        "fix": "Use full dates with years in every sample and specify units once at the top; kilometers are valid for non-miles records."
+      },
+      {
+        "type": "problem",
+        "evidence": "'Anything about you' groups VIN with address/account numbers and says the car's record does not need it.",
+        "fix": "Distinguish vehicle identity from personal financial information; offer make/model/year and VIN or another stable identifier in the header, especially for receipts or sale."
+      },
+      {
+        "type": "strength",
+        "evidence": "Explicitly distinguishes service history from planned jobs and tells readers to retain receipt photos; product limits include no export/upload.",
+        "fix": "Preserve these limits; add receipt reference and warranty note as optional fields rather than imposing a larger system."
+      }
+    ],
+    "research": {
+      "general_web": [
+        {
+          "url": "https://www.bar.ca.gov/auto-repairs",
+          "note": "Official recordkeeping and maintenance context verified."
+        },
+        {
+          "url": "https://staticar.app/en/blog/carnet-entretien-voiture",
+          "note": "Stored general-web lead offers printable service log; indicates users may expect a usable blank layout, not independently endorsed."
+        }
+      ],
+      "reddit": [
+        {
+          "url": "https://www.reddit.com/r/rav4club/comments/1k7fmcx",
+          "note": "Users describe date/mileage/service/shop notes plus receipt photos."
+        },
+        {
+          "url": "https://www.reddit.com/r/cars/comments/oo6gkr/to_people_who_do_diy_maintenance_how_do_you_make/",
+          "note": "DIY users need records that survive resale and include parts and fluids."
+        }
+      ],
+      "users_need": [
+        "A copyable log that remains unambiguous across years and vehicles."
+      ],
+      "quora": "Blocked by robots.txt in stored research; no Quora evidence claimed.",
+      "search_volume": "unknown"
+    },
+    "suggested_title": "Car maintenance log: what to write down",
+    "proposed_outline": [
+      "Blank three-column log",
+      "Five complete dated examples",
+      "Optional receipt, shop, part and warranty fields",
+      "Unknown history versus completed work",
+      "One master plus backup",
+      "Using the log at service or sale"
+    ],
+    "image_assessment": {
+      "inspection": "Metadata and alt text only; no visual or AI-origin claim.",
+      "assessment": "Figure alt says three entries while HTML sample has five. Not necessarily an error, but label it as a shortened illustration; appearance unverified."
+    },
+    "recommendation": "improve",
+    "limitations": [
+      "Search volume unknown; parent will join GSC. Full stored article and research read; external leads are not independently established facts. Images not visually inspected in this review. Quora blocked by robots.txt. Product behavior not tested."
+    ]
+  },
+  {
+    "url": "https://draftpace.com/guides/selling-your-car-with-a-service-history",
+    "title": "Selling your car: how to present your service history",
+    "intent": "Present credible, easy-to-check maintenance evidence to a private buyer without overstating its value.",
+    "verdict": "partial",
+    "priority": "P1",
+    "findings": [
+      {
+        "type": "factual error",
+        "evidence": "Body says history reports show title/accident events, 'not oil changes'; FAQ softens this to mostly not routine maintenance.",
+        "fix": "Replace both with consistent explanation that reported servicing may appear, but coverage is incomplete; CARFAX explicitly includes oil changes."
+      },
+      {
+        "type": "problem",
+        "evidence": "'What you say and hand over is the whole disclosure' follows the FTC rule's exclusion of private sellers.",
+        "fix": "Delete the legal inference: exemption from the federal dealer rule does not settle state private-sale disclosure, title or odometer obligations. Link state agency guidance without claiming a national rule."
+      },
+      {
+        "type": "problem",
+        "evidence": "Instructions hand over receipts and put them behind the summary but omit removal of personal addresses, payment details and unrelated information.",
+        "fix": "Add a redaction/copy step while preserving vehicle identifiers, dates, mileage and shop details needed to verify work."
+      },
+      {
+        "type": "strength",
+        "evidence": "Example marks its 41,000-mile starting point and missing earlier records; refuses to promise a resale-value uplift.",
+        "fix": "Keep the honest gap line and no-guaranteed-price framing."
+      },
+      {
+        "type": "problem",
+        "evidence": "Can/cannot table says a self-kept record shows there is nothing to hide but cannot show work predating ownership.",
+        "fix": "Use evidence-based wording: records do not prove honesty, and inherited invoices can document earlier service even if the seller cannot personally attest to it."
+      }
+    ],
+    "research": {
+      "general_web": [
+        {
+          "url": "https://www.carfax.com/buying/how-to-read-a-carfax-report",
+          "note": "Verified provider documentation contradicts categorical oil-change exclusion."
+        },
+        {
+          "url": "https://www.ftc.gov/business-guidance/resources/dealers-guide-used-car-rule",
+          "note": "Article's federal dealer-rule source; do not extend its scope into blanket state private-sale advice."
+        }
+      ],
+      "reddit": [
+        {
+          "url": "https://www.reddit.com/r/askcarsales/comments/1uujwcf/does_losing_your_maintenance_records_actually/",
+          "note": "Stored Reddit lead asks whether lost records affect price or willingness to buy; no numeric uplift justified."
+        },
+        {
+          "url": "https://www.reddit.com/r/CarTalkUK/comments/vdg1pl",
+          "note": "Stored discussion differentiates DIY evidence from garage servicing; UK anecdotes are not US law."
+        }
+      ],
+      "users_need": [
+        "A credible summary, supporting evidence, privacy-safe handover and realistic expectations."
+      ],
+      "quora": "Blocked by robots.txt in stored research; no Quora evidence claimed.",
+      "search_volume": "unknown"
+    },
+    "suggested_title": "Selling your car: how to present your service history",
+    "proposed_outline": [
+      "What buyers can verify",
+      "Filled-in summary with gaps",
+      "Match each entry to evidence",
+      "Redact personal details",
+      "Explain DIY and missing history",
+      "Inspection and state sale paperwork"
+    ],
+    "image_assessment": {
+      "inspection": "Metadata and alt text only; no visual or AI-origin claim.",
+      "assessment": "Alt describes three chronological entries while body supplies four service entries plus an ownership line. No visual inspection; verify consistency during update."
+    },
+    "recommendation": "improve",
+    "limitations": [
+      "Search volume unknown; parent will join GSC. Full stored article and research read; external leads are not independently established facts. Images not visually inspected in this review. Quora blocked by robots.txt. Product behavior not tested."
+    ]
+  },
+  {
+    "url": "https://draftpace.com/guides/car-maintenance-by-mileage-start-with-your-manual",
+    "title": "Car maintenance schedule by mileage: how to read your manual",
+    "intent": "Find model-specific maintenance intervals and distinguish time, mileage, severe-use and inspection requirements.",
+    "verdict": "partial",
+    "priority": "P1",
+    "findings": [
+      {
+        "type": "factual error",
+        "evidence": "Generic table gives tire tread/pressure check every 6,000 miles or three months; milestone section ties a pressure look to 5,000-6,000 miles.",
+        "fix": "Replace pressure interval with NHTSA's at-least-monthly cold-pressure check and separate this routine safety check from scheduled rotation."
+      },
+      {
+        "type": "problem",
+        "evidence": "Thirteen exact generic replacement intervals are introduced as reasonable starting points and offered as placeholders without item-level manufacturer support.",
+        "fix": "Make the primary artifact a blank schedule-extraction worksheet; if illustrative numbers remain, attribute each to a specified year/model and never substitute them for an unavailable manual."
+      },
+      {
+        "type": "problem",
+        "evidence": "Companion severe-duty toggle halves any typed interval and is suggested when a manual lacks hard-use figures.",
+        "fix": "Do not recommend a universal halving rule. Tell readers to obtain manufacturer/dealer clarification for applicable tasks; flag this as product behavior, not validated maintenance advice."
+      },
+      {
+        "type": "strength",
+        "evidence": "Clearly distinguishes inspect from replace, miles from months, and normal from severe conditions.",
+        "fix": "Retain the manual-reading explanation and worked two-column example; add oil-life-monitor systems as a separate case."
+      }
+    ],
+    "research": {
+      "general_web": [
+        {
+          "url": "https://www.nhtsa.gov/vehicle-safety/tires",
+          "note": "Verified monthly cold-pressure guidance directly contradicts quarterly generic row."
+        },
+        {
+          "url": "https://www.aaa.com/AAA/common/AAR/files/Maintenance-Reminders.pdf",
+          "note": "Stored authoritative lead distinguishes mileage-based reminders from condition-monitoring systems."
+        }
+      ],
+      "reddit": [
+        {
+          "url": "https://www.reddit.com/r/COROLLA/comments/1qfsalf/maintenance_schedule_time_vs_mileage/",
+          "note": "Stored discussion shows low-mileage owners' uncertainty about elapsed-time maintenance."
+        },
+        {
+          "url": "https://www.reddit.com/r/Cartalk/comments/12pka3k",
+          "note": "Stored first-time-owner query asks what a maintenance notification actually requires."
+        }
+      ],
+      "users_need": [
+        "The actual schedule for their vehicle, not an unsupported universal 30/60/90k chart."
+      ],
+      "quora": "Blocked by robots.txt in stored research; no Quora evidence claimed.",
+      "search_volume": "unknown"
+    },
+    "suggested_title": "Car maintenance schedule by mileage: how to read your manual",
+    "proposed_outline": [
+      "Identify year, engine and market",
+      "Locate official schedule",
+      "Extract inspect/replace and time/mileage rules",
+      "Severe conditions by item",
+      "Dashboard oil-life reminders",
+      "Monthly safety checks",
+      "Worked model-specific example"
+    ],
+    "image_assessment": {
+      "inspection": "Metadata and alt text only; no visual or AI-origin claim.",
+      "assessment": "Alt describes a generic interval chart. Its numbers need the same correction/source treatment as the HTML; no visual judgment."
+    },
+    "recommendation": "improve",
+    "limitations": [
+      "Search volume unknown; parent will join GSC. Full stored article and research read; external leads are not independently established facts. Images not visually inspected in this review. Quora blocked by robots.txt. Product behavior not tested."
+    ]
+  },
+  {
+    "url": "https://draftpace.com/guides/winter-car-prep-checklist",
+    "title": "Winter car prep checklist: what to check before frost",
+    "intent": "Prepare a vehicle and emergency kit for freezing conditions and avoid preventable roadside risks.",
+    "verdict": "partial",
+    "priority": "P1",
+    "findings": [
+      {
+        "type": "safety gap",
+        "evidence": "Fuel section explicitly discusses running the engine for warmth while stuck, without exhaust-clearing or carbon-monoxide precautions.",
+        "fix": "Add NHTSA instructions to clear snow from exhaust and run only intermittently; link full stranded-vehicle guidance next to this advice."
+      },
+      {
+        "type": "factual ambiguity",
+        "evidence": "Section headed 'If you drive a hybrid or an electric car' says oil and spark-plug items do not apply to 'you'.",
+        "fix": "Separate battery-electric cars from hybrids: hybrids still have combustion engines and engine maintenance."
+      },
+      {
+        "type": "strength",
+        "evidence": "Useful check/result table records battery tests, cold tire pressure, coolant test status, lighting and kit dates; example admits coolant was not tested.",
+        "fix": "Keep this distinction between observed level and tested protection."
+      },
+      {
+        "type": "problem",
+        "evidence": "Opening says seven things, caption says five checks, table has eight rows, and figure alt calls itself five-item while naming six categories.",
+        "fix": "Standardize groupings and counts; this is a text/metadata inconsistency, not evidence of bad artwork."
+      },
+      {
+        "type": "problem",
+        "evidence": "Winter-tire FAQ mostly defers to a shop without helping readers prepare the decision.",
+        "fix": "Add climate/route, existing tire condition, manufacturer-approved sizes, and local chain/tire requirement checks without prescribing one universal tire."
+      }
+    ],
+    "research": {
+      "general_web": [
+        {
+          "url": "https://www.nhtsa.gov/winter-driving-tips",
+          "note": "Verified official stranded-vehicle carbon-monoxide precaution."
+        },
+        {
+          "url": "https://www.nhtsa.gov/summer-driving-tips",
+          "note": "Verified conventional and hybrid vehicles require oil checks."
+        },
+        {
+          "url": "https://www.fueleconomy.gov/feg/coldweather.shtml",
+          "note": "Article's official lead for cold-weather efficiency; percentage figures not independently rechecked in this pass."
+        }
+      ],
+      "reddit": [
+        {
+          "url": "https://www.reddit.com/r/minnesota/comments/16rr2aw/winterizing_a_vehicle/",
+          "note": "Stored users emphasize tires, coolant testing, battery and washer fluid."
+        },
+        {
+          "url": "https://www.reddit.com/r/AskChicago/comments/1wslbf7/whats_actually_worth_doing_to_get_a_car_ready_for/",
+          "note": "Stored question asks which preparations are actually worth doing in a specific winter climate."
+        }
+      ],
+      "users_need": [
+        "Prioritized checks, what needs a shop, kit contents and safe stranded-car actions."
+      ],
+      "quora": "Blocked by robots.txt in stored research; no Quora evidence claimed.",
+      "search_volume": "unknown"
+    },
+    "suggested_title": "Winter car prep checklist: what to check before frost",
+    "proposed_outline": [
+      "Climate-timed preparation",
+      "Battery and tire assessment",
+      "Visibility, coolant and heat",
+      "Hybrid versus battery-electric differences",
+      "Emergency kit",
+      "Stranded-car precautions",
+      "Dated results and follow-up"
+    ],
+    "image_assessment": {
+      "inspection": "Metadata and alt text only; no visual or AI-origin claim.",
+      "assessment": "Alt/count mismatch documented above; no visual inspection. Safety instructions must be available in text, not image alone."
+    },
+    "recommendation": "improve",
+    "limitations": [
+      "Search volume unknown; parent will join GSC. Full stored article and research read; external leads are not independently established facts. Images not visually inspected in this review. Quora blocked by robots.txt. Product behavior not tested."
+    ]
+  }
+]

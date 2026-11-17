@@ -1,0 +1,205 @@
+{
+  "slug": "how-to-check-if-your-child-learned-something",
+  "title": "Is my homeschooler learning? Check one skill",
+  "dek": "Use a short explanation, demonstration and later revisit to understand one learning goal without turning a handful of answers into a diagnosis.",
+  "metaDescription": "Use a short explanation, demonstration and later revisit to understand one learning goal without turning a handful of answers into a diagnosis.",
+  "updatedAt": "2026-11-17",
+  "body": [
+    {
+      "kind": "paragraphs",
+      "paragraphs": [
+        "To check whether your homeschooler learned something, choose one specific goal and ask them to use it, explain it or demonstrate it. Note the help they needed and revisit the skill later. Several observations tell you more than a single correct answer or a completed workbook page.",
+        "You covered fractions last term, but cannot tell whether the idea is still available without prompts. That question is narrower, and more answerable, than 'Is homeschooling working?' This guide helps choose the next teaching step. It does not assign a grade level, diagnose learning difficulties or replace a required evaluation."
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "Choose a goal small enough to observe",
+      "paragraphs": [
+        "'Understands fractions' is too broad. 'Can show why one half and two quarters represent the same amount' gives you something to look for. For reading, a goal might be explaining an event using details from a passage. For science, it could be predicting what changes when one condition changes.",
+        "Choose a response format that fits the goal and the child's communication needs. Drawing, manipulatives, speech, typing or demonstration may reveal different things. Do not mistake reluctance to speak, handwriting difficulty or slow delivery for lack of subject knowledge."
+      ]
+    },
+    {
+      "kind": "list",
+      "heading": "Run a useful short check",
+      "checkable": true,
+      "items": [
+        "Write the exact skill or idea you want to observe.",
+        "Choose a familiar example and a related new example.",
+        "Ask for a response without supplying the answer in your question.",
+        "Invite a reason, drawing or demonstration where appropriate.",
+        "Record prompts, tools and other help used, not only right or wrong.",
+        "Give feedback or reteach the specific gap.",
+        "Revisit later using another example rather than memorizing the original answer."
+      ]
+    },
+    {
+      "kind": "table",
+      "heading": "Invented example: equivalent fractions",
+      "columns": [
+        "Prompt",
+        "Observation",
+        "Teaching decision"
+      ],
+      "rows": [
+        [
+          "Show one half using four equal pieces",
+          "Chooses two pieces independently",
+          "Try another representation"
+        ],
+        [
+          "Explain why two quarters equal one half",
+          "Correct picture, uncertain explanation",
+          "Connect picture and fraction notation"
+        ],
+        [
+          "Show the same idea with thirds and sixths",
+          "Needs a model first",
+          "Practice transfer, then revisit"
+        ]
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "Use the result to choose an action",
+      "paragraphs": [
+        "In this example the child has evidence of some understanding and needs help transferring it. Calling that '67 percent mastery' would imply a precision the activity cannot support. Write the actual observation: 'Uses pieces correctly; needs a model when the denominator changes.'",
+        "Useful working labels include ready for a further challenge, needs practice on one element, needs a different explanation, or not enough information. These are planning notes, not validated categories. A tired morning or an inaccessible prompt may mean you need a different check, not a new curriculum."
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "Immediate checks and later checks do different jobs",
+      "paragraphs": [
+        "An immediate check can expose a misunderstanding before more practice reinforces it. A later check helps you see what can be retrieved after time has passed. Neither is automatically worthless. The [IES practice guide](https://ies.ed.gov/ncee/wwc/PracticeGuide/1) supports spacing learning, retrieval and explanatory questions; it does not prescribe a four-question threshold for understanding.",
+        "Leave enough time for the child to respond, and avoid converting every family interaction into a quiz. Tell them what you are trying to learn: whether your explanation or the materials need changing. If the session becomes tense, pause and choose a more suitable moment or format."
+      ]
+    },
+    {
+      "kind": "scripts",
+      "heading": "Explain the purpose",
+      "items": [
+        {
+          "situation": "Before checking",
+          "line": "I want to see which part needs another explanation. You can show me with the pieces or draw it."
+        },
+        {
+          "situation": "After an uncertain answer",
+          "line": "Show me where you started. I want to understand the step, not just mark the final answer."
+        }
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "When to seek another view",
+      "paragraphs": [
+        "If a difficulty persists despite appropriate instruction and different accessible ways to respond, consult a qualified educator or other relevant professional. Record concrete examples and support used. Do not infer a diagnosis from this checklist or conclude that a child is behind all peers based on one topic.",
+        "For formal requirements, use [evaluation preparation](/guides/preparing-for-a-homeschool-evaluation). For the everyday teaching record, save a brief observation with a work sample, then let the next lesson respond to what you actually saw."
+      ]
+    },
+    {
+      "kind": "faq",
+      "items": [
+        {
+          "q": "How many questions prove understanding?",
+          "a": "There is no universal number. The quality and coverage of the tasks, the help used and consistency over time matter. A few well-chosen prompts can guide tomorrow's lesson, but they cannot establish complete mastery or a formal grade-level judgment on their own."
+        },
+        {
+          "q": "Does explaining it back always work?",
+          "a": "It can reveal reasoning, but oral explanation is not a perfect measure for every child or skill. Use another suitable format when language, anxiety or communication needs interfere. Observe whether the child can apply the idea, not merely whether the explanation sounds fluent."
+        },
+        {
+          "q": "Should I check immediately or later?",
+          "a": "Use both for different purposes. An immediate check helps adjust teaching now; a later revisit explores retention and transfer. Do not withhold useful feedback just to preserve a test. Record the support you gave so you can interpret later performance honestly."
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "name": "IES What Works Clearinghouse: Organizing instruction and study",
+      "url": "https://ies.ed.gov/ncee/wwc/PracticeGuide/1",
+      "retrieved": "2026-11-17",
+      "note": "Spacing, retrieval and explanatory questions; does not validate a four-question mastery cutoff."
+    }
+  ],
+  "visuals": [
+    {
+      "title": "Observe before labeling",
+      "kicker": "One skill at a time",
+      "steps": [
+        {
+          "label": "Goal",
+          "detail": "Name the exact idea or action."
+        },
+        {
+          "label": "Evidence",
+          "detail": "Ask for use, explanation or demonstration."
+        },
+        {
+          "label": "Support",
+          "detail": "Record tools and prompts."
+        },
+        {
+          "label": "Decision",
+          "detail": "Choose practice, explanation or another observation."
+        }
+      ],
+      "caption": "A teaching decision needs observations, not an invented mastery percentage.",
+      "alt": "Four stages connect a specific learning goal with evidence, support and the next lesson.",
+      "kind": "sequence"
+    },
+    {
+      "title": "Now and later",
+      "kicker": "Two useful checks",
+      "steps": [
+        {
+          "label": "Immediate",
+          "detail": "Look for a misunderstanding while teaching."
+        },
+        {
+          "label": "After a delay",
+          "detail": "See what can be retrieved without the same prompts."
+        },
+        {
+          "label": "New example",
+          "detail": "Explore whether the idea transfers."
+        }
+      ],
+      "caption": "No single response format establishes every kind of understanding.",
+      "alt": "Three checks distinguish immediate feedback, later retrieval and transfer.",
+      "kind": "compare"
+    }
+  ],
+  "worksheet": {
+    "title": "One-skill learning check",
+    "prompt": "Choose a goal and record what you observed before deciding what to teach next.",
+    "fields": [
+      "Learning goal",
+      "Prompt or task",
+      "Response format",
+      "Independent response",
+      "Prompts and tools used",
+      "Specific gap or strength",
+      "Next teaching action",
+      "Later revisit"
+    ]
+  },
+  "research": {
+    "primaryQuery": "is my homeschooler learning",
+    "supportingQueries": [
+      "check homeschool understanding",
+      "how to tell if a lesson stuck"
+    ],
+    "intent": "Informal instructional feedback on a specific skill, not formal evaluation or grade-level diagnosis.",
+    "sourceChecks": [
+      "https://ies.ed.gov/ncee/wwc/PracticeGuide/1 - Spacing, retrieval and explanatory questions; does not validate a four-question mastery cutoff."
+    ],
+    "limitations": [
+      "No fixed number of questions establishes mastery.",
+      "Activities are examples, not a standardized assessment or disability screen.",
+      "No keyword-volume dataset was available. Saved Reddit leads were qualitative only; Quora was blocked in the saved research."
+    ]
+  }
+}

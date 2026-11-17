@@ -1,0 +1,210 @@
+{
+  "slug": "how-to-catch-up-on-homeschool-records",
+  "title": "Catch up on homeschool records without inventing dates",
+  "dek": "Rebuild missing homeschool records from dated evidence, separate facts from estimates, and restart today's log without pretending it is complete.",
+  "metaDescription": "Rebuild missing homeschool records from dated evidence, separate facts from estimates, and restart today's log without pretending it is complete.",
+  "updatedAt": "2026-11-17",
+  "body": [
+    {
+      "kind": "paragraphs",
+      "paragraphs": [
+        "To catch up on homeschool records, gather existing evidence, separate confirmed facts from estimates and label the reconstruction with today's date. Start a current log now rather than waiting for the past to be complete. Do not invent daily attendance, hours or completion dates.",
+        "The workbook exists, the science project is on a shelf and learning happened. The missing piece is the record connecting it all. You may recover useful information, but a purchase receipt or calendar plan does not prove that a lesson occurred. This guide helps rebuild an honest account, not manufacture compliance."
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "Check what the record must establish",
+      "paragraphs": [
+        "Before spending an evening recreating every week, find your current state or program requirements and any pending request. Identify whether the requirement concerns attendance, hours, subject coverage, work samples or evaluation. These are not interchangeable.",
+        "For example, [Florida's official overview](https://www.fldoe.org/file/5606/HomeEd-Sept-2025.pdf) describes portfolio records and annual evaluation options. It is not a national rule or a promise that a retrospective summary meets every obligation. If a deadline has passed or a contemporaneous log was required, ask the relevant office or a qualified adviser how to proceed."
+      ]
+    },
+    {
+      "kind": "list",
+      "heading": "Rebuild one period at a time",
+      "checkable": true,
+      "items": [
+        "Choose one child and a bounded period, such as October through December.",
+        "Gather workbooks, saved files, dated photos, submitted assignments and actual class records.",
+        "Keep plans, purchases and borrowed materials separate from evidence of completed activity.",
+        "Create entries showing the activity period, supporting evidence, uncertainty and date reconstructed.",
+        "Leave unsupported facts blank or explicitly unknown.",
+        "Attach evidence without changing original timestamps or relabeling old work as newly completed.",
+        "Record today's real learning separately so the recovery project stops growing."
+      ]
+    },
+    {
+      "kind": "table",
+      "heading": "Invented example: what evidence can support",
+      "columns": [
+        "Evidence",
+        "Reasonable entry",
+        "What it cannot prove alone"
+      ],
+      "rows": [
+        [
+          "Project photo dated October 14",
+          "Project present on that date",
+          "The hours spent making it"
+        ],
+        [
+          "Workbook ending at unit 4",
+          "Work through unit 4 is present",
+          "Exact daily completion dates"
+        ],
+        [
+          "Library checkout list",
+          "Books borrowed during the period",
+          "Every book read or finished"
+        ],
+        [
+          "Co-op attendance record",
+          "Attendance shown by provider",
+          "All independent work completed"
+        ]
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "Write uncertainty where a reader can see it",
+      "paragraphs": [
+        "An entry might read: 'Reconstructed November 17. Equivalent-fraction practice appears in workbook pages 42-49. Covered during autumn; individual lesson dates not recorded.' That preserves the evidence and the gap. It does not pretend the reconstruction was written at the time.",
+        "If several subjects appear in one project, describe what was actually done before assigning labels. Do not multiply a single hour into several hours merely because the activity touched science, writing and art. If hours are legally important, get guidance on the applicable definition."
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "Do not reverse-engineer a perfect year",
+      "paragraphs": [
+        "A current workbook position cannot prove every preceding unit was taught on a planned date. Children skip, revisit or accelerate material. Likewise, a curriculum purchase in September does not establish instruction began then. Use cross-checks, but do not make the cross-check more precise than its evidence.",
+        "Some gaps will remain. Write 'no surviving work sample located' rather than 'no learning occurred.' Those statements mean different things. If a reviewer needs information you cannot reconstruct, explain the limitation directly and ask what alternative evidence or corrective action is acceptable."
+      ]
+    },
+    {
+      "kind": "scripts",
+      "heading": "Ask about a required missing record",
+      "items": [
+        {
+          "situation": "Before a review",
+          "line": "I have work samples and some dated records, but this period's daily log is missing. I am labeling a reconstruction honestly. What does the applicable requirement allow, and what should I submit?"
+        },
+        {
+          "situation": "After a deadline",
+          "line": "The required record or submission is incomplete. Please confirm the current status, next steps and any written notice I need to respond to."
+        }
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "Restart with a record you can maintain",
+      "paragraphs": [
+        "Use [the recordkeeping template](/guides/homeschool-record-keeping-template) for the current log. Keep reconstruction notes separate, with a clear link to supporting work. Review a small recent sample regularly so missing dates become a short correction rather than a year-end research project.",
+        "If the next event is already booked, move to [evaluation preparation](/guides/preparing-for-a-homeschool-evaluation) after establishing what you can truthfully document. A tidy binder helps retrieval; it does not repair an unmet legal requirement by itself."
+      ]
+    },
+    {
+      "kind": "faq",
+      "items": [
+        {
+          "q": "Can I backdate the entries?",
+          "a": "Distinguish the period described from the date you wrote the entry. Label it reconstructed and retain the original evidence. Do not give an invented day or hour count the appearance of a contemporaneous log. Ask for advice if the governing rules specifically require records made during instruction."
+        },
+        {
+          "q": "What if I cannot recover a subject?",
+          "a": "State what is missing and preserve any evidence you do have. Do not replace a gap with a curriculum plan presented as completed instruction. Contact the reviewer or relevant adviser if that subject or record is required, and begin an accurate current record immediately."
+        },
+        {
+          "q": "How long should the reconstruction take?",
+          "a": "There is no reliable universal estimate. A few dated files can resolve a short gap quickly; a full year across several children may remain incomplete after substantial work. Start with the records needed for the next real decision and avoid spending hours decorating an unsupported chronology."
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "name": "Florida Department of Education: Home education program",
+      "url": "https://www.fldoe.org/file/5606/HomeEd-Sept-2025.pdf",
+      "retrieved": "2026-11-17",
+      "note": "Florida example: portfolio records and annual evaluation options, not a national requirement."
+    }
+  ],
+  "visuals": [
+    {
+      "title": "Evidence is not all equivalent",
+      "kicker": "Rebuilding a term",
+      "steps": [
+        {
+          "label": "Completed work",
+          "detail": "Shows the work that survives."
+        },
+        {
+          "label": "Dated record",
+          "detail": "Connects an activity to a supported date."
+        },
+        {
+          "label": "Plan or receipt",
+          "detail": "Shows intention or purchase, not completion."
+        },
+        {
+          "label": "Unknown",
+          "detail": "Stays unknown when evidence is missing."
+        }
+      ],
+      "caption": "Keep completion evidence separate from plans and purchases.",
+      "alt": "Four evidence categories distinguish surviving work, supported dates, intentions and unknowns.",
+      "kind": "compare"
+    },
+    {
+      "title": "Two dates in every reconstruction",
+      "kicker": "Preserve when the note was made",
+      "steps": [
+        {
+          "label": "Activity period",
+          "detail": "Use the narrowest period the evidence supports."
+        },
+        {
+          "label": "Entry date",
+          "detail": "Record when you reconstructed the information."
+        },
+        {
+          "label": "Confidence",
+          "detail": "Name estimates and attach the supporting material."
+        }
+      ],
+      "caption": "An honest record does not disguise retrospective work.",
+      "alt": "A reconstruction records activity period, entry date and confidence separately.",
+      "kind": "record"
+    }
+  ],
+  "worksheet": {
+    "title": "Homeschool reconstruction ledger",
+    "prompt": "Rebuild one child and one period using surviving evidence.",
+    "fields": [
+      "Child and period",
+      "Activity or subject",
+      "Evidence location",
+      "Confirmed date or range",
+      "Estimate and basis",
+      "Date reconstructed",
+      "Remaining gap",
+      "Required follow-up"
+    ]
+  },
+  "research": {
+    "primaryQuery": "catch up on homeschool records",
+    "supportingQueries": [
+      "reconstruct missing homeschool records",
+      "behind on homeschool log"
+    ],
+    "intent": "Honest recovery of missing learning records, not routine portfolio assembly.",
+    "sourceChecks": [
+      "https://www.fldoe.org/file/5606/HomeEd-Sept-2025.pdf - Florida example: portfolio records and annual evaluation options, not a national requirement."
+    ],
+    "limitations": [
+      "Reconstruction may not satisfy a contemporaneous record requirement.",
+      "Florida is a bounded official example; no nationwide compliance finding is made.",
+      "No keyword-volume dataset was available. Saved Reddit leads were qualitative only; Quora was blocked in the saved research."
+    ]
+  }
+}

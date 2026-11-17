@@ -1,0 +1,235 @@
+{
+  "slug": "how-to-find-someones-accounts-after-they-die",
+  "title": "How to find accounts after someone dies (US)",
+  "dek": "Trace banks, insurance and retirement benefits using records and free official searches, with an authority check before requesting private information.",
+  "metaDescription": "Trace banks, insurance and retirement benefits using records and free official searches, with an authority check before requesting private information.",
+  "updatedAt": "2026-11-17",
+  "body": [
+    {
+      "kind": "paragraphs",
+      "paragraphs": [
+        "To find someone's accounts after they die, start with records you are entitled to inspect, then follow each institution through its bereavement process. Use separate official searches for life insurance, unclaimed property and missing retirement benefits. No single search reveals every account, and discovering a name is not permission to access or move its money.",
+        "A stack of mail can make it look as though you should already know the whole picture. You do not. Build a lead register instead: institution, evidence, asset type, authorized contact, next action. This guide concerns US financial-account discovery, not a complete probate or digital-inheritance process."
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "Put the permission check first",
+      "paragraphs": [
+        "Before opening private email, downloading statements or entering an app, establish your legal authority and the provider's process. A phone in your possession or a written password does not settle that question. Use a legacy-contact or bereavement request where available; do not impersonate the person. [Fidelity's document guide](https://www.fidelity.com/learning-center/life-events/gathering-documents-and-accounts-after-a-death) flags restrictions on electronic communications.",
+        "You can gather publicly available clues and ask a provider what documents it requires without claiming you already have transaction authority. A nominated executor may need court papers or a permitted alternative. A beneficiary may be able to claim one asset without being authorized to inspect the entire estate. Keep those roles separate."
+      ]
+    },
+    {
+      "kind": "list",
+      "heading": "Work through the available paper trail",
+      "checkable": true,
+      "items": [
+        "Gather a year of bank and card statements where lawfully available. A longer view can reveal annual insurance premiums or infrequent transfers that a single month misses.",
+        "List incoming pensions, investment distributions and transfers separately from premiums, loan payments and recurring charges. Do not classify every debit as an asset.",
+        "Review tax documents for institutions reporting interest, dividends or retirement income. Treat them as clues, not a complete inventory: some accounts produce no reportable income.",
+        "Check correspondence from former employers, advisers, accountants and insurers. Note former names, previous addresses and mergers, keeping the evidence beside each lead.",
+        "Preserve unresolved letters and relevant records. Arrange lawful mail handling and a follow-up review rather than discarding statements after the first search.",
+        "For each candidate institution, independently find its bereavement contact and request the document checklist. Record whether the response confirms an account or merely acknowledges an enquiry."
+      ]
+    },
+    {
+      "kind": "table",
+      "heading": "Three searches, three different jobs",
+      "columns": [
+        "Official route",
+        "Useful for",
+        "What it does not establish"
+      ],
+      "rows": [
+        [
+          "NAIC life insurance policy locator",
+          "Matching a deceased person to participating insurers' life policies or annuity contracts.",
+          "No response does not prove no policy exists or that you are entitled to it."
+        ],
+        [
+          "NAUPA state unclaimed-property directory",
+          "Finding official state searches for property already transferred to unclaimed-property custody.",
+          "It is not a live list of all current bank accounts."
+        ],
+        [
+          "PBGC unclaimed retirement benefits search",
+          "Benefits held by PBGC after certain retirement plans ended.",
+          "A match is only a first step, not confirmed entitlement or a search of all pensions."
+        ]
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "Use the tools without overreading the results",
+      "paragraphs": [
+        "The [NAIC instructions](https://content.naic.org/article/learn-how-use-naic-life-insurance-policy-locator) explain the free matching request and identifying information taken from the death certificate. Participating companies contact a beneficiary when a matching policy is found. The NAIC itself does not hold policy or beneficiary information. Silence can mean no match or that the requester is not the beneficiary.",
+        "Start state searches from [NAUPA's official directory](https://unclaimed.org/search/), checking relevant former names and places the person lived. Follow the state's evidence rules to claim anything. Do not pay someone merely because they discovered a public listing. [PBGC explains its narrower search](https://www.pbgc.gov/workers-retirees/find-unclaimed-retirement-benefits/search-unclaimed); contact former employers and plan administrators for retirement leads outside that scope."
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "Invented example: one unexplained annual payment",
+      "paragraphs": [
+        "An authorized representative finds an annual debit labelled only with an abbreviated company name. The lead register says: possible insurance premium, statement dated April, company identity unconfirmed. The representative checks the merchant name through the bank and contacts the insurer through its official bereavement route.",
+        "The outcome might be a live policy, an expired contract or an unrelated service. The useful result is a documented answer, not an assumed payout. A second lead from an old employer remains open until the plan administrator responds. Avoid assigning a value to either lead before evidence arrives."
+      ]
+    },
+    {
+      "kind": "scripts",
+      "heading": "Ask for the right kind of search",
+      "items": [
+        {
+          "situation": "Known institution",
+          "line": "I am tracing accounts for someone who has died. Please explain your deceased-customer search process, the proof of authority you require, and how to submit documents securely. I am not requesting a withdrawal today."
+        },
+        {
+          "situation": "Former employer",
+          "line": "Which administrator holds benefits from employment during these years? If the scheme or company changed, can you identify the successor or the records contact?"
+        }
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "Restricted records and escalation",
+      "paragraphs": [
+        "A deceased person's credit report, tax transcript or private financial statements is not the same as a public-name lookup. Ask the relevant agency or bureau about estate-representative documentation. Credit reports are not complete asset inventories; a lack of reported debt says little about savings, insurance or privately held assets.",
+        "Pause if you encounter disputed authority, a foreign institution, suspected theft, cryptocurrency custody or a provider refusing a request you believe is lawful. An estate lawyer can clarify the route without asking you to bypass access controls. Independently verify unexpected calls before sharing identifiers or documents, even when a legitimate search may produce insurer follow-up.",
+        "Close a lead only with a reason: account confirmed, no record after a defined search, claim transferred to a beneficiary, or unresolved pending evidence. A negative lookup today is not permanent proof of absence. Save search dates and revisit outstanding leads when new correspondence arrives."
+      ]
+    },
+    {
+      "kind": "faq",
+      "items": [
+        {
+          "q": "Is there a database of all a deceased person's accounts?",
+          "a": "No universal US inventory covers every bank account, policy, pension and digital asset. Official tools cover particular categories. Use them alongside lawfully available statements, tax documents and employer records, and record the limits of each search rather than treating one negative result as a complete answer."
+        },
+        {
+          "q": "Can I use their email if I know the password?",
+          "a": "Knowing a password is not enough to establish permission. Electronic communications can be subject to legal and provider restrictions after death. Ask the provider about bereavement or legacy access and clarify your authority before searching. Do not log in as the deceased person to avoid an institution's checks."
+        },
+        {
+          "q": "Do free searches release the money?",
+          "a": "No. A public listing or policy match is only a lead. Claiming funds requires the relevant institution's evidence and entitlement checks. Some restricted records also require estate authority before they are disclosed. Keep public lookup, private record requests and actual claims as three distinct stages."
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "name": "NAIC: using the life insurance locator",
+      "url": "https://content.naic.org/article/learn-how-use-naic-life-insurance-policy-locator",
+      "retrieved": "2026-11-17",
+      "note": "Opened: free tool, required identifiers, participating-company contact and no-response limitations."
+    },
+    {
+      "name": "NAUPA: official unclaimed-property searches",
+      "url": "https://unclaimed.org/search/",
+      "retrieved": "2026-11-17",
+      "note": "Opened: free state search directory; no fixed participation count asserted."
+    },
+    {
+      "name": "PBGC: unclaimed retirement benefits",
+      "url": "https://www.pbgc.gov/workers-retirees/find-unclaimed-retirement-benefits/search-unclaimed",
+      "retrieved": "2026-11-17",
+      "note": "Opened: terminated-plan scope, initial matching and further verification."
+    },
+    {
+      "name": "Fidelity: gathering documents after death",
+      "url": "https://www.fidelity.com/learning-center/life-events/gathering-documents-and-accounts-after-a-death",
+      "retrieved": "2026-11-17",
+      "note": "Opened: records to gather and digital communications access restrictions; not an individualized legal ruling."
+    }
+  ],
+  "visuals": [
+    {
+      "title": "Discovery is not access",
+      "kicker": "Three different permissions",
+      "kind": "sequence",
+      "steps": [
+        {
+          "label": "Find a lead",
+          "detail": "Identify an institution through lawful records or an official lookup."
+        },
+        {
+          "label": "Request records",
+          "detail": "Supply the evidence required for your role."
+        },
+        {
+          "label": "Claim or administer",
+          "detail": "Proceed only after entitlement or estate authority is established."
+        }
+      ],
+      "caption": "A bank name, a disclosed balance and permission to transfer money are different outcomes.",
+      "alt": "Three stages separate discovering an account lead, requesting records and claiming or administering money."
+    },
+    {
+      "title": "Track the uncertain leads",
+      "kicker": "Financial account search register",
+      "kind": "record",
+      "steps": [
+        {
+          "label": "Evidence",
+          "detail": "Keep the statement, employer letter or search result that raised the lead."
+        },
+        {
+          "label": "Status",
+          "detail": "Distinguish possible match from confirmed account."
+        },
+        {
+          "label": "Next step",
+          "detail": "Record the document request and follow-up owner."
+        }
+      ],
+      "caption": "An unresolved lead stays visible without being counted as confirmed estate money.",
+      "alt": "An account-search register links evidence to match status and a named next action."
+    }
+  ],
+  "worksheet": {
+    "title": "Deceased-person account discovery register",
+    "prompt": "Record institutions and evidence without storing passwords or full identity numbers.",
+    "fields": [
+      "Institution or former employer",
+      "Asset type suspected",
+      "Evidence and date",
+      "Search route used",
+      "Your role and authority required",
+      "Result or unresolved question",
+      "Follow-up owner and date"
+    ]
+  },
+  "research": {
+    "primaryQuery": "how to find someone's accounts after they die",
+    "supportingQueries": [
+      "find deceased parent bank accounts",
+      "free life insurance search after death",
+      "trace missing retirement benefits"
+    ],
+    "intent": "US account discovery with clear public-search, restricted-record and claim boundaries.",
+    "sourceChecks": [
+      {
+        "url": "https://content.naic.org/article/learn-how-use-naic-life-insurance-policy-locator",
+        "verified": "Opened: free tool, required identifiers, participating-company contact and no-response limitations."
+      },
+      {
+        "url": "https://unclaimed.org/search/",
+        "verified": "Opened: free state search directory; no fixed participation count asserted."
+      },
+      {
+        "url": "https://www.pbgc.gov/workers-retirees/find-unclaimed-retirement-benefits/search-unclaimed",
+        "verified": "Opened: terminated-plan scope, initial matching and further verification."
+      },
+      {
+        "url": "https://www.fidelity.com/learning-center/life-events/gathering-documents-and-accounts-after-a-death",
+        "verified": "Opened: records to gather and digital communications access restrictions; not an individualized legal ruling."
+      }
+    ],
+    "limitations": [
+      "No search guarantees a complete inventory or benefit entitlement.",
+      "The NAIC generic landing page failed; the specific official instructions page opened successfully.",
+      "No credit-bureau-specific document requirements or state probate deadlines are certified.",
+      "Saved Quora was blocked and anecdotal language was not used as authority."
+    ]
+  }
+}

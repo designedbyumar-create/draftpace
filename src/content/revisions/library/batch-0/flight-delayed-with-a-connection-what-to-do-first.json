@@ -1,0 +1,211 @@
+{
+  "slug": "flight-delayed-with-a-connection-what-to-do-first",
+  "title": "Flight delayed with a connection: what to do first",
+  "dek": "Check the real gate deadline, ticket arrangement and rebooking options before buying replacements, then confirm baggage and overnight arrangements.",
+  "metaDescription": "Check the real gate deadline, ticket arrangement and rebooking options before buying replacements, then confirm baggage and overnight arrangements.",
+  "updatedAt": "2026-11-17",
+  "body": [
+    {
+      "kind": "paragraphs",
+      "paragraphs": [
+        "If a delay threatens your connection, check the onward flight's current status and gate-closing time, identify whether the flights are on one ticket, and contact the airline about options now. Use the app, a service desk or the airline's official phone channel. Do not assume scheduled departure is the last moment you can board.",
+        "You may have a nearly flat phone, a boarding pass with an old gate and a crowd moving toward a service desk. First preserve the booking reference and current flight information. This guide covers immediate US-oriented travel administration, not a promise about compensation or a universal minimum connection time."
+      ]
+    },
+    {
+      "kind": "list",
+      "heading": "The next few minutes",
+      "checkable": true,
+      "items": [
+        "Check the latest onward status, gate and boarding cutoff through official airline information. Confirm whether the incoming estimate means landing or arrival at the gate.",
+        "Allow for taxiing, leaving the aircraft, terminal travel, assistance, security or border processing where applicable. Do not use a guessed walking time as proof that the connection is safe.",
+        "If the connection may still be reachable, ask staff for directions or assistance rather than automatically abandoning it for a long queue. Follow crew and airport safety instructions.",
+        "If it is clearly unworkable, open official rebooking options and seek an agent. A phone or chat channel while waiting can help, but complete only one change and end duplicate conversations.",
+        "State your destination, ticket arrangement and practical constraints, such as the last flight, mobility assistance, traveling children or an onward entry requirement.",
+        "Before accepting, check the new arrival date, airports, confirmed seats, assistance and baggage plan. Save the replacement itinerary and boarding passes."
+      ]
+    },
+    {
+      "kind": "table",
+      "heading": "Invented connection calculation",
+      "columns": [
+        "Known or assumed detail",
+        "Example value",
+        "Meaning"
+      ],
+      "rows": [
+        [
+          "Estimated arrival at gate",
+          "14:40",
+          "Use the actual gate estimate, not only touchdown."
+        ],
+        [
+          "Onward gate closes",
+          "14:55",
+          "This is the relevant airline-confirmed deadline in this example."
+        ],
+        [
+          "Time after leaving aircraft and reaching gate",
+          "25 minutes, assumed",
+          "Expected gate arrival is 15:05."
+        ],
+        [
+          "Result",
+          "Ten minutes beyond cutoff",
+          "Ask for rebooking now; replace every assumption with current information."
+        ]
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "One ticket is not the same as one shopping basket",
+      "paragraphs": [
+        "On a through-ticket, tell the airline the delayed inbound flight has broken your ticketed connection and ask how it will get you to the final destination. On separate tickets, contact the onward airline before its cutoff about change or no-show options. The first airline may not protect the independent ticket.",
+        "A booking platform can sell a self-transfer itinerary. Look for separate ticket numbers, a self-transfer warning and any separate protection contract rather than relying only on a shared email. If uncertain, ask the ticket issuer directly. Do not buy an expensive replacement expecting automatic repayment."
+      ]
+    },
+    {
+      "kind": "scripts",
+      "heading": "Ask for an actionable outcome",
+      "items": [
+        {
+          "situation": "Connection at risk",
+          "line": "My inbound flight is delayed and my onward gate closes at [time]. These flights are [one ticket/separate tickets/unclear]. Can you confirm whether the connection is still possible and the rebooking options?"
+        },
+        {
+          "situation": "Overnight disruption",
+          "line": "The next confirmed option arrives tomorrow. What meals, accommodation and transport do you provide for this disruption, and what must you authorize before I pay?"
+        },
+        {
+          "situation": "Before ending the conversation",
+          "line": "Please confirm the new flight is ticketed, what happens to my checked bag, whether the rest of my itinerary remains active, and the reference for this change."
+        }
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "Meals, hotels and refund choices are different questions",
+      "paragraphs": [
+        "[DOT's cancellation and delay dashboard](https://www.transportation.gov/airconsumer/airline-cancellation-delay-dashboard) summarizes airline commitments for controllable disruptions. It is not a blanket hotel entitlement for every weather delay. Ask which commitment applies to your airline and circumstances, and obtain spending instructions where possible. Keep receipts and evidence of attempts to get help.",
+        "If the trip no longer works, ask about a refund before accepting a voucher or replacement. [DOT's refund guidance](https://www.transportation.gov/individuals/aviation-consumer-protection/refunds) separates qualifying refund rights from continuing to travel. A ticket refund does not necessarily pay for a new independent journey. Other countries may provide different rights.",
+        "If a revised route needs a visa, an airport change or an overnight entry you cannot make, stop and raise that before accepting. Ask where checked baggage will go and what essentials are available if you cannot retrieve it. Notify the hotel or person meeting you once the new arrival is established."
+      ]
+    },
+    {
+      "kind": "faq",
+      "items": [
+        {
+          "q": "Should I stand in line or call the airline?",
+          "a": "Use an official remote channel while waiting if practical, but do not let the queue make you miss a connection that remains reachable. Check current status with staff first. Once an agent completes a change, stop other requests so two channels do not alter the same itinerary independently."
+        },
+        {
+          "q": "Will the airline pay for a missed separate-ticket connection?",
+          "a": "Do not assume so. Separate tickets usually create separate contracts, and any self-transfer protection or insurance has its own conditions. Contact the onward carrier before the flight closes, explain the situation and ask about options. Get authorization before buying a replacement if you expect another party to reimburse it."
+        },
+        {
+          "q": "How much time is enough for a connection?",
+          "a": "There is no single safe number for every airport and traveler. Gate cutoff, deplaning, terminal transfer, security, immigration and assistance can all matter. During a disruption, use the current gate deadline and actual route, not just the layover printed on the original itinerary."
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "name": "US DOT: airline commitments",
+      "url": "https://www.transportation.gov/airconsumer/airline-cancellation-delay-dashboard",
+      "retrieved": "2026-11-17",
+      "note": "Opened: controllable disruption commitments vary by carrier and are distinct from refund rights."
+    },
+    {
+      "name": "US DOT: refunds",
+      "url": "https://www.transportation.gov/individuals/aviation-consumer-protection/refunds",
+      "retrieved": "2026-11-17",
+      "note": "Opened: cancellation/significant-change refunds depend on declining travel and relevant alternatives."
+    }
+  ],
+  "visuals": [
+    {
+      "title": "Can you reach the gate?",
+      "kicker": "Use the boarding deadline",
+      "kind": "timeline",
+      "steps": [
+        {
+          "label": "Arrive",
+          "detail": "Identify the current gate-arrival estimate, not only landing time."
+        },
+        {
+          "label": "Transfer",
+          "detail": "Allow for leaving the aircraft, terminal travel and required processing."
+        },
+        {
+          "label": "Compare",
+          "detail": "Check expected gate arrival against the actual boarding cutoff."
+        }
+      ],
+      "caption": "Every transfer time is airport- and traveler-specific.",
+      "alt": "A connection timeline compares gate arrival, transfer tasks and the onward boarding cutoff."
+    },
+    {
+      "title": "Before accepting the replacement",
+      "kicker": "Confirm the complete journey",
+      "kind": "record",
+      "steps": [
+        {
+          "label": "Flight",
+          "detail": "Check ticketed seats, airports and local arrival date."
+        },
+        {
+          "label": "Baggage",
+          "detail": "Ask where checked bags will be sent or returned."
+        },
+        {
+          "label": "Care",
+          "detail": "Confirm assistance and any authorized overnight arrangements."
+        },
+        {
+          "label": "Remaining bookings",
+          "detail": "Check onward segments and notify the destination contact."
+        }
+      ],
+      "caption": "A new flight number alone is not a complete recovery plan.",
+      "alt": "A replacement-flight record checks confirmed travel, baggage, assistance and remaining bookings."
+    }
+  ],
+  "worksheet": {
+    "title": "Missed-connection recovery record",
+    "prompt": "Write the current facts before agreeing to another itinerary.",
+    "fields": [
+      "Booking reference and ticket arrangement",
+      "Inbound gate-arrival estimate",
+      "Onward flight and boarding cutoff",
+      "Transfer needs or constraints",
+      "Replacement flight confirmation",
+      "Baggage and assistance plan",
+      "Expense authorization and reference",
+      "Destination contacts notified"
+    ]
+  },
+  "research": {
+    "primaryQuery": "flight delayed missed connection what to do",
+    "supportingQueries": [
+      "flight delay connection gate cutoff",
+      "missed connection separate tickets",
+      "overnight missed flight baggage"
+    ],
+    "intent": "Immediate connection triage and rebooking confirmation, not general schedule-change planning.",
+    "sourceChecks": [
+      {
+        "url": "https://www.transportation.gov/airconsumer/airline-cancellation-delay-dashboard",
+        "verified": "Opened: controllable disruption commitments vary by carrier and are distinct from refund rights."
+      },
+      {
+        "url": "https://www.transportation.gov/individuals/aviation-consumer-protection/refunds",
+        "verified": "Opened: cancellation/significant-change refunds depend on declining travel and relevant alternatives."
+      }
+    ],
+    "limitations": [
+      "No individual airline rebooking window or universal hotel entitlement is asserted.",
+      "Example cutoff and transfer duration are invented, not airport standards."
+    ]
+  }
+}

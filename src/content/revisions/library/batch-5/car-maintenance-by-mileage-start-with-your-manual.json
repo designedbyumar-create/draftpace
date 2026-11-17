@@ -1,0 +1,206 @@
+{
+  "slug": "car-maintenance-by-mileage-start-with-your-manual",
+  "title": "Car maintenance by mileage: read your own schedule",
+  "dek": "Find your vehicle-specific maintenance schedule and separate mileage, time, inspections and severe-use rules without relying on a generic chart.",
+  "metaDescription": "Find your vehicle-specific maintenance schedule and separate mileage, time, inspections and severe-use rules without relying on a generic chart.",
+  "updatedAt": "2026-11-17",
+  "body": [
+    {
+      "kind": "paragraphs",
+      "paragraphs": [
+        "Use the manufacturer maintenance schedule for your exact year, model, powertrain and market. Copy each required action, its time or mileage rule and any conditions or footnotes. A universal 30,000-, 60,000- or 90,000-mile list cannot tell you which replacements your particular car needs.",
+        "The confusing part is rarely finding a number. It is knowing whether that number means inspect or replace, whether months also apply, and whether a footnote changes your situation. This guide helps you extract those instructions into a usable record. It does not supply a factory schedule or diagnose wear."
+      ]
+    },
+    {
+      "kind": "list",
+      "heading": "Find the correct source before copying intervals",
+      "checkable": true,
+      "items": [
+        "Identify the model year, engine or powertrain, country of sale and current odometer units.",
+        "Look on the manufacturer owner website for the manual and any separate maintenance or warranty booklet.",
+        "Check that the document covers your version rather than a similar car or another market.",
+        "Read the maintenance symbols, footnotes and special-operating-condition definitions before extracting rows.",
+        "For each job, copy the action, interval, conditions and page reference. Keep any uncertainty visible.",
+        "If a document is missing or contradictory, ask the manufacturer or its service department for written clarification specific to the vehicle."
+      ]
+    },
+    {
+      "kind": "table",
+      "heading": "Schedule-extraction table",
+      "columns": [
+        "Field",
+        "What to copy",
+        "Mistake to avoid"
+      ],
+      "rows": [
+        [
+          "Action",
+          "Inspect, replace, adjust or another stated action",
+          "Treating an inspection as an automatic replacement"
+        ],
+        [
+          "Trigger",
+          "Distance, elapsed time, dashboard system or combined rule",
+          "Adding a made-up time limit to a distance-only entry"
+        ],
+        [
+          "Conditions",
+          "Only the listed conditions relevant to that task",
+          "Shortening every interval because one severe-use item applies"
+        ],
+        [
+          "Evidence",
+          "Document title, version and page",
+          "Using an undated generic chart as the source"
+        ]
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "An invented arithmetic example, not a car recommendation",
+      "paragraphs": [
+        "Suppose a fictional manual says to replace a particular item after 10,000 miles or 12 months, whichever comes first. The supported last replacement was on 2026-02-10 at 40,000 miles. Its two possible thresholds are 50,000 miles and 2027-02-10. Reaching either would trigger the job under that fictional instruction. These numbers demonstrate reading and arithmetic only.",
+        "If the same manual says \"inspect\" another item at that point, the schedule calls for an inspection, not necessarily a new part. Record any subsequent finding separately. Never use the example interval as a placeholder while searching for your real one."
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "Time, mileage and monitor-based systems",
+      "paragraphs": [
+        "When the actual instruction uses both time and distance, retain both. A rarely driven car can reach a time threshold before a distance threshold. A high-mileage driver may do the reverse. If the instructions specify an initial service followed by a different repeat interval, preserve that distinction too.",
+        "Some vehicles use service-reminder systems. Consult the manual for the displayed code, additional required tasks and any maximum elapsed-time provisions. Do not reset a reminder merely to clear the display, and do not assume an oil-life percentage is a report on every maintenance item. [California BAR](https://www.bar.ca.gov/auto-repairs) directs owners to consult the manual when reminders appear."
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "Special conditions need item-by-item reading",
+      "paragraphs": [
+        "Towing, dust, temperature and short-trip definitions vary. Match your actual use to the document wording, then identify which tasks change. A hard-use rule for one fluid does not establish a shorter interval for every filter and component. Halving all intervals is not a manufacturer-validated substitute.",
+        "The [FTC](https://consumer.ftc.gov/articles/0211-auto-repair-basics) recommends comparing a shop schedule with the manufacturer instructions and asking why extra service is proposed. A shop may have a vehicle-specific reason; ask for the reason, the finding and the price rather than assuming either document is automatically wrong."
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "Safety checks do not wait for a mileage milestone",
+      "paragraphs": [
+        "[NHTSA tire guidance](https://www.nhtsa.gov/vehicle-safety/tires) calls for checking cold tire pressure at least monthly, using the vehicle placard or manual, not the sidewall maximum. This is separate from scheduled rotation. A visible tire problem, warning light or change in braking also should not wait for the next round-number service.",
+        "If the history is unknown, the schedule tells you what the manufacturer requires, not what the former owner completed. Keep those questions separate. Use the [missing-records guide](/guides/used-car-no-service-records-what-to-do) for establishing a baseline rather than filling the last-done column with guesses."
+      ]
+    },
+    {
+      "kind": "faq",
+      "items": [
+        {
+          "q": "What maintenance is required at 60,000 miles?",
+          "a": "Read the schedule for your exact vehicle and check the previous completed work. The answer may include inspections, replacements or repeat tasks from earlier intervals. There is no reliable universal list for all engines, transmissions, model years and markets."
+        },
+        {
+          "q": "Should I use miles or months?",
+          "a": "Use the rule stated for each job in your own schedule. Where it says whichever comes first, retain both thresholds. Where a monitor or a special first-service instruction applies, preserve that wording instead of forcing it into a simple mileage-only tracker."
+        },
+        {
+          "q": "What if I cannot find my manual?",
+          "a": "Ask the manufacturer or its service department for the correct owner and maintenance documents using the vehicle identity. Record the request and unresolved tasks. Do not quietly substitute an unrelated model schedule or a generic online replacement chart."
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "name": "FTC: Auto repair basics",
+      "url": "https://consumer.ftc.gov/articles/0211-auto-repair-basics",
+      "retrieved": "2026-11-17",
+      "note": "Page checked: estimates, diagnostic charges, completed repair orders and manufacturer maintenance schedules."
+    },
+    {
+      "name": "California Bureau of Automotive Repair: Maintenance and repairs",
+      "url": "https://www.bar.ca.gov/auto-repairs",
+      "retrieved": "2026-11-17",
+      "note": "Page checked: California repair-shop context and owner-manual/service-reminder guidance; not national law."
+    },
+    {
+      "name": "NHTSA: Tires",
+      "url": "https://www.nhtsa.gov/vehicle-safety/tires",
+      "retrieved": "2026-11-17",
+      "note": "Page checked: at least monthly cold-pressure checks, door placard pressure and tire selection."
+    }
+  ],
+  "visuals": [
+    {
+      "title": "Extract the instruction",
+      "kicker": "The footnote belongs with the interval",
+      "kind": "sequence",
+      "steps": [
+        {
+          "label": "Identify",
+          "detail": "Match year, powertrain and market."
+        },
+        {
+          "label": "Read",
+          "detail": "Check the action and all applicable notes."
+        },
+        {
+          "label": "Record",
+          "detail": "Keep the trigger, conditions and page reference together."
+        }
+      ],
+      "caption": "A copied number without its action or footnote can change the meaning.",
+      "alt": "A schedule-reading sequence connects vehicle identification, instructions and a source-linked service record."
+    },
+    {
+      "title": "Two possible triggers",
+      "kicker": "For a whichever-comes-first instruction",
+      "kind": "compare",
+      "steps": [
+        {
+          "label": "Distance",
+          "detail": "Compare the actual reading with the stated distance threshold."
+        },
+        {
+          "label": "Time",
+          "detail": "Compare the current date with the elapsed-time threshold."
+        },
+        {
+          "label": "Decision",
+          "detail": "Act when either applicable threshold is reached."
+        }
+      ],
+      "caption": "Only use both triggers where the manufacturer instruction specifies them.",
+      "alt": "Time and distance are separate triggers when the actual maintenance instruction says whichever comes first."
+    }
+  ],
+  "worksheet": {
+    "title": "From the manufacturer maintenance schedule",
+    "prompt": "Copy one job exactly, including its action, conditions and source reference.",
+    "fields": [
+      "Year, model, powertrain and market",
+      "Document title and page",
+      "Maintenance item",
+      "Inspect or replace instruction",
+      "Distance or monitor rule",
+      "Elapsed-time rule if stated",
+      "Special conditions and footnotes",
+      "Unresolved question for manufacturer"
+    ]
+  },
+  "research": {
+    "primaryQuery": "car maintenance schedule by mileage",
+    "supportingQueries": [
+      "read manufacturer maintenance schedule",
+      "car maintenance miles or months",
+      "severe use service schedule"
+    ],
+    "intent": "Extract a vehicle-specific maintenance schedule instead of applying universal mileage intervals.",
+    "sourceChecks": [
+      "https://consumer.ftc.gov/articles/0211-auto-repair-basics - Page checked: estimates, diagnostic charges, completed repair orders and manufacturer maintenance schedules.",
+      "https://www.bar.ca.gov/auto-repairs - Page checked: California repair-shop context and owner-manual/service-reminder guidance; not national law.",
+      "https://www.nhtsa.gov/vehicle-safety/tires - Page checked: at least monthly cold-pressure checks, door placard pressure and tire selection."
+    ],
+    "limitations": [
+      "US-focused administration; requirements and individual circumstances vary.",
+      "Saved Reddit leads informed reader-language only; no anecdotes treated as factual authority. Quora was blocked in the saved research.",
+      "No keyword-volume dataset or ranking guarantee. Product registry inspected, but live product workflows not tested."
+    ]
+  }
+}

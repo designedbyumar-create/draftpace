@@ -1,0 +1,36 @@
+{
+  "articles": 137,
+  "verdicts": {
+    "partial": 119,
+    "not fulfilled": 7,
+    "fulfilled": 11
+  },
+  "priorities": {
+    "P1": 30,
+    "P0": 2,
+    "P2": 105
+  },
+  "categories": {
+    "Death, estates and family affairs": 13,
+    "Homeschooling": 16,
+    "Home and car maintenance": 26,
+    "Travel administration": 15,
+    "General life administration": 27,
+    "Money administration": 22,
+    "Cognitive load and follow-through": 8,
+    "Health administration": 10
+  },
+  "gsc_page_rows_matched": 41,
+  "source_or_evidence_gaps": 20,
+  "promised_artifact_gaps": 2,
+  "gsc_metadata": {
+    "period": "2026-10-14 to 2026-11-10",
+    "source": "Search Console Performance export"
+  },
+  "interpretation": [
+    "The dominant problem is not simply word count. Many pages need a reader-first artifact, clearer intent boundaries, claim-level primary sourcing, and less repeated explanation.",
+    "GSC shows site exposure, not market-wide search volume. This audit does not invent monthly volumes.",
+    "Quora access was blocked by robots.txt. Reddit results are anecdotal demand language, not representative volume.",
+    "Image provenance cannot be established from a live-page crawl. Empty alt text is a measurable accessibility issue; AI origin is not proven."
+  ]
+}

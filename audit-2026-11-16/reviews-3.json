@@ -1,0 +1,476 @@
+[
+  {
+    "url": "https://draftpace.com/guides/how-to-make-a-home-binder",
+    "title": "How to make a home binder: what goes in and what stays out",
+    "intent": "Build a small, usable household reference binder with sections, document choices and a practical first page.",
+    "verdict": "fulfilled",
+    "priority": "P2",
+    "findings": [
+      {
+        "type": "strength",
+        "evidence": "The five named sections include shutoffs, filter sizes, trusted trades, completed jobs and renewal dates; the filled contents table and one-section-at-a-time fallback make this actionable.",
+        "fix": "Keep the emergency-first sequence and concrete field examples."
+      },
+      {
+        "type": "issue",
+        "evidence": "The paper list includes closing documents and the text says the same binder may be handed to a sitter or repair technician. Excluding passwords alone does not protect sensitive financial or ownership paperwork.",
+        "fix": "Separate a shareable household reference from restricted document storage; use copies or location pointers for sensitive originals."
+      },
+      {
+        "type": "issue",
+        "evidence": "The article says digital is impossible to leave behind and an app is the opposite of paper during an outage. These are absolutes, not established capabilities.",
+        "fix": "Explain device, login, connectivity and offline-copy dependencies; add a dated offline emergency page."
+      },
+      {
+        "type": "opportunity",
+        "evidence": "The setup is detailed, but no owner or review date is assigned to the shutoff/contact pages.",
+        "fix": "Add last-checked and responsible-person fields, with review after a move, contractor change or system replacement."
+      }
+    ],
+    "suggested_title": "How to make a home binder: five sections and a safe sharing plan",
+    "proposed_outline": [
+      "Start with one emergency reference page",
+      "Five sections with completed examples",
+      "Shareable pages versus restricted originals",
+      "Paper and digital storage",
+      "Update owner and review triggers"
+    ],
+    "research": {
+      "general_web": [
+        {
+          "url": "https://organisemyhouse.com/how-to-make-a-home-management-binder/",
+          "status": "Stored research lead; intent evidence, not independently verified factual authority"
+        }
+      ],
+      "reddit": [
+        {
+          "url": "https://www.reddit.com/search/?q=how%20to%20make%20a%20home%20binder",
+          "status": "Discovery link only; no relevant Reddit result returned in stored research, no consensus inferred"
+        }
+      ],
+      "verified_sources": [],
+      "user_needs": "Search leads emphasize section choices and printable setup; this narrower home-systems binder should explicitly distinguish itself from meal-planning/family-management binders.",
+      "quora": "Blocked by robots.txt in stored research; not inspected.",
+      "search_volume": "Unknown; parent will join GSC."
+    },
+    "image_assessment": "Alt text describes five sections and a password exclusion card, directly relevant to the text. No actual image viewed; readability and origin unassessed.",
+    "recommendation": "improve",
+    "limitations": [
+      "Full extracted article and corresponding research read; extraction duplicates tables and navigation, not assumed to be visible duplication.",
+      "No live product testing or actual image inspection.",
+      "Stored general-web and Reddit leads are not proof of factual claims; verification URLs identified separately."
+    ]
+  },
+  {
+    "url": "https://draftpace.com/guides/moving-into-a-rental-what-to-document",
+    "title": "Moving into a rental: what to document on day one",
+    "intent": "Create move-in evidence that supports repair requests and later deposit disputes.",
+    "verdict": "partial",
+    "priority": "P1",
+    "findings": [
+      {
+        "type": "strength",
+        "evidence": "The four-record system covers dated photos, notice dates, deposit information and written repair reports; it explicitly limits the guide to US rentals and cautions against uninformed rent withholding.",
+        "fix": "Preserve these scope and escalation boundaries."
+      },
+      {
+        "type": "issue",
+        "evidence": "The FAQ says dated photos do the same job as a checklist and are harder to dispute, and that photos and notes hold up regardless of local rules. California DRE recommends photos in addition to a signed checklist, not as a guaranteed substitute.",
+        "fix": "Say photos supplement the inventory; request signatures, retain copies and comply with local submission deadlines. Remove guarantees about evidentiary outcomes.",
+        "sources": [
+          "https://www.dre.ca.gov/publications/ResourceGuidebook/gb07_when.html"
+        ]
+      },
+      {
+        "type": "issue",
+        "evidence": "The summary promises four records settle most deposit arguments. No outcome data supports 'most'; the text itself recognizes local legal variation.",
+        "fix": "Use 'help document and challenge deductions' rather than a promised dispute outcome."
+      },
+      {
+        "type": "opportunity",
+        "evidence": "The day-one record omits file names, submission date/receipt, landlord acknowledgement, key count and meter readings.",
+        "fix": "Add a room-by-room record with original-file backup and a ready-to-send condition email; keep acknowledgement separate from agreement."
+      }
+    ],
+    "suggested_title": "Rental move-in checklist: photos, signed condition records and deposit paperwork",
+    "proposed_outline": [
+      "Before unpacking",
+      "Room-by-room condition checklist",
+      "Photos plus signed inventory",
+      "Send and preserve evidence",
+      "Lease, deposit, keys and meters",
+      "Repairs and local tenant help"
+    ],
+    "research": {
+      "general_web": [
+        {
+          "url": "https://legalaidwv.org/legal-information/checklist-for-moving-into-new-rental-housing/",
+          "status": "Stored research lead; intent evidence, not independently verified factual authority"
+        }
+      ],
+      "reddit": [
+        {
+          "url": "https://www.reddit.com/search/?q=moving%20into%20a%20rental%20what%20to%20document",
+          "status": "Discovery link only; no relevant Reddit result returned in stored research, no consensus inferred"
+        }
+      ],
+      "verified_sources": [
+        "https://www.dre.ca.gov/publications/ResourceGuidebook/gb07_when.html"
+      ],
+      "user_needs": "Readers need a defensible condition record and proof it was delivered, not merely a collection of photos.",
+      "quora": "Blocked by robots.txt in stored research; not inspected.",
+      "search_volume": "Unknown; parent will join GSC."
+    },
+    "image_assessment": "Alt text describes a day-one checklist and deposit/notice example. Relevant concept, but actual image not inspected; no visual or AI-origin claim.",
+    "recommendation": "improve",
+    "limitations": [
+      "Full extracted article and corresponding research read; extraction duplicates tables and navigation, not assumed to be visible duplication.",
+      "No live product testing or actual image inspection.",
+      "Stored general-web and Reddit leads are not proof of factual claims; verification URLs identified separately."
+    ]
+  },
+  {
+    "url": "https://draftpace.com/guides/debt-snowball-vs-avalanche",
+    "title": "Debt snowball vs avalanche: which costs less, which sticks",
+    "intent": "Compare repayment order, interest and motivation using the reader's own debts.",
+    "verdict": "partial",
+    "priority": "P1",
+    "findings": [
+      {
+        "type": "strength",
+        "evidence": "Three debts are fully specified; extra-payment sensitivity, a wider-rate-gap example, promotional-rate limits and constant-minimum assumptions go well beyond definitions.",
+        "fix": "Retain the worked comparisons and explicit model boundaries."
+      },
+      {
+        "type": "issue",
+        "evidence": "'Why the gap is often small' generalizes from the selected example. CFPB explains the methods but does not establish how commonly savings are small.",
+        "fix": "Rename to 'Why the gap is small in this example'; avoid population-level claims without evidence.",
+        "sources": [
+          "https://www.consumerfinance.gov/archive/blog/how-reduce-your-debt/"
+        ]
+      },
+      {
+        "type": "issue",
+        "evidence": "The recommendation chooses snowball for a $114 gap and avalanche for hundreds, without establishing that the reader would abandon avalanche or can absorb that cost.",
+        "fix": "Present the dollar tradeoff neutrally and let the reader weigh motivation, liquidity and cost; label the threshold as editorial preference, not a rule."
+      },
+      {
+        "type": "issue",
+        "evidence": "The FAQ asserts steady $100 helps more than $400 in one month and nothing the next; these are unequal totals over the stated period, and timing also affects interest.",
+        "fix": "Compare equal cumulative contributions over the same time horizon and distinguish sustainability from mathematical savings."
+      },
+      {
+        "type": "opportunity",
+        "evidence": "Independent APR/12 calculation closely reproduced the $200 totals within cents but the text does not specify first-payment month, rounding or whether snowball order stays fixed. Re-sorting balances changes the $0 path.",
+        "fix": "Publish a reproducible payment schedule and declare ordering, rounding, leftover allocation and first-payment date before treating exact cents/dates as verified."
+      }
+    ],
+    "suggested_title": "Debt snowball vs avalanche: compare interest, payoff milestones and monthly relief",
+    "proposed_outline": [
+      "Two orders, all minimums protected",
+      "Reproducible three-debt comparison",
+      "When the cost gap grows",
+      "Cash-flow relief and motivation",
+      "Promotion deadlines and affordability",
+      "Choose using your own numbers"
+    ],
+    "research": {
+      "general_web": [
+        {
+          "url": "https://www.fidelity.com/learning-center/personal-finance/avalanche-snowball-debt",
+          "status": "Stored research lead; intent evidence, not independently verified factual authority"
+        }
+      ],
+      "reddit": [
+        {
+          "url": "https://www.reddit.com/r/personalfinance/comments/1pynb1a/pay_off_highest_monthly_balance_first_or_debt/",
+          "status": "Stored discussion lead, anecdotal only"
+        }
+      ],
+      "verified_sources": [
+        "https://www.consumerfinance.gov/archive/blog/how-reduce-your-debt/"
+      ],
+      "user_needs": "The Reddit lead asks whether freeing a larger minimum payment matters; readers need cost, payoff milestones and cash-flow relief distinguished.",
+      "quora": "Blocked by robots.txt in stored research; not inspected.",
+      "search_volume": "Unknown; parent will join GSC."
+    },
+    "image_assessment": "Alt describes the $113.94 comparison. Actual image unviewed; any chart/table should be updated alongside verified calculations.",
+    "recommendation": "improve",
+    "limitations": [
+      "Full extracted article and corresponding research read; extraction duplicates tables and navigation, not assumed to be visible duplication.",
+      "No live product testing or actual image inspection.",
+      "Stored general-web and Reddit leads are not proof of factual claims; verification URLs identified separately."
+    ]
+  },
+  {
+    "url": "https://draftpace.com/guides/monthly-bills-list",
+    "title": "Monthly bills list: include the bills that are not monthly",
+    "intent": "Create a complete dated bills list and convert irregular frequencies into a monthly planning amount.",
+    "verdict": "fulfilled",
+    "priority": "P2",
+    "findings": [
+      {
+        "type": "strength",
+        "evidence": "The $1,668 monthly-only and $223 non-monthly amounts correctly total $1,891; weekly and fortnightly conversions avoid the common four-week-month error.",
+        "fix": "Keep the arithmetic and overlooked-bill checklist."
+      },
+      {
+        "type": "issue",
+        "evidence": "The introduction says subscriptions are excluded, yet streaming and an annual gym membership appear in the worked total; the FAQ allows either arrangement.",
+        "fix": "State one rule: include all recurring commitments in the master total, with subscription decisions optionally tracked separately and no double counting."
+      },
+      {
+        "type": "opportunity",
+        "evidence": "Quarterly $612 becomes $204 monthly, but someone starting one month before the bill cannot fund it from one $204 contribution.",
+        "fix": "Add a first-cycle catch-up example using amount still needed divided by remaining pay periods, then the steady-state monthly reserve."
+      },
+      {
+        "type": "opportunity",
+        "evidence": "The promised six columns omit the paying account and paid/confirmed status; later text sends account checks elsewhere.",
+        "fix": "Offer optional account, payday allocation and confirmed-paid columns without making the basic list harder."
+      }
+    ],
+    "suggested_title": "Monthly bills list: due dates, annual bills and a worked template",
+    "proposed_outline": [
+      "Copy the basic bills list",
+      "Find monthly and annual commitments",
+      "Convert frequencies accurately",
+      "Fund the first irregular bill",
+      "Sort by due date and payday",
+      "Confirm payments and maintain the list"
+    ],
+    "research": {
+      "general_web": [
+        {
+          "url": "https://files.consumerfinance.gov/f/documents/cfpb_well-being_bill-calendar.pdf",
+          "status": "Stored research lead; intent evidence, not independently verified factual authority"
+        }
+      ],
+      "reddit": [
+        {
+          "url": "https://www.reddit.com/search/?q=monthly%20bills%20list",
+          "status": "Discovery link only; no relevant Reddit result returned in stored research, no consensus inferred"
+        }
+      ],
+      "verified_sources": [],
+      "user_needs": "General-web leads favor printable checklists and due-date calendars. Users need both an annualized cost total and the actual money required before the next payday.",
+      "quora": "Blocked by robots.txt in stored research; not inspected.",
+      "search_volume": "Unknown; parent will join GSC."
+    },
+    "image_assessment": "Alt describes eight bills totaling $1,891, matching text arithmetic. Actual figure not viewed; no rendering or origin assessment.",
+    "recommendation": "improve",
+    "limitations": [
+      "Full extracted article and corresponding research read; extraction duplicates tables and navigation, not assumed to be visible duplication.",
+      "No live product testing or actual image inspection.",
+      "Stored general-web and Reddit leads are not proof of factual claims; verification URLs identified separately."
+    ]
+  },
+  {
+    "url": "https://draftpace.com/guides/organize-your-finances-from-scratch",
+    "title": "How to organize your finances when everything is scattered",
+    "intent": "Get an overwhelmed reader from scattered information to one provisional money overview and a manageable verification step.",
+    "verdict": "fulfilled",
+    "priority": "P2",
+    "findings": [
+      {
+        "type": "strength",
+        "evidence": "The six-area example shows real uncertainty markers for electric, insurance, balances and APR rather than invented precision; the ten-minute sequence turns each gap into an errand.",
+        "fix": "Keep the memory-first approach as a clearly provisional intake."
+      },
+      {
+        "type": "issue",
+        "evidence": "The Goals row gives $5,000 by next summer and says 'None yet' under gap to close, despite omitting current earmarked savings and an exact date.",
+        "fix": "Mark those goal inputs unknown too; show remaining amount and deadline before planning contributions."
+      },
+      {
+        "type": "opportunity",
+        "evidence": "Readers choose safe-to-spend or debt payoff at minute seven, then close only one gap; approximate balances are not a verified spending allowance.",
+        "fix": "Add a clear stop gate: verify current balances, pending transactions and obligations through the relevant payday before acting on a spending figure."
+      },
+      {
+        "type": "issue",
+        "evidence": "The tax retention shorthand says three years from filing, while IRS says early-filed returns count from the due date and lists longer exceptions.",
+        "fix": "Keep this section short but add early-filing treatment and link readers to the IRS exceptions before discarding anything.",
+        "sources": [
+          "https://www.irs.gov/businesses/small-businesses-self-employed/how-long-should-i-keep-records"
+        ]
+      }
+    ],
+    "suggested_title": "Organize scattered finances: a ten-minute starting page and what to verify",
+    "proposed_outline": [
+      "Write six headings from memory",
+      "Mark every estimate",
+      "Choose a deadline-sensitive gap",
+      "Verify before spending",
+      "Give documents a home",
+      "Schedule the next small review"
+    ],
+    "research": {
+      "general_web": [
+        {
+          "url": "https://njaes.rutgers.edu/sshw/message/message.php?m=1548&p=Finance",
+          "status": "Stored research lead; intent evidence, not independently verified factual authority"
+        }
+      ],
+      "reddit": [
+        {
+          "url": "https://www.reddit.com/search/?q=organize%20your%20finances%20from%20scratch",
+          "status": "Discovery link only; no relevant Reddit result returned in stored research, no consensus inferred"
+        }
+      ],
+      "verified_sources": [
+        "https://www.irs.gov/businesses/small-businesses-self-employed/how-long-should-i-keep-records"
+      ],
+      "user_needs": "Extension guidance supports small repeatable actions; this article serves the overwhelmed-start intent better than a full investment or tax-planning guide.",
+      "quora": "Blocked by robots.txt in stored research; not inspected.",
+      "search_volume": "Unknown; parent will join GSC."
+    },
+    "image_assessment": "Image files were not visually inspected. Keep any six-area example subordinate to accessible text; no claim about visual quality or origin.",
+    "recommendation": "improve",
+    "limitations": [
+      "Full extracted article and corresponding research read; extraction duplicates tables and navigation, not assumed to be visible duplication.",
+      "No live product testing or actual image inspection.",
+      "Stored general-web and Reddit leads are not proof of factual claims; verification URLs identified separately."
+    ]
+  },
+  {
+    "url": "https://draftpace.com/guides/split-bills-with-a-partner-or-roommate",
+    "title": "How to split bills with a partner or roommate: 3 methods",
+    "intent": "Choose and calculate an agreed household cost split and make settlement predictable.",
+    "verdict": "fulfilled",
+    "priority": "P2",
+    "findings": [
+      {
+        "type": "strength",
+        "evidence": "The $4,200/$2,100 example compares equal versus proportional burdens, and scripts cover privacy and changed income. The lease-liability caveat prevents mistaking a private split for a landlord agreement.",
+        "fix": "Retain the worked fairness comparison and scripts."
+      },
+      {
+        "type": "issue",
+        "evidence": "The table uses exact two-thirds ($1,328 of $1,992), but instructions and product entry use 67 percent, which yields $1,334.64, a $6.64 difference.",
+        "fix": "Keep full ratios through calculation and round only final cents, or consistently show the agreed 67/33 amounts and explain the difference."
+      },
+      {
+        "type": "issue",
+        "evidence": "The subtitle promises equal, income or room; the three-method table instead uses equal, income or item. Room-size is effectively a fourth method.",
+        "fix": "Make labels consistent or explicitly frame room weighting as a roommate-specific variant."
+      },
+      {
+        "type": "opportunity",
+        "evidence": "Room rent allocates the entire $2,700 solely by bedroom area, without distinguishing equally shared common space. It is an agreement option, not uniquely fair.",
+        "fix": "Label it one possible convention and offer an optional equal common-space portion plus weighted private-space portion."
+      },
+      {
+        "type": "opportunity",
+        "evidence": "Joint-account suitability is discussed but access/withdrawal risks and account closure are not.",
+        "fix": "Add a bank-terms check and a brief exit agreement without implying a joint account is required."
+      }
+    ],
+    "suggested_title": "Split bills with a partner or roommates: equal, income-based and room-based examples",
+    "proposed_outline": [
+      "Choose the shared costs",
+      "Compare equal and exact income ratios",
+      "Roommate room/use alternatives",
+      "Agree payer and settlement day",
+      "Handle income changes and one-offs",
+      "Separate records and account access"
+    ],
+    "research": {
+      "general_web": [
+        {
+          "url": "https://www.becu.org/blog/how-do-couples-split-bills",
+          "status": "Stored research lead; intent evidence, not independently verified factual authority"
+        }
+      ],
+      "reddit": [
+        {
+          "url": "https://www.reddit.com/search/?q=split%20bills%20with%20a%20partner%20or%20roommate",
+          "status": "Discovery link only; no relevant Reddit result returned in stored research, no consensus inferred"
+        }
+      ],
+      "verified_sources": [],
+      "user_needs": "Bank and credit-union leads emphasize multiple arrangements and discussing fairness; users need a repeatable calculation and clear ownership of payments, not one mandatory split.",
+      "quora": "Blocked by robots.txt in stored research; not inspected.",
+      "search_volume": "Unknown; parent will join GSC."
+    },
+    "image_assessment": "Alt describes the exact two-thirds $1,328 total. Image unviewed; reconcile any figure with the chosen rounding convention.",
+    "recommendation": "improve",
+    "limitations": [
+      "Full extracted article and corresponding research read; extraction duplicates tables and navigation, not assumed to be visible duplication.",
+      "No live product testing or actual image inspection.",
+      "Stored general-web and Reddit leads are not proof of factual claims; verification URLs identified separately."
+    ]
+  },
+  {
+    "url": "https://draftpace.com/guides/subscription-tracker-what-to-track",
+    "title": "Subscription tracker: the six fields that catch renewals",
+    "intent": "Track known subscriptions so renewal decisions happen before a charge and cancellations can be confirmed.",
+    "verdict": "partial",
+    "priority": "P1",
+    "findings": [
+      {
+        "type": "strength",
+        "evidence": "The five-row example differentiates annual renewals, shared cost and decision status; the guide distinguishes finding subscriptions from tracking or canceling them.",
+        "fix": "Keep this narrower scope and the account-page verification step."
+      },
+      {
+        "type": "issue",
+        "evidence": "Both opening and FAQ call renewal date the last day to cancel, while the trial FAQ itself admits earlier processing constraints.",
+        "fix": "Track the provider's actual cancellation cutoff separately from charge date; set reminders before the cutoff and verify terms, rather than treating renewal day as safe.",
+        "sources": [
+          "https://consumer.ftc.gov/articles/getting-and-out-free-trials-auto-renewals-and-negative-option-subscriptions"
+        ]
+      },
+      {
+        "type": "issue",
+        "evidence": "A monthly review looks ahead only two weeks. Without correctly installed per-item reminders, renewals in the later half of the interval are missed.",
+        "fix": "Look through the next scheduled review plus a buffer, or review weekly; make reminder setup an explicit completed step."
+      },
+      {
+        "type": "issue",
+        "evidence": "The checklist says remove canceled items, yet the article also advises retaining cancellation requests and checking stopped charges.",
+        "fix": "Archive canceled rows with request date, confirmation reference and last verification instead of deleting them."
+      },
+      {
+        "type": "opportunity",
+        "evidence": "The six fields do not record billing channel or management link, so an Apple/Google/direct subscription can be harder to cancel even with a date.",
+        "fix": "Add optional billing channel, account owner and cancellation link without storing credentials."
+      }
+    ],
+    "suggested_title": "Subscription tracker: renewal dates, cancellation deadlines and proof",
+    "proposed_outline": [
+      "Copy a known-subscription tracker",
+      "Charge date versus cancellation cutoff",
+      "Trials and billing channels",
+      "Schedule reminders and review coverage",
+      "Archive and verify cancellations"
+    ],
+    "research": {
+      "general_web": [
+        {
+          "url": "https://subsradar.com/guides/privacy-first-subscription-tracking-guide",
+          "status": "Stored research lead; intent evidence, not independently verified factual authority"
+        }
+      ],
+      "reddit": [
+        {
+          "url": "https://www.reddit.com/r/macapps/comments/1grsxhy/the_best_subscription_tracking_app/",
+          "status": "Stored discussion lead, anecdotal only"
+        }
+      ],
+      "verified_sources": [
+        "https://consumer.ftc.gov/articles/getting-and-out-free-trials-auto-renewals-and-negative-option-subscriptions"
+      ],
+      "user_needs": "Reddit lead highlights missed subscriptions and wanting history across repeated subscribe/cancel cycles; users need reminders and retained evidence, not only an active list.",
+      "quora": "Blocked by robots.txt in stored research; not inspected.",
+      "search_volume": "Unknown; parent will join GSC."
+    },
+    "image_assessment": "Alt describes three tracker rows whereas the text example has five; not necessarily an error, but check consistency. Image not visually inspected.",
+    "recommendation": "improve",
+    "limitations": [
+      "Full extracted article and corresponding research read; extraction duplicates tables and navigation, not assumed to be visible duplication.",
+      "No live product testing or actual image inspection.",
+      "Stored general-web and Reddit leads are not proof of factual claims; verification URLs identified separately."
+    ]
+  }
+]

@@ -1,0 +1,229 @@
+{
+  "slug": "beneficiary-forms-override-your-will",
+  "title": "Beneficiary vs will: what controls each account?",
+  "dek": "Check which assets follow a beneficiary designation, which may enter your estate, and when spouse rights or conflicting paperwork need advice.",
+  "metaDescription": "Check which assets follow a beneficiary designation, which may enter your estate, and when spouse rights or conflicting paperwork need advice.",
+  "updatedAt": "2026-11-17",
+  "body": [
+    {
+      "kind": "paragraphs",
+      "paragraphs": [
+        "A valid beneficiary designation commonly controls the payment of an account or policy rather than the instructions in a will. But 'the form always wins' is too absolute: spouse protections, plan terms, court orders, ownership and state or federal law can change the result. Check the provider's current record and get advice about conflicts.",
+        "An old workplace plan can be easy to miss when updating a will. The will may be current while a separate designation is years out of date. This US guide helps you inventory those separate instructions. It does not decide who should inherit or resolve a disputed claim."
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "Start with the way the asset is held",
+      "paragraphs": [
+        "Ask whether the asset is individually owned, jointly held with a relevant survivorship provision, held in trust or subject to a beneficiary arrangement. These are different routes. An account with no beneficiary does not necessarily pass under a will: the plan's default provision may identify a recipient, and other ownership rules may apply.",
+        "The [Supreme Court of Texas will instructions](https://www.txcourts.gov/media/1456774/239037.pdf) specifically warn that a new will does not change beneficiary designations on listed assets. That is a useful example of the distinction, not permission to apply Texas rules to every household."
+      ]
+    },
+    {
+      "kind": "table",
+      "heading": "Questions to ask for each asset",
+      "columns": [
+        "Asset or arrangement",
+        "Check with the provider"
+      ],
+      "rows": [
+        [
+          "Workplace retirement plan",
+          "Current designation, spouse rights and any applicable domestic relations order"
+        ],
+        [
+          "IRA",
+          "Designation, custodian defaults and relevant state-law questions"
+        ],
+        [
+          "Life insurance",
+          "Policy owner, insured person, beneficiaries and accepted changes"
+        ],
+        [
+          "POD or TOD account",
+          "Whether the designation is active and what happens if it fails"
+        ],
+        [
+          "Joint or trust property",
+          "Ownership documents and controlling terms, with legal advice where needed"
+        ]
+      ]
+    },
+    {
+      "kind": "list",
+      "heading": "Audit the provider records",
+      "checkable": true,
+      "items": [
+        "List current and former employers' retirement plans, personal retirement accounts and insurance policies.",
+        "Ask each provider for the primary and contingent beneficiaries currently accepted on file.",
+        "Check names, relationships, contact details and any shares shown, without posting private data on a shared checklist.",
+        "Ask what happens if a beneficiary has died, cannot be found or is not eligible.",
+        "Check consent, signature and submission requirements before making a change.",
+        "Submit through the official process and retain acceptance confirmation.",
+        "Record the check date and where confirmation is stored; set a review after significant life changes."
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "Invented example: a form and a will disagree",
+      "paragraphs": [
+        "Morgan's will leaves the estate to two adult children. A retirement account record still names a sibling. The useful next action is not writing 'children' in a household binder. Morgan asks the administrator to confirm the designation and explain the change procedure, including any spouse-related requirement.",
+        "After submitting a new form, Morgan saves the administrator's confirmation. Until acceptance is established, the checklist says 'change submitted, awaiting confirmation,' not 'updated.' This example illustrates a recordkeeping process, not a predicted distribution."
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "Marriage and divorce need extra care",
+      "paragraphs": [
+        "The [IRS death-of-spouse guidance](https://www.irs.gov/retirement-plans/plan-participant-employee/retirement-topics-death-of-spouse) notes that many retirement plans require a spouse as primary beneficiary unless written consent allows an alternative. Do not assume an ordinary online edit can override that protection.",
+        "Likewise, do not assume divorce automatically removes an ex-spouse, or that it never does. Asset type, applicable law, orders and plan administration matter. Ask the administrator and a qualified attorney about your specific situation. Do not ignore a divorce order or settlement while trying to simplify a beneficiary record."
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "When to stop filling in the form",
+      "paragraphs": [
+        "Pause for a minor beneficiary, a person receiving means-tested benefits, a trust, blended-family disagreement, international assets or conflicting documents. These choices can have legal and tax consequences beyond the provider's form. Avoid naming another adult 'to pass it on later' without advice; that may not create the arrangement you intend.",
+        "If the account owner has died, this is no longer a routine update. Contact the provider's bereavement or claims team and the authorized estate representative. Do not use a saved login to change beneficiaries after death. Preserve forms, confirmations and correspondence for the claims process."
+      ]
+    },
+    {
+      "kind": "scripts",
+      "heading": "Ask the administrator",
+      "items": [
+        {
+          "situation": "Confirm the record",
+          "line": "Please confirm the primary and contingent beneficiaries currently accepted for this account, and the date of the latest designation."
+        },
+        {
+          "situation": "Find the unresolved issue",
+          "line": "What spouse-consent rules, court orders or plan defaults could affect this change, and where can I obtain the governing instructions?"
+        },
+        {
+          "situation": "Close the loop",
+          "line": "How will I know the new designation has been accepted, rather than merely uploaded?"
+        }
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "Make the household note an index",
+      "paragraphs": [
+        "Record the provider, account type, date checked and location of accepted documentation. Keep sensitive identifiers in a protected record rather than a broadly shared planning page. Your index helps someone find evidence; it is not itself the beneficiary designation.",
+        "Review the [if-something-happens file](/guides/the-if-something-happens-to-me-file) for the larger document index. Keep the jobs separate: a will expresses estate instructions, provider forms address particular benefits, and legal advice coordinates conflicts. None substitutes automatically for the others."
+      ]
+    },
+    {
+      "kind": "faq",
+      "items": [
+        {
+          "q": "Does a newer will replace an older beneficiary form?",
+          "a": "Usually not for an asset governed by a valid beneficiary designation, but the actual result depends on the asset and applicable rules. Ask the provider to confirm the designation and consult an attorney if there is a conflict. Updating the will alone is not a reliable account-update method."
+        },
+        {
+          "q": "What if the beneficiary field is blank?",
+          "a": "Ask for the plan or policy's default order. A spouse, other person or estate may receive the benefit depending on those terms and applicable law. Do not assume either that probate is inevitable or that the will definitely controls merely because you cannot see a named beneficiary online."
+        },
+        {
+          "q": "Can I name a child directly?",
+          "a": "The provider may permit it, but a minor's receipt and management of funds can require arrangements under applicable law. Children with disabilities or benefits may need additional planning. Discuss an appropriate structure with a qualified attorney rather than treating an adult relative's informal promise as a substitute."
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "name": "Supreme Court of Texas: Will form instructions",
+      "url": "https://www.txcourts.gov/media/1456774/239037.pdf",
+      "retrieved": "2026-11-17",
+      "note": "Texas instructions distinguish beneficiary assets from assets controlled by a will."
+    },
+    {
+      "name": "IRS: Death of spouse",
+      "url": "https://www.irs.gov/retirement-plans/plan-participant-employee/retirement-topics-death-of-spouse",
+      "retrieved": "2026-11-17",
+      "note": "Many retirement plans require spousal consent for an alternative beneficiary."
+    }
+  ],
+  "visuals": [
+    {
+      "title": "Which instruction applies?",
+      "kicker": "Start with the asset, not the will",
+      "steps": [
+        {
+          "label": "Ownership",
+          "detail": "Check joint, individual or trust ownership."
+        },
+        {
+          "label": "Designation",
+          "detail": "Find any accepted beneficiary arrangement."
+        },
+        {
+          "label": "Exceptions",
+          "detail": "Check spouse protections, orders and governing rules."
+        },
+        {
+          "label": "Estate route",
+          "detail": "Use estate instructions only where that route applies."
+        }
+      ],
+      "caption": "The controlling route depends on more than the date of the will.",
+      "alt": "Four checks distinguish ownership, beneficiary designations, legal exceptions and estate assets.",
+      "kind": "sequence"
+    },
+    {
+      "title": "Submitted is not accepted",
+      "kicker": "Track a designation change",
+      "steps": [
+        {
+          "label": "Current record",
+          "detail": "Obtain the administrator's accepted designation."
+        },
+        {
+          "label": "Change request",
+          "detail": "Complete the required signatures and consents."
+        },
+        {
+          "label": "Confirmation",
+          "detail": "Retain evidence that the new instruction was accepted."
+        }
+      ],
+      "caption": "A household note cannot replace the provider's change process.",
+      "alt": "Three record stages show confirmation of the current form, submission and accepted change.",
+      "kind": "record"
+    }
+  ],
+  "worksheet": {
+    "title": "Beneficiary designation audit",
+    "prompt": "Check one provider at a time and record unresolved legal questions.",
+    "fields": [
+      "Provider and asset type",
+      "Ownership arrangement",
+      "Primary and contingent record",
+      "Date confirmed",
+      "Spouse or court-order question",
+      "Change status",
+      "Acceptance evidence location",
+      "Professional advice needed"
+    ]
+  },
+  "research": {
+    "primaryQuery": "beneficiary vs will",
+    "supportingQueries": [
+      "does a beneficiary override a will",
+      "check retirement account beneficiaries"
+    ],
+    "intent": "Explain beneficiary-versus-will administration with qualified exceptions, not estate-plan design.",
+    "sourceChecks": [
+      "https://www.txcourts.gov/media/1456774/239037.pdf - Texas instructions distinguish beneficiary assets from assets controlled by a will.",
+      "https://www.irs.gov/retirement-plans/plan-participant-employee/retirement-topics-death-of-spouse - Many retirement plans require spousal consent for an alternative beneficiary."
+    ],
+    "limitations": [
+      "US general information; state, federal, plan and court rules can change outcomes.",
+      "Texas will instructions support a bounded example, not a national legal conclusion.",
+      "No individual divorce, trust, minor-beneficiary or tax outcome is determined.",
+      "No keyword-volume dataset was available. Saved Reddit leads were qualitative only; Quora was blocked in the saved research."
+    ]
+  }
+}

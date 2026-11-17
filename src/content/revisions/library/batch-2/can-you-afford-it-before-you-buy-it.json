@@ -1,0 +1,215 @@
+{
+  "slug": "can-you-afford-it-before-you-buy-it",
+  "title": "Can you afford it? Check before you buy",
+  "dek": "Subtract bills, essentials, and protected savings before testing the full purchase cost. Check installment dates separately from paydays.",
+  "metaDescription": "Subtract bills, essentials, and protected savings before testing the full purchase cost. Check installment dates separately from paydays.",
+  "updatedAt": "2026-11-17",
+  "body": [
+    {
+      "kind": "paragraphs",
+      "paragraphs": [
+        "You can afford an everyday purchase only if its full cost fits after the bills, essentials, and money you intend to protect. Check the dates as well as the total. A balance, available credit limit, or small first installment does not answer that question by itself.",
+        "The tempting moment is checkout, when the price is clear but next week's groceries are not on the screen. This short cash test makes those commitments visible. It is for ordinary purchases, not a complete assessment of a mortgage, car loan, or other long-term commitment."
+      ]
+    },
+    {
+      "kind": "list",
+      "heading": "Run the purchase check",
+      "checkable": true,
+      "items": [
+        "Choose an interval through the next reliable income date and include commitments funded from today's money.",
+        "Start with spendable cash that is actually available, not credit or an unreceived payment.",
+        "Subtract bills and unposted purchases not already reflected in that balance.",
+        "Protect realistic groceries, transport, and other essentials for the interval.",
+        "Subtract emergency savings and other amounts you have chosen not to spend.",
+        "Add tax, delivery, accessories, and immediate operating costs to the price.",
+        "Test any later installments on their actual dates before deciding."
+      ]
+    },
+    {
+      "kind": "table",
+      "heading": "Invented example: three prices, one cash position",
+      "columns": [
+        "Calculation",
+        "Amount"
+      ],
+      "rows": [
+        [
+          "Available cash",
+          "$1,250"
+        ],
+        [
+          "Upcoming bills",
+          "-$420"
+        ],
+        [
+          "Essential spending",
+          "-$300"
+        ],
+        [
+          "Protected repair reserve",
+          "-$350"
+        ],
+        [
+          "Uncommitted before the purchase",
+          "$180"
+        ],
+        [
+          "A $42 purchase leaves",
+          "$138"
+        ],
+        [
+          "A $180 purchase leaves",
+          "$0"
+        ],
+        [
+          "A $480 purchase leaves",
+          "-$300"
+        ]
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "Read what the answer means",
+      "paragraphs": [
+        "The $42 purchase fits this invented interval's stated commitments. That does not mean it is the best use of the money. The $180 purchase leaves no margin for an underestimated cost. The $480 purchase creates a gap unless something genuinely changes. Do not silently reclassify the repair reserve as free money to make the answer work.",
+        "If your essential-spending estimate is uncertain, use actual recent spending and known changes. A week with a school trip, extra travel, or a prescription collection is not necessarily an ordinary week. If the item itself reduces an essential cost, count only the reduction you can reasonably establish."
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "Tomorrow is payday: avoid misleading weekly arithmetic",
+      "paragraphs": [
+        "Do not divide by a rounded number of weeks that can become zero or exaggerate what remains. With one day until payday, subtract the actual costs before the deposit: tomorrow's commute, a grocery purchase, and any bills that will collect. Then review the next cycle after income arrives.",
+        "Waiting can give you time to compare prices or avoid a rushed choice, but payday does not automatically make the purchase affordable. That income may already fund rent or an annual bill. Recalculate with the new commitments rather than treating the entire deposit as extra."
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "Installments need a calendar, not just a cheaper first line",
+      "paragraphs": [
+        "Use the schedule in the actual agreement. For an invented $180 plan with four $45 payments on November 18, December 2, December 16, and December 30, write all four dates down. Do not call them 'the next four paydays' unless your pay actually arrives on those dates.",
+        "Test each collection against other spending in that period. Check fees, interest, payment method, and any consequences of a missed installment in the agreement. If the plan only fits by assuming overtime, a refund, or another uncertain receipt, record that dependency instead of calling the purchase funded."
+      ]
+    },
+    {
+      "kind": "scripts",
+      "heading": "A decision note to use before checkout",
+      "items": [
+        {
+          "situation": "It fits",
+          "line": "The full cost is [amount]. After bills, essentials, and protected money, I would have [amount] left through [date]."
+        },
+        {
+          "situation": "It does not fit yet",
+          "line": "I need another [amount] without using [protected purpose]. I will reconsider on [date] using a fresh calculation."
+        },
+        {
+          "situation": "It is necessary",
+          "line": "I need this for [specific reason]. Before paying, I will compare a repair, a lower-cost alternative, and an agreed payment arrangement."
+        }
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "Urgent needs change the choice, not the arithmetic",
+      "paragraphs": [
+        "A broken work tool may be necessary even when this check shows a shortfall. Identify the minimum workable replacement, ask about repairs or assistance, and check terms before borrowing. Do not turn necessity into an assurance that financing is harmless.",
+        "If the purchase would leave housing, utilities, food, or other essentials unpaid, stop the discretionary transaction and address the shortfall first. For a longer commitment, include ongoing ownership costs and seek suitable advice. Use [safe-to-spend calculations](/guides/how-much-of-your-money-is-actually-safe-to-spend) to establish the starting figure."
+      ]
+    },
+    {
+      "kind": "faq",
+      "items": [
+        {
+          "q": "Should I count savings as money I can spend?",
+          "a": "Only if you deliberately decide to use that particular savings purpose. A balance earmarked for rent, repairs, or an emergency is not uncommitted merely because it is accessible. Record what would remain and how you would handle the obligation the savings previously covered."
+        },
+        {
+          "q": "Does paying by credit card change the answer?",
+          "a": "It changes how payment is processed, not the resources available for repayment. Include the purchase in your plan once and make sure the card payment can be funded. If you expect to carry a balance, evaluate its costs separately before deciding."
+        },
+        {
+          "q": "How much margin should I leave?",
+          "a": "There is no single amount that suits every household. Consider how uncertain your bills, income timing, and essential spending are. A calculation that leaves exactly zero is more vulnerable to a small surprise than one with room you have deliberately protected."
+        }
+      ]
+    }
+  ],
+  "sources": [],
+  "visuals": [
+    {
+      "title": "The purchase comes last",
+      "kicker": "Cash already has jobs",
+      "kind": "sequence",
+      "steps": [
+        {
+          "label": "Commitments",
+          "detail": "Protect bills and existing obligations."
+        },
+        {
+          "label": "Essentials",
+          "detail": "Set aside necessary spending until reliable income."
+        },
+        {
+          "label": "Reserves",
+          "detail": "Keep money assigned to future needs."
+        },
+        {
+          "label": "Purchase",
+          "detail": "Compare the full cost with what remains."
+        }
+      ],
+      "caption": "Available cash is not the same as uncommitted cash.",
+      "alt": "A sequence protects commitments, essential spending, and reserves before testing a purchase."
+    },
+    {
+      "title": "Dates must fit too",
+      "kicker": "Installment affordability",
+      "kind": "timeline",
+      "steps": [
+        {
+          "label": "Checkout",
+          "detail": "Record the full price and first payment."
+        },
+        {
+          "label": "Later collections",
+          "detail": "Place each installment on its actual calendar date."
+        },
+        {
+          "label": "Income",
+          "detail": "Compare those dates with real paydays and existing bills."
+        }
+      ],
+      "caption": "A small first payment does not establish affordability across the agreement.",
+      "alt": "An installment timeline compares actual collection dates with paydays and other commitments."
+    }
+  ],
+  "worksheet": {
+    "title": "Before-you-buy affordability check",
+    "prompt": "Test one purchase using full costs and dated commitments.",
+    "fields": [
+      "Item and full purchase cost",
+      "Available cash and date",
+      "Bills and unposted commitments",
+      "Essential spending to income date",
+      "Protected savings purposes",
+      "Amount left after purchase",
+      "Installment dates if relevant",
+      "Decision and review date"
+    ]
+  },
+  "research": {
+    "primaryQuery": "how to know if you can afford something",
+    "supportingQueries": [
+      "can I afford this purchase",
+      "purchase affordability before payday"
+    ],
+    "intent": "Make an everyday purchase decision from committed cash rather than a balance or installment amount.",
+    "sourceChecks": [],
+    "limitations": [
+      "Practical organization suggestions are not individualized professional advice.",
+      "Saved Reddit leads are qualitative only; Quora was blocked in saved research. No keyword-volume or ranking claims."
+    ]
+  }
+}

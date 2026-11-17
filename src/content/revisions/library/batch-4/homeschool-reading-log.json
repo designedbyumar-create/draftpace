@@ -1,0 +1,195 @@
+{
+  "slug": "homeschool-reading-log",
+  "title": "Homeschool reading log: titles, dates and format",
+  "dek": "Record books started, finished or stopped, with optional reading-format notes that distinguish listening from independent reading work.",
+  "metaDescription": "Record books started, finished or stopped, with optional reading-format notes that distinguish listening from independent reading work.",
+  "updatedAt": "2026-11-17",
+  "body": [
+    {
+      "kind": "paragraphs",
+      "paragraphs": [
+        "A useful homeschool reading log records the title, date or date range, and whether the book is in progress, finished or stopped. Add the author to identify the book reliably. Where the log supports a review, an optional format and assistance note helps distinguish independent reading, shared reading and listening.",
+        "The book you remember vividly is easy to log. The library book returned half-finished, the reread and the audiobook heard in the car are easier to lose. A small record can include all of them without turning reading into a daily paperwork test. This is a practical format, not a national portfolio requirement or a measure of reading ability."
+      ]
+    },
+    {
+      "kind": "table",
+      "heading": "Example: three honest entries",
+      "columns": [
+        "Title and author",
+        "Dates",
+        "Status",
+        "Format or support"
+      ],
+      "rows": [
+        [
+          "The Wild Robot, Peter Brown",
+          "Nov 1-8",
+          "Finished",
+          "Adult read-aloud; discussed the setting."
+        ],
+        [
+          "Charlotte's Web, E. B. White",
+          "Nov 9 onward",
+          "In progress",
+          "Child reading independently."
+        ],
+        [
+          "A library book about volcanoes",
+          "Nov 10-12",
+          "Stopped",
+          "Read together; author to confirm from library history."
+        ]
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "What the example can and cannot show",
+      "paragraphs": [
+        "The entries are invented examples. They identify what was used and how, but do not prove decoding skill, comprehension or time spent. The incomplete author entry is a reminder to check the borrowing record, not a model of perfect documentation. Do not invent a detail just to fill a column.",
+        "A completed book may have been enjoyed, skimmed, difficult or read with substantial help. Keep the factual status separate from judgments about understanding. If you want to examine learning, use a short conversation or another appropriate activity and record that evidence separately. [Checking what a child learned](/guides/how-to-check-if-your-child-learned-something) addresses that different job."
+      ]
+    },
+    {
+      "kind": "list",
+      "heading": "Start a log you can continue",
+      "checkable": true,
+      "items": [
+        "Choose one place for this child's reading record: a notebook page, spreadsheet or simple document. Avoid parallel lists that disagree.",
+        "Write the title and author when the book starts or enters regular use. Mark an approximate start date as approximate if necessary.",
+        "Use plain status words: in progress, finished, stopped or reread. Keep stopped books rather than silently deleting the entry.",
+        "Add a format or support tag when it matters: independent print, shared print, adult read-aloud or audiobook. Include accessibility formats without treating them as lesser participation.",
+        "Check any state, evaluator or course requirements before omitting fields such as dates, pages or minutes. A low-burden default cannot override a requirement.",
+        "Review the list against the current book stack and library history occasionally. Resolve a few missing titles while they are still recoverable."
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "Keep compliance questions separate from preferences",
+      "paragraphs": [
+        "The [Pennsylvania home education guide](https://www.pa.gov/content/dam/copapwp-pagov/en/education/documents/instruction/home-education-and-private-tutoring/home%20education%20and%20private%20tutoring%20guide.pdf) requires a contemporaneous log naming reading materials used as part of its portfolio provisions. That supports keeping identifiable titles in that setting; it does not make this article's columns sufficient everywhere. Check your own route before deciding the log is complete.",
+        "A reading program may request minutes, a particular response or pages completed. You can add those fields for that purpose. Ratings, stickers and cover images are optional preferences unless a specific program requires them. Keep them only if they serve the child or the reporting job, rather than because a template includes them."
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "How to handle books that do not fit neatly",
+      "paragraphs": [
+        "For anthologies or short selections, identify the collection and the particular piece where that is useful. For reference books consulted repeatedly, record the relevant dates or topic rather than pretending the whole book was read. For a reread, add a new date range or a clearly marked repeat entry.",
+        "If several children listen to one read-aloud, one household event can link to each participating child's record. Keep an individual response only when you actually observed one. Do not copy a sibling's comment as evidence for everyone. A format tag tells a later reader what the activity involved without excluding listening or shared reading."
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "When the log reveals a concern",
+      "paragraphs": [
+        "Repeatedly stopping books may reflect choice, access, interest or difficulty; the log alone cannot tell you which. Ask the child what is getting in the way. Check whether print size, language, format or the material itself is a mismatch before interpreting the pattern as unwillingness.",
+        "Seek appropriate educational or clinical advice when there is a persistent difficulty, distress, or a sudden change in reading access or performance. Do not diagnose from a completion tally. Keep dated examples of what the child could do and what help was needed so the conversation is specific."
+      ]
+    },
+    {
+      "kind": "faq",
+      "items": [
+        {
+          "q": "Should I include audiobooks?",
+          "a": "Yes, if you want a record of materials used, and where permitted for the particular reporting purpose. Mark the format so listening comprehension is not confused with independent print decoding. The same title can support different activities, so describe what actually happened rather than assigning a general ability label."
+        },
+        {
+          "q": "Do stopped books belong on the log?",
+          "a": "They can. Mark stopped and the date or approximate range, without inventing a reason. That preserves the record of materials used and may help you discuss choices later. A stopped book is not by itself evidence of poor motivation or a reading problem."
+        },
+        {
+          "q": "Do I need pages and minutes?",
+          "a": "Add them if the applicable rules, evaluator, course or your own useful purpose calls for them. Otherwise they can be optional. Do not assume every reviewer wants the same format, and do not reconstruct precise minutes from memory merely to make a reading log look more complete."
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "name": "Pennsylvania Department of Education: home education guide",
+      "url": "https://www.pa.gov/content/dam/copapwp-pagov/en/education/documents/instruction/home-education-and-private-tutoring/home%20education%20and%20private%20tutoring%20guide.pdf",
+      "retrieved": "2026-11-17",
+      "note": "Official PDF search text: 180 days OR 900 elementary/990 secondary hours; contemporaneous log naming reading materials and student work samples. PDF labelled revised January 2025."
+    }
+  ],
+  "visuals": [
+    {
+      "title": "A title is not a skill score",
+      "kicker": "Reading record boundaries",
+      "kind": "compare",
+      "steps": [
+        {
+          "label": "Title and dates",
+          "detail": "Identify the material and when it was used."
+        },
+        {
+          "label": "Format",
+          "detail": "Explain independent reading, shared work or listening."
+        },
+        {
+          "label": "Evidence",
+          "detail": "Keep any actual comprehension or decoding observation separately."
+        }
+      ],
+      "caption": "Completion alone does not establish understanding.",
+      "alt": "Three reading-log layers distinguish the material used, reading format and separately observed learning evidence."
+    },
+    {
+      "title": "Keep the real ending",
+      "kicker": "Book status",
+      "kind": "timeline",
+      "steps": [
+        {
+          "label": "Started",
+          "detail": "Record the identifiable title when reading begins."
+        },
+        {
+          "label": "In progress",
+          "detail": "Leave ongoing work open without inventing an end date."
+        },
+        {
+          "label": "Finished or stopped",
+          "detail": "Record what actually happened."
+        },
+        {
+          "label": "Reread",
+          "detail": "Add the repeat with its own dates or clear note."
+        }
+      ],
+      "caption": "A truthful log includes unfinished work and rereading.",
+      "alt": "A reading timeline includes started, in-progress, finished or stopped, and reread statuses."
+    }
+  ],
+  "worksheet": {
+    "title": "Reading materials and format log",
+    "prompt": "Record the material used without turning completion into an ability judgment.",
+    "fields": [
+      "Child and date range",
+      "Title and author",
+      "Status: ongoing, finished, stopped or reread",
+      "Reading format and assistance",
+      "Optional response or work reference",
+      "Required pages or minutes if applicable"
+    ]
+  },
+  "research": {
+    "primaryQuery": "homeschool reading log",
+    "supportingQueries": [
+      "homeschool book log format",
+      "log audiobooks homeschool portfolio",
+      "reading log abandoned books"
+    ],
+    "intent": "Provide a minimal truthful reading-materials record while separating format and ability evidence.",
+    "sourceChecks": [
+      {
+        "url": "https://www.pa.gov/content/dam/copapwp-pagov/en/education/documents/instruction/home-education-and-private-tutoring/home%20education%20and%20private%20tutoring%20guide.pdf",
+        "verified": "Official PDF search text: 180 days OR 900 elementary/990 secondary hours; contemporaneous log naming reading materials and student work samples. PDF labelled revised January 2025."
+      }
+    ],
+    "limitations": [
+      "No universal sufficiency claim. The three sample entries are invented; the volcano-book title is deliberately incomplete pending verification.",
+      "Saved search leads were reviewed for reader language only, not authority or prevalence. Quora was blocked in saved research. No search-volume or ranking estimate is available."
+    ]
+  }
+}

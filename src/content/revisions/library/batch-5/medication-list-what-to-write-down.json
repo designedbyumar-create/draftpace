@@ -1,0 +1,245 @@
+{
+  "slug": "medication-list-what-to-write-down",
+  "title": "How to keep an accurate medication list",
+  "dek": "Record each product, strength, instructions and actual use, including occasional medicines and supplements. Flag differences for a pharmacist to resolve.",
+  "metaDescription": "Record each product, strength, instructions and actual use, including occasional medicines and supplements. Flag differences for a pharmacist to resolve.",
+  "updatedAt": "2026-11-17",
+  "body": [
+    {
+      "kind": "paragraphs",
+      "paragraphs": [
+        "Keep one current list per person with every medicine and supplement used, its name and strength, the instructions, and how the person actually takes it. Include occasional products. Date the check, record allergies or reported reactions separately, and ask a pharmacist or prescriber to resolve any disagreement rather than choosing a dose yourself.",
+        "The difficult question is often not \"what is the name?\" but \"which instruction is current?\" A bottle, discharge paper and clinic portal may show different information. Your list should make that difference visible. It is a communication tool, not a prescription, interaction checker or medication-administration record."
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "Start from the products and current instructions",
+      "paragraphs": [
+        "Collect labels, current written instructions and any recent change notices. Ask the person what they actually use, including products kept outside the usual medicine cupboard. Do not gather someone else's medicines into the same row because the packaging looks similar.",
+        "The [FDA medication-list guidance](https://www.fda.gov/consumers/consumer-updates/create-and-keep-medication-list-your-health) includes prescription medicines, nonprescription products, vitamins and supplements. A product being available without prescription does not make it irrelevant to the list. Keep enough information for a professional to identify it accurately."
+      ]
+    },
+    {
+      "kind": "list",
+      "heading": "Build and check the list",
+      "checkable": true,
+      "items": [
+        "Identify the person and write the date of this check. Name who helped check it.",
+        "Record each medicine or supplement by its actual label name and strength or concentration. Include the form where it helps identify the product.",
+        "Copy the current instructions for amount, route, timing and any relevant conditions without converting units yourself.",
+        "Write actual use separately if it differs from the instruction. Do not conceal missed use or self-directed changes.",
+        "Add the prescriber or relevant contact and the purpose if confirmed; mark unknown information as unknown.",
+        "Separate active, stopped and uncertain entries. Retain useful change history without making stopped items look current.",
+        "Bring unresolved differences to the pharmacist or prescriber and update copies after clarification."
+      ]
+    },
+    {
+      "kind": "table",
+      "heading": "Invented record structure: no treatment instructions",
+      "columns": [
+        "Field",
+        "Example of what to record"
+      ],
+      "rows": [
+        [
+          "Product identity",
+          "Exact name, form and strength from the actual label"
+        ],
+        [
+          "Current instruction source",
+          "Dated clinician instruction or pharmacy label reference"
+        ],
+        [
+          "Actual use",
+          "Person reports following the current directions, or describes the difference"
+        ],
+        [
+          "Status",
+          "Current, stopped on confirmed date, or awaiting clarification"
+        ],
+        [
+          "Question",
+          "Recent discharge paper differs from bottle directions"
+        ],
+        [
+          "Resolution",
+          "Pharmacist or prescriber confirms the instruction; date and contact recorded"
+        ]
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "Strength and dose are not interchangeable labels",
+      "paragraphs": [
+        "A product's strength or concentration describes the product. The amount taken and when it is taken are separate pieces of information. A row that records only a strength does not necessarily say how much the person uses. Likewise, writing only \"one\" without the product form or unit may be unclear.",
+        "This guide deliberately avoids filled examples with drug doses. Copy the real information for the actual person and ask the pharmacist to clarify unfamiliar wording. Do not derive a child's amount from an adult example, change liquid units, or identify a medicine solely by color or shape."
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "Occasional use and stopped items",
+      "paragraphs": [
+        "For something used only occasionally, preserve the relevant confirmed instructions and describe actual recent use when useful to the clinical conversation. Do not turn \"when needed\" into an invented daily schedule. If you are not sure whether a product remains part of the current plan, flag that uncertainty instead of deleting it.",
+        "When a clinician stops or changes a medicine, record the source and date. Move the prior entry out of the active section without losing the history needed to explain the change. A list of current products answers a different question from a record of every administration; keep those tools distinct."
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "When the bottle, portal and discharge page disagree",
+      "paragraphs": [
+        "A label is valuable evidence, but it can be older than a later instruction. A portal can also contain outdated entries. Do not apply a blanket rule that the bottle always wins or that the newest-looking screen is always right. Show the conflicting sources and ask the pharmacist or prescriber which instruction applies now.",
+        "[FDA pharmacist advice](https://www.fda.gov/drugs/information-consumers-and-patients-drugs/stop-learn-go-tips-talking-your-pharmacist-learn-how-use-medicines-safely) asks people to describe actual use, stopped products and problems or reactions. State exactly what differs. If a decision about the next administration is imminent, obtain appropriate clinical advice promptly rather than treating the discrepancy as a filing task for later."
+      ]
+    },
+    {
+      "kind": "scripts",
+      "heading": "A clarification call",
+      "items": [
+        {
+          "situation": "Different directions",
+          "line": "My bottle says one thing and this dated instruction says another. Here are the product details and what has actually been taken. Please confirm the current directions."
+        },
+        {
+          "situation": "Unknown purpose",
+          "line": "I have the product name and instructions, but I do not know what it is for. Can you explain that and help me complete the list?"
+        },
+        {
+          "situation": "After clarification",
+          "line": "Please confirm what should be shown as current and what should be marked stopped or replaced. Where can I get the updated written instruction?"
+        }
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "Keep reactions and copies accurate",
+      "paragraphs": [
+        "Record the substance, the observed reaction and any uncertainty about its classification. Do not diagnose an allergy from a symptom or remove an allergy label on your own. Bring uncertain histories to the clinical team so the record can be clarified.",
+        "Choose one master list, then make dated copies for visits and agreed caregivers. Review the affected entries after changes, replace stale active copies and keep retained history identifiable. An old copy should not look newly checked because you changed only the page heading."
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "What the list cannot do",
+      "paragraphs": [
+        "It cannot decide whether two products interact, whether a dose is suitable or whether a medicine should be started, stopped or restarted. It also cannot establish that someone took a medicine at a particular time. Those are different clinical or recording questions.",
+        "If an error, concerning reaction or urgent medication question may have occurred, seek the appropriate professional or emergency help rather than relying on this article. Bring the available labels and information, but do not delay help to make the list complete."
+      ]
+    },
+    {
+      "kind": "faq",
+      "items": [
+        {
+          "q": "Should I include inhalers, creams and supplements?",
+          "a": "Include the products the person actually uses, not only regular tablets. Record enough label information to identify them and show the list to the relevant health professional. Do not decide that a product is unimportant solely because it is topical, occasional or nonprescription."
+        },
+        {
+          "q": "What if the printed list does not match the bottle?",
+          "a": "Keep both sources and ask the pharmacist or prescriber to resolve the difference. A bottle may be outdated after a later instruction, and a printed list can be stale too. This article cannot select the correct treatment direction from conflicting records."
+        },
+        {
+          "q": "Is a medicine list the same as a dose checklist?",
+          "a": "No. The list describes current products and instructions. A dose or administration record tracks what was actually given and when, with a process appropriate to the care arrangement. Keeping the distinction clear prevents a planned instruction from being mistaken for a completed administration."
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "name": "FDA: Create and keep a medication list",
+      "url": "https://www.fda.gov/consumers/consumer-updates/create-and-keep-medication-list-your-health",
+      "retrieved": "2026-11-17",
+      "note": "Official search-result content checked: medication names, strengths, instructions, OTC products, supplements and updating after changes."
+    },
+    {
+      "name": "FDA: Tips for talking with your pharmacist",
+      "url": "https://www.fda.gov/drugs/information-consumers-and-patients-drugs/stop-learn-go-tips-talking-your-pharmacist-learn-how-use-medicines-safely",
+      "retrieved": "2026-11-17",
+      "note": "Official search-result content checked: report actual use, stopped medicines and reactions; ask pharmacist about uncertainties."
+    }
+  ],
+  "visuals": [
+    {
+      "title": "A medication row has separate facts",
+      "kicker": "Do not let one number stand for everything",
+      "kind": "record",
+      "steps": [
+        {
+          "label": "Identity",
+          "detail": "Record the product name, form and strength."
+        },
+        {
+          "label": "Instructions",
+          "detail": "Keep amount, route and timing from the confirmed source."
+        },
+        {
+          "label": "Actual use",
+          "detail": "Record any difference or uncertainty honestly."
+        },
+        {
+          "label": "Status",
+          "detail": "Show whether the entry is current, stopped or unresolved."
+        }
+      ],
+      "caption": "A product strength alone does not describe the complete directions.",
+      "alt": "A medication record separates product identity, confirmed instructions, actual use and current status."
+    },
+    {
+      "title": "Resolve conflicting instructions",
+      "kicker": "Organize the question without choosing a dose",
+      "kind": "sequence",
+      "steps": [
+        {
+          "label": "Gather",
+          "detail": "Keep both conflicting sources and actual-use details."
+        },
+        {
+          "label": "Ask",
+          "detail": "Obtain clarification from the pharmacist or prescriber."
+        },
+        {
+          "label": "Update",
+          "detail": "Record the confirmed instruction and its date."
+        },
+        {
+          "label": "Replace",
+          "detail": "Update relevant copies without losing useful history."
+        }
+      ],
+      "caption": "Neither a bottle nor a portal should be treated as infallible when records disagree.",
+      "alt": "Conflicting medication records are gathered, professionally clarified, updated and replaced in active copies."
+    }
+  ],
+  "worksheet": {
+    "title": "Medication record and discrepancy check",
+    "prompt": "Record the actual product and instructions; put any disagreement in the question field for professional review.",
+    "fields": [
+      "Person and checked date",
+      "Product name, form and strength",
+      "Confirmed instruction and source",
+      "Actual use if different",
+      "Purpose and prescriber if known",
+      "Current, stopped or uncertain status",
+      "Reaction history and uncertainties",
+      "Clarification contact and resolution"
+    ]
+  },
+  "research": {
+    "primaryQuery": "how to keep a medication list",
+    "supportingQueries": [
+      "medication list strength versus dose",
+      "current medication list actual use",
+      "update medicines list after hospital discharge"
+    ],
+    "intent": "Maintain a current person-specific medication record and safely escalate conflicting instructions without giving dosing advice.",
+    "sourceChecks": [
+      "https://www.fda.gov/consumers/consumer-updates/create-and-keep-medication-list-your-health - Official search-result content checked: medication names, strengths, instructions, OTC products, supplements and updating after changes.",
+      "https://www.fda.gov/drugs/information-consumers-and-patients-drugs/stop-learn-go-tips-talking-your-pharmacist-learn-how-use-medicines-safely - Official search-result content checked: report actual use, stopped medicines and reactions; ask pharmacist about uncertainties."
+    ],
+    "limitations": [
+      "US-focused administration; requirements and individual circumstances vary.",
+      "Saved Reddit leads informed reader-language only; no anecdotes treated as factual authority. Quora was blocked in the saved research.",
+      "No keyword-volume dataset or ranking guarantee. Product registry inspected, but live product workflows not tested."
+    ]
+  }
+}

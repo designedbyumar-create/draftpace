@@ -1,0 +1,244 @@
+{
+  "slug": "which-documents-to-keep-and-where-to-put-them",
+  "title": "How long to keep documents and where to store them",
+  "dek": "Sort household papers by purpose, protect originals and active claims, and use retention rules carefully instead of shredding by age alone.",
+  "metaDescription": "Sort household papers by purpose, protect originals and active claims, and use retention rules carefully instead of shredding by age alone.",
+  "updatedAt": "2026-11-17",
+  "body": [
+    {
+      "kind": "paragraphs",
+      "paragraphs": [
+        "Keep a document while it supports ownership, rights, tax reporting, an active account, a claim or another unresolved purpose. Protect important originals and confirm the applicable retention rule before destroying them. Age alone is not enough to decide what can go.",
+        "A drawer can contain obsolete leaflets beside the only evidence of a paid loan. Sorting all of it into 'older than seven years' is quick but unsafe. This guide is for ordinary US household records. Business records, an estate, a dispute or a legal hold need their own advice."
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "Ask what the paper proves",
+      "paragraphs": [
+        "For every important document, finish 'I may need this to show...' A closing statement may help establish property history; an old policy may matter to a claim; a statement may support a tax entry or prove a payment. One document can serve several purposes, so use the longest relevant retention need.",
+        "Separate true duplicates from different versions. A later summary may not contain the terms, endorsement, signature or transaction detail that made the original important. Do not call something a duplicate merely because it has the same account name."
+      ]
+    },
+    {
+      "kind": "list",
+      "heading": "Sort without premature destruction",
+      "checkable": true,
+      "items": [
+        "Set aside current legal and identity originals before handling ordinary correspondence.",
+        "Create a separate group for active disputes, claims, notices and uncertain documents.",
+        "Link tax-supporting records to the relevant return rather than leaving them in a generic bank-statement pile.",
+        "Keep property acquisition, improvement and disposal evidence together.",
+        "Check whether replacement copies are available, what they cost and whether they include the needed detail.",
+        "Write a retention reason and review trigger for the archive.",
+        "Destroy sensitive records securely only after the decision is established."
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "Use federal tax periods with their exceptions",
+      "paragraphs": [
+        "[IRS Topic 305](https://www.irs.gov/taxtopics/tc305) explains that records supporting a return must remain available for the relevant limitations period. Its general assessment period is three years, but exceptions and other deadlines apply. A refund claim, substantial omitted income, a fraudulent return or no return can change the analysis.",
+        "Do not reduce this to 'all receipts can go after three years.' State taxes, unresolved notices and other purposes can require longer retention. If the filing history or rule is unclear, consult a qualified tax professional before shredding."
+      ]
+    },
+    {
+      "kind": "table",
+      "heading": "Keep by purpose, not one universal date",
+      "columns": [
+        "Record",
+        "Retention question",
+        "Storage approach"
+      ],
+      "rows": [
+        [
+          "Tax return and support",
+          "Which federal and state periods and exceptions apply?",
+          "Group by tax year with notices"
+        ],
+        [
+          "Property records",
+          "Could this establish basis, title, ownership or a later claim?",
+          "Maintain an asset history"
+        ],
+        [
+          "Legal and identity originals",
+          "Is this the current authoritative original, or legally relevant history?",
+          "Protected storage with a lawful retrieval plan"
+        ],
+        [
+          "Insurance papers",
+          "Could a current or later claim need these terms?",
+          "Keep policy versions with claim records"
+        ],
+        [
+          "Routine statements",
+          "Do they support taxes, payment proof or a dispute?",
+          "Keep relevant evidence; review true duplicates"
+        ]
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "Invented example: an old drawer",
+      "paragraphs": [
+        "A household finds a 2019 tax return, a recent kitchen invoice, a canceled subscription notice and an old employer insurance document. None is assigned a destruction date from its age alone. The tax return is checked against filing circumstances and any open issue. The invoice is classified by what work it describes and whether it is relevant to the property's records.",
+        "The cancellation notice stays until billing is resolved. The old insurance paper is checked with the provider before being treated as irrelevant. This example is a sorting method, not advice that any particular expense increases tax basis or any specific old return is safe to destroy."
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "Property papers often have a longer story",
+      "paragraphs": [
+        "The IRS guidance specifically discusses property records: their relevance can extend through the limitations period for the year of disposal. Purchase, improvement, depreciation and sale information can connect across many tax years. Not every repair is a capital improvement, and mixed-use or inherited property can complicate matters.",
+        "Keep the underlying documents and ask a tax professional about treatment where needed. Avoid writing 'all home improvement receipts raise basis' on an index; that is a tax conclusion the index cannot establish."
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "Choose storage by access and consequence",
+      "paragraphs": [
+        "Keep frequently needed current material in an accessible protected place. Store important originals where they are protected from foreseeable damage and can be obtained by an authorized person. A location known only to you is not a complete retrieval plan.",
+        "Make a low-detail index describing what exists, its location, the custodian and any access restriction. Do not put safe codes or full account identifiers on a widely shared index. If a safe-deposit box or adviser holds originals, confirm the actual access process rather than assuming a spare key is sufficient."
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "A scan is a backup, not automatic permission to shred",
+      "paragraphs": [
+        "A readable scan can make ordinary information easier to find, but acceptance depends on the document and purpose. Check whether a recipient needs an original, certified copy or specific electronic format. Do not destroy signed legal papers based on a general article about digital filing.",
+        "Check scan completeness, both sides, attachments and legibility before relying on it. Keep a protected backup separate from the only device and test that you can retrieve it. An encrypted file whose recovery method nobody can use has its own access problem."
+      ]
+    },
+    {
+      "kind": "scripts",
+      "heading": "Ask before discarding something uncertain",
+      "items": [
+        {
+          "situation": "Tax record",
+          "line": "Does this document support any open return, property basis or exception that requires keeping it longer?"
+        },
+        {
+          "situation": "Legal version",
+          "line": "Before I destroy an earlier version, is there any reason to retain it as part of the legal history?"
+        },
+        {
+          "situation": "Original requirement",
+          "line": "Will a clear copy be accepted for this purpose, or must I retain the original or certified copy?"
+        }
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "Stop the shred pile when circumstances change",
+      "paragraphs": [
+        "Pause destruction when a claim, investigation, audit, dispute or litigation is pending or reasonably relevant. Follow any formal preservation requirement and get advice if you are unsure. Do not discard something merely because its routine review date arrived.",
+        "For a repair-specific archive, use [what to keep after a home repair](/guides/what-to-keep-after-a-home-repair). For the short map someone else can follow, use [the advance handover list](/guides/what-to-write-down-in-case-something-happens-to-you). The index and the retention decision are related but separate jobs."
+      ]
+    },
+    {
+      "kind": "faq",
+      "items": [
+        {
+          "q": "Can I throw away bank statements after a year?",
+          "a": "Not automatically. Check whether they support a tax entry, prove payment, document a dispute or establish another important fact. A general household review point is not a legal destruction rule. Verify what the bank can reissue before relying on future access."
+        },
+        {
+          "q": "Do tax records always need seven years?",
+          "a": "No single period covers every situation. IRS guidance starts with a general limitations period and lists exceptions; property and claim records may have longer relevance. State rules can differ. Check the record's actual purpose and filing circumstances rather than applying a universal seven-year label."
+        },
+        {
+          "q": "Should I destroy an old will when I sign a new one?",
+          "a": "Ask the lawyer or other qualified adviser handling the change. Earlier documents may matter in some circumstances, and validity or revocation questions are not resolved by a filing checklist. Keep current documents clearly identified without independently deciding which legal history should disappear."
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "name": "IRS Topic 305: Recordkeeping",
+      "url": "https://www.irs.gov/taxtopics/tc305",
+      "retrieved": "2026-11-17",
+      "note": "Retention varies by purpose and limitations periods; property basis records remain relevant longer."
+    }
+  ],
+  "visuals": [
+    {
+      "title": "The retention decision",
+      "kicker": "Purpose before age",
+      "steps": [
+        {
+          "label": "Purpose",
+          "detail": "Identify what the document proves."
+        },
+        {
+          "label": "Rule",
+          "detail": "Check the applicable period and exceptions."
+        },
+        {
+          "label": "Open issue",
+          "detail": "Preserve records tied to unresolved matters."
+        },
+        {
+          "label": "Disposition",
+          "detail": "Keep, review later or securely destroy."
+        }
+      ],
+      "caption": "No single age threshold decides every household record.",
+      "alt": "Four checks connect document purpose, retention rules, open issues and final disposition.",
+      "kind": "sequence"
+    },
+    {
+      "title": "Store three things separately",
+      "kicker": "Record, copy and index",
+      "steps": [
+        {
+          "label": "Authoritative record",
+          "detail": "Protect the required original or accepted record."
+        },
+        {
+          "label": "Backup",
+          "detail": "Keep a complete, readable protected copy."
+        },
+        {
+          "label": "Index",
+          "detail": "Record the location and lawful retrieval route."
+        }
+      ],
+      "caption": "A useful index need not expose the contents of the archive.",
+      "alt": "Three storage roles distinguish authoritative records, backups and location indexes.",
+      "kind": "record"
+    }
+  ],
+  "worksheet": {
+    "title": "Household document retention decision",
+    "prompt": "Identify the purpose and applicable rule before assigning a destruction date.",
+    "fields": [
+      "Document and version",
+      "Purpose or right supported",
+      "Relevant tax or asset year",
+      "Rule and source checked",
+      "Open claim or dispute",
+      "Original requirement",
+      "Storage and backup",
+      "Review trigger and advice needed"
+    ]
+  },
+  "research": {
+    "primaryQuery": "how long to keep documents",
+    "supportingQueries": [
+      "household document retention checklist",
+      "which financial papers to keep"
+    ],
+    "intent": "Household retention and storage decisions, not a universal legal retention schedule.",
+    "sourceChecks": [
+      "https://www.irs.gov/taxtopics/tc305 - Retention varies by purpose and limitations periods; property basis records remain relevant longer."
+    ],
+    "limitations": [
+      "US household scope, not business, litigation or estate recordkeeping advice.",
+      "Only federal tax principles were verified; non-tax periods require relevant authority or professional advice.",
+      "No claim that every scan substitutes for an original is made.",
+      "No keyword-volume dataset was available. Saved Reddit leads were qualitative only; Quora was blocked in the saved research."
+    ]
+  }
+}

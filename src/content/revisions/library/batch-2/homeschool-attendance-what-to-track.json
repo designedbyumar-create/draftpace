@@ -1,0 +1,192 @@
+{
+  "slug": "homeschool-attendance-what-to-track",
+  "title": "Homeschool attendance records: what to track",
+  "dek": "Record the learning that happened without guessing what counts. Build a dated attendance log around your state's actual requirements.",
+  "metaDescription": "Record the learning that happened without guessing what counts. Build a dated attendance log around your state's actual requirements.",
+  "updatedAt": "2026-11-17",
+  "body": [
+    {
+      "kind": "paragraphs",
+      "paragraphs": [
+        "A homeschool attendance record should identify the child, the date, and the instruction actually completed. Add hours, subjects, or other fields when your applicable rules require them. There is no nationwide number of hours that makes every homeschool day count, and checking a box in an app does not establish compliance.",
+        "You may have taught all morning and still hesitate over the attendance column. A museum visit feels different from a workbook lesson; a day interrupted by illness feels harder to classify. Keep the factual record first, then apply the rule that governs your program. This guide concerns US parent-directed homeschooling, not attendance at an online public school."
+      ]
+    },
+    {
+      "kind": "list",
+      "heading": "Set up the attendance page",
+      "checkable": true,
+      "items": [
+        "Find your current state education department guidance and the legal route under which you homeschool.",
+        "Write the school year and child's name at the top; keep each child's totals distinguishable.",
+        "Copy the applicable day, hour, subject, and documentation requirements into a separate rules note.",
+        "Add a dated line describing completed instruction, with actual time where needed.",
+        "Mark uncertain entries for review instead of silently including them in the compliance total.",
+        "Save supporting records and check totals before the reporting deadline."
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "Do not turn one state's example into a national rule",
+      "paragraphs": [
+        "The [Colorado education department's family guidance](https://ed.cde.state.co.us/choice/homeschool/homeschool-for-families) is one official starting point for Colorado families. Another state's attendance definition may differ, and different schooling arrangements within a state may have different obligations. Use your own authority's wording rather than importing a friend's schedule.",
+        "Questions to resolve include whether a minimum applies per day or across the year, whether time must be recorded by subject, and what evidence must be retained. If the page is unclear, ask the responsible office to identify the governing provision. Keep its reply with the rule, not buried in a conversation thread."
+      ]
+    },
+    {
+      "kind": "table",
+      "heading": "Invented example: instruction is not the same as eligibility",
+      "columns": [
+        "Date",
+        "Factual entry",
+        "Before counting it"
+      ],
+      "rows": [
+        [
+          "November 3",
+          "Museum: compared animal habitats; completed observation sheet",
+          "Check whether this activity and duration meet applicable requirements."
+        ],
+        [
+          "November 4",
+          "Reading aloud, 20 minutes; no other instruction",
+          "Record the limited work honestly; do not label it a full day automatically."
+        ],
+        [
+          "November 5",
+          "No instruction because of illness",
+          "Keep outside an instructional total unless your specific rules say otherwise."
+        ]
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "Choose the smallest record that serves your rule",
+      "paragraphs": [
+        "A personal log can be brief: date, learner, activity, and a pointer to any sample. If hours are required, record the detail your rules call for. Do not replace necessary daily or subject information with a rough weekly estimate just because it is easier.",
+        "Shared lessons can share a description, but the record should still show which child participated. A child's absence, an unfinished activity, and a completed lesson should not become indistinguishable marks. Planned lessons belong in the plan; completed lessons belong in the record."
+      ]
+    },
+    {
+      "kind": "scripts",
+      "heading": "Ask a precise question",
+      "items": [
+        {
+          "situation": "Unclear definition",
+          "line": "I homeschool under [program or statute]. Does [specific activity and duration] satisfy its attendance requirement? Please point me to the current written guidance."
+        },
+        {
+          "situation": "A reporting request",
+          "line": "Which records are required for this request, which period does it cover, and what is the submission deadline?"
+        }
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "Missing days, disputed totals, and requests for records",
+      "paragraphs": [
+        "Start today's log even if earlier entries are missing. Reconstruct older work only from evidence you actually have, such as dated assignments or a co-op record. Label the entry with its reconstruction date and evidence source. Do not turn a curriculum's intended schedule into proof that each lesson happened.",
+        "If your running total suggests a shortfall, check the rule and remaining calendar promptly. Do not fix the arithmetic by inventing days. If an official challenges your record, preserve the request, observe its deadline, and seek qualified local advice when needed. A transfer, custody dispute, or move can change what information you need to retain.",
+        "For the routine that keeps entries manageable, see [a simple homeschool record keeping system](/guides/simple-homeschool-record-keeping-system). Keep attendance requirements separate from any tool's automatic count."
+      ]
+    },
+    {
+      "kind": "faq",
+      "items": [
+        {
+          "q": "Does a field trip count as a homeschool day?",
+          "a": "It may contribute to your record, but its eligibility depends on the rules that apply to your program. Describe what was learned and any time required by those rules. A ticket or photograph documents a visit, not necessarily a complete instructional day."
+        },
+        {
+          "q": "Do I have to record hours if I count days?",
+          "a": "Possibly. A day minimum and an hours requirement can coexist, so do not assume that counting days removes the need to track time. Check the applicable statute and current official guidance before deciding which columns to omit."
+        },
+        {
+          "q": "Can I use one attendance calendar for several children?",
+          "a": "Yes, if each child's participation and required totals remain clear. Use separate columns or identifiers rather than a single household tick. Keep child-specific samples and reports findable even when the family did the same activity together."
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "name": "Colorado Department of Education: homeschool for families",
+      "url": "https://ed.cde.state.co.us/choice/homeschool/homeschool-for-families",
+      "retrieved": "2026-11-17",
+      "note": "Official state guidance provides the route to Colorado's homeschool law and record requirements; it is not a national rule."
+    }
+  ],
+  "visuals": [
+    {
+      "title": "Facts before totals",
+      "kicker": "Attendance decisions",
+      "kind": "sequence",
+      "steps": [
+        {
+          "label": "Record",
+          "detail": "Write what the child actually completed."
+        },
+        {
+          "label": "Check",
+          "detail": "Compare the entry with the applicable rule."
+        },
+        {
+          "label": "Count",
+          "detail": "Include only entries that satisfy that rule."
+        }
+      ],
+      "caption": "An activity note and a legal attendance decision are separate steps.",
+      "alt": "Three steps distinguish recording completed learning, checking the state rule, and counting eligible attendance."
+    },
+    {
+      "title": "Plan versus record",
+      "kicker": "Avoid accidental overcounting",
+      "kind": "compare",
+      "steps": [
+        {
+          "label": "Planned",
+          "detail": "The calendar lists what you intended to teach."
+        },
+        {
+          "label": "Completed",
+          "detail": "The log states what actually happened."
+        },
+        {
+          "label": "Uncertain",
+          "detail": "A flagged entry stays out of confirmed totals until checked."
+        }
+      ],
+      "caption": "A plan is not evidence that instruction occurred.",
+      "alt": "A comparison of planned lessons, completed instruction, and uncertain entries awaiting a rules check."
+    }
+  ],
+  "worksheet": {
+    "title": "Attendance rule and daily-entry sheet",
+    "prompt": "Copy the applicable requirement, then record one child's completed instruction without guessing.",
+    "fields": [
+      "Child and school year",
+      "Governing program and official URL",
+      "Day and hour requirements",
+      "Instruction date",
+      "Completed subjects or activities",
+      "Time detail required",
+      "Evidence location",
+      "Eligibility question to resolve"
+    ]
+  },
+  "research": {
+    "primaryQuery": "homeschool attendance record",
+    "supportingQueries": [
+      "what counts as a homeschool day",
+      "homeschool attendance log fields"
+    ],
+    "intent": "Create an accurate attendance record without assuming a universal definition of an instructional day.",
+    "sourceChecks": [
+      "https://ed.cde.state.co.us/choice/homeschool/homeschool-for-families - Official state guidance provides the route to Colorado's homeschool law and record requirements; it is not a national rule."
+    ],
+    "limitations": [
+      "Practical organization suggestions are not individualized professional advice.",
+      "Saved Reddit leads are qualitative only; Quora was blocked in saved research. No keyword-volume or ranking claims."
+    ]
+  }
+}

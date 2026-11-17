@@ -1,0 +1,42 @@
+.visual { margin: 30px 0 !important; width: 100%; max-width: none !important; color: var(--text); }
+.visual h3 { font: 28px/1.15 Georgia,serif; letter-spacing: 0; margin: 0; }
+.eyebrow { display: block; font: 11px/1.6 monospace; color: var(--primary); margin-bottom: 14px; }
+.sheet { background: var(--surface); border: 1px solid var(--border-strong); padding: 28px; border-radius: 4px; }
+.sheet header { display: grid; grid-template-columns: 1fr auto; align-items: end; gap: 0 16px; border-bottom: 2px solid var(--primary); padding-bottom: 22px; }
+.sheet .eyebrow { grid-column: 1/-1; }
+.dateLine { font: 11px/1.7 monospace; color: var(--muted); padding-bottom: 3px; }
+.fields { display: grid; grid-template-columns: 1fr 1fr; gap: 26px 28px; margin-top: 26px; }
+.fields dt { font-size: 14px; font-weight: 700; line-height: 1.5; }
+.fields dt span { color: var(--primary); font: 11px monospace; margin-right: 9px; }
+.fields dd { margin: 8px 0 0; }
+.fields dd > span { color: var(--muted); font-size: 12px; line-height: 1.6; display: block; min-height: 40px; }
+.writingLine { border-bottom: 1px solid var(--border-strong); height: 25px; }
+.sheetLink { display: flex; align-items: center; gap: 10px; border-top: 1px solid var(--border-strong); padding: 18px 0 0; margin-top: 26px; color: var(--primary); font-size: 13px; min-height: 44px; }
+.sheetLink svg:last-child { margin-left: auto; }
+.kit { background: var(--surface); border-block: 2px solid var(--primary); padding: 28px 0; }
+.kit header > span, .rhythm header > span, .record header > span:last-child { display: block; color: var(--muted); font-size: 13px; line-height: 1.6; margin-top: 12px; }
+.kit ul { list-style: none; padding: 0; margin: 24px 0 0; display: grid; grid-template-columns: 1fr 1fr; gap: 0 28px; }
+.kit li { padding: 22px 0; border-top: 1px solid var(--border-strong); display: flex; align-items: start; gap: 15px; }
+.kit li > svg { color: var(--primary); flex-shrink: 0; }
+.kit strong { display: block; font-size: 15px; margin-bottom: 7px; }
+.kit li span { display: block; font-size: 13px; color: var(--muted); line-height: 1.65; }
+.rhythm { background: var(--surface); border-block: 2px solid var(--primary); padding: 28px 0 0; }
+.rhythm ol { margin-top: 28px; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); }
+.rhythm li { display: flex; flex-direction: column; gap: 16px; padding: 0 18px 24px; }
+.rhythm li:first-child { padding-left: 0; }
+.rhythm li + li { border-left: 1px solid var(--border-strong); }
+.rhythm li svg { color: var(--primary); }
+.rhythmNumber { font: 11px monospace; color: var(--muted); }
+.rhythm li strong { font-size: 16px; line-height: 1.5; }
+.rhythm li > span:last-child { font-size: 13px; color: var(--muted); line-height: 1.7; }
+.arithmetic { display: flex; align-items: center; gap: 24px; background: var(--primary-soft); padding: 22px; }
+.arithmetic strong { font: 29px/1.3 Georgia,serif; color: var(--primary); white-space: nowrap; }
+.arithmetic > span { font-size: 12px; line-height: 1.7; color: var(--text); }
+.record { border: 1px solid var(--border-strong); border-radius: 4px; padding: 28px; background: var(--surface); }
+.record header { padding-bottom: 24px; border-bottom: 2px solid var(--primary); }
+.record dl > div { display: grid; grid-template-columns: .8fr 1.2fr; gap: 25px; padding: 23px 0; border-bottom: 1px solid var(--border); }
+.record dt { font-size: 18px; font-weight: 600; color: var(--primary); }
+.record dt span { display: block; font-size: 12px; font-weight: 400; color: var(--muted); margin-top: 6px; line-height: 1.5; }
+.record dd { font: 18px/1.65 Georgia,serif; }
+@media(max-width:639px) { .visual h3 { font-size: 25px; } .sheet, .kit, .record { padding: 20px; } .sheet header { grid-template-columns: 1fr; gap: 14px; } .sheet .eyebrow { margin-bottom: 0; } .fields { grid-template-columns: 1fr; gap: 22px; } .fields dd > span { min-height: 0; } .kit ul { grid-template-columns: 1fr; gap: 0; } .kit li > svg { width: 30px; } .rhythm ol { grid-template-columns: 1fr; } .rhythm li, .rhythm li:first-child { padding: 20px 0; gap: 10px; } .rhythm li + li { border-left: 0; border-top: 1px solid var(--border-strong); } .rhythmNumber { display: none; } .arithmetic { flex-direction: column; align-items: start; gap: 12px; padding: 20px; } .record dl > div { grid-template-columns: 1fr; gap: 12px; } }
+@media print { .visual { break-inside: avoid; } }

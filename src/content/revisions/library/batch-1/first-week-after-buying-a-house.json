@@ -1,0 +1,205 @@
+{
+  "slug": "first-week-after-buying-a-house",
+  "title": "New house checklist: the first week after closing",
+  "dek": "Secure access, check alarms and utilities, and turn the inspection report into a short first-week record without tackling every repair.",
+  "metaDescription": "Secure access, check alarms and utilities, and turn the inspection report into a short first-week record without tackling every repair.",
+  "updatedAt": "2026-11-17",
+  "body": [
+    {
+      "kind": "paragraphs",
+      "paragraphs": [
+        "In the first week after buying a house, secure access, confirm essential services, check alarms and record important controls and documents. Then triage the inspection report. You do not need to turn every observation into a repair before unpacking.",
+        "The keys arrive with small mysteries: who supplies the water, whether the garage keypad still uses the seller's code and where the inspection report was saved. Capture answers while the relevant documents and contacts are available. There is no universal one-week deadline for learning your home; this is a practical order."
+      ]
+    },
+    {
+      "kind": "list",
+      "heading": "Before the first night",
+      "checkable": true,
+      "items": [
+        "Confirm insurance and utility arrangements match closing and occupancy dates; ask about any period when the house will be empty.",
+        "Arrange exterior rekeying or replacement as appropriate, and change garage, alarm and smart-access permissions.",
+        "Test smoke alarms using their instructions and check manufacture dates; check carbon monoxide alarms under their own guidance.",
+        "Locate the water shutoff, electrical panel and utility emergency contacts without removing equipment covers.",
+        "Keep an accessible escape route and identify urgent inspection findings before using unfamiliar systems."
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "Locate controls without experimenting",
+      "paragraphs": [
+        "Write 'water shutoff: basement front wall beside meter' rather than simply 'basement.' A photograph of the surroundings helps another person identify it. Do not force a stuck valve, operate an unfamiliar gas shutoff for practice or remove electrical panel covers. Ask the utility or an appropriate professional for instructions.",
+        "[USFA](https://www.usfa.fema.gov/prevention/home-fires/prepare-for-fire/smoke-alarms/) recommends monthly smoke-alarm testing and gives replacement guidance generally based on ten years from manufacture. This is not a universal ten-year rule for carbon monoxide alarms. Follow each device's instructions."
+      ]
+    },
+    {
+      "kind": "table",
+      "heading": "Invented example: the first week's record",
+      "columns": [
+        "When",
+        "Finding",
+        "Next action"
+      ],
+      "rows": [
+        [
+          "Move-in day",
+          "Water supply active; meter photographed",
+          "Save contact with dated reading"
+        ],
+        [
+          "Day 2",
+          "Garage keypad uses an inherited code",
+          "Reset using owner instructions"
+        ],
+        [
+          "Day 3",
+          "Inspection flags an electrical concern",
+          "Book a qualified electrician"
+        ],
+        [
+          "Day 6",
+          "Furnace service date unknown",
+          "Request records and arrange assessment"
+        ]
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "Read the report as a decision list",
+      "paragraphs": [
+        "Separate immediate hazards, items needing further assessment, routine upkeep and cosmetic preferences. Preserve the inspector's wording so 'recommend further evaluation' does not become 'confirmed failure.' Ask what additional access or testing is necessary before agreeing to work.",
+        "For each consequential item, record the location, who will assess it and when you will follow up. 'Call electrician about the kitchen outlet on page 18' is more usable than 'sort electrics.' Save the report, not only your summary."
+      ]
+    },
+    {
+      "kind": "list",
+      "heading": "Capture facts without making a full inventory",
+      "checkable": true,
+      "items": [
+        "Photograph accessible rating plates for heating, cooling, hot water and major appliances.",
+        "Mark installation dates confirmed, estimated or unknown; distinguish recollection from paperwork.",
+        "Collect manuals, warranties, service receipts and transfer instructions.",
+        "Verify compatible filter specifications before buying supplies.",
+        "Protect closing papers and the inspection report, with a separate backup.",
+        "Ask focused seller questions, but use manufacturer or professional advice for technical decisions."
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "Let the house change the order",
+      "paragraphs": [
+        "Freezing weather, storm exposure, a leak or a failing system overrides this plan. A missing paint color can wait. [ENERGY STAR](https://www.energystar.gov/saveathome/heating-cooling/maintenance-checklist) distinguishes contractor HVAC checks from routine owner filter work; buying a house does not make every maintenance task safe to perform yourself.",
+        "For missing history, use [the undocumented-house guide](/guides/inherited-a-house-where-to-start). After move-in, build [a maintenance calendar](/guides/home-maintenance-checklist-by-month). This week's useful output is a reliable starting record and a short list of unresolved risks, not a fully renovated house."
+      ]
+    },
+    {
+      "kind": "faq",
+      "items": [
+        {
+          "q": "Should I change every lock immediately?",
+          "a": "Prioritize control over exterior access, including keys, garage entry, alarm permissions and smart locks. A locksmith can advise whether rekeying existing hardware is suitable. Shared buildings and community systems may restrict changes, so confirm what you own and can alter before ordering work."
+        },
+        {
+          "q": "What if the seller has no records?",
+          "a": "Record unknowns, photograph accessible equipment labels and use the inspection report as your starting reference. Ask qualified professionals what needs assessment now. Do not invent service dates or automatically replace equipment merely because its history is missing."
+        },
+        {
+          "q": "Can the full maintenance calendar wait?",
+          "a": "Yes, once immediate hazards and essential services are addressed. Begin with the next genuinely time-sensitive item and expand later. A short list you can act on during a move is better than an annual schedule built from guesses about the equipment."
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "name": "U.S. Fire Administration: Smoke alarms",
+      "url": "https://www.usfa.fema.gov/prevention/home-fires/prepare-for-fire/smoke-alarms/",
+      "retrieved": "2026-11-17",
+      "note": "Monthly testing and smoke alarm replacement age."
+    },
+    {
+      "name": "ENERGY STAR: Maintenance checklist",
+      "url": "https://www.energystar.gov/saveathome/heating-cooling/maintenance-checklist",
+      "retrieved": "2026-11-17",
+      "note": "Pre-season contractor checkups and filter checks, not a schedule for every system."
+    }
+  ],
+  "visuals": [
+    {
+      "title": "First night to first week",
+      "kicker": "Access and safety come first",
+      "steps": [
+        {
+          "label": "First night",
+          "detail": "Confirm services, secure entry and check alarms."
+        },
+        {
+          "label": "Next days",
+          "detail": "Locate controls and triage inspection findings."
+        },
+        {
+          "label": "Week one",
+          "detail": "Save equipment records and assign follow-ups."
+        }
+      ],
+      "caption": "Adjust the sequence for weather and the home's condition.",
+      "alt": "A first-week sequence moves from entry and alarms to controls and records.",
+      "kind": "timeline"
+    },
+    {
+      "title": "Four inspection categories",
+      "kicker": "Keep uncertainty visible",
+      "steps": [
+        {
+          "label": "Urgent hazard",
+          "detail": "Arrange safe assessment or immediate help."
+        },
+        {
+          "label": "Further evaluation",
+          "detail": "Book the appropriate trade without assuming failure."
+        },
+        {
+          "label": "Routine upkeep",
+          "detail": "Use equipment guidance to choose a date."
+        },
+        {
+          "label": "Cosmetic preference",
+          "detail": "Keep appearance separate from safety work."
+        }
+      ],
+      "caption": "An observation is not automatically a confirmed defect.",
+      "alt": "Four categories separate urgent risks, uncertain findings, routine upkeep and appearance.",
+      "kind": "compare"
+    }
+  ],
+  "worksheet": {
+    "title": "First-week house starting record",
+    "prompt": "Capture essential locations and the next unresolved risk.",
+    "fields": [
+      "Utility contacts and start dates",
+      "Access changes",
+      "Alarm checks",
+      "Water shutoff location",
+      "Inspection item and page",
+      "Equipment records",
+      "Professional and follow-up"
+    ]
+  },
+  "research": {
+    "primaryQuery": "new house checklist",
+    "supportingQueries": [
+      "what to do after closing on a house",
+      "first week homeowner records"
+    ],
+    "intent": "First-week safety and information capture, not a complete annual maintenance schedule.",
+    "sourceChecks": [
+      "https://www.usfa.fema.gov/prevention/home-fires/prepare-for-fire/smoke-alarms/ - Monthly testing and smoke alarm replacement age.",
+      "https://www.energystar.gov/saveathome/heating-cooling/maintenance-checklist - Pre-season contractor checkups and filter checks, not a schedule for every system."
+    ],
+    "limitations": [
+      "US-oriented starter checklist; local conditions take priority.",
+      "Property-specific insurance terms and technical procedures are not verified.",
+      "No keyword-volume dataset was available. Saved Reddit leads were qualitative only; Quora was blocked in the saved research."
+    ]
+  }
+}

@@ -1,0 +1,215 @@
+{
+  "slug": "homeschool-subject-not-working-what-to-change-first",
+  "title": "Homeschool subject stalled? Choose one useful change",
+  "dek": "Identify the specific difficulty, choose one proportionate change and record what happens before replacing a whole homeschool subject.",
+  "metaDescription": "Identify the specific difficulty, choose one proportionate change and record what happens before replacing a whole homeschool subject.",
+  "updatedAt": "2026-11-17",
+  "body": [
+    {
+      "kind": "paragraphs",
+      "paragraphs": [
+        "When a homeschool subject is not working, first describe the difficulty precisely, ask the child what is hard, and check for an obvious access or placement mismatch. Then try one relevant change and compare what happens across actual sessions. You do not have to work through a mandatory sequence before changing unsuitable materials or seeking help.",
+        "A lesson can fail for several different reasons: the child understands but cannot sustain the volume, the instructions are unclear, a prerequisite is missing, or the resource is inaccessible. Buying another book without identifying the problem may simply move it. This guide offers an editorial troubleshooting method, not a diagnostic test or a proven order for every age and subject."
+      ]
+    },
+    {
+      "kind": "table",
+      "heading": "Match the change to the observation",
+      "columns": [
+        "What you see",
+        "A possible check",
+        "One change to try"
+      ],
+      "rows": [
+        [
+          "Accurate work followed by exhaustion",
+          "Amount or timing may be difficult.",
+          "Shorten the session or move it, not both initially."
+        ],
+        [
+          "Same error from the first problem",
+          "Check prerequisite understanding and instructions.",
+          "Model a smaller step and ask for an explanation."
+        ],
+        [
+          "Can explain aloud but written work breaks down",
+          "Check the writing or access demand.",
+          "Allow an appropriate alternative response format."
+        ],
+        [
+          "Material is clearly inaccessible or wrongly placed",
+          "Check publisher placement and access options.",
+          "Change the resource or level directly."
+        ]
+      ]
+    },
+    {
+      "kind": "list",
+      "heading": "Run a small, observable trial",
+      "checkable": true,
+      "items": [
+        "Name the exact task that is breaking down. \"Cannot explain why these fractions are equal\" is more useful than \"bad at math.\"",
+        "Ask the child to show where they get lost. Separate not understanding instructions from not understanding the subject.",
+        "Check obvious access needs, resource placement and prerequisites. Do not insist on a timing experiment when the material is clearly wrong for the child.",
+        "Choose one change with a reason. Write what you expect to observe, such as fewer prompts or a clearer explanation, not just a happier session.",
+        "Choose a manageable number of actual sessions and a review date. This is a practical trial length, not an evidence-based threshold.",
+        "Record the task, help provided, response and next decision. Keep what worked, adapt it, change materials or ask for outside help."
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "Example: division without changing everything",
+      "paragraphs": [
+        "Invented example: Nia completes long-division steps with reminders but repeatedly confuses the place value of the quotient. Her parent stops treating the issue as a fifteen-problem endurance test. The trial uses a few carefully chosen problems, a worked model and a place-value representation. The parent records which step still needs prompting.",
+        "After several actual sessions, Nia is more comfortable but still cannot explain the quotient position independently. That is useful information, not proof the problem is solved. The next step is targeted teaching or advice about that concept, rather than restoring the original volume because the argument has stopped."
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "Use evidence without overstating it",
+      "paragraphs": [
+        "The [IES elementary mathematics intervention guide](https://ies.ed.gov/ncee/wwc/PracticeGuide/26) supports systematic instruction, clear mathematical language and well-chosen representations for struggling mathematics learners. It does not establish that every homeschool difficulty should be addressed by changing time, then quantity, then prerequisites in that order.",
+        "That distinction matters outside mathematics too. A spelling problem, inaccessible reading text and unsuitable science resource need different questions. Use the curriculum's scope and placement information where relevant, and seek subject-specific teaching advice rather than treating this table as a universal intervention."
+      ]
+    },
+    {
+      "kind": "scripts",
+      "heading": "Ask for targeted help",
+      "items": [
+        {
+          "situation": "Tutor or teacher",
+          "line": "Here is the task, the repeated error and the support I tried. Could you help identify the prerequisite or explanation we should work on next?"
+        },
+        {
+          "situation": "Child conversation",
+          "line": "Show me the first point where this stops making sense. Is the difficult part understanding it, remembering the steps, writing the answer or keeping going?"
+        }
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "What counts as improvement",
+      "paragraphs": [
+        "Choose a sign tied to the original problem. Independent explanation, a successful demonstration with less support, or a more accurate response to a comparable task can be informative. One easier worksheet does not necessarily show the same skill, so note when task difficulty changes.",
+        "Enjoyment and willingness matter, but keep them separate from understanding. A child may enjoy a new activity while the underlying concept remains uncertain. [Checking learning](/guides/how-to-check-if-your-child-learned-something) can help frame that separate question. A short before-and-after note is more useful than a general easy or difficult rating alone."
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "Do not make help the last resort",
+      "paragraphs": [
+        "Persistent difficulty, significant distress, sudden change or suspected vision, hearing or other access concerns justify appropriate professional advice without finishing every experiment. A qualified teacher, tutor, evaluator or clinician can address different parts of the problem. This record helps explain your observations; it does not diagnose a condition.",
+        "If replacing materials is the sensible response, keep the last completed topic and the first intended topic in the new resource. Check gaps and overlap. You do not need to restart an entire subject simply because the cover or publisher changed."
+      ]
+    },
+    {
+      "kind": "faq",
+      "items": [
+        {
+          "q": "How long should I try a change?",
+          "a": "Choose a review point based on actual sessions, your schedule and the concern. No universal week or session count fits every learner. Record enough comparable observations to make a useful decision, but seek help promptly for significant distress or access concerns rather than waiting for an arbitrary trial to end."
+        },
+        {
+          "q": "Should I change the curriculum first?",
+          "a": "You can if there is an obvious resource, access or placement mismatch. Otherwise, a smaller targeted change may help reveal what is wrong before a larger purchase. The important step is identifying the problem, not proving that you have exhausted every cheaper option in a prescribed order."
+        },
+        {
+          "q": "What if the child says they hate the whole subject?",
+          "a": "Take that statement seriously and ask what happens during the work. It could involve difficulty, workload, access, interest or the interaction around teaching. Do not assume a hidden prerequisite is always the cause. Keep the conversation specific and seek additional support if distress persists."
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "name": "Institute of Education Sciences: elementary mathematics intervention",
+      "url": "https://ies.ed.gov/ncee/wwc/PracticeGuide/26",
+      "retrieved": "2026-11-17",
+      "note": "Official practice-guide text returned through search: systematic instruction, mathematical language and representations. Does not validate a universal homeschool troubleshooting order."
+    }
+  ],
+  "visuals": [
+    {
+      "title": "Choose a relevant change",
+      "kicker": "Not a mandatory ladder",
+      "kind": "compare",
+      "steps": [
+        {
+          "label": "Amount",
+          "detail": "Shorten an overwhelming but understood task."
+        },
+        {
+          "label": "Instruction",
+          "detail": "Model and explain the step that is unclear."
+        },
+        {
+          "label": "Access or placement",
+          "detail": "Change an unsuitable format or level directly."
+        },
+        {
+          "label": "Support",
+          "detail": "Seek help when concerns warrant it."
+        }
+      ],
+      "caption": "The observed difficulty determines the next action.",
+      "alt": "Four possible responses to a stalled subject depend on workload, instruction, access and support needs."
+    },
+    {
+      "title": "Observe before and after",
+      "kicker": "A small teaching trial",
+      "kind": "record",
+      "steps": [
+        {
+          "label": "Baseline",
+          "detail": "Describe the task, error and help needed."
+        },
+        {
+          "label": "Change",
+          "detail": "Record one adjustment and why it fits."
+        },
+        {
+          "label": "Response",
+          "detail": "Note accuracy, explanation and support separately."
+        },
+        {
+          "label": "Decision",
+          "detail": "Keep, adapt, replace or seek advice."
+        }
+      ],
+      "caption": "Less conflict is useful, but it is not the same as demonstrated understanding.",
+      "alt": "A trial record connects the initial difficulty, one adjustment, observed response and next teaching decision."
+    }
+  ],
+  "worksheet": {
+    "title": "One-subject teaching trial record",
+    "prompt": "Choose a change that matches the observed difficulty and compare actual sessions.",
+    "fields": [
+      "Subject and specific task",
+      "Child's description of the problem",
+      "Baseline response and support",
+      "Chosen change and reason",
+      "Actual session observations",
+      "Review date",
+      "Keep, adapt, replace or ask for help"
+    ]
+  },
+  "research": {
+    "primaryQuery": "homeschool subject not working",
+    "supportingQueries": [
+      "homeschool curriculum not working",
+      "child struggling one homeschool subject",
+      "when to change homeschool materials"
+    ],
+    "intent": "Troubleshoot a specific subject without universal sequences or unsupported diagnostic claims.",
+    "sourceChecks": [
+      {
+        "url": "https://ies.ed.gov/ncee/wwc/PracticeGuide/26",
+        "verified": "Official practice-guide text returned through search: systematic instruction, mathematical language and representations. Does not validate a universal homeschool troubleshooting order."
+      }
+    ],
+    "limitations": [
+      "The IES evidence is mathematics-specific. The broader trial framework and review timing are editorial suggestions, not validated clinical or educational thresholds.",
+      "Saved search leads were reviewed for reader language only, not authority or prevalence. Quora was blocked in saved research. No search-volume or ranking estimate is available."
+    ]
+  }
+}

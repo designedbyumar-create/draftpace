@@ -1,0 +1,233 @@
+{
+  "slug": "questions-to-bring-to-the-doctor",
+  "title": "How to write questions for the doctor",
+  "dek": "Turn scattered concerns into specific questions, show the full list at the start and record the agreed next steps before leaving the appointment.",
+  "metaDescription": "Turn scattered concerns into specific questions, show the full list at the start and record the agreed next steps before leaving the appointment.",
+  "updatedAt": "2026-11-17",
+  "body": [
+    {
+      "kind": "paragraphs",
+      "paragraphs": [
+        "Write one question per line, put your main concern first and show the clinician the whole list near the start. Leave space for the answer and next action. Keep lower-priority questions visible rather than hiding them because the appointment is short; the clinician can help decide what needs attention now.",
+        "A phone note saying \"test, tired, prescription, form\" contains useful concerns but not yet usable questions. You do not need medical vocabulary. You need enough context that the clinician understands what you are asking and what you are trying to decide."
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "Questions are preparation, not self-triage",
+      "paragraphs": [
+        "This guide is about communicating at a medical appointment for yourself or someone you support. It does not decide which symptom is urgent, which test is necessary or which treatment to choose. If something changes before the visit or you are uncertain whether waiting is safe, contact the clinic through its appropriate advice route.",
+        "For an emergency, get urgent help rather than refining the list. In the US, call 911 for a suspected life-threatening emergency. [MedlinePlus](https://medlineplus.gov/ency/article/001927.htm) describes emergency warning signs; no short writing guide can provide a complete assessment for every age and situation."
+      ]
+    },
+    {
+      "kind": "list",
+      "heading": "Turn the notes into a usable page",
+      "checkable": true,
+      "items": [
+        "Write the visit date, the person's name and the main reason for the appointment.",
+        "Collect concerns without trying to answer them yourself.",
+        "Turn each concern into a question with enough context: what changed, when, or what decision needs explanation.",
+        "Mark your main concern, then show the complete list so the clinician can assess priorities too.",
+        "Separate administrative questions from clinical ones, while noting any real deadline.",
+        "Leave room for the answer, responsible person, timing and contact route.",
+        "Bring relevant symptom notes or medication information rather than embedding the whole record in every question."
+      ]
+    },
+    {
+      "kind": "table",
+      "heading": "Invented example: from a reminder to a question",
+      "columns": [
+        "Original reminder",
+        "Question to bring"
+      ],
+      "rows": [
+        [
+          "Test results",
+          "What do these results mean for the next step, and is anything still outstanding?"
+        ],
+        [
+          "Prescription confusion",
+          "My printed list and recent instructions differ. Can we confirm the current instructions and update the record?"
+        ],
+        [
+          "Work affected",
+          "This problem is interfering with my work. What should I know about activity and follow-up?"
+        ],
+        [
+          "Form due",
+          "The form is due on 2026-12-01. Who should handle it and what information is needed?"
+        ]
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "Ask for decisions you can understand",
+      "paragraphs": [
+        "A useful question does not have to force a one-sentence answer. \"What are the options and what are the tradeoffs for me?\" may need discussion. For a proposed test, ask what question it is intended to answer, what preparation is required and how results will reach you. For an instruction, ask what to do if following it is difficult.",
+        "[AHRQ](https://www.ahrq.gov/questions/be-engaged/index.html) recommends preparing questions, checking understanding and asking about next steps. Use that as permission to speak plainly, not as a promise that a particular list will produce a particular outcome. The clinician still needs to assess the actual concern."
+      ]
+    },
+    {
+      "kind": "scripts",
+      "heading": "When the conversation moves quickly",
+      "items": [
+        {
+          "situation": "Opening the visit",
+          "line": "I wrote down my concerns so I do not miss them. This is the main one, and here is the rest of the list."
+        },
+        {
+          "situation": "Checking understanding",
+          "line": "Can I say back what I understood so you can correct anything I missed?"
+        },
+        {
+          "situation": "An unfamiliar term",
+          "line": "Please explain that in ordinary words and write the important name or instruction down."
+        },
+        {
+          "situation": "A practical barrier",
+          "line": "I am not sure I can follow that plan because of this obstacle. What should we arrange instead?"
+        },
+        {
+          "situation": "Before finishing",
+          "line": "Which questions need another visit or message, and who should I contact about them?"
+        }
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "Record the answer as an action, not a verdict",
+      "paragraphs": [
+        "Under each question, write the explanation and the agreed next step. If a test is planned, record who arranges it, the expected route for results and what to do if nothing arrives. If a decision is deferred, write that it is deferred and what information is still needed.",
+        "Do not write \"all fine\" when the actual answer includes a follow-up condition or an unresolved issue. Equally, distinguish your interpretation from the clinician's words. If you do not understand a phrase, ask before turning it into a confident note that another caregiver may later treat as an instruction."
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "Long lists and difficult conversations",
+      "paragraphs": [
+        "You can bring more questions than fit into one visit, but tell the clinic if you need several issues addressed and ask about suitable booking arrangements. Do not silently drop a concern that might change clinical priorities. Showing the whole list makes the limits visible; it does not obligate the clinician to complete every topic immediately.",
+        "If you need an interpreter, accessible communication or a support person, ask in advance how to arrange that. A companion can help with notes, but should not replace the patient's own voice. Ask about privacy for any topic you prefer to discuss without them."
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "After the appointment",
+      "paragraphs": [
+        "Review the notes while the conversation is fresh and compare them with any written visit instructions. If they differ, ask the clinic to clarify rather than choosing whichever version is easier. Put a specific follow-up task in your calendar only when it reflects the agreed plan.",
+        "Use the clinic's stated route for remaining questions and ask how urgent concerns should be handled. A portal message is not necessarily monitored continuously. If you become worried about a change, seek the appropriate advice rather than waiting for the next scheduled visit or a response to a nonurgent message."
+      ]
+    },
+    {
+      "kind": "faq",
+      "items": [
+        {
+          "q": "How many questions should I bring?",
+          "a": "There is no reliable universal limit. Bring the full list, identify your main concern and ask which topics can be handled in this visit. If there are several substantial issues, discuss booking needs with the clinic. Do not omit a potentially important concern merely to hit a number."
+        },
+        {
+          "q": "Is it okay to read directly from my phone?",
+          "a": "Yes, a paper or phone list can support communication. Choose a form you can find and read easily during the visit. Keep it accessible without searching through unrelated notes, and leave a way to record the answer and follow-up."
+        },
+        {
+          "q": "What if I only think of the question afterward?",
+          "a": "Write it down and use the clinic's agreed contact route. Include the visit date and enough context to identify the issue. If you are uncertain whether it can wait, ask the appropriate clinical advice service; do not assume ordinary messaging is suitable for an emergency."
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "name": "AHRQ: Be more engaged in your healthcare",
+      "url": "https://www.ahrq.gov/questions/be-engaged/index.html",
+      "retrieved": "2026-11-17",
+      "note": "Official search-result content checked: prepare priority questions before appointments."
+    },
+    {
+      "name": "MedlinePlus: Recognizing medical emergencies",
+      "url": "https://medlineplus.gov/ency/article/001927.htm",
+      "retrieved": "2026-11-17",
+      "note": "NIH-hosted search-result content checked: breathing problems, loss of consciousness and confusion are emergency warning signs; not a complete triage list."
+    }
+  ],
+  "visuals": [
+    {
+      "title": "Question to next action",
+      "kicker": "Leave with a usable record",
+      "kind": "sequence",
+      "steps": [
+        {
+          "label": "Ask",
+          "detail": "State the concern and the question."
+        },
+        {
+          "label": "Check",
+          "detail": "Confirm what the answer means."
+        },
+        {
+          "label": "Record",
+          "detail": "Write the action, owner and timing."
+        },
+        {
+          "label": "Follow up",
+          "detail": "Know the route if the answer or result does not arrive."
+        }
+      ],
+      "caption": "An answered question may still need a named next step.",
+      "alt": "A clinical question becomes a checked answer, a recorded action and a follow-up route."
+    },
+    {
+      "title": "Show the whole list",
+      "kicker": "Priority is a conversation",
+      "kind": "record",
+      "steps": [
+        {
+          "label": "Main concern",
+          "detail": "Identify what brought you to the visit."
+        },
+        {
+          "label": "Other concerns",
+          "detail": "Keep the remainder visible for clinical prioritization."
+        },
+        {
+          "label": "Deferred items",
+          "detail": "Record where and when they will be addressed."
+        }
+      ],
+      "caption": "Do not use a short list to hide information the clinician may need.",
+      "alt": "A question page distinguishes the main concern, other concerns and agreed deferred items."
+    }
+  ],
+  "worksheet": {
+    "title": "Doctor question and next-action page",
+    "prompt": "Write your main concern first, then keep the answer and agreed follow-up beneath each question.",
+    "fields": [
+      "Person and visit date",
+      "Main reason for visit",
+      "Priority question",
+      "Other questions to show",
+      "Relevant note or record reference",
+      "Answer in understood words",
+      "Next action, owner and timing",
+      "Unanswered question and contact route"
+    ]
+  },
+  "research": {
+    "primaryQuery": "how to write questions for the doctor",
+    "supportingQueries": [
+      "write doctor appointment questions",
+      "prioritize questions medical appointment",
+      "record answers and follow up doctor visit"
+    ],
+    "intent": "Create a prioritized question-and-answer page that supports the visit without choosing medical treatment.",
+    "sourceChecks": [
+      "https://www.ahrq.gov/questions/be-engaged/index.html - Official search-result content checked: prepare priority questions before appointments.",
+      "https://medlineplus.gov/ency/article/001927.htm - NIH-hosted search-result content checked: breathing problems, loss of consciousness and confusion are emergency warning signs; not a complete triage list."
+    ],
+    "limitations": [
+      "US-focused administration; requirements and individual circumstances vary.",
+      "Saved Reddit leads informed reader-language only; no anecdotes treated as factual authority. Quora was blocked in the saved research.",
+      "No keyword-volume dataset or ranking guarantee. Product registry inspected, but live product workflows not tested."
+    ]
+  }
+}

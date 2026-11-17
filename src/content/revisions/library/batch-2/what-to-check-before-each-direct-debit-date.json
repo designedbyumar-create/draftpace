@@ -1,0 +1,228 @@
+{
+  "slug": "what-to-check-before-each-direct-debit-date",
+  "title": "Before bills come out: a US autopay check",
+  "dek": "Check upcoming debits by account before payment cutoffs, protect everyday essentials, and confirm any date change before relying on it.",
+  "metaDescription": "Check upcoming debits by account before payment cutoffs, protect everyday essentials, and confirm any date change before relying on it.",
+  "updatedAt": "2026-11-17",
+  "body": [
+    {
+      "kind": "paragraphs",
+      "paragraphs": [
+        "Before bills come out, check the amount, collection date, funding account, and money needed for essentials until your next reliable deposit. Do the main check early enough to meet the bank's and biller's cutoffs, with room for weekends and holidays. A last-minute balance check is useful, but it may be too late to change a payment.",
+        "Rent can fit comfortably in the balance while the next four debits do not. The problem is often sequence rather than the monthly total. This guide covers US consumer accounts and distinguishes bank-account transfers from subscriptions charged to a credit card; UK Direct Debit rules are different."
+      ]
+    },
+    {
+      "kind": "list",
+      "heading": "Check before the cutoff",
+      "checkable": true,
+      "items": [
+        "List every scheduled debit through the next reliable income date, including annual charges.",
+        "Group them by the actual funding account, not by the person who pays them.",
+        "Compare upcoming amounts with current bills and renewal notices.",
+        "Start with available funds; account for unposted commitments not already reflected.",
+        "Reserve groceries, transport, and other essential spending during the interval.",
+        "Check transfer availability and the exact cutoff for changes or stop requests.",
+        "After any change, save confirmation and monitor the original collection date."
+      ]
+    },
+    {
+      "kind": "table",
+      "heading": "Invented example: the visible shortfall",
+      "columns": [
+        "Item before payday",
+        "Amount"
+      ],
+      "rows": [
+        [
+          "Available in the funding account",
+          "$1,940"
+        ],
+        [
+          "Rent",
+          "-$1,450"
+        ],
+        [
+          "Car loan",
+          "-$312"
+        ],
+        [
+          "Phone",
+          "-$55"
+        ],
+        [
+          "Internet",
+          "-$60"
+        ],
+        [
+          "Electric bill",
+          "-$96"
+        ],
+        [
+          "After listed bills",
+          "-$33"
+        ],
+        [
+          "Food and transport not already reserved",
+          "-$120"
+        ],
+        [
+          "Total uncovered",
+          "-$153"
+        ]
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "Fix the whole gap, not just the last debit",
+      "paragraphs": [
+        "In this example, moving $33 would only cover the listed bills, not food and transport. A $153 transfer could address the arithmetic if the money is genuinely spare and available before collection. Do not assume a transfer is instant or that money in a savings goal is uncommitted.",
+        "Alternatively, ask a biller about a payment arrangement or date change. Get the effective date, any cost, and confirmation about this particular debit. A new due date may not automatically change an already submitted autopay. Avoid making a manual payment until you know whether the automatic one will also run."
+      ]
+    },
+    {
+      "kind": "scripts",
+      "heading": "Questions that prevent double payments",
+      "items": [
+        {
+          "situation": "Changing the date",
+          "line": "Can you change this collection, not just future bills? Please confirm the amount, effective date, and whether autopay follows the new due date."
+        },
+        {
+          "situation": "Paying another way",
+          "line": "If I pay manually today, will the automatic debit still run? What must I do to avoid paying twice?"
+        },
+        {
+          "situation": "A shortfall",
+          "line": "I cannot cover the upcoming payment as scheduled. What arrangement is available, and what fees or service consequences would apply?"
+        }
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "Bank-account transfers have their own rules",
+      "paragraphs": [
+        "For covered preauthorized transfers from a US consumer account, [Regulation E](https://www.consumerfinance.gov/rules-policy/regulations/1005/10/) allows a stop-payment notice to the financial institution at least three business days before the scheduled transfer. The bank may require written confirmation within 14 days of an oral request. Ask exactly how to provide it.",
+        "The rule also addresses notice of varying amounts, with exceptions for agreed ranges or differences. Read the authorization you gave. These rules do not mean stopping a debit cancels the debt or service contract, and they should not be presented as the procedure for every recurring credit-card charge."
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "Credit-card subscriptions and card-bill autopay are different",
+      "paragraphs": [
+        "A subscription charged to a credit card is a merchant billing relationship. Cancel the service through its billing provider and contact the issuer about a disputed charge when appropriate. Separately, the payment that settles your card statement may itself pull from a bank account. Check its chosen amount: minimum, statement balance, or another figure.",
+        "A replaced card, closed bank account, or stale payment instruction can also break an otherwise affordable payment. Check current payment details rather than assuming last month's success guarantees this month's result."
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "When the ordinary check is not enough",
+      "paragraphs": [
+        "If there is no way to cover essentials and upcoming commitments, contact billers promptly and seek qualified debt or local assistance advice. Protecting a monthly plan on paper is not the same as resolving a shortfall. Do not rely on overdraft coverage or a payment retry unless you have confirmed the terms.",
+        "After collection, check both the account and the biller's record. Record failed payments, retries, charges, and any promised adjustment. If a payment already failed, use [missed-payment next steps](/guides/you-missed-a-payment-what-to-do-next) rather than waiting for the next monthly review."
+      ]
+    },
+    {
+      "kind": "faq",
+      "items": [
+        {
+          "q": "How early should I check autopay?",
+          "a": "Work backward from the earliest applicable bank or biller cutoff, then allow extra room for non-business days and processing. There is no universal two-day window that protects every payment. Keep a final funds check close to collection as a second check, not the first."
+        },
+        {
+          "q": "Can I just move a bill to after payday?",
+          "a": "You can ask, but the provider may refuse or apply the change only to a later cycle. Confirm this debit's status and any fees before spending the money elsewhere. Do not assume that a changed due date also changes autopay."
+        },
+        {
+          "q": "Does stopping autopay remove what I owe?",
+          "a": "No. Stopping a transfer and ending a contract are separate actions. Arrange another way to pay legitimate obligations, and cancel services through the correct provider when that is your intention. Keep records of both processes so they do not get confused."
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "name": "CFPB: Regulation E, preauthorized transfers",
+      "url": "https://www.consumerfinance.gov/rules-policy/regulations/1005/10/",
+      "retrieved": "2026-11-17",
+      "note": "Covered consumer-account transfers have a three-business-day stop-payment notice rule and variable-amount notice provisions; this is not a credit-card contract cancellation rule."
+    }
+  ],
+  "visuals": [
+    {
+      "title": "Check while action is possible",
+      "kicker": "Payment timing",
+      "kind": "timeline",
+      "steps": [
+        {
+          "label": "Before cutoff",
+          "detail": "Review each debit and essential spending."
+        },
+        {
+          "label": "Before collection",
+          "detail": "Confirm funds are available in the right account."
+        },
+        {
+          "label": "After collection",
+          "detail": "Check the account and biller both show the expected result."
+        }
+      ],
+      "caption": "A final balance check cannot replace a cutoff-aware review.",
+      "alt": "A timeline shows an early payment review, final funding check, and confirmation after collection."
+    },
+    {
+      "title": "Find the full gap",
+      "kicker": "Funding-account arithmetic",
+      "kind": "record",
+      "steps": [
+        {
+          "label": "Funds",
+          "detail": "Begin with the account that will actually be debited."
+        },
+        {
+          "label": "Commitments",
+          "detail": "Subtract scheduled bills and unposted obligations once."
+        },
+        {
+          "label": "Essentials",
+          "detail": "Protect food, transport, and other necessary spending."
+        },
+        {
+          "label": "Gap",
+          "detail": "Resolve the uncovered amount before relying on the plan."
+        }
+      ],
+      "caption": "Money in a different account is not automatically available to the debit.",
+      "alt": "An account-level record subtracts commitments and essential spending to reveal the actual funding gap."
+    }
+  ],
+  "worksheet": {
+    "title": "Autopay funding and cutoff check",
+    "prompt": "Review upcoming debits in one account through the next reliable deposit.",
+    "fields": [
+      "Funding account",
+      "Available funds and timestamp",
+      "Unposted commitments",
+      "Debits and collection dates",
+      "Essential spending reserve",
+      "Bank and biller cutoffs",
+      "Confirmed change or transfer",
+      "Post-collection result"
+    ]
+  },
+  "research": {
+    "primaryQuery": "what to check before bills come out",
+    "supportingQueries": [
+      "autopay insufficient funds check",
+      "change automatic payment before due date"
+    ],
+    "intent": "Prevent a US payment-account shortfall with cutoff-aware checks distinct from UK Direct Debit advice.",
+    "sourceChecks": [
+      "https://www.consumerfinance.gov/rules-policy/regulations/1005/10/ - Covered consumer-account transfers have a three-business-day stop-payment notice rule and variable-amount notice provisions; this is not a credit-card contract cancellation rule."
+    ],
+    "limitations": [
+      "Practical organization suggestions are not individualized professional advice.",
+      "Saved Reddit leads are qualitative only; Quora was blocked in saved research. No keyword-volume or ranking claims."
+    ]
+  }
+}

@@ -1,0 +1,223 @@
+{
+  "slug": "first-car-checklist-for-new-drivers",
+  "title": "First car checklist: before driving and week one",
+  "dek": "Confirm cover and legal driving status before collection, then check the paperwork, learn the controls and start an honest service record.",
+  "metaDescription": "Confirm cover and legal driving status before collection, then check the paperwork, learn the controls and start an honest service record.",
+  "updatedAt": "2026-11-17",
+  "body": [
+    {
+      "kind": "paragraphs",
+      "paragraphs": [
+        "Before driving your first car, confirm insurance or other required cover, your legal driving status and the vehicle paperwork or permit that applies. Then learn the controls, check for immediate safety concerns, find the correct manual and start a record of what you know and what remains unknown.",
+        "Getting the keys can make everything feel finished. In practice, there is often a short gap between owning a car and having its documents, controls and history organized. This checklist covers that transition for US drivers. It does not replace a pre-purchase inspection, state instructions or a driving lesson."
+      ]
+    },
+    {
+      "kind": "list",
+      "heading": "Before you drive away",
+      "checkable": true,
+      "items": [
+        "Confirm with the insurer when cover is effective for this exact car and who is covered to drive it. Do not rely on the seller's assurance.",
+        "Verify your license or permit conditions and the applicable registration, transfer or temporary-driving requirements through the official agency.",
+        "Match the vehicle identifier on the car with the papers. Pause if ownership or identity is inconsistent.",
+        "Locate the lights, wipers, defroster, hazards and parking brake while parked. Adjust the seat and mirrors.",
+        "Read the manual response to any warning or safety concern before driving. Arrange suitable help if safe operation is uncertain.",
+        "Make sure you can obtain roadside assistance if needed and know what access or key arrangements exist."
+      ]
+    },
+    {
+      "kind": "table",
+      "heading": "First-week priorities, not legal deadlines",
+      "columns": [
+        "When",
+        "Task",
+        "Useful result"
+      ],
+      "rows": [
+        [
+          "Before driving",
+          "Confirm cover, permission and safe operation",
+          "Specific status confirmed rather than assumed"
+        ],
+        [
+          "At handover",
+          "Check identity, keys and supplied documents",
+          "List of what was received and what is missing"
+        ],
+        [
+          "As soon as possible",
+          "Establish the official transfer process and deadlines",
+          "Named owner and actual agency requirements"
+        ],
+        [
+          "During week one",
+          "Find manual, check vehicle-specific basics and history",
+          "Baseline page with honest unknowns"
+        ],
+        [
+          "Next",
+          "Arrange outstanding inspections or service questions",
+          "A booked action, not a vague intention"
+        ]
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "Invented example: Saturday collection",
+      "paragraphs": [
+        "A fictional buyer plans to collect a used hatchback on Saturday. On Friday they ask the insurer about the exact start of cover, check the state transfer instructions and ask the seller which documents and keys will be handed over. The buyer does not wait until the journey home to make the insurance call.",
+        "At collection the VIN on one document does not match the car. The buyer pauses the handover and asks for clarification through the appropriate seller and agency routes. A nice folder and a promise to fix it later are not enough to resolve the identity problem."
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "Build a baseline without inventing a service history",
+      "paragraphs": [
+        "Record the acquisition date, odometer with units, vehicle identity, keys received and location of the papers. Add the correct manual link and supported service records. \"Last oil change unknown\" is a usable fact; \"probably done before sale\" is not a completed-service entry.",
+        "If you bought without an independent inspection, arrange an appropriate assessment of outstanding concerns. A vehicle history report and a seller's statement do not remove the need to investigate current problems. The [missing service-records guide](/guides/used-car-no-service-records-what-to-do) handles that specific situation in more detail."
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "Learn the car before adding accessories",
+      "paragraphs": [
+        "Check the manual for warning indicators, fuel or charging requirements, maintenance documents and recovery guidance. Locate any spare wheel, inflation kit or other equipment actually supplied, without assuming you should use it on a dangerous roadside or without knowing the procedure.",
+        "For tire pressure, [NHTSA](https://www.nhtsa.gov/vehicle-safety/tires) specifies cold checks at least monthly and the vehicle placard or manual pressure. Record your car's information rather than copying another driver's number. A tire problem or persistent warning needs assessment, not only a reminder."
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "Paperwork and recall checks",
+      "paragraphs": [
+        "Use [your state motor vehicle agency](https://www.usa.gov/state-motor-vehicle-services) to establish who submits the transfer, what is needed and when it is due. Dealer involvement is not evidence that every step is already complete; obtain confirmation of responsibilities and status.",
+        "Check the vehicle through [NHTSA's recall lookup](https://www.nhtsa.gov/recalls) and follow the specific manufacturer instructions for any result. Record when you checked and any follow-up. A recall search is not a comprehensive mechanical inspection or a guarantee that every issue is resolved."
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "Stop points for a new owner",
+      "paragraphs": [
+        "Do not drive simply to see whether a serious warning will disappear. Stop and obtain appropriate advice for unresolved driving legality, vehicle identity, braking or steering concerns, or a warning that the manual says requires stopping. Do not delay those questions until the end of an arbitrary first week.",
+        "Optional upgrades can wait while you establish the basics. Keep a small current document folder, a known roadside contact and one service log. Those records make the second week easier without requiring you to become a mechanic on the first day."
+      ]
+    },
+    {
+      "kind": "faq",
+      "items": [
+        {
+          "q": "Should I call insurance before or after collecting the car?",
+          "a": "Confirm the effective cover and covered drivers before driving it. Ask the insurer how its terms apply to your exact situation rather than assuming an existing policy automatically covers any purchase. If status is uncertain, resolve it before arranging the journey."
+        },
+        {
+          "q": "Do I need to complete everything within seven days?",
+          "a": "No universal seven-day rule is being stated. Some tasks belong before driving, while transfer and registration deadlines depend on the jurisdiction. The first-week structure is an organizing aid. Check official deadlines immediately and do not postpone urgent safety questions to fit the schedule."
+        },
+        {
+          "q": "What if the car comes with no manual or receipts?",
+          "a": "Find the manufacturer documents for the correct model year and powertrain, and record the history as unknown where appropriate. Begin a dated log now. Seek vehicle-specific assessment rather than filling gaps with generic replacement intervals or assuming the seller recently serviced everything."
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "name": "USAGov: State motor vehicle services",
+      "url": "https://www.usa.gov/state-motor-vehicle-services",
+      "retrieved": "2026-11-17",
+      "note": "Official directory checked; links readers to their own jurisdiction, not a universal deadline or insurance rule."
+    },
+    {
+      "name": "NHTSA: Tires",
+      "url": "https://www.nhtsa.gov/vehicle-safety/tires",
+      "retrieved": "2026-11-17",
+      "note": "Page checked: at least monthly cold-pressure checks, door placard pressure and tire selection."
+    },
+    {
+      "name": "NHTSA: Recalls",
+      "url": "https://www.nhtsa.gov/recalls",
+      "retrieved": "2026-11-17",
+      "note": "Official recall lookup checked; vehicle-specific results must be checked by the reader."
+    }
+  ],
+  "visuals": [
+    {
+      "title": "First-car priorities",
+      "kicker": "Ownership and readiness are separate",
+      "kind": "timeline",
+      "steps": [
+        {
+          "label": "Before driving",
+          "detail": "Confirm cover, permission and safety concerns."
+        },
+        {
+          "label": "At collection",
+          "detail": "Check identity, papers and keys."
+        },
+        {
+          "label": "Week one",
+          "detail": "Build the baseline and learn the correct manual."
+        },
+        {
+          "label": "Follow-up",
+          "detail": "Complete official steps and unresolved assessments."
+        }
+      ],
+      "caption": "Actual legal deadlines come from the relevant authority.",
+      "alt": "First-car tasks are ordered from pre-driving confirmation through handover, baseline and follow-up."
+    },
+    {
+      "title": "Your starting record",
+      "kicker": "Known facts and open questions",
+      "kind": "record",
+      "steps": [
+        {
+          "label": "Identity",
+          "detail": "Record the vehicle and dated odometer."
+        },
+        {
+          "label": "Received",
+          "detail": "List keys, documents and supported service evidence."
+        },
+        {
+          "label": "Unknown",
+          "detail": "Name missing facts without treating them as completed work."
+        }
+      ],
+      "caption": "A clear unknown is a better starting point than assumed maintenance.",
+      "alt": "A new owner baseline separates vehicle identity, received records and unresolved history."
+    }
+  ],
+  "worksheet": {
+    "title": "First-car handover and baseline",
+    "prompt": "Complete the before-driving checks first, then record the starting facts for this vehicle.",
+    "fields": [
+      "Vehicle identity and acquisition date",
+      "Cover effective status",
+      "Driving and transfer requirements",
+      "Keys and documents received",
+      "Odometer with unit",
+      "Manual and recall-check references",
+      "Known service evidence and unknowns",
+      "Next action, owner and deadline"
+    ]
+  },
+  "research": {
+    "primaryQuery": "first car checklist",
+    "supportingQueries": [
+      "what to do after getting first car",
+      "new driver first week car checklist",
+      "first car paperwork and maintenance setup"
+    ],
+    "intent": "Help a new owner prioritize pre-driving checks, paperwork and a first-week baseline rather than shopping or universal repair advice.",
+    "sourceChecks": [
+      "https://www.usa.gov/state-motor-vehicle-services - Official directory checked; links readers to their own jurisdiction, not a universal deadline or insurance rule.",
+      "https://www.nhtsa.gov/vehicle-safety/tires - Page checked: at least monthly cold-pressure checks, door placard pressure and tire selection.",
+      "https://www.nhtsa.gov/recalls - Official recall lookup checked; vehicle-specific results must be checked by the reader."
+    ],
+    "limitations": [
+      "US-focused administration; requirements and individual circumstances vary.",
+      "Saved Reddit leads informed reader-language only; no anecdotes treated as factual authority. Quora was blocked in the saved research.",
+      "No keyword-volume dataset or ranking guarantee. Product registry inspected, but live product workflows not tested."
+    ]
+  }
+}

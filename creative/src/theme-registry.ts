@@ -5,7 +5,6 @@
  * duplicated here: one source of truth for "what is this product's real
  * palette," shared by the storyboard tooling and this engine.
  */
-// @ts-expect-error - plain JS module, no type declarations
 import { THEMES as THEMES_UNTYPED, themeFor as themeForUntyped } from "../../scripts/video-plan/theme.mjs";
 
 export type ProductTheme = {

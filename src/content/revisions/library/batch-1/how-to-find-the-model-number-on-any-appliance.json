@@ -1,0 +1,214 @@
+{
+  "slug": "how-to-find-the-model-number-on-any-appliance",
+  "title": "How to find an appliance model number safely",
+  "dek": "Find the rating label, distinguish model from serial, and save the full identifier without moving heavy equipment or opening hazardous covers.",
+  "metaDescription": "Find the rating label, distinguish model from serial, and save the full identifier without moving heavy equipment or opening hazardous covers.",
+  "updatedAt": "2026-11-17",
+  "body": [
+    {
+      "kind": "paragraphs",
+      "paragraphs": [
+        "Look for the appliance's rating label or identification plate, usually around a door opening, inside an accessible compartment or on an exterior panel. Copy the field marked model, plus the serial separately, and photograph the whole label. Use the manufacturer's locator if it is not safely visible.",
+        "A large logo on the front may identify a product family rather than the precise model. That distinction matters when looking for the correct manual or asking for service. This guide covers common household appliances, not every brand or permission to dismantle equipment."
+      ]
+    },
+    {
+      "kind": "table",
+      "heading": "Safe starting places, not guaranteed locations",
+      "columns": [
+        "Appliance",
+        "Look first",
+        "Stop before"
+      ],
+      "rows": [
+        [
+          "Refrigerator",
+          "Accessible inner wall or door area",
+          "Moving a heavy unit or removing covers"
+        ],
+        [
+          "Washer or dryer",
+          "Door opening, lid area or accessible rear-facing label shown by the maker",
+          "Climbing behind or disconnecting services"
+        ],
+        [
+          "Dishwasher",
+          "Door edge or frame with the door open",
+          "Pulling it from cabinetry"
+        ],
+        [
+          "Range or oven",
+          "Frame visible with the door open; maker's locator",
+          "Moving a range or defeating an anti-tip restraint"
+        ],
+        [
+          "Microwave",
+          "Accessible door frame or maker's identified exterior spot",
+          "Removing the casing"
+        ],
+        [
+          "Water heater or HVAC",
+          "Visible external data plate or existing records",
+          "Opening unfamiliar service compartments"
+        ]
+      ]
+    },
+    {
+      "kind": "list",
+      "heading": "Capture the identifier correctly",
+      "checkable": true,
+      "items": [
+        "Read the brand from the actual appliance, not only a detached remote or accessory.",
+        "Use the manufacturer's model-locator instructions for that product type.",
+        "Open only ordinary user-access doors or lids that are safe under the manual.",
+        "Photograph the full plate and a readable close view, keeping all suffixes.",
+        "Copy model and serial into separate labeled fields.",
+        "Check likely confusions such as O and zero, I and one, or missing hyphens.",
+        "Save the label location so another person can find it without another search."
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "Model, serial and part number are different",
+      "paragraphs": [
+        "The model identifies a product configuration or range; the serial identifies the particular unit. A replacement component can carry its own part number, which is not necessarily the appliance model. Some manufacturers also need product, service or revision codes. Preserve every label field when uncertain.",
+        "The [GE locator](https://www.geappliances.com/ge/find-model-serial-number/) gives product-specific help and says GE and GE Profile model numbers begin and end with a letter. That is GE-specific guidance, not a test for whether another manufacturer's number is valid."
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "Invented example: the nearly right number",
+      "paragraphs": [
+        "A dishwasher label has MODEL DWX42A/02 and SERIAL SN77881. A handwritten note says only DWX42A. The household saves the photo and records the full model including /02, then asks the manufacturer which identifiers are required for the manual or service request.",
+        "These codes are invented and do not identify a real product. The lesson is to retain suffixes and separate fields, not use this pattern as a universal format. An apparently minor ending can matter, so do not let an online search silently discard it."
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "If the label is missing or inaccessible",
+      "paragraphs": [
+        "Check the purchase order, retailer account, installation record, registration confirmation or past service invoice. Compare any found number against the appliance rather than assuming a manual left in the house belongs to it. A manual may cover several models.",
+        "Contact the manufacturer with clear exterior photographs and whatever paperwork exists. Mark an uncertain identifier unconfirmed until support verifies it. Do not scrape, repaint or dismantle an appliance to make a label readable, and do not order a safety-critical part by appearance alone."
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "Do not decode age by a generic rule",
+      "paragraphs": [
+        "A serial may contain a manufacturing code, but formats differ by brand and period. A manufacture date, purchase date and installation date are separate facts. Use the manufacturer's interpretation where needed and label estimates honestly.",
+        "If identifying the model requires moving a heavy unit, disturbing a gas connection, removing a microwave case or opening electrical equipment, stop and ask a qualified person. A phone camera is not worth creating an access hazard. Missing information is preferable to an unsafe search."
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "Make the photo findable",
+      "paragraphs": [
+        "Save the image under the appliance and location, not only as an unnamed camera-roll item. Keep the typed identifier beside it for searching. Link it to [the warranty record](/guides/appliance-warranties-what-to-track) and [the purchase record](/guides/what-to-record-when-you-buy-an-appliance) if those exist.",
+        "A model number helps select the right documentation, but it does not prove that a part is compatible or that a repair is safe. Ask the manufacturer or appropriate service provider to confirm the exact configuration before making consequential decisions."
+      ]
+    },
+    {
+      "kind": "faq",
+      "items": [
+        {
+          "q": "Is the serial number the same as the model?",
+          "a": "No. Keep the labels separate and retain both. The model helps identify the product configuration; the serial identifies your unit and may be needed for warranty, service or recall checks. Photograph the whole plate if there are additional product or service codes."
+        },
+        {
+          "q": "What if there is no readable sticker?",
+          "a": "Look for purchase, installation or previous service records and ask the maker for help. Photos and partial information may assist, but identification is not guaranteed. Mark guesses as unconfirmed and avoid ordering consequential parts from a visually similar product."
+        },
+        {
+          "q": "Can I pull the oven out to see the label?",
+          "a": "Do not do that just because a general guide suggests a rear label. Ranges can be heavy and involve electrical or gas connections and anti-tip restraints. Check the manufacturer's safe locator instructions or ask a qualified person if normal accessible locations do not reveal it."
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "name": "GE Appliances: Model and serial locator",
+      "url": "https://www.geappliances.com/ge/find-model-serial-number/",
+      "retrieved": "2026-11-17",
+      "note": "Manufacturer locator and GE-specific model format, not rules for every brand."
+    }
+  ],
+  "visuals": [
+    {
+      "title": "Read the right field",
+      "kicker": "Keep the whole label",
+      "steps": [
+        {
+          "label": "Model",
+          "detail": "Identifies the product configuration."
+        },
+        {
+          "label": "Serial",
+          "detail": "Identifies the specific unit."
+        },
+        {
+          "label": "Other codes",
+          "detail": "May be required by the manufacturer."
+        },
+        {
+          "label": "Photo",
+          "detail": "Preserves suffixes and label context."
+        }
+      ],
+      "caption": "Do not substitute a component part number for the appliance model.",
+      "alt": "Four fields distinguish model, serial, other manufacturer codes and the full-label photo.",
+      "kind": "record"
+    },
+    {
+      "title": "Safe search route",
+      "kicker": "No dismantling required",
+      "steps": [
+        {
+          "label": "Accessible label",
+          "detail": "Use ordinary doors and the maker's locator."
+        },
+        {
+          "label": "Existing records",
+          "detail": "Check purchase and service paperwork."
+        },
+        {
+          "label": "Manufacturer help",
+          "detail": "Verify uncertain details through support."
+        }
+      ],
+      "caption": "Stop when the search requires moving or opening hazardous equipment.",
+      "alt": "A safe search moves from accessible labels to records and manufacturer support.",
+      "kind": "sequence"
+    }
+  ],
+  "worksheet": {
+    "title": "Appliance identification record",
+    "prompt": "Capture the complete identifier and mark uncertain information.",
+    "fields": [
+      "Appliance and location",
+      "Manufacturer",
+      "Full model including suffix",
+      "Serial",
+      "Other product or service code",
+      "Label location and photo",
+      "Evidence source",
+      "Confirmed or unresolved"
+    ]
+  },
+  "research": {
+    "primaryQuery": "how to find appliance model number",
+    "supportingQueries": [
+      "where is appliance model number",
+      "model number versus serial appliance"
+    ],
+    "intent": "Safe location and transcription of appliance identifiers, not diagnosis, age decoding or parts selection.",
+    "sourceChecks": [
+      "https://www.geappliances.com/ge/find-model-serial-number/ - Manufacturer locator and GE-specific model format, not rules for every brand."
+    ],
+    "limitations": [
+      "Locations vary by manufacturer and model; no claim to cover every appliance.",
+      "No universal serial-number age decoder or component compatibility rule is asserted.",
+      "No keyword-volume dataset was available. Saved Reddit leads were qualitative only; Quora was blocked in the saved research."
+    ]
+  }
+}

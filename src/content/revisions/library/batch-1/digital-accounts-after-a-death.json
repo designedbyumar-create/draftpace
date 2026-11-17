@@ -1,0 +1,246 @@
+{
+  "slug": "digital-accounts-after-a-death",
+  "title": "Digital accounts after a death: preserve, then request",
+  "dek": "Separate account closure from requests for data, preserve devices and records, and use provider processes without assuming a password gives authority.",
+  "metaDescription": "Separate account closure from requests for data, preserve devices and records, and use provider processes without assuming a password gives authority.",
+  "updatedAt": "2026-11-17",
+  "body": [
+    {
+      "kind": "paragraphs",
+      "paragraphs": [
+        "After a death, preserve devices and account information before deleting or closing anything. Identify the authorized person, decide whether data is needed and use each provider's deceased-user process. A death certificate, family relationship or known password does not automatically establish unrestricted access.",
+        "The phone may hold family photographs, authentication messages and business records at once. The wish to stop recurring charges can conflict with the need to preserve information. This guide organizes that decision. It cannot unlock a device, determine legal rights or promise that a provider will release content."
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "Separate three different requests",
+      "paragraphs": [
+        "Closing an account, obtaining selected data and taking control of an account are different actions. Ask the provider what it supports and what evidence is required. Do not interpret a closure form as an inheritance claim or assume a successful identity check transfers all the account's contents.",
+        "Also separate a device from an online service. Possession of a laptop does not mean a cloud account can be opened, and access to one service does not establish the right to transact through another. Provider terms and applicable law may treat messages, purchased content, money and stored files differently."
+      ]
+    },
+    {
+      "kind": "list",
+      "heading": "Preserve the starting position",
+      "checkable": true,
+      "items": [
+        "Keep devices, storage media and existing documentation secure without trying repeated passcode guesses.",
+        "Record the services you know exist and the evidence for each, using only lawful access.",
+        "Identify the estate representative or other person authorized for the proposed task.",
+        "List what must be preserved, what is costing money and what can wait.",
+        "Find each provider's official deceased-user or bereavement instructions.",
+        "Save requests, supporting-document copies and confirmation numbers in a protected file.",
+        "Do not close an account until the person responsible has considered related data requests and dependencies."
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "What Google actually says",
+      "paragraphs": [
+        "[Google's deceased-user request process](https://support.google.com/accounts/troubleshooter/6357590?hl=en) says it may work with immediate family or representatives to close an account and may provide content in certain circumstances after review. It does not provide passwords or other login details.",
+        "The same page warns that closing an account prevents a later request for its contents. If a content request is already pending, Google says to wait for that process before submitting a closure request. This is a provider-specific warning, not evidence that every service uses the same rules."
+      ]
+    },
+    {
+      "kind": "table",
+      "heading": "Invented example: email and family photographs",
+      "columns": [
+        "Item",
+        "Current question",
+        "Safe administrative next step"
+      ],
+      "rows": [
+        [
+          "Email account",
+          "Are records or other requests still needed?",
+          "Pause closure and ask about the data process"
+        ],
+        [
+          "Phone",
+          "Is useful local data preserved?",
+          "Secure it and obtain appropriate advice"
+        ],
+        [
+          "Photo service",
+          "Is there a verified backup or legacy arrangement?",
+          "Check the provider's current instructions"
+        ],
+        [
+          "Paid subscription",
+          "Can billing stop without destroying needed files?",
+          "Ask about cancellation and retention separately"
+        ]
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "Do not turn recovery into impersonation",
+      "paragraphs": [
+        "A saved browser session or password manager entry may make access technically possible. It does not settle whether the person using it is authorized. Do not change beneficiaries, move money, send messages as the deceased person or accept new terms on their behalf because a session remains open.",
+        "If the account contains business, client, employee or confidential professional material, involve the appropriate responsible person. The estate's interests may not be the only duties involved. Preserve potentially relevant material and seek advice before copying or distributing it."
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "Build a request log, not a guessing campaign",
+      "paragraphs": [
+        "For each provider, record the account identifier, official help page, desired outcome, claimant role, documents requested and submission status. Give private evidence only through the verified channel, and share the minimum required. Be cautious about unofficial services promising guaranteed access.",
+        "If a request is refused, ask what the refusal means: missing evidence, an unsupported request type or a final policy decision. Ask whether an appeal or legal process exists. A court document may be relevant, but this guide cannot promise a court can compel any particular disclosure."
+      ]
+    },
+    {
+      "kind": "scripts",
+      "heading": "Ask the provider the right question",
+      "items": [
+        {
+          "situation": "Preserve data",
+          "line": "We are determining whether account content is needed before closure. What is your deceased-user process, and does closure prevent a later data request?"
+        },
+        {
+          "situation": "Clarify documents",
+          "line": "Please list the evidence required for this specific request and the secure channel for submitting it."
+        },
+        {
+          "situation": "Clarify limits",
+          "line": "Does approval provide selected data, account closure or another outcome? What does it not authorize?"
+        }
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "Treat billing and authentication as dependencies",
+      "paragraphs": [
+        "A subscription may renew while access is unresolved. Contact the provider and authorized payment or estate representative about the billing route. Do not assume canceling a payment closes the account or that closing the account resolves every financial obligation.",
+        "An email address or phone number can also receive notices for other services. Record those dependencies without using password resets as an automatic workaround. Retaining a service temporarily can have costs and privacy implications; have the responsible person decide what is proportionate."
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "For your own accounts, plan separately",
+      "paragraphs": [
+        "[Google's Inactive Account Manager](https://support.google.com/accounts/answer/3036546?hl=en) lets an account holder choose notifications or selected data sharing after inactivity. It does not provide unrestricted login access or operate simply because a family member reports a death.",
+        "Check any other provider's current legacy setting directly and tell the intended contact what you have arranged. Keep access keys or recovery instructions protected and findable. For the household's broader map, use [what to write down in advance](/guides/what-to-write-down-in-case-something-happens-to-you)."
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "When to escalate",
+      "paragraphs": [
+        "Get qualified advice when authority is disputed, essential business records are involved, a device is locked or significant funds depend on an account. Noncustodial digital assets and hosted financial accounts have different recovery routes; there is no universal conclusion that all cryptocurrency is either recoverable or lost.",
+        "If there is a suspected security incident, contact the provider through a known channel rather than clicking a message offering help. Keep a record of the incident and do not publish identity documents or sensitive credentials in a family discussion thread."
+      ]
+    },
+    {
+      "kind": "faq",
+      "items": [
+        {
+          "q": "Can the provider give me the password?",
+          "a": "Do not assume so. Google's verified process specifically says it will not provide passwords or other login details, even when it considers a deceased-user request. Another provider may offer selected data or closure rather than login access. Check the exact supported outcome."
+        },
+        {
+          "q": "Should I delete social accounts first?",
+          "a": "Not automatically. Decide whether messages, photographs, evidence or another request need preserving, and use the platform's current process. Memorialization, closure and data release are separate possibilities whose availability varies. This guide does not verify a universal social-media rule."
+        },
+        {
+          "q": "Does being executor guarantee access?",
+          "a": "No universal guarantee follows from that role. Providers may require particular documentation, consent, review or legal process, and different data can be treated differently. Ask for the official requirements and get legal advice if essential records or a disputed claim cannot be resolved administratively."
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "name": "Google: Deceased user's account requests",
+      "url": "https://support.google.com/accounts/troubleshooter/6357590?hl=en",
+      "retrieved": "2026-11-17",
+      "note": "No password disclosure; closure can prevent later requests for content."
+    },
+    {
+      "name": "Google: Inactive Account Manager",
+      "url": "https://support.google.com/accounts/answer/3036546?hl=en",
+      "retrieved": "2026-11-17",
+      "note": "Chosen data sharing after inactivity, not unrestricted access."
+    }
+  ],
+  "visuals": [
+    {
+      "title": "Preserve before closing",
+      "kicker": "Choose the requested outcome",
+      "steps": [
+        {
+          "label": "Secure",
+          "detail": "Preserve devices and existing records."
+        },
+        {
+          "label": "Identify",
+          "detail": "Confirm the responsible claimant and needed data."
+        },
+        {
+          "label": "Request",
+          "detail": "Use the provider's official process."
+        },
+        {
+          "label": "Close",
+          "detail": "Consider closure only after data and dependencies."
+        }
+      ],
+      "caption": "Closure and data release are different administrative actions.",
+      "alt": "Four stages preserve devices, identify needs, submit requests and consider closure.",
+      "kind": "sequence"
+    },
+    {
+      "title": "Three different outcomes",
+      "kicker": "Read the provider's approval carefully",
+      "steps": [
+        {
+          "label": "Closure",
+          "detail": "Ends or removes the account under provider rules."
+        },
+        {
+          "label": "Data release",
+          "detail": "Provides an approved subset or export."
+        },
+        {
+          "label": "Login access",
+          "detail": "Is not implied by either other outcome."
+        }
+      ],
+      "caption": "Google does not supply passwords through its deceased-user process.",
+      "alt": "Three outcomes distinguish closure, selected data release and login access.",
+      "kind": "compare"
+    }
+  ],
+  "worksheet": {
+    "title": "Deceased-user account request log",
+    "prompt": "Track one provider without exposing passwords or private documents on the index.",
+    "fields": [
+      "Provider and identifier",
+      "Desired outcome",
+      "Authorized claimant",
+      "Preservation need",
+      "Official request URL",
+      "Documents and secure submission",
+      "Status and reference",
+      "Closure decision and dependencies"
+    ]
+  },
+  "research": {
+    "primaryQuery": "digital accounts after death",
+    "supportingQueries": [
+      "close deceased person's online accounts",
+      "request deceased family member account data"
+    ],
+    "intent": "Post-death digital account triage and provider request process, with bounded advance-planning guidance.",
+    "sourceChecks": [
+      "https://support.google.com/accounts/troubleshooter/6357590?hl=en - No password disclosure; closure can prevent later requests for content.",
+      "https://support.google.com/accounts/answer/3036546?hl=en - Chosen data sharing after inactivity, not unrestricted access."
+    ],
+    "limitations": [
+      "Only Google policies were verified in full; other provider rules require individual checks.",
+      "Apple support returned a rate-limit error; no detailed Apple access claim is made.",
+      "No state-by-state digital fiduciary law or cryptocurrency recovery outcome is asserted.",
+      "No keyword-volume dataset was available. Saved Reddit leads were qualitative only; Quora was blocked in the saved research."
+    ]
+  }
+}

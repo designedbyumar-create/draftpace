@@ -1,0 +1,204 @@
+{
+  "slug": "winter-car-prep-checklist",
+  "title": "Winter car prep checklist before freezing weather",
+  "dek": "Check tires, visibility, starting power, fluids and your roadside kit before freezing weather. Record what was tested and what still needs a shop.",
+  "metaDescription": "Check tires, visibility, starting power, fluids and your roadside kit before freezing weather. Record what was tested and what still needs a shop.",
+  "updatedAt": "2026-11-17",
+  "body": [
+    {
+      "kind": "paragraphs",
+      "paragraphs": [
+        "Before freezing weather arrives, check the tires, visibility equipment, starting system, correct fluids and emergency supplies. Book help for checks you cannot perform safely. Record the result and any unresolved problem, rather than ticking off a system simply because it looked normal.",
+        "The first icy morning is a poor time to discover that the washer fluid freezes or the defroster does not clear the glass. Choose a practical check date ahead of your local cold season, not a fixed national month. This is a preparation list, not a repair manual or permission to travel in dangerous conditions."
+      ]
+    },
+    {
+      "kind": "list",
+      "heading": "A pre-freeze check you can work through",
+      "checkable": true,
+      "items": [
+        "Check tire condition and cold pressure against the vehicle placard. Ask a tire professional about damage, uneven wear or suitability for the routes you drive.",
+        "Test headlights, brake lights, turn signals, hazards, wipers, washers and glass-clearing functions. Resolve visibility problems before travel.",
+        "Ask for a starting-battery and charging-system assessment if appropriate, especially after slow starting or other concerns. Keep the test result.",
+        "Check coolant and washer-fluid requirements in the manual. Have freeze protection assessed when uncertain; a visible level alone does not establish protection.",
+        "Locate the scraper, brush, blankets, flashlight, charging cable, water, food and the vehicle-appropriate recovery supplies.",
+        "Check the forecast and road authority advice before a trip. Allow for delay, closures and a decision not to go."
+      ]
+    },
+    {
+      "kind": "table",
+      "heading": "What your record should distinguish",
+      "columns": [
+        "Check",
+        "Useful result",
+        "Not the same thing"
+      ],
+      "rows": [
+        [
+          "Tires",
+          "Cold readings and any professional findings",
+          "Assuming all tires match because one reading did"
+        ],
+        [
+          "Battery",
+          "Dated test result and any advice",
+          "Assuming a test predicts the whole winter"
+        ],
+        [
+          "Coolant",
+          "Protection test or manufacturer-specific assessment",
+          "Seeing fluid in the reservoir"
+        ],
+        [
+          "Visibility",
+          "Washer, wiper and defroster functions checked",
+          "Only topping up the bottle"
+        ],
+        [
+          "Kit",
+          "Items present, usable and accessible",
+          "Owning supplies stored elsewhere"
+        ]
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "Choose tires for the actual route",
+      "paragraphs": [
+        "[NHTSA](https://www.nhtsa.gov/vehicle-safety/tires) distinguishes winter, all-season and summer tires; the appropriate choice depends on conditions. Before asking a shop, note typical temperatures, snow or ice exposure, hills, journey frequency and the tires currently fitted. Confirm approved sizes and local chain or traction requirements with the relevant road authority.",
+        "Do not treat the tire-pressure warning lamp as a complete pressure inspection. Retain actual cold readings in your record. A damaged tire, persistent pressure loss or a serious driving concern needs assessment rather than a future calendar reminder."
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "Invented example: one unresolved line matters",
+      "paragraphs": [
+        "On 2026-10-14 a fictional driver records: \"Wipers checked, washer label suitable for expected conditions, lights working. Battery tested at shop; result filed. Coolant level observed but freeze protection not established.\" The next action is a coolant question for the shop, not a completed winter-prep claim.",
+        "The driver also notices that the flashlight works but its spare batteries are missing. That is an equipment task, not a mechanical one. Keeping those categories distinct makes the list easier to finish without buying an unnecessary package of vehicle services."
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "Combustion, hybrid and battery-electric differences",
+      "paragraphs": [
+        "A hybrid still has a combustion engine and its associated maintenance. A battery-electric car does not acquire engine-oil or spark-plug tasks simply because it appears on a generic checklist. Use the correct manual for both propulsion and low-voltage battery arrangements, charging, cold-weather operation and recovery.",
+        "Plan charging or fuel stops with weather and delay in mind. Do not promise yourself a fixed winter range reduction or assume the range estimate is a guarantee. Cold weather and cabin heating can affect electric range; the actual vehicle, conditions and route determine the practical plan."
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "If stranded, the checklist becomes secondary",
+      "paragraphs": [
+        "Follow [NHTSA winter emergency guidance](https://www.nhtsa.gov/winter-driving-tips) and local responder instructions. Prioritize location, visibility and help. Do not leave the vehicle to walk into dangerous weather without considering immediate hazards and official advice.",
+        "If using a combustion engine for warmth while stranded in snow, keep the exhaust clear and run it only intermittently. Do not run it for long periods with the windows up or in an enclosed space. Carbon monoxide is a serious risk. Never let a preparation checklist distract from a blocked exhaust, traffic danger or an emergency call."
+      ]
+    },
+    {
+      "kind": "faq",
+      "items": [
+        {
+          "q": "When should I prepare my car for winter?",
+          "a": "Before your local freeze season or before a trip into winter conditions, with enough time to obtain needed repairs. There is no single October or November deadline for the whole country. Recheck supplies and important changes when the forecast or route changes."
+        },
+        {
+          "q": "Does a good battery test mean I am covered all winter?",
+          "a": "No. Keep the test date and result, but treat later slow starting or other changes as new information. A test is an assessment at that time, not a guarantee. Ask the shop what follow-up is appropriate for your particular battery and vehicle."
+        },
+        {
+          "q": "Can I use the same list for a hybrid and an electric car?",
+          "a": "The tires, visibility and emergency-supply checks overlap, but the powertrain tasks do not. Hybrids retain engine maintenance; battery-electric vehicles have their own manufacturer requirements. Check charging, recovery and cold-operation guidance in the correct manual rather than borrowing another vehicle's procedure."
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "name": "NHTSA: Winter weather driving tips",
+      "url": "https://www.nhtsa.gov/winter-driving-tips",
+      "retrieved": "2026-11-17",
+      "note": "Page checked: winter checks, emergency supplies, reduced EV range and exhaust/carbon-monoxide precautions."
+    },
+    {
+      "name": "NHTSA: Tires",
+      "url": "https://www.nhtsa.gov/vehicle-safety/tires",
+      "retrieved": "2026-11-17",
+      "note": "Page checked: at least monthly cold-pressure checks, door placard pressure and tire selection."
+    }
+  ],
+  "visuals": [
+    {
+      "title": "Before freezing weather",
+      "kicker": "Prepare, test and close gaps",
+      "kind": "sequence",
+      "steps": [
+        {
+          "label": "Check",
+          "detail": "Inspect tires, visibility functions and kit contents."
+        },
+        {
+          "label": "Confirm",
+          "detail": "Obtain the tests or vehicle-specific answers you need."
+        },
+        {
+          "label": "Resolve",
+          "detail": "Book repairs and replace missing supplies before travel."
+        }
+      ],
+      "caption": "Observed, tested and unresolved are different results.",
+      "alt": "Winter preparation moves from checks to confirmed results and resolved repair or supply gaps."
+    },
+    {
+      "title": "Winter findings record",
+      "kicker": "Keep the next action visible",
+      "kind": "record",
+      "steps": [
+        {
+          "label": "Observed",
+          "detail": "Record what you directly checked."
+        },
+        {
+          "label": "Tested",
+          "detail": "Attach the dated result or shop assessment."
+        },
+        {
+          "label": "Unresolved",
+          "detail": "Name the question, owner and next action."
+        }
+      ],
+      "caption": "A fluid-level observation does not establish freeze protection.",
+      "alt": "A winter record distinguishes direct observations, test results and items still requiring action."
+    }
+  ],
+  "worksheet": {
+    "title": "Pre-freeze vehicle check record",
+    "prompt": "Write a result and next action for each winter check, not just a tick.",
+    "fields": [
+      "Vehicle and check date",
+      "Tire readings and condition",
+      "Battery test reference",
+      "Wipers, washers and visibility",
+      "Coolant protection status",
+      "Lighting and defroster findings",
+      "Kit gaps",
+      "Shop booking or unresolved question"
+    ]
+  },
+  "research": {
+    "primaryQuery": "winter car prep checklist",
+    "supportingQueries": [
+      "winter vehicle safety checks",
+      "winter car emergency kit",
+      "car coolant protection test before frost"
+    ],
+    "intent": "Prioritize pre-freeze checks and roadside preparation without universal fluid intervals or unsafe stranded-car advice.",
+    "sourceChecks": [
+      "https://www.nhtsa.gov/winter-driving-tips - Page checked: winter checks, emergency supplies, reduced EV range and exhaust/carbon-monoxide precautions.",
+      "https://www.nhtsa.gov/vehicle-safety/tires - Page checked: at least monthly cold-pressure checks, door placard pressure and tire selection."
+    ],
+    "limitations": [
+      "US-focused administration; requirements and individual circumstances vary.",
+      "Saved Reddit leads informed reader-language only; no anecdotes treated as factual authority. Quora was blocked in the saved research.",
+      "No keyword-volume dataset or ranking guarantee. Product registry inspected, but live product workflows not tested."
+    ]
+  }
+}

@@ -1,0 +1,237 @@
+{
+  "slug": "appliance-warranties-what-to-track",
+  "title": "Appliance warranty tracking: dates, terms and claims",
+  "dek": "Keep the receipt, model and serial, coverage details and claim route together, then check what is covered before authorizing a repair.",
+  "metaDescription": "Keep the receipt, model and serial, coverage details and claim route together, then check what is covered before authorizing a repair.",
+  "updatedAt": "2026-11-17",
+  "body": [
+    {
+      "kind": "paragraphs",
+      "paragraphs": [
+        "Track the appliance's identity, proof of purchase, warranty start rule, separate coverage periods and claim instructions. Keep the actual warranty terms, not just an expiry reminder. Before authorizing a paid repair, ask what the warranty covers and whether the provider requires a particular claim process.",
+        "A label saying 'ten-year warranty' can hide different periods for a major component, other parts and labor. A single calendar date may therefore give the wrong impression. This guide concerns ordinary US appliance warranty administration, not a review of paid home-service plans."
+      ]
+    },
+    {
+      "kind": "list",
+      "heading": "Build one warranty record",
+      "checkable": true,
+      "items": [
+        "Photograph the full rating plate and record the exact model and serial.",
+        "Save the receipt, order confirmation, delivery and installation evidence available.",
+        "Download the warranty version applying to the purchase rather than relying on a current marketing page.",
+        "Record what event starts each coverage period.",
+        "Separate component, parts and labor periods and any stated limits.",
+        "Note registration status, transfer rules and documented maintenance requirements actually found in the terms.",
+        "Save the official claims contact and authorization procedure.",
+        "Keep service visits and claim correspondence attached to the appliance record."
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "Write terms you can trace back",
+      "paragraphs": [
+        "For each summary, record the page or heading in the warranty. 'Coverage starts from installation under section 2' is checkable; 'installed sometime last spring, probably covered' is not. If the terms are unclear, ask the manufacturer or seller and retain the response.",
+        "The [FTC](https://consumer.ftc.gov/articles/warranties) advises keeping the warranty and receipt and checking coverage and claims procedures. This record cannot decide whether a particular failure is a covered defect. Do not write that most claims fail because of paperwork; that would need evidence this guide does not have."
+      ]
+    },
+    {
+      "kind": "table",
+      "heading": "Invented example: separate coverage questions",
+      "columns": [
+        "Field",
+        "Entry to confirm"
+      ],
+      "rows": [
+        [
+          "Start date",
+          "Which purchase or installation event controls?"
+        ],
+        [
+          "Major component",
+          "What component is named, and for how long?"
+        ],
+        [
+          "Other parts",
+          "Are there separate terms or limits?"
+        ],
+        [
+          "Labor and visit fees",
+          "Who pays and under what authorization?"
+        ],
+        [
+          "Maintenance",
+          "What documented care does this product require?"
+        ],
+        [
+          "Claim",
+          "Who approves work and what evidence is needed?"
+        ]
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "A warranty and a service contract differ",
+      "paragraphs": [
+        "A manufacturer's warranty and a separately purchased service contract can have different providers, exclusions, fees and claims routes. 'Extended warranty' is often used loosely. Read the actual agreement before treating it as an extension of the original manufacturer's obligations.",
+        "Do not assume a whole-home plan covers every appliance, renews on the same terms or pays every visit fee. Keep the contract's own record if you have one. This guide does not recommend buying a plan or predict whether its price will be worthwhile."
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "Do not invent a maintenance condition",
+      "paragraphs": [
+        "Some terms connect coverage to proper use and maintenance, but there is no universal annual-service rule covering all furnaces, water heaters and appliances. Copy the condition actually applicable to your model. Keep maintenance evidence without inventing a visit that did not happen.",
+        "Nor should you assume that using an independent repairer voids the entire warranty. FTC guidance explains restrictions on requirements to use specified parts or services. Damage caused by improper work and an unlawful blanket restriction are different questions. Ask for a written explanation of a refusal and seek qualified consumer advice if needed."
+      ]
+    },
+    {
+      "kind": "scripts",
+      "heading": "Before authorizing a repair",
+      "items": [
+        {
+          "situation": "Coverage",
+          "line": "My appliance has this model and serial, and I have these purchase documents. Which parts of this fault may be covered?"
+        },
+        {
+          "situation": "Authorization",
+          "line": "Do I need a claim number or approval before anyone starts work, and what costs could remain mine?"
+        },
+        {
+          "situation": "Refusal",
+          "line": "Please identify the term or reason for the coverage decision and the review process in writing."
+        }
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "Track the claim separately from the expiry",
+      "paragraphs": [
+        "Record when the fault was observed, when you contacted the provider, what was submitted and the promised next step. Do not assume a reminder just before expiry preserves a claim or that a submitted form means approval. Check the actual reporting requirements.",
+        "If a visit is arranged, ask who is coming, what was authorized and how additional work will be approved. Afterward, keep the service record and any changed coverage terms with the claim. Use [the repair record guide](/guides/what-to-keep-after-a-home-repair) for what to capture."
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "A safety recall is another route",
+      "paragraphs": [
+        "Search the [CPSC recall listings](https://www.cpsc.gov/Recalls) and manufacturer guidance if there is a safety concern. Match model, serial range and other identifiers to the actual notice and follow its instructions. A broad search result for the brand does not establish that your unit is affected.",
+        "Do not wait for a warranty appointment to respond to an immediate hazard. Stop and obtain appropriate emergency or professional help for dangerous symptoms. A warranty record is administrative evidence, not permission to keep using unsafe equipment."
+      ]
+    },
+    {
+      "kind": "faq",
+      "items": [
+        {
+          "q": "What if I lost the receipt?",
+          "a": "Ask the retailer, installer or account history for available proof, and ask the warrantor what alternative evidence it accepts. A serial may identify the unit but not necessarily prove the purchase date or owner. Do not substitute an invented purchase date for missing documentation."
+        },
+        {
+          "q": "Does registration always extend coverage?",
+          "a": "No. Effects vary by product, terms and applicable law. Check whether registration is requested, what benefit is offered and what evidence confirms completion. Keep the response or confirmation, but do not assume a marketing invitation creates a longer warranty."
+        },
+        {
+          "q": "Can the warranty transfer to a buyer?",
+          "a": "Check the written transfer rules and any required process or deadline. Do not promise transferable coverage when selling an appliance or home based only on the original term. Record whether transfer is confirmed, restricted or unknown and direct the buyer to the actual terms."
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "name": "FTC: Warranties",
+      "url": "https://consumer.ftc.gov/articles/warranties",
+      "retrieved": "2026-11-17",
+      "note": "Written terms, receipts, service contracts and claim procedures."
+    },
+    {
+      "name": "CPSC: Recalls and product safety warnings",
+      "url": "https://www.cpsc.gov/Recalls",
+      "retrieved": "2026-11-17",
+      "note": "Official recall search and safety notices; follow the actual notice for a matching product."
+    }
+  ],
+  "visuals": [
+    {
+      "title": "One appliance, several periods",
+      "kicker": "Read the coverage detail",
+      "steps": [
+        {
+          "label": "Start rule",
+          "detail": "Identify the event that starts the clock."
+        },
+        {
+          "label": "Parts",
+          "detail": "Separate named components from other parts."
+        },
+        {
+          "label": "Labor",
+          "detail": "Check visit, labor and authorization terms."
+        },
+        {
+          "label": "Claim",
+          "detail": "Record reporting and evidence requirements."
+        }
+      ],
+      "caption": "The largest advertised number may not describe the whole repair.",
+      "alt": "Four warranty checks distinguish start rule, parts, labor and claim process.",
+      "kind": "compare"
+    },
+    {
+      "title": "From fault to claim",
+      "kicker": "Keep approval separate from submission",
+      "steps": [
+        {
+          "label": "Observe",
+          "detail": "Record the symptom and date."
+        },
+        {
+          "label": "Contact",
+          "detail": "Use the official claim route."
+        },
+        {
+          "label": "Authorize",
+          "detail": "Confirm covered work and possible charges."
+        },
+        {
+          "label": "Retain",
+          "detail": "Save the decision and service evidence."
+        }
+      ],
+      "caption": "Submitting a claim does not establish that the repair is approved.",
+      "alt": "Four stages track an appliance fault through contact, authorization and retained evidence.",
+      "kind": "sequence"
+    }
+  ],
+  "worksheet": {
+    "title": "Appliance coverage and claim record",
+    "prompt": "Summarize the real terms and retain the source document.",
+    "fields": [
+      "Appliance model and serial",
+      "Receipt and installation evidence",
+      "Applicable terms location",
+      "Coverage start rule",
+      "Parts and labor periods",
+      "Maintenance or registration terms",
+      "Claim contact and authorization",
+      "Claim status and open cost"
+    ]
+  },
+  "research": {
+    "primaryQuery": "appliance warranty tracking",
+    "supportingQueries": [
+      "track appliance warranty expiration",
+      "what to keep for appliance warranty claim"
+    ],
+    "intent": "Manufacturer-warranty record and claim preparation, distinct from purchase inventory or choosing service contracts.",
+    "sourceChecks": [
+      "https://consumer.ftc.gov/articles/warranties - Written terms, receipts, service contracts and claim procedures.",
+      "https://www.cpsc.gov/Recalls - Official recall search and safety notices; follow the actual notice for a matching product."
+    ],
+    "limitations": [
+      "No claim-failure statistics or general annual-service condition is asserted.",
+      "Specific coverage, registration effects and transfer rights must be checked in the actual terms.",
+      "No keyword-volume dataset was available. Saved Reddit leads were qualitative only; Quora was blocked in the saved research."
+    ]
+  }
+}

@@ -1,0 +1,240 @@
+{
+  "slug": "babysitter-and-grandparent-info-sheet",
+  "title": "Babysitter information sheet for a real handover",
+  "dek": "Leave current contacts, the home address, allergies, relevant care instructions and routines. Walk through the important details before you go.",
+  "metaDescription": "Leave current contacts, the home address, allergies, relevant care instructions and routines. Walk through the important details before you go.",
+  "updatedAt": "2026-11-17",
+  "body": [
+    {
+      "kind": "paragraphs",
+      "paragraphs": [
+        "Leave the sitter the child's identity, your location and return plan, the care address, two reachable contacts, relevant allergies and existing care instructions, and a short routine. Review the sheet together before leaving. Medicine names alone are not permission or sufficient instructions to give a medicine.",
+        "A familiar grandparent may know the bedtime story and still have last month's information about a changed medicine or food restriction. A new sitter may know neither. The sheet should carry the current handover for these hours, supported by a conversation and any clinician plan that applies."
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "What this page is for",
+      "paragraphs": [
+        "This is US-focused childcare administration, not guidance on diagnosing illness or giving treatment. It does not replace first-aid training, a clinician's plan, or legally required permissions. If a care task is outside the sitter's training or comfort, resolve that before the arrangement begins rather than relying on a detailed note.",
+        "Keep one child's health information clearly distinguishable from a sibling's. A shared house page can show the address and escape arrangements, while individual pages identify the child and relevant instructions. Do not let saving paper make it unclear who an allergy or medicine belongs to."
+      ]
+    },
+    {
+      "kind": "list",
+      "heading": "Prepare the handover before the doorbell",
+      "checkable": true,
+      "items": [
+        "Write the exact care address, unit or access details and a useful location description for an emergency call.",
+        "Add your current contact, where you will be, when you expect to return and an agreed backup adult.",
+        "Identify each child and the current allergies or other facts relevant to safe care. Mark uncertainties for clarification, not interpretation.",
+        "Provide any clinician-written plan the sitter needs and arrange appropriate instruction for its use.",
+        "If any medicine may be given, confirm the authorized instructions and labeled product, last administration information where needed, and a way to record what was given.",
+        "Write relevant meals, sleep, comfort and house routines in ordinary words.",
+        "Show the sitter the sheet, supplies and emergency arrangements, then ask what remains unclear."
+      ]
+    },
+    {
+      "kind": "table",
+      "heading": "Invented handover: an evening with one child",
+      "columns": [
+        "Section",
+        "Example content without treatment directions"
+      ],
+      "rows": [
+        [
+          "Identity and location",
+          "Noah; care at the address written on the actual handover"
+        ],
+        [
+          "Contact plan",
+          "Parent at a nearby event until 10 p.m.; backup adult has agreed to answer"
+        ],
+        [
+          "Relevant health information",
+          "Current clinician plan in the named folder; sitter has reviewed it with parent"
+        ],
+        [
+          "Medicine boundary",
+          "No routine dose scheduled during this visit; any existing emergency plan reviewed separately"
+        ],
+        [
+          "Routine",
+          "Dinner already eaten; bedtime story and hall light at bedtime"
+        ],
+        [
+          "Open issue",
+          "Parent checks backup number before departure"
+        ]
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "The conversation is part of the tool",
+      "paragraphs": [
+        "The [American Academy of Pediatrics](https://www.healthychildren.org/English/safety-prevention/at-home/Pages/Babysitting-Reminders.aspx) recommends leaving emergency contacts and address information, discussing specific needs and showing the sitter the home. Use the page to guide that conversation, not to avoid it. Ask the sitter to locate the address, the backup contact and any relevant care plan.",
+        "Do not test them with a surprise or make them guess what you consider an emergency. Agree how to get help and how to reach you for an ordinary uncertainty. If your own availability changes during the evening, update the sitter directly rather than editing a document they may not reopen."
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "Medicine information must be actionable and current",
+      "paragraphs": [
+        "For a medicine that might be used, a vague line such as \"inhaler as needed\" leaves important questions unresolved. Obtain the relevant instructions from the prescriber or pharmacist and use the actual labeled product and clinician plan as applicable. This guide supplies no dose, schedule, conversion or substitute emergency plan.",
+        "[FDA pharmacist guidance](https://www.fda.gov/drugs/information-consumers-and-patients-drugs/stop-learn-go-tips-talking-your-pharmacist-learn-how-use-medicines-safely) emphasizes reporting actual use and changes. If the label, parent recollection and plan disagree, do not pick one because it looks newer or more familiar. Get clarification before the sitter is expected to act."
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "A grandparent needs the changes, not a different standard",
+      "paragraphs": [
+        "Use the same current information for someone who knows the child well. Point out what changed since the last visit: contact details, care arrangements, medication instructions or routines. Avoid relying on \"you remember what we usually do\" when the facts have changed.",
+        "Invite questions without making the handover a debate at the door. A useful line is: \"This is the current version; let us check anything that differs from last time.\" For an overnight or multi-day stay, add dates, responsibilities and a plan for handing the child and records back."
+      ]
+    },
+    {
+      "kind": "scripts",
+      "heading": "At the handover",
+      "items": [
+        {
+          "situation": "Showing the page",
+          "line": "Here is the current sheet for tonight. Please check the address, contacts and relevant plan with me before I leave."
+        },
+        {
+          "situation": "An unclear medicine line",
+          "line": "We should not guess from that note. I will clarify the instructions with the appropriate clinician or pharmacist before you are responsible for this task."
+        },
+        {
+          "situation": "For a grandparent",
+          "line": "The routine is familiar, but these two details changed. Please use this checked version rather than the old page."
+        }
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "Privacy and stop points",
+      "paragraphs": [
+        "Keep necessary safety information usable, but do not leave unrelated family history or financial identifiers on a publicly visible wall. Choose a known location where the sitter can reach the page. Agree how a digital copy is stored and avoid sending it through a large family group unnecessarily.",
+        "For a suspected medical emergency, call 911 in the US rather than waiting for a parent to approve the call. [MedlinePlus](https://medlineplus.gov/ency/article/001927.htm) lists warning signs such as trouble breathing or unconsciousness; this is not an exhaustive triage list. Do not delay help to find a binder, finish notes or establish a diagnosis."
+      ]
+    },
+    {
+      "kind": "faq",
+      "items": [
+        {
+          "q": "Does a babysitter need the whole medical binder?",
+          "a": "Usually the useful handover is a child-specific selection for the care being provided, together with relevant clinician plans. Do not assume a short visit makes safety information unnecessary. Keep the full archive available through the appropriate adult without automatically distributing unrelated private history."
+        },
+        {
+          "q": "Should a grandparent get the same written sheet?",
+          "a": "Yes, a current handover can help even when someone knows the child well. Point out changes and confirm contact arrangements. Familiarity does not establish which version of a medicine instruction or routine they remember, so make updates explicit."
+        },
+        {
+          "q": "What if the sitter is unsure about a care task?",
+          "a": "Resolve the uncertainty before leaving. That may mean clarification from the clinician, appropriate training, a different arrangement or not delegating that task. A longer sheet cannot substitute for a person being prepared and authorized to do what is expected."
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "name": "American Academy of Pediatrics: Babysitting reminders",
+      "url": "https://www.healthychildren.org/English/safety-prevention/at-home/Pages/Babysitting-Reminders.aspx",
+      "retrieved": "2026-11-17",
+      "note": "Publisher search-result content checked: emergency contact details, child information, emergency supplies and parent instructions."
+    },
+    {
+      "name": "MedlinePlus: Recognizing medical emergencies",
+      "url": "https://medlineplus.gov/ency/article/001927.htm",
+      "retrieved": "2026-11-17",
+      "note": "NIH-hosted search-result content checked: breathing problems, loss of consciousness and confusion are emergency warning signs; not a complete triage list."
+    },
+    {
+      "name": "FDA: Tips for talking with your pharmacist",
+      "url": "https://www.fda.gov/drugs/information-consumers-and-patients-drugs/stop-learn-go-tips-talking-your-pharmacist-learn-how-use-medicines-safely",
+      "retrieved": "2026-11-17",
+      "note": "Official search-result content checked: report actual use, stopped medicines and reactions; ask pharmacist about uncertainties."
+    }
+  ],
+  "visuals": [
+    {
+      "title": "A complete handover",
+      "kicker": "The page and the conversation work together",
+      "kind": "sequence",
+      "steps": [
+        {
+          "label": "Prepare",
+          "detail": "Write the current child-specific information."
+        },
+        {
+          "label": "Show",
+          "detail": "Locate the contacts, plans and supplies together."
+        },
+        {
+          "label": "Check",
+          "detail": "Resolve questions before care responsibility changes."
+        },
+        {
+          "label": "Update",
+          "detail": "Communicate changes during the arrangement directly."
+        }
+      ],
+      "caption": "A printed note alone cannot establish caregiver readiness.",
+      "alt": "A childcare handover includes a current page, a shared walkthrough, clarification and direct updates."
+    },
+    {
+      "title": "What the sitter needs tonight",
+      "kicker": "Separate essential care from the archive",
+      "kind": "record",
+      "steps": [
+        {
+          "label": "Reach help",
+          "detail": "Keep the address and contact order accessible."
+        },
+        {
+          "label": "Provide care",
+          "detail": "Include current relevant instructions and routines."
+        },
+        {
+          "label": "Know limits",
+          "detail": "Identify tasks needing clarification or additional preparation."
+        }
+      ],
+      "caption": "A familiar caregiver still needs the current version.",
+      "alt": "The sitter handover groups emergency access, relevant care information and unresolved limits."
+    }
+  ],
+  "worksheet": {
+    "title": "Sitter or grandparent handover for this visit",
+    "prompt": "Complete this for the actual care dates and review the unresolved items before leaving.",
+    "fields": [
+      "Child and care dates",
+      "Exact address and access",
+      "Parent location and return plan",
+      "First and backup contacts",
+      "Allergies and plan location",
+      "Medicine responsibilities and confirmed instructions",
+      "Meals, sleep and comfort routines",
+      "Walkthrough completed and open questions"
+    ]
+  },
+  "research": {
+    "primaryQuery": "babysitter information sheet",
+    "supportingQueries": [
+      "babysitter information sheet emergency contacts",
+      "grandparent childcare handover notes",
+      "what to leave for babysitter medication instructions"
+    ],
+    "intent": "Prepare and rehearse a child-specific handover sheet without replacing clinician care plans or inventing medicine directions.",
+    "sourceChecks": [
+      "https://www.healthychildren.org/English/safety-prevention/at-home/Pages/Babysitting-Reminders.aspx - Publisher search-result content checked: emergency contact details, child information, emergency supplies and parent instructions.",
+      "https://medlineplus.gov/ency/article/001927.htm - NIH-hosted search-result content checked: breathing problems, loss of consciousness and confusion are emergency warning signs; not a complete triage list.",
+      "https://www.fda.gov/drugs/information-consumers-and-patients-drugs/stop-learn-go-tips-talking-your-pharmacist-learn-how-use-medicines-safely - Official search-result content checked: report actual use, stopped medicines and reactions; ask pharmacist about uncertainties."
+    ],
+    "limitations": [
+      "US-focused administration; requirements and individual circumstances vary.",
+      "Saved Reddit leads informed reader-language only; no anecdotes treated as factual authority. Quora was blocked in the saved research.",
+      "No keyword-volume dataset or ranking guarantee. Product registry inspected, but live product workflows not tested."
+    ]
+  }
+}

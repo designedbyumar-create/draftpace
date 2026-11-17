@@ -1,0 +1,242 @@
+{
+  "slug": "what-to-leave-off-a-health-page-you-hand-over",
+  "title": "What health information to share with a school",
+  "dek": "Match the information to the recipient, purpose and safety needs. Ask about unclear requests rather than handing over everything or hiding relevant facts.",
+  "metaDescription": "Match the information to the recipient, purpose and safety needs. Ask about unclear requests rather than handing over everything or hiding relevant facts.",
+  "updatedAt": "2026-11-17",
+  "body": [
+    {
+      "kind": "paragraphs",
+      "paragraphs": [
+        "Give the school the accurate information required for its program and the facts needed for safe participation and support. Ask its designated health contact about anything unclear, sensitive or not captured by the form. A sitter, school and treating clinician need different information; neither \"print everything\" nor \"only answer the boxes\" is a reliable rule.",
+        "The full family record may be the easiest page to send, especially just before a deadline. But it can expose unrelated private information while still failing to explain the actual care arrangement. Decide who needs what for this purpose, then check that the selected page is current and not misleading."
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "Start with the task, not a fixed list of secrets",
+      "paragraphs": [
+        "This is US-focused information-sharing administration, not legal advice about every school or guidance on withholding information from a treating clinician. Requirements, privacy protections, student rights and permissions can differ. For a specific dispute or sensitive concern, use the school's appropriate health or privacy contact and qualified advice where needed.",
+        "A short form may not cover every relevant need. If the child needs a care arrangement, accommodation or clinician plan, ask how to supply it and who should receive it. Do not remove a safety-relevant fact merely because a template did not provide a convenient field."
+      ]
+    },
+    {
+      "kind": "list",
+      "heading": "Check the page before it leaves you",
+      "checkable": true,
+      "items": [
+        "Identify the recipient and what they are being asked to do. A classroom teacher, nurse and intake clinician do not necessarily need identical copies.",
+        "Read the current requested form and any separate instructions about health support, medication or emergency plans.",
+        "Confirm current facts against the appropriate record. Keep unknown information labelled instead of inventing a complete-looking answer.",
+        "Ask about an unclear field, a broad history request or relevant information that has no place on the form.",
+        "Retain safety-relevant context and existing clinician instructions needed for the arrangement.",
+        "Remove unrelated information from a selected handout only after checking that the omission does not make it misleading.",
+        "Use the organization's appropriate channel and keep a record of what you sent, when and to whom."
+      ]
+    },
+    {
+      "kind": "table",
+      "heading": "Invented example: one child, different recipients",
+      "columns": [
+        "Recipient",
+        "Purpose",
+        "What to check"
+      ],
+      "rows": [
+        [
+          "School health contact",
+          "Arrange safe participation and required records",
+          "Current form, relevant health facts and any requested clinician plan"
+        ],
+        [
+          "Evening sitter",
+          "Provide the agreed care during those hours",
+          "Address, contacts, current relevant care instructions and routines"
+        ],
+        [
+          "Treating clinician",
+          "Assess health and make clinical decisions",
+          "Relevant full history, current products, symptoms and uncertainties"
+        ],
+        [
+          "General event volunteer",
+          "Carry out a specific assigned role",
+          "Necessary task information and emergency arrangements, not the whole family archive"
+        ]
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "A shorter page must not appear complete when it is not",
+      "paragraphs": [
+        "If you make a selected medication or history page, identify its scope. \"Information for this school arrangement\" describes something different from \"complete medical history.\" Do not write \"no medicines\" because you excluded private rows from a printout. A missing entry and an affirmative negative are different statements.",
+        "Similarly, avoid turning a mild previous reaction into a claim that future reactions will be mild. Supply the relevant recorded facts and clinician plan without creating your own risk forecast. A privacy choice should not quietly rewrite the meaning of the health information."
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "Ask questions about access and storage",
+      "paragraphs": [
+        "[Joint HHS and Education guidance](https://www.hhs.gov/sites/default/files/2019-hipaa-ferpa-joint-guidance.pdf) explains the relationship between FERPA and HIPAA for student records. The applicable framework depends on the record and setting; a school health page is not automatically governed exactly like a hospital chart. This article does not determine the rule for a particular institution.",
+        "Ask who receives the submission, who can access it for the program, how updates are made and which secure method to use. Do not assume that writing \"confidential\" prevents copying or that every organization has the same retention and deletion rules. Obtain an answer from the actual holder when it matters."
+      ]
+    },
+    {
+      "kind": "scripts",
+      "heading": "Questions before sending",
+      "items": [
+        {
+          "situation": "Unclear requirement",
+          "line": "Is this field required for this program, and can the health lead explain what information is needed?"
+        },
+        {
+          "situation": "Relevant fact without a box",
+          "line": "There is a current care need that the form does not capture. Who should receive the details and any clinician plan?"
+        },
+        {
+          "situation": "Broad access",
+          "line": "Who can access this information and what is the appropriate channel for sensitive attachments?"
+        },
+        {
+          "situation": "Selected handout",
+          "line": "This page is selected for this care arrangement, not a complete medical history. Please tell me if you need additional relevant information."
+        }
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "The sitter version still needs a real handover",
+      "paragraphs": [
+        "A sitter needs information that lets them provide the agreed care safely, not merely a list of diagnoses. [AAP babysitting guidance](https://www.healthychildren.org/English/safety-prevention/at-home/Pages/Babysitting-Reminders.aspx) includes contact, address and specific-needs preparation. Explain applicable instructions and show the relevant supplies or plans.",
+        "Do not assume that a medicine taken outside the visit is automatically irrelevant, or that a short visit needs no medical context. Ask the clinician when relevance is uncertain. Equally, the sitter does not automatically need insurance identifiers, unrelated family history or other people's medical details simply because those appear in the master binder."
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "Clinician sharing is a different decision",
+      "paragraphs": [
+        "A treating clinician may need information that would not belong on a casual handover. Do not apply the sitter's short selection rule to an assessment. If you are worried about a sensitive topic, ask how to discuss it privately and how information is recorded or shared.",
+        "For a child or teenager, privacy and parental access can depend on the service and applicable law. Do not promise secrecy or unrestricted parental access based on this article. Ask the clinical team about the actual arrangement and obtain appropriate advice for a disputed issue."
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "After a change or a mistaken disclosure",
+      "paragraphs": [
+        "When a relevant fact changes, update the recipient through the agreed route and identify the earlier copy it replaces. A newer master file does not update a school's old attachment automatically. Keep the sent version and confirmation so everyone can identify what is current.",
+        "If information went to the wrong person, contact the recipient and the relevant organization promptly, request appropriate handling and follow its privacy process. Do not promise yourself that an email recall, deletion request or print filter can retrieve every copy. Review the remaining copies without removing information someone still needs for safety."
+      ]
+    },
+    {
+      "kind": "faq",
+      "items": [
+        {
+          "q": "Should I answer only the exact boxes on the school form?",
+          "a": "Start with the form, but do not ignore a relevant care need because there is no box for it. Ask the designated health contact how to provide the information. If a request seems unrelated or unclear, ask why it is needed rather than guessing or silently omitting it."
+        },
+        {
+          "q": "Is the school health record protected by HIPAA?",
+          "a": "Not automatically. FERPA, HIPAA and other applicable rules depend on the setting, holder and record. Ask the school about its privacy arrangements rather than relying on a label. This guide does not determine which law controls a particular school or disclosure."
+        },
+        {
+          "q": "Can I leave a sensitive medicine off every printed page?",
+          "a": "A print choice does not decide clinical relevance. Before sharing a selected page, consider its purpose and whether an omission would make it unsafe or misleading. Discuss uncertain relevance with the clinician or designated health professional instead of allowing a software filter to make that judgment."
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "name": "HHS and Education: FERPA and HIPAA joint guidance",
+      "url": "https://www.hhs.gov/sites/default/files/2019-hipaa-ferpa-joint-guidance.pdf",
+      "retrieved": "2026-11-17",
+      "note": "Official PDF checked: student-record privacy depends on the setting and holder; school records cannot all be labelled HIPAA records."
+    },
+    {
+      "name": "American Academy of Pediatrics: Babysitting reminders",
+      "url": "https://www.healthychildren.org/English/safety-prevention/at-home/Pages/Babysitting-Reminders.aspx",
+      "retrieved": "2026-11-17",
+      "note": "Publisher search-result content checked: emergency contact details, child information, emergency supplies and parent instructions."
+    }
+  ],
+  "visuals": [
+    {
+      "title": "Purpose before disclosure",
+      "kicker": "Three questions for every handout",
+      "kind": "sequence",
+      "steps": [
+        {
+          "label": "Who",
+          "detail": "Identify the specific recipient and role."
+        },
+        {
+          "label": "Why",
+          "detail": "State the task or care arrangement."
+        },
+        {
+          "label": "What",
+          "detail": "Select accurate relevant facts and resolve missing context."
+        },
+        {
+          "label": "How",
+          "detail": "Use the appropriate channel and keep the sent version."
+        }
+      ],
+      "caption": "Do not let a form omission hide a relevant care need.",
+      "alt": "A health-sharing decision checks recipient, purpose, needed information and the submission route."
+    },
+    {
+      "title": "Selected is not complete",
+      "kicker": "Keep the scope visible",
+      "kind": "compare",
+      "steps": [
+        {
+          "label": "Selected page",
+          "detail": "Supplies information for a particular recipient or task."
+        },
+        {
+          "label": "Complete history",
+          "detail": "Claims broader coverage and must not conceal exclusions."
+        },
+        {
+          "label": "Update",
+          "detail": "Replaces a specific earlier copy after a relevant change."
+        }
+      ],
+      "caption": "Omitting an entry must not become a false statement that none exists.",
+      "alt": "A selected health handout is distinguished from a complete history and a dated replacement copy."
+    }
+  ],
+  "worksheet": {
+    "title": "Health-information handover review",
+    "prompt": "Check one recipient and purpose before deciding what to include or ask about.",
+    "fields": [
+      "Person, recipient and role",
+      "Purpose of the handover",
+      "Required form and current instructions",
+      "Relevant safety and care information",
+      "Unclear or sensitive request",
+      "Scope or exclusions to state honestly",
+      "Secure submission route",
+      "Sent version and update contact"
+    ]
+  },
+  "research": {
+    "primaryQuery": "what health information to share with a school",
+    "supportingQueries": [
+      "what medical information should school know",
+      "health privacy babysitter handover",
+      "share child health information selectively"
+    ],
+    "intent": "Choose recipient-specific health disclosures safely, emphasizing school information needs without blanket minimal-disclosure or HIPAA claims.",
+    "sourceChecks": [
+      "https://www.hhs.gov/sites/default/files/2019-hipaa-ferpa-joint-guidance.pdf - Official PDF checked: student-record privacy depends on the setting and holder; school records cannot all be labelled HIPAA records.",
+      "https://www.healthychildren.org/English/safety-prevention/at-home/Pages/Babysitting-Reminders.aspx - Publisher search-result content checked: emergency contact details, child information, emergency supplies and parent instructions."
+    ],
+    "limitations": [
+      "US-focused administration; requirements and individual circumstances vary.",
+      "Saved Reddit leads informed reader-language only; no anecdotes treated as factual authority. Quora was blocked in the saved research.",
+      "No keyword-volume dataset or ranking guarantee. Product registry inspected, but live product workflows not tested."
+    ]
+  }
+}

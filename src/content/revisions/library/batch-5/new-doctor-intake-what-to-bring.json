@@ -1,0 +1,254 @@
+{
+  "slug": "new-doctor-intake-what-to-bring",
+  "title": "What to bring to a new doctor appointment",
+  "dek": "Ask the clinic what it needs, prepare a current health summary and medication information, and arrange the records transfer before your first visit.",
+  "metaDescription": "Ask the clinic what it needs, prepare a current health summary and medication information, and arrange the records transfer before your first visit.",
+  "updatedAt": "2026-11-17",
+  "body": [
+    {
+      "kind": "paragraphs",
+      "paragraphs": [
+        "Ask the new clinic what documents, forms and records it needs. Bring current medication information, allergies and reported reactions, relevant history, the reason for the visit and any requested identification or insurance details. Start records-transfer questions before the visit and confirm receipt; do not assume two clinics can automatically see each other's files.",
+        "A first appointment often combines two jobs: establishing the administrative record and explaining why you need care. A short summary helps with the conversation, but the original reports and current instructions may still matter. Prepare both deliberately rather than arriving with an undifferentiated folder."
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "Confirm the clinic-specific requirements",
+      "paragraphs": [
+        "This is US-focused intake preparation, not a universal rule about what every practice must demand or a guide to choosing treatment. Ask for the new-patient packet, accepted submission method, arrival arrangements and any requested referral or insurance authorization. If a requested document is unavailable, explain that before assuming you cannot be seen.",
+        "Also ask about communication access, interpreter arrangements, mobility needs or a support person. These practical questions belong at booking because they can affect whether the visit works for you. They should not depend on remembering to mention them after arrival."
+      ]
+    },
+    {
+      "kind": "list",
+      "heading": "Prepare the first-visit packet",
+      "checkable": true,
+      "items": [
+        "Confirm the appointment purpose, location, time and any instructions sent by the clinic.",
+        "Complete your sections of the intake forms using current sources; mark unknown answers rather than guessing.",
+        "Prepare the current medication list, available labels or the clinic's requested product information, including nonprescription products and actual use.",
+        "Write allergies or reactions, relevant conditions, surgeries or hospital stays, with dates or clearly labelled approximate timing.",
+        "Add relevant family history, identifying the relative and condition where known; say when information is unknown.",
+        "Write a short reason for the visit and your priority questions, with dated symptom notes if relevant.",
+        "Ask both offices how required records will move and confirm what the new clinic actually received."
+      ]
+    },
+    {
+      "kind": "table",
+      "heading": "Invented first-visit index: facts and records",
+      "columns": [
+        "Item",
+        "Summary entry",
+        "Supporting action"
+      ],
+      "rows": [
+        [
+          "Reason for visit",
+          "New primary-care practice after moving; two current concerns listed",
+          "Show both concerns at the start"
+        ],
+        [
+          "Medication information",
+          "Current list checked with the patient on 2026-11-17",
+          "Bring conflicting sources for professional review"
+        ],
+        [
+          "Past surgery",
+          "Procedure remembered; year approximate",
+          "Request relevant report rather than inventing a date"
+        ],
+        [
+          "Recent investigation",
+          "Test performed by previous clinic",
+          "Confirm report receipt and whether other material is needed"
+        ],
+        [
+          "Family history",
+          "One side known; other side unknown",
+          "Do not fill unknown history with assumed negatives"
+        ]
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "What to ask about records transfer",
+      "paragraphs": [
+        "Ask the new clinic which specific records are useful for the planned visit and how it receives them securely. Then ask the holder of those records about its process. Confirm the recipient, dates or categories requested and any action required from you. Keep a note of the request and a follow-up contact.",
+        "[HHS explains](https://www.hhs.gov/hipaa/for-individuals/medical-records/index.html) rights to access and request corrections to records held by covered organizations, with exceptions and qualifications. This article does not promise a particular transfer time or that a signed release is required in every situation. Ask about the actual process instead of treating one clinic's procedure as national law."
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "Medication disagreements should travel with the question",
+      "paragraphs": [
+        "A bottle, portal list and recent instruction may differ. Do not settle that difference by copying whichever one is easiest to read. Bring the relevant sources and explain what the person actually takes. Ask the prescriber or pharmacist to confirm the current instruction.",
+        "[FDA pharmacist guidance](https://www.fda.gov/drugs/information-consumers-and-patients-drugs/stop-learn-go-tips-talking-your-pharmacist-learn-how-use-medicines-safely) emphasizes reporting actual use and changes. A new clinic should not receive an artificially neat list that hides an unresolved difference. Use the [medication-list guide](/guides/medication-list-what-to-write-down) to organize that question, not to choose treatment."
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "Keep the summary honest and selective",
+      "paragraphs": [
+        "Use plain words for what you know. \"Operation in about 2012, exact details requested\" is better than a precise invented date. For family history, an unknown side of the family is different from no family history of a condition. For a current concern, describe onset and effect rather than presenting an online guess as a diagnosis.",
+        "[NIA preparation guidance](https://www.nia.nih.gov/health/medical-care-and-appointments/how-prepare-doctors-appointment) supports gathering history and asking for forms in advance. Your own summary is a starting point for review, not a substitute for the clinical record or permission to leave out information relevant to the assessment."
+      ]
+    },
+    {
+      "kind": "scripts",
+      "heading": "Useful intake questions",
+      "items": [
+        {
+          "situation": "Before the visit",
+          "line": "What do you need me to bring or send, and how can I check that the records you requested arrived?"
+        },
+        {
+          "situation": "Missing document",
+          "line": "I cannot obtain this document before the appointment. What should I bring instead, and does the visit need any different arrangement?"
+        },
+        {
+          "situation": "Conflicting record",
+          "line": "This field differs from my current understanding. Can we review the sources rather than copy either version without checking?"
+        },
+        {
+          "situation": "At the end",
+          "line": "Which outside records are still outstanding, who is following up, and what should I do if nothing arrives?"
+        }
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "If you are attending for someone else",
+      "paragraphs": [
+        "Ask the person what support they want and ask the clinic about its arrangements for involvement, privacy and any legal authority it needs to establish. Do not log into another adult's portal using their credentials simply because you organize their forms. Use the authorized access route.",
+        "A support person can keep track of questions without taking over the conversation. If information should be discussed privately, tell the clinic. For a child or an adult with particular legal arrangements, verify the relevant requirements rather than assuming every relationship works the same way."
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "After the first visit",
+      "paragraphs": [
+        "Review the printed or electronic instructions and ask about anything that differs from your notes. Update the relevant summary, record confirmed changes and keep outstanding transfer tasks open. Do not mark the whole history complete because the appointment happened.",
+        "An incomplete file should not delay emergency help. If there is an urgent clinical concern before the new appointment, seek the appropriate advice or emergency service rather than waiting for the records packet or the first available routine slot."
+      ]
+    },
+    {
+      "kind": "faq",
+      "items": [
+        {
+          "q": "Do I have to bring every medical record I own?",
+          "a": "Ask which records the clinic wants for this visit. A concise summary plus relevant reports is easier to review than an unexplained archive, but the clinician may need specific source material. Keep an index and arrange secure transfer rather than assuming the summary is enough."
+        },
+        {
+          "q": "Should I bring medicine bottles or a written list?",
+          "a": "Ask the clinic what it prefers and bring enough information to identify the actual products and instructions. A list can help, while labels and recent instructions help resolve questions. If they disagree, do not choose a dose yourself; show the discrepancy for professional review."
+        },
+        {
+          "q": "What if the old clinic has not sent the records?",
+          "a": "Tell the new clinic what was requested and what remains outstanding. Ask how the visit should proceed and who will follow up. Do not say the file is complete without confirmation, and do not invent missing details to fill the new-patient form."
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "name": "NIA: How to prepare for a doctor appointment",
+      "url": "https://www.nia.nih.gov/health/medical-care-and-appointments/how-prepare-doctors-appointment",
+      "retrieved": "2026-11-17",
+      "note": "Official indexed excerpt checked for advance history forms and communication preparation; direct fetch returned 405."
+    },
+    {
+      "name": "FDA: Tips for talking with your pharmacist",
+      "url": "https://www.fda.gov/drugs/information-consumers-and-patients-drugs/stop-learn-go-tips-talking-your-pharmacist-learn-how-use-medicines-safely",
+      "retrieved": "2026-11-17",
+      "note": "Official search-result content checked: report actual use, stopped medicines and reactions; ask pharmacist about uncertainties."
+    },
+    {
+      "name": "HHS: Your medical records",
+      "url": "https://www.hhs.gov/hipaa/for-individuals/medical-records/index.html",
+      "retrieved": "2026-11-17",
+      "note": "Page checked: access and amendment routes for records held by covered providers; no transfer deadline claimed."
+    }
+  ],
+  "visuals": [
+    {
+      "title": "Two intake tracks",
+      "kicker": "Administration and clinical history",
+      "kind": "compare",
+      "steps": [
+        {
+          "label": "Clinic requirements",
+          "detail": "Confirm forms, identity or cover documents and access needs."
+        },
+        {
+          "label": "Clinical summary",
+          "detail": "Prepare current facts, concerns and questions."
+        },
+        {
+          "label": "Source records",
+          "detail": "Arrange relevant reports and confirm what arrived."
+        }
+      ],
+      "caption": "A completed packet is not proof that outside records were received.",
+      "alt": "New-patient preparation separates clinic requirements, the patient summary and source-record transfer."
+    },
+    {
+      "title": "Track the records request",
+      "kicker": "A request needs a receipt check",
+      "kind": "sequence",
+      "steps": [
+        {
+          "label": "Specify",
+          "detail": "Ask which records the new clinic needs."
+        },
+        {
+          "label": "Request",
+          "detail": "Use the holder's process and correct recipient."
+        },
+        {
+          "label": "Confirm",
+          "detail": "Check what the receiving clinic obtained."
+        },
+        {
+          "label": "Follow up",
+          "detail": "Keep missing records assigned to a next action."
+        }
+      ],
+      "caption": "Do not assume separate clinics automatically share every record.",
+      "alt": "A records-transfer sequence includes a specific request, correct destination, receipt check and follow-up."
+    }
+  ],
+  "worksheet": {
+    "title": "New-patient intake and records tracker",
+    "prompt": "Separate what you will bring from records another office must send.",
+    "fields": [
+      "Appointment and clinic contact",
+      "Clinic-specific documents and forms",
+      "Current summary checked date",
+      "Medication discrepancies to review",
+      "Priority concerns and questions",
+      "Records requested and holder",
+      "Receiving clinic confirmation",
+      "Outstanding item, owner and follow-up"
+    ]
+  },
+  "research": {
+    "primaryQuery": "what to bring to a new doctor appointment",
+    "supportingQueries": [
+      "new patient appointment checklist",
+      "transfer records to new doctor",
+      "first visit medical history summary"
+    ],
+    "intent": "Prepare a first-visit intake and records-transfer plan distinct from generic appointment-day preparation.",
+    "sourceChecks": [
+      "https://www.nia.nih.gov/health/medical-care-and-appointments/how-prepare-doctors-appointment - Official indexed excerpt checked for advance history forms and communication preparation; direct fetch returned 405.",
+      "https://www.fda.gov/drugs/information-consumers-and-patients-drugs/stop-learn-go-tips-talking-your-pharmacist-learn-how-use-medicines-safely - Official search-result content checked: report actual use, stopped medicines and reactions; ask pharmacist about uncertainties.",
+      "https://www.hhs.gov/hipaa/for-individuals/medical-records/index.html - Page checked: access and amendment routes for records held by covered providers; no transfer deadline claimed."
+    ],
+    "limitations": [
+      "Clinic requirements, payment arrangements and record-transfer processes differ; no universal ID requirement, processing time or access deadline is asserted.",
+      "NIA official indexed excerpt checked, but direct page fetch returned 405. FDA and HHS pages were accessible.",
+      "No diagnosis or medication direction is provided. Quora blocked in saved research; no demand figures invented."
+    ]
+  }
+}

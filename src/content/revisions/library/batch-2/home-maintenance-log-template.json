@@ -1,0 +1,220 @@
+{
+  "slug": "home-maintenance-log-template",
+  "title": "Home maintenance log template: useful entries",
+  "dek": "Record the asset, work, date, provider, and cost, then link the evidence. Keep unfinished work separate from a completed maintenance record.",
+  "metaDescription": "Record the asset, work, date, provider, and cost, then link the evidence. Keep unfinished work separate from a completed maintenance record.",
+  "updatedAt": "2026-11-17",
+  "body": [
+    {
+      "kind": "paragraphs",
+      "paragraphs": [
+        "A useful home maintenance log records which item was worked on, the date, what actually happened, who did it, and the cost. Add the evidence location and any unresolved follow-up. It is a history of completed work, not proof that equipment is safe or a substitute for its maintenance instructions.",
+        "The question usually arrives after something fails: which filter did we buy, what did the technician find, and was that recommendation ever completed? A short entry with a clear asset name answers more than a folder of invoices with no index."
+      ]
+    },
+    {
+      "kind": "table",
+      "heading": "Copy these fields for one entry",
+      "columns": [
+        "Field",
+        "What to write"
+      ],
+      "rows": [
+        [
+          "Item and location",
+          "A specific asset, such as upstairs air handler, not just heating"
+        ],
+        [
+          "Work date",
+          "Actual completion date; label an estimate if uncertain"
+        ],
+        [
+          "Work completed",
+          "Inspection, cleaning, replacement, or repair, with useful detail"
+        ],
+        [
+          "Person or provider",
+          "Name and a retrievable contact"
+        ],
+        [
+          "Cost",
+          "Known amount and status; use 'awaiting invoice' if needed"
+        ],
+        [
+          "Evidence",
+          "Invoice, service report, photo, or manual location"
+        ],
+        [
+          "Follow-up",
+          "Unresolved finding, responsible person, and next action"
+        ]
+      ]
+    },
+    {
+      "kind": "list",
+      "heading": "Create the first reliable entry",
+      "checkable": true,
+      "items": [
+        "Choose one completed job with a receipt, report, or clear recollection.",
+        "Identify the exact system, appliance, or location.",
+        "Describe the work without upgrading an inspection into a repair.",
+        "Enter the actual date and provider, marking unknowns honestly.",
+        "Record cost accurately or flag that the invoice is pending.",
+        "File the evidence and write a location you can retrieve.",
+        "Create a separate open task for any unfinished recommendation.",
+        "Check that the entry and its evidence can both be found."
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "Invented example: inspection is not replacement",
+      "paragraphs": [
+        "On November 12, a heating technician inspects the upstairs unit and replaces its filter. The report also recommends further investigation of a noise. The log says 'inspection and filter replacement completed; noise investigation remains open,' with the service report location and the invoiced amount.",
+        "It does not say 'heating fixed' or record a part replacement that was only quoted. The follow-up task says who will seek clarification and when. If later work happens, it receives its own dated entry rather than overwriting what occurred on November 12."
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "Write useful unknowns instead of guesses",
+      "paragraphs": [
+        "Use 'date uncertain, invoice dated November 12' when that is all the evidence supports. Use 'awaiting invoice' rather than entering zero to fill a cost field. A zero cost should mean you know no payment was made, not that you have not checked.",
+        "If a contractor gives verbal advice, label it as advice and record who said it. Ask for important findings in writing. Keep estimated costs and approved quotes distinct from final invoices. That makes later comparisons more meaningful than a column containing mixed guesses and actual bills."
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "The log is an index, not the whole repair file",
+      "paragraphs": [
+        "Link or describe where supporting material lives: the original invoice, parts details, warranty information, photos, and service findings. Use stable filenames or a physical folder label. If a link requires an account that may close, keep an appropriate independent copy.",
+        "For equipment identification, record the model or serial number in the asset record, then refer to that asset consistently. Avoid retyping a long identifier in every line if a clear asset name already points to it. See [what to keep after a home repair](/guides/what-to-keep-after-a-home-repair) for the broader evidence set."
+      ]
+    },
+    {
+      "kind": "scripts",
+      "heading": "Ask for an entry you can actually use",
+      "items": [
+        {
+          "situation": "Work summary",
+          "line": "Please separate the work completed today from the work only recommended or quoted. Which item and part were involved?"
+        },
+        {
+          "situation": "Next service",
+          "line": "What is the basis for the next check: the manufacturer's instructions, an observed condition, or a quoted recommendation? Please note it on the report."
+        },
+        {
+          "situation": "Outstanding cost",
+          "line": "Is this the final invoice, an estimate, or a deposit, and does any further charge remain?"
+        }
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "Do not let an entry invent the next interval",
+      "paragraphs": [
+        "Recording a job does not automatically establish when it is due again. A full service, partial inspection, and failed attempt should not all reset the same maintenance schedule. Use the manual, relevant professional advice, and the work's actual scope.",
+        "Keep urgent faults out of a routine future reminder. If there is an active hazard or unexplained leak, seek the appropriate professional or emergency help now. An unresolved safety issue should not become a harmless-looking note scheduled for next year."
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "Make it workable for the property you have",
+      "paragraphs": [
+        "One chronological log can work for a small home. A larger property may benefit from asset-specific views, provided you can still find the complete history. Choose the arrangement that makes the question 'what happened to this item?' easy to answer.",
+        "Renters should distinguish work they performed from reports to the landlord and landlord-arranged visits. Preserve communications separately. The log helps organize facts but does not settle liability, deposit disputes, warranty coverage, or legal record requirements."
+      ]
+    },
+    {
+      "kind": "faq",
+      "items": [
+        {
+          "q": "Do I need to record DIY work?",
+          "a": "Yes, when it will help you or a later professional understand the history. State what you actually did and which materials or parts were used. Do not imply qualified servicing or a safety certification when you performed a limited household task."
+        },
+        {
+          "q": "Can I use one log for the whole house?",
+          "a": "Yes, if each entry clearly identifies the item and you can find its history. Separate views may help when there are many systems or repeated faults. Avoid multiple records that disagree about whether the same job was completed."
+        },
+        {
+          "q": "What if I stopped recording maintenance?",
+          "a": "Begin with the next completed job and recover older entries from real evidence where useful. Mark uncertain dates and missing details. A concise honest history is more useful than an apparently complete one built from assumptions about what usually happens each year."
+        }
+      ]
+    }
+  ],
+  "sources": [],
+  "visuals": [
+    {
+      "title": "What happened to which item?",
+      "kicker": "A useful maintenance entry",
+      "kind": "record",
+      "steps": [
+        {
+          "label": "Asset",
+          "detail": "Identify the equipment and location."
+        },
+        {
+          "label": "Work",
+          "detail": "Describe the completed scope and date."
+        },
+        {
+          "label": "Evidence",
+          "detail": "Point to the invoice and findings."
+        },
+        {
+          "label": "Follow-up",
+          "detail": "Keep unfinished work assigned and visible."
+        }
+      ],
+      "caption": "A maintenance history is strongest when it distinguishes completed work from recommendations.",
+      "alt": "Four fields connect the asset, completed work, supporting evidence, and outstanding follow-up."
+    },
+    {
+      "title": "Three different states",
+      "kicker": "Avoid false completion",
+      "kind": "compare",
+      "steps": [
+        {
+          "label": "Quoted",
+          "detail": "The provider proposed work and a price."
+        },
+        {
+          "label": "Completed",
+          "detail": "The described work was carried out."
+        },
+        {
+          "label": "Unresolved",
+          "detail": "A finding or repair still needs a next action."
+        }
+      ],
+      "caption": "A quote or visit booking is not a completed repair.",
+      "alt": "A comparison distinguishes quoted work, completed maintenance, and unresolved findings."
+    }
+  ],
+  "worksheet": {
+    "title": "Home maintenance entry and follow-up",
+    "prompt": "Record one completed job, then identify anything that remains open.",
+    "fields": [
+      "Asset and location",
+      "Completion date and certainty",
+      "Work actually completed",
+      "Provider and contact",
+      "Cost and invoice status",
+      "Evidence location",
+      "Unresolved finding",
+      "Next action, owner, and date"
+    ]
+  },
+  "research": {
+    "primaryQuery": "home maintenance log",
+    "supportingQueries": [
+      "home maintenance record fields",
+      "maintenance log example homeowner"
+    ],
+    "intent": "Provide a copyable maintenance history format without inventing service intervals, legal proof, or automated product behavior.",
+    "sourceChecks": [],
+    "limitations": [
+      "Practical organization suggestions are not individualized professional advice.",
+      "Saved Reddit leads are qualitative only; Quora was blocked in saved research. No keyword-volume or ranking claims."
+    ]
+  }
+}

@@ -1,0 +1,215 @@
+{
+  "slug": "life-admin-the-work-nobody-teaches-you",
+  "title": "What is life admin? Name the work and share it",
+  "dek": "Life admin is the paperwork and follow-through behind ordinary life. Identify live matters, give each an owner, and keep the details findable.",
+  "metaDescription": "Life admin is the paperwork and follow-through behind ordinary life. Identify live matters, give each an owner, and keep the details findable.",
+  "updatedAt": "2026-11-17",
+  "body": [
+    {
+      "kind": "paragraphs",
+      "paragraphs": [
+        "Life admin is the practical coordination that keeps ordinary life running: appointments, bills, renewals, forms, records, and following up when something has not happened. The visible action might be a phone call; the less visible work is noticing the need, gathering facts, and checking the outcome.",
+        "You can spend an evening doing this and have nothing new to show for it. The insurance stayed valid, the appointment moved, and the lost document was replaced. Naming the work helps you see what is open and agree who is responsible, rather than leaving the person who remembers first to manage everything."
+      ]
+    },
+    {
+      "kind": "table",
+      "heading": "One matter contains several jobs",
+      "columns": [
+        "Stage",
+        "Address-change example"
+      ],
+      "rows": [
+        [
+          "Notice",
+          "Realize the insurer still has the old address"
+        ],
+        [
+          "Prepare",
+          "Find the policy reference and correct new details"
+        ],
+        [
+          "Act",
+          "Submit the change through the insurer's verified route"
+        ],
+        [
+          "Confirm",
+          "Check the policy record and any response"
+        ],
+        [
+          "Preserve",
+          "Save the confirmation where another authorized person can find it"
+        ]
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "The task is not always the whole matter",
+      "paragraphs": [
+        "'Call the insurer' describes an action. 'Update insurance after the move' describes a matter that may need several actions. If you cross off the call while a document is still missing, the list can look finished while the matter remains open.",
+        "Give a matter a current state: need information, ready to act, waiting for someone, or complete. A waiting state needs an expected response date or a follow-up point. That prevents the same unresolved issue from returning to your attention without any clue what to do next."
+      ]
+    },
+    {
+      "kind": "list",
+      "heading": "Make the work visible",
+      "checkable": true,
+      "items": [
+        "Collect live letters, messages, and remembered obligations in one temporary inbox.",
+        "Name each matter in concrete terms, such as 'renew car insurance,' not 'car stuff.'",
+        "Record the actual deadline or mark it unknown until checked.",
+        "Choose the next action and put its needed reference beside it.",
+        "Identify who owns the whole matter, including follow-up.",
+        "Give waiting items a review date.",
+        "Agree where confirmations and lasting facts will be kept."
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "Invented example: a move that is not one checkbox",
+      "paragraphs": [
+        "Alex and Jo have moved. Alex updates the bank, while Jo handles utilities. They agree that ownership includes checking the new details, not just sending the first request. The dentist and insurer are still unassigned, so these remain visible matters instead of becoming invisible assumptions.",
+        "Their record has four lines: organization, owner, current state, next check. It is not a complete legal change-of-address list. It is a way to prevent 'I thought you did that' from being the household's operating process."
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "Share responsibility, not only the phone call",
+      "paragraphs": [
+        "An owner should know the desired outcome, deadline, information location, and authority needed to act. Handing someone a number while continuing to remember every deadline is help with execution, not a full transfer of the matter. Either arrangement can be useful if it is explicit.",
+        "Agree a completion signal: a confirmed appointment, updated account details, or a saved receipt. Respect private information and legal authority. Household membership does not automatically allow someone to access another adult's accounts, health information, or official records."
+      ]
+    },
+    {
+      "kind": "scripts",
+      "heading": "Language for a useful handoff",
+      "items": [
+        {
+          "situation": "Dividing the work",
+          "line": "Can you own [matter] through confirmation? The deadline is [date], the reference is [location], and the unresolved question is [question]."
+        },
+        {
+          "situation": "Accepting a limited task",
+          "line": "I can make the call, but I cannot monitor replies this week. Who will own the follow-up?"
+        },
+        {
+          "situation": "Checking shared ownership",
+          "line": "Which matters still depend on one of us remembering them without a written owner or next action?"
+        }
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "Use a small map rather than a complete life inventory",
+      "paragraphs": [
+        "Start with current deadlines and unresolved matters. You do not need to catalog every appliance, old account, and possible future event before the map is useful. Put lasting facts in an appropriate record when you encounter them, then link the live matter to that location.",
+        "A calendar holds dates; a secure record holds references; an action list holds next steps. One tool can do several jobs, but you still need to distinguish them. If your problem is choosing a tool, see [why productivity tools fail at life admin](/guides/why-productivity-tools-fail-at-life-admin)."
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "When the map is not enough",
+      "paragraphs": [
+        "A task system cannot supply legal authority, money, healthcare, or an institution's decision. When an open matter threatens housing, essential services, health access, or legal rights, seek the relevant help promptly. Marking it urgent does not resolve it.",
+        "If sharing admin is unsafe because someone monitors or controls your access to money or documents, do not assume a shared household record is appropriate. Use private, safe support. The aim is useful coordination, not compulsory access to every adult's private information."
+      ]
+    },
+    {
+      "kind": "faq",
+      "items": [
+        {
+          "q": "Is life admin just housework?",
+          "a": "It overlaps with household work but usually refers to paperwork, coordination, decisions, and follow-through rather than cleaning or cooking itself. Arranging a repair and checking the invoice are admin; doing the physical repair is a different part of the job."
+        },
+        {
+          "q": "Do I need a special app for it?",
+          "a": "No. A short matter list, a calendar, and secure document storage can work. What matters is knowing the owner, current state, next action, and deadline. Choose a tool only when it makes those details easier to maintain and retrieve."
+        },
+        {
+          "q": "How do I know a matter is actually finished?",
+          "a": "Define the required outcome before acting. A call made or a form sent may only begin the process. Save any confirmation and check whether another step remains, especially when the organization has not yet acknowledged or processed your request."
+        }
+      ]
+    }
+  ],
+  "sources": [],
+  "visuals": [
+    {
+      "title": "The work behind a call",
+      "kicker": "Life admin stages",
+      "kind": "sequence",
+      "steps": [
+        {
+          "label": "Notice",
+          "detail": "Identify the need and consequence."
+        },
+        {
+          "label": "Prepare",
+          "detail": "Gather the facts and authority."
+        },
+        {
+          "label": "Act",
+          "detail": "Complete the next concrete step."
+        },
+        {
+          "label": "Confirm",
+          "detail": "Check the outcome and preserve evidence."
+        }
+      ],
+      "caption": "The visible action is only one stage of the matter.",
+      "alt": "Four stages show the noticing, preparation, action, and confirmation behind a household admin task."
+    },
+    {
+      "title": "A useful ownership map",
+      "kicker": "Shared follow-through",
+      "kind": "record",
+      "steps": [
+        {
+          "label": "Matter",
+          "detail": "Name the outcome, not a vague category."
+        },
+        {
+          "label": "Owner",
+          "detail": "Agree who monitors it through completion."
+        },
+        {
+          "label": "State",
+          "detail": "Show what is happening or awaited."
+        },
+        {
+          "label": "Next check",
+          "detail": "Record the action or response date."
+        }
+      ],
+      "caption": "An unassigned follow-up remains unassigned work.",
+      "alt": "A matter record includes its name, owner, current state, and next check date."
+    }
+  ],
+  "worksheet": {
+    "title": "Household live-matter ownership map",
+    "prompt": "Name three current matters and agree who owns each through confirmation.",
+    "fields": [
+      "Matter and required outcome",
+      "Deadline or consequence",
+      "Owner",
+      "Current state",
+      "Next action",
+      "Reference location",
+      "Expected response or review date",
+      "Completion evidence"
+    ]
+  },
+  "research": {
+    "primaryQuery": "what is life admin",
+    "supportingQueries": [
+      "life admin examples",
+      "how to share household admin"
+    ],
+    "intent": "Define life admin with an actionable ownership map, without duplicating the dedicated binder or overwhelm guides.",
+    "sourceChecks": [],
+    "limitations": [
+      "Practical organization suggestions are not individualized professional advice.",
+      "Saved Reddit leads are qualitative only; Quora was blocked in saved research. No keyword-volume or ranking claims."
+    ]
+  }
+}

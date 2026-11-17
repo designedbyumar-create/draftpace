@@ -1,0 +1,208 @@
+{
+  "slug": "how-to-find-every-subscription-you-are-paying-for",
+  "title": "How to find all your paid subscriptions",
+  "dek": "Search statements, billing platforms and receipts to trace recurring charges, identify who owns each plan, and catch annual renewals a short review misses.",
+  "metaDescription": "Search statements, billing platforms and receipts to trace recurring charges, identify who owns each plan, and catch annual renewals a short review misses.",
+  "updatedAt": "2026-11-17",
+  "body": [
+    {
+      "kind": "paragraphs",
+      "paragraphs": [
+        "To find your paid subscriptions, review every payment account across a full year where possible, then cross-check app-store subscriptions, payment-wallet agreements and receipts. Match each charge to a service and billing account. No single app-store list or statement search guarantees that you have found everything.",
+        "A charge can show the store or payment processor rather than the service you remember joining. An annual plan may appear only once. Treat the first pass as discovery, not an instruction to cancel every recurring payment. This guide helps build the list; ending an unwanted contract is a separate step."
+      ]
+    },
+    {
+      "kind": "list",
+      "heading": "Run a search with a visible boundary",
+      "checkable": true,
+      "items": [
+        "List the bank accounts, current and replaced cards, wallets and household billing accounts you are authorized to review. Mark any missing statement periods.",
+        "Review roughly twelve months where available. Look for repeating merchants, variable recurring amounts and single charges that may be annual renewals.",
+        "Check Apple subscriptions under each relevant Apple Account. On iPhone, Settings, your name, then Subscriptions is the current documented starting point.",
+        "Check Google Play subscriptions under the Google Account that made the purchase. Repeat for other accounts you use; a direct website subscription may not appear.",
+        "Review PayPal automatic payments and saved businesses, plus other payment services, phone bills or platform memberships you actually use.",
+        "Search your receipts and renewal messages for subscription, invoice, membership, trial, renewal and the unexplained statement wording.",
+        "Record the service, billing owner, actual amount and cycle, next known charge, and evidence. Mark uncertain matches unresolved rather than guessing."
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "Find the billing owner before making changes",
+      "paragraphs": [
+        "[Apple's instructions](https://support.apple.com/en-us/118428) explain where device subscriptions are managed and what to do when an item is missing. [Google Play's guidance](https://support.google.com/googleplay/answer/7018481) says to use the account holding the subscription and notes that uninstalling an app does not cancel it. A familiar app icon is therefore not the same as a billing record.",
+        "[PayPal's automatic-payment guide](https://www.paypal.com/us/cshelp/article/what-is-an-automatic-payment-and-how-do-i-update-or-cancel-one-help240) directs website users to Settings, Payments, then Subscriptions and saved businesses or Automatic Payments. A saved payment arrangement does not by itself prove that a monthly charge is active. Cross-check actual merchant terms and recent transactions."
+      ]
+    },
+    {
+      "kind": "table",
+      "heading": "Invented example: three leads become a checked list",
+      "columns": [
+        "Lead",
+        "Evidence found",
+        "Recorded conclusion"
+      ],
+      "rows": [
+        [
+          "A $12 monthly platform charge",
+          "Receipt names a video service and the owning account.",
+          "Confirmed monthly subscription; $144 annual equivalent if unchanged."
+        ],
+        [
+          "A $72 charge in March",
+          "Email shows an annual renewal.",
+          "Confirmed annual plan; next price and renewal still need checking."
+        ],
+        [
+          "A $40 monthly debit",
+          "Statement and contract identify a loan payment.",
+          "Recurring obligation, not a discretionary subscription."
+        ]
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "Calculate the cost without hiding the next bill",
+      "paragraphs": [
+        "For a monthly plan, multiplying the current price by twelve gives an annual equivalent, not a guaranteed future bill total. For an annual plan, dividing by twelve helps comparison but does not change the fact that the whole renewal may be taken on one day. Keep the real cycle and next known charge beside any normalized amount.",
+        "Do not add a PayPal entry and the bank's matching PayPal debit as two subscriptions. Conversely, do not merge two identical charges until you have checked whether they belong to separate accounts or genuinely duplicate services. Shared households should compare their own authorized records rather than using another person's login without permission."
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "Unknown charges and decisions need different routes",
+      "paragraphs": [
+        "If you recognize the service, decide keep, review or cancel. Check storage, exports, household access and contract terms before ending something that holds essential data. Use [the cancellation guide](/guides/how-to-cancel-subscriptions) when you have identified the actual billing owner. Save confirmation and check subsequent statements.",
+        "If a charge may be unauthorized, contact the bank or card issuer promptly through a verified channel and follow its dispute process. Do not spend days attempting to decode a suspicious merchant while an account remains at risk. Avoid giving credentials to a search service simply because it promises to find every subscription.",
+        "Finish by recording what the sweep covered and what it could not cover. Missing older records, other household accounts and longer billing cycles remain limitations. Add a reminder before known renewals and update the list when a new plan starts; do not call it complete forever."
+      ]
+    },
+    {
+      "kind": "faq",
+      "items": [
+        {
+          "q": "Why is a subscription missing from my phone's list?",
+          "a": "It may be billed directly by the provider, through another store, or under a different Apple or Google Account. Find the receipt and payment route rather than assuming it ended. Check only accounts you own or have permission to manage, and ask the relevant account holder to review their own list."
+        },
+        {
+          "q": "Will reviewing three months find annual plans?",
+          "a": "It can miss them entirely. A longer statement history gives you a better chance of seeing annual charges, although even a year is not a guarantee. Search renewal emails and current account terms as well. Mark missing periods and unresolved leads so you know what remains outside the review."
+        },
+        {
+          "q": "Does cancelling an automatic payment cancel the service?",
+          "a": "Not necessarily. Payment authorization and the underlying subscription contract are different things. Identify the billing owner and follow the service's cancellation procedure, then retain proof. If a charge is unauthorized, also contact your payment provider promptly rather than treating it only as an unwanted subscription."
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "name": "Apple Support: cancel a subscription",
+      "url": "https://support.apple.com/en-us/118428",
+      "retrieved": "2026-11-17",
+      "note": "Opened: current iPhone subscription route and missing-subscription guidance."
+    },
+    {
+      "name": "Google Play: subscription management",
+      "url": "https://support.google.com/googleplay/answer/7018481",
+      "retrieved": "2026-11-17",
+      "note": "Opened: correct account, subscription cycles and uninstalling does not cancel."
+    },
+    {
+      "name": "PayPal: automatic payments",
+      "url": "https://www.paypal.com/us/cshelp/article/what-is-an-automatic-payment-and-how-do-i-update-or-cancel-one-help240",
+      "retrieved": "2026-11-17",
+      "note": "Opened: website settings path, saved merchants and payment-method management."
+    }
+  ],
+  "visuals": [
+    {
+      "title": "Follow the charge to the plan",
+      "kicker": "A recurring-charge search",
+      "kind": "sequence",
+      "steps": [
+        {
+          "label": "Statement",
+          "detail": "Record the exact merchant, date and amount."
+        },
+        {
+          "label": "Billing platform",
+          "detail": "Check the store or wallet that processed it."
+        },
+        {
+          "label": "Receipt",
+          "detail": "Identify the service and owning account."
+        },
+        {
+          "label": "Decision",
+          "detail": "Keep, investigate or follow the actual cancellation route."
+        }
+      ],
+      "caption": "The payment processor and the subscription service may have different names.",
+      "alt": "Four steps trace a statement charge through its billing platform and receipt to a subscription decision."
+    },
+    {
+      "title": "Comparison is not cash timing",
+      "kicker": "Keep both cost views",
+      "kind": "compare",
+      "steps": [
+        {
+          "label": "Actual cycle",
+          "detail": "Record the full amount taken monthly, annually or on another schedule."
+        },
+        {
+          "label": "Annual equivalent",
+          "detail": "Use a consistent estimate for comparing plans at current prices."
+        },
+        {
+          "label": "Next charge",
+          "detail": "Keep the real renewal date and expected amount visible."
+        }
+      ],
+      "caption": "A monthly equivalent does not spread an annual payment across twelve bank debits.",
+      "alt": "A subscription cost record separates billing cycle, annual comparison and the next actual charge."
+    }
+  ],
+  "worksheet": {
+    "title": "Subscription discovery and billing-owner record",
+    "prompt": "Keep one row per confirmed plan and a separate status for uncertain charges.",
+    "fields": [
+      "Service or unexplained merchant",
+      "Statement date and amount",
+      "Billing platform and account owner",
+      "Actual billing cycle",
+      "Next charge and price evidence",
+      "Annual equivalent if useful",
+      "Keep, review, cancel or unauthorized",
+      "Evidence, confirmation and follow-up"
+    ]
+  },
+  "research": {
+    "primaryQuery": "how to find all my subscriptions",
+    "supportingQueries": [
+      "find annual recurring charges",
+      "find subscriptions different apple google account",
+      "trace paypal subscription merchant"
+    ],
+    "intent": "Discover and reconcile subscription charges, separate from cancellation or ongoing tracker design.",
+    "sourceChecks": [
+      {
+        "url": "https://support.apple.com/en-us/118428",
+        "verified": "Opened: current iPhone subscription route and missing-subscription guidance."
+      },
+      {
+        "url": "https://support.google.com/googleplay/answer/7018481",
+        "verified": "Opened: correct account, subscription cycles and uninstalling does not cancel."
+      },
+      {
+        "url": "https://www.paypal.com/us/cshelp/article/what-is-an-automatic-payment-and-how-do-i-update-or-cancel-one-help240",
+        "verified": "Opened: website settings path, saved merchants and payment-method management."
+      }
+    ],
+    "limitations": [
+      "A year-long sweep cannot guarantee complete discovery.",
+      "Platform menus can vary by region and device; checked official instructions are dated.",
+      "No savings amount or time-to-completion promise is made."
+    ]
+  }
+}

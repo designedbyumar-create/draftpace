@@ -1,0 +1,219 @@
+{
+  "slug": "fall-home-maintenance-checklist",
+  "title": "Fall home maintenance checklist: plan by conditions",
+  "dek": "Prioritize heating readiness, water drainage, and weather deadlines. Adapt the fall sequence to your climate, equipment, and safe access.",
+  "metaDescription": "Prioritize heating readiness, water drainage, and weather deadlines. Adapt the fall sequence to your climate, equipment, and safe access.",
+  "updatedAt": "2026-11-17",
+  "body": [
+    {
+      "kind": "paragraphs",
+      "paragraphs": [
+        "For fall maintenance, first prepare the systems you will soon rely on, then address outdoor water and drainage before local weather makes the work urgent. Use equipment instructions and your forecast rather than a universal September-to-November schedule. Leave roof work, combustion servicing, and other unsafe access to qualified help.",
+        "A fixed list can send you to clean gutters while the heating system is still untested, or remind you to winterize after cold has already arrived. This guide organizes the season. If freezing weather is imminent, use [the winterizing checklist](/guides/winterize-your-house-checklist) for the narrower water-protection task first."
+      ]
+    },
+    {
+      "kind": "list",
+      "heading": "Make the first pass",
+      "checkable": true,
+      "items": [
+        "Identify which heating, cooling, ventilation, and outdoor-water systems the property actually has.",
+        "Check manuals and existing service records before choosing work.",
+        "Arrange heating service or inspection appropriate to the equipment.",
+        "Test smoke and carbon monoxide alarms according to their instructions.",
+        "Inspect safely accessible drainage and note blockages or damage.",
+        "Plan weather-sensitive outdoor-water work before local freezing conditions.",
+        "Assign jobs requiring a contractor, landlord, or building manager.",
+        "Record completion and unresolved findings, not just booking dates."
+      ]
+    },
+    {
+      "kind": "table",
+      "heading": "Three passes, adjusted to your conditions",
+      "columns": [
+        "Trigger",
+        "Priority",
+        "What not to assume"
+      ],
+      "rows": [
+        [
+          "Before regular heating use",
+          "Service readiness, filters, alarms, known faults",
+          "A new filter is a complete heating-system inspection."
+        ],
+        [
+          "Before local freezing weather",
+          "Outdoor-water and exposed-pipe preparation",
+          "The same calendar month works everywhere."
+        ],
+        [
+          "After substantial leaf fall or observed blockage",
+          "Check gutters, downspouts, and drainage",
+          "You must wait until every leaf has fallen to address an active overflow."
+        ]
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "Prepare the equipment you actually own",
+      "paragraphs": [
+        "[ENERGY STAR's maintenance checklist](https://www.energystar.gov/saveathome/heating-cooling/maintenance-checklist) recommends pre-season professional checks. Ask what the visit includes and keep the findings. A boiler, heat pump, and furnace are not interchangeable checklists. Do not bleed, adjust, or dismantle equipment merely because a generic seasonal list says to.",
+        "Check the filter type and instructions rather than automatically replacing every filter on the first day of fall. If you have a fireplace or stove, arrange the inspection and maintenance appropriate to that installation before use. A calendar tick does not establish that equipment is safe."
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "Keep routine safety checks separate from the season",
+      "paragraphs": [
+        "The [CPSC recommends monthly smoke and CO alarm tests](https://www.cpsc.gov/Newsroom/News-Releases/2023/Save-Daylight-Save-Lives-Replace-Batteries-in-Smoke-and-Carbon-Monoxide-Alarms). Follow the device's instructions for batteries, replacement, and a failed test; sealed-battery alarms have different battery arrangements. Fall can be a review point, but it is not the only time alarms need attention.",
+        "For a vented clothes dryer, the [NFPA safety sheet](https://www.nfpa.org/-/media/project/storefront/catalog/files/safety-tip-sheets/dryersafetytips.pdf?rev=8af04b5662ec41ebaed95e6064888f71) advises clearing vent-pipe lint annually, or more often if drying takes longer. Use the appliance's maintenance instructions and qualified help where access is difficult."
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "Invented example: cold arrives before the leaves finish",
+      "paragraphs": [
+        "A homeowner's forecast shows freezing conditions next week, but the trees are still shedding. They book the needed heating visit, complete the appropriate outdoor-water preparation, and inspect drainage from the ground. A visibly overflowing gutter gets attention now, with a later recheck after more leaves fall.",
+        "They do not delay the freeze-sensitive work until November because the old list grouped everything by month. Nor do they climb a wet roof to keep the schedule. The contractor and later check are named in the record."
+      ]
+    },
+    {
+      "kind": "scripts",
+      "heading": "Give a contractor a useful brief",
+      "items": [
+        {
+          "situation": "Heating",
+          "line": "The system is [type and model]. The last documented service was [date or unknown]. I have noticed [specific symptom]. Please confirm the inspection scope and any unresolved safety issue."
+        },
+        {
+          "situation": "Drainage",
+          "line": "Water overflowed at [location] during [conditions]. Safe ground-level photos are available. Please inspect the cause and describe the recommended work."
+        }
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "When to stop the checklist",
+      "paragraphs": [
+        "An active leak, smoke, a carbon monoxide alarm, gas odor, or unsafe electrical conditions is not routine seasonal maintenance. Move away from danger and use the appropriate emergency service or utility guidance. Do not continue experimenting to complete a checklist.",
+        "Renters should report problems through the lease or building's designated process and preserve the response. For inaccessible work or uncertain equipment, arrange the right person rather than guessing. Keep a [home maintenance log](/guides/home-maintenance-log-template) so the next season starts with facts."
+      ]
+    },
+    {
+      "kind": "faq",
+      "items": [
+        {
+          "q": "Which month should I start fall maintenance?",
+          "a": "Start early enough for your local conditions and the service availability you need. Heating use, freezing weather, and leaf fall are different triggers. Assign your own dates after checking those triggers instead of treating a national month-by-month list as a deadline."
+        },
+        {
+          "q": "Should gutters wait until all the leaves fall?",
+          "a": "Not when there is already a blockage, overflow, or drainage problem. Arrange safe attention when the problem appears and consider a later check after further leaf fall. Do not climb onto an unsafe surface to fit a seasonal schedule."
+        },
+        {
+          "q": "Does a mild climate need this checklist?",
+          "a": "Use the parts relevant to your property: equipment readiness, drainage, alarms, and documented faults can still matter. Freeze-sensitive jobs depend on local exposure and forecasts. Do not assume mild winters mean that a particular cold event cannot require preparation."
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "name": "ENERGY STAR: maintenance checklist",
+      "url": "https://www.energystar.gov/saveathome/heating-cooling/maintenance-checklist",
+      "retrieved": "2026-11-17",
+      "note": "Recommends pre-season contractor checks and regular filter attention; detailed servicing belongs to qualified people."
+    },
+    {
+      "name": "CPSC: smoke and CO alarms",
+      "url": "https://www.cpsc.gov/Newsroom/News-Releases/2023/Save-Daylight-Save-Lives-Replace-Batteries-in-Smoke-and-Carbon-Monoxide-Alarms",
+      "retrieved": "2026-11-17",
+      "note": "Recommends monthly alarm tests and following battery requirements, including sealed-battery exceptions."
+    },
+    {
+      "name": "NFPA: clothes dryer safety",
+      "url": "https://www.nfpa.org/-/media/project/storefront/catalog/files/safety-tip-sheets/dryersafetytips.pdf?rev=8af04b5662ec41ebaed95e6064888f71",
+      "retrieved": "2026-11-17",
+      "note": "Recommends cleaning vent-pipe lint annually or more often when drying takes longer."
+    }
+  ],
+  "visuals": [
+    {
+      "title": "Three fall triggers",
+      "kicker": "Conditions set the sequence",
+      "kind": "timeline",
+      "steps": [
+        {
+          "label": "Heating use",
+          "detail": "Prepare and inspect the equipment before relying on it."
+        },
+        {
+          "label": "Freezing forecast",
+          "detail": "Complete relevant outdoor-water protection."
+        },
+        {
+          "label": "Leaf fall or overflow",
+          "detail": "Check drainage and arrange safe clearing as needed."
+        }
+      ],
+      "caption": "These triggers can arrive in a different order at different homes.",
+      "alt": "A seasonal timeline uses heating demand, freezing conditions, and drainage observations instead of fixed months."
+    },
+    {
+      "title": "Inspection is not completion",
+      "kicker": "Maintenance status",
+      "kind": "record",
+      "steps": [
+        {
+          "label": "Observed",
+          "detail": "Describe the visible condition."
+        },
+        {
+          "label": "Assigned",
+          "detail": "Name who will handle it and when."
+        },
+        {
+          "label": "Completed",
+          "detail": "Record the work actually carried out."
+        },
+        {
+          "label": "Unresolved",
+          "detail": "Keep remaining findings visible."
+        }
+      ],
+      "caption": "Booking a visit is not evidence the work has been completed.",
+      "alt": "A maintenance record separates an observation, assigned work, completed work, and unresolved findings."
+    }
+  ],
+  "worksheet": {
+    "title": "Property-specific fall maintenance plan",
+    "prompt": "Assign work using your equipment, local weather, and safe-access limits.",
+    "fields": [
+      "Equipment and property systems",
+      "Heating readiness tasks",
+      "Local weather trigger",
+      "Drainage observations",
+      "Alarm and dryer checks",
+      "Contractor or responsible person",
+      "Completed work and evidence",
+      "Unresolved issue and next review"
+    ]
+  },
+  "research": {
+    "primaryQuery": "fall home maintenance checklist",
+    "supportingQueries": [
+      "fall house maintenance order",
+      "autumn home checks before cold weather"
+    ],
+    "intent": "Create a condition-led autumn maintenance plan distinct from the urgent freeze-protection checklist.",
+    "sourceChecks": [
+      "https://www.energystar.gov/saveathome/heating-cooling/maintenance-checklist - Recommends pre-season contractor checks and regular filter attention; detailed servicing belongs to qualified people.",
+      "https://www.cpsc.gov/Newsroom/News-Releases/2023/Save-Daylight-Save-Lives-Replace-Batteries-in-Smoke-and-Carbon-Monoxide-Alarms - Recommends monthly alarm tests and following battery requirements, including sealed-battery exceptions.",
+      "https://www.nfpa.org/-/media/project/storefront/catalog/files/safety-tip-sheets/dryersafetytips.pdf?rev=8af04b5662ec41ebaed95e6064888f71 - Recommends cleaning vent-pipe lint annually or more often when drying takes longer."
+    ],
+    "limitations": [
+      "Practical organization suggestions are not individualized professional advice.",
+      "Saved Reddit leads are qualitative only; Quora was blocked in saved research. No keyword-volume or ranking claims."
+    ]
+  }
+}

@@ -1,0 +1,74 @@
+{
+  "slug": "used-car-no-service-records-what-to-do",
+  "title": "Bought a used car with no service records? Start here",
+  "dek": "Recover what you can, separate evidence from guesses, and agree a maintenance baseline with a mechanic. Missing paperwork is not a diagnosis.",
+  "metaDescription": "Bought a used car with no service records? Find available history, check recalls, arrange an inspection and start a clear maintenance baseline.",
+  "updatedAt": "2026-11-17",
+  "sources": [
+    { "name": "FTC: Used Cars", "url": "https://consumer.ftc.gov/features/feature-0040-used-cars", "retrieved": "2026-11-17", "note": "History-report scope, different providers and why a report does not replace an independent inspection." },
+    { "name": "NHTSA: Check for Recalls", "url": "https://www.nhtsa.gov/recalls", "retrieved": "2026-11-17", "note": "VIN lookup and exclusions, including repaired recalls, some recent recalls, older recalls and international vehicles." },
+    { "name": "CARFAX: How to Read a Report", "url": "https://www.carfax.com/buying/how-to-read-a-carfax-report", "retrieved": "2026-11-17", "note": "The provider describes reported oil changes and tire rotations; this corrects the earlier blanket claim that reports cannot include servicing." }
+  ],
+  "body": [
+    { "kind": "paragraphs", "paragraphs": [
+      "If you bought a used car with no service records, ask the seller for receipts and previous service locations, write down today's mileage, check the correct owner's manual and arrange an independent mechanical inspection. Keep documented work separate from the seller's recollection. Start a record now, but do not treat the purchase date as the last service date.",
+      "The keys are yours. The history is not. Someone says it was always looked after, the glove box has an old handbook, and you are trying to decide whether the next bill is overdue maintenance or work that was done six months ago. The answer is not to assume everything is fine, or pay to replace everything. It is to find what can be established and make the remaining questions specific.",
+      "This guide is for US owners dealing with missing records. It helps you organise evidence and a conversation with a qualified mechanic; it does not diagnose the car or certify it safe to drive. If there are warning signs, damage or a known safety concern, follow the vehicle's warning instructions and seek appropriate professional help rather than waiting to finish the paperwork."
+    ]},
+    { "kind": "list", "heading": "The first five things to do", "checkable": true, "items": [
+      "Record the VIN, year, model, engine or powertrain where known, current odometer reading and date. Check that the documents match the vehicle.",
+      "Ask the seller for invoices, digital records and the shops used. Keep the reply, but label recollections as reported rather than documented.",
+      "Get the manufacturer's manual and maintenance schedule for the correct year and version. Note any time-based and usage-based requirements rather than using a generic interval from another car.",
+      "Check official recall information and arrange an independent inspection. Explain that the maintenance history is incomplete and ask for a written priority list.",
+      "Agree what needs action, what needs further evidence, and what can be reviewed at a specific time or mileage. Recording a problem does not resolve a safety issue."
+    ]},
+    { "kind": "table", "heading": "Where to look for a used car's service history", "columns": ["Source", "What it might establish", "What it does not establish"], "rows": [
+      ["Seller's receipts", "The work, vehicle, date and mileage shown on an invoice", "Everything that happened outside that record"],
+      ["Previous shop or brand dealer", "Work recorded in that business's systems, if it can be released", "Work done elsewhere or unrestricted access to a previous owner's personal information"],
+      ["Vehicle-history report", "Reported events, which may include service visits as well as title or damage information", "A complete maintenance log or today's mechanical condition"],
+      ["Manufacturer recall lookup", "Applicable recall information within that service's scope", "That routine maintenance was done or that the whole vehicle is safe"],
+      ["Independent inspection", "Findings about the vehicle's current condition and recommended next steps", "An exact past service date where there is no evidence"]
+    ]},
+    { "kind": "paragraphs", "heading": "Can CARFAX show oil changes and service records?", "paragraphs": [
+      "It can show reported services. [CARFAX describes](https://www.carfax.com/buying/how-to-read-a-carfax-report) maintenance entries such as oil changes and tire rotations. That does not mean every shop, owner or event appears. An empty entry is a gap in what you can see, not proof that the work never happened.",
+      "The [FTC explains](https://consumer.ftc.gov/features/feature-0040-used-cars) that vehicle-history products differ: title, loss and salvage data are not the same as a comprehensive service history. A history report does not replace an independent inspection. Use a report as one source and check what each entry actually says, rather than treating a clean-looking page as an all-clear."
+    ]},
+    { "kind": "compare", "heading": "Give every maintenance fact an evidence label", "left": {"label": "What you can document", "items": ["Invoice with the matching vehicle, work, date and mileage. Keep a copy and note anything unclear.", "Your own new service receipt or the written findings from an inspection. Record what was done separately from what was recommended."]}, "right": {"label": "What still needs checking", "items": ["Seller remembers a job but has no supporting record. Preserve their wording and its source; do not convert it into an exact service date.", "No reliable information. Mark unknown and ask how to assess the risk for that item on this particular vehicle."]}},
+    { "kind": "scripts", "heading": "Ask for a baseline, not a mystery full service", "items": [
+      {"situation": "Booking the inspection", "line": "I bought this car with incomplete service records. Can you inspect its current condition, compare the unknown items with the correct manufacturer schedule, and give me written priorities before I authorise repairs?"},
+      {"situation": "A large work list", "line": "Which items concern immediate safety, which are scheduled maintenance, and which are recommendations? What evidence supports each one, and what are the consequences of waiting?"},
+      {"situation": "Permission for extra work", "line": "Please give me the scope and price for the work requested today. Contact me for approval before adding work, and put the agreed next review date or mileage in writing."}
+    ]},
+    { "kind": "paragraphs", "heading": "Do I need to replace every fluid and belt?", "paragraphs": [
+      "No blanket list can decide that from the absence of receipts. The model, age, actual condition, manufacturer instructions, use and evidence all matter. A timing belt is not interchangeable with a timing chain, and a photograph of a belt does not supply a reliable replacement history.",
+      "Ask the mechanic to identify the important unknowns and explain the appropriate assessment or service for each. Do not infer fluid condition or the correct work solely from colour, a seller's description or a generic internet interval. For each recommendation, keep the reason, urgency, quoted scope and what you authorised. The [mechanic conversation guide](/guides/what-to-tell-a-mechanic-before-work-starts) helps you keep that boundary clear."
+    ]},
+    { "kind": "paragraphs", "heading": "Check recalls without confusing them with maintenance", "paragraphs": [
+      "Use the [NHTSA recall lookup](https://www.nhtsa.gov/recalls) for a US vehicle and follow any manufacturer instructions for a relevant recall. Read the lookup's limitations: repaired recalls, some newly announced recalls, certain older recalls, some manufacturers and international vehicles may not appear in the VIN result.",
+      "A zero result is not a full safety inspection. Save the result and date, and ask the manufacturer or dealer about anything unclear. A routine service recommendation, a safety recall and a service campaign are different things; ask which one you are discussing."
+    ]},
+    { "kind": "table", "heading": "A first entry that does not invent the past", "intro": "An invented example, not an inspection or a recommendation for a specific car.", "columns": ["Field", "What the owner records"], "rows": [
+      ["Ownership baseline", "Bought 12 November; odometer 84,000 miles. This is the purchase reading, not a service date."],
+      ["Seller's statement", "Seller says oil changes were regular; no receipts supplied."],
+      ["Evidence recovered", "One invoice found. Check VIN, actual work, date and mileage before treating it as relevant."],
+      ["Unknown item", "Previous timing-system service is unconfirmed. Mechanic to identify applicable system and manufacturer requirements."],
+      ["Next action", "Independent inspection booked. Written safety and maintenance priorities requested; repairs not yet authorised."]
+    ]},
+    { "kind": "paragraphs", "paragraphs": ["Once actual work is completed, add its date, mileage, shop and invoice reference. Keep recommendations and completed services in separate lines. The [car maintenance log guide](/guides/car-maintenance-log-what-to-write-down) shows what to keep, and the [manual schedule guide](/guides/car-maintenance-by-mileage-start-with-your-manual) helps you avoid transferring another model's intervals to yours."]},
+    { "kind": "faq", "heading": "When the records do not turn up", "items": [
+      {"q": "Is buying a car with no service history always a mistake?", "a": "Missing records alone do not prove poor maintenance, but they leave uncertainty that paperwork cannot remove. If you have not bought yet, arrange an independent inspection before deciding. If you already own it, focus on a qualified assessment and a documented baseline, not on inventing a reassuring past."},
+      {"q": "Can a dealer find service history by VIN?", "a": "A dealer may have access to work recorded in its own or the manufacturer's systems, subject to availability and privacy rules. Ask what can be supplied for the vehicle and what it covers. A record from one network does not prove that no work happened at an independent shop."},
+      {"q": "Can I use the date I bought the car as the last service date?", "a": "No. Buying it establishes when you became the owner, not when oil, belts or other maintenance were last done. Record the purchase date separately. Use a documented service date when you have one, or keep the history unknown while agreeing the appropriate next action with a mechanic."}
+    ]},
+    { "kind": "paragraphs", "heading": "Give the next owner a better starting point", "paragraphs": [
+      "A folder and a clear log are enough to begin. Keep what you can establish, label the rest, and add evidence as work happens. You are not trying to reconstruct every mile. You are trying to stop the next decision from starting with the same blank page.",
+      "If you want one place for the dates and intervals you actually know, [Vehicle Maintenance Companion](/shop/vehicle-maintenance-companion) is an optional tool. It supports unknown history and records you enter; it does not connect to your car, retrieve a VIN history, choose the real factory schedule or diagnose a problem. The guide and worksheet remain useful without buying it."
+    ]}
+  ],
+  "visuals": [
+    {"title":"Four questions, four sources","kicker":"Do not ask one report to answer everything","kind":"compare","steps":[{"label":"What was recorded?","detail":"Ask for invoices and service entries, with vehicle, date and mileage."},{"label":"What happened before?","detail":"Use a history report for the events its provider actually includes."},{"label":"Is there an open recall?","detail":"Use the official lookup and read its limitations."},{"label":"What needs attention now?","detail":"Arrange a qualified inspection and a written priority list."}],"caption":"A report, a receipt, a recall check and an inspection answer different questions.","alt":"Four evidence sources separate recorded service, reported history, recall information and present mechanical condition."},
+    {"title":"Keep the evidence honest","kicker":"A useful record does not fill gaps with guesses","kind":"record","steps":[{"label":"Documented","detail":"Keep the invoice, actual work, date and mileage together."},{"label":"Reported","detail":"Write what the seller said and who said it, without inventing a date."},{"label":"Unknown","detail":"Name the unanswered question and the person or assessment needed to resolve it."}],"caption":"Unknown is not the same as never done, and it is not permission to ignore a safety concern.","alt":"Three evidence states distinguish a documented invoice, a seller's reported memory and a genuinely unknown maintenance history."}
+  ],
+  "worksheet":{"title":"Used-car service baseline","prompt":"Recover the evidence you can and agree what must happen next.","fields":["Vehicle / VIN / current mileage / date","Seller or service location to contact","Documented work: invoice, date, mileage","Reported work: exact statement and source","Unknown item and how it will be assessed","Inspection findings and priority","Work authorised, estimate and next review","Completed service and receipt location"]},
+  "research":{"primaryQuery":"used car no service records what to do","supportingQueries":["how to find used car service history","does CARFAX show oil changes","bought used car no maintenance records","should I change everything on a used car"],"intent":"Recover evidence and establish a mechanical maintenance baseline after purchase without false certainty or unnecessary blanket replacement.","sourceChecks":["FTC Used Cars page opened: report limitations and inspection distinction.","NHTSA recalls page opened: explicit VIN lookup exclusions.","CARFAX report explanation opened: reported maintenance may include oil changes and rotations.","Reddit saved evidence describes missing records and uncertainty; not used to decide repairs."],"limitations":["No keyword-volume dataset available; GSC page row shows 21 impressions and position 7.1, not market volume.","Quora unavailable in the original research run.","No vehicle-specific diagnosis, professional inspection or manufacturer interval verification is possible without the actual vehicle."]}
+}

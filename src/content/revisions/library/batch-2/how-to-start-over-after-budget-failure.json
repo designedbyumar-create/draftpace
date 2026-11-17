@@ -1,0 +1,220 @@
+{
+  "slug": "how-to-start-over-after-budget-failure",
+  "title": "How to restart a budget from today's money",
+  "dek": "Begin with current balances and unpaid commitments, not a receipt backlog. Protect essentials and resolve shortfalls before rebuilding categories.",
+  "metaDescription": "Begin with current balances and unpaid commitments, not a receipt backlog. Protect essentials and resolve shortfalls before rebuilding categories.",
+  "updatedAt": "2026-11-17",
+  "body": [
+    {
+      "kind": "paragraphs",
+      "paragraphs": [
+        "Restart a budget from today's verified balances, the commitments still unpaid, and the essential spending ahead. You do not need to categorize every purchase from the missed weeks first. You do need to check unposted payments, card obligations, overdue bills, and unfamiliar transactions so the new starting point is reliable.",
+        "Opening an abandoned budget can feel like accepting an evening of catch-up work. Separate two jobs: deciding what today's money must cover, and investigating the past. The first can begin now; the second matters when there is a specific problem, not just because the spreadsheet has blank rows."
+      ]
+    },
+    {
+      "kind": "list",
+      "heading": "Make today the new starting point",
+      "checkable": true,
+      "items": [
+        "Note the date and balances of each account used for spending.",
+        "Identify pending or unposted commitments without subtracting anything twice.",
+        "Check card statements and the actual payments you must fund.",
+        "List overdue bills and bills due before the next reliable deposit.",
+        "Protect necessary groceries, transport, and other essential spending.",
+        "Keep reserves and money promised to another purpose separate.",
+        "Calculate the remaining uncommitted amount by account.",
+        "Choose a short next review date and one problem to address."
+      ]
+    },
+    {
+      "kind": "table",
+      "heading": "Invented example: a restart on the 18th",
+      "columns": [
+        "Line through the next deposit",
+        "Amount"
+      ],
+      "rows": [
+        [
+          "Available checking balance",
+          "$1,640"
+        ],
+        [
+          "Card payment due, not yet reflected",
+          "-$410"
+        ],
+        [
+          "Phone bill",
+          "-$55"
+        ],
+        [
+          "Electric bill, confirmed amount",
+          "-$85"
+        ],
+        [
+          "Insurance",
+          "-$132"
+        ],
+        [
+          "Protected margin",
+          "-$150"
+        ],
+        [
+          "Food and transport",
+          "-$300"
+        ],
+        [
+          "Uncommitted after these lines",
+          "$508"
+        ]
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "The balance is a starting point, not a complete plan",
+      "paragraphs": [
+        "The example leaves $508 only if the listed commitments are complete and not already deducted from the available balance. It does not establish that every day has an equal spending allowance. A necessary purchase tomorrow can use more cash than a quiet day next week.",
+        "Use fresh bill amounts when available. Last month's variable bill is an estimate, not a confirmed obligation. Mark uncertainty and leave room for it rather than quietly treating an old number as exact. If funds are spread across accounts, check the account each payment will actually debit."
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "Handle cards without hiding the rest of the debt",
+      "paragraphs": [
+        "Include the card payment you need to fund on its date. Also record the remaining balance and repayment plan separately when you are not paying the full amount. A smaller payment may improve this week's cash position without making the debt disappear.",
+        "Avoid subtracting the same purchase twice through both the opening bank balance and a duplicated spending entry. Conversely, card purchases may not yet have reduced checking at all. The useful question is which cash obligations remain, not whether every transaction has a tidy category."
+      ]
+    },
+    {
+      "kind": "scripts",
+      "heading": "A short reset note",
+      "items": [
+        {
+          "situation": "Starting today",
+          "line": "As of [date and time], these accounts hold [amount]. Unpaid commitments and essential spending total [amount]. Protected money is [amount]. The current gap or remainder is [amount]."
+        },
+        {
+          "situation": "Asking about a bill",
+          "line": "I am reviewing an unpaid bill due on [date]. What options are available, what would they cost, and when would an agreed change take effect?"
+        }
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "Look backward for specific risks",
+      "paragraphs": [
+        "Scan recent statements for recurring charges missing from the list, unfamiliar payments, fees, and unpaid obligations. Look further back when annual charges or a particular discrepancy require it. Do not ignore a possible error because this is a fresh-start exercise.",
+        "Detailed reconstruction may be necessary for taxes, business records, reimbursements, disputes, or a shared-money reconciliation. Those are real separate needs. You can start a forward cash plan while keeping the investigation open and preserving relevant records."
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "Give the first two weeks a small rhythm",
+      "paragraphs": [
+        "After the reset, check whether the expected payments actually cleared and whether essential spending is matching your estimate. Repeat the calculation with fresh balances after the next reliable deposit or a significant change. Do not keep subtracting bills that are now reflected in the new balance.",
+        "Choose one maintenance habit that addresses the lapse: a bill-date check, a short statement review, or a reminder to update cash after payday. Avoid rebuilding a system with the same unnecessary work that made it difficult to return."
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "If the new number is negative",
+      "paragraphs": [
+        "Show the gap plainly. Contact the relevant biller before the deadline where possible, ask about arrangements, and seek suitable assistance for essentials or debt. A hoped-for extension is not an agreed extension. Keep any response and its effective date.",
+        "If you share an account, agree what each person's remaining commitments are before treating a combined remainder as available. If access to shared money is unsafe or restricted, prioritize private support over a compulsory joint reset. For a payment already missed, see [what to do next](/guides/you-missed-a-payment-what-to-do-next)."
+      ]
+    },
+    {
+      "kind": "faq",
+      "items": [
+        {
+          "q": "Can I restart in the middle of the month?",
+          "a": "Yes. Use a defined starting date, current balances, and the commitments those balances must still cover. A calendar month is a planning convenience, not a requirement. Check what happens after the next deposit so you do not spend money needed for the following cycle."
+        },
+        {
+          "q": "Can I ignore all old transactions?",
+          "a": "You can postpone optional categorization, but not unresolved errors, unposted commitments, overdue bills, or required records. Scan for those first. Today's balance tells you how much is in the account; it does not explain every obligation that may still be outstanding."
+        },
+        {
+          "q": "What if I fall behind again?",
+          "a": "Restart from fresh facts and notice which maintenance step was hard to sustain. Keep necessary records, but reduce optional categories or repeated entry. A recurring lapse may also reflect an income gap or access problem that a simpler tracking routine alone cannot fix."
+        }
+      ]
+    }
+  ],
+  "sources": [],
+  "visuals": [
+    {
+      "title": "Restart without a receipt backlog",
+      "kicker": "Forward cash plan",
+      "kind": "sequence",
+      "steps": [
+        {
+          "label": "Verify",
+          "detail": "Check today's balances and pending items."
+        },
+        {
+          "label": "Protect",
+          "detail": "List unpaid commitments, essentials, and reserves."
+        },
+        {
+          "label": "Calculate",
+          "detail": "Find the actual remainder or shortfall."
+        },
+        {
+          "label": "Review",
+          "detail": "Update after payments and income change the facts."
+        }
+      ],
+      "caption": "A fresh start does not mean ignoring unresolved obligations.",
+      "alt": "Four steps rebuild a forward cash plan from verified balances and remaining commitments."
+    },
+    {
+      "title": "Two separate jobs",
+      "kicker": "Reset and investigation",
+      "kind": "compare",
+      "steps": [
+        {
+          "label": "Forward plan",
+          "detail": "Decide what today's money still needs to cover."
+        },
+        {
+          "label": "Past review",
+          "detail": "Investigate errors, fees, or required historical records."
+        },
+        {
+          "label": "Connection",
+          "detail": "Carry unresolved findings into the current plan."
+        }
+      ],
+      "caption": "You can plan forward while keeping a specific historical question open.",
+      "alt": "A comparison separates the immediate cash reset from necessary investigation of past transactions."
+    }
+  ],
+  "worksheet": {
+    "title": "Today's-money budget restart",
+    "prompt": "Establish a reliable starting position and the commitments still ahead.",
+    "fields": [
+      "Starting date and balances",
+      "Pending items and double-count check",
+      "Card payments and remaining debt",
+      "Overdue and upcoming bills",
+      "Essential spending to next income",
+      "Protected reserves",
+      "Current gap or remainder",
+      "Next review and unresolved issue"
+    ]
+  },
+  "research": {
+    "primaryQuery": "how to restart a budget",
+    "supportingQueries": [
+      "restart budget mid month",
+      "budget reset after stopped tracking"
+    ],
+    "intent": "Restore a forward-looking cash plan after a tracking lapse without overlooking unposted transactions or ongoing debt.",
+    "sourceChecks": [],
+    "limitations": [
+      "Practical organization suggestions are not individualized professional advice.",
+      "Saved Reddit leads are qualitative only; Quora was blocked in saved research. No keyword-volume or ranking claims."
+    ]
+  }
+}

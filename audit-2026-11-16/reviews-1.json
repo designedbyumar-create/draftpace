@@ -1,0 +1,266 @@
+[
+  {
+    "url": "https://draftpace.com/guides/why-you-keep-thinking-about-a-task-and-not-doing-it",
+    "title": "Why you keep thinking about a task and not doing it",
+    "intent": "Understand recurring thoughts about an unfinished admin task and turn one into an actionable start.",
+    "verdict": "partial",
+    "priority": "P2",
+    "findings": [
+      {
+        "type": "strength",
+        "evidence": "Insurance, replying to Sam and booking a dentist each have a visible first action and the information needed beside it.",
+        "fix": "Keep these concrete examples and the distinction between recording a topic and preparing an action."
+      },
+      {
+        "type": "problem",
+        "evidence": "The steps assert that inability to name an action is why the task has not moved, and the FAQ says writing helps only if a physical action is included.",
+        "fix": "Present unclear steps as one possible barrier, not a causal diagnosis or universal condition; acknowledge worry, fatigue and decisions that genuinely require thinking."
+      },
+      {
+        "type": "strength",
+        "evidence": "The introduction and escalation section distinguish one looping admin task from persistent worry affecting sleep or work.",
+        "fix": "Retain the clinician referral and add an evidence source for the behavioral explanation."
+      },
+      {
+        "type": "problem",
+        "evidence": "The next-action method substantially overlaps with the adjacent ten-minute task-paralysis guide, while the distinctive recurring-thought problem receives little troubleshooting.",
+        "fix": "Keep a distinct rumination-focused page only if it adds a scheduled worry capture, decision bottleneck example and what to do when the same thought returns after scheduling; otherwise consider consolidation after GSC review."
+      }
+    ],
+    "research": {
+      "general_web": [
+        {
+          "url": "https://www.reading.ac.uk/essentials/-/media/essentials/files/support-and-wellbeing/wellbeing-guides/wellbeing-guide-to-stopping-procrastination.pdf",
+          "status": "stored research lead",
+          "need": "Small starts plus recognition of perfectionism, not one universal explanation."
+        }
+      ],
+      "reddit": [
+        {
+          "url": "https://www.reddit.com/r/Habits/comments/1xog1qy/does_anyone_else_spend_more_time_thinking_about_a/",
+          "status": "stored snippet, anecdotal",
+          "need": "Stop planning from substituting for action; low-friction examples."
+        }
+      ],
+      "quora": "Blocked by robots.txt in stored research; not inspected.",
+      "search_volume": "Unknown; parent will join GSC."
+    },
+    "suggested_title": "Keep thinking about a task? Turn the loop into one next step",
+    "proposed_outline": [
+      "The two-question quick start",
+      "Three worked admin examples",
+      "When the obstacle is a decision or worry",
+      "When the thought returns after scheduling",
+      "When to seek support"
+    ],
+    "image_assessment": "Metadata describes a three-example table with descriptive alt text. Images not visually inspected; no conclusion about readability or origin. Keep equivalent text accessible.",
+    "recommendation": "improve",
+    "limitations": [
+      "Full article and stored research read; extracted duplicate table text may be responsive markup, not visible duplication.",
+      "Behavioral causal claims lack direct evidence here; not classified as proven false. Images and product behavior untested."
+    ]
+  },
+  {
+    "url": "https://draftpace.com/guides/task-paralysis-what-to-do-in-the-next-ten-minutes",
+    "title": "ADHD task paralysis: what to do in the next ten minutes",
+    "intent": "Get immediate, nonjudgmental help starting one task while frozen, with fallback options.",
+    "verdict": "fulfilled",
+    "priority": "P2",
+    "findings": [
+      {
+        "type": "strength",
+        "evidence": "The minute-by-minute sequence includes a stopping note, and the insurance task is reduced through three concrete versions.",
+        "fix": "Keep the sequence near the top; make it a compact printable/text checklist."
+      },
+      {
+        "type": "problem",
+        "evidence": "The insurance-letter example says it needs no motivation and nothing can go wrong; the smaller-step fallback says there is nothing to refuse.",
+        "fix": "Remove guarantees that invalidate persistent difficulty; say these steps reduce demands and may still require support."
+      },
+      {
+        "type": "problem",
+        "evidence": "Minute 9-10 instructs readers to stop even if they should keep going, but the FAQ says to keep going if they get going.",
+        "fix": "Use one consistent rule: permission to stop at ten minutes, with optional continuation if useful."
+      },
+      {
+        "type": "strength",
+        "evidence": "Body doubling is offered as something worth trying, not proven for everyone, and the article clearly says paralysis is not a diagnosis.",
+        "fix": "Retain this careful qualification; the Child Mind source supports the informal term and suggested strategies."
+      }
+    ],
+    "research": {
+      "general_web": [
+        {
+          "url": "https://childmind.org/article/what-is-adhd-paralysis/",
+          "status": "opened and verified",
+          "need": "An explanation of the frozen feeling, manageable steps, basic-needs checks and support, without diagnostic promises."
+        }
+      ],
+      "reddit": [
+        {
+          "url": "https://www.reddit.com/r/ExecutiveDysfunction/comments/1te4k0t/have_any_of_you_actually_found_something_that/",
+          "status": "stored snippet, anecdotal",
+          "need": "Practical alternatives when breaking down tasks alone does not work, including another person's presence."
+        }
+      ],
+      "quora": "Blocked by robots.txt in stored research.",
+      "search_volume": "Unknown; parent will join GSC."
+    },
+    "suggested_title": "ADHD task paralysis: a ten-minute plan to start one task",
+    "proposed_outline": [
+      "Ten-minute checklist",
+      "Insurance example",
+      "When even the first step is too big",
+      "Stop or continue: one consistent rule",
+      "Persistent impairment and professional support"
+    ],
+    "image_assessment": "Alt text describes a ten-minute timeline and insurance example. Not visually inspected; no claim about quality or generation method.",
+    "recommendation": "improve",
+    "limitations": [
+      "Full article and research read. This is practical support, not an evaluated treatment protocol.",
+      "No visual or product testing."
+    ]
+  },
+  {
+    "url": "https://draftpace.com/guides/first-week-after-buying-a-house",
+    "title": "New house checklist: what to do in the first week",
+    "intent": "Prioritize safety, utilities, access and house records immediately after getting the keys.",
+    "verdict": "fulfilled",
+    "priority": "P2",
+    "findings": [
+      {
+        "type": "strength",
+        "evidence": "Day-one tasks name meters, utility suppliers, shutoffs and alarm dates; week-one tasks capture model plates and service history.",
+        "fix": "Preserve the time-based split and add owner/date/result fields so the list becomes a usable record."
+      },
+      {
+        "type": "problem",
+        "evidence": "The introduction says most facts disappear within a month or two and the example treats seller access declining toward zero as a real one-week window.",
+        "fix": "Label the timeline as a possible scenario and remove unsupported general deadlines; advise asking through the agent when direct seller contact is unavailable."
+      },
+      {
+        "type": "problem",
+        "evidence": "Locks are discussed after both day-one and week-one checklists even though the text says to rekey before moving belongings in.",
+        "fix": "Move access security, including garage codes and existing remote access, into the day-one list."
+      },
+      {
+        "type": "strength",
+        "evidence": "The vacancy warning and ten-year smoke-alarm replacement claim have named sources.",
+        "fix": "Retain them: Triple-I and USFA verify the general advice. Tell readers to contact their own insurer before a vacancy rather than treating 30-60 days as guaranteed coverage."
+      }
+    ],
+    "research": {
+      "general_web": [
+        {
+          "url": "https://www.redfin.com/blog/things-to-do-after-buying-a-home/",
+          "status": "stored research lead",
+          "need": "An ordered first-week checklist beyond decorating."
+        },
+        {
+          "url": "https://www.iii.org/blog/when-no-ones-home-understanding-roleof-vacancy-insurance",
+          "status": "opened and verified",
+          "need": "Policy-specific vacancy review."
+        },
+        {
+          "url": "https://www.usfa.fema.gov/prevention/home-fires/prepare-for-fire/smoke-alarms/",
+          "status": "opened and verified",
+          "need": "Test alarms and check manufacture dates."
+        }
+      ],
+      "reddit": [
+        {
+          "url": "https://www.reddit.com/r/u_Idaho_Falls_Realtor/comments/1u70ay5/heres_what_i_do_in_the_first_30_days_after_closing/",
+          "status": "stored snippet; realtor promotional perspective, weak independent intent evidence",
+          "need": "Sequence security, understanding the house and maintenance."
+        }
+      ],
+      "quora": "Blocked by robots.txt in stored research.",
+      "search_volume": "Unknown; parent will join GSC."
+    },
+    "suggested_title": "First week after buying a house: safety, utilities and records checklist",
+    "proposed_outline": [
+      "Day one: secure and test",
+      "Utility handover and meter evidence",
+      "Week one: systems and documents",
+      "Inspection findings into dated tasks",
+      "Empty-house insurance and missing records"
+    ],
+    "image_assessment": "Metadata describes a day-one checklist with a lock reminder. Not viewed; ensure rekeying is not visually relegated below lower-priority records.",
+    "recommendation": "improve",
+    "limitations": [
+      "Full text and research read. No assertion that the seller-contact timeline is factually false; it is unsupported.",
+      "Images, saved checklist behavior and product capabilities not tested."
+    ]
+  },
+  {
+    "url": "https://draftpace.com/guides/home-maintenance-checklist-by-month",
+    "title": "Home maintenance checklist by month (short version)",
+    "intent": "Obtain a manageable annual maintenance calendar adapted to the house, with recurring tasks distinguished from seasonal ones.",
+    "verdict": "partial",
+    "priority": "P1",
+    "findings": [
+      {
+        "type": "strength",
+        "evidence": "Separates seasonal deadlines from last-done intervals and discloses US/northern-hemisphere scope and product region limitations.",
+        "fix": "Retain the two-list approach and manual-first qualification."
+      },
+      {
+        "type": "problem",
+        "evidence": "July and August are labeled 'Nothing seasonal'; the FAQ says its three-task monthly list is the whole list, despite climate and equipment variation acknowledged elsewhere.",
+        "fix": "Say no additional tasks in this cold-climate starter example; add climate/system branches and avoid exhaustive claims."
+      },
+      {
+        "type": "problem",
+        "evidence": "October's actionable sequence includes blowing out irrigation, bleeding radiators and removing window AC units without task-level safety or equipment-specific qualifications.",
+        "fix": "Mark specialist/system-dependent jobs clearly, link manufacturer procedures and specify when to book a professional rather than implying all are two-hour DIY work."
+      },
+      {
+        "type": "strength",
+        "evidence": "Monthly filter checks, yearly HVAC tune-ups and ten-year smoke alarm replacement match the opened ENERGY STAR and USFA sources.",
+        "fix": "Keep those citations, while making manufacturer intervals override generic filter guidance in the table itself."
+      },
+      {
+        "type": "problem",
+        "evidence": "Gutter advice says clearing in September achieves very little and to wait for leaves.",
+        "fix": "Make debris/blockage and local rain conditions override the suggested fall date; readers should not postpone an already blocked gutter."
+      }
+    ],
+    "research": {
+      "general_web": [
+        {
+          "url": "https://myhome.freddiemac.com/docs/home_maintenance.pdf?sf174179979=1",
+          "status": "stored research lead",
+          "need": "A reusable monthly/seasonal checklist."
+        },
+        {
+          "url": "https://www.energystar.gov/saveathome/heating-cooling",
+          "status": "opened and verified",
+          "need": "Evidence-backed HVAC intervals."
+        }
+      ],
+      "reddit": [
+        {
+          "url": "https://www.reddit.com/r/UpDweller/comments/1wfgxfc/sharing_my_home_maintenance_calendar_so_you_can/",
+          "status": "stored snippet, anecdotal",
+          "need": "A realistic calendar that does not consume every weekend."
+        }
+      ],
+      "quora": "Blocked by robots.txt in stored research.",
+      "search_volume": "Unknown; parent will join GSC."
+    },
+    "suggested_title": "Home maintenance by month: a short cold-climate checklist",
+    "proposed_outline": [
+      "Choose climate and systems",
+      "Monthly safety checks",
+      "January-December starter calendar",
+      "DIY checks versus professional service",
+      "Last-done log and missed-deadline triage"
+    ],
+    "image_assessment": "Alt text describes four months including empty summer months. Not viewed; revise the figure's scope if the calendar is corrected, and preserve a full text alternative.",
+    "recommendation": "improve",
+    "limitations": [
+      "Full article and research read. No visual inspection or model-specific maintenance verification.",
+      "Safety issues are missing task-level guardrails, not proof that every listed procedure is incorrect."
+    ]
+  }
+]

@@ -1,0 +1,223 @@
+{
+  "slug": "task-paralysis-what-to-do-in-the-next-ten-minutes",
+  "title": "ADHD task paralysis: a ten-minute starting plan",
+  "dek": "Use a short sequence to choose one task, reduce the first move, try it with support if needed, and leave a useful place to restart.",
+  "metaDescription": "Use a short sequence to choose one task, reduce the first move, try it with support if needed, and leave a useful place to restart.",
+  "updatedAt": "2026-11-17",
+  "body": [
+    {
+      "kind": "paragraphs",
+      "paragraphs": [
+        "For the next ten minutes, choose one task, reduce it to a visible first move and try that move. Save one line about where you stopped. Finishing is optional; the goal is to make the task easier to enter or resume.",
+        "You may have the tab open and still feel unable to touch the form. Knowing that the job matters does not make it startable. 'ADHD task paralysis' is informal language for this experience, but difficulty starting alone cannot tell you whether you have ADHD. This is an admin sequence, not treatment."
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "Check whether a timer is the right tool",
+      "paragraphs": [
+        "Check for a real emergency or deadline today. A medical emergency, safety threat or urgent legal notice needs appropriate help, not a productivity exercise. If you are exhausted, unwell or missing an essential resource, getting support may be the useful first move.",
+        "You do not have to race a countdown. If timers increase distress, use the steps without one. Ten minutes is a ceiling you choose, not proof that the task should be easy."
+      ]
+    },
+    {
+      "kind": "timeline",
+      "heading": "The next ten minutes",
+      "steps": [
+        {
+          "when": "Minutes 0-2",
+          "what": "Choose one task. Name an acceptable stopping point, such as locating the claim reference rather than resolving the claim."
+        },
+        {
+          "when": "Minutes 2-4",
+          "what": "Find the first action you could see happen. Reduce it again if it contains several decisions."
+        },
+        {
+          "when": "Minutes 4-8",
+          "what": "Try only that action. Adjust the setting or ask for company if helpful."
+        },
+        {
+          "when": "Minutes 8-10",
+          "what": "Record what happened, where the materials are and the next step. Stop or continue by choice."
+        }
+      ]
+    },
+    {
+      "kind": "table",
+      "heading": "Invented example: an insurance claim",
+      "columns": [
+        "Version",
+        "Hidden work",
+        "Smaller move"
+      ],
+      "rows": [
+        [
+          "Sort the claim",
+          "Find papers and understand the request",
+          "Locate the latest message"
+        ],
+        [
+          "Call the insurer",
+          "Find number, reference and question",
+          "Copy those items onto one page"
+        ],
+        [
+          "Send the document",
+          "Find file and check requirements",
+          "Read the requested document name"
+        ]
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "What counts as progress",
+      "paragraphs": [
+        "You discover the insurer wants a repair estimate, not the receipt you were searching for. The session ends without a call, but it prevented work on the wrong document. Your note can say: 'Need estimate from garage; request it next. Insurer email saved under Claim.'",
+        "If the form needs another person's signature, record that dependency. This is information about the actual route, not a failure to push through. Do not submit guesses just to produce a completed checkbox."
+      ]
+    },
+    {
+      "kind": "list",
+      "heading": "If the first move still will not happen",
+      "checkable": true,
+      "items": [
+        "Replace 'find the paperwork' with 'open the drawer where it might be', then reassess.",
+        "Remove one obstacle, such as a missing charger or a screen crowded with unrelated tabs.",
+        "Ask for specific company: someone present while you open a message, not someone to supervise you.",
+        "Request an accessible alternative if the format is the barrier.",
+        "Record what prevented the start so tomorrow's attempt can use a different setup."
+      ]
+    },
+    {
+      "kind": "scripts",
+      "heading": "Ask for practical support",
+      "items": [
+        {
+          "situation": "Quiet company",
+          "line": "Could you stay on the phone while I open this form? You do not need to solve it."
+        },
+        {
+          "situation": "Unclear instructions",
+          "line": "I can complete the form, but I do not understand this question. Can you help me find the official instructions?"
+        }
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "When this is not enough",
+      "paragraphs": [
+        "The [CCI materials](https://www.cci.health.wa.gov.au/Resources/Looking-After-Yourself/Procrastination) include practical behavior changes; this timeline is an editorial aid, not a tested protocol. If difficulties repeatedly affect essential care, work or relationships, speak with a healthcare professional. [NIMH](https://www.nimh.nih.gov/health/publications/adhd-what-you-need-to-know) explains that assessment considers a broader persistent pattern.",
+        "For several overdue tasks rather than one blocked start, use [everything is overdue](/guides/how-to-start-when-everything-is-overdue). Choose a route that matches the problem rather than cycling through increasingly elaborate starting rituals."
+      ]
+    },
+    {
+      "kind": "faq",
+      "items": [
+        {
+          "q": "Must I finish when the timer ends?",
+          "a": "No. Choose whether to continue, pause or request help. Before stopping, preserve your place with a document location and next action. A timer is a boundary for this attempt, not a demand to finish work whose requirements you may only just have discovered."
+        },
+        {
+          "q": "What if company makes it worse?",
+          "a": "Do not use that strategy. Some people find company useful; others feel watched or distracted. Request different help, such as finding instructions or protecting an uninterrupted block. Support should remove an obstacle, not add an audience you do not want."
+        },
+        {
+          "q": "What should I record if nothing happened?",
+          "a": "Record the obstacle without judging yourself: 'Question 4 is unclear' or 'Too exhausted to read today.' Add the next useful response, which might be asking for help. If starting difficulties repeatedly affect essential tasks, bring that pattern to a clinician."
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "name": "NIMH: ADHD in adults",
+      "url": "https://www.nimh.nih.gov/health/publications/adhd-what-you-need-to-know",
+      "retrieved": "2026-11-17",
+      "note": "Functional difficulties and assessment; trouble starting alone does not establish ADHD."
+    },
+    {
+      "name": "Centre for Clinical Interventions: Procrastination",
+      "url": "https://www.cci.health.wa.gov.au/Resources/Looking-After-Yourself/Procrastination",
+      "retrieved": "2026-11-17",
+      "note": "Practical self-help strategies, not diagnosis or guaranteed relief."
+    }
+  ],
+  "visuals": [
+    {
+      "title": "A ten-minute attempt",
+      "kicker": "An optional boundary",
+      "steps": [
+        {
+          "label": "Choose",
+          "detail": "Take one task and one stopping point."
+        },
+        {
+          "label": "Reduce",
+          "detail": "Name a visible move with few hidden decisions."
+        },
+        {
+          "label": "Try",
+          "detail": "Attempt it using the support you want."
+        },
+        {
+          "label": "Preserve",
+          "detail": "Leave the location and next action."
+        }
+      ],
+      "caption": "The boundary organizes an attempt, not a guaranteed completion.",
+      "alt": "Four stages show choosing, reducing, trying and preserving a starting point.",
+      "kind": "timeline"
+    },
+    {
+      "title": "Task or obstacle?",
+      "kicker": "Match the response to the barrier",
+      "steps": [
+        {
+          "label": "Information",
+          "detail": "Find the instruction or ask a question."
+        },
+        {
+          "label": "Resource",
+          "detail": "Request the document, access or assistance."
+        },
+        {
+          "label": "Blocked start",
+          "detail": "Reduce the move or seek broader support."
+        }
+      ],
+      "caption": "Different obstacles need different responses.",
+      "alt": "Three obstacles lead to information, resources or additional starting support.",
+      "kind": "compare"
+    }
+  ],
+  "worksheet": {
+    "title": "Ten-minute starting record",
+    "prompt": "Record one attempt without requiring completion.",
+    "fields": [
+      "Task chosen",
+      "Urgent consequence checked",
+      "Stopping point",
+      "First move",
+      "Obstacle or support needed",
+      "What changed",
+      "Next action and location"
+    ]
+  },
+  "research": {
+    "primaryQuery": "adhd task paralysis",
+    "supportingQueries": [
+      "cannot start a task right now",
+      "ten minute task paralysis plan"
+    ],
+    "intent": "Immediate practical starting support without diagnostic or treatment claims.",
+    "sourceChecks": [
+      "https://www.nimh.nih.gov/health/publications/adhd-what-you-need-to-know - Functional difficulties and assessment; trouble starting alone does not establish ADHD.",
+      "https://www.cci.health.wa.gov.au/Resources/Looking-After-Yourself/Procrastination - Practical self-help strategies, not diagnosis or guaranteed relief."
+    ],
+    "limitations": [
+      "Task paralysis is informal language, not a diagnosis.",
+      "Ten minutes is an optional organizing limit, not a treatment dose.",
+      "No keyword-volume dataset was available. Saved Reddit leads were qualitative only; Quora was blocked in the saved research."
+    ]
+  }
+}

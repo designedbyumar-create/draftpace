@@ -1,0 +1,217 @@
+{
+  "slug": "end-of-month-money-review",
+  "title": "End of month budget review: what to check",
+  "dek": "Compare consistent balance snapshots, confirm bills, and carry unpaid commitments forward. Finish with one specific change for next month.",
+  "metaDescription": "Compare consistent balance snapshots, confirm bills, and carry unpaid commitments forward. Finish with one specific change for next month.",
+  "updatedAt": "2026-11-17",
+  "body": [
+    {
+      "kind": "paragraphs",
+      "paragraphs": [
+        "At month end, compare like-for-like balances, confirm which bills were paid, check unfamiliar transactions, and list commitments the next month must still cover. Finish with one concrete adjustment. A short review can reveal priorities, but it is not a substitute for resolving an error, overdue payment, or missing record.",
+        "The aim is not to grade the month. It is to make the next starting point more accurate. A higher checking balance can mean progress, or simply that a large bill has not left yet. Read the balances alongside the obligations."
+      ]
+    },
+    {
+      "kind": "list",
+      "heading": "Close the period in order",
+      "checkable": true,
+      "items": [
+        "Choose a review date and use the same account scope as the prior snapshot.",
+        "Record bank, savings, cash, and card balances with the timestamp.",
+        "Note pending items and unpaid bills that affect the comparison.",
+        "Confirm expected payments cleared and investigate discrepancies.",
+        "Review unfamiliar charges and changed recurring costs.",
+        "List next month's non-monthly bills and dates.",
+        "Carry forward outstanding obligations, not just recurring templates.",
+        "Choose one specific change and who will make it."
+      ]
+    },
+    {
+      "kind": "table",
+      "heading": "Invented example: a limited snapshot",
+      "columns": [
+        "Included balances",
+        "Start",
+        "End"
+      ],
+      "rows": [
+        [
+          "Checking and savings",
+          "$1,120",
+          "$1,390"
+        ],
+        [
+          "Credit-card balances",
+          "$640",
+          "$520"
+        ],
+        [
+          "Included accounts less included cards",
+          "$480",
+          "$870"
+        ],
+        [
+          "Change in this limited measure",
+          "Not applicable: change is measured across the period",
+          "+$390"
+        ]
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "Explain the measure before interpreting it",
+      "paragraphs": [
+        "The included cash rose by $270 and the included cards fell by $120, giving a $390 increase in this limited measure. It is not full net worth if loans, other assets, or liabilities are excluded. It is not safe-to-spend money if some of the cash is reserved or a bill remains unpaid.",
+        "Use the same accounts and a comparable point in the payment cycle each time where possible. A card payment posted on one side of the snapshot and not the other can distort interpretation. If the timing is different, write that down instead of drawing a confident conclusion from the change alone."
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "Reconcile the facts that matter",
+      "paragraphs": [
+        "For each expected bill, distinguish scheduled, sent, cleared, and confirmed paid. A payment screenshot may not show the biller's final status. Check outstanding items rather than automatically labeling everything green when it disappears from a task list.",
+        "For an unfamiliar charge, verify it through your statements and the provider's known contact route. Do not wait until next month's review to report a suspected error. Keep relevant records and ask the bank or issuer about the applicable process and timing."
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "Carry obligations across the boundary",
+      "paragraphs": [
+        "An unpaid one-off bill does not vanish because the month closed. A pending card payment, reimbursement you have not received, or expense incurred on credit also needs a place in the next plan. Mark whether it is already reflected in the opening balance to avoid subtracting it twice.",
+        "Recurring items can be copied as a starting template, then checked for new amounts and dates. A renewal, school cost, or insurance premium may be due next month even though it was absent this month. Use [sinking funds](/guides/sinking-funds-explained) for predictable future costs where feasible."
+      ]
+    },
+    {
+      "kind": "scripts",
+      "heading": "Two lines that turn review into action",
+      "items": [
+        {
+          "situation": "Keep",
+          "line": "The change that helped was [specific action]. We will keep it because [observable result]."
+        },
+        {
+          "situation": "Change",
+          "line": "Before [date], [person] will [specific action] so that [bill or spending problem] is addressed."
+        },
+        {
+          "situation": "Unresolved",
+          "line": "We still need to confirm [payment or charge]. The owner is [person], and the next check is [date]."
+        }
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "Do not turn carryover into fresh income",
+      "paragraphs": [
+        "Money already in an account belongs in the next opening balance, not again as new income. A transfer between your own accounts is not a second salary. If savings is protected for a known purpose, keep that purpose visible when you carry the balance forward.",
+        "Decide how to handle a surplus only after checking commitments and reserves. If spending exceeded the plan, identify the cause: an estimate was low, income changed, a one-off cost arose, or a decision changed. Each suggests a different adjustment."
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "Review together without requiring universal access",
+      "paragraphs": [
+        "For shared finances, compare the agreed shared scope and assign follow-up tasks. Adults can keep personal information private while sharing the facts needed to fund shared commitments. Do not assume one person's checking balance represents the whole household position.",
+        "If essentials are unpaid, there is suspected fraud, or a debt issue is worsening, stop the routine review and address that specific problem promptly. If you lack the prior snapshot, save this month's as the baseline. Inventing a starting balance adds false precision rather than insight."
+      ]
+    },
+    {
+      "kind": "faq",
+      "items": [
+        {
+          "q": "How long should the review take?",
+          "a": "A small set of accurate records may allow a brief review, but there is no guaranteed ten-minute limit. An unexplained charge, missed bill, or reconciliation issue deserves the time it needs. Keep optional analysis separate so it does not delay necessary follow-up."
+        },
+        {
+          "q": "Do I need every transaction categorized?",
+          "a": "Not to make a useful first review of balances, bills, and upcoming commitments. More detail is helpful when it answers a particular question or meets a recordkeeping requirement. Missing categories should not prevent you from checking a consequential unpaid bill."
+        },
+        {
+          "q": "What if I have no start-of-month balances?",
+          "a": "Use today's verified balances as your first snapshot, noting the accounts and timing included. Review bills and upcoming commitments now; begin the numerical comparison next time. Do not reconstruct an exact starting figure from memory just to complete a table."
+        }
+      ]
+    }
+  ],
+  "sources": [],
+  "visuals": [
+    {
+      "title": "A snapshot needs context",
+      "kicker": "Balance comparison",
+      "kind": "record",
+      "steps": [
+        {
+          "label": "Scope",
+          "detail": "Include the same accounts and liabilities."
+        },
+        {
+          "label": "Timing",
+          "detail": "Note when balances were checked."
+        },
+        {
+          "label": "Obligations",
+          "detail": "Identify unpaid and pending amounts."
+        },
+        {
+          "label": "Meaning",
+          "detail": "Describe only what the comparison actually measures."
+        }
+      ],
+      "caption": "A partial balance measure is neither full net worth nor spendable cash.",
+      "alt": "A balance snapshot is interpreted using consistent scope, timing, pending obligations, and its limited meaning."
+    },
+    {
+      "title": "What crosses month end",
+      "kicker": "Carryover decisions",
+      "kind": "compare",
+      "steps": [
+        {
+          "label": "Cash",
+          "detail": "Carry the actual balance, not duplicate income."
+        },
+        {
+          "label": "Commitments",
+          "detail": "Keep unpaid bills and pending items visible."
+        },
+        {
+          "label": "Templates",
+          "detail": "Copy recurring items, then verify dates and amounts."
+        },
+        {
+          "label": "Action",
+          "detail": "Assign one next change and any unresolved checks."
+        }
+      ],
+      "caption": "Closing a month does not cancel a one-off unpaid obligation.",
+      "alt": "Month-end carryover includes real cash, unresolved commitments, checked recurring items, and next actions."
+    }
+  ],
+  "worksheet": {
+    "title": "Month-end balances and carryover review",
+    "prompt": "Close one period using consistent facts and identify the next period's outstanding work.",
+    "fields": [
+      "Snapshot date and included accounts",
+      "Start and end balances",
+      "Pending items and unpaid obligations",
+      "Unfamiliar charges or differences",
+      "Next month's non-monthly bills",
+      "Protected cash carried forward",
+      "One change and owner",
+      "Unresolved checks and dates"
+    ]
+  },
+  "research": {
+    "primaryQuery": "end of month budget review",
+    "supportingQueries": [
+      "monthly budget review checklist",
+      "what carries into next month budget"
+    ],
+    "intent": "Close a budgeting period accurately without mistaking a partial balance snapshot for wealth or available spending.",
+    "sourceChecks": [],
+    "limitations": [
+      "Practical organization suggestions are not individualized professional advice.",
+      "Saved Reddit leads are qualitative only; Quora was blocked in saved research. No keyword-volume or ranking claims."
+    ]
+  }
+}

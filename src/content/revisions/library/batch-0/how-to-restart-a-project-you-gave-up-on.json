@@ -1,0 +1,203 @@
+{
+  "slug": "how-to-restart-a-project-you-gave-up-on",
+  "title": "How to restart a project you gave up on",
+  "dek": "Find the last confirmed step, check what has changed, and choose whether to resume, shrink or close the project before spending another afternoon on it.",
+  "metaDescription": "Find the last confirmed step, check what has changed, and choose whether to resume, shrink or close the project before spending another afternoon on it.",
+  "updatedAt": "2026-11-17",
+  "body": [
+    {
+      "kind": "paragraphs",
+      "paragraphs": [
+        "To restart a project you gave up on, locate the last confirmed work, check whether the goal and requirements are still current, and choose one concrete next action. Preserve useful work instead of automatically starting over. If the project no longer serves a purpose, close it deliberately after checking any obligations.",
+        "An unfinished claim, application or household project can contain two jobs now: doing the work and reconstructing what happened before you stopped. Start by recovering the facts, not by promising a whole new routine. This guide is for personal administration and small projects, not a substitute for professional oversight of safety-critical work."
+      ]
+    },
+    {
+      "kind": "list",
+      "heading": "A restart review in one sitting",
+      "checkable": true,
+      "items": [
+        "Find the latest saved form, sent email, receipt, photograph or project note. Identify what is confirmed complete rather than trusting the newest file name alone.",
+        "Write one line: last completed step, where the evidence is, and what remains unresolved. If the status is uncertain, make checking it the next action.",
+        "Check the current deadline, form version, eligibility and any promises to other people. An old plan is not proof that the same process is still open.",
+        "Decide: resume the original goal, reduce the scope, wait for a named dependency, or close the project. Record the reason.",
+        "Choose a physical next action with a visible result: photograph the serial-number label, ask for the current form, or confirm whether a submission was received.",
+        "Before stopping, save the new status, next step and any follow-up date where you will find them again."
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "Check what is still true before reusing it",
+      "paragraphs": [
+        "A long gap does not make every earlier step worthless, but some work becomes stale. Forms change, quotes expire, personal circumstances move and a previous adviser may no longer handle the case. Review the parts that depend on changed facts; leave unaffected work alone.",
+        "PMI's [discussion of restarting suspended projects](https://www.pmi.org/learning/library/2019/04/07/15/12/stalled-project-suspension-restarting-successful-4215) emphasizes reassessing the situation rather than blindly resuming the old plan. This guide applies that principle on a smaller personal scale. The particular note format and short work sessions here are practical suggestions, not proven rules about how every person works."
+      ]
+    },
+    {
+      "kind": "table",
+      "heading": "Invented example: an unfinished appliance claim",
+      "columns": [
+        "Restart question",
+        "Recorded answer"
+      ],
+      "rows": [
+        [
+          "Last confirmed work",
+          "Receipt photographed; draft claim saved, not submitted."
+        ],
+        [
+          "Current uncertainty",
+          "Whether the old form and claim route remain valid."
+        ],
+        [
+          "Missing item",
+          "Exact appliance model and serial number."
+        ],
+        [
+          "First action",
+          "Check the manufacturer's current claim instructions and photograph the accessible label."
+        ],
+        [
+          "Next stopping note",
+          "Record the current requirements and whether the claim was actually submitted."
+        ]
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "A small action must change the state of the project",
+      "paragraphs": [
+        "Opening the same folder repeatedly may not resolve anything. Look for the missing fact or decision: whether the provider received the application, which measurement is needed, or whether the quote is still valid. If you are waiting for someone else, a clear request and a follow-up date may be the whole useful session.",
+        "Set a bounded session that fits your day. It might be ten minutes, not a universal recommended duration. End with evidence of what changed. Do not turn the first session into a compulsory review of every old note, but do read enough to avoid a duplicate payment, contradictory submission or missed safety issue."
+      ]
+    },
+    {
+      "kind": "scripts",
+      "heading": "Restart without a long explanation",
+      "items": [
+        {
+          "situation": "To a provider",
+          "line": "I started this request on [date] and did not complete it. Please confirm its current status, whether the existing documents can still be used, and the next required step."
+        },
+        {
+          "situation": "To someone waiting",
+          "line": "This project has been paused. I can now complete [specific part] by [realistic date]. Please confirm whether that still meets the need before I continue."
+        },
+        {
+          "situation": "To close a voluntary project",
+          "line": "I am closing this because [reason]. I have saved [useful work] and checked that no payment, promise or required action remains open."
+        }
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "When restarting is the wrong next move",
+      "paragraphs": [
+        "Do not close a tax, legal, benefits, debt or safety obligation merely because the project feels unrewarding or nobody is visibly waiting. Find out what is still required and seek qualified advice if a deadline has passed. A missed deadline is a reason to ask about the available route, not to invent a later one.",
+        "If the project stopped because money, permission, equipment or health was missing, name that constraint rather than scheduling the same impossible task again. Reduce scope where you can; ask for help where you cannot. If many projects are stalled, use [the overdue-task triage guide](/guides/how-to-start-when-everything-is-overdue) before restarting all of them.",
+        "A useful stopping note has three lines: what is now true, what comes next, and what could block it. Keep it with the work itself. That makes the next return a check of known facts rather than another reconstruction."
+      ]
+    },
+    {
+      "kind": "faq",
+      "items": [
+        {
+          "q": "Should I start over after a long break?",
+          "a": "Not automatically. First preserve the previous work, identify what is complete and check which facts or requirements changed. Reuse valid material and replace stale parts. Starting over makes sense when the old version is unusable, not simply because the gap feels uncomfortable or you cannot remember every detail."
+        },
+        {
+          "q": "What if I do not know where I stopped?",
+          "a": "Look for evidence: sent messages, submission receipts, payment records or the latest confirmed output. Write uncertainty explicitly instead of marking a step complete. Your next action may be asking whether a form was received, which prevents duplicating an application or paying a fee twice."
+        },
+        {
+          "q": "How do I decide whether to drop it?",
+          "a": "Separate a voluntary goal from an obligation. For an optional project, consider whether the result still matters and whether a smaller version would suffice. For legal, financial, safety or promised work, check the consequences and available alternatives first. Record a closure decision only after unresolved duties have been addressed."
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "name": "PMI: a fresh restart",
+      "url": "https://www.pmi.org/learning/library/2019/04/07/15/12/stalled-project-suspension-restarting-successful-4215",
+      "retrieved": "2026-11-17",
+      "note": "Opened: professional project-restart discussion supports reassessment after suspension; personal worksheet is an editorial adaptation, not a tested intervention."
+    }
+  ],
+  "visuals": [
+    {
+      "title": "Resume, shrink, wait or close",
+      "kicker": "A decision before more work",
+      "kind": "compare",
+      "steps": [
+        {
+          "label": "Resume or shrink",
+          "detail": "The outcome still matters and a workable version can be defined."
+        },
+        {
+          "label": "Wait deliberately",
+          "detail": "A named dependency must be resolved before meaningful work can continue."
+        },
+        {
+          "label": "Close with checks",
+          "detail": "The voluntary goal no longer matters and no obligation is left unresolved."
+        }
+      ],
+      "caption": "An abandoned optional project and an overdue obligation need different decisions.",
+      "alt": "A restart comparison separates resuming or reducing scope, waiting on a dependency and deliberate closure."
+    },
+    {
+      "title": "Leave a restart note",
+      "kicker": "Make the next return easier",
+      "kind": "record",
+      "steps": [
+        {
+          "label": "Current state",
+          "detail": "Name the last confirmed result and where its evidence lives."
+        },
+        {
+          "label": "Next action",
+          "detail": "Write one visible step rather than the whole project."
+        },
+        {
+          "label": "Constraint",
+          "detail": "Record the missing fact, owner or follow-up date."
+        }
+      ],
+      "caption": "Keep the note with the work so it survives another interruption.",
+      "alt": "A project restart note contains confirmed status, one next action and the remaining dependency."
+    }
+  ],
+  "worksheet": {
+    "title": "Paused-project restart decision",
+    "prompt": "Check current requirements before choosing one action or closing the project.",
+    "fields": [
+      "Project and current purpose",
+      "Last confirmed step and evidence",
+      "Changed facts, forms or deadlines",
+      "Unresolved obligation or dependency",
+      "Resume, shrink, wait or close decision",
+      "Smallest useful next action",
+      "Owner and next review date"
+    ]
+  },
+  "research": {
+    "primaryQuery": "restart a project you gave up on",
+    "supportingQueries": [
+      "resume unfinished admin project",
+      "restart abandoned application",
+      "project restart note"
+    ],
+    "intent": "Recover and reassess a paused personal project without automatically rebuilding it.",
+    "sourceChecks": [
+      {
+        "url": "https://www.pmi.org/learning/library/2019/04/07/15/12/stalled-project-suspension-restarting-successful-4215",
+        "verified": "Opened: professional project-restart discussion supports reassessment after suspension; personal worksheet is an editorial adaptation, not a tested intervention."
+      }
+    ],
+    "limitations": [
+      "No productivity-effect size, diagnosis or guaranteed completion result is claimed.",
+      "Deadlines and permission to close regulated obligations require the relevant official process."
+    ]
+  }
+}

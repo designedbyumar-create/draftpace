@@ -1,0 +1,221 @@
+{
+  "slug": "how-often-home-systems-need-servicing",
+  "title": "Home maintenance schedule: set real service dates",
+  "dek": "Build a service schedule from your actual equipment, last confirmed work and local conditions, separating monthly checks from seasonal and specialist jobs.",
+  "metaDescription": "Build a service schedule from your actual equipment, last confirmed work and local conditions, separating monthly checks from seasonal and specialist jobs.",
+  "updatedAt": "2026-11-17",
+  "body": [
+    {
+      "kind": "paragraphs",
+      "paragraphs": [
+        "A useful home maintenance schedule starts with the equipment you own, its instructions and the last confirmed service, not one universal list of replacement intervals. Use monthly owner checks, pre-season professional work and condition-based inspections as separate categories. Unknown history calls for a baseline assessment, not a guessed completion date.",
+        "Perhaps you moved in with a folder of receipts that never mentions the water heater, or a calendar reminder says service the house without naming a system. Build one row per real task. This US-oriented guide is for scheduling and records, not instructions for gas, electrical, pressure-system or roof work."
+      ]
+    },
+    {
+      "kind": "table",
+      "heading": "Schedule by the kind of task",
+      "columns": [
+        "System or task",
+        "Checked guidance or planning basis",
+        "What belongs in your record"
+      ],
+      "rows": [
+        [
+          "Heating and cooling",
+          "ENERGY STAR recommends annual pre-season contractor checks.",
+          "Equipment model, season used, last service and booked inspection."
+        ],
+        [
+          "HVAC filter",
+          "ENERGY STAR recommends monthly inspection, cleaning or changing as appropriate.",
+          "Exact filter specification and model-specific action."
+        ],
+        [
+          "Household smoke alarms",
+          "USFA recommends monthly tests and ten-year unit replacement.",
+          "Manufacture date, model, test record and replacement due date."
+        ],
+        [
+          "Septic system",
+          "EPA gives at-least-three-year inspections for average household systems and typically three-to-five-year pumping; alternatives need more frequent attention.",
+          "System type, occupancy, professional findings and locally applicable plan."
+        ],
+        [
+          "Appliances and water heating",
+          "Use the actual product maintenance instructions.",
+          "Procedure, owner-versus-technician responsibility and any service conditions."
+        ],
+        [
+          "Exterior drainage and weather preparation",
+          "Use observations, local seasons and exposure.",
+          "Inspection trigger, safe access plan and what damage requires repair."
+        ]
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "Why the task description matters as much as the date",
+      "paragraphs": [
+        "Inspecting is not replacing, testing is not repairing, and servicing one component does not necessarily complete every task on the system. A technician may check the heating equipment while an owner separately checks the filter. Write the work in the same terms as the manual or service report.",
+        "[ENERGY STAR's checklist](https://www.energystar.gov/saveathome/heating-cooling/maintenance-checklist) distinguishes owner filter attention from contractor tasks. [EPA's septic guidance](https://www.epa.gov/septic/how-care-your-septic-system) shows why intervals depend on system type, household use and inspection findings. A general range is a prompt to establish your own schedule, not a promise that waiting to its far end is safe.",
+        "Do not apply smoke-alarm replacement ages to every CO unit or connected detector system. Check each manufacturer's instructions. Likewise, do not assume a tankless heater uses the same maintenance procedure as a storage tank, or that every refrigerator has owner-accessible coils needing the same cleaning routine."
+      ]
+    },
+    {
+      "kind": "list",
+      "heading": "Create the first usable schedule",
+      "checkable": true,
+      "items": [
+        "List heating, cooling, hot water, alarms, drainage and the appliances actually present. Include specialist systems such as septic, a sump pump or chimney only if you have them.",
+        "Find the brand, model and correct manual. Note whether access or the proposed procedure requires a qualified professional.",
+        "Recover the last service report and record its actual scope. Mark dates estimated or unknown when the evidence is incomplete.",
+        "Copy each required inspection, cleaning, test or replacement into a separate task with its source. Record any use-based or condition-based trigger.",
+        "Put seasonal work before the local weather or usage period that matters. Do not assign the same month to every US climate.",
+        "Book unknown or concerning systems for assessment, then use the findings to set the next action. Update the record when the work is confirmed complete."
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "Invented example: a house with incomplete records",
+      "paragraphs": [
+        "A new owner has a heating invoice from last autumn but no filter specification and no septic report. They record the heating visit as confirmed, identify the filter using the equipment instructions, and ask the septic provider for system records and a baseline inspection. They do not mark all three systems serviced on moving day.",
+        "After the septic inspection, the professional's report identifies the type, condition and recommended follow-up. That information replaces the generic reminder. If an active leak or safety concern appears meanwhile, it becomes an immediate issue rather than waiting for the planned calendar slot."
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "Keep repairs outside the repeating checklist",
+      "paragraphs": [
+        "An abnormal smell, leaking tank, failed safety test or repeated electrical trip is not a routine reminder to snooze. Stop using unsafe equipment where appropriate and arrange the relevant urgent help. If there is immediate danger, move to safety and contact emergency services. Do not open live panels or improvise gas or pressure-system maintenance.",
+        "For each completed job, save the date, person or company, findings, work performed and next recommendation. [The maintenance-log guide](/guides/home-maintenance-log-template) covers that record. A schedule says what should happen; the log proves what actually happened. If you rent, record reports to the landlord and agreed responsibilities rather than taking on unapproved repairs."
+      ]
+    },
+    {
+      "kind": "faq",
+      "items": [
+        {
+          "q": "Should every home system be serviced annually?",
+          "a": "No. Different systems and tasks have different intervals, and some checks are seasonal or condition-based. Heating and cooling often have pre-season professional checks, while filters and alarms need separate owner attention. Identify the exact equipment and procedure before copying an annual reminder across the house."
+        },
+        {
+          "q": "What if I cannot find the last service date?",
+          "a": "Mark it unknown and gather the manual, model details and any available invoices. Arrange a suitable baseline assessment where needed instead of assuming the system was serviced when you moved in. Unknown history does not mean every maintenance procedure is safe to perform yourself immediately."
+        },
+        {
+          "q": "Can I use a generic interval until I find the manual?",
+          "a": "Use it only as a reminder to verify or inspect, not as proof that the system is within a safe service window. Equipment type, age, usage and local conditions can change the answer. Visible faults or failed safety tests need action regardless of the generic calendar."
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "name": "ENERGY STAR: maintenance checklist",
+      "url": "https://www.energystar.gov/saveathome/heating-cooling/maintenance-checklist",
+      "retrieved": "2026-11-17",
+      "note": "Opened: annual pre-season professional work and monthly filter attention; intervals are task-specific."
+    },
+    {
+      "name": "USFA: smoke alarms",
+      "url": "https://www.usfa.fema.gov/gallery/pictographs/smoke-alarms.html",
+      "retrieved": "2026-11-17",
+      "note": "Official excerpt checked: monthly testing and ten-year household smoke alarm replacement."
+    },
+    {
+      "name": "EPA: septic care",
+      "url": "https://www.epa.gov/septic/how-care-your-septic-system",
+      "retrieved": "2026-11-17",
+      "note": "Opened: average-system inspection and pumping ranges, alternative-system differences and service records."
+    }
+  ],
+  "visuals": [
+    {
+      "title": "Three clocks for home care",
+      "kicker": "Not every job repeats the same way",
+      "kind": "compare",
+      "steps": [
+        {
+          "label": "Elapsed time",
+          "detail": "Count from the last confirmed service when the manual specifies an interval."
+        },
+        {
+          "label": "Season",
+          "detail": "Schedule ahead of local weather or heavy use."
+        },
+        {
+          "label": "Condition",
+          "detail": "Act on symptoms, test results or professional findings."
+        }
+      ],
+      "caption": "A fault can require attention before a routine date arrives.",
+      "alt": "Home maintenance timing distinguishes elapsed intervals, seasonal work and condition-triggered action."
+    },
+    {
+      "title": "Build a defensible due date",
+      "kicker": "Equipment-specific scheduling",
+      "kind": "sequence",
+      "steps": [
+        {
+          "label": "Identify",
+          "detail": "Find the actual model and procedure."
+        },
+        {
+          "label": "Establish history",
+          "detail": "Separate confirmed service from estimates and unknowns."
+        },
+        {
+          "label": "Apply the rule",
+          "detail": "Use the manual and professional findings for this system."
+        },
+        {
+          "label": "Record completion",
+          "detail": "Save what was done before setting the next action."
+        }
+      ],
+      "caption": "Do not start every interval from the date you created the list.",
+      "alt": "Four steps establish equipment identity, service history, applicable timing and recorded completion."
+    }
+  ],
+  "worksheet": {
+    "title": "Equipment-specific home service schedule",
+    "prompt": "Use one task per row, keeping inspections and replacements separate.",
+    "fields": [
+      "System, location and model",
+      "Specific inspection or service task",
+      "Manual URL or professional instruction",
+      "Last confirmed date and evidence",
+      "Timing rule or condition trigger",
+      "Owner or qualified provider",
+      "Next due date or seasonal window",
+      "Findings and completion record"
+    ]
+  },
+  "research": {
+    "primaryQuery": "home maintenance schedule",
+    "supportingQueries": [
+      "how often service home systems",
+      "home service schedule unknown history",
+      "maintenance interval versus seasonal task"
+    ],
+    "intent": "Set a model- and condition-based service schedule rather than prioritize deferred jobs.",
+    "sourceChecks": [
+      {
+        "url": "https://www.energystar.gov/saveathome/heating-cooling/maintenance-checklist",
+        "verified": "Opened: annual pre-season professional work and monthly filter attention; intervals are task-specific."
+      },
+      {
+        "url": "https://www.usfa.fema.gov/gallery/pictographs/smoke-alarms.html",
+        "verified": "Official excerpt checked: monthly testing and ten-year household smoke alarm replacement."
+      },
+      {
+        "url": "https://www.epa.gov/septic/how-care-your-septic-system",
+        "verified": "Opened: average-system inspection and pumping ranges, alternative-system differences and service records."
+      }
+    ],
+    "limitations": [
+      "Selected official examples do not prescribe every system interval.",
+      "No universal water-heater, hose, roof or gutter replacement period is asserted."
+    ]
+  }
+}

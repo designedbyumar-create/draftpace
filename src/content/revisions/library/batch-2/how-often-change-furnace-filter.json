@@ -1,0 +1,232 @@
+{
+  "slug": "how-often-change-furnace-filter",
+  "title": "How often to change a furnace filter",
+  "dek": "Inspect your filter regularly, follow its actual instructions, and record the correct size. A universal three-month rule can miss your system's needs.",
+  "metaDescription": "Inspect your filter regularly, follow its actual instructions, and record the correct size. A universal three-month rule can miss your system's needs.",
+  "updatedAt": "2026-11-17",
+  "body": [
+    {
+      "kind": "paragraphs",
+      "paragraphs": [
+        "Inspect your furnace or central HVAC filter regularly and replace or clean it according to the equipment and filter instructions. ENERGY STAR recommends monthly filter attention. The correct replacement schedule depends on the actual filter, system, use, and conditions; do not assume every filter should be replaced exactly every three months.",
+        "The useful first question is not which generic interval to put in a calendar. It is which filter your system uses and how its manufacturer says to maintain it. A deep media filter, disposable panel, washable filter, and specialist cleaner can have different instructions."
+      ]
+    },
+    {
+      "kind": "list",
+      "heading": "Establish your filter routine",
+      "checkable": true,
+      "items": [
+        "Find the equipment manual and identify the filter location and type.",
+        "Confirm the approved dimensions and specification, not only the old filter's label.",
+        "Check the recommended inspection and maintenance method.",
+        "Use the manual's safe access and shutdown procedure before handling it.",
+        "Inspect for dirt, damage, fit, and the conditions described by the instructions.",
+        "Replace disposable filters or clean reusable ones only as directed.",
+        "Record the installed item, date, and next inspection.",
+        "Ask an HVAC professional when access, compatibility, or system behavior is unclear."
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "Inspection and replacement are different actions",
+      "paragraphs": [
+        "[ENERGY STAR's checklist](https://www.energystar.gov/saveathome/heating-cooling/maintenance-checklist) calls for monthly inspection, cleaning, or changing. That is a prompt to give the filter attention, not a claim that every filter in every home has the same life. Use the manufacturer-specific instructions to decide what maintenance is due.",
+        "Heavy use and unusual dust may justify checking sooner, but a visual judgment alone may not answer every maintenance question. Do not extend an interval solely because a house is empty, or wash a disposable filter to keep using it. Keep a new inspection date visible even when no replacement was needed."
+      ]
+    },
+    {
+      "kind": "table",
+      "heading": "Invented example: record the system, not a shopping guess",
+      "columns": [
+        "Field",
+        "Entry"
+      ],
+      "rows": [
+        [
+          "Equipment",
+          "Upstairs air handler; model recorded in equipment folder"
+        ],
+        [
+          "Filter location",
+          "Return cabinet identified in the manual"
+        ],
+        [
+          "Dimensions",
+          "16 x 25 x 1 shown as an example only; verify approved size"
+        ],
+        [
+          "Specification",
+          "Manufacturer-approved type and rating confirmed before buying"
+        ],
+        [
+          "Last action",
+          "Inspected November 17; actual result recorded"
+        ],
+        [
+          "Next action",
+          "Date chosen from instructions and observed conditions"
+        ]
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "Size and rating both matter",
+      "paragraphs": [
+        "The size printed on an existing filter is a useful lead, but it may not establish that someone previously installed the correct part. Confirm against the equipment instructions or a qualified technician. Avoid forcing a filter into a slot or leaving gaps around an undersized one.",
+        "The [EPA's air-cleaner guidance](https://www.epa.gov/indoor-air-quality-iaq/guide-air-cleaners-home) discusses choosing an appropriate HVAC filter. A higher filtration rating is not automatically an appropriate upgrade for every system. Ask about compatibility rather than choosing the highest number on the shelf."
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "Handle access as an equipment task",
+      "paragraphs": [
+        "Follow the unit's access and power instructions and the filter's airflow markings. If the location or required orientation is unclear, ask someone qualified to show you. Do not remove service panels, reach near moving parts, or bypass safety switches to make a routine filter task possible.",
+        "Keep the cabinet properly closed when finished, following the instructions. If you rent, ask the landlord or building manager which maintenance is yours to do and which filter is approved. A shared-building system may not have an occupant-serviceable filter at all."
+      ]
+    },
+    {
+      "kind": "scripts",
+      "heading": "Ask the technician once and record the answer",
+      "items": [
+        {
+          "situation": "Specification",
+          "line": "Which exact size, type, and rating are appropriate for this equipment, and where is that confirmed?"
+        },
+        {
+          "situation": "Schedule",
+          "line": "How often should I inspect this filter, and what condition or limit means it needs replacement or cleaning?"
+        },
+        {
+          "situation": "Safe access",
+          "line": "Please show me the approved access and shutdown procedure and tell me which parts I should not touch."
+        }
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "When the filter is not the whole problem",
+      "paragraphs": [
+        "Weak airflow, recurring system faults, unusual noises, or a filter that loads unexpectedly can need professional investigation. Do not keep installing filters while assuming that repeated symptoms are normal. Record the dates and what you noticed so the technician has a useful history.",
+        "Filtration also does not remove every indoor pollutant or replace addressing a moisture or pollutant source. Do not treat a new filter as a health guarantee or as a response to a smoke or carbon monoxide alarm. Leave a dangerous situation and use the appropriate emergency help."
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "Make the reminder specific enough to act on",
+      "paragraphs": [
+        "Use 'inspect upstairs return filter' instead of 'house maintenance.' Put the specification and purchase reference in the equipment record, and record what you actually did in [the home maintenance log](/guides/home-maintenance-log-template). A reminder should point to the verified information, not force a new search.",
+        "If an inspection shows that no maintenance is needed, record that result without pretending a replacement occurred. That keeps a service history honest and prevents an automatic next-date calculation from starting from the wrong event."
+      ]
+    },
+    {
+      "kind": "faq",
+      "items": [
+        {
+          "q": "Is every three months a safe rule?",
+          "a": "Not universally. It may resemble instructions for some filters, but others differ. Inspect regularly and follow the actual equipment and filter guidance. Confirm the schedule when the filter type or household conditions change rather than relying only on an inherited calendar reminder."
+        },
+        {
+          "q": "Can I use a higher-rated filter?",
+          "a": "Only after checking that it is appropriate for the system. Size is not the only compatibility question. Ask the equipment maker or an HVAC professional about the suitable specification, especially if you are considering a change from the established type."
+        },
+        {
+          "q": "Can I clean and reuse my filter?",
+          "a": "Only if that filter is designed to be cleaned and reused, and then only by its specified method. Disposable and reusable filters are not interchangeable maintenance tasks. If you cannot identify the type, obtain the instructions or professional help before proceeding."
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "name": "ENERGY STAR: maintenance checklist",
+      "url": "https://www.energystar.gov/saveathome/heating-cooling/maintenance-checklist",
+      "retrieved": "2026-11-17",
+      "note": "Advises monthly inspection, cleaning, or changing of HVAC filters and contractor help understanding the task."
+    },
+    {
+      "name": "EPA: guide to air cleaners",
+      "url": "https://www.epa.gov/indoor-air-quality-iaq/guide-air-cleaners-home",
+      "retrieved": "2026-11-17",
+      "note": "Filter selection must account for HVAC compatibility; filtration has limits and is not a substitute for addressing pollutant sources."
+    }
+  ],
+  "visuals": [
+    {
+      "title": "Check before choosing an interval",
+      "kicker": "Filter routine",
+      "kind": "sequence",
+      "steps": [
+        {
+          "label": "Identify",
+          "detail": "Confirm equipment, filter type, and approved specification."
+        },
+        {
+          "label": "Inspect",
+          "detail": "Use the safe access procedure."
+        },
+        {
+          "label": "Maintain",
+          "detail": "Replace or clean as the instructions require."
+        },
+        {
+          "label": "Record",
+          "detail": "Note the action and next inspection."
+        }
+      ],
+      "caption": "A filter inspection and a filter replacement are different events.",
+      "alt": "A sequence identifies the correct filter, inspects it safely, maintains it as directed, and records the action."
+    },
+    {
+      "title": "Two compatibility checks",
+      "kicker": "Before buying a filter",
+      "kind": "compare",
+      "steps": [
+        {
+          "label": "Fit",
+          "detail": "Confirm the approved dimensions and cabinet fit."
+        },
+        {
+          "label": "Specification",
+          "detail": "Confirm the suitable type and filtration rating."
+        },
+        {
+          "label": "Method",
+          "detail": "Follow disposable or reusable maintenance instructions."
+        }
+      ],
+      "caption": "The old filter's label is a starting clue, not proof of compatibility.",
+      "alt": "A comparison distinguishes dimensional fit, approved filtration specification, and maintenance method."
+    }
+  ],
+  "worksheet": {
+    "title": "Verified furnace-filter record",
+    "prompt": "Confirm your equipment's actual filter and maintenance instructions before setting a reminder.",
+    "fields": [
+      "Equipment and model",
+      "Filter location",
+      "Approved dimensions",
+      "Type and rating",
+      "Manual or technician source",
+      "Safe access instructions",
+      "Last inspection and action",
+      "Next inspection and replacement criteria"
+    ]
+  },
+  "research": {
+    "primaryQuery": "how often to change furnace filter",
+    "supportingQueries": [
+      "furnace filter replacement schedule",
+      "furnace filter size and airflow"
+    ],
+    "intent": "Choose a system-appropriate filter inspection and replacement routine without universal intervals or airflow assumptions.",
+    "sourceChecks": [
+      "https://www.energystar.gov/saveathome/heating-cooling/maintenance-checklist - Advises monthly inspection, cleaning, or changing of HVAC filters and contractor help understanding the task.",
+      "https://www.epa.gov/indoor-air-quality-iaq/guide-air-cleaners-home - Filter selection must account for HVAC compatibility; filtration has limits and is not a substitute for addressing pollutant sources."
+    ],
+    "limitations": [
+      "Practical organization suggestions are not individualized professional advice.",
+      "Saved Reddit leads are qualitative only; Quora was blocked in saved research. No keyword-volume or ranking claims."
+    ]
+  }
+}

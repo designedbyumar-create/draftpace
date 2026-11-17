@@ -3,7 +3,12 @@ import Link from "next/link";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import Container from "@/design-system/Container";
-import { ArrowRight, Clock } from "@/design-system/Icon";
+import { ArrowRight, Clock, Download } from "@/design-system/Icon";
+import editorial from "./editorial.module.css";
+import DoctorArticleExperience from "@/components/public/guides/DoctorArticleExperience";
+import HomeschoolArticleExperience from "@/components/public/guides/HomeschoolArticleExperience";
+import LibraryArticleExperience from "@/components/public/guides/LibraryArticleExperience";
+import { libraryInfo } from "@/content/revisions/library";
 import TextLink from "@/design-system/TextLink";
 import GuideBody from "@/components/public/guides/GuideBody";
 import GuideContents from "@/components/public/guides/GuideContents";
@@ -148,6 +153,11 @@ export default async function GuideOrHubPage({ params }: { params: Promise<{ gui
   const headings = guideHeadings(guide.body);
   const { Mark } = areaIdentity(guide.areaSlug);
   const counterpart = localeCounterpart(guide);
+  const isDoctor = guide.slug === "doctor-appointment-prep-checklist";
+  const isHomeschool = guide.slug === "four-day-homeschool-week";
+  const fieldnote = libraryInfo[guide.slug];
+  const revised = isDoctor || isHomeschool || Boolean(fieldnote);
+  const worksheet = fieldnote?.printHref ?? (isHomeschool ? "/guides/print/four-day-homeschool.html" : "/guides/print/doctor-appointment.html");
   const art = guideArt(guide.slug);
 
   // The trail is built once and used twice: drawn above the title, and
@@ -165,7 +175,7 @@ export default async function GuideOrHubPage({ params }: { params: Promise<{ gui
   return (
     // Every area colour on the page descends from this one declaration,
     // so no component below has to know which area it is rendering in.
-    <div style={areaVars(guide.areaSlug)}>
+    <div style={areaVars(guide.areaSlug)} className={revised ? editorial.page : undefined}>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -191,23 +201,26 @@ export default async function GuideOrHubPage({ params }: { params: Promise<{ gui
         <Container width="wide" className="pb-10 pt-10 sm:pt-14">
           <Breadcrumbs trail={trail} />
 
-          <div className={`mt-5 grid gap-8 lg:items-center lg:gap-12 ${art ? "lg:grid-cols-[minmax(0,1fr)_340px]" : "lg:grid-cols-[minmax(0,1fr)_180px]"}`}>
+          {revised && <div className={editorial.kicker}><span>Draftpace fieldnotes</span><span>{fieldnote ? guideArea?.label ?? "Life administration" : isHomeschool ? "Family & learning / 02" : "Family health / 01"}</span></div>}
+
+          <div className={`mt-5 grid gap-8 lg:items-center lg:gap-12 ${revised ? "" : art ? "lg:grid-cols-[minmax(0,1fr)_340px]" : "lg:grid-cols-[minmax(0,1fr)_180px]"}`}>
             <div>
               <h1 className="max-w-[26ch] text-heading-lg font-serif font-semibold tracking-tight text-balance">
                 {guide.title}
               </h1>
               <p className="mt-4 max-w-[54ch] text-body-lg leading-relaxed text-[var(--muted)]">{guide.dek}</p>
+              {revised && <p className="mt-4 text-body-sm text-[var(--muted)]">By Draftpace · {fieldnote ? "Sources and scope included below" : isHomeschool ? "Planning examples, not a curriculum or legal advice" : "Appointment preparation, not clinical advice"}</p>}
               {/* Loud, above the fold, and before a word of the procedure.
                   Six of these guides described UK probate with nothing
                   saying so, and an American reader was being told to do
                   something that does not exist where they live. */}
-              {guide.locale && (
+              {(guide.locale || guide.scopeCountry) && (
                 <p className="mt-5 inline-flex flex-wrap items-center gap-2 rounded-lg border border-[var(--area)] bg-[var(--surface)] px-3 py-2 text-body-sm">
                   <span className="font-bold uppercase tracking-[0.1em] text-[var(--area)]">
-                    {localeLabel(guide.locale)}
+                    {localeLabel((guide.locale ?? guide.scopeCountry)!)}
                   </span>
                   <span className="text-[var(--muted)]">
-                    This describes the {localeLabel(guide.locale)} procedure.
+                    This describes the {localeLabel((guide.locale ?? guide.scopeCountry)!)} procedure.
                   </span>
                   {counterpart && (
                     <TextLink href={`/guides/${counterpart.slug}`}>
@@ -232,7 +245,7 @@ export default async function GuideOrHubPage({ params }: { params: Promise<{ gui
 
             {/* The area mark. Decorative, and hidden on phones where the
                 headline should own the whole first screen. */}
-            <div className="hidden text-[var(--area)] lg:block">
+            <div className={revised ? "hidden" : "hidden text-[var(--area)] lg:block"}>
               {art ? (
                 <Image
                   src={art.thumb}
@@ -248,14 +261,18 @@ export default async function GuideOrHubPage({ params }: { params: Promise<{ gui
               )}
             </div>
           </div>
+          {revised && <div className={editorial.resourceBar}>
+            <div><strong>{fieldnote ? fieldnote.worksheetTitle : isHomeschool ? "Keep the breathing room. Check the numbers." : "Bring the question. Leave with a plan."}</strong><span>{fieldnote ? fieldnote.worksheetPrompt : isHomeschool ? "A weekly rhythm, a pacing check, and a place to begin." : "A little preparation for a conversation that matters."}</span></div>
+            <a href={worksheet}><Download size={20} aria-hidden />{fieldnote ? "Get the free worksheet" : isHomeschool ? "Get the free week planner" : "Get the free prep sheet"}<ArrowRight size={18} aria-hidden /></a>
+          </div>}
         </Container>
       </header>
 
       <Container width="wide" className="pb-24">
-        <div className="grid gap-10 lg:grid-cols-[minmax(0,1fr)_236px] lg:gap-16">
-          <article className="min-w-0 max-w-[68ch]">
+        <div className={`grid gap-10 lg:grid-cols-[minmax(0,1fr)_236px] lg:gap-16 ${revised ? editorial.readingGrid : ""}`}>
+          <article className={`min-w-0 max-w-[68ch] ${revised ? editorial.article : ""}`}>
             <GuideContents headings={headings} variant="disclosure" />
-            <GuideBody blocks={bodyWithFigure(guide)} />
+            <div className={revised ? editorial.body : undefined}>{isDoctor ? <DoctorArticleExperience blocks={guide.body} /> : isHomeschool ? <HomeschoolArticleExperience blocks={guide.body} /> : fieldnote ? <LibraryArticleExperience blocks={guide.body} info={fieldnote} /> : <GuideBody blocks={bodyWithFigure(guide)} />}</div>
 
             {guide.sources && <Sources sources={guide.sources} />}
             <GuideNotice areaSlug={guide.areaSlug} />
@@ -297,7 +314,12 @@ export default async function GuideOrHubPage({ params }: { params: Promise<{ gui
 
           </article>
 
-          <GuideContents headings={headings} variant="rail" />
+          {revised ? <aside className={editorial.rail}>
+            <div className={editorial.railIntro}><span>{fieldnote ? "Keep it together" : isHomeschool ? "Before next Monday" : "Before you go"}</span>{fieldnote ? <p>{fieldnote.worksheetTitle}</p> : isHomeschool ? <p>Four teaching days.<br />A week that fits.<br />A record that lasts.</p> : <p>One concern.<br />A few good questions.<br />Room for the answers.</p>}</div>
+            <GuideContents headings={headings} variant="rail" />
+            <a className={editorial.railDownload} href={worksheet}><Download size={18} aria-hidden />{fieldnote ? "Free worksheet" : isHomeschool ? "Free week worksheet" : "Free appointment sheet"}<ArrowRight size={16} aria-hidden /></a>
+            <p className={editorial.railNote}>No signup. No purchase.<br />{fieldnote ? "Use it with the guide." : isHomeschool ? "Start with the week you have." : "Just something useful to bring."}</p>
+          </aside> : <GuideContents headings={headings} variant="rail" />}
         </div>
 
       </Container>

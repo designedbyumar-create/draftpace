@@ -29,6 +29,7 @@ export default function Figure({ src, alt, caption, width, height, layout = "inl
         aside ? "mx-auto max-w-[300px] lg:float-right lg:mb-4 lg:ml-8 lg:mr-0 lg:mt-2 lg:w-[260px]" : "mx-auto max-w-[520px]",
       ].join(" ")}
     >
+      <a href={src} aria-label="Open full-size illustration">
       <Image
         src={src}
         alt={alt}
@@ -37,6 +38,7 @@ export default function Figure({ src, alt, caption, width, height, layout = "inl
         sizes={aside ? "(min-width: 1024px) 260px, 300px" : "(min-width: 640px) 520px, 100vw"}
         className="h-auto w-full rounded-[var(--radius-lg)] border border-[var(--border)]"
       />
+      </a>
       {caption && <figcaption className="mt-2 text-body-sm leading-snug text-[var(--muted)]">{caption}</figcaption>}
     </figure>
   );

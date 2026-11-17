@@ -1,0 +1,455 @@
+[
+  {
+    "url": "https://draftpace.com/guides/four-day-homeschool-week",
+    "title": "Four-day homeschool week: how many days each subject gets",
+    "intent": "Plan a workable four-day timetable without losing required instruction or curriculum coverage.",
+    "verdict": "partial",
+    "priority": "P1",
+    "findings": [
+      {
+        "type": "issue",
+        "evidence": "The coverage section offers only dropping the fifth day's material or schooling year-round, and says year-round means nothing is dropped.",
+        "fix": "Show lesson-count arithmetic and curriculum-specific four-day plans; neither calendar alone guarantees coverage. Sonlight explicitly offers a complete 144-day option with fewer books."
+      },
+      {
+        "type": "issue",
+        "evidence": "The FAQ says a co-op subject does not need a second home session.",
+        "fix": "Qualify this by actual co-op coverage, practice needs and course expectations; attendance alone does not establish mastery."
+      },
+      {
+        "type": "strength",
+        "evidence": "Three distinct weekly layouts and the math/reading/writing/science/history/geography frequency table make the schedule actionable.",
+        "fix": "Retain the examples, but attach grade/course assumptions and a blank weekly grid."
+      },
+      {
+        "type": "issue",
+        "evidence": "The introduction defers legal counts without showing that four times 36 equals 144 days.",
+        "fix": "Put that arithmetic beside the example and explain how families using a 180-day route must reconcile the gap."
+      }
+    ],
+    "research": {
+      "general_web": [
+        {
+          "url": "https://www.sonlight.com/pages/4-day",
+          "assessment": "Verified publisher offers separate 144- and 180-day schedules; users need coverage arithmetic, not reassurance based only on calendar shape."
+        }
+      ],
+      "reddit": [
+        {
+          "url": "https://www.reddit.com/r/homeschool/comments/1qq1s7q/sonlight_do_you_opt_for_a_4_day_or_5_day_school/",
+          "assessment": "Parents compare four/five-day materials and annual attendance totals."
+        }
+      ],
+      "quora": "Blocked by robots.txt in stored research; no Quora evidence reviewed.",
+      "user_needs": "Plan a workable four-day timetable without losing required instruction or curriculum coverage.",
+      "search_volume": "Unknown; parent will join GSC."
+    },
+    "suggested_title": "Four-Day Homeschool Week: Sample Schedule and Annual Coverage Check",
+    "proposed_outline": [
+      "Check legal and course requirements",
+      "Choose four teaching days",
+      "Allocate subjects and lessons",
+      "Calculate annual days and coverage",
+      "Review a worked timetable"
+    ],
+    "image_assessment": {
+      "inspected": false,
+      "assessment": "Image pixels not viewed; no claim about visual quality or AI origin. A subject-specific worked-example figure or printable would support this task; verify existing figure accessibility and agreement with revised text before replacing it."
+    },
+    "recommendation": "improve",
+    "limitations": [
+      "Full stored article and corresponding research read; stored external snippets are leads unless explicitly marked verified.",
+      "No product implementation testing, visual inspection, or search-volume data.",
+      "State rules are not comprehensively re-audited; only identified consequential counterexamples verified."
+    ]
+  },
+  {
+    "url": "https://draftpace.com/guides/homeschool-notice-of-intent-explained",
+    "title": "Homeschool notice of intent: what it is, how to find yours",
+    "intent": "Understand the notice, find the correct local form and submit it in the right order.",
+    "verdict": "partial",
+    "priority": "P1",
+    "findings": [
+      {
+        "type": "strength",
+        "evidence": "The Florida/New Mexico comparison separates one-time district filing from annual state registration and distinguishes withdrawal from notice.",
+        "fix": "Keep the comparison with direct official citations next to each deadline."
+      },
+      {
+        "type": "issue",
+        "evidence": "The body calls both examples rules from two state agencies, but its Florida citation is florida-homeschooling.org, not a government agency.",
+        "fix": "Correct the source attribution and link the Florida statute or education department; this is a provenance error, not proof the quoted deadline is false."
+      },
+      {
+        "type": "issue",
+        "evidence": "The five-step lookup omits checking whether acknowledgement is needed before withdrawal, although it warns about pre-start notices.",
+        "fix": "Add a submission/acknowledgement/withdrawal sequence field. NC DOA explicitly instructs families to await acknowledgement."
+      },
+      {
+        "type": "issue",
+        "evidence": "Filing the wrong document is called the most common mistake without comparative evidence.",
+        "fix": "Describe it as a possible mistake rather than an evidenced ranking."
+      }
+    ],
+    "research": {
+      "general_web": [
+        {
+          "url": "https://www.doa.nc.gov/divisions/non-public-education/home-schools/requirements-recommendations",
+          "assessment": "Verified official guidance shows why notice timing and acknowledgement are separate checks."
+        }
+      ],
+      "reddit": [
+        {
+          "url": "https://www.reddit.com/r/homeschool/comments/p4dilw/",
+          "assessment": "Question about approval timing illustrates state-specific confusion; comments are not legal authority."
+        }
+      ],
+      "quora": "Blocked by robots.txt in stored research; no Quora evidence reviewed.",
+      "user_needs": "Understand the notice, find the correct local form and submit it in the right order.",
+      "search_volume": "Unknown; parent will join GSC."
+    },
+    "suggested_title": "Homeschool Notice of Intent: Find Your Form, Deadline and Filing Order",
+    "proposed_outline": [
+      "Notice versus withdrawal",
+      "State-specific recipient and form",
+      "Deadlines and acknowledgement",
+      "Florida/New Mexico examples",
+      "Keep proof and renewal reminder"
+    ],
+    "image_assessment": {
+      "inspected": false,
+      "assessment": "Image pixels not viewed; no claim about visual quality or AI origin. A subject-specific worked-example figure or printable would support this task; verify existing figure accessibility and agreement with revised text before replacing it."
+    },
+    "recommendation": "improve",
+    "limitations": [
+      "Full stored article and corresponding research read; stored external snippets are leads unless explicitly marked verified.",
+      "No product implementation testing, visual inspection, or search-volume data.",
+      "State rules are not comprehensively re-audited; only identified consequential counterexamples verified."
+    ]
+  },
+  {
+    "url": "https://draftpace.com/guides/do-you-have-to-count-homeschool-days-or-hours",
+    "title": "Do you have to count homeschool days or hours?",
+    "intent": "Determine whether attendance days, instructional hours or both apply and keep the right evidence.",
+    "verdict": "partial",
+    "priority": "P1",
+    "findings": [
+      {
+        "type": "issue",
+        "evidence": "The lookup tells readers to treat finding nothing about days or hours as their answer that no count applies.",
+        "fix": "Replace absence-of-search-results inference with confirmation from current law or the responsible agency; unresolved searches remain unresolved."
+      },
+      {
+        "type": "issue",
+        "evidence": "The FAQ defines a day count as schooling on a date regardless of duration.",
+        "fix": "Colorado's official rule combines 172 days with an average four instructional contact hours. Explain days-only, hours-only, either, and combined requirements."
+      },
+      {
+        "type": "strength",
+        "evidence": "Pennsylvania versus Texas is an understandable contrast and the guide explicitly discloses the product does not calculate hours.",
+        "fix": "Preserve the contrast and disclosure; add a combined-rule example."
+      },
+      {
+        "type": "issue",
+        "evidence": "The opening's roughly-half claim is attributed to most published counts but only two state sources are supplied.",
+        "fix": "Remove the national estimate or supply a dated, defined state-by-state methodology; it is unsubstantiated here, not established false."
+      }
+    ],
+    "research": {
+      "general_web": [
+        {
+          "url": "https://www.cde.state.co.us/node/773",
+          "assessment": "Verified combined day/hour requirement directly limits the FAQ's universal definition."
+        }
+      ],
+      "reddit": [
+        {
+          "url": "https://www.reddit.com/r/homeschool/comments/pcp3qv/",
+          "assessment": "Colorado parents ask how to document the day/hour rule, supporting a need for concrete log examples."
+        }
+      ],
+      "quora": "Blocked by robots.txt in stored research; no Quora evidence reviewed.",
+      "user_needs": "Determine whether attendance days, instructional hours or both apply and keep the right evidence.",
+      "search_volume": "Unknown; parent will join GSC."
+    },
+    "suggested_title": "Homeschool Days or Hours: Find Your Rule and Record the Right Total",
+    "proposed_outline": [
+      "Identify legal pathway",
+      "Days, hours, either or both",
+      "Verify unresolved rules",
+      "Worked daily log",
+      "Annual totals and evidence"
+    ],
+    "image_assessment": {
+      "inspected": false,
+      "assessment": "Image pixels not viewed; no claim about visual quality or AI origin. A subject-specific worked-example figure or printable would support this task; verify existing figure accessibility and agreement with revised text before replacing it."
+    },
+    "recommendation": "improve",
+    "limitations": [
+      "Full stored article and corresponding research read; stored external snippets are leads unless explicitly marked verified.",
+      "No product implementation testing, visual inspection, or search-volume data.",
+      "State rules are not comprehensively re-audited; only identified consequential counterexamples verified."
+    ]
+  },
+  {
+    "url": "https://draftpace.com/guides/how-to-start-homeschooling-first-month-paperwork",
+    "title": "How to start homeschooling: what to do in the first month",
+    "intent": "Complete a legally valid school transition and establish a manageable first-month record.",
+    "verdict": "partial",
+    "priority": "P1",
+    "findings": [
+      {
+        "type": "issue",
+        "evidence": "The opening and Tuesday-to-Friday example prescribe withdrawal before filing the notice.",
+        "fix": "Make the order conditional: NC DOA requires acknowledgement before withdrawal for the applicable children. A general disclaimer does not repair the universal sequence."
+      },
+      {
+        "type": "issue",
+        "evidence": "The national two-letter and hand-delivery prescription rests on a California association source.",
+        "fix": "Present it as one workable example and offer district portal/email/form alternatives plus receipt retention; do not frame local practice as a national requirement."
+      },
+      {
+        "type": "strength",
+        "evidence": "The guide explicitly labels the month-per-year deschooling rule as a blogging heuristic, not research.",
+        "fix": "Keep that qualification and add that adjustment time must still satisfy applicable instruction duties."
+      },
+      {
+        "type": "issue",
+        "evidence": "The first-week checklist says start with one subject, while the broad title promises how to start homeschooling.",
+        "fix": "Keep the paperwork focus in the title and require a check of mandated subjects and start conditions before endorsing a minimal academic week."
+      }
+    ],
+    "research": {
+      "general_web": [
+        {
+          "url": "https://www.doa.nc.gov/divisions/non-public-education/home-schools/requirements-recommendations",
+          "assessment": "Verified transition order provides a concrete counterexample to the universal withdrawal-first instruction."
+        }
+      ],
+      "reddit": [
+        {
+          "url": "https://www.reddit.com/r/homeschool/comments/1rz9cuj/homeschooling_in_north_carolina/",
+          "assessment": "Parents struggle with age thresholds and opening a school; the need is a jurisdiction-aware start sequence."
+        }
+      ],
+      "quora": "Blocked by robots.txt in stored research; no Quora evidence reviewed.",
+      "user_needs": "Complete a legally valid school transition and establish a manageable first-month record.",
+      "search_volume": "Unknown; parent will join GSC."
+    },
+    "suggested_title": "Starting Homeschooling: First-Month Paperwork in the Right Order",
+    "proposed_outline": [
+      "Find legal route and start conditions",
+      "File and obtain acknowledgement where needed",
+      "Withdraw and request records",
+      "Start required instruction and records",
+      "Review the first month"
+    ],
+    "image_assessment": {
+      "inspected": false,
+      "assessment": "Image pixels not viewed; no claim about visual quality or AI origin. A subject-specific worked-example figure or printable would support this task; verify existing figure accessibility and agreement with revised text before replacing it."
+    },
+    "recommendation": "improve",
+    "limitations": [
+      "Full stored article and corresponding research read; stored external snippets are leads unless explicitly marked verified.",
+      "No product implementation testing, visual inspection, or search-volume data.",
+      "State rules are not comprehensively re-audited; only identified consequential counterexamples verified."
+    ]
+  },
+  {
+    "url": "https://draftpace.com/guides/homeschool-record-keeping-for-multiple-children",
+    "title": "Homeschool record keeping for multiple children",
+    "intent": "Maintain child-identifiable records efficiently when lessons and activities are shared.",
+    "verdict": "partial",
+    "priority": "P2",
+    "findings": [
+      {
+        "type": "strength",
+        "evidence": "Maya and Leo's shared read-aloud followed by different math work clearly demonstrates separate participation and pacing.",
+        "fix": "Retain this example and add a dated row with each child's learning evidence."
+      },
+      {
+        "type": "issue",
+        "evidence": "The opening's never-one-shared-record rule conflates separate child outputs with separate manual input.",
+        "fix": "Offer a master log with child identifiers and child-specific exports as an alternative; the essential outcome is attributable evidence, not duplicated typing."
+      },
+      {
+        "type": "issue",
+        "evidence": "The example labels Leo's lesson about right because he sat through it, while Maya wanted more.",
+        "fix": "Distinguish engagement from understanding; add a brief response or observation without pretending these ratings measure mastery."
+      },
+      {
+        "type": "strength",
+        "evidence": "The 400-lessons/400-notes household-wide display/print limit is disclosed twice.",
+        "fix": "Keep the disclosure and add an export/archive interval worked example; do not imply actual deletion without checking implementation."
+      },
+      {
+        "type": "issue",
+        "evidence": "Related-link title says three columns while its description says four.",
+        "fix": "Reconcile the count against the linked template."
+      }
+    ],
+    "research": {
+      "general_web": [
+        {
+          "url": "https://crhe.org/guides/resources-for-homeschool-parents/assessments-record-keeping/homeschool-record-keeping/",
+          "assessment": "Stored research supports child-specific complete records; no independent legal requirement for duplicated manual entry established."
+        }
+      ],
+      "reddit": [
+        {
+          "url": "https://www.reddit.com/r/homeschool/comments/1nchv5w/how_do_you_keep_track_of_homeschool_learning_when/",
+          "assessment": "Stored discussion describes a master reading log identifying each child, supporting flexible input with attributable records."
+        }
+      ],
+      "quora": "Blocked by robots.txt in stored research; no Quora evidence reviewed.",
+      "user_needs": "Maintain child-identifiable records efficiently when lessons and activities are shared.",
+      "search_volume": "Unknown; parent will join GSC."
+    },
+    "suggested_title": "Homeschool Records for Multiple Children: Shared Lessons, Separate Evidence",
+    "proposed_outline": [
+      "Choose child identifiers and school year",
+      "Log a shared lesson once with child outcomes",
+      "Keep private notes separate",
+      "Export each child's packet",
+      "Archive before product display limits"
+    ],
+    "image_assessment": {
+      "inspected": false,
+      "assessment": "Image pixels not viewed; no claim about visual quality or AI origin. A subject-specific worked-example figure or printable would support this task; verify existing figure accessibility and agreement with revised text before replacing it."
+    },
+    "recommendation": "improve",
+    "limitations": [
+      "Full stored article and corresponding research read; stored external snippets are leads unless explicitly marked verified.",
+      "No product implementation testing, visual inspection, or search-volume data.",
+      "State rules are not comprehensively re-audited; only identified consequential counterexamples verified."
+    ]
+  },
+  {
+    "url": "https://draftpace.com/guides/homeschool-reading-log",
+    "title": "Homeschool reading log: three columns, quit books included",
+    "intent": "Get a simple usable book log that includes unfinished books and fits portfolio needs.",
+    "verdict": "fulfilled",
+    "priority": "P2",
+    "findings": [
+      {
+        "type": "strength",
+        "evidence": "The article provides three sample rows, explicit column definitions and a stopped-book example.",
+        "fix": "Keep the simple format and offer a blank printable/copyable version alongside the example."
+      },
+      {
+        "type": "strength",
+        "evidence": "It openly says the Companion has no dedicated searchable book list and recommends paper or a spreadsheet.",
+        "fix": "Preserve this product-independent answer rather than forcing an unsuitable app workflow."
+      },
+      {
+        "type": "issue",
+        "evidence": "Audiobooks, read-alouds and solo reading are all recorded identically despite the portfolio use case.",
+        "fix": "Offer an optional format/assistance tag so listening comprehension is not confused with independent decoding; do not exclude audiobooks."
+      },
+      {
+        "type": "issue",
+        "evidence": "Claims that almost no reviewer needs pages/minutes and that a finished book shows attention are broader than the cited examples establish.",
+        "fix": "Reframe as a low-burden default; follow state, evaluator and reading-program requirements and avoid treating completion as a comprehension measure."
+      }
+    ],
+    "research": {
+      "general_web": [
+        {
+          "url": "https://homeschoolhelperonline.com/reading-list/",
+          "assessment": "Stored results offer printable title/author/subject records, supporting a practical template intent rather than an essay alone."
+        }
+      ],
+      "reddit": [
+        {
+          "url": "https://www.reddit.com/r/homeschool/comments/1nchv5w/how_do_you_keep_track_of_homeschool_learning_when/",
+          "assessment": "Stored discussion includes title, child and physical/audio distinctions; users want a memory aid without excessive administration."
+        }
+      ],
+      "quora": "Blocked by robots.txt in stored research; no Quora evidence reviewed.",
+      "user_needs": "Get a simple usable book log that includes unfinished books and fits portfolio needs.",
+      "search_volume": "Unknown; parent will join GSC."
+    },
+    "suggested_title": "Homeschool Reading Log: A Simple Template, Including Unfinished Books",
+    "proposed_outline": [
+      "Blank three-column log",
+      "Completed and stopped examples",
+      "Optional format and author fields",
+      "Portfolio requirements",
+      "Keep logging separate from comprehension checks"
+    ],
+    "image_assessment": {
+      "inspected": false,
+      "assessment": "Image pixels not viewed; no claim about visual quality or AI origin. A subject-specific worked-example figure or printable would support this task; verify existing figure accessibility and agreement with revised text before replacing it."
+    },
+    "recommendation": "improve",
+    "limitations": [
+      "Full stored article and corresponding research read; stored external snippets are leads unless explicitly marked verified.",
+      "No product implementation testing, visual inspection, or search-volume data.",
+      "State rules are not comprehensively re-audited; only identified consequential counterexamples verified."
+    ]
+  },
+  {
+    "url": "https://draftpace.com/guides/homeschool-subject-not-working-what-to-change-first",
+    "title": "Homeschool subject not working? What to change first",
+    "intent": "Diagnose a stalled subject and make a proportionate change before replacing materials.",
+    "verdict": "partial",
+    "priority": "P2",
+    "findings": [
+      {
+        "type": "strength",
+        "evidence": "The long-division example and three-subject table translate time/amount/prerequisite/material changes into concrete actions.",
+        "fix": "Retain the low-cost experiment framework and add a before/after observation field."
+      },
+      {
+        "type": "issue",
+        "evidence": "The article says the same order works for ages six to sixteen and any subject, and forbids skipping ahead.",
+        "fix": "Label this an editorial troubleshooting heuristic, not a validated universal sequence; allow direct action for obvious placement, access or material mismatch."
+      },
+      {
+        "type": "issue",
+        "evidence": "One week, five or six sessions, and two or three weeks are treated interchangeably despite recommending fewer weekly sessions elsewhere.",
+        "fix": "Define the trial by actual sessions and a review date, without a rigid threshold unsupported by research."
+      },
+      {
+        "type": "issue",
+        "evidence": "No Sources and how we checked section supports the most-likely-to-fix and only-then claims.",
+        "fix": "Add relevant educational evidence or soften causal confidence. Preserve the existing tutor/pediatrician escalation and clarify that concerns need not wait for every trial."
+      }
+    ],
+    "research": {
+      "general_web": [
+        {
+          "url": "https://seahomeschoolers.com/blog/2024/02/12/when-should-you-change-curriculum/",
+          "assessment": "Stored practitioner discussion asks about resource fit and the child's own view; does not establish the article's mandatory order."
+        }
+      ],
+      "reddit": [
+        {
+          "url": "https://www.reddit.com/r/homeschool/search/?q=curriculum%20not%20working&restrict_sr=1",
+          "assessment": "Research discovery link only: no relevant Reddit thread appeared in this article's stored results, so no community consensus claimed."
+        }
+      ],
+      "quora": "Blocked by robots.txt in stored research; no Quora evidence reviewed.",
+      "user_needs": "Diagnose a stalled subject and make a proportionate change before replacing materials.",
+      "search_volume": "Unknown; parent will join GSC."
+    },
+    "suggested_title": "Homeschool Subject Stalled? A Flexible Troubleshooting Checklist",
+    "proposed_outline": [
+      "Describe the specific difficulty",
+      "Ask the child and check placement",
+      "Try one low-cost change",
+      "Record what changes across sessions",
+      "When to change materials or seek help"
+    ],
+    "image_assessment": {
+      "inspected": false,
+      "assessment": "Image pixels not viewed; no claim about visual quality or AI origin. A subject-specific worked-example figure or printable would support this task; verify existing figure accessibility and agreement with revised text before replacing it."
+    },
+    "recommendation": "improve",
+    "limitations": [
+      "Full stored article and corresponding research read; stored external snippets are leads unless explicitly marked verified.",
+      "No product implementation testing, visual inspection, or search-volume data.",
+      "State rules are not comprehensively re-audited; only identified consequential counterexamples verified."
+    ]
+  }
+]

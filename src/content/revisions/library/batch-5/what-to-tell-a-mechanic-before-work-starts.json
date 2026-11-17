@@ -1,0 +1,189 @@
+{
+  "slug": "what-to-tell-a-mechanic-before-work-starts",
+  "title": "What to tell a mechanic before work starts",
+  "dek": "Describe the symptom, agree the diagnostic fee and set an approval boundary before leaving your car. Keep the estimate and final invoice together.",
+  "metaDescription": "Describe the symptom, agree the diagnostic fee and set an approval boundary before leaving your car. Keep the estimate and final invoice together.",
+  "updatedAt": "2026-11-17",
+  "body": [
+    {
+      "kind": "paragraphs",
+      "paragraphs": [
+        "Tell the mechanic what you noticed, when it happens, what you want done today and how to reach you. Before handing over the keys, agree what diagnosis costs and require a new price and your approval before additional work. Get the agreement in writing.",
+        "The difficult moment is often the lunchtime call: the car is already apart, another job has been suggested and you have five minutes between meetings. A useful drop-off note makes that decision smaller. This guide covers communicating and authorizing work, not diagnosing the car or stating repair law for every US state."
+      ]
+    },
+    {
+      "kind": "list",
+      "heading": "Before you leave the car",
+      "checkable": true,
+      "items": [
+        "Identify the vehicle by year, model, plate and current odometer reading. Bring relevant earlier invoices.",
+        "Describe the onset, frequency and conditions: cold start, braking, turning, speed or weather. Say what changed after recent work.",
+        "Ask what diagnosis alone costs, whether that includes taxes and shop charges, and whether it is credited toward a repair.",
+        "Confirm any teardown, reassembly, storage or towing charges before agreeing to diagnostic work that could leave the car unavailable.",
+        "Name the jobs you authorize, the total limit and the contact method. Ask the shop to wait for your answer about anything else.",
+        "Read the work order before signing. Keep a copy, including any terms on the reverse."
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "Describe the problem without naming a failed part",
+      "paragraphs": [
+        "Write \"a scraping sound while braking at low speed, first noticed Monday\" rather than \"replace my brakes\" unless you are deliberately ordering that job. Include whether the problem is intermittent and whether another shop has already attempted a repair. Mark missing history as unknown.",
+        "A safely taken warning-light photo or recording can help explain an intermittent concern. Do not recreate a dangerous fault, film while driving or continue driving to produce evidence. Ask the shop whether the car should be towed if safe operation is uncertain."
+      ]
+    },
+    {
+      "kind": "scripts",
+      "heading": "Words to use at the counter",
+      "items": [
+        {
+          "situation": "Diagnosis only",
+          "line": "Please investigate this symptom first. What is the total diagnostic charge, including fees and tax? Do not start repairs until I approve the written estimate."
+        },
+        {
+          "situation": "Scheduled work",
+          "line": "Today I authorize only the listed service at the agreed total. Please contact me before any change and wait for my reply."
+        },
+        {
+          "situation": "Additional work",
+          "line": "Please send the findings, proposed parts, labor and total price. What makes this urgent, and what happens if I leave it until another appointment?"
+        },
+        {
+          "situation": "Declining after inspection",
+          "line": "I am not approving that repair today. What do I owe for the work already authorized, and what will reassembly or collection involve?"
+        }
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "Invented example: a limit is not blanket permission",
+      "paragraphs": [
+        "A driver agrees to a $120 diagnostic inspection for a noise. The shop later quotes $460 for a repair. The $120 approval does not describe a $460 repair, and an available credit-card balance is not consent. The driver asks for the findings and full estimate, then replies with the exact job approved. These amounts illustrate the conversation, not typical prices.",
+        "Write whether a limit covers diagnosis only or the whole authorized visit. \"Call above $250\" can otherwise leave everyone assuming something different. A clear note also says which number to try, when you are available and that silence is not approval."
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "Parts, pickup and a disputed bill",
+      "paragraphs": [
+        "Ask before work begins if you want replaced parts returned. Warranty returns, exchange cores and other restrictions can affect what is available; confirm rather than treating return as unconditional. At pickup, compare the itemized bill with what you approved and ask about any difference. File the invoice with your [maintenance log](/guides/car-maintenance-log-what-to-write-down).",
+        "The [FTC repair guide](https://consumer.ftc.gov/articles/0211-auto-repair-basics) recommends written estimates and documenting disputes. [California BAR](https://www.bar.ca.gov/auto-repairs) provides a state-specific consumer route, not a nationwide rule. If the shop will not resolve a disputed charge, contact the relevant state consumer or repair regulator. Do not assume you can withhold payment and remove the car without legal consequences."
+      ]
+    },
+    {
+      "kind": "faq",
+      "items": [
+        {
+          "q": "Should I tell the mechanic my budget?",
+          "a": "You can state a spending boundary, but also define its scope. Ask whether it includes diagnosis, parts, labor, taxes and fees. A number alone does not explain which work you consent to, so list the authorized job and require contact before changes."
+        },
+        {
+          "q": "Can a shop charge for diagnosis if I decline the repair?",
+          "a": "It may charge for diagnostic work you agreed to even when you do not buy the repair. Ask about that fee before the inspection begins, including reassembly and storage if relevant. Local rules and the agreement matter; a free estimate is not the same as free diagnosis."
+        },
+        {
+          "q": "What if I cannot answer the shop during work?",
+          "a": "Agree a contact window or an alternative authorized contact in advance. Ask the shop to pause rather than interpret a missed call as permission. Also ask how a delay changes completion time and whether any storage charge could arise."
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "name": "FTC: Auto repair basics",
+      "url": "https://consumer.ftc.gov/articles/0211-auto-repair-basics",
+      "retrieved": "2026-11-17",
+      "note": "Page checked: estimates, diagnostic charges, completed repair orders and manufacturer maintenance schedules."
+    },
+    {
+      "name": "California Bureau of Automotive Repair: Maintenance and repairs",
+      "url": "https://www.bar.ca.gov/auto-repairs",
+      "retrieved": "2026-11-17",
+      "note": "Page checked: California repair-shop context and owner-manual/service-reminder guidance; not national law."
+    },
+    {
+      "name": "California BAR: Core charges explained",
+      "url": "https://www.bar.ca.gov/arsc/newsletters/newsletter/fall-2021/core-charges-explained",
+      "retrieved": "2026-11-17",
+      "note": "Official indexed content checked: supplier warranty returns and exchange cores can restrict return of replaced parts; California context."
+    }
+  ],
+  "visuals": [
+    {
+      "title": "From symptom to approval",
+      "kicker": "Keep diagnosis and repair separate",
+      "kind": "sequence",
+      "steps": [
+        {
+          "label": "Describe",
+          "detail": "Report what changed and the conditions in which it happens."
+        },
+        {
+          "label": "Price diagnosis",
+          "detail": "Agree the diagnostic scope and total before work begins."
+        },
+        {
+          "label": "Approve repair",
+          "detail": "Read the findings and approve the specific priced repair."
+        }
+      ],
+      "caption": "An approval should identify the job, not just a spending ceiling.",
+      "alt": "Three stages connect a symptom description to a priced diagnosis and a separately approved repair."
+    },
+    {
+      "title": "The all-in estimate",
+      "kicker": "Questions before leaving the keys",
+      "kind": "record",
+      "steps": [
+        {
+          "label": "Work",
+          "detail": "List the requested job and excluded extras."
+        },
+        {
+          "label": "Charges",
+          "detail": "Confirm labor, parts, diagnosis, tax and other fees."
+        },
+        {
+          "label": "Contact",
+          "detail": "Record the number to call and that work waits for an answer."
+        }
+      ],
+      "caption": "Resolve uncertain charges before authorizing teardown or repair.",
+      "alt": "An estimate record separates authorized work, total charges and the contact-and-wait instruction."
+    }
+  ],
+  "worksheet": {
+    "title": "Mechanic drop-off and approval note",
+    "prompt": "Record the symptom and the exact work you are approving before leaving the keys.",
+    "fields": [
+      "Vehicle and odometer",
+      "Symptom onset and conditions",
+      "Recent work or unknown history",
+      "Authorized diagnostic scope",
+      "All-in approved amount",
+      "Extra charges to clarify",
+      "Contact number and availability",
+      "Written approval reference"
+    ]
+  },
+  "research": {
+    "primaryQuery": "what to tell a mechanic before repair",
+    "supportingQueries": [
+      "mechanic drop off note",
+      "approve diagnostic fee before repair",
+      "what to ask about extra repair work"
+    ],
+    "intent": "Prepare a symptom-focused drop-off note and clearly bounded authorization for a US repair visit.",
+    "sourceChecks": [
+      "https://consumer.ftc.gov/articles/0211-auto-repair-basics - Page checked: estimates, diagnostic charges, completed repair orders and manufacturer maintenance schedules.",
+      "https://www.bar.ca.gov/auto-repairs - Page checked: California repair-shop context and owner-manual/service-reminder guidance; not national law.",
+      "https://www.bar.ca.gov/arsc/newsletters/newsletter/fall-2021/core-charges-explained - Official indexed content checked: warranty and exchange-core exceptions to returning parts; California context."
+    ],
+    "limitations": [
+      "US-focused administration; requirements and individual circumstances vary.",
+      "Saved Reddit leads informed reader-language only; no anecdotes treated as factual authority. Quora was blocked in the saved research.",
+      "No keyword-volume dataset or ranking guarantee. Product registry inspected, but live product workflows not tested."
+    ]
+  }
+}

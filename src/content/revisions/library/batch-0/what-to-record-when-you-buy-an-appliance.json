@@ -1,0 +1,218 @@
+{
+  "slug": "what-to-record-when-you-buy-an-appliance",
+  "title": "What to record when you buy an appliance",
+  "dek": "Keep the exact model, serial number, purchase and installation evidence, warranty terms and service details in one usable appliance record.",
+  "metaDescription": "Keep the exact model, serial number, purchase and installation evidence, warranty terms and service details in one usable appliance record.",
+  "updatedAt": "2026-11-17",
+  "body": [
+    {
+      "kind": "paragraphs",
+      "paragraphs": [
+        "When you buy an appliance, record its exact model and serial number, seller and purchase evidence, installation date, written warranty terms and the location of its manual. Photograph the identification label safely and type the identifiers into a searchable note. Do not guess a warranty end date from the brand alone.",
+        "Delivery day can leave you with packaging in the hallway and a receipt buried in email. You do not have to build a whole home inventory now. Make one record for the new item while you can still connect the paperwork to the actual machine. This guide concerns records, not installation or repair instructions."
+      ]
+    },
+    {
+      "kind": "list",
+      "heading": "Capture the details that are difficult to recover later",
+      "checkable": true,
+      "items": [
+        "Name the appliance and location so another person can distinguish it from similar units. Copy the exact model including suffixes, not only the marketing name.",
+        "Photograph the serial label where safely accessible, then transcribe it carefully and check letters against digits. Do not move heavy equipment or remove service covers just for a photo.",
+        "Save the receipt or invoice, seller, order reference, purchase date and price. Keep delivery and installation evidence separately if those dates differ.",
+        "Save the written warranty and identify who provides it, when coverage starts, what is covered and how claims are made. Mark uncertain dates for confirmation.",
+        "Keep the correct owner manual and any installer documentation, commissioning record or required certificate. Link files to this appliance rather than leaving them in a general downloads folder.",
+        "Record any model-specific consumable or accessory specification you actually need, such as the approved filter part number. Verify it in the correct manual before buying spares.",
+        "Check the official recall information for the exact affected model or serial range and follow any applicable safety instruction."
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "Model and serial answer different questions",
+      "paragraphs": [
+        "The model identifies a product configuration; the serial identifies the particular unit. Repair, warranty or recall enquiries can need both. [GE's official locator](https://www.geappliances.com/ge/find-model-serial-number/) provides product-specific help finding them. Locations differ, so do not assume every refrigerator or washer uses the same label position.",
+        "A photograph is useful only if it is readable. Check focus and glare before closing the door or discarding packaging. A photo can preserve a transcription error just as easily as a typed note if you capture the wrong sticker. Keep the full label and the text together, without posting serial details publicly."
+      ]
+    },
+    {
+      "kind": "table",
+      "heading": "Invented example: a new dishwasher record",
+      "columns": [
+        "Field",
+        "Entry"
+      ],
+      "rows": [
+        [
+          "Item",
+          "Kitchen dishwasher beside the sink."
+        ],
+        [
+          "Identification",
+          "Exact model and serial copied from the door-edge label; readable photo saved."
+        ],
+        [
+          "Dates",
+          "Purchased November 2; installed November 8."
+        ],
+        [
+          "Evidence",
+          "Seller invoice and installer handover stored with the item."
+        ],
+        [
+          "Warranty",
+          "Written terms saved; coverage start and labor terms still being confirmed."
+        ],
+        [
+          "Next action",
+          "Ask the provider which date controls coverage, then record its answer."
+        ]
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "Keep the terms, not just a single expiry date",
+      "paragraphs": [
+        "A warranty may distinguish parts, labor, certain components, shipping and different coverage periods. A paid service contract is also not necessarily the same thing as the included warranty. The [FTC warranty guide](https://consumer.ftc.gov/articles/warranties) explains why the written conditions and claims route matter. This page does not decide whether an extra plan is worth buying.",
+        "Check registration instructions in the actual terms and applicable law. Do not assume either that registration always creates coverage or that it never affects an additional benefit. Save any registration confirmation, but do not confuse it with proof of purchase or a guarantee that every future fault will be covered."
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "Recall checks are independent of warranty dates",
+      "paragraphs": [
+        "Use the [CPSC recall and safety-warning listings](https://www.cpsc.gov/Recalls) in the US and compare the identifiers specified in any relevant notice. A similar appearance is not enough to establish a match. A recall remedy can have its own process; follow the exact notice rather than applying a general repair idea.",
+        "Registration or official alerts can help you hear about later notices, but a general alert is not a substitute for checking whether your unit falls in an affected range. If a notice says to stop use, do not wait for the next maintenance reminder or assume an expired warranty makes the notice irrelevant."
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "If the appliance came with the house",
+      "paragraphs": [
+        "Record purchase date and warranty status as unknown unless you have evidence. Ask the previous owner, installer or manufacturer what can be recovered. Do not assign an invented age from its appearance or promise transferable warranty coverage. Use [the model-number guide](/guides/how-to-find-the-model-number-on-any-appliance) for identification before contacting support.",
+        "After any repair, add the date, fault reported, work completed, provider and evidence. When an item is sold, removed or replaced, mark that change so a future owner does not order parts for the old machine. Share useful manuals and records while removing payment details and other personal information that do not belong in the handover."
+      ]
+    },
+    {
+      "kind": "faq",
+      "items": [
+        {
+          "q": "Is a receipt enough for an appliance record?",
+          "a": "It proves some purchase details but may not identify the exact installed unit or explain coverage conditions. Keep it with the model, serial, installation evidence and written warranty. That combination lets you answer a support enquiry without trying to reconstruct which machine an old invoice described."
+        },
+        {
+          "q": "Should I write one warranty end date?",
+          "a": "Only when the written terms support that date and scope. Some coverage periods differ by component or parts versus labor, and start dates can depend on the terms. Record the document and any uncertainty. A clear pending question is better than a confident but invented expiry date."
+        },
+        {
+          "q": "What if I cannot reach the identification label safely?",
+          "a": "Do not pull out a heavy or connected appliance, climb onto it or remove service covers just to finish the record. Check the manual, packaging, delivery paperwork or manufacturer locator first. Ask an installer or technician to capture the label during appropriate safe access if necessary."
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "name": "GE Appliances: identification locator",
+      "url": "https://www.geappliances.com/ge/find-model-serial-number/",
+      "retrieved": "2026-11-17",
+      "note": "Opened: product-specific model and serial locator; no universal plate location asserted."
+    },
+    {
+      "name": "FTC: warranties",
+      "url": "https://consumer.ftc.gov/articles/warranties",
+      "retrieved": "2026-11-17",
+      "note": "Opened: written coverage, start and scope questions, claims conditions and service-contract distinction."
+    },
+    {
+      "name": "CPSC: recalls and warnings",
+      "url": "https://www.cpsc.gov/Recalls",
+      "retrieved": "2026-11-17",
+      "note": "Opened: official searchable recall route; particular appliance recall status was not inferred."
+    }
+  ],
+  "visuals": [
+    {
+      "title": "One item, connected evidence",
+      "kicker": "An appliance record",
+      "kind": "record",
+      "steps": [
+        {
+          "label": "Identity",
+          "detail": "Keep exact model, serial and readable label evidence."
+        },
+        {
+          "label": "Purchase and installation",
+          "detail": "Preserve each date with its supporting document."
+        },
+        {
+          "label": "Coverage and care",
+          "detail": "Link the written terms, manual and subsequent service record."
+        }
+      ],
+      "caption": "A searchable identifier and its evidence should stay together.",
+      "alt": "An appliance record connects exact identity, purchase and installation evidence, warranty and care documents."
+    },
+    {
+      "title": "Do not guess from a date",
+      "kicker": "Warranty and recall are separate checks",
+      "kind": "compare",
+      "steps": [
+        {
+          "label": "Warranty",
+          "detail": "Read coverage scope, start conditions and the claims route."
+        },
+        {
+          "label": "Service contract",
+          "detail": "Keep any separately purchased protection and its own terms."
+        },
+        {
+          "label": "Recall",
+          "detail": "Match the official notice to the affected product identifiers."
+        }
+      ],
+      "caption": "An expired warranty does not answer whether a safety notice applies.",
+      "alt": "Three checks distinguish included warranty, paid service contract and official recall applicability."
+    }
+  ],
+  "worksheet": {
+    "title": "New appliance evidence record",
+    "prompt": "Record confirmed details and leave unsupported dates marked unknown.",
+    "fields": [
+      "Appliance and location",
+      "Exact model and serial",
+      "Label photo location",
+      "Seller, purchase date and invoice",
+      "Delivery and installation evidence",
+      "Warranty scope, start and claims contact",
+      "Manual and consumable specification",
+      "Recall check and unresolved follow-up"
+    ]
+  },
+  "research": {
+    "primaryQuery": "appliance information to record",
+    "supportingQueries": [
+      "new appliance purchase record",
+      "appliance model serial warranty details",
+      "save appliance installation evidence"
+    ],
+    "intent": "Capture identification and transaction evidence at purchase, distinct from warranty-plan evaluation.",
+    "sourceChecks": [
+      {
+        "url": "https://www.geappliances.com/ge/find-model-serial-number/",
+        "verified": "Opened: product-specific model and serial locator; no universal plate location asserted."
+      },
+      {
+        "url": "https://consumer.ftc.gov/articles/warranties",
+        "verified": "Opened: written coverage, start and scope questions, claims conditions and service-contract distinction."
+      },
+      {
+        "url": "https://www.cpsc.gov/Recalls",
+        "verified": "Opened: official searchable recall route; particular appliance recall status was not inferred."
+      }
+    ],
+    "limitations": [
+      "No specific model warranty, registration benefit or coverage transfer is certified.",
+      "No universal maintenance interval or guaranteed recall notification is claimed."
+    ]
+  }
+}

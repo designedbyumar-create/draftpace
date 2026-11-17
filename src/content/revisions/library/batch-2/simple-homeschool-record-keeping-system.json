@@ -1,0 +1,189 @@
+{
+  "slug": "simple-homeschool-record-keeping-system",
+  "title": "A simple homeschool record keeping system",
+  "dek": "Keep a short lesson record, a place for evidence, and a weekly check. Build a homeschool system you can restart after missed days.",
+  "metaDescription": "Keep a short lesson record, a place for evidence, and a weekly check. Build a homeschool system you can restart after missed days.",
+  "updatedAt": "2026-11-17",
+  "body": [
+    {
+      "kind": "paragraphs",
+      "paragraphs": [
+        "Use one daily lesson log, one evidence folder per child, and one weekly check. Write what happened where you already finish the lesson. Add any fields your state's requirements call for; this small system is a personal organizing method, not a claim that three columns satisfy every homeschool law.",
+        "The problem often starts with two records of the same lesson: the planner you meant to follow and the tracker you meant to fill in later. By Friday they disagree. A workable system lets you distinguish intention from completion without rewriting the whole week."
+      ]
+    },
+    {
+      "kind": "table",
+      "heading": "The three places and their jobs",
+      "columns": [
+        "Place",
+        "Keep here",
+        "Keep elsewhere"
+      ],
+      "rows": [
+        [
+          "Daily log",
+          "Date, child, subject, work completed, short next-step note",
+          "Lengthy planning and unrelated family notes"
+        ],
+        [
+          "Evidence folder",
+          "Required samples, reports, photos with context",
+          "Every duplicate worksheet"
+        ],
+        [
+          "Weekly check",
+          "Missing records, upcoming deadlines, evidence to file",
+          "A second version of the daily log"
+        ]
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "Set up at the point of use",
+      "paragraphs": [
+        "Choose a notebook or file you can reach when the books close. Give each child a clearly named section. Use the same headings consistently, but let a useful entry be short: 'November 5, Maya, fractions lesson 8, needed help comparing thirds; repeat with strips.' That tells you more than a green tick.",
+        "Keep the coming week's plan separate or visibly mark planned work as planned. Crossing something off a plan can work as a record only if you can still tell when it happened, who did it, and what the mark means. Do not let an automatic timestamp stand in for a lesson date when you enter something late."
+      ]
+    },
+    {
+      "kind": "list",
+      "heading": "Run the first week",
+      "checkable": true,
+      "items": [
+        "Add any legally required fields before you start, including time detail if applicable.",
+        "Record one completed lesson immediately after putting its materials away.",
+        "Use a clear status: completed, partly completed, or not done.",
+        "Name one next teaching step only when it will help your next session.",
+        "File one relevant sample with its date and child identifier.",
+        "Choose a weekly review point and check that each child's record can be found."
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "Invented example: the interrupted Tuesday",
+      "paragraphs": [
+        "Maya completes reading and begins a math lesson before an appointment interrupts the morning. Her record says 'Reading chapter 4 completed; math lesson 8 started, examples 1-3 only.' Her brother's record says 'Co-op art class, leaf printing; photograph in art folder.' Neither entry describes a full day merely because something was logged.",
+        "At the weekly review, the parent notices the math lesson needs resuming. That is the benefit of recording position rather than awarding a general success mark. The family can also apply its attendance rules separately without changing the factual entries."
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "Give unusual work a findable home",
+      "paragraphs": [
+        "For a large project, save a photograph with the child's name, date, and a short description of the work. Link it in the daily entry with a filename or folder name. A phone camera roll alone may be hard to search later. Preserve any originals your requirements call for.",
+        "For shared lessons, use a common activity description but identify each child's participation. Keep private reflections out of a record you may hand to another person. Educational evidence, administrative correspondence, and family memories can live in separate subfolders even when they concern the same child."
+      ]
+    },
+    {
+      "kind": "scripts",
+      "heading": "A weekly check you can say aloud",
+      "items": [
+        {
+          "situation": "Review",
+          "line": "Can I find each child's latest entry, the evidence it points to, and the next deadline without searching several apps?"
+        },
+        {
+          "situation": "Handing over a lesson",
+          "line": "We stopped at [position]. [Child] completed [work]. Next time start with [specific task], not the beginning of the chapter."
+        }
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "Restart without rebuilding the whole system",
+      "paragraphs": [
+        "After a gap, write today's entry first. Then make a separate list of missing dates that matter for required records. Recover only what dated evidence supports and label reconstructed entries. A gap is an accuracy problem to address, not permission to invent a tidy history.",
+        "If the weekly review routinely takes longer than the lessons it records, remove optional fields before changing tools. Keep necessary compliance information. If a required report is overdue or you cannot establish whether records meet local requirements, contact the relevant authority or a qualified adviser promptly rather than waiting for a more attractive planner."
+      ]
+    },
+    {
+      "kind": "faq",
+      "items": [
+        {
+          "q": "Is a notebook enough?",
+          "a": "A notebook can handle the daily log described here if its entries are legible, identifiable by child, and easy to retrieve. Whether it meets a particular legal requirement depends on that requirement. Keep required reports and evidence alongside it, not only a notebook summary."
+        },
+        {
+          "q": "What if I forget to record a lesson?",
+          "a": "Resume with the next lesson, then recover the missing entry from work or other evidence where possible. Mark late reconstruction clearly. Do not copy a planned lesson into the completed column merely because you think it probably happened."
+        },
+        {
+          "q": "Should I record how the lesson went?",
+          "a": "A short teaching note is optional but useful when it changes your next step. 'Needs another example with borrowing' is actionable. A daily mood score or long narrative is unnecessary unless you have a specific reason to collect it."
+        }
+      ]
+    }
+  ],
+  "sources": [],
+  "visuals": [
+    {
+      "title": "One lesson, one entry",
+      "kicker": "Avoid duplicate records",
+      "kind": "sequence",
+      "steps": [
+        {
+          "label": "Finish",
+          "detail": "Record the work at the end of the lesson."
+        },
+        {
+          "label": "File",
+          "detail": "Store selected evidence under the child's name."
+        },
+        {
+          "label": "Review",
+          "detail": "Check missing information and deadlines once a week."
+        }
+      ],
+      "caption": "The weekly check reviews the original record rather than recreating it.",
+      "alt": "A lesson moves from one daily entry to a child's evidence folder and a weekly accuracy check."
+    },
+    {
+      "title": "A restartable entry",
+      "kicker": "Useful details",
+      "kind": "record",
+      "steps": [
+        {
+          "label": "Date and learner",
+          "detail": "Identify when and with whom the work happened."
+        },
+        {
+          "label": "Work completed",
+          "detail": "State the subject and actual stopping point."
+        },
+        {
+          "label": "Next step",
+          "detail": "Name what the next session should begin with."
+        }
+      ],
+      "caption": "Include additional fields whenever applicable requirements demand them.",
+      "alt": "Three parts of a lesson entry show the learner, completed work, and the next teaching step."
+    }
+  ],
+  "worksheet": {
+    "title": "One-week homeschool record setup",
+    "prompt": "Choose the places and trigger for your record, then try them for one week.",
+    "fields": [
+      "Child identifiers",
+      "Daily log location",
+      "Required additional fields",
+      "Lesson-end recording trigger",
+      "Evidence folder location",
+      "Weekly review date",
+      "Restart note"
+    ]
+  },
+  "research": {
+    "primaryQuery": "simple homeschool record keeping system",
+    "supportingQueries": [
+      "easy daily homeschool records",
+      "restart homeschool record keeping"
+    ],
+    "intent": "Design a sustainable daily record habit distinct from attendance definitions and retention rules.",
+    "sourceChecks": [],
+    "limitations": [
+      "Practical organization suggestions are not individualized professional advice.",
+      "Saved Reddit leads are qualitative only; Quora was blocked in saved research. No keyword-volume or ranking claims."
+    ]
+  }
+}

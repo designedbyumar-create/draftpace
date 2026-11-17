@@ -1,0 +1,522 @@
+[
+  {
+    "inventory_index": 46,
+    "url": "https://draftpace.com/guides/homeschool-attendance-what-to-track",
+    "title": "Homeschool attendance records: what counts as a school day",
+    "intent": "Determine which activities count and keep a legally appropriate attendance record.",
+    "verdict": "partial",
+    "priority": "P1",
+    "findings": [
+      {
+        "type": "unsupported_generalization",
+        "evidence": "The opening and FAQ say four to six hours is the usual full day and that hours usually do not matter in day-count states; no state-by-state evidence establishes those national frequency claims.",
+        "fix": "Replace national shortcuts with named, directly sourced state examples and distinguish day minimums, daily hours, annual hours, and subject requirements."
+      },
+      {
+        "type": "compliance_overclaim",
+        "evidence": "The three-part record is described as holding up whether a state counts days, hours or nothing; the hours section recommends rough weekly totals as what most reporting asks for.",
+        "fix": "Label this a personal starting log, not universally sufficient compliance evidence; require the reader to confirm required granularity and fields first."
+      },
+      {
+        "type": "strength",
+        "evidence": "Science-center and math examples make non-workbook learning concrete, and the article honestly says its product has no hours field.",
+        "fix": "Keep the examples but make eligibility conditional on the applicable requirements, and foreground the hours limitation before product use."
+      },
+      {
+        "type": "unsupported_assurance",
+        "evidence": "The assertion that a gapped log reads as normal while a perfect reconstructed log looks suspicious predicts evaluator judgment without evidence.",
+        "fix": "Recommend truthful contemporaneous records and explicitly labeled reconstruction, without promising acceptance or judging records by appearance."
+      }
+    ],
+    "research": {
+      "general_web": [
+        {
+          "url": "https://www.homeschooltracker.com/attendance.html",
+          "use": "Verification source where stated; otherwise stored research lead."
+        }
+      ],
+      "reddit": [
+        {
+          "url": "https://www.reddit.com/r/homeschool/comments/1s575xo/record_keeping/",
+          "use": "Parents need a minimal log that distinguishes learning activity from a legally qualifying day; the Reddit record-keeping lead from the adjacent research file describes inconsistent systems, not legal authority."
+        }
+      ],
+      "user_needs": "Parents need a minimal log that distinguishes learning activity from a legally qualifying day; the Reddit record-keeping lead from the adjacent research file describes inconsistent systems, not legal authority.",
+      "quora": "Blocked by robots.txt in stored research; no Quora content reviewed.",
+      "search_volume": "Unknown; parent will join GSC."
+    },
+    "suggested_title": "Homeschool Attendance: What to Log and How to Check Your State's Rules",
+    "proposed_outline": [
+      "Check your legal route and required fields",
+      "Activity examples with conditional eligibility",
+      "Copyable day and hour records",
+      "Partial days and truthful catch-up",
+      "Product limitations and exports"
+    ],
+    "image_assessment": {
+      "status": "Metadata only; images not visually inspected; origin not assessed.",
+      "assessment": "Metadata describes a three-field checklist; a completed day/hour comparison would explain the legal distinction better."
+    },
+    "recommendation": "improve",
+    "limitations": [
+      "Read full stored article and corresponding research text; stored search snippets are leads, not independently verified facts.",
+      "No product behavior or visual layout testing; no GSC data in this assessment."
+    ]
+  },
+  {
+    "inventory_index": 47,
+    "url": "https://draftpace.com/guides/simple-homeschool-record-keeping-system",
+    "title": "A simple homeschool record keeping system you will keep",
+    "intent": "Maintain a low-effort record without abandoning it after disrupted weeks.",
+    "verdict": "partial",
+    "priority": "P2",
+    "findings": [
+      {
+        "type": "strength",
+        "evidence": "The toddler illness and orthodontist examples demonstrate honest short-session logging, and tying the entry to closing a book makes the habit actionable.",
+        "fix": "Retain these practical examples and the notebook-first option."
+      },
+      {
+        "type": "scope_gap",
+        "evidence": "The FAQ calls any time log or other extra field a reason a system becomes too heavy, despite the introductory state-law caveat.",
+        "fix": "Separate optional detail from legally required hours, reading titles, assessments or portfolio evidence; required fields cannot simply be discarded."
+      },
+      {
+        "type": "product_ambiguity",
+        "evidence": "The product section says 'Did not get to it' still records the day, while the attendance companion article says dates with recorded entries count on printed records.",
+        "fix": "Clarify whether skipped-only entries appear as attendance, and verify actual export behavior before suggesting compliance use."
+      },
+      {
+        "type": "usability_gap",
+        "evidence": "The article refers to three things and then links to a template described as four columns; the actual reusable blank table is off-page.",
+        "fix": "Put a small blank and filled-in record here, with child/year identifiers and an optional required-hours field."
+      }
+    ],
+    "research": {
+      "general_web": [
+        {
+          "url": "https://homeschoolreports.com/blog/homeschool-tracker/how-to-organize-homeschool-records/",
+          "use": "Verification source where stated; otherwise stored research lead."
+        }
+      ],
+      "reddit": [
+        {
+          "url": "https://www.reddit.com/r/homeschool/comments/1r3nzza/how_do_you_track_progress_without_turning_it_into/",
+          "use": "Search leads emphasize one place per child/year; Reddit users want progress evidence without busywork. These are intent leads, not proof that one format satisfies every state."
+        }
+      ],
+      "user_needs": "Search leads emphasize one place per child/year; Reddit users want progress evidence without busywork. These are intent leads, not proof that one format satisfies every state.",
+      "quora": "Blocked by robots.txt in stored research; no Quora content reviewed.",
+      "search_volume": "Unknown; parent will join GSC."
+    },
+    "suggested_title": "A Simple Homeschool Record-Keeping Habit That Survives Bad Weeks",
+    "proposed_outline": [
+      "Minimum personal record",
+      "Add your state's required fields",
+      "Filled-in week and blank template",
+      "Photos and per-child filing",
+      "Restart after a gap",
+      "Export and backup"
+    ],
+    "image_assessment": {
+      "status": "Metadata only; images not visually inspected; origin not assessed.",
+      "assessment": "Alt text describes a checklist, not a filled-in week; show a realistic week with short days if revising."
+    },
+    "recommendation": "improve",
+    "limitations": [
+      "Read full stored article and corresponding research text; stored search snippets are leads, not independently verified facts.",
+      "No product behavior or visual layout testing; no GSC data in this assessment."
+    ]
+  },
+  {
+    "inventory_index": 48,
+    "url": "https://draftpace.com/guides/life-admin-with-brain-fog",
+    "title": "Life admin with brain fog: long covid, illness, grief",
+    "intent": "Complete essential paperwork with fluctuating cognitive capacity and preserve progress between attempts.",
+    "verdict": "fulfilled",
+    "priority": "P2",
+    "findings": [
+      {
+        "type": "strength",
+        "evidence": "The insurance-claim stopping note captures position, contact, reference, failed approach and next action.",
+        "fix": "Retain it and offer a directly copyable blank version."
+      },
+      {
+        "type": "strength",
+        "evidence": "Five call scripts cover losing the thread, slower speech, written confirmation, repeated questions and ending the call.",
+        "fix": "Keep these prominent; they meet the need for usable language rather than motivation alone."
+      },
+      {
+        "type": "qualification_needed",
+        "evidence": "'Sort tasks ... not by importance' and saving calls for clear days can obscure a non-negotiable deadline.",
+        "fix": "Add an urgent-deadline override: ask for help, an extension or an accessible contact method when the task cannot wait."
+      },
+      {
+        "type": "scope_gap",
+        "evidence": "The CDC citation supports fluctuating Long COVID symptoms, not the efficacy of every technique across concussion, grief, menopause and depression.",
+        "fix": "Label the adjustments as practical suggestions, retain the clinician referral, and add condition-sensitive pacing guidance rather than treating all causes as interchangeable."
+      }
+    ],
+    "research": {
+      "general_web": [
+        {
+          "url": "https://www.cdc.gov/long-covid/about/index.html",
+          "use": "Verification source where stated; otherwise stored research lead."
+        }
+      ],
+      "reddit": [
+        {
+          "url": "https://www.reddit.com/r/BrainFog/comments/1ic0l6k",
+          "use": "CDC was opened to verify the Long COVID context. The stored Reddit lead asks for workable daily strategies and notes that organization cannot treat the underlying condition."
+        }
+      ],
+      "user_needs": "CDC was opened to verify the Long COVID context. The stored Reddit lead asks for workable daily strategies and notes that organization cannot treat the underlying condition.",
+      "quora": "Blocked by robots.txt in stored research; no Quora content reviewed.",
+      "search_volume": "Unknown; parent will join GSC."
+    },
+    "suggested_title": "Life Admin With Brain Fog: Notes, Calls and Essential Deadlines",
+    "proposed_outline": [
+      "One-page stopping note",
+      "Choose by capacity and deadline",
+      "Call scripts",
+      "Delegation and access permissions",
+      "When organization is not enough"
+    ],
+    "image_assessment": {
+      "status": "Metadata only; images not visually inspected; origin not assessed.",
+      "assessment": "Alt text describes four rows while the article's example has five, including what was already tried; check consistency when rendering."
+    },
+    "recommendation": "improve",
+    "limitations": [
+      "Read full stored article and corresponding research text; stored search snippets are leads, not independently verified facts.",
+      "No product behavior or visual layout testing; no GSC data in this assessment."
+    ]
+  },
+  {
+    "inventory_index": 49,
+    "url": "https://draftpace.com/guides/executive-dysfunction-is-not-procrastination",
+    "title": "Executive dysfunction vs procrastination: the difference",
+    "intent": "Understand overlapping reasons for delayed tasks and choose practical support without self-diagnosing.",
+    "verdict": "partial",
+    "priority": "P1",
+    "findings": [
+      {
+        "type": "strength",
+        "evidence": "The introduction explicitly acknowledges overlap, and the final escalation section recommends professional assessment for persistent impairment.",
+        "fix": "Preserve these guardrails and the concrete parking-permit example."
+      },
+      {
+        "type": "unsupported_discriminator",
+        "evidence": "The comparison table and five questions imply enjoyment of an alternative, response to urgency, or benefit from breakdown can sort readers between procrastination and executive dysfunction.",
+        "fix": "Remove the quasi-test; use these questions to select supports, not infer the cause. Cleveland Clinic describes executive difficulty including distraction and impulse control, so choosing an appealing activity does not rule it out."
+      },
+      {
+        "type": "internal_tension",
+        "evidence": "The article says the distinction is not clean but repeatedly describes procrastination as an eyes-open choice and says 'you're probably choosing' if another activity appeals.",
+        "fix": "Use neutral language about delay, emotion regulation and initiation; explain that observed behavior alone cannot establish voluntary control."
+      },
+      {
+        "type": "strength",
+        "evidence": "Both intervention columns offer small observable actions and prepared materials rather than relying only on willpower.",
+        "fix": "Combine into a menu anyone can try; no need to classify oneself before receiving help."
+      }
+    ],
+    "research": {
+      "general_web": [
+        {
+          "url": "https://my.clevelandclinic.org/health/diseases/23224-executive-dysfunction",
+          "use": "Verification source where stated; otherwise stored research lead."
+        }
+      ],
+      "reddit": [
+        {
+          "url": "https://www.reddit.com/r/Neurodivergent/comments/1slenp3/anyone_else_have_days_where_you_know_exactly_what/",
+          "use": "The clinical source was opened and describes broader executive-function symptoms. Reddit lead expresses wanting a task done but being unable to begin; users need nonjudgmental support, not a diagnostic binary."
+        }
+      ],
+      "user_needs": "The clinical source was opened and describes broader executive-function symptoms. Reddit lead expresses wanting a task done but being unable to begin; users need nonjudgmental support, not a diagnostic binary.",
+      "quora": "Blocked by robots.txt in stored research; no Quora content reviewed.",
+      "search_volume": "Unknown; parent will join GSC."
+    },
+    "suggested_title": "Executive Dysfunction and Procrastination: Overlap and Help With Starting",
+    "proposed_outline": [
+      "Definitions and overlap",
+      "Why a two-column test cannot diagnose",
+      "The same task with different barriers",
+      "Support options to try",
+      "When to seek assessment"
+    ],
+    "image_assessment": {
+      "status": "Metadata only; images not visually inspected; origin not assessed.",
+      "assessment": "Alt text promises 'the question that tells them apart', stronger than the article's own disclaimer; revise that claim in text and figure after checking the actual asset."
+    },
+    "recommendation": "improve",
+    "limitations": [
+      "Read full stored article and corresponding research text; stored search snippets are leads, not independently verified facts.",
+      "No product behavior or visual layout testing; no GSC data in this assessment."
+    ]
+  },
+  {
+    "inventory_index": 50,
+    "url": "https://draftpace.com/guides/what-to-keep-on-paper-when-you-travel",
+    "title": "What to print before you travel: a one-page paper list",
+    "intent": "Prepare an offline travel backup that works if the phone or a bag is lost.",
+    "verdict": "fulfilled",
+    "priority": "P2",
+    "findings": [
+      {
+        "type": "strength",
+        "evidence": "The local-language hotel address, insurer assistance line and separate-bag passport copies directly address the midnight-arrival scenario.",
+        "fix": "Keep the concrete example and the distinction between a backup and an accepted travel document."
+      },
+      {
+        "type": "usability_gap",
+        "evidence": "The page repeatedly insists everything fits on one side while also including passport photo pages for every traveler.",
+        "fix": "Distinguish a one-page contact summary from separate full-size identity copies; add a printable blank summary."
+      },
+      {
+        "type": "clarity_gap",
+        "evidence": "The fictional phone numbers have no country codes, and the example hotel row omits the property's phone despite the opening requirement.",
+        "fix": "Show internationally dialable placeholder formats and include accommodation contact, booking dates and traveler name fields."
+      },
+      {
+        "type": "security_gap",
+        "evidence": "The text rejects sensitive data on the carried page but includes passport copies in the same overall packet without explaining secure handling.",
+        "fix": "Keep summary and identity copies distinct; explain limited sharing and secure disposal. This is a completeness improvement, not proof of an existing data leak."
+      }
+    ],
+    "research": {
+      "general_web": [
+        {
+          "url": "https://www.onebag.com/packing-list-paperwork.html",
+          "use": "Verification source where stated; otherwise stored research lead."
+        }
+      ],
+      "reddit": [
+        {
+          "url": "https://www.reddit.com/search/?q=printed%20travel%20documents%20passport%20copies",
+          "use": "Stored search leads support offline access and separated backups. No relevant Reddit result appeared in the stored research; the Reddit URL is a search route only, not evidence of user statements."
+        }
+      ],
+      "user_needs": "Stored search leads support offline access and separated backups. No relevant Reddit result appeared in the stored research; the Reddit URL is a search route only, not evidence of user statements.",
+      "quora": "Blocked by robots.txt in stored research; no Quora content reviewed.",
+      "search_volume": "Unknown; parent will join GSC."
+    },
+    "suggested_title": "What to Print Before Travel: A One-Page Summary and Document Backups",
+    "proposed_outline": [
+      "Contact summary template",
+      "Separate copies and required originals",
+      "Local-language addresses and dialable numbers",
+      "Two independent storage locations",
+      "Update, share and dispose safely"
+    ],
+    "image_assessment": {
+      "status": "Metadata only; images not visually inspected; origin not assessed.",
+      "assessment": "Metadata describes a five-item checklist; a legible blank summary plus filled example would be more actionable."
+    },
+    "recommendation": "improve",
+    "limitations": [
+      "Read full stored article and corresponding research text; stored search snippets are leads, not independently verified facts.",
+      "No product behavior or visual layout testing; no GSC data in this assessment."
+    ]
+  },
+  {
+    "inventory_index": 51,
+    "url": "https://draftpace.com/guides/what-to-check-before-each-direct-debit-date",
+    "title": "Before your bills come out: a two minute autopay check",
+    "intent": "Avoid insufficient-funds payments by checking upcoming debits, funding accounts and changes.",
+    "verdict": "partial",
+    "priority": "P1",
+    "findings": [
+      {
+        "type": "timing_conflict",
+        "evidence": "The lead recommends a check two days before the busiest autopay, but the stop-payment section correctly requires three business days.",
+        "fix": "Move the main check earlier than the relevant bank/biller cutoff, with weekend and holiday margin; keep a final balance check near collection."
+      },
+      {
+        "type": "overpromise",
+        "evidence": "The $33-short example says moving money, changing the due date or paying manually each take minutes and none works on the 3rd.",
+        "fix": "Remove guaranteed processing claims. Require confirmation that a date change or pause affects this collection and that funds will be available in time."
+      },
+      {
+        "type": "scope_confusion",
+        "evidence": "The article covers ACH and card-on-file payments but presents Regulation E procedures without explicitly separating credit-card recurring charges.",
+        "fix": "State that the cited rule concerns covered transfers from consumer asset accounts; separate merchant credit-card subscription procedures."
+      },
+      {
+        "type": "strength",
+        "evidence": "The arithmetic correctly totals $1,973 against $1,940, and the account-by-account check addresses money sitting in the wrong account.",
+        "fix": "Retain the worked example and add essential spending and outstanding unposted transactions to the reserve check."
+      }
+    ],
+    "research": {
+      "general_web": [
+        {
+          "url": "https://www.consumerfinance.gov/rules-policy/regulations/1005/10/",
+          "use": "Verification source where stated; otherwise stored research lead."
+        }
+      ],
+      "reddit": [
+        {
+          "url": "https://www.reddit.com/search/?q=autopay%20before%20payday",
+          "use": "Regulation E was directly checked: three-business-day stop notice and variable-amount notice support the legal section. Stored general searches skew UK Direct Debit while this page is explicitly US; no relevant Reddit result was returned, so the link is a research route only."
+        }
+      ],
+      "user_needs": "Regulation E was directly checked: three-business-day stop notice and variable-amount notice support the legal section. Stored general searches skew UK Direct Debit while this page is explicitly US; no relevant Reddit result was returned, so the link is a research route only.",
+      "quora": "Blocked by robots.txt in stored research; no Quora content reviewed.",
+      "search_volume": "Unknown; parent will join GSC."
+    },
+    "suggested_title": "US Autopay Check: Cover Bills and Act Before Payment Cutoffs",
+    "proposed_outline": [
+      "Check early enough to act",
+      "List debits by account to payday",
+      "Worked cash-flow example",
+      "Confirm amount and date changes",
+      "ACH versus credit-card billing",
+      "Verify the payment cleared"
+    ],
+    "image_assessment": {
+      "status": "Metadata only; images not visually inspected; origin not assessed.",
+      "assessment": "Alt text describes the correct $33 shortfall and a checklist; no visual rendering was inspected."
+    },
+    "recommendation": "improve",
+    "limitations": [
+      "Read full stored article and corresponding research text; stored search snippets are leads, not independently verified facts.",
+      "No product behavior or visual layout testing; no GSC data in this assessment."
+    ]
+  },
+  {
+    "inventory_index": 52,
+    "url": "https://draftpace.com/guides/can-you-afford-it-before-you-buy-it",
+    "title": "How to know if you can afford something before you buy it",
+    "intent": "Decide whether an everyday purchase leaves enough for bills and essentials before reliable income arrives.",
+    "verdict": "partial",
+    "priority": "P1",
+    "findings": [
+      {
+        "type": "strength",
+        "evidence": "The $42, $180 and $480 comparisons make the cost tradeoff concrete; tax, shipping and ongoing ownership costs are explicitly included.",
+        "fix": "Retain the examples and show the protected $350 as a named reserve."
+      },
+      {
+        "type": "calculation_edge_case",
+        "evidence": "Rounding days-to-payday to the nearest half week can produce zero for a very short interval and inflate the allowance when rounded down.",
+        "fix": "Use exact days with a nonzero denominator, or subtract expected essential costs directly; provide a tomorrow-is-payday example."
+      },
+      {
+        "type": "unsupported_assurance",
+        "evidence": "'Waiting until after payday costs nothing, and the number gets bigger' ignores the new cycle's bills and essential spending.",
+        "fix": "Require a fresh full-cycle calculation after income arrives; describe delay as an option, not guaranteed affordability."
+      },
+      {
+        "type": "schedule_error",
+        "evidence": "The BNPL example correctly gives payments at weeks 0, 2, 4 and 6 but then says each next three paydays is $45 lower, despite the example having four weeks to payday.",
+        "fix": "Keep installment dates separate from pay dates and show a dated cash-flow test; CFPB confirms common biweekly installments, not alignment with wages."
+      }
+    ],
+    "research": {
+      "general_web": [
+        {
+          "url": "https://www.consumerfinance.gov/ask-cfpb/what-is-a-buy-now-pay-later-bnpl-loan-en-2119/",
+          "use": "Verification source where stated; otherwise stored research lead."
+        }
+      ],
+      "reddit": [
+        {
+          "url": "https://www.reddit.com/search/?q=can%20I%20afford%20this%20purchase",
+          "use": "CFPB was opened to verify the payment structure. Stored general leads focus on goals, emergency reserves and cash-flow affordability; no relevant Reddit thread was returned, and the link is a search route only."
+        }
+      ],
+      "user_needs": "CFPB was opened to verify the payment structure. Stored general leads focus on goals, emergency reserves and cash-flow affordability; no relevant Reddit thread was returned, and the link is a search route only.",
+      "quora": "Blocked by robots.txt in stored research; no Quora content reviewed.",
+      "search_volume": "Unknown; parent will join GSC."
+    },
+    "suggested_title": "Can You Afford This Purchase? A Cash-Flow Check Before You Buy",
+    "proposed_outline": [
+      "Protect bills, essentials and reserves",
+      "Compare full price with remaining cash",
+      "Short pay periods and irregular income",
+      "BNPL by actual installment date",
+      "Recheck after payday"
+    ],
+    "image_assessment": {
+      "status": "Metadata only; images not visually inspected; origin not assessed.",
+      "assessment": "Alt text describes the useful comparison table; revise it if the weekly calculation method changes."
+    },
+    "recommendation": "improve",
+    "limitations": [
+      "Read full stored article and corresponding research text; stored search snippets are leads, not independently verified facts.",
+      "No product behavior or visual layout testing; no GSC data in this assessment."
+    ]
+  },
+  {
+    "inventory_index": 53,
+    "url": "https://draftpace.com/guides/how-long-to-keep-homeschool-records",
+    "title": "How long to keep homeschool records, and what to throw away",
+    "intent": "Decide what can be discarded, what to retain permanently and which state-specific periods control.",
+    "verdict": "partial",
+    "priority": "P1",
+    "findings": [
+      {
+        "type": "strength",
+        "evidence": "Separates ordinary work samples, official correspondence and permanent high-school records; distinguishes Florida's legal period from HSLDA advice.",
+        "fix": "Keep the categorization and make recommendation versus legal requirement a table column."
+      },
+      {
+        "type": "source_maintenance",
+        "evidence": "The Florida citation links the 2010 statute despite a 2026 checked date.",
+        "fix": "Replace with the latest applicable statute and date verification. The opened 2025 statute still states two-year preservation and 15-day written notice, so the old URL is not proof the stated rule is false."
+      },
+      {
+        "type": "overstatement",
+        "evidence": "'Curriculum ... isn't part of any record' is absolute, while Florida's portfolio provision includes titles of reading materials and samples of materials used.",
+        "fix": "Distinguish unused reusable curriculum from completed work and required bibliographic records; save required evidence before disposal."
+      },
+      {
+        "type": "operational_gap",
+        "evidence": "The article says keep the log forever but discloses product printing is limited to the latest 400 entries and is not an archive.",
+        "fix": "Add a dated export-and-backup schedule before reaching the cap, verify completeness per child, and state how to preserve older records independently."
+      },
+      {
+        "type": "verified_strength",
+        "evidence": "The New Hampshire 2026 change is supported by the opened HSLDA bill page, which reports signed legislation removing mandatory notification, evaluation and recordkeeping.",
+        "fix": "Retain the example with a direct enacted-law link for final legal review rather than treating it as an invented claim."
+      }
+    ],
+    "research": {
+      "general_web": [
+        {
+          "url": "https://www.flsenate.gov/Laws/Statutes/2025/1002.41",
+          "use": "Verification source where stated; otherwise stored research lead."
+        }
+      ],
+      "reddit": [
+        {
+          "url": "https://www.reddit.com/r/homeschool/comments/1s575xo/record_keeping/",
+          "use": "Florida's portfolio provisions and HSLDA's New Hampshire update were checked. The adjacent batch's Reddit record-keeping lead illustrates storage and future-school concerns, not statutory retention periods."
+        }
+      ],
+      "user_needs": "Florida's portfolio provisions and HSLDA's New Hampshire update were checked. The adjacent batch's Reddit record-keeping lead illustrates storage and future-school concerns, not statutory retention periods.",
+      "quora": "Blocked by robots.txt in stored research; no Quora content reviewed.",
+      "search_volume": "Unknown; parent will join GSC."
+    },
+    "suggested_title": "How Long to Keep Homeschool Records: Legal Minimums and Permanent Files",
+    "proposed_outline": [
+      "Identify legal route and retention rule",
+      "Keep/discard table with authority",
+      "Permanent high-school file",
+      "Photographs versus required samples",
+      "Export and duplicate backups",
+      "Moves, disputes and rule changes"
+    ],
+    "image_assessment": {
+      "status": "Metadata only; images not visually inspected; origin not assessed.",
+      "assessment": "Figure alt text is truncated after 'check your...' in the stored metadata; inspect and repair accessible text if that is the actual attribute."
+    },
+    "recommendation": "improve",
+    "limitations": [
+      "Read full stored article and corresponding research text; stored search snippets are leads, not independently verified facts.",
+      "No product behavior or visual layout testing; no GSC data in this assessment."
+    ]
+  }
+]

@@ -1,0 +1,265 @@
+{
+  "slug": "inherited-a-house-where-to-start",
+  "title": "Inherited house maintenance: start with missing records",
+  "dek": "Secure the property, identify immediate risks and build an honest equipment baseline without treating missing service history as proof of failure.",
+  "metaDescription": "Secure the property, identify immediate risks and build an honest equipment baseline without treating missing service history as proof of failure.",
+  "updatedAt": "2026-11-17",
+  "body": [
+    {
+      "kind": "paragraphs",
+      "paragraphs": [
+        "For an inherited house with no maintenance records, first confirm who can authorize access and work, secure the property and check immediate risks. Then identify equipment, recover existing documents and arrange targeted professional assessment. Mark missing dates unknown rather than treating every service as overdue or every old system as failed.",
+        "A house can arrive with keys but no explanation of the heating, water or previous repairs. You do not have to reconstruct its entire history before addressing an active leak. This guide covers the maintenance starting point, not title transfer, probate, taxes or whether to keep the property."
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "Confirm responsibility before changing the house",
+      "paragraphs": [
+        "Identify the authorized estate representative, current owner or other person entitled to arrange work. Family agreement and possession of a key may not settle authority. Before large spending, disposal or changes to access, ask the appropriate legal adviser if there is uncertainty.",
+        "Record urgent preservation concerns and communicate them promptly to the responsible person. An inherited home can still have a mortgage and other obligations. The [CFPB inherited-mortgage guidance](https://www.consumerfinance.gov/ask-cfpb/i-recently-inherited-a-house-the-mortgage-lender-said-its-required-to-determine-my-ability-to-repay-before-it-will-let-me-take-over-the-mortgage-loan-is-this-true-en-1939/) discusses successor documentation; inheritance should not be treated as automatic loan cancellation."
+      ]
+    },
+    {
+      "kind": "list",
+      "heading": "First safe visit",
+      "checkable": true,
+      "items": [
+        "Confirm lawful access and who may authorize expenses.",
+        "Check whether anyone or anything depends on immediate care or safe occupation.",
+        "Look for active water, fire, structural or other obvious hazards without entering unsafe spaces.",
+        "Confirm the insurance and essential-service position with the responsible person and providers, especially if the property is empty.",
+        "Record access arrangements, emergency contacts and known utility controls without publishing codes.",
+        "Photograph accessible equipment and visible conditions, keeping date and location.",
+        "Leave hazardous or unfamiliar systems for the appropriate professional."
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "Do not turn a walkthrough into an inspection",
+      "paragraphs": [
+        "Stay within ordinary safe access. Do not remove electrical covers, enter an unsafe roof space, climb onto a roof or operate unknown gas controls to see whether they work. A visible label may identify equipment, but it does not tell you whether hidden wiring, combustion or drainage is safe.",
+        "If there is gas odor, a carbon monoxide alarm, dangerous electrical behavior, serious structural concern or water near energized equipment, leave the hazard and obtain appropriate help. Bereavement can justify simplifying the work, not ignoring a condition threatening people or property."
+      ]
+    },
+    {
+      "kind": "table",
+      "heading": "Invented example: a baseline with honest gaps",
+      "columns": [
+        "System",
+        "What is known",
+        "What remains unknown",
+        "Next step"
+      ],
+      "rows": [
+        [
+          "Water heater",
+          "External label photographed",
+          "Install date and current condition",
+          "Find maker instructions and seek assessment if indicated"
+        ],
+        [
+          "Heating",
+          "Model identified; no service sticker found",
+          "Last completed service",
+          "Ask previous provider or book suitable check"
+        ],
+        [
+          "Roof drainage",
+          "Visible overflow after rain",
+          "Cause and access safety",
+          "Arrange assessment; do not climb"
+        ],
+        [
+          "Smoke alarms",
+          "Devices present",
+          "Age and test result",
+          "Check labels and test under instructions"
+        ]
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "Recover documents before guessing dates",
+      "paragraphs": [
+        "Look for invoices, manuals, seller disclosures, prior inspection reports, warranties and service contacts in accessible records. Ask relevant providers what history they can lawfully share. Save the source of each date: an invoice, a label or a person's recollection are different kinds of evidence.",
+        "Use [manufacturer identification guidance](https://www.geappliances.com/ge/find-model-serial-number/) for relevant GE products, or the actual maker's instructions for another brand. Keep model and serial separate. A serial-number pattern found online is not a universal age decoder. Manufacture, purchase and installation can all be different dates."
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "Use unknown as a request for assessment",
+      "paragraphs": [
+        "Missing service history means you need to establish the right next step, not repeat every service operation immediately. Some equipment needs professional evaluation before use; other items may simply need a manual check or routine observation. Ask what is appropriate for the specific system and condition.",
+        "For HVAC, [ENERGY STAR](https://www.energystar.gov/saveathome/heating-cooling/maintenance-checklist) describes contractor pre-season checks and owner filter care. Its checklist is not an instruction to adjust refrigerant, inspect live wiring or service combustion equipment yourself."
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "Check alarms as their own task",
+      "paragraphs": [
+        "Follow [USFA smoke-alarm guidance](https://www.usfa.fema.gov/prevention/home-fires/prepare-for-fire/smoke-alarms/) for testing and replacement age, alongside device instructions and local requirements. Record the actual test and manufacture date rather than writing only 'alarms present.' Carbon monoxide alarms have their own manufacturer requirements.",
+        "If a device is inaccessible or hardwired work is needed, arrange suitable help. Do not remove an alarm battery to stop a nuisance signal and leave the home without protection. A maintenance inventory is incomplete if it lists safety devices but never checks their condition."
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "Commission a useful starting report",
+      "paragraphs": [
+        "Choose the appropriate professional for the question. A broad inspection can help identify issues, while a specialist may be needed for a particular system. Ask what is included, what is excluded and which findings require further evaluation. Save the written report and scope.",
+        "Do not treat a general inspection as proof of remaining lifespan or a guarantee that every hidden defect is absent. Record the recommendation and responsibility for follow-up. Avoid replacing equipment solely because a generic service-life table says it is old."
+      ]
+    },
+    {
+      "kind": "scripts",
+      "heading": "Ask for a targeted assessment",
+      "items": [
+        {
+          "situation": "Unknown history",
+          "line": "We have no reliable service record for this system. What assessment is appropriate before normal use, and what does your visit include?"
+        },
+        {
+          "situation": "After the visit",
+          "line": "Please distinguish confirmed defects, further checks and routine maintenance, with any restrictions on use."
+        },
+        {
+          "situation": "Planning",
+          "line": "Which next dates come from the manufacturer, which from condition and which are your professional recommendation?"
+        }
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "Build the history from today",
+      "paragraphs": [
+        "For completed work, save date, findings, actual parts or adjustments, provider and open actions. A visit date alone is not proof every service item was performed. Keep the evidence with the system rather than scattered across an estate email thread.",
+        "Use [the repair-record guide](/guides/what-to-keep-after-a-home-repair) and then [the maintenance calendar](/guides/home-maintenance-checklist-by-month). The goal is a truthful baseline, a short risk list and assigned follow-ups. It is acceptable for much of the earlier history to remain unknown."
+      ]
+    },
+    {
+      "kind": "faq",
+      "items": [
+        {
+          "q": "Does no history mean everything needs servicing now?",
+          "a": "No. It means the appropriate next step has not been established. Check manuals, visible condition and professional recommendations, prioritizing hazards and systems needed for occupation. Unnecessary service or replacement can also cost money and introduce problems; missing records alone do not diagnose failure."
+        },
+        {
+          "q": "Can an appliance's age tell me whether to replace it?",
+          "a": "Age is one planning input, not a condition assessment or automatic replacement deadline. Verify how the age was established, then consider safety, performance, parts, repair findings and actual guidance. Do not use an unverified serial decoder or generic lifespan as the sole decision."
+        },
+        {
+          "q": "Is this the complete inherited-house checklist?",
+          "a": "No. It intentionally covers maintenance triage and records. Authority, estate administration, title, mortgage, taxes and insurance need separate attention and may have real deadlines. Ask the appropriate court, adviser, servicer or insurer about the actual property rather than assuming the maintenance plan covers those duties."
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "name": "U.S. Fire Administration: Smoke alarms",
+      "url": "https://www.usfa.fema.gov/prevention/home-fires/prepare-for-fire/smoke-alarms/",
+      "retrieved": "2026-11-17",
+      "note": "Monthly testing and smoke alarm replacement age."
+    },
+    {
+      "name": "ENERGY STAR: Maintenance checklist",
+      "url": "https://www.energystar.gov/saveathome/heating-cooling/maintenance-checklist",
+      "retrieved": "2026-11-17",
+      "note": "Pre-season contractor checkups and filter checks, not a schedule for every system."
+    },
+    {
+      "name": "GE Appliances: Model and serial locator",
+      "url": "https://www.geappliances.com/ge/find-model-serial-number/",
+      "retrieved": "2026-11-17",
+      "note": "Manufacturer locator and GE-specific model format, not rules for every brand."
+    },
+    {
+      "name": "CFPB: Inherited house and mortgage",
+      "url": "https://www.consumerfinance.gov/ask-cfpb/i-recently-inherited-a-house-the-mortgage-lender-said-its-required-to-determine-my-ability-to-repay-before-it-will-let-me-take-over-the-mortgage-loan-is-this-true-en-1939/",
+      "retrieved": "2026-11-17",
+      "note": "Successor documentation and inherited mortgage process."
+    }
+  ],
+  "visuals": [
+    {
+      "title": "A baseline without invented history",
+      "kicker": "Record what is actually known",
+      "steps": [
+        {
+          "label": "Evidence",
+          "detail": "Save labels, invoices and reports."
+        },
+        {
+          "label": "Confidence",
+          "detail": "Separate confirmed, recalled and unknown dates."
+        },
+        {
+          "label": "Assessment",
+          "detail": "Ask the right professional about unresolved risk."
+        },
+        {
+          "label": "New history",
+          "detail": "Record completed work from today."
+        }
+      ],
+      "caption": "Unknown is a useful status, not proof that a system has failed.",
+      "alt": "Four steps connect evidence, confidence, assessment and a new maintenance history.",
+      "kind": "sequence"
+    },
+    {
+      "title": "Three starting priorities",
+      "kicker": "Keep the work in order",
+      "steps": [
+        {
+          "label": "Authority and access",
+          "detail": "Confirm who may arrange entry and work."
+        },
+        {
+          "label": "Immediate risk",
+          "detail": "Address threats to people or property."
+        },
+        {
+          "label": "Routine baseline",
+          "detail": "Identify equipment and set supported follow-ups."
+        }
+      ],
+      "caption": "Urgent conditions can override a gradual records project.",
+      "alt": "Three priorities distinguish authority, immediate risk and routine equipment records.",
+      "kind": "timeline"
+    }
+  ],
+  "worksheet": {
+    "title": "Inherited-house maintenance baseline",
+    "prompt": "Identify the next safe action for each undocumented system.",
+    "fields": [
+      "System and location",
+      "Authorized contact",
+      "Immediate hazard or restriction",
+      "Model and serial evidence",
+      "Known dates and source",
+      "Unknown history",
+      "Professional assessment and scope",
+      "Completed work and next action"
+    ]
+  },
+  "research": {
+    "primaryQuery": "inherited house maintenance",
+    "supportingQueries": [
+      "inherited house no maintenance records",
+      "identify systems in house with no history"
+    ],
+    "intent": "Maintenance starting record for inherited or undocumented homes, not a comprehensive inheritance or probate guide.",
+    "sourceChecks": [
+      "https://www.usfa.fema.gov/prevention/home-fires/prepare-for-fire/smoke-alarms/ - Monthly testing and smoke alarm replacement age.",
+      "https://www.energystar.gov/saveathome/heating-cooling/maintenance-checklist - Pre-season contractor checkups and filter checks, not a schedule for every system.",
+      "https://www.geappliances.com/ge/find-model-serial-number/ - Manufacturer locator and GE-specific model format, not rules for every brand.",
+      "https://www.consumerfinance.gov/ask-cfpb/i-recently-inherited-a-house-the-mortgage-lender-said-its-required-to-determine-my-ability-to-repay-before-it-will-let-me-take-over-the-mortgage-loan-is-this-true-en-1939/ - Successor documentation and inherited mortgage process."
+    ],
+    "limitations": [
+      "Property authority, title, estate deadlines and insurance depend on the actual situation.",
+      "No universal equipment lifespan or serial-number date rule is used.",
+      "A visual walk-through does not establish hidden system condition or code compliance.",
+      "No keyword-volume dataset was available. Saved Reddit leads were qualitative only; Quora was blocked in the saved research."
+    ]
+  }
+}

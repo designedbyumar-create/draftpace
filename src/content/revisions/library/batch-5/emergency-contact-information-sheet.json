@@ -1,0 +1,233 @@
+{
+  "slug": "emergency-contact-information-sheet",
+  "title": "Emergency contact information sheet essentials",
+  "dek": "Write the location, first and backup contacts, key health facts and a checked date. Keep it findable without confusing a contact with legal authority.",
+  "metaDescription": "Write the location, first and backup contacts, key health facts and a checked date. Keep it findable without confusing a contact with legal authority.",
+  "updatedAt": "2026-11-17",
+  "body": [
+    {
+      "kind": "paragraphs",
+      "paragraphs": [
+        "An emergency contact information sheet should identify the person and relevant location, state how to obtain emergency help, list a first and backup contact, and provide concise current health information or its location. Add a checked date and tell the people who may need it where it is. A contact listing does not appoint a medical decision-maker.",
+        "The sheet has to work for someone who did not write it. They may know the person but not the apartment number, or know the address but not which relative can answer during work. Make those questions explicit rather than assuming the reader shares your household knowledge."
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "Emergency help comes before family notifications",
+      "paragraphs": [
+        "For a suspected life-threatening emergency in the US, call 911. Do not make a family contact a mandatory first approval step. [MedlinePlus](https://medlineplus.gov/ency/article/001927.htm) recommends accessible emergency numbers and describes warning signs including trouble breathing and unconsciousness. This guide is not a complete triage tool.",
+        "An emergency page is supporting information, not a diagnosis, treatment plan or promise that responders will find it. Get help first. If the page is immediately available, it can help with identification and contact details without delaying the call."
+      ]
+    },
+    {
+      "kind": "list",
+      "heading": "Build the working sheet",
+      "checkable": true,
+      "items": [
+        "Write the person's name and enough identification for the intended setting. Keep different people's pages separate.",
+        "For a home or care location, write the exact address, unit and necessary location details rather than relying on phone location alone.",
+        "Label the emergency-help route for the place where the sheet will be used. This guide's 911 wording is US-focused.",
+        "Ask the first and backup contacts whether they are willing, reachable and suitable for the role.",
+        "List phone numbers with area codes and clear relationship labels; add country codes where relevant.",
+        "Add current safety-relevant facts and the location of a checked medication list or clinician plan.",
+        "Date the check, choose a findable but appropriate location and tell regular helpers about it."
+      ]
+    },
+    {
+      "kind": "table",
+      "heading": "Invented example: an adult household sheet",
+      "columns": [
+        "Field",
+        "What the household records"
+      ],
+      "rows": [
+        [
+          "Person and location",
+          "Elena; actual home address and unit written on her real sheet"
+        ],
+        [
+          "Emergency route",
+          "US emergency instruction stated separately from family contact order"
+        ],
+        [
+          "First contact",
+          "Brother, mobile number checked directly with him"
+        ],
+        [
+          "Backup contact",
+          "Neighbor who agreed to help; number checked"
+        ],
+        [
+          "Health information",
+          "Current list and clinician documents in the identified folder"
+        ],
+        [
+          "Authority documents",
+          "Named role and document location recorded separately, if established"
+        ],
+        [
+          "Checked",
+          "2026-11-17; contact availability reviewed"
+        ]
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "A contact is a person to notify, not a legal appointment",
+      "paragraphs": [
+        "Use relationship labels that describe reality: partner, sister, neighbor or friend. If someone also has a legal role, identify that separately and note the document location. Do not write \"next of kin decides everything\" or assume the nearest relative automatically has unlimited authority.",
+        "[HHS guidance](https://www.hhs.gov/hipaa/for-professionals/faq/under-hipaa-when-can-a-family-member/index.html) distinguishes a personal representative under applicable law from a family member involved in care. This page cannot determine the legal role in a particular case. Ask the clinical team or a qualified local adviser about required documents and authority."
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "Make health information concise without making it misleading",
+      "paragraphs": [
+        "Keep current allergies or reported reactions clearly identified, with relevant uncertainties. Where a full medication list is needed, provide it or say where the current copy can be found. Do not abbreviate a product into an unrecognizable nickname, invent instructions or imply that a short selection is a complete medical history.",
+        "If there is an existing clinician plan, identify it as that document and keep an accessible copy as appropriate. A contact sheet should not become a homemade substitute for emergency treatment instructions. For a longer form or intake, take the supporting records rather than expecting a small summary to answer every clinical question."
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "Test whether another person can use it",
+      "paragraphs": [
+        "Ask a regular helper to find the location, contact order and document reference without prompting. You are checking the sheet, not testing their memory. If they need to unlock your phone or search your private messages, decide whether that access will actually be available in the situation you are planning for.",
+        "A paper copy can fail through being hidden, outdated or exposed to unnecessary readers. A digital copy can fail through access problems or an uncharged device. Choose a practical combination for the people involved. Do not assume a sheet is a wearable medical ID or appears on a locked screen."
+      ]
+    },
+    {
+      "kind": "scripts",
+      "heading": "Check the arrangement",
+      "items": [
+        {
+          "situation": "Asking a contact",
+          "line": "May I list you as my backup contact? Here is what I mean by that, and here is who else is listed. What number and availability should I write?"
+        },
+        {
+          "situation": "Showing a helper",
+          "line": "The emergency-help instruction comes first. These are the people to notify, and this is where the current supporting information is."
+        },
+        {
+          "situation": "Separating authority",
+          "line": "This name is a contact for notification. Any legal decision-making role is recorded separately with the relevant documents."
+        }
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "Copies, privacy and changed facts",
+      "paragraphs": [
+        "Use only the identifiers the intended reader needs. A home notice does not need every insurance number or financial detail. Keep more sensitive clinical or administrative documents in an appropriate place while making relevant emergency information accessible to the agreed helpers.",
+        "When a phone number, care location, relevant health fact or contact willingness changes, update the master and replace active copies. If you retain old pages, mark them superseded. Tell the people who regularly use the sheet what changed rather than assuming they will notice a new date at the bottom."
+      ]
+    },
+    {
+      "kind": "faq",
+      "items": [
+        {
+          "q": "How many contacts should I list?",
+          "a": "A first and a backup contact are a practical starting point, not a universal legal requirement. Choose people who have agreed to the role and can realistically be reached. More names do not help if the order, numbers or expected responsibilities are unclear."
+        },
+        {
+          "q": "Does the sheet make someone my medical decision-maker?",
+          "a": "No. Listing a name for notification does not itself establish decision-making authority. Relevant legal documents and applicable law determine that role. Keep the contact order and any established legal role separately identified so readers do not confuse the two."
+        },
+        {
+          "q": "Should the sheet be on the fridge?",
+          "a": "That can be practical in some homes if agreed helpers know to look there, but it also exposes information to visitors. Choose a place that balances access and privacy for your situation. A hidden sheet nobody knows about and a public full medical history are both poor defaults."
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "name": "MedlinePlus: Recognizing medical emergencies",
+      "url": "https://medlineplus.gov/ency/article/001927.htm",
+      "retrieved": "2026-11-17",
+      "note": "NIH-hosted search-result content checked: breathing problems, loss of consciousness and confusion are emergency warning signs; not a complete triage list."
+    },
+    {
+      "name": "HHS: Family member access and legal authority",
+      "url": "https://www.hhs.gov/hipaa/for-professionals/faq/under-hipaa-when-can-a-family-member/index.html",
+      "retrieved": "2026-11-17",
+      "note": "Page checked: personal-representative status depends on applicable law; relevant care sharing is a separate route."
+    }
+  ],
+  "visuals": [
+    {
+      "title": "Help, notify, inform",
+      "kicker": "Keep the order unambiguous",
+      "kind": "sequence",
+      "steps": [
+        {
+          "label": "Help",
+          "detail": "Obtain emergency assistance when needed."
+        },
+        {
+          "label": "Notify",
+          "detail": "Use the agreed first and backup contacts."
+        },
+        {
+          "label": "Inform",
+          "detail": "Provide relevant current facts or their location."
+        }
+      ],
+      "caption": "Do not delay an emergency call while seeking family approval.",
+      "alt": "An emergency sheet separates obtaining help, notifying contacts and supplying relevant information."
+    },
+    {
+      "title": "Contact and authority",
+      "kicker": "Two roles that can overlap but are not identical",
+      "kind": "compare",
+      "steps": [
+        {
+          "label": "Notification",
+          "detail": "A contact can be someone to call or inform."
+        },
+        {
+          "label": "Legal role",
+          "detail": "Decision-making authority depends on applicable arrangements and law."
+        },
+        {
+          "label": "Evidence",
+          "detail": "Keep the document location separate from the contact label."
+        }
+      ],
+      "caption": "A name on a contact sheet is not a legal appointment.",
+      "alt": "Notification contacts and legal decision-making roles are distinguished with supporting document locations."
+    }
+  ],
+  "worksheet": {
+    "title": "Emergency contact and location check",
+    "prompt": "Prepare a findable page for the intended setting and verify contact agreement directly.",
+    "fields": [
+      "Person and intended setting",
+      "Exact location and access details",
+      "Emergency-help route",
+      "First contact and checked number",
+      "Backup contact and checked number",
+      "Current health-record location",
+      "Separate legal-role document reference",
+      "Checked date and copy locations"
+    ]
+  },
+  "research": {
+    "primaryQuery": "emergency contact information sheet",
+    "supportingQueries": [
+      "emergency contact sheet what to include",
+      "emergency contact versus medical decision maker",
+      "household emergency information page"
+    ],
+    "intent": "Build a findable, current emergency contact sheet with clear scope, location and authority boundaries.",
+    "sourceChecks": [
+      "https://medlineplus.gov/ency/article/001927.htm - NIH-hosted search-result content checked: breathing problems, loss of consciousness and confusion are emergency warning signs; not a complete triage list.",
+      "https://www.hhs.gov/hipaa/for-professionals/faq/under-hipaa-when-can-a-family-member/index.html - Page checked: personal-representative status depends on applicable law; relevant care sharing is a separate route."
+    ],
+    "limitations": [
+      "US-focused administration; requirements and individual circumstances vary.",
+      "Saved Reddit leads informed reader-language only; no anecdotes treated as factual authority. Quora was blocked in the saved research.",
+      "No keyword-volume dataset or ranking guarantee. Product registry inspected, but live product workflows not tested."
+    ]
+  }
+}

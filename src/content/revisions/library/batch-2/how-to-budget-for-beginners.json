@@ -1,0 +1,236 @@
+{
+  "slug": "how-to-budget-for-beginners",
+  "title": "How to make a monthly budget for the first time",
+  "dek": "Start with take-home income, real expenses, and bill dates. Build a first monthly plan without counting two-week paychecks twice.",
+  "metaDescription": "Start with take-home income, real expenses, and bill dates. Build a first monthly plan without counting two-week paychecks twice.",
+  "updatedAt": "2026-11-17",
+  "body": [
+    {
+      "kind": "paragraphs",
+      "paragraphs": [
+        "To make a monthly budget, list take-home income, bills, everyday spending, and amounts you plan to save or reserve. Subtract the planned outgoings from income, then check whether each bill can be paid on its date. A month that balances in total can still run short before payday.",
+        "Your first plan does not need elaborate categories. It needs numbers drawn from statements rather than an ideal version of the month. This guide assumes mostly regular income; if pay changes substantially, use [budgeting with irregular income](/guides/how-to-budget-with-irregular-income)."
+      ]
+    },
+    {
+      "kind": "list",
+      "heading": "Build the first version",
+      "checkable": true,
+      "items": [
+        "Gather recent bank and card statements, payslips, and current bills.",
+        "Write down take-home pay and the dates it will actually arrive.",
+        "List recurring bills, debt payments, and non-monthly costs.",
+        "Estimate groceries, transport, and other essentials from recent spending.",
+        "Add feasible savings and known future-cost reserves.",
+        "Subtract every planned line, then walk the balance through payment dates.",
+        "Review actual spending and revise the next plan rather than treating the first estimate as a verdict."
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "Choose one consistent income method",
+      "paragraphs": [
+        "If you receive $1,495 every two weeks, a normal two-paycheck month brings in $2,990. You can build a base plan on that and decide separately how later three-paycheck months will be used.",
+        "Alternatively, 26 paychecks total $38,870 annually, averaging about $3,239.17 a month. That is an annualized average, not the amount deposited in every month. Using it requires money carried between months and a cash-flow check. Do not use the annual average and then count third paychecks as additional income outside that total."
+      ]
+    },
+    {
+      "kind": "table",
+      "heading": "Invented example: a two-paycheck base month",
+      "columns": [
+        "Planned line",
+        "Amount"
+      ],
+      "rows": [
+        [
+          "Take-home pay: $1,495 twice",
+          "$2,990"
+        ],
+        [
+          "Housing, utilities, phone, insurance",
+          "-$1,700"
+        ],
+        [
+          "Groceries and transport",
+          "-$600"
+        ],
+        [
+          "Required debt payments",
+          "-$100"
+        ],
+        [
+          "Non-monthly bill reserves",
+          "-$150"
+        ],
+        [
+          "Emergency savings contribution",
+          "-$100"
+        ],
+        [
+          "Flexible spending",
+          "-$150"
+        ],
+        [
+          "Unassigned margin",
+          "$90"
+        ]
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "Check the calendar after the subtraction",
+      "paragraphs": [
+        "The example leaves $90, but rent may arrive before the second paycheck. Write the opening balance and apply income and bills in date order. Keep money already committed to next month's rent out of the current month's flexible spending.",
+        "For a $600 annual bill due in twelve months, $50 a month is simple planning arithmetic. If it is due in two months and nothing is saved, that reserve is not enough. Use the amount still needed divided by the remaining saving opportunities, then decide what is feasible."
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "Avoid counting credit-card spending twice",
+      "paragraphs": [
+        "For spending categories, record the groceries or fuel when purchased. Paying the card later transfers money to settle that purchase; it is not another grocery expense. Interest, fees, and repayments of older debt need their own treatment.",
+        "Your cash-flow view still needs the actual card payment date and amount. A category plan answers what you spent; a cash-flow plan answers when cash leaves. Keep those views distinct so neither the card payment nor the underlying spending disappears."
+      ]
+    },
+    {
+      "kind": "scripts",
+      "heading": "Questions for a first weekly check",
+      "items": [
+        {
+          "situation": "Income",
+          "line": "What arrived, what changed, and which expected payment is still uncertain?"
+        },
+        {
+          "situation": "Bills",
+          "line": "Which payments cleared, and is the next amount different from the plan?"
+        },
+        {
+          "situation": "Spending",
+          "line": "Which essential-spending estimate needs changing based on what actually happened?"
+        },
+        {
+          "situation": "Ahead",
+          "line": "What must today's money still cover before the next reliable deposit?"
+        }
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "If the plan is negative",
+      "paragraphs": [
+        "First check for duplicated card payments, missing income, and unrealistic estimates. Then identify which costs can actually change and when. A subscription cancellation effective next month does not close this week's gap.",
+        "Protect essentials and address consequential missed payments promptly. Ask billers about arrangements and seek qualified debt or benefits advice when necessary. A budget reveals a resource shortfall; it cannot fix insufficient income through more precise categorization alone."
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "Keep the first month small",
+      "paragraphs": [
+        "Use a few categories you can recognize from statements. Split one category later if the detail would change a decision. If an estimate turns out wrong, update it with the reason rather than hiding the difference in miscellaneous spending.",
+        "[Consumer.gov's budgeting guidance](https://consumer.gov/your-money/making-budget) supports reviewing actual spending and using that information for the next plan. You can begin mid-month with a shorter plan, then review a complete cycle when the dates make sense."
+      ]
+    },
+    {
+      "kind": "faq",
+      "items": [
+        {
+          "q": "Do I need a zero-based budget?",
+          "a": "No particular method is required. What matters is that commitments and ordinary spending fit the resources available, with timing checked. If you assign every dollar a purpose, include reserves and a margin deliberately rather than assuming an exact zero leaves no uncertainty."
+        },
+        {
+          "q": "Should I budget from gross salary?",
+          "a": "Use income available after deductions for the household plan, while separately accounting for obligations you must still pay yourself. Gross salary can overstate spendable income. Check your payslip and actual deposits rather than copying the headline annual salary into a monthly spending plan."
+        },
+        {
+          "q": "What if I do not know what I spend?",
+          "a": "Use recent statements as a starting estimate and record the uncertainty. Check the largest or most variable lines during the first month. You do not need perfect history before beginning, but you do need to revise guesses when real spending shows they are wrong."
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "name": "Consumer.gov: making a budget",
+      "url": "https://consumer.gov/your-money/making-budget",
+      "retrieved": "2026-11-17",
+      "note": "Official guidance starts with income, bills, expenses, subtraction, and reviewing actual spending; timing and examples here are editorial calculations."
+    }
+  ],
+  "visuals": [
+    {
+      "title": "Build, then date-check",
+      "kicker": "First budget sequence",
+      "kind": "sequence",
+      "steps": [
+        {
+          "label": "Income",
+          "detail": "Use take-home money and real pay dates."
+        },
+        {
+          "label": "Outgoings",
+          "detail": "Include bills, essentials, reserves, and flexible spending."
+        },
+        {
+          "label": "Subtract",
+          "detail": "Find a surplus or shortfall."
+        },
+        {
+          "label": "Date-check",
+          "detail": "Confirm cash is available before each payment."
+        }
+      ],
+      "caption": "A balanced monthly total can still contain an unfunded payment date.",
+      "alt": "A first-budget sequence lists income and expenses, subtracts them, and checks payment timing."
+    },
+    {
+      "title": "Two ways to plan biweekly pay",
+      "kicker": "Do not combine them twice",
+      "kind": "compare",
+      "steps": [
+        {
+          "label": "Base month",
+          "detail": "Two $1,495 deposits provide $2,990."
+        },
+        {
+          "label": "Annual average",
+          "detail": "Twenty-six deposits average about $3,239.17 monthly."
+        },
+        {
+          "label": "Carryover",
+          "detail": "An average needs a plan for uneven monthly deposits."
+        }
+      ],
+      "caption": "Third paychecks are already included in the annualized average.",
+      "alt": "Two-paycheck income is compared with the annualized average and the need for carryover."
+    }
+  ],
+  "worksheet": {
+    "title": "First monthly budget and timing check",
+    "prompt": "Build one consistent income-and-expense plan, then check the dates.",
+    "fields": [
+      "Planning month and opening balance",
+      "Income method and deposit dates",
+      "Recurring bills and due dates",
+      "Essential spending estimates",
+      "Debt payments and card method",
+      "Non-monthly reserves and savings",
+      "Flexible spending and margin",
+      "Lowest projected balance date"
+    ]
+  },
+  "research": {
+    "primaryQuery": "how to make a monthly budget",
+    "supportingQueries": [
+      "first monthly budget example",
+      "budget biweekly income beginners"
+    ],
+    "intent": "Create a first regular-income monthly budget with internally consistent income and payment accounting.",
+    "sourceChecks": [
+      "https://consumer.gov/your-money/making-budget - Official guidance starts with income, bills, expenses, subtraction, and reviewing actual spending; timing and examples here are editorial calculations."
+    ],
+    "limitations": [
+      "Practical organization suggestions are not individualized professional advice.",
+      "Saved Reddit leads are qualitative only; Quora was blocked in saved research. No keyword-volume or ranking claims."
+    ]
+  }
+}

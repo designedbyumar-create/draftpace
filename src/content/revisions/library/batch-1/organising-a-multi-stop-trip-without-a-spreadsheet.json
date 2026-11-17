@@ -1,0 +1,196 @@
+{
+  "slug": "organising-a-multi-stop-trip-without-a-spreadsheet",
+  "title": "Plan a multi-stop trip without a spreadsheet",
+  "dek": "Keep transport, nights and reservations in one chronological record, with local dates, realistic buffers and the bookings each change may affect.",
+  "metaDescription": "Keep transport, nights and reservations in one chronological record, with local dates, realistic buffers and the bookings each change may affect.",
+  "updatedAt": "2026-11-17",
+  "body": [
+    {
+      "kind": "paragraphs",
+      "paragraphs": [
+        "To organize a multi-stop trip without a spreadsheet, keep one chronological list of confirmed bookings. For each, record the local start and end date, place, reference and what would need checking if it changed. Add overnight stays and unbooked gaps so a missing night or transfer is visible.",
+        "The problem usually appears between otherwise sensible bookings: the train reaches the station after the rental desk closes, or an overnight flight arrives a day later than you imagined. This guide organizes a route you are already considering. It does not choose destinations, compare live prices or guarantee a workable connection."
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "Build the travel skeleton first",
+      "paragraphs": [
+        "List the departure and arrival of each transport leg before adding activities. Use the actual date at each end, including overnight arrivals. Copy local times from confirmations and label the relevant place or time zone. Do not manually infer arrival time from the departure clock and flight duration.",
+        "Add every overnight location next. Count nights against arrival and departure dates, not a vague 'three days in Porto.' Mark gaps as unbooked rather than leaving them invisible. Check station and airport names carefully; a city can have several."
+      ]
+    },
+    {
+      "kind": "table",
+      "heading": "Invented example: one transfer day",
+      "columns": [
+        "Item",
+        "Local date and time",
+        "Check if it changes"
+      ],
+      "rows": [
+        [
+          "Train to Stop B",
+          "June 12, arrive 14:20",
+          "Station exit and onward transfer"
+        ],
+        [
+          "Car collection",
+          "June 12, 15:30",
+          "Desk hours and late-arrival terms"
+        ],
+        [
+          "Lodging",
+          "June 12-15, three nights",
+          "Check-in window and access"
+        ],
+        [
+          "Reserved activity",
+          "June 13, 09:00",
+          "Travel from lodging and cancellation terms"
+        ]
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "Record dependencies as reasons to check",
+      "paragraphs": [
+        "A transfer booked around a train arrival clearly needs review if that train changes. The lodging may still work, but only after checking its access window. A next-day activity might be unaffected unless the delay consumes the overnight stay. Write the reason, not merely an arrow linking everything to everything.",
+        "Some changes reach backward as well as forward. Moving a departure earlier can affect the preceding hotel checkout or a car return. Do not assume all earlier bookings are safe because they appear above the changed item."
+      ]
+    },
+    {
+      "kind": "list",
+      "heading": "Make the booking record usable",
+      "checkable": true,
+      "items": [
+        "Assign each stop a name and its arrival, departure and overnight dates.",
+        "Give every confirmed reservation its own line; keep ideas in a separate section.",
+        "Record the actual provider, booking channel and confirmation reference.",
+        "Add local start and end times, exact terminals or stations where relevant, and check-in windows.",
+        "Note cancellation or change deadlines with the applicable time zone.",
+        "Write the nearby bookings that require checking if this one changes.",
+        "Keep a readable offline copy and retain original confirmations for terms and details."
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "Test the joins, not only the attractions",
+      "paragraphs": [
+        "For each travel day, account for checkout, travel to the terminal, provider check-in requirements, arrival procedures, luggage and onward travel. A gap between two printed times is not automatically spare time. Verify the requirements with the actual operators and leave a buffer appropriate to the route and your needs.",
+        "The [State Department travel checklist](https://travel.state.gov/en/international-travel/planning/checklist.html) is a starting point for documents and destination preparation for US travelers. Check every country on the route, including transit requirements where relevant. A booking record is not an entry-permission check."
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "Keep a change log short",
+      "paragraphs": [
+        "When a booking moves, preserve the old and new details, identify affected joins and contact providers before assuming a refund, free change or protected connection. Record who confirmed the new arrangement. An email proposing a change is not the same as a reissued ticket.",
+        "Use [the flight-change guide](/guides/flight-changed-what-else-is-affected) for that situation. For a long trip, keep one summary of connecting legs and a separate page for each stop. The summary should still reveal where you sleep each night and how you move between places."
+      ]
+    },
+    {
+      "kind": "faq",
+      "items": [
+        {
+          "q": "Can I use paper instead of an app?",
+          "a": "Yes. A chronological note or paper record can hold the same facts. The important part is keeping it current and retaining original confirmations. Date the copy you carry so a companion does not rely on an obsolete train or hotel time after a change."
+        },
+        {
+          "q": "Should every booking depend on just one other?",
+          "a": "Not necessarily. A simple record can name the main dependency, but real trips may have several constraints. A car return can depend on lodging checkout, road travel and a flight deadline. Note the important checks rather than forcing the trip into a misleading single chain."
+        },
+        {
+          "q": "How much connection time should I leave?",
+          "a": "There is no useful universal figure for all routes. Verify operator requirements, terminal changes, immigration, baggage and whether tickets are connected or separate. Allow for your group's mobility and other needs. If a join only works with everything exactly on time, reconsider it before booking."
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "name": "U.S. Department of State: International travel checklist",
+      "url": "https://travel.state.gov/en/international-travel/planning/checklist.html",
+      "retrieved": "2026-11-17",
+      "note": "Destination research, required documents and insurance; specific entry rules need separate checks."
+    }
+  ],
+  "visuals": [
+    {
+      "title": "Check the joins",
+      "kicker": "A transfer-day chain",
+      "steps": [
+        {
+          "label": "Arrival",
+          "detail": "Use the real local arrival date and location."
+        },
+        {
+          "label": "Collection",
+          "detail": "Check travel time and desk closing."
+        },
+        {
+          "label": "Lodging",
+          "detail": "Confirm access if arrival moves."
+        },
+        {
+          "label": "Next booking",
+          "detail": "Review any remaining constraints."
+        }
+      ],
+      "caption": "A changed leg prompts checks; it does not automatically cancel every later booking.",
+      "alt": "Four connected checks follow arrival through collection, lodging and the next reservation.",
+      "kind": "sequence"
+    },
+    {
+      "title": "Two records, two purposes",
+      "kicker": "Route summary and booking detail",
+      "steps": [
+        {
+          "label": "Summary",
+          "detail": "Shows transport legs and overnight places."
+        },
+        {
+          "label": "Booking line",
+          "detail": "Holds reference, times and change terms."
+        },
+        {
+          "label": "Original",
+          "detail": "Preserves the provider's complete confirmation."
+        }
+      ],
+      "caption": "The short itinerary is an index to the underlying bookings.",
+      "alt": "Three record levels separate route overview, booking details and original confirmation.",
+      "kind": "compare"
+    }
+  ],
+  "worksheet": {
+    "title": "Multi-stop booking and join record",
+    "prompt": "Review one travel day and every booking it constrains.",
+    "fields": [
+      "Stop and overnight dates",
+      "Transport arrival details",
+      "Next fixed booking",
+      "Travel and processing buffer",
+      "Reference and provider",
+      "Change deadline and zone",
+      "Bookings to recheck",
+      "Confirmed update"
+    ]
+  },
+  "research": {
+    "primaryQuery": "multi stop trip planner",
+    "supportingQueries": [
+      "multi city itinerary without spreadsheet",
+      "organize bookings across several stops"
+    ],
+    "intent": "Chronological multi-stop booking and dependency record, not destination selection or group cost splitting.",
+    "sourceChecks": [
+      "https://travel.state.gov/en/international-travel/planning/checklist.html - Destination research, required documents and insurance; specific entry rules need separate checks."
+    ],
+    "limitations": [
+      "No transport schedules, connection minimums or destination rules are verified.",
+      "Dependency notes identify checks; they do not automatically establish which bookings remain unaffected.",
+      "No keyword-volume dataset was available. Saved Reddit leads were qualitative only; Quora was blocked in the saved research."
+    ]
+  }
+}

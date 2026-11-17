@@ -1,0 +1,237 @@
+{
+  "slug": "first-international-trip-checklist",
+  "title": "First international trip: what to check before booking",
+  "dek": "Check passport, entry and transit requirements before paying, then plan health access, money, phone service and a usable arrival backup.",
+  "metaDescription": "Check passport, entry and transit requirements before paying, then plan health access, money, phone service and a usable arrival backup.",
+  "updatedAt": "2026-11-17",
+  "body": [
+    {
+      "kind": "paragraphs",
+      "paragraphs": [
+        "Before booking your first international trip, check every traveler's passport and the entry, exit and transit requirements for the actual route. Then confirm practical health access, payment options, phone service and the first arrival. Do not apply a blanket six-month passport rule or assume a visa-free destination means no authorization is required.",
+        "The first unfamiliar checkpoint often comes before departure: a booking form asks for a name, passport details or a connection choice you have never had to consider. Deal with requirements that could prevent travel before polishing the packing list. This checklist is primarily for U.S. citizens leaving the United States; other passports and statuses can produce different requirements."
+      ]
+    },
+    {
+      "kind": "list",
+      "heading": "Before a nonrefundable booking",
+      "checkable": true,
+      "items": [
+        "Check the passport identity page, condition and expiry for every traveler, including children. Verify requirements for the actual passport and itinerary.",
+        "Read destination and transit-country entry and exit guidance from the responsible authorities. Check visa or authorization, validity, blank pages and other required evidence where relevant.",
+        "Check current passport or visa application procedures and realistic lead times if anything is missing. Do not rely on a processing estimate remembered from another trip.",
+        "Match traveler details to the required booking and identity documents. Resolve a name or status question before paying rather than hoping the airport will fix it.",
+        "Review cancellation terms and dependencies such as separate-ticket connections. Know what could be lost if an upstream booking changes.",
+        "Identify any health, accessibility, child-consent or equipment requirement that needs advance arrangements. Ask the relevant professional or authority early."
+      ]
+    },
+    {
+      "kind": "table",
+      "heading": "A first-trip order, not a universal countdown",
+      "columns": [
+        "Stage",
+        "Output",
+        "Where to confirm"
+      ],
+      "rows": [
+        [
+          "Feasibility",
+          "Documents and permissions for every traveler.",
+          "Issuing and border authorities."
+        ],
+        [
+          "Bookings",
+          "Confirmed names, dates and arrival chain.",
+          "Actual providers and booking terms."
+        ],
+        [
+          "Practical access",
+          "Health, funds and communication arrangements.",
+          "Insurer, clinician, bank and carrier as relevant."
+        ],
+        [
+          "Departure backup",
+          "Current references, addresses and document copies.",
+          "Confirmations and official requirements."
+        ],
+        [
+          "Return",
+          "Required declarations and valid return documents.",
+          "Relevant border and transport authorities."
+        ]
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "Use country information, then verify the actual rule",
+      "paragraphs": [
+        "The [State Department checklist](https://travel.state.gov/en/international-travel/planning/checklist.html) directs travelers to destination information covering entry, exit, visas, passport validity and local conditions. Use that as a starting point, then confirm consequential details with the relevant destination authority. Check every country where your itinerary creates an entry or transit requirement.",
+        "Do not generalize one regional rule to a continent, or another traveler's nationality to yours. A passport can be unexpired yet fail a destination's validity condition. Conversely, six months is not a universal requirement. Record the precise rule, relevant date basis and when you checked it."
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "Example: a route check changes the purchase",
+      "paragraphs": [
+        "Invented example: Sam finds an attractive fare with a long connection in another country. Before buying, Sam checks whether the itinerary requires an airport change, collecting baggage or entering that country, and what documents those steps require. The destination alone does not answer the transit question.",
+        "Sam also checks that the first lodging can accept the planned arrival. A flight landing late at night can make a cheap room impractical if access closes early. The decision is based on the route and provider terms, not on assuming the lowest fare creates the lowest total risk."
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "Arrange health access rather than guessing treatment",
+      "paragraphs": [
+        "Ask your health insurer what is covered abroad and how assistance, payment and claims work. If considering travel insurance, read the actual exclusions, covered reasons, assistance terms and any relevant timing requirements. Do not assume a policy automatically covers every cancellation, existing condition or transport home.",
+        "Discuss health preparation with an appropriate clinician or travel service where needed. Check destination rules for your medicines, equipment and documentation. Keep required supplies accessible and plan storage. This article does not recommend vaccines, treatment or doses for a particular traveler."
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "Make money and communication work independently",
+      "paragraphs": [
+        "Ask card issuers about use abroad, fees, replacement and notification practices rather than assuming every bank requires a travel notice. Consider a backup payment route kept separately. Know how to contact the issuer without the missing card or phone.",
+        "Confirm roaming or alternative mobile access with your carrier or provider, including compatibility, activation and the phone's lock status where relevant. Download essential arrival information for offline use. A plug adapter must suit the destination and equipment; it is not automatically a voltage converter."
+      ]
+    },
+    {
+      "kind": "scripts",
+      "heading": "Ask the practical coverage question",
+      "items": [
+        {
+          "situation": "Insurer",
+          "line": "For this destination and these dates, what medical or assistance cover applies, what exclusions matter and how would I contact you and obtain help if my phone were unavailable?"
+        },
+        {
+          "situation": "Lodging",
+          "line": "Our arrival is scheduled for this local date and time. Please confirm the exact address, access window and what to do if the flight is delayed."
+        }
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "Prepare the arrival and the return",
+      "paragraphs": [
+        "Keep the first accommodation address, transport plan, essential references, insurer contact and one trusted home contact accessible offline or on paper. Keep document copies separately from originals and share appropriate copies securely with a trusted person. Copies help with recovery; they do not replace documents required to board or cross a border.",
+        "Check return-entry and customs requirements through the relevant official authority before shopping or packing restricted items. This guide does not reproduce changing duty allowances or cash-reporting thresholds. Know where the actual requirements are and allow time to follow them."
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "The final verification is short but real",
+      "paragraphs": [
+        "Recheck official entry and operator information close to departure, especially after an itinerary or policy change. For U.S. citizens, consider STEP for embassy updates and emergency contact support as described by the State Department. It is not insurance or an individual guarantee of assistance.",
+        "Stop and resolve any missing requirement, disputed name, uncertain child permission or essential-equipment problem before departure. Use [the document checklist](/guides/travel-document-checklist) to organize what you have verified and [the night-before guide](/guides/night-before-you-travel-checklist) for final execution."
+      ]
+    },
+    {
+      "kind": "faq",
+      "items": [
+        {
+          "q": "How early should I prepare?",
+          "a": "As soon as the destination and likely dates are known, especially if documents or permissions need processing. Use current official lead times for your actual applications rather than a fixed month count. Some arrangements can be quick, but you cannot know which ones until the route and traveler requirements are checked."
+        },
+        {
+          "q": "Does my passport always need six months left?",
+          "a": "No. Validity rules depend on the country, passport and circumstances. Check destination and relevant transit requirements, including what date the validity period is measured from. Do not rely on a general checklist or a travel companion's experience as proof that your passport meets the rule."
+        },
+        {
+          "q": "Is travel insurance mandatory?",
+          "a": "There is no universal answer. Some destinations or circumstances require particular cover, and individual policies differ substantially. Verify entry requirements and ask your existing insurer what applies abroad. If buying additional cover, read the actual terms rather than assuming medical assistance, cancellation and evacuation are all included."
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "name": "U.S. Department of State: international travel checklist",
+      "url": "https://travel.state.gov/en/international-travel/planning/checklist.html",
+      "retrieved": "2026-11-17",
+      "note": "Current official search text: destination-specific entry and passport checks, separate document copies, and STEP. No blanket six-month rule or processing-time promise used."
+    }
+  ],
+  "visuals": [
+    {
+      "title": "Check feasibility before spending",
+      "kicker": "First international trip",
+      "kind": "sequence",
+      "steps": [
+        {
+          "label": "Traveler",
+          "detail": "Identify the actual passport and status."
+        },
+        {
+          "label": "Route",
+          "detail": "Check destination and transit conditions."
+        },
+        {
+          "label": "Documents",
+          "detail": "Resolve required permissions and processing."
+        },
+        {
+          "label": "Booking",
+          "detail": "Pay with the requirements and terms understood."
+        }
+      ],
+      "caption": "An attractive fare does not establish that the traveler can use the route.",
+      "alt": "Four feasibility checks connect traveler status, route rules and documents before booking a first international trip."
+    },
+    {
+      "title": "The arrival backup",
+      "kicker": "Independent of one phone",
+      "kind": "record",
+      "steps": [
+        {
+          "label": "Address",
+          "detail": "Keep the first lodging location usable offline."
+        },
+        {
+          "label": "Transport",
+          "detail": "Record the confirmed arrival route and conditions."
+        },
+        {
+          "label": "Contacts",
+          "detail": "Retain insurer, provider and trusted-person details."
+        },
+        {
+          "label": "Copies",
+          "detail": "Keep appropriate document copies separate from originals."
+        }
+      ],
+      "caption": "Backups support recovery but do not replace required travel documents.",
+      "alt": "Four arrival-backup components cover lodging, transport, essential contacts and separately held document copies."
+    }
+  ],
+  "worksheet": {
+    "title": "First international trip verification sheet",
+    "prompt": "Record the official requirement and the practical arrangement for each traveler and route.",
+    "fields": [
+      "Traveler passport and status",
+      "Destination and transit route",
+      "Entry requirements and checked official links",
+      "Application or authorization status",
+      "Health access and insurer assistance",
+      "Payment and phone backup",
+      "First arrival address and access",
+      "Return requirements and final recheck"
+    ]
+  },
+  "research": {
+    "primaryQuery": "first international trip checklist",
+    "supportingQueries": [
+      "first trip abroad preparation",
+      "passport validity and transit rules",
+      "international travel before booking checklist"
+    ],
+    "intent": "Sequence first-trip feasibility and practical arrangements without country-specific assumptions or changing numeric thresholds.",
+    "sourceChecks": [
+      {
+        "url": "https://travel.state.gov/en/international-travel/planning/checklist.html",
+        "verified": "Current official search text: destination-specific entry and passport checks, separate document copies, and STEP. No blanket six-month rule or processing-time promise used."
+      }
+    ],
+    "limitations": [
+      "No destination-specific rule, processing time, customs allowance, insurance policy or personal medical need was individually assessed.",
+      "Saved search leads were reviewed for reader language only, not authority or prevalence. Quora was blocked in saved research. No search-volume or ranking estimate is available."
+    ]
+  }
+}

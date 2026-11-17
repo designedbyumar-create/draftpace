@@ -1,0 +1,207 @@
+{
+  "slug": "car-maintenance-log-what-to-write-down",
+  "title": "Car maintenance log: what to write down",
+  "dek": "Record the full date, odometer and work completed, then link each entry to its receipt. Keep unknown history separate from your next-service plan.",
+  "metaDescription": "Record the full date, odometer and work completed, then link each entry to its receipt. Keep unknown history separate from your next-service plan.",
+  "updatedAt": "2026-11-17",
+  "body": [
+    {
+      "kind": "paragraphs",
+      "paragraphs": [
+        "A car maintenance log needs the full date, the odometer reading with units and a precise description of completed work. Put the vehicle identity at the top. Add the shop or DIY name and a receipt reference when you have them; costs and warranty notes are useful but optional.",
+        "You may be starting with one oil-change receipt, a stack of invoices or no history at all. The job is not to recreate a perfect past. It is to make the next question answerable: which vehicle, what work, when, and what evidence supports the entry?"
+      ]
+    },
+    {
+      "kind": "table",
+      "heading": "Invented examples: completed work only",
+      "columns": [
+        "Date",
+        "Odometer",
+        "Completed work",
+        "Evidence"
+      ],
+      "rows": [
+        [
+          "2026-03-03",
+          "48,100 mi",
+          "Oil and filter changed by Oak Garage",
+          "Invoice 104, oil specification on invoice"
+        ],
+        [
+          "2026-03-03",
+          "48,100 mi",
+          "Tires rotated by Oak Garage",
+          "Same invoice 104"
+        ],
+        [
+          "2026-06-21",
+          "50,600 mi",
+          "Rear brake pads replaced",
+          "Invoice 219; inspection notes attached"
+        ],
+        [
+          "2026-07-09",
+          "51,400 mi",
+          "Front wiper blades replaced, DIY",
+          "Parts receipt W1"
+        ],
+        [
+          "2026-08-02",
+          "52,000 mi",
+          "Battery replaced by Oak Garage",
+          "Invoice 260; warranty terms filed"
+        ]
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "Make the header unambiguous",
+      "paragraphs": [
+        "Write the year, make, model and a stable identifier such as the VIN or plate. A VIN is vehicle identity, not the same thing as your bank account or home address. It is useful when records might be separated from the car or compared with invoices. For two similar cars, add a familiar label without relying on the label alone.",
+        "Choose miles or kilometers and write the unit in the header and wherever a reading might be copied elsewhere. Use dates with a year. An entry saying \"Mar 3\" will be ambiguous after several years, even if it feels obvious today."
+      ]
+    },
+    {
+      "kind": "list",
+      "heading": "Start the log with the next real fact",
+      "checkable": true,
+      "items": [
+        "Write the vehicle header and choose one master record: notebook, spreadsheet or app.",
+        "Copy the actual service date and odometer from the invoice. If either is missing, mark it unknown rather than substituting today.",
+        "Describe the action and location: inspected front brakes, replaced rear pads, or topped up washer fluid.",
+        "Add the performer and receipt reference. Photograph receipts clearly enough to read the work and odometer.",
+        "Store warranty terms with the relevant job and note where they can be found.",
+        "Keep recommendations in a separate pending-work list. Add a completion entry only when the work is actually done."
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "Inspected is not replaced",
+      "paragraphs": [
+        "\"Brakes\" does not tell the next shop whether anyone inspected them, fitted pads or replaced a component. Likewise, a receipt for a filter proves purchase, not installation. For DIY work, record the installation date, odometer, what you fitted and relevant part or fluid information from the actual purchase.",
+        "A finding can be recorded without pretending a repair happened: \"2026-09-10, 53,200 mi, shop inspected rear tires; recommendation retained in invoice 310.\" Put a follow-up beside the pending jobs, not in a completed-work row. Do not turn an informal comment into a measurement the shop never provided."
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "Missing history and conflicting records",
+      "paragraphs": [
+        "If you remember an old service but have no date, keep it in a separate note marked \"owner recollection, date unknown.\" You do not need to discard useful context, but it should not look like a verified entry. Ask the servicing shop whether it can supply an invoice or vehicle-specific history.",
+        "If mileage runs backward or two invoices conflict, stop calculating future due points from those numbers. Check the vehicle identifier, units and whether an invoice contains a typing error. Retain the original and add a dated correction note rather than silently changing evidence."
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "Keep the summary and evidence together",
+      "paragraphs": [
+        "The [FTC](https://consumer.ftc.gov/articles/0211-auto-repair-basics) advises obtaining a completed repair order with work, parts, charges and odometer information. Your log makes that paperwork searchable; it does not independently prove workmanship or replace the invoice.",
+        "Choose a simple filing name such as \"2026-08-02 battery invoice 260\" and make a backup outside the car. A notebook left in the glove box should not be the only copy. When preparing to sell, make a buyer version that removes personal payment details while preserving vehicle and service information."
+      ]
+    },
+    {
+      "kind": "faq",
+      "items": [
+        {
+          "q": "Does DIY maintenance belong in the log?",
+          "a": "Yes. Record what you actually completed, not only the parts you bought. Add the date, odometer and parts or fluid details that matter. Keep the purchase evidence, while being clear that it does not independently verify installation or the quality of the work."
+        },
+        {
+          "q": "Should I put the next due date in the same table?",
+          "a": "You can, but label it as a plan and keep it distinct from completed work. Future intervals come from the correct manual and applicable conditions, not from the log itself. A completed row should remain understandable even if a planned service later changes."
+        },
+        {
+          "q": "How much old history should I reconstruct?",
+          "a": "Start with records you can identify reliably, then stop. Mark the earliest supported point and any known gaps. A short honest history is more useful than a long list with invented dates. Keep uncertain recollections in notes rather than using them to calculate maintenance deadlines."
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "name": "FTC: Auto repair basics",
+      "url": "https://consumer.ftc.gov/articles/0211-auto-repair-basics",
+      "retrieved": "2026-11-17",
+      "note": "Page checked: estimates, diagnostic charges, completed repair orders and manufacturer maintenance schedules."
+    }
+  ],
+  "visuals": [
+    {
+      "title": "One service, four anchors",
+      "kicker": "A record that survives several years",
+      "kind": "record",
+      "steps": [
+        {
+          "label": "Vehicle",
+          "detail": "Tie the entry to the right VIN or plate."
+        },
+        {
+          "label": "Date and reading",
+          "detail": "Include a full date and odometer units."
+        },
+        {
+          "label": "Action",
+          "detail": "Say what was inspected, replaced or repaired."
+        },
+        {
+          "label": "Evidence",
+          "detail": "Point to an invoice or identify a DIY entry."
+        }
+      ],
+      "caption": "Costs and warranty notes can be added without obscuring the basic entry.",
+      "alt": "Four anchors connect a vehicle identity, full date and odometer, completed action and supporting evidence."
+    },
+    {
+      "title": "Done, planned or unknown",
+      "kicker": "Do not mix these records",
+      "kind": "compare",
+      "steps": [
+        {
+          "label": "Done",
+          "detail": "A dated entry records work completed."
+        },
+        {
+          "label": "Planned",
+          "detail": "A separate list holds recommendations and appointments."
+        },
+        {
+          "label": "Unknown",
+          "detail": "A gap remains labelled until evidence resolves it."
+        }
+      ],
+      "caption": "Buying a part or booking a visit is not a completed service.",
+      "alt": "Completed services, planned jobs and unknown history are shown as three distinct record types."
+    }
+  ],
+  "worksheet": {
+    "title": "Vehicle service log starter",
+    "prompt": "Complete one row from an invoice or a job you finished yourself.",
+    "fields": [
+      "Vehicle identity and units",
+      "Full service date",
+      "Odometer at service",
+      "Exact completed work",
+      "Shop or DIY performer",
+      "Invoice or parts reference",
+      "Warranty terms location",
+      "Unresolved history or correction"
+    ]
+  },
+  "research": {
+    "primaryQuery": "car maintenance log",
+    "supportingQueries": [
+      "car service log columns",
+      "record DIY car maintenance",
+      "maintenance receipts and service history"
+    ],
+    "intent": "Create a compact, durable service log with dated examples, receipt references and honest gaps.",
+    "sourceChecks": [
+      "https://consumer.ftc.gov/articles/0211-auto-repair-basics - Page checked: estimates, diagnostic charges, completed repair orders and manufacturer maintenance schedules."
+    ],
+    "limitations": [
+      "US-focused administration; requirements and individual circumstances vary.",
+      "Saved Reddit leads informed reader-language only; no anecdotes treated as factual authority. Quora was blocked in the saved research.",
+      "No keyword-volume dataset or ranking guarantee. Product registry inspected, but live product workflows not tested."
+    ]
+  }
+}

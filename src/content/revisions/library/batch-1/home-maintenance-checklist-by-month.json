@@ -1,0 +1,224 @@
+{
+  "slug": "home-maintenance-checklist-by-month",
+  "title": "Home maintenance by month: a flexible checklist",
+  "dek": "Build a month-by-month home maintenance plan around weather, equipment instructions and last-done dates, with safe limits for DIY work.",
+  "metaDescription": "Build a month-by-month home maintenance plan around weather, equipment instructions and last-done dates, with safe limits for DIY work.",
+  "updatedAt": "2026-11-17",
+  "body": [
+    {
+      "kind": "paragraphs",
+      "paragraphs": [
+        "Use a monthly home maintenance checklist for two jobs: recurring checks and preparation for the next weather season. Keep equipment service dates separately, using the manual and last completed work. A calendar month alone cannot tell you whether a particular system needs service.",
+        "A house does not spread its needs evenly across twelve tidy boxes. Leaves fall late, a storm blocks a drain in June and a heat pump may work through much of the year. The calendar below is a cold-climate northern-hemisphere starting point. Move or remove tasks to match your location and systems."
+      ]
+    },
+    {
+      "kind": "list",
+      "heading": "Set up the calendar first",
+      "checkable": true,
+      "items": [
+        "List the systems actually present, including any septic, well, sump pump, fireplace or irrigation.",
+        "Collect manuals and service records before assigning intervals.",
+        "Add local freeze, heavy-rain, heat and storm periods.",
+        "Separate safe owner observations from professional maintenance.",
+        "For each planned task, record last done, next trigger and who is responsible.",
+        "Schedule a short monthly review and leave room for a newly discovered problem."
+      ]
+    },
+    {
+      "kind": "table",
+      "heading": "A twelve-month starter calendar",
+      "columns": [
+        "Month",
+        "Planning focus"
+      ],
+      "rows": [
+        [
+          "January",
+          "Review winter leaks, drafts and unresolved heating concerns"
+        ],
+        [
+          "February",
+          "Check indoor moisture signs and plan spring contractors"
+        ],
+        [
+          "March",
+          "Assess safe ground-level drainage after thaw or rain"
+        ],
+        [
+          "April",
+          "Arrange cooling checks before local peak heat"
+        ],
+        [
+          "May",
+          "Review exterior damage and weather-dependent repairs"
+        ],
+        [
+          "June",
+          "Watch cooling performance and condensate concerns"
+        ],
+        [
+          "July",
+          "Review local storm or wildfire preparation"
+        ],
+        [
+          "August",
+          "Book heating assessment before local cold demand"
+        ],
+        [
+          "September",
+          "Plan leaf, drainage and freeze preparations"
+        ],
+        [
+          "October",
+          "Complete system-specific freeze work before local frost"
+        ],
+        [
+          "November",
+          "Recheck drainage after leaf fall and storms"
+        ],
+        [
+          "December",
+          "Review completed work, open defects and next year's dates"
+        ]
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "Keep the monthly line short",
+      "paragraphs": [
+        "Test smoke alarms monthly under [USFA guidance](https://www.usfa.fema.gov/prevention/home-fires/prepare-for-fire/smoke-alarms/). Check other safety devices according to their instructions. Look for visible leaks, unusual moisture or damage in accessible areas. Review HVAC filters using the system's instructions and operating conditions; inspection is not an automatic order to replace every filter monthly.",
+        "[ENERGY STAR](https://www.energystar.gov/saveathome/heating-cooling/maintenance-checklist) recommends contractor pre-season HVAC checkups and describes filter care. It does not make electrical, combustion or refrigerant work a homeowner checklist item. Keep those tasks assigned to qualified people."
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "Invented example: move the month, keep the reason",
+      "paragraphs": [
+        "A household in a wet, mild climate has no routine frost preparation but gets blocked gutters during autumn storms. It removes irrelevant freeze tasks and adds a safe drainage observation before the rainy period. A household farther north books heating service earlier because cold arrives sooner.",
+        "Both households record 'roof drainage clear after storm, October 19' rather than merely ticking 'October done.' If a gutter is visibly blocked in September, neither waits for the final leaf to fall. Condition overrides the suggested month."
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "What not to turn into a DIY afternoon",
+      "paragraphs": [
+        "Do not climb onto a roof, open an electrical cabinet, service gas equipment or use compressed air on irrigation because a generic calendar names the task. Removing a window AC, bleeding a heating system or winterizing an outdoor supply needs equipment-specific instructions and an assessment of access and risk.",
+        "Stop for gas odor, burning smells, sparking, a carbon monoxide alarm or dangerous water near electrical equipment. Get away from the hazard and contact the appropriate emergency or utility service. For nonurgent unfamiliar equipment, book an assessment instead of experimenting."
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "When a month is missed",
+      "paragraphs": [
+        "Do not move every unchecked box into the next weekend. Check which risks remain live, which season has passed and which tasks require a new appointment. Use [a home maintenance log](/guides/home-maintenance-log-template) to preserve actual work, not a fiction of perfect attendance.",
+        "An equipment interval should be calculated from a reliable service record or manufacturer rule, not from the last time you looked at the calendar. Mark missing history unknown until a qualified check establishes a useful starting point."
+      ]
+    },
+    {
+      "kind": "faq",
+      "items": [
+        {
+          "q": "Is this the complete list for every home?",
+          "a": "No. It omits many system-specific tasks and cannot account for every climate, building type or local requirement. Add equipment instructions and professional recommendations. The point is to organize your home's work, not certify that every possible maintenance obligation has been covered."
+        },
+        {
+          "q": "Should empty summer months have no tasks?",
+          "a": "No month is automatically maintenance-free. Heat, storms, smoke, irrigation and cooling can create summer work. This starter calendar gives review themes rather than declaring that nothing happens. Use the local hazard season and actual system condition to decide what belongs there."
+        },
+        {
+          "q": "What if I do not know the last service date?",
+          "a": "Mark it unknown and ask the manufacturer or a qualified professional what assessment is appropriate. Unknown does not mean every component needs replacement. After work is actually completed, save the date, scope and invoice so future reminders have an honest basis."
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "name": "U.S. Fire Administration: Smoke alarms",
+      "url": "https://www.usfa.fema.gov/prevention/home-fires/prepare-for-fire/smoke-alarms/",
+      "retrieved": "2026-11-17",
+      "note": "Monthly testing and smoke alarm replacement age."
+    },
+    {
+      "name": "ENERGY STAR: Maintenance checklist",
+      "url": "https://www.energystar.gov/saveathome/heating-cooling/maintenance-checklist",
+      "retrieved": "2026-11-17",
+      "note": "Pre-season contractor checkups and filter checks, not a schedule for every system."
+    }
+  ],
+  "visuals": [
+    {
+      "title": "Two maintenance clocks",
+      "kicker": "Season and elapsed time",
+      "steps": [
+        {
+          "label": "Weather trigger",
+          "detail": "Prepare before local frost, rain or heat."
+        },
+        {
+          "label": "Service interval",
+          "detail": "Use the manual and last completed service."
+        },
+        {
+          "label": "Condition trigger",
+          "detail": "Respond to a visible problem even outside its planned month."
+        }
+      ],
+      "caption": "A problem today overrides a later calendar reminder.",
+      "alt": "Three triggers distinguish weather preparation, service intervals and condition-based action.",
+      "kind": "compare"
+    },
+    {
+      "title": "From calendar to evidence",
+      "kicker": "Close the maintenance loop",
+      "steps": [
+        {
+          "label": "Plan",
+          "detail": "Name the task, owner and trigger."
+        },
+        {
+          "label": "Complete",
+          "detail": "Record the date and actual work."
+        },
+        {
+          "label": "Review",
+          "detail": "Save the evidence and next due basis."
+        }
+      ],
+      "caption": "A tick records less than a dated description of completed work.",
+      "alt": "A three-step loop connects a planned task with work evidence and the next review.",
+      "kind": "sequence"
+    }
+  ],
+  "worksheet": {
+    "title": "Annual home maintenance planner",
+    "prompt": "Assign work by local conditions and reliable service dates.",
+    "fields": [
+      "System or area",
+      "Local season or hazard",
+      "Manual instruction",
+      "Last completed date",
+      "Next due trigger",
+      "Owner or contractor",
+      "Evidence and open concern"
+    ]
+  },
+  "research": {
+    "primaryQuery": "seasonal home maintenance checklist",
+    "supportingQueries": [
+      "monthly home maintenance calendar",
+      "seasonal house maintenance schedule"
+    ],
+    "intent": "Adaptable annual maintenance calendar separated from equipment-specific service intervals.",
+    "sourceChecks": [
+      "https://www.usfa.fema.gov/prevention/home-fires/prepare-for-fire/smoke-alarms/ - Monthly testing and smoke alarm replacement age.",
+      "https://www.energystar.gov/saveathome/heating-cooling/maintenance-checklist - Pre-season contractor checkups and filter checks, not a schedule for every system."
+    ],
+    "limitations": [
+      "Calendar is a northern-hemisphere cold-climate starter, not an exhaustive home checklist.",
+      "No universal intervals for septic, irrigation, roofing or individual equipment models are asserted.",
+      "No keyword-volume dataset was available. Saved Reddit leads were qualitative only; Quora was blocked in the saved research."
+    ]
+  }
+}

@@ -1,0 +1,249 @@
+{
+  "slug": "life-admin-binder-what-goes-in-it",
+  "title": "Life admin binder: what belongs in each section",
+  "dek": "Build an emergency binder that points to contacts, documents and practical arrangements without exposing passwords or implying legal authority.",
+  "metaDescription": "Build an emergency binder that points to contacts, documents and practical arrangements without exposing passwords or implying legal authority.",
+  "updatedAt": "2026-11-17",
+  "body": [
+    {
+      "kind": "paragraphs",
+      "paragraphs": [
+        "A life admin binder should tell a trusted person who to contact, what needs attention and where the supporting documents are kept. Start with a current contact page, a document-location index, essential household arrangements and a review date. Treat it as a map to information, not a substitute for signed legal documents or authorized account access.",
+        "The binder becomes useful when someone other than you can answer a practical question from it: who collects the children tonight, where the insurance policy is, or which bill needs attention. This guide covers that emergency handoff, primarily in a US context. A household planner for cleaning, meals and maintenance is a different tool."
+      ]
+    },
+    {
+      "kind": "table",
+      "heading": "Eight sections with a specific job",
+      "columns": [
+        "Section",
+        "Useful contents",
+        "Keep separately"
+      ],
+      "rows": [
+        [
+          "Contacts",
+          "First call, backup, professional contacts and each person's role.",
+          "Unnecessary private details about other people."
+        ],
+        [
+          "Documents",
+          "Location of will, ID, directives and authority documents.",
+          "Originals needing secure storage."
+        ],
+        [
+          "Money administration",
+          "Institutions, essential bills, payment method and whom to ask.",
+          "Full account numbers and authentication secrets."
+        ],
+        [
+          "Home",
+          "Occupancy details, insurer, utilities and spare-key contact.",
+          "Entry codes on a widely shared page."
+        ],
+        [
+          "Dependents",
+          "Agreed caregivers, school and routine information.",
+          "Sensitive records not needed by the recipient."
+        ],
+        [
+          "Animals",
+          "Caregiver, vet, feeding information and records location.",
+          "Old medication instructions."
+        ],
+        [
+          "Devices and accounts",
+          "Provider names and approved recovery or access arrangements.",
+          "Passwords and recovery codes."
+        ],
+        [
+          "Preferences and business",
+          "Relevant wishes, document locations and continuity contact.",
+          "Confidential client files or unsupported legal wording."
+        ]
+      ]
+    },
+    {
+      "kind": "list",
+      "heading": "Build the first usable version",
+      "checkable": true,
+      "items": [
+        "Write the first call and a backup, ask their agreement and check how they can be reached without your phone.",
+        "List essential document locations precisely enough to find them. Mark missing, unsigned or outdated documents honestly.",
+        "Separate finding information from acting on it. Record who has verified authority, what document supports that role and where it is held.",
+        "Identify practical tasks for the first day and the next two weeks: dependents, animals, housing, employer and essential payments.",
+        "Keep access secrets in a separate protected arrangement, and explain how the authorized person learns the approved access process.",
+        "Walk one trusted person through the binder, then record the review date and the event that should trigger the next update."
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "Example: an entry that can be acted on",
+      "paragraphs": [
+        "Invented example: a binder says, \"Home: rented apartment. Manager contact on the lease cover page in the desk file. Backup key held by my sister, who has agreed to help. Rent payment schedule is in the bill list. Bank authority still to be arranged.\" That final sentence matters: it prevents an organizing note from looking like permission to transact.",
+        "Compare \"my sister handles everything.\" It does not say whether she has agreed, has a working key, knows which institution to call or can legally act. A useful entry can be short while still exposing unfinished arrangements. Put a named next action beside a gap rather than hiding it behind confident wording."
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "Where copies belong",
+      "paragraphs": [
+        "An index-only binder reduces what is exposed if someone sees it. A more restricted emergency file may appropriately contain selected copies, such as a signed advance directive. Choose the contents according to who will receive it and why. \"Never include any document copies\" is not a universal rule.",
+        "The [National Institute on Aging](https://www.nia.nih.gov/health/advance-care-planning/choosing-health-care-proxy?form=MG0AV3) recommends sharing signed health care documents with the proxy and care team. A binder entry can identify those copies and the current version; it does not make a person your legally appointed agent. Witnessing and execution rules must be checked for your jurisdiction."
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "Keep the secure layer separate",
+      "paragraphs": [
+        "Do not put passwords, recovery codes, full financial identifiers or a safe combination in an ordinary handoff binder. A document-location map is still sensitive, so store it privately and share deliberately. For digital copies, consider both access control and whether the intended person can reach them during an outage or device loss.",
+        "The [FDIC storage guide](https://catalog.fdic.gov/catalog/sfc/servlet.shepherd/document/download/069t000000BciamAAB) distinguishes documents needed quickly from items suitable for a safe deposit box. Ask an attorney where an original will should be held rather than keeping the only route to essential papers inside a box no one can readily access."
+      ]
+    },
+    {
+      "kind": "scripts",
+      "heading": "Test the binder without sharing secrets",
+      "items": [
+        {
+          "situation": "Handoff test",
+          "line": "If I could not answer for two weeks, could you find the current contact page, identify what needs attention and tell where the supporting papers are? Please mark anything that depends on information only I know."
+        }
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "When the binder is not enough",
+      "paragraphs": [
+        "Pause and get qualified help where the gap concerns legal authority, contested guardianship, a disputed will, benefits, a business duty or someone pressuring you to grant access. Do not add someone to an account simply to make the binder feel finished. The right arrangement depends on your circumstances and its risks.",
+        "If coercion, estrangement or a safety concern affects who can enter the home or see information, limit distribution and ask an appropriate professional about secure planning. A family relationship is not itself a reason to share every section. You can provide a task-specific handoff rather than the entire file."
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "Maintain it by changes, not page count",
+      "paragraphs": [
+        "Review after a move, new dependent, job change, separation, death of a named helper or change of document storage. An occasional scheduled review is also useful, but it is an organizing choice rather than a legal requirement. Put the checked date on the contact page and retire obsolete copies when an arrangement changes.",
+        "[Personal Life Affairs Companion](/shop/personal-life-affairs-companion) is an optional way to record locations and produce a handoff book. The published listing explicitly excludes password storage and legal-document drafting. The paper structure above works without a purchase."
+      ]
+    },
+    {
+      "kind": "faq",
+      "items": [
+        {
+          "q": "Should a life admin binder contain original documents?",
+          "a": "Not automatically. Use the binder to identify originals and their secure locations. Include selected copies only where the recipient needs them and privacy is appropriate. Ask a qualified adviser about original wills and other legally important papers; ordinary emergency access and secure long-term storage are different concerns."
+        },
+        {
+          "q": "Is writing someone's name enough to authorize them?",
+          "a": "No. An emergency contact, a proposed caregiver and a legally appointed agent are different roles. Record the actual status and supporting document, including anything not yet arranged. If the intended helper needs to make transactions or decisions, confirm the appropriate authority with the relevant institution or qualified adviser."
+        },
+        {
+          "q": "How much do I need to finish before sharing it?",
+          "a": "Share a useful first version once the recipient and privacy boundaries are clear. Contacts, immediate responsibilities and document locations can already help. Mark unknowns and uncompleted arrangements explicitly, date the file, and agree how the recipient will know when an updated version replaces it."
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "name": "National Institute on Aging: choosing a health care proxy",
+      "url": "https://www.nia.nih.gov/health/advance-care-planning/choosing-health-care-proxy?form=MG0AV3",
+      "retrieved": "2026-11-17",
+      "note": "Official article text returned through search: willingness, honoring preferences, alternate agent, state execution rules, and sharing signed documents."
+    },
+    {
+      "name": "FDIC: Money Smart for Older Adults resource guide",
+      "url": "https://catalog.fdic.gov/catalog/sfc/servlet.shepherd/document/download/069t000000BciamAAB",
+      "retrieved": "2026-11-17",
+      "note": "Official PDF search text: emergency-access documents versus safe deposit storage; consult attorney about original will location. Historical general guidance, not bank-specific access rules."
+    }
+  ],
+  "visuals": [
+    {
+      "title": "Information is not authority",
+      "kicker": "Emergency binder layers",
+      "kind": "compare",
+      "steps": [
+        {
+          "label": "Contact",
+          "detail": "Names the person to call."
+        },
+        {
+          "label": "Location",
+          "detail": "Shows where supporting information is held."
+        },
+        {
+          "label": "Authority",
+          "detail": "Identifies the separate legal or institutional arrangement."
+        },
+        {
+          "label": "Action",
+          "detail": "States the practical task the authorized person can take."
+        }
+      ],
+      "caption": "A name on a page does not grant permission to transact.",
+      "alt": "Four binder layers distinguish contact details, document locations, formal authority and practical actions."
+    },
+    {
+      "title": "The first useful binder",
+      "kicker": "Build by immediate need",
+      "kind": "sequence",
+      "steps": [
+        {
+          "label": "Reach someone",
+          "detail": "Confirm first contact and backup."
+        },
+        {
+          "label": "Find documents",
+          "detail": "Record current locations and missing items."
+        },
+        {
+          "label": "Cover essentials",
+          "detail": "Identify dependents, home and payment tasks."
+        },
+        {
+          "label": "Test access",
+          "detail": "Check the handoff without exposing credentials."
+        }
+      ],
+      "caption": "A short tested file is more useful than an unexplained collection.",
+      "alt": "Four steps build a usable emergency binder from contacts through documents, essential tasks and a handoff test."
+    }
+  ],
+  "worksheet": {
+    "title": "Emergency binder section index",
+    "prompt": "For each section, record its purpose, location and unresolved access question.",
+    "fields": [
+      "First contact and backup",
+      "Legal document locations and status",
+      "Essential bill list location",
+      "Dependents and animal caregiver plan",
+      "Home and key contact",
+      "Approved account-access arrangement",
+      "Last review date and next change trigger"
+    ]
+  },
+  "research": {
+    "primaryQuery": "life admin binder",
+    "supportingQueries": [
+      "what goes in an emergency binder",
+      "life admin binder sections",
+      "emergency binder privacy"
+    ],
+    "intent": "Build a findable emergency information index while keeping authority and confidential access separate.",
+    "sourceChecks": [
+      {
+        "url": "https://www.nia.nih.gov/health/advance-care-planning/choosing-health-care-proxy?form=MG0AV3",
+        "verified": "Official article text returned through search: willingness, honoring preferences, alternate agent, state execution rules, and sharing signed documents."
+      },
+      {
+        "url": "https://catalog.fdic.gov/catalog/sfc/servlet.shepherd/document/download/069t000000BciamAAB",
+        "verified": "Official PDF search text: emergency-access documents versus safe deposit storage; consult attorney about original will location. Historical general guidance, not bank-specific access rules."
+      }
+    ],
+    "limitations": [
+      "Storage guidance is general and partly historical. No document execution, personal authority or security arrangement was individually assessed.",
+      "Saved search leads were reviewed for reader language only, not authority or prevalence. Quora was blocked in saved research. No search-volume or ranking estimate is available."
+    ]
+  }
+}

@@ -1,0 +1,216 @@
+{
+  "slug": "how-much-of-your-money-is-actually-safe-to-spend",
+  "title": "How much money is safe to spend after your bills?",
+  "dek": "Start with usable cash, reserve bills and everyday essentials until your next reliable income, and keep unreflected payments from being counted twice.",
+  "metaDescription": "Start with usable cash, reserve bills and everyday essentials until your next reliable income, and keep unreflected payments from being counted twice.",
+  "updatedAt": "2026-11-17",
+  "body": [
+    {
+      "kind": "paragraphs",
+      "paragraphs": [
+        "Money available for an optional purchase is usable cash minus commitments, essential living costs and the amount you need to protect before the next reliable income. Your banking app's available balance is a starting point, not the answer. Check which pending transactions are already reflected so you do not subtract the same payment twice.",
+        "A positive balance can look reassuring on the day before insurance, groceries and a card payment all need funding. The useful exercise is a dated cash check for a defined period. This is a budgeting estimate, not a bank guarantee, investment recommendation or promise that no surprise expense will occur."
+      ]
+    },
+    {
+      "kind": "list",
+      "heading": "Build the estimate before deciding on the purchase",
+      "checkable": true,
+      "items": [
+        "Choose the end date: usually the next reliable income date. If income is uncertain, use a shorter review period and protect known essentials rather than counting an expected payment as received.",
+        "Start with cash actually usable in the payment account. Exclude credit limits, overdraft facilities, inaccessible deposits and protected savings you do not intend to spend.",
+        "Check pending debits, outstanding checks and transfers. Subtract committed payments only to the extent they are not already reflected in the starting balance.",
+        "Reserve every bill due within the period, including annual charges, debt payments and any agreed deposit. Check the actual scheduled card payment, not an assumed balance.",
+        "Allow for groceries, fuel, transport, care and other necessary spending before income arrives. A bills-only remainder is not all discretionary.",
+        "Reserve money needed for later obligations that the next income will not fully cover, plus a personal uncertainty buffer. Date the result and recalculate when facts change."
+      ]
+    },
+    {
+      "kind": "table",
+      "heading": "Invented example: ten days until reliable income",
+      "columns": [
+        "Line",
+        "Amount",
+        "Treatment"
+      ],
+      "rows": [
+        [
+          "Usable balance after reflected holds",
+          "$1,800",
+          "Starting point."
+        ],
+        [
+          "Unreflected check",
+          "-$100",
+          "Committed but not in the displayed balance."
+        ],
+        [
+          "Bills before income",
+          "-$650",
+          "Includes the actual card payment due."
+        ],
+        [
+          "Groceries and transport",
+          "-$220",
+          "Necessary spending still ahead."
+        ],
+        [
+          "Protected future cost",
+          "-$300",
+          "Already assigned to a later obligation."
+        ],
+        [
+          "Uncertainty buffer",
+          "-$150",
+          "Chosen for this example, not a universal minimum."
+        ],
+        [
+          "Estimated flexible remainder",
+          "$380",
+          "Only while these facts remain accurate."
+        ]
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "Check timing, not just the total",
+      "paragraphs": [
+        "A whole-month surplus can hide an account shortfall on Tuesday. Keep the relevant bills and income dates beside the calculation. If one account pays rent and another holds the spare cash, verify whether a transfer will arrive before the payment is taken. Avoid assuming that money elsewhere is instantly usable.",
+        "The [CFPB toolkit](https://www.consumerfinance.gov/consumer-tools/educator-tools/your-money-your-goals/toolkit/) provides bill-calendar and cash-flow tools for this timing problem. The [OCC's checking-account guidance](https://occ.gov/topics/consumers-and-communities/consumer-protection/depository-services/checking-accounts.html) explains why deposited funds and displayed balances need care. Your own account terms decide availability.",
+        "Do not ignore next month's rent merely because another payday comes first. Ask whether that income will actually cover it and the other obligations then due. A known shortfall after payday may require holding some of today's cash back now. The date window is a planning boundary, not permission to forget a larger obligation."
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "Cards and pending transactions need one consistent treatment",
+      "paragraphs": [
+        "For this cash snapshot, reserve the payment that will actually leave before the review date. If you intend to pay the statement in full, use the scheduled full payment. If you carry a balance, this calculation does not decide the appropriate repayment strategy; it still needs the required payment and any other payment you have committed to make.",
+        "An individual purchase and the card repayment can otherwise be counted twice. Likewise, a debit already deducted from available cash should not be deducted again as outstanding. Label each item reflected, unreflected or future. If you cannot reconcile a material difference, ask the bank before making the optional purchase. [The balance guide](/guides/available-balance-vs-current-balance) deals with that narrower question."
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "When the result is negative or uncertain",
+      "paragraphs": [
+        "Keep a negative number visible. It shows an estimated funding gap, not spare money rounded to zero. Pause optional spending, verify dates and amounts, and contact affected providers early about legitimate options. Do not cancel an essential payment or move protected tax money without understanding the consequences.",
+        "A positive estimate can still be wrong when a bill is omitted, a hold changes, income arrives late or necessary spending is underestimated. Update after significant changes rather than trusting a note because it is only a few days old. For a specific purchase, ask whether the remaining buffer and obligations still work after its full cost, including associated fees."
+      ]
+    },
+    {
+      "kind": "faq",
+      "items": [
+        {
+          "q": "Is my available balance safe to spend?",
+          "a": "It is not a complete spending allowance. It may reflect some holds and pending items, but not every check, future bill or everyday essential you still need to fund. Start there, reconcile unreflected commitments, and reserve necessary spending before treating the remainder as flexible money."
+        },
+        {
+          "q": "Should I include savings?",
+          "a": "Only include savings you genuinely intend and are able to use for this purpose. Emergency reserves, tax money and known future costs already have jobs. Including them simply to make the remainder positive hides the tradeoff. Record a deliberate change of purpose rather than silently counting protected money twice."
+        },
+        {
+          "q": "What if my next paycheck is uncertain?",
+          "a": "Do not treat uncertain income as cash already available. Use a shorter review window, protect immediate essentials and identify which obligations need a provider conversation. A flexible remainder based on a hoped-for payment is not dependable. Recalculate when the payment is received and usable."
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "name": "CFPB: Your Money, Your Goals toolkit",
+      "url": "https://www.consumerfinance.gov/consumer-tools/educator-tools/your-money-your-goals/toolkit/",
+      "retrieved": "2026-11-17",
+      "note": "Opened: bill calendar, income tracking and cash-flow budgeting tools; exact subtraction example is editorial."
+    },
+    {
+      "name": "OCC: checking accounts",
+      "url": "https://occ.gov/topics/consumers-and-communities/consumer-protection/depository-services/checking-accounts.html",
+      "retrieved": "2026-11-17",
+      "note": "Opened: deposit availability and caution about balances including overdraft protection."
+    }
+  ],
+  "visuals": [
+    {
+      "title": "Cash is not all flexible",
+      "kicker": "Reserve what already has a job",
+      "kind": "sequence",
+      "steps": [
+        {
+          "label": "Usable cash",
+          "detail": "Exclude credit, inaccessible funds and protected savings."
+        },
+        {
+          "label": "Commitments",
+          "detail": "Deduct bills and unreflected payments once."
+        },
+        {
+          "label": "Essentials and buffer",
+          "detail": "Reserve living costs and uncertainty before optional spending."
+        },
+        {
+          "label": "Review",
+          "detail": "Date the remainder and update after material changes."
+        }
+      ],
+      "caption": "A spending estimate depends on complete inputs and payment timing.",
+      "alt": "A spending calculation moves from usable cash through commitments and essentials to a dated flexible remainder."
+    },
+    {
+      "title": "Count each payment once",
+      "kicker": "Reconcile before subtracting",
+      "kind": "compare",
+      "steps": [
+        {
+          "label": "Reflected",
+          "detail": "The debit is already reducing the starting balance."
+        },
+        {
+          "label": "Unreflected",
+          "detail": "The payment is committed but not yet included."
+        },
+        {
+          "label": "Future",
+          "detail": "The obligation is still ahead and needs a reserve."
+        }
+      ],
+      "caption": "A pending label alone does not tell you whether the bank has already deducted the amount.",
+      "alt": "Three transaction categories prevent reflected, unreflected and future payments from being counted twice."
+    }
+  ],
+  "worksheet": {
+    "title": "Until-income spending estimate",
+    "prompt": "Use one account and one review date, counting each payment only once.",
+    "fields": [
+      "Account and balance timestamp",
+      "Next reliable income or review date",
+      "Usable cash excluding credit",
+      "Unreflected commitments",
+      "Bills and necessary living costs",
+      "Protected future costs and buffer",
+      "Estimated flexible remainder",
+      "Change that triggers recalculation"
+    ]
+  },
+  "research": {
+    "primaryQuery": "how much money is safe to spend",
+    "supportingQueries": [
+      "money left after bills and groceries",
+      "safe to spend until payday",
+      "avoid double counting pending payments"
+    ],
+    "intent": "A dated cash-flow estimate before discretionary spending, distinct from defining bank balances.",
+    "sourceChecks": [
+      {
+        "url": "https://www.consumerfinance.gov/consumer-tools/educator-tools/your-money-your-goals/toolkit/",
+        "verified": "Opened: bill calendar, income tracking and cash-flow budgeting tools; exact subtraction example is editorial."
+      },
+      {
+        "url": "https://occ.gov/topics/consumers-and-communities/consumer-protection/depository-services/checking-accounts.html",
+        "verified": "Opened: deposit availability and caution about balances including overdraft protection."
+      }
+    ],
+    "limitations": [
+      "No guarantee against overdraft or unexpected costs.",
+      "Account availability, payment amounts and benefits conditions require personal verification."
+    ]
+  }
+}

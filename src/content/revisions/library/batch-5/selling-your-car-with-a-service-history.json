@@ -1,0 +1,226 @@
+{
+  "slug": "selling-your-car-with-a-service-history",
+  "title": "Selling your car with a clear service history",
+  "dek": "Build a buyer-ready service summary with supporting receipts, honest gaps and personal details removed. Keep sale paperwork separate.",
+  "metaDescription": "Build a buyer-ready service summary with supporting receipts, honest gaps and personal details removed. Keep sale paperwork separate.",
+  "updatedAt": "2026-11-17",
+  "body": [
+    {
+      "kind": "paragraphs",
+      "paragraphs": [
+        "Give a prospective buyer a dated summary of maintenance and repairs, backed by the records you actually hold. Identify the car, state where the history starts, mark gaps, and remove personal information from copies. Service history is evidence to inspect, not a guarantee of condition or a promised increase in price.",
+        "A buyer looking through twenty receipts should not have to work out which car they belong to or whether \"service\" means a repair, inspection or oil change. Your summary is an index to those records. This guide covers that handover, not all legal duties involved in a private US vehicle sale."
+      ]
+    },
+    {
+      "kind": "list",
+      "heading": "Build the buyer copy",
+      "checkable": true,
+      "items": [
+        "Gather invoices, your log, DIY records and any history inherited from earlier owners.",
+        "Check the VIN or other vehicle identifier on each document before including it.",
+        "List each completed job by full date, odometer with units, work performed and performer.",
+        "Assign each supporting document a short reference and put copies in the same order as the summary.",
+        "State missing periods and unsupported recollections explicitly. Do not describe an incomplete file as a full history.",
+        "Remove addresses, payment details and unrelated information from buyer copies; keep service dates, mileage and shop details legible.",
+        "Retain your own copy of the handover and check official sale requirements separately."
+      ]
+    },
+    {
+      "kind": "table",
+      "heading": "Invented example: the summary and its evidence",
+      "columns": [
+        "Date or period",
+        "What the seller can say",
+        "Supporting record"
+      ],
+      "rows": [
+        [
+          "Before 2023-04-15",
+          "No earlier invoices supplied at purchase",
+          "Gap explicitly stated"
+        ],
+        [
+          "2023-04-15, 41,000 mi",
+          "Ownership began; no service asserted",
+          "Purchase document retained separately"
+        ],
+        [
+          "2024-06-21, 53,900 mi",
+          "Oil/filter and tire rotation",
+          "Garage invoice S2"
+        ],
+        [
+          "2025-01-08, 60,200 mi",
+          "Battery replaced",
+          "Invoice S3; transfer terms not yet checked"
+        ],
+        [
+          "2026-08-19, 71,400 mi",
+          "Front wipers replaced, DIY",
+          "Owner entry plus parts receipt S4"
+        ]
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "Evidence has different strengths",
+      "paragraphs": [
+        "A garage invoice documents what the garage recorded. Your own log documents what you wrote. A parts receipt documents a purchase. Keep those distinctions visible, especially for DIY work. Do not create a garage-style invoice for your own labor or imply that a receipt validates every related job.",
+        "Earlier-owner invoices can document work before your ownership. Describe them as supplied records, rather than work you personally witnessed. If a service is remembered but unsupported, say so. A gap means the file is incomplete; it does not establish that no maintenance happened."
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "History reports can include servicing",
+      "paragraphs": [
+        "[CARFAX describes](https://www.carfax.com/buying/how-to-read-a-carfax-report) reports containing reported maintenance, including oil changes and tire rotations. Do not tell a buyer that history reports never show routine servicing. Equally, a report is not a complete account of everything ever done to a vehicle. Compare it with the original documents and identify differences without inventing an explanation.",
+        "A detailed file does not establish the car is fault-free today. Leave room for an independent inspection and keep current faults or unanswered questions separate from the historical record. Avoid language such as \"nothing to hide\" as a substitute for evidence."
+      ]
+    },
+    {
+      "kind": "scripts",
+      "heading": "Answer the awkward questions",
+      "items": [
+        {
+          "situation": "Where does the history start?",
+          "line": "These are the records I have from my purchase onward. Earlier work is not documented in this file."
+        },
+        {
+          "situation": "Was this garage work?",
+          "line": "That entry is a DIY job. The log records what I did and the parts receipt is attached; it is not a shop certification."
+        },
+        {
+          "situation": "Is the replacement part still under warranty?",
+          "line": "The terms are attached. I have not confirmed transferability, so please do not assume the coverage transfers."
+        }
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "Privacy and sale requirements are separate checks",
+      "paragraphs": [
+        "Make copies before redacting. On a digital copy, use proper redaction rather than placing a movable black shape over text, then inspect the exported file. Do not alter the work description or hide a relevant vehicle fact under the excuse of privacy. If a shop needs to reissue an invoice, ask it to do so.",
+        "A service file does not replace title transfer, odometer disclosures, lien releases or other applicable sale requirements. Use [your state motor vehicle agency](https://www.usa.gov/state-motor-vehicle-services). [California DMV](https://www.dmv.ca.gov/portal/vehicle-registration/titles/title-transfers-and-changes/) is one example of separate transfer paperwork, not a rule for other states. If ownership, a lien or a mileage discrepancy is unresolved, pause the transaction and obtain the appropriate agency or legal guidance."
+      ]
+    },
+    {
+      "kind": "faq",
+      "items": [
+        {
+          "q": "Will good service records increase the selling price?",
+          "a": "They give a buyer evidence to evaluate and can make questions easier to answer. They do not produce a dependable price premium for every vehicle or market. Do not quote a percentage uplift without reliable evidence specific to the situation."
+        },
+        {
+          "q": "Can I sell with missing service receipts?",
+          "a": "Missing receipts do not by themselves establish whether a sale can proceed or what disclosures apply. Describe the history accurately, include supported facts and check local sale requirements. Do not claim full history or suggest that a buyer inspection excuses misleading statements."
+        },
+        {
+          "q": "Should I give the buyer my original invoices?",
+          "a": "Decide what originals need to travel with the car and retain copies for yourself. During enquiries, a redacted copy is usually more practical than giving strangers your only evidence. Warranty documents may have their own transfer requirements, so check the actual terms before promising coverage."
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "name": "CARFAX: How to read a report",
+      "url": "https://www.carfax.com/buying/how-to-read-a-carfax-report",
+      "retrieved": "2026-11-17",
+      "note": "Provider page checked: reports can contain reported oil changes, tire rotations and service visits."
+    },
+    {
+      "name": "California DMV: Title transfers and changes",
+      "url": "https://www.dmv.ca.gov/portal/vehicle-registration/titles/title-transfers-and-changes/",
+      "retrieved": "2026-11-17",
+      "note": "Page checked: title transfer is separate from maintenance history; California example only."
+    },
+    {
+      "name": "USAGov: State motor vehicle services",
+      "url": "https://www.usa.gov/state-motor-vehicle-services",
+      "retrieved": "2026-11-17",
+      "note": "Official directory checked; links readers to their own jurisdiction, not a universal deadline or insurance rule."
+    }
+  ],
+  "visuals": [
+    {
+      "title": "Service-history handover",
+      "kicker": "Summary first, evidence behind it",
+      "kind": "sequence",
+      "steps": [
+        {
+          "label": "Identify",
+          "detail": "Match the vehicle to the paperwork."
+        },
+        {
+          "label": "Summarize",
+          "detail": "List supported work and known gaps."
+        },
+        {
+          "label": "Attach",
+          "detail": "Link each entry to its receipt or owner record."
+        },
+        {
+          "label": "Review",
+          "detail": "Remove personal details without changing service facts."
+        }
+      ],
+      "caption": "A clear index helps the buyer inspect the supporting records.",
+      "alt": "A four-stage handover joins vehicle identity, a service summary, supporting evidence and a privacy review."
+    },
+    {
+      "title": "What the file establishes",
+      "kicker": "Past evidence is not present condition",
+      "kind": "compare",
+      "steps": [
+        {
+          "label": "Invoice",
+          "detail": "Shows what a named shop recorded at that visit."
+        },
+        {
+          "label": "Owner log",
+          "detail": "Shows the owner's account, including labelled DIY work."
+        },
+        {
+          "label": "Inspection",
+          "detail": "Assesses the vehicle now within the inspection's scope."
+        }
+      ],
+      "caption": "None of these makes all three checks unnecessary.",
+      "alt": "Shop invoices, owner logs and a present-day inspection answer different buyer questions."
+    }
+  ],
+  "worksheet": {
+    "title": "Buyer service-history handover index",
+    "prompt": "Match each statement in the sale summary to evidence and mark any gaps.",
+    "fields": [
+      "Vehicle identity and current reading",
+      "Earliest supported history date",
+      "Completed work and mileage",
+      "Evidence reference",
+      "DIY or inherited-record label",
+      "Missing periods",
+      "Personal details to redact",
+      "Unresolved warranty or sale questions"
+    ]
+  },
+  "research": {
+    "primaryQuery": "selling a car with service history",
+    "supportingQueries": [
+      "prepare car service records for buyer",
+      "redact service invoices before selling car",
+      "sell car missing maintenance receipts"
+    ],
+    "intent": "Prepare a credible, privacy-conscious service-history handover for a private US car sale without price promises.",
+    "sourceChecks": [
+      "https://www.carfax.com/buying/how-to-read-a-carfax-report - Provider page checked: reports can contain reported oil changes, tire rotations and service visits.",
+      "https://www.dmv.ca.gov/portal/vehicle-registration/titles/title-transfers-and-changes/ - Page checked: title transfer is separate from maintenance history; California example only.",
+      "https://www.usa.gov/state-motor-vehicle-services - Official directory checked; links readers to their own jurisdiction, not a universal deadline or insurance rule."
+    ],
+    "limitations": [
+      "US-focused administration; requirements and individual circumstances vary.",
+      "Saved Reddit leads informed reader-language only; no anecdotes treated as factual authority. Quora was blocked in the saved research.",
+      "No keyword-volume dataset or ranking guarantee. Product registry inspected, but live product workflows not tested."
+    ]
+  }
+}

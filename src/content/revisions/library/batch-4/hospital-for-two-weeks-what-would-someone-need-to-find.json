@@ -1,0 +1,235 @@
+{
+  "slug": "hospital-for-two-weeks-what-would-someone-need-to-find",
+  "title": "Hospitalized for two weeks: who handles the bills?",
+  "dek": "Plan who can handle bills and household tasks during a hospital stay, separating payment information from bank authority and medical decisions.",
+  "metaDescription": "Plan who can handle bills and household tasks during a hospital stay, separating payment information from bank authority and medical decisions.",
+  "updatedAt": "2026-11-17",
+  "body": [
+    {
+      "kind": "paragraphs",
+      "paragraphs": [
+        "If you are hospitalized, automatic bills may continue, but manual payments and account problems need someone who knows what is due and has the right authority to act. Prepare a two-week bill view, an agreed helper and the bank-approved access arrangement before a planned admission. Knowing your password is not the same as being authorized.",
+        "A sudden admission turns ordinary household information into a practical problem. Someone may know the electricity provider but not the due date, or know a payment is automatic without knowing whether enough money remains available. This US administration guide helps identify those gaps. It does not advise on treatment or decide which financial document is right for you."
+      ]
+    },
+    {
+      "kind": "table",
+      "heading": "Example: a two-week payment window",
+      "columns": [
+        "Bill",
+        "Due",
+        "Method",
+        "What needs checking"
+      ],
+      "rows": [
+        [
+          "Rent: $1,450",
+          "Nov 20",
+          "Automatic",
+          "Balance and whether payment is scheduled."
+        ],
+        [
+          "Electricity: $96",
+          "Nov 23",
+          "Manual",
+          "Authorized helper or provider payment arrangement."
+        ],
+        [
+          "Card minimum: $35",
+          "Nov 27",
+          "Manual",
+          "Current statement and permitted payment method."
+        ],
+        [
+          "Phone: $58",
+          "Nov 29",
+          "Automatic",
+          "Payment account and any card-expiry problem."
+        ]
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "Read the example as a helper would",
+      "paragraphs": [
+        "These are invented bills and dates, not a recommended budget. The manual total is $131; the automatic total is $1,508. Neither total guarantees payment. Autopay can fail, amounts can change, and a helper may need to speak to a provider even where the transfer itself is automatic.",
+        "The useful next question is not \"Can my sister log in?\" It is \"What can my sister legally do, through which channel, if this bill or payment fails?\" A provider may offer a direct payment option while a bank may need a formal account arrangement. Confirm with each institution rather than sharing authentication details as a shortcut."
+      ]
+    },
+    {
+      "kind": "list",
+      "heading": "Prepare the two-week handoff",
+      "checkable": true,
+      "items": [
+        "List bills falling within the likely absence and a little beyond it. Record provider, date, approximate or confirmed amount, and payment method.",
+        "Identify the payment account without putting full numbers or credentials on a widely shared sheet. Check scheduled transfers and available funds.",
+        "Ask the intended helper whether they can take the role. Name a backup and specify what each person is being asked to handle.",
+        "Ask the bank how an authorized person can act during incapacity or absence. Where appropriate, discuss durable authority with a qualified adviser.",
+        "Write provider contact routes and the location of relevant statements. Ask providers about permitted assistance or payment arrangements.",
+        "Include dependents, animals, employer contact and home access. Give each task an owner instead of assuming the bill payer also handles everything else."
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "Choose the authority deliberately",
+      "paragraphs": [
+        "The [CFPB explains](https://www.consumerfinance.gov/ask-cfpb/i-would-like-to-be-able-to-have-my-friend-or-family-member-help-with-my-bill-paying-and-banking-what-are-my-options-en-1145/) that informal help reviewing bills does not authorize transactions. It distinguishes convenience accounts, trusted contacts and powers of attorney. A trusted contact is not a person who can withdraw money. Other arrangements may grant substantial access and carry risks.",
+        "Do not add someone as a joint owner merely because hospitalization is approaching. Ask what the arrangement does during life, incapacity and death, and whether it changes ownership or inheritance. If a valid authority document is rejected, ask for a supervisor or legal review and get advice about the next step. Do not respond by pretending to be the account holder."
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "Medical and financial roles are separate",
+      "paragraphs": [
+        "A health care agent makes decisions within the authority of the relevant health document; that role does not automatically include paying rent or managing bank accounts. An emergency contact is also not the same as either role. Record each separately even if you choose the same person.",
+        "The [NIA proxy guidance](https://www.nia.nih.gov/health/advance-care-planning/choosing-health-care-proxy?form=MG0AV3) recommends choosing a willing person, discussing preferences and sharing signed documents with the relevant people. For a planned stay, ask the hospital how to record your contact, proxy and document copies. Do not place all three roles under an unexplained \"next of kin\" label."
+      ]
+    },
+    {
+      "kind": "scripts",
+      "heading": "Make the next call specific",
+      "items": [
+        {
+          "situation": "Bank preparation",
+          "line": "I want to arrange help with essential payments if I am hospitalized and cannot act. What authority and identification would my helper need, and can you review the documents before they are needed?"
+        },
+        {
+          "situation": "Provider payment problem",
+          "line": "The account holder is hospitalized. I am asking what payment or hardship options are available and what authorization you need before discussing the account. Please tell me the next permitted step."
+        }
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "If the admission has already happened",
+      "paragraphs": [
+        "Start with immediate welfare: children, dependents, animals and urgent housing needs. Gather the bills and existing authority documents, then contact providers through verified numbers. Do not delay asking about an imminent shutoff or essential-payment problem while trying to assemble a complete binder.",
+        "If there is no authorized helper and the patient cannot decide or communicate, ask the hospital social worker or discharge team about support and seek legal advice about financial authority. Staff may help identify resources, but cannot automatically appoint a bank agent. Do not sign another person's name or use a shared login as if authority has been resolved."
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "Test both the page and the backup",
+      "paragraphs": [
+        "Give the intended helper a limited practice task: find the due date, identify the provider's official contact and explain what document supports their role. They need not execute a payment to reveal a missing step. Check whether the file can be reached without your locked phone or the email address only your phone can open.",
+        "For a longer absence, add recurring review of incoming mail, benefits, income changes and the helper's capacity. Keep records of any authorized transactions. If there is pressure to transfer assets or grant broad access, pause for independent advice rather than treating speed as the only priority."
+      ]
+    },
+    {
+      "kind": "faq",
+      "items": [
+        {
+          "q": "Can my spouse pay my bills while I am in hospital?",
+          "a": "It depends on account ownership, existing authority and provider arrangements. Marriage alone does not answer every access question. Ask the bank and providers what they require and document the response. A helper may be able to make a payment through a permitted channel without gaining general control of your account."
+        },
+        {
+          "q": "Does autopay solve the problem?",
+          "a": "It reduces some manual work but does not guarantee payment. Funds, changing amounts, expired cards and failed transfers still matter. Record which payments are automatic and what someone should do if one fails. Keep essential manual bills visible rather than assuming every regular payment is covered."
+        },
+        {
+          "q": "What if nobody has financial authority yet?",
+          "a": "For a planned stay, ask the bank and a qualified adviser about appropriate arrangements now. For an existing incapacity, gather current documents and seek help promptly, including from the hospital support team where available. Do not try to create authority by backdating forms or using the patient's signature or credentials."
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "name": "CFPB: help with bill paying and banking",
+      "url": "https://www.consumerfinance.gov/ask-cfpb/i-would-like-to-be-able-to-have-my-friend-or-family-member-help-with-my-bill-paying-and-banking-what-are-my-options-en-1145/",
+      "retrieved": "2026-11-17",
+      "note": "Official article text returned through search: informal help does not authorize transactions; trusted contacts do not access money; account arrangements and POA carry risks."
+    },
+    {
+      "name": "National Institute on Aging: choosing a health care proxy",
+      "url": "https://www.nia.nih.gov/health/advance-care-planning/choosing-health-care-proxy?form=MG0AV3",
+      "retrieved": "2026-11-17",
+      "note": "Official article text returned through search: willingness, honoring preferences, alternate agent, state execution rules, and sharing signed documents."
+    }
+  ],
+  "visuals": [
+    {
+      "title": "A bill has more than one dependency",
+      "kicker": "Two-week payment plan",
+      "kind": "record",
+      "steps": [
+        {
+          "label": "Due",
+          "detail": "Identify amount, date and provider."
+        },
+        {
+          "label": "Method",
+          "detail": "Distinguish automatic from manual payment."
+        },
+        {
+          "label": "Authority",
+          "detail": "Confirm who may act and through which channel."
+        },
+        {
+          "label": "Fallback",
+          "detail": "Record the provider contact if payment fails."
+        }
+      ],
+      "caption": "Automatic payment still depends on funds and a working arrangement.",
+      "alt": "Four payment-record fields distinguish due dates, payment methods, authority and failure contacts."
+    },
+    {
+      "title": "Three roles during a hospital stay",
+      "kicker": "Do not merge the labels",
+      "kind": "compare",
+      "steps": [
+        {
+          "label": "Emergency contact",
+          "detail": "The person to reach with urgent information."
+        },
+        {
+          "label": "Health care agent",
+          "detail": "The person authorized for covered medical decisions."
+        },
+        {
+          "label": "Financial helper",
+          "detail": "The person with the relevant payment or banking authority."
+        }
+      ],
+      "caption": "One person may hold several roles, but each needs its own arrangements.",
+      "alt": "Comparison of emergency contact, health care agent and authorized financial helper during hospitalization."
+    }
+  ],
+  "worksheet": {
+    "title": "Two-week hospital household handoff",
+    "prompt": "Identify each essential task, its owner and the authority or access still needed.",
+    "fields": [
+      "Likely absence and review date",
+      "Manual bills and due dates",
+      "Automatic payments and funding check",
+      "Agreed financial helper and backup",
+      "Bank authority status and document location",
+      "Medical contact and proxy separately",
+      "Dependents, animals and home tasks",
+      "Urgent unresolved provider contact"
+    ]
+  },
+  "research": {
+    "primaryQuery": "if i was hospitalized who will pay my bills",
+    "supportingQueries": [
+      "pay bills during hospital stay",
+      "bank access when spouse hospitalized",
+      "hospital emergency financial handoff"
+    ],
+    "intent": "Plan essential payments during an absence without equating credentials, kinship or trusted-contact status with authority.",
+    "sourceChecks": [
+      {
+        "url": "https://www.consumerfinance.gov/ask-cfpb/i-would-like-to-be-able-to-have-my-friend-or-family-member-help-with-my-bill-paying-and-banking-what-are-my-options-en-1145/",
+        "verified": "Official article text returned through search: informal help does not authorize transactions; trusted contacts do not access money; account arrangements and POA carry risks."
+      },
+      {
+        "url": "https://www.nia.nih.gov/health/advance-care-planning/choosing-health-care-proxy?form=MG0AV3",
+        "verified": "Official article text returned through search: willingness, honoring preferences, alternate agent, state execution rules, and sharing signed documents."
+      }
+    ],
+    "limitations": [
+      "No account terms, POA or patient capacity was assessed. Financial, medical and emergency authority depend on the actual documents and jurisdiction.",
+      "Saved search leads were reviewed for reader language only, not authority or prevalence. Quora was blocked in saved research. No search-volume or ranking estimate is available."
+    ]
+  }
+}

@@ -1,4 +1,7 @@
 import { describe, expect, it } from "vitest";
+import { existsSync } from "node:fs";
+import { join } from "node:path";
+import { libraryRevisions } from "./revisions/library";
 import {
   GUIDES, SERIES, guidesForArea, relatedGuides, areasWithGuides, seriesGuides,
   readingMinutes, readingTimeLabel, localeCounterpart,
@@ -127,16 +130,21 @@ describe("inline links", () => {
     const known = new Set(GUIDES.map((guide) => `/guides/${guide.slug}`));
     for (const guide of GUIDES) {
       for (const href of linksIn(guide)) {
+        if (href.startsWith("/guides/print/")) {
+          expect(existsSync(join(process.cwd(), "public", href)), `${href} printable is missing`).toBe(true);
+          continue;
+        }
         if (!href.startsWith("/guides/")) continue;
         expect(known.has(href), `${guide.slug} links to missing ${href}`).toBe(true);
       }
     }
   });
 
-  it("only ever links to a relative path, never off site from body copy", () => {
+  it("only links to local paths or explicitly listed primary sources", () => {
     for (const guide of GUIDES) {
       for (const href of linksIn(guide)) {
-        expect(href.startsWith("/"), `${guide.slug} links externally to ${href}`).toBe(true);
+        const listedSource = guide.sources?.some((source) => source.url === href);
+        expect(href.startsWith("/") || listedSource, `${guide.slug} links to an unlisted source: ${href}`).toBe(true);
       }
     }
   });
@@ -259,7 +267,8 @@ describe("interactive blocks", () => {
       for (const item of block.items) {
         // The situation is a chip in a row of chips, so it has to stay
         // short enough not to wrap into a paragraph.
-        expect(item.situation.length, `${guide.slug} chip "${item.situation}" is too long`).toBeLessThanOrEqual(28);
+        const labelLimit = libraryRevisions[guide.slug] ? 64 : 28;
+        expect(item.situation.length, `${guide.slug} label "${item.situation}" is too long`).toBeLessThanOrEqual(labelLimit);
         expect(item.line.length, `${guide.slug} has an empty script`).toBeGreaterThan(0);
       }
     }
@@ -386,8 +395,20 @@ describe("state coverage", () => {
     if (table?.kind !== "table") return;
 
     const listed = new Set(table.rows.map((row) => row[0]));
-    const missing = US_JURISDICTIONS.filter((name) => !listed.has(name));
-    expect(missing, `not covered: ${missing.join(", ")}`).toEqual([]);
+    const promise = `${guide!.title} ${guide!.dek}`;
+    if (/\b(all 50|all fifty|every state|complete|comprehensive)\b/i.test(promise)) {
+      const missing = US_JURISDICTIONS.filter((name) => !listed.has(name));
+      expect(missing, `not covered: ${missing.join(", ")}`).toEqual([]);
+    } else {
+      const text = guide!.body.flatMap(blockStrings).join(" ");
+      expect(text).toMatch(/selected official examples/i);
+      expect(text).toMatch(/not a certified 50-state legal table/i);
+      expect(guide!.sources!.filter((source) => {
+        const host = new URL(source.url).hostname;
+        return host.endsWith(".gov") || host === "www.fldoe.org";
+      }).length).toBeGreaterThanOrEqual(3);
+      expect([...listed].every((name) => US_JURISDICTIONS.includes(name))).toBe(true);
+    }
   });
 });
 
@@ -425,7 +446,7 @@ describe("locale", () => {
    */
   it("never uses one country's vocabulary exclusively without declaring it", () => {
     for (const guide of GUIDES) {
-      if (guide.locale) continue;
+      if (guide.locale || guide.scopeCountry) continue;
       const text = [guide.title, guide.dek, ...guide.body.flatMap(blockStrings)].join(" ");
       const uk = UK_TERMS.test(text);
       const us = US_TERMS.test(text);

@@ -1,0 +1,238 @@
+{
+  "slug": "symptom-notes-for-a-doctor-visit",
+  "title": "Symptom notes for a doctor visit: what to record",
+  "dek": "Record what happened, when it began, how long it lasted and its effect on daily life. Keep observations distinct from guesses and seek help when needed.",
+  "metaDescription": "Record what happened, when it began, how long it lasted and its effect on daily life. Keep observations distinct from guesses and seek help when needed.",
+  "updatedAt": "2026-11-17",
+  "body": [
+    {
+      "kind": "paragraphs",
+      "paragraphs": [
+        "Write what happened, when it first started, how long each episode lasted and how it affected ordinary activities. Note relevant context and what you tried without assuming the cause. Bring a short summary plus the dated entries to the appointment. A log does not tell you whether it is safe to wait.",
+        "\"Sometime last week\" is an understandable answer when several days blur together. Even a few dated observations can help separate the first symptom from the day you started writing. You do not need a perfect diary or a medical label before contacting the clinic."
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "Safety comes before the notes",
+      "paragraphs": [
+        "This is a communication guide, not a symptom checker or advice to monitor a condition at home. If you are unsure whether a symptom needs attention, contact the appropriate clinical advice service. Do not wait to collect several days of data before asking.",
+        "For a suspected emergency in the US, call 911. [MedlinePlus](https://medlineplus.gov/ency/article/001927.htm) includes trouble breathing, unconsciousness and serious changes in responsiveness among emergency warning signs, with age-specific examples. These examples are not an exhaustive list, and absence from a short list does not establish safety."
+      ]
+    },
+    {
+      "kind": "list",
+      "heading": "Write one useful entry",
+      "checkable": true,
+      "items": [
+        "Identify the person, symptom and full date; add the approximate time where it matters.",
+        "Separate the first noticed onset from the time you wrote the entry. Mark uncertain timing honestly.",
+        "Describe location and what it felt or looked like in ordinary words.",
+        "Record duration, frequency and whether it came and went or continued.",
+        "Say what the symptom prevented or changed: sleep, eating, walking, school, work or another usual activity.",
+        "Record relevant circumstances, associated observations and anything tried, including the product and timing if a medicine was used.",
+        "Include any clinician contact and advice separately from your own observations."
+      ]
+    },
+    {
+      "kind": "table",
+      "heading": "Invented example: a wrist concern",
+      "columns": [
+        "Entry",
+        "Observation",
+        "Uncertainty or question"
+      ],
+      "rows": [
+        [
+          "2026-11-12, evening note",
+          "First noticed wrist discomfort earlier that afternoon while carrying a bag; exact start time not known",
+          "Cause not established"
+        ],
+        [
+          "2026-11-13, morning",
+          "Discomfort noticed when turning a door handle; interrupted usual morning task",
+          "Not a measured severity score"
+        ],
+        [
+          "2026-11-13, clinic contact",
+          "Asked clinic how to arrange assessment; wrote down the instructions received",
+          "Follow the actual clinician advice, not this fictional entry"
+        ]
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "Describe impact as well as intensity",
+      "paragraphs": [
+        "Words such as mild or severe can be useful personal descriptions, but add what they mean to you. \"Woke me twice\" or \"could not finish the usual walk\" gives context a single adjective does not. If the clinic has asked for a particular scale or measurement, follow that instruction and name the scale.",
+        "Do not convert an impression into a measurement. \"Felt warm\" and a thermometer reading are different entries. If you record a measured value, include the unit, approximate time and method or device where relevant. Do not buy monitoring equipment or repeatedly test yourself simply to fill every possible field."
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "Keep observation and explanation apart",
+      "paragraphs": [
+        "You can tell the clinician what you are worried about. Put that concern in a question rather than recording it as a diagnosis. \"Could this relate to the recent change?\" is different from \"the medicine caused it.\" Timing can be relevant without proving cause.",
+        "[NIA's symptom communication guidance](https://www.nia.nih.gov/health/medical-care-and-appointments/what-do-i-need-tell-doctor) supports making notes before a call or visit. It does not make a home log a clinical assessment. Keep your own interpretation visibly separate from any explanation a clinician has actually provided."
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "When the patient is a child or another adult",
+      "paragraphs": [
+        "Record the person's own words where possible, then distinguish your observations. \"Says tummy hurts\" is different from your conclusion about the cause. Use a separate page for each person so two similar symptoms do not become one shared timeline.",
+        "For an adult you support, ask what they want help recording and whether they want you to speak at the appointment. If the person cannot describe what happened, say what you saw and what you do not know. A witness note can be useful, but it should not pretend to know the person's internal experience."
+      ]
+    },
+    {
+      "kind": "scripts",
+      "heading": "Use the notes during the conversation",
+      "items": [
+        {
+          "situation": "Opening",
+          "line": "I first noticed this around this date. I began writing later, so the earliest timing is approximate."
+        },
+        {
+          "situation": "Explaining impact",
+          "line": "The main change is that this interrupts this ordinary activity. Here are the dated examples."
+        },
+        {
+          "situation": "Asking about urgency",
+          "line": "I do not know whether this can wait for the booked appointment. Please advise how I should seek assessment."
+        },
+        {
+          "situation": "Separating a concern",
+          "line": "This is my worry about a possible cause, not something that has been diagnosed."
+        }
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "Prepare a short summary, not a verdict",
+      "paragraphs": [
+        "Before the visit, write a few lines on onset, the main pattern or change, impact and your central question. Keep the original dated entries available. Do not remove an important episode because it does not fit the pattern you expected, or make a graph appear more precise than the underlying notes.",
+        "An empty day in an occasional log does not prove no symptoms occurred. If you write \"no episode noticed,\" say that only when it reflects your observation. Mark a gap as not recorded rather than silently treating it as symptom-free."
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "Keep the task proportionate",
+      "paragraphs": [
+        "If keeping notes becomes burdensome or increases distress, simplify the record and discuss the concern with the clinic. More words are not automatically more useful. A short accurate entry made when you can manage it is enough to support a conversation.",
+        "After the visit, keep the symptom observations separate from the clinician's plan and record any advised follow-up. Do not use the diary to change treatment or decide independently that a problem has resolved. Seek further advice when the agreed plan says to, when circumstances change or when you are uncertain."
+      ]
+    },
+    {
+      "kind": "faq",
+      "items": [
+        {
+          "q": "How long should I keep a symptom log?",
+          "a": "There is no universal required duration. Start with what you can accurately recall and ask the clinic whether it wants specific information. Do not postpone assessment to reach a number of days. The log supports communication; it does not establish a safe waiting period."
+        },
+        {
+          "q": "Can I write what I think is causing the symptom?",
+          "a": "Yes, as a clearly identified concern or question. Keep it separate from observed events and confirmed clinical explanations. This lets the clinician address your worry without making an untested idea look like a diagnosis in the record."
+        },
+        {
+          "q": "What if I cannot remember the exact start date?",
+          "a": "Write the best honest range and label it approximate. Distinguish first noticed onset from the date of your first entry. Do not replace uncertainty with a precise date just because a form has a date box; explain the limit when you speak to the clinic."
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "name": "NIA: What do I need to tell the doctor?",
+      "url": "https://www.nia.nih.gov/health/medical-care-and-appointments/what-do-i-need-tell-doctor",
+      "retrieved": "2026-11-17",
+      "note": "Official indexed excerpt checked for dated symptom notes; direct fetch returned 405."
+    },
+    {
+      "name": "MedlinePlus: Recognizing medical emergencies",
+      "url": "https://medlineplus.gov/ency/article/001927.htm",
+      "retrieved": "2026-11-17",
+      "note": "NIH-hosted search-result content checked: breathing problems, loss of consciousness and confusion are emergency warning signs; not a complete triage list."
+    }
+  ],
+  "visuals": [
+    {
+      "title": "A useful symptom entry",
+      "kicker": "Observation before interpretation",
+      "kind": "record",
+      "steps": [
+        {
+          "label": "When",
+          "detail": "Separate onset, episode time and entry date."
+        },
+        {
+          "label": "What",
+          "detail": "Describe the symptom and its duration."
+        },
+        {
+          "label": "Impact",
+          "detail": "Record the effect on ordinary activities."
+        },
+        {
+          "label": "Context",
+          "detail": "Note circumstances and relevant actions without assuming cause."
+        }
+      ],
+      "caption": "Uncertain timing should remain labelled approximate.",
+      "alt": "A symptom entry connects timing, description, daily impact and context while keeping cause unconfirmed."
+    },
+    {
+      "title": "From entries to appointment summary",
+      "kicker": "Keep the originals available",
+      "kind": "sequence",
+      "steps": [
+        {
+          "label": "Collect",
+          "detail": "Write dated observations when feasible."
+        },
+        {
+          "label": "Summarize",
+          "detail": "Identify onset, change and impact in a few lines."
+        },
+        {
+          "label": "Ask",
+          "detail": "Bring the question and original entries to the clinician."
+        }
+      ],
+      "caption": "Do not wait to finish a log before seeking needed help.",
+      "alt": "Dated observations become a short appointment summary and a question for the clinician."
+    }
+  ],
+  "worksheet": {
+    "title": "Symptom observation and visit summary",
+    "prompt": "Record what you noticed without deciding the cause or whether it is safe to wait.",
+    "fields": [
+      "Person and symptom",
+      "First noticed onset and certainty",
+      "Episode date and duration",
+      "Description or measured value with unit",
+      "Effect on usual activities",
+      "Context and actions taken",
+      "Clinical contact or advice reference",
+      "Main question for the visit"
+    ]
+  },
+  "research": {
+    "primaryQuery": "symptom log for doctor visit",
+    "supportingQueries": [
+      "symptom log for doctor appointment",
+      "describe symptoms onset duration",
+      "symptom diary observations versus diagnosis"
+    ],
+    "intent": "Create a concise dated symptom history for clinical communication without monitoring advice or delayed-care implications.",
+    "sourceChecks": [
+      "https://www.nia.nih.gov/health/medical-care-and-appointments/what-do-i-need-tell-doctor - Official indexed excerpt checked for dated symptom notes; direct fetch returned 405.",
+      "https://medlineplus.gov/ency/article/001927.htm - NIH-hosted search-result content checked: breathing problems, loss of consciousness and confusion are emergency warning signs; not a complete triage list."
+    ],
+    "limitations": [
+      "Recordkeeping only; no diagnosis, monitoring schedule or waiting period is prescribed.",
+      "NIA indexed content supports preparing symptom notes; direct page fetch returned 405. MedlinePlus emergency page was accessible.",
+      "The example is invented and is not a clinical pattern or recommendation.",
+      "Saved research was reviewed for user intent; Quora blocked. Search volume unknown."
+    ]
+  }
+}

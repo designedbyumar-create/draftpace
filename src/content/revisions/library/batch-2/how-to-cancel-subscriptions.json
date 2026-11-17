@@ -1,0 +1,261 @@
+{
+  "slug": "how-to-cancel-subscriptions",
+  "title": "How to cancel a subscription that is hard to cancel",
+  "dek": "Find who bills you, preserve the cancellation evidence, and check the next charge. Use the right route for credit cards and bank payments.",
+  "metaDescription": "Find who bills you, preserve the cancellation evidence, and check the next charge. Use the right route for credit cards and bank payments.",
+  "updatedAt": "2026-11-17",
+  "body": [
+    {
+      "kind": "paragraphs",
+      "paragraphs": [
+        "Cancel a difficult subscription through the organization that actually bills you, save the confirmation and effective date, then check the next expected charge. If a valid cancellation is ignored or you cannot complete the process, contact the payment provider promptly. Ending a service, disputing an old charge, and blocking future payments are separate jobs.",
+        "A service can still open after cancellation because paid access has not ended. It can also show no cancellation button because another company bills you. This guide is for US consumers; contract terms and applicable state rules can change the details, especially for memberships with minimum terms."
+      ]
+    },
+    {
+      "kind": "list",
+      "heading": "Get the cancellation on record",
+      "checkable": true,
+      "items": [
+        "Match the statement charge to a receipt and the billing provider.",
+        "Check the renewal date, cancellation cutoff, and any minimum-term obligation.",
+        "Use the provider's actual cancellation route, not an unrelated support page.",
+        "Save screenshots or messages showing the completed request.",
+        "Record when access ends and whether another charge is expected.",
+        "Ask separately about any refund you believe is due.",
+        "Check the account around the next expected billing date.",
+        "Escalate unexplained continued charges promptly without waiting through repeated monthly cycles."
+      ]
+    },
+    {
+      "kind": "table",
+      "heading": "Start where the money is collected",
+      "columns": [
+        "Billing provider",
+        "Starting route"
+      ],
+      "rows": [
+        [
+          "Apple",
+          "Your Apple account's subscription management"
+        ],
+        [
+          "Google Play",
+          "Your Google Play account's subscription management"
+        ],
+        [
+          "The service directly",
+          "Its verified account billing page or customer-support route"
+        ],
+        [
+          "Phone, internet, or another bundle",
+          "The provider that bills for the bundle"
+        ],
+        [
+          "Unclear merchant description",
+          "Receipt search and payment-provider help identifying the charge"
+        ]
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "Do not delete the evidence with the app",
+      "paragraphs": [
+        "[Google Play states that uninstalling an app does not cancel the subscription](https://support.google.com/googleplay/answer/7018481?co=GENIE.Platform%3DAndroid&hl=en-419). Likewise, a request to delete an account may not be the correct billing cancellation process. Preserve the account reference and confirmation until the financial side is resolved.",
+        "[Apple's support page](https://support.apple.com/en-us/118428) provides its current cancellation route and help if you cannot find the subscription. Check that you are using the account associated with the receipt. Do not follow an unexpected renewal email's payment link simply because its wording creates urgency."
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "Invented example: a cancellation record",
+      "paragraphs": [
+        "A customer cancels a streaming plan on November 9. The confirmation says access ends November 12 and there will be no further renewal. They save the email, a screenshot, and reference CX-48213, then set a check around the date the next charge would have appeared.",
+        "If a new charge arrives, they compare its billing period with the confirmation before contacting the provider. It might be an unexplained renewal, an earlier legitimate charge, or a different subscription. The record narrows the question without assuming every post-cancellation transaction is automatically invalid."
+      ]
+    },
+    {
+      "kind": "scripts",
+      "heading": "Say the outcome you want",
+      "items": [
+        {
+          "situation": "Discount offered",
+          "line": "Thank you, but I want to cancel rather than pause or discount the plan. Please confirm the effective end date and any final charge."
+        },
+        {
+          "situation": "Process keeps failing",
+          "line": "I attempted to cancel on [dates] through [route]. Please complete the cancellation and give me a written confirmation and reference."
+        },
+        {
+          "situation": "Charge after confirmation",
+          "line": "My confirmation says [end date and billing outcome]. The charge on [date] appears inconsistent with it. Please explain the billing period and correct it if it was taken in error."
+        },
+        {
+          "situation": "Minimum term mentioned",
+          "line": "Please identify the term or charge you say still applies and how I can prevent renewal after that obligation ends."
+        }
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "When the company does not resolve it",
+      "paragraphs": [
+        "The [FTC's subscription guidance](https://consumer.ftc.gov/articles/getting-and-out-free-trials-auto-renewals-and-negative-option-subscriptions) supports keeping a record and seeking help from the payment provider when unwanted charges continue. Use the verified phone number or secure account channel for your bank or card issuer. Describe what happened accurately and provide the evidence.",
+        "Do not assume repeated complaints to the merchant pause a dispute deadline. Ask the payment provider about the right process immediately. A merchant refund request and a payment dispute can run on different timelines; tell each party if a refund is issued so the same amount is not recovered twice."
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "Credit-card billing errors need the correct notice",
+      "paragraphs": [
+        "For a qualifying US credit-card billing error, [CFPB guidance](https://www.consumerfinance.gov/consumer-tools/credit-cards/how-to-fix-mistakes-in-your-credit-card-bill/) says to send written notice no later than 60 days after the issuer sent the statement first showing the error. Use its billing-inquiry address or instructed channel, not simply the payment address. Keep proof and a copy.",
+        "Continue paying correct charges on time. Ask the issuer how the disputed amount and any autopay will be handled. Do not apply the credit-card process or deadline as a universal rule for debit cards, bank transfers, or every type of consumer dispute."
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "Bank-account payments are a different route",
+      "paragraphs": [
+        "For covered preauthorized US consumer-account transfers, [Regulation E](https://www.consumerfinance.gov/rules-policy/regulations/1005/10/) provides a stop-payment route through the bank. Ask about cutoffs, any written confirmation, and fees. Give the merchant a clear revocation or cancellation notice as appropriate and keep the evidence.",
+        "Blocking a payment does not erase a valid contract or debt. Nor should you rely on replacing a card as proof of cancellation. Resolve the billing relationship and monitor what happens afterward. If the provider asserts a significant contract claim, obtain qualified local advice."
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "Know when the ordinary script is insufficient",
+      "paragraphs": [
+        "A gym membership, financed service, family account, or business subscription may have obligations beyond turning off auto-renewal. Read the actual agreement. For suspected unauthorized enrollment or identity misuse, tell the payment provider that specifically rather than describing it only as a cancellation problem.",
+        "Keep a cancellation record until the expected charges and any dispute are resolved. Then update [your subscription tracker](/guides/subscription-tracker-what-to-track) so a planned cancellation is not mistaken for a completed one."
+      ]
+    },
+    {
+      "kind": "faq",
+      "items": [
+        {
+          "q": "Does cancelled mean access stops immediately?",
+          "a": "Not necessarily. The confirmation may let you use the service until the end of a paid period. Check the effective end date and expected final charge. Continued access alone does not establish that renewal is still active or that a refund is due."
+        },
+        {
+          "q": "Will I get a refund for unused time?",
+          "a": "That depends on the agreement, billing provider, applicable rules, and circumstances. Ask separately and preserve the response. Cancelling a renewal and receiving a refund are different outcomes; do not budget from a refund until it is confirmed and available."
+        },
+        {
+          "q": "Can my bank cancel the subscription for me?",
+          "a": "The bank may help with payment blocking or a dispute, but that is not necessarily cancellation of the service contract. Notify the billing provider through the appropriate route as well. Ask the bank which payments its action covers and monitor the result."
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "name": "Apple: cancel a subscription",
+      "url": "https://support.apple.com/en-us/118428",
+      "retrieved": "2026-11-17",
+      "note": "Apple gives the cancellation route for subscriptions it bills and guidance when the subscription cannot be found."
+    },
+    {
+      "name": "Google Play: cancel a subscription",
+      "url": "https://support.google.com/googleplay/answer/7018481?co=GENIE.Platform%3DAndroid&hl=en-419",
+      "retrieved": "2026-11-17",
+      "note": "Uninstalling an app does not cancel its Google Play subscription."
+    },
+    {
+      "name": "FTC: trials and auto-renewals",
+      "url": "https://consumer.ftc.gov/articles/getting-and-out-free-trials-auto-renewals-and-negative-option-subscriptions",
+      "retrieved": "2026-11-17",
+      "note": "Consumer cancellation guidance recommends preserving records and contacting the payment provider when unwanted charges continue."
+    },
+    {
+      "name": "CFPB: fixing credit-card billing mistakes",
+      "url": "https://www.consumerfinance.gov/consumer-tools/credit-cards/how-to-fix-mistakes-in-your-credit-card-bill/",
+      "retrieved": "2026-11-17",
+      "note": "US credit-card billing-error guidance includes written notice timing and paying correct charges while a dispute is investigated."
+    },
+    {
+      "name": "CFPB: preauthorized transfers",
+      "url": "https://www.consumerfinance.gov/rules-policy/regulations/1005/10/",
+      "retrieved": "2026-11-17",
+      "note": "Covered US bank-account transfers have separate stop-payment procedures; stopping payment does not itself end the underlying obligation."
+    }
+  ],
+  "visuals": [
+    {
+      "title": "Three different outcomes",
+      "kicker": "Cancellation and payments",
+      "kind": "compare",
+      "steps": [
+        {
+          "label": "Cancel",
+          "detail": "End the service or prevent its renewal."
+        },
+        {
+          "label": "Dispute",
+          "detail": "Challenge a particular charge with evidence."
+        },
+        {
+          "label": "Block",
+          "detail": "Ask the payment provider about stopping covered future payments."
+        }
+      ],
+      "caption": "One action does not automatically accomplish the other two.",
+      "alt": "A comparison separates ending a service, disputing a charge, and blocking future payments."
+    },
+    {
+      "title": "Keep a cancellation trail",
+      "kicker": "Evidence through the next charge",
+      "kind": "timeline",
+      "steps": [
+        {
+          "label": "Request",
+          "detail": "Record the route and date used."
+        },
+        {
+          "label": "Confirm",
+          "detail": "Save the end date, reference, and final-charge terms."
+        },
+        {
+          "label": "Check",
+          "detail": "Review the next expected billing date."
+        },
+        {
+          "label": "Escalate",
+          "detail": "Contact the payment provider promptly if unresolved."
+        }
+      ],
+      "caption": "Preserve evidence before account access disappears.",
+      "alt": "A cancellation timeline preserves the request, confirmation, billing check, and escalation evidence."
+    }
+  ],
+  "worksheet": {
+    "title": "Subscription cancellation and dispute record",
+    "prompt": "Keep the billing identity and evidence for one cancellation in a single record.",
+    "fields": [
+      "Service and actual billing provider",
+      "Amount and renewal date",
+      "Contract cutoff or minimum term",
+      "Cancellation attempt dates and route",
+      "Confirmation reference and evidence",
+      "End date and expected final charge",
+      "Refund or dispute status",
+      "Next billing check and deadline"
+    ]
+  },
+  "research": {
+    "primaryQuery": "hard to cancel subscription",
+    "supportingQueries": [
+      "subscription charged after cancellation",
+      "cannot find subscription cancel button"
+    ],
+    "intent": "Complete a difficult US subscription cancellation and preserve dispute rights without conflating cancellation with payment blocking.",
+    "sourceChecks": [
+      "https://support.apple.com/en-us/118428 - Apple gives the cancellation route for subscriptions it bills and guidance when the subscription cannot be found.",
+      "https://support.google.com/googleplay/answer/7018481?co=GENIE.Platform%3DAndroid&hl=en-419 - Uninstalling an app does not cancel its Google Play subscription.",
+      "https://consumer.ftc.gov/articles/getting-and-out-free-trials-auto-renewals-and-negative-option-subscriptions - Consumer cancellation guidance recommends preserving records and contacting the payment provider when unwanted charges continue.",
+      "https://www.consumerfinance.gov/consumer-tools/credit-cards/how-to-fix-mistakes-in-your-credit-card-bill/ - US credit-card billing-error guidance includes written notice timing and paying correct charges while a dispute is investigated.",
+      "https://www.consumerfinance.gov/rules-policy/regulations/1005/10/ - Covered US bank-account transfers have separate stop-payment procedures; stopping payment does not itself end the underlying obligation."
+    ],
+    "limitations": [
+      "Practical organization suggestions are not individualized professional advice.",
+      "Saved Reddit leads are qualitative only; Quora was blocked in saved research. No keyword-volume or ranking claims."
+    ]
+  }
+}

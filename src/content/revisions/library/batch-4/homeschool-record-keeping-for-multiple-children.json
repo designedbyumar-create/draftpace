@@ -1,0 +1,211 @@
+{
+  "slug": "homeschool-record-keeping-for-multiple-children",
+  "title": "Homeschool records for multiple children",
+  "dek": "Keep shared lessons easy to enter while making each child's participation, work samples and progress clear in a separate usable record.",
+  "metaDescription": "Keep shared lessons easy to enter while making each child's participation, work samples and progress clear in a separate usable record.",
+  "updatedAt": "2026-11-17",
+  "body": [
+    {
+      "kind": "paragraphs",
+      "paragraphs": [
+        "Keep homeschool evidence attributable to each child. You can use separate notebooks or one master log with child identifiers and child-specific exports. Shared teaching does not require duplicated typing, but a household entry must show who participated and what each child actually did.",
+        "At the end of a shared science morning, \"we did plants\" may feel sufficient. Months later, it does not show whether both children participated or whether one drew a diagram while the other wrote an explanation. This guide helps organize those differences without turning a shared lesson into twice the administrative work. State-specific requirements still determine what must be retained or submitted."
+      ]
+    },
+    {
+      "kind": "table",
+      "heading": "A shared lesson with individual evidence",
+      "columns": [
+        "Date and child",
+        "Shared activity",
+        "Individual evidence"
+      ],
+      "rows": [
+        [
+          "Nov 18: Maya",
+          "Compared two seedlings.",
+          "Labelled root, stem and leaf without prompts."
+        ],
+        [
+          "Nov 18: Leo",
+          "Compared the same seedlings.",
+          "Pointed to the root; needed help naming stem."
+        ],
+        [
+          "Nov 18: Maya",
+          "Independent math afterward.",
+          "Fraction comparison sheet saved as Maya-1118."
+        ],
+        [
+          "Nov 18: Leo",
+          "Independent math afterward.",
+          "Grouped counters in fives; photo filed under Leo."
+        ]
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "Example: one event, two different records",
+      "paragraphs": [
+        "Those rows are an invented example, not a developmental benchmark. Maya and Leo share the activity description but not the observation. Watching quietly, asking for more and enjoying the lesson describe engagement; they do not establish understanding. A short response, demonstration or work sample gives the entry more useful detail.",
+        "A master log can store the shared event once and link each child's participation and observation to it. When you filter or export Maya's record, the event must still make sense without Leo's page. If your paper system cannot do that easily, separate pages may be simpler."
+      ]
+    },
+    {
+      "kind": "list",
+      "heading": "Set up the records so they can be separated",
+      "checkable": true,
+      "items": [
+        "Choose a consistent child identifier, usually a name, and put it on every loose work sample before it joins the pile.",
+        "Create a folder or filter for each child and school year. Keep shared resources in a household folder rather than copying every source file.",
+        "For each shared event, identify actual participants. Add a child-specific response where useful instead of assuming the same outcome for everyone.",
+        "Keep attendance or time data separate enough to meet each child's applicable requirement. Do not count a sibling who was not present.",
+        "File sensitive notes with restricted access. Include only what belongs in the record you intend to hand to an evaluator or school.",
+        "Test a child-only export or assemble one child's paper file now. Fix missing labels before the year becomes difficult to untangle."
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "Separate outcomes, not necessarily every input",
+      "paragraphs": [
+        "The [Pennsylvania home education guide](https://www.pa.gov/content/dam/copapwp-pagov/en/education/documents/instruction/home-education-and-private-tutoring/home%20education%20and%20private%20tutoring%20guide.pdf) provides a jurisdiction-specific example of a portfolio containing a log and work samples developed or used by the student. It does not establish that every household must maintain physically separate binders. The useful organizing principle is that a reader can identify the student and the supporting evidence.",
+        "Twins may use the same curriculum and still need different notes. A child in public school may need a lighter home file than a homeschooled sibling. Equal page counts are not the goal, and easy or difficult ratings are not a ranking between children."
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "Make the weekly review a file test",
+      "paragraphs": [
+        "At a review, choose one shared entry and ask: could I explain this child's work from this record alone? Then choose a loose sheet and check that its name, date and context are present. Correct the file while the memory is fresh.",
+        "Check any app's export coverage, entry limits and backup process before using it as your only archive. An attractive household dashboard does not prove that a complete child-specific record can be produced. Save and inspect exports periodically, particularly during a busy year. The general [record-keeping template](/guides/homeschool-record-keeping-template) can supply the underlying daily columns."
+      ]
+    },
+    {
+      "kind": "scripts",
+      "heading": "Ask an evaluator about the output",
+      "items": [
+        {
+          "situation": "Before compiling the year",
+          "line": "I keep one master log with each participating child identified. Would a child-filtered record with that child's dated work samples meet the format you need? Please distinguish required evidence from your preferred presentation."
+        }
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "If the records are already mixed",
+      "paragraphs": [
+        "Start with a small recent period and sort confidently identified work first. Do not assign an anonymous worksheet to a child because it looks like their handwriting unless you label that uncertainty. Shared photographs may establish participation but not who completed each task.",
+        "Seek local guidance if a required report is imminent, a child's evidence cannot be reconstructed, or you are unsure what must be disclosed. Keep incomplete information separate from confirmed entries. Fixing labels prospectively is useful even if earlier gaps remain."
+      ]
+    },
+    {
+      "kind": "faq",
+      "items": [
+        {
+          "q": "Do I need a different binder for every child?",
+          "a": "Not necessarily. Separate binders are one practical choice, but a master system with reliable child-specific records can also work. Confirm the required output for your route. The test is whether each child's evidence can be identified and presented without another sibling's private or unrelated information."
+        },
+        {
+          "q": "Can I log a field trip once for the whole family?",
+          "a": "You can enter the shared event once if your system also identifies each participating child and preserves that context in individual records. Add different observations or work references where appropriate. A family outing title alone should not be mistaken for proof that every child completed the same instruction."
+        },
+        {
+          "q": "What if one child has far fewer entries?",
+          "a": "Look first at what happened, what is required and whether entries were missed. Different ages, programs or activities can produce different records. Do not add invented entries to equalize the totals. If the difference reflects a learning or instruction concern, address that concern separately from the filing system."
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "name": "Pennsylvania Department of Education: home education guide",
+      "url": "https://www.pa.gov/content/dam/copapwp-pagov/en/education/documents/instruction/home-education-and-private-tutoring/home%20education%20and%20private%20tutoring%20guide.pdf",
+      "retrieved": "2026-11-17",
+      "note": "Official PDF search text: 180 days OR 900 elementary/990 secondary hours; contemporaneous log naming reading materials and student work samples. PDF labelled revised January 2025."
+    }
+  ],
+  "visuals": [
+    {
+      "title": "One lesson, individual evidence",
+      "kicker": "Shared science session",
+      "kind": "record",
+      "steps": [
+        {
+          "label": "Shared event",
+          "detail": "Describe the lesson once and identify participants."
+        },
+        {
+          "label": "Maya",
+          "detail": "Attach her labelled diagram and response."
+        },
+        {
+          "label": "Leo",
+          "detail": "Attach his observation and the help he needed."
+        },
+        {
+          "label": "Export",
+          "detail": "Each child's record retains the event context."
+        }
+      ],
+      "caption": "Shared input can produce distinct, attributable records.",
+      "alt": "A shared science event branches into Maya and Leo records with separate work evidence and export context."
+    },
+    {
+      "title": "Check the child-only record",
+      "kicker": "Before a review or transfer",
+      "kind": "sequence",
+      "steps": [
+        {
+          "label": "Filter",
+          "detail": "Select one child and the relevant period."
+        },
+        {
+          "label": "Read",
+          "detail": "Check that shared entries still make sense."
+        },
+        {
+          "label": "Inspect",
+          "detail": "Confirm work samples have names and dates."
+        },
+        {
+          "label": "Protect",
+          "detail": "Remove unrelated sibling and private notes."
+        }
+      ],
+      "caption": "Test the output before you rely on the archive.",
+      "alt": "Four checks test whether a household log can produce a clear, private record for one child."
+    }
+  ],
+  "worksheet": {
+    "title": "Shared lesson to child record check",
+    "prompt": "Use one recent shared activity to test attribution and individual evidence.",
+    "fields": [
+      "Shared activity and date",
+      "Children who participated",
+      "Each child's task",
+      "Observed response or support",
+      "Named work sample location",
+      "Child-only export checked",
+      "Missing evidence and next action"
+    ]
+  },
+  "research": {
+    "primaryQuery": "homeschool record keeping multiple children",
+    "supportingQueries": [
+      "log shared homeschool lessons",
+      "homeschool portfolio for siblings",
+      "one homeschool planner multiple children"
+    ],
+    "intent": "Reduce repeated entry while preserving child-specific participation, evidence and privacy.",
+    "sourceChecks": [
+      {
+        "url": "https://www.pa.gov/content/dam/copapwp-pagov/en/education/documents/instruction/home-education-and-private-tutoring/home%20education%20and%20private%20tutoring%20guide.pdf",
+        "verified": "Official PDF search text: 180 days OR 900 elementary/990 secondary hours; contemporaneous log naming reading materials and student work samples. PDF labelled revised January 2025."
+      }
+    ],
+    "limitations": [
+      "Pennsylvania is an example of student-specific portfolio evidence, not a national format rule. No app capacity or export feature was assumed.",
+      "Saved search leads were reviewed for reader language only, not authority or prevalence. Quora was blocked in saved research. No search-volume or ranking estimate is available."
+    ]
+  }
+}

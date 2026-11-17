@@ -1,0 +1,220 @@
+{
+  "slug": "two-cars-one-household-maintenance",
+  "title": "How to track maintenance on two household cars",
+  "dek": "Give each vehicle its own history and schedule, then review both together. Assign the next action so shared responsibility does not become a gap.",
+  "metaDescription": "Give each vehicle its own history and schedule, then review both together. Assign the next action so shared responsibility does not become a gap.",
+  "updatedAt": "2026-11-17",
+  "body": [
+    {
+      "kind": "paragraphs",
+      "paragraphs": [
+        "Keep separate histories and manufacturer-based schedules for each car, then bring their next actions into one household review. Label every entry with the vehicle, full date and odometer units. Give each open job one named owner, even if both adults drive both cars.",
+        "Two cars create more than twice the receipts: the keys, bookings and responsibility can become mixed together. You do not need an elaborate fleet system. You need to distinguish the vehicles and close the handoff between noticing a job, arranging it and recording completion."
+      ]
+    },
+    {
+      "kind": "list",
+      "heading": "Set up both cars without mixing them",
+      "checkable": true,
+      "items": [
+        "Give each car a unique label plus year, model and plate or VIN. Use the same label on folders and booking notes.",
+        "Create one service history and one schedule page per vehicle. Copy intervals from the correct manual, not the other car.",
+        "Read each odometer and record the reading, unit and date beside the vehicle identity.",
+        "List current concerns separately from scheduled work and paperwork renewals.",
+        "Name who will book, who will take the car and who will enter the final invoice.",
+        "Put the next household review in a calendar, with earlier checks for fast-changing mileage or unresolved concerns."
+      ]
+    },
+    {
+      "kind": "table",
+      "heading": "Invented household review: 2026-11-17",
+      "columns": [
+        "Vehicle",
+        "Known fact",
+        "Unresolved item",
+        "Next owner action"
+      ],
+      "rows": [
+        [
+          "Blue hatchback, plate ending 21",
+          "Reading updated today; last service invoice filed",
+          "Manual rule has not been copied",
+          "Jo obtains correct schedule by Friday"
+        ],
+        [
+          "Work van, plate ending 84",
+          "Manual schedule and service invoice available",
+          "Next distance threshold approaching",
+          "Lee checks reading again after the next work trip"
+        ],
+        [
+          "Both vehicles",
+          "Insurance renewal papers received",
+          "Two vehicle details need checking",
+          "Jo checks each vehicle listing, then files confirmed policy"
+        ]
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "One combined view, not one combined history",
+      "paragraphs": [
+        "The combined page should say which car needs what, who owns the next step and what evidence is missing. It should not collapse both service histories into \"oil done in June.\" Keep the underlying invoice and completion row against the right car.",
+        "The [FTC](https://consumer.ftc.gov/articles/0211-auto-repair-basics) advises following the manufacturer schedule for the type of driving. A lightly used car and a work vehicle can reach different triggers. Do not assume low mileage means nothing is due or that two cars of the same brand use identical intervals."
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "Choose a review rhythm that fits the driving",
+      "paragraphs": [
+        "A regular household check is an organizing habit, not a safety interval. If one vehicle covers substantial distance each week, update it often enough to spot the relevant threshold before passing it. A monthly review alone may be too infrequent. Calendar-based requirements also need attention on a car that rarely moves.",
+        "Warnings, tire concerns and new symptoms are not jobs to hold until the next shared review. Use the manual and seek appropriate assessment when they occur. [California BAR](https://www.bar.ca.gov/auto-repairs) describes the role of owner manuals and service reminders; a shared spreadsheet does not replace either."
+      ]
+    },
+    {
+      "kind": "scripts",
+      "heading": "Make the handoff explicit",
+      "items": [
+        {
+          "situation": "After paying the garage",
+          "line": "The invoice is in the van folder. I have not entered it yet. Can you add the date, odometer and completed work tonight?"
+        },
+        {
+          "situation": "Before a combined booking",
+          "line": "Please confirm these are two separate work orders, with the right plate and requested work on each."
+        },
+        {
+          "situation": "After noticing a concern",
+          "line": "I noted the hatchback symptom on its page. This needs a safety question for the shop, not just a reminder next month."
+        }
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "Catch the wrong-car error before it spreads",
+      "paragraphs": [
+        "At pickup, compare the plate, date and odometer on the invoice with the vehicle. If something does not fit, ask the shop to correct its record. Do not quietly move a suspicious entry to whichever car makes the arithmetic work. Keep an explanatory note if a correction is made later.",
+        "Avoid parallel versions with no agreed master. Both adults can contribute to a shared document, but use identifiable entries and keep evidence rather than deleting conflicting rows. An owner is responsible for finishing a task, not entitled to discard the other driver's observations."
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "When a car leaves or joins the household",
+      "paragraphs": [
+        "Archive a sold car with its history and handover copy, then remove its future jobs from the active review. Do not erase records you may need later. When adding a car, use an honest starting point: known invoices, current reading and explicit gaps.",
+        "If both cars need work, coordinate transport as well as bookings. A tidy combined due list is not useful if it leaves the household without necessary transport. Where a safety concern removes one vehicle from use, resolve the transport plan without treating the other car as automatically fit."
+      ]
+    },
+    {
+      "kind": "faq",
+      "items": [
+        {
+          "q": "Can I keep both cars in one spreadsheet?",
+          "a": "Yes. Use separate histories or clearly identified rows for each vehicle and one combined next-action view. Include a stable identifier so a copied row still makes sense. The risk is not one file; it is losing which car a fact belongs to."
+        },
+        {
+          "q": "Should one person handle all the records?",
+          "a": "That can work, but it is not required. Agree how receipts reach the record keeper and how completion is confirmed. If both adults enter data, use one master and a consistent rule. A vague assumption that the other person handled it is the gap to avoid."
+        },
+        {
+          "q": "Can both cars have the same service dates?",
+          "a": "They may, but matching dates do not establish matching requirements. Each vehicle has its own manual, history, conditions and distance traveled. Combine appointments only when appropriate; do not delay a needed check or add unnecessary work merely to synchronize the calendar."
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "name": "FTC: Auto repair basics",
+      "url": "https://consumer.ftc.gov/articles/0211-auto-repair-basics",
+      "retrieved": "2026-11-17",
+      "note": "Page checked: estimates, diagnostic charges, completed repair orders and manufacturer maintenance schedules."
+    },
+    {
+      "name": "California Bureau of Automotive Repair: Maintenance and repairs",
+      "url": "https://www.bar.ca.gov/auto-repairs",
+      "retrieved": "2026-11-17",
+      "note": "Page checked: California repair-shop context and owner-manual/service-reminder guidance; not national law."
+    }
+  ],
+  "visuals": [
+    {
+      "title": "Separate facts, shared actions",
+      "kicker": "Two vehicles need two histories",
+      "kind": "compare",
+      "steps": [
+        {
+          "label": "Car one",
+          "detail": "Keep its identity, readings, schedule and invoices together."
+        },
+        {
+          "label": "Car two",
+          "detail": "Keep a different identity and its own supporting records."
+        },
+        {
+          "label": "Household",
+          "detail": "Combine only the next actions and transport plan."
+        }
+      ],
+      "caption": "The household review coordinates work without merging vehicle facts.",
+      "alt": "Two independent vehicle histories feed a single household next-action review."
+    },
+    {
+      "title": "Close the service handoff",
+      "kicker": "A receipt is not yet a log entry",
+      "kind": "sequence",
+      "steps": [
+        {
+          "label": "Book",
+          "detail": "Name the car, scope and responsible person."
+        },
+        {
+          "label": "Collect",
+          "detail": "Check the invoice against that vehicle."
+        },
+        {
+          "label": "Record",
+          "detail": "Enter the completed work and file the evidence."
+        },
+        {
+          "label": "Confirm",
+          "detail": "Tell the other driver what changed or remains open."
+        }
+      ],
+      "caption": "Give each step an owner when responsibility is shared.",
+      "alt": "A shared service task moves through booking, invoice checking, logging and confirmation."
+    }
+  ],
+  "worksheet": {
+    "title": "Two-vehicle next-action review",
+    "prompt": "Use one line per vehicle and name the person completing the next step.",
+    "fields": [
+      "Vehicle label and identifier",
+      "Dated odometer and unit",
+      "Schedule source",
+      "Last service evidence",
+      "Next due or unresolved item",
+      "Booking owner",
+      "Transport arrangement",
+      "Completion and receipt confirmed"
+    ]
+  },
+  "research": {
+    "primaryQuery": "keep track of maintenance on two cars",
+    "supportingQueries": [
+      "two car household maintenance tracker",
+      "separate service logs multiple vehicles",
+      "who handles family car maintenance"
+    ],
+    "intent": "Coordinate separate vehicle records and ownership of next actions without merging service histories.",
+    "sourceChecks": [
+      "https://consumer.ftc.gov/articles/0211-auto-repair-basics - Page checked: estimates, diagnostic charges, completed repair orders and manufacturer maintenance schedules.",
+      "https://www.bar.ca.gov/auto-repairs - Page checked: California repair-shop context and owner-manual/service-reminder guidance; not national law."
+    ],
+    "limitations": [
+      "US-focused administration; requirements and individual circumstances vary.",
+      "Saved Reddit leads informed reader-language only; no anecdotes treated as factual authority. Quora was blocked in the saved research.",
+      "No keyword-volume dataset or ranking guarantee. Product registry inspected, but live product workflows not tested."
+    ]
+  }
+}

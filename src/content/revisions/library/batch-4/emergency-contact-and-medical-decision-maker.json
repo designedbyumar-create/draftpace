@@ -1,0 +1,228 @@
+{
+  "slug": "emergency-contact-and-medical-decision-maker",
+  "title": "How to choose and record a health care proxy",
+  "dek": "Choose a willing health care proxy, discuss your priorities and complete the right paperwork without confusing the role with an emergency contact.",
+  "metaDescription": "Choose a willing health care proxy, discuss your priorities and complete the right paperwork without confusing the role with an emergency contact.",
+  "updatedAt": "2026-11-17",
+  "body": [
+    {
+      "kind": "paragraphs",
+      "paragraphs": [
+        "Choose a health care proxy who is willing, eligible under your state's rules, reachable and able to represent your wishes even when others disagree. Ask them, discuss your priorities, name an alternate where permitted, and complete the appropriate document correctly. Listing an emergency contact alone does not appoint your preferred medical decision maker.",
+        "Hospital forms often put names in adjacent boxes, which can make the roles look interchangeable. They are not. The person you want called first may be different from the person you trust to work through difficult decisions. This US guide concerns choosing, documenting and communicating the role, not selecting medical treatments or drafting a binding document."
+      ]
+    },
+    {
+      "kind": "table",
+      "heading": "Different labels, different jobs",
+      "columns": [
+        "Item",
+        "Purpose",
+        "What not to assume"
+      ],
+      "rows": [
+        [
+          "Emergency contact",
+          "Identifies someone to contact.",
+          "The label itself appoints a legal decision maker."
+        ],
+        [
+          "Health care agent or proxy",
+          "A person named through the appropriate legal arrangement.",
+          "Every state uses identical eligibility or activation rules."
+        ],
+        [
+          "Living will or instruction directive",
+          "Records applicable care wishes.",
+          "A written preference answers every future situation."
+        ],
+        [
+          "Financial power of attorney",
+          "Authorizes covered financial matters.",
+          "It necessarily grants medical decision-making authority."
+        ]
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "Choose for the task, not the family ranking",
+      "paragraphs": [
+        "The [National Institute on Aging](https://www.nia.nih.gov/health/advance-care-planning/choosing-health-care-proxy?form=MG0AV3) recommends considering whether the person can honor your wishes, discuss your priorities and handle conflicting opinions. They do not need to be the relative who would be most offended not to be chosen. They do need to be able and willing to take the responsibility.",
+        "Consider practical access too: reliable phone contact, ability to communicate with the care team, and a backup if the person is unavailable. Physical distance matters, but living nearby is not a substitute for understanding your values. Confirm any state restrictions on who may serve rather than relying on a national age or relationship shortcut."
+      ]
+    },
+    {
+      "kind": "list",
+      "heading": "Choose, document and communicate",
+      "checkable": true,
+      "items": [
+        "List one or two possible people and consider their willingness, communication, reliability and ability to follow your preferences.",
+        "Ask directly before naming anyone. Give them time to decline or ask questions; agreement to receive a call is not agreement to be a proxy.",
+        "Discuss what matters to you in health decisions and how you would want uncertainty handled. Ask the person to explain back the role they understand.",
+        "Find the appropriate current form and instructions for your jurisdiction. Check eligibility, signatures, witnesses or notarization before signing.",
+        "Record an alternate if allowed, with a clear order. Do not create competing names on different forms without resolving which document controls.",
+        "Give the current signed document to the proxy and relevant care team, record where originals and copies are kept, and review after changes."
+      ]
+    },
+    {
+      "kind": "scripts",
+      "heading": "Open the conversation",
+      "items": [
+        {
+          "situation": "Asking the person",
+          "line": "Would you be willing to speak for my medical wishes if I could not? I want someone who can ask questions and represent what matters to me, even if their own choice would be different. You do not need to answer today."
+        },
+        {
+          "situation": "Checking the care record",
+          "line": "Please confirm who is recorded as my emergency contact and who is recorded as my health care agent. Where should I provide the signed document, and how can we check the current version is on file?"
+        }
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "Example: contact and proxy are different people",
+      "paragraphs": [
+        "Invented example: Elena wants her nearby brother called immediately because he can secure the house. She chooses a longtime friend as health care agent because they have discussed her priorities carefully. Her brother knows that being the first contact does not itself make him the appointed agent. The record identifies the friend, the alternate, the document date and where copies are held.",
+        "That arrangement still needs proper execution under the applicable law. Elena's contact page does not turn an unsigned intention into an appointment. She also asks the care team how it will identify and contact the agent if needed, rather than assuming a document stored at home will be discovered automatically."
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "Discuss values without inventing medical instructions",
+      "paragraphs": [
+        "You can start by explaining what makes life meaningful, what worries you and whom you want involved in discussion. Ask your clinician to explain medical terminology or likely decisions if you have a specific condition. A proxy conversation should not depend on guessing treatment outcomes from a general article.",
+        "Keep the conversation open as circumstances change. A person can remember your priorities better when they understand the reasoning, not just a list of unfamiliar treatment names. Written instructions and an agent may complement each other, but their scope and legal effect depend on the applicable documents and law."
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "If you have not appointed anyone",
+      "paragraphs": [
+        "Do not assume the emergency-contact field settles who decides. Default surrogate rules vary, and a hospital may need to establish the appropriate decision maker under local law. Ask the care team or patient advocate how that works in the actual situation. This guide deliberately does not publish a national priority ladder or a supposedly current list of states without one.",
+        "If you remain able to make your own decisions, ask how to complete the appropriate planning documents correctly. If someone already lacks the relevant decision-making ability, do not try to solve the situation by having a relative sign a new appointment for them. Ask the clinical team and an appropriate legal adviser what process applies."
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "When to get specific help",
+      "paragraphs": [
+        "Seek advice for conflicting documents, family dispute, coercion, a move or regular care in multiple states, uncertainty about eligibility, or difficulty communicating wishes. A qualified attorney or legal aid service can address execution and authority; the treating team can address clinical questions. The boundaries overlap but are not interchangeable.",
+        "After changing the agent or instructions, tell the relevant people and providers and follow the proper process for replacing or revoking old documents. Label copies with their dates. An old copy circulating in a family group chat can create confusion even when a new form has been correctly signed."
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "Keep the practical record separate",
+      "paragraphs": [
+        "On your emergency page, write the agent's name, contact, alternate, document date and location. Mark whether the discussion has happened and whether copies have been shared. Avoid writing \"all sorted\" if you have only chosen a name.",
+        "For the broader household file, [the hospital handoff guide](/guides/hospital-for-two-weeks-what-would-someone-need-to-find) covers bills, dependents and access. Those arrangements do not follow automatically from appointing a health care proxy."
+      ]
+    },
+    {
+      "kind": "faq",
+      "items": [
+        {
+          "q": "Can my emergency contact also be my proxy?",
+          "a": "Yes, the same person may fill both roles if eligible and appropriately appointed, but the emergency-contact label alone does not create the appointment. Record both roles explicitly and complete the relevant document. Ask the provider to confirm that the contact information and signed authority document are both on file."
+        },
+        {
+          "q": "Does a proxy decide while I can still decide?",
+          "a": "Your own decision-making remains central. When an agent may act depends on the governing document, law and applicable clinical determination, so ask how your form works. Do not treat a general article as a substitute for understanding the activation conditions in the document you actually signed."
+        },
+        {
+          "q": "What if I cannot choose between two people?",
+          "a": "Consider who can best represent your wishes and handle the practical work, then ask about an alternate arrangement permitted by your form. Do not assume naming multiple equal decision makers makes disagreements easier. Discuss any uncertainty with a qualified adviser before creating documents that might conflict."
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "name": "National Institute on Aging: choosing a health care proxy",
+      "url": "https://www.nia.nih.gov/health/advance-care-planning/choosing-health-care-proxy?form=MG0AV3",
+      "retrieved": "2026-11-17",
+      "note": "Official article text returned through search: willingness, honoring preferences, alternate agent, state execution rules, and sharing signed documents."
+    }
+  ],
+  "visuals": [
+    {
+      "title": "Contact is not appointment",
+      "kicker": "Medical planning roles",
+      "kind": "compare",
+      "steps": [
+        {
+          "label": "Call first",
+          "detail": "Emergency contact information tells staff whom to reach."
+        },
+        {
+          "label": "Represent wishes",
+          "detail": "A health care agent acts under the appropriate authority."
+        },
+        {
+          "label": "Record preferences",
+          "detail": "Instructions explain relevant wishes and priorities."
+        }
+      ],
+      "caption": "Keep the roles explicit even when the same person appears twice.",
+      "alt": "Three medical planning roles distinguish the first contact, appointed agent and written care preferences."
+    },
+    {
+      "title": "Make the choice usable",
+      "kicker": "From conversation to current copies",
+      "kind": "sequence",
+      "steps": [
+        {
+          "label": "Ask",
+          "detail": "Confirm the person is willing to take the responsibility."
+        },
+        {
+          "label": "Discuss",
+          "detail": "Explain priorities and how to handle uncertainty."
+        },
+        {
+          "label": "Execute",
+          "detail": "Complete the appropriate document correctly."
+        },
+        {
+          "label": "Share",
+          "detail": "Give current copies to the people and providers who need them."
+        }
+      ],
+      "caption": "Choosing a name is only the first part of the arrangement.",
+      "alt": "Four steps make a proxy choice practical through agreement, discussion, correct paperwork and shared copies."
+    }
+  ],
+  "worksheet": {
+    "title": "Health care proxy choice and document record",
+    "prompt": "Track the conversation, legal document and current copies as separate tasks.",
+    "fields": [
+      "Preferred agent and contact",
+      "Alternate and order",
+      "Agreement date",
+      "Priorities discussed and questions for clinician",
+      "State form and execution status",
+      "Document date and storage",
+      "Copies given to agent and care team",
+      "Review trigger"
+    ]
+  },
+  "research": {
+    "primaryQuery": "how to choose a health care proxy",
+    "supportingQueries": [
+      "emergency contact versus health care proxy",
+      "choose medical decision maker",
+      "record health care agent"
+    ],
+    "intent": "Help select and communicate an agent without making treatment recommendations or claiming a national surrogate hierarchy.",
+    "sourceChecks": [
+      {
+        "url": "https://www.nia.nih.gov/health/advance-care-planning/choosing-health-care-proxy?form=MG0AV3",
+        "verified": "Official article text returned through search: willingness, honoring preferences, alternate agent, state execution rules, and sharing signed documents."
+      }
+    ],
+    "limitations": [
+      "No individualized legal review or medical advice. Activation, eligibility and execution must be checked against the actual state form and circumstances.",
+      "Saved search leads were reviewed for reader language only, not authority or prevalence. Quora was blocked in saved research. No search-volume or ranking estimate is available."
+    ]
+  }
+}

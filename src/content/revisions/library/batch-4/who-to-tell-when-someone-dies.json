@@ -1,0 +1,249 @@
+{
+  "slug": "who-to-tell-when-someone-dies",
+  "title": "Who to notify when someone dies: a working list",
+  "dek": "Prioritize death notifications by benefits, immediate risks and account needs, then track requirements without treating suggested timing as law.",
+  "metaDescription": "Prioritize death notifications by benefits, immediate risks and account needs, then track requirements without treating suggested timing as law.",
+  "updatedAt": "2026-11-17",
+  "body": [
+    {
+      "kind": "paragraphs",
+      "paragraphs": [
+        "After a death, first notify the people needed for immediate care and practical arrangements, confirm Social Security reporting where relevant, and identify benefits, insurance or household services that need prompt attention. Then work through institutions using a notification log. There is no universal rule that every bank or utility can safely wait a week.",
+        "The same news has to be repeated to people who ask different questions. A short record of whom you contacted, what they require and what happens next can prevent repeated calls. This guide focuses on US notifications, not the full probate process. Local deadlines and the person's circumstances may change the order."
+      ]
+    },
+    {
+      "kind": "list",
+      "heading": "Start with a manageable notification pass",
+      "checkable": true,
+      "items": [
+        "Tell close family and the people responsible for children, dependents, animals or an unattended home. Delegate personal messages if helpful.",
+        "Ask the funeral director whether the death has been reported to Social Security, if relevant. Record who is reporting and what remains to be done.",
+        "Identify active benefits, pension, employer and insurance contacts. Ask about ongoing payments, survivor options and any deadlines that apply.",
+        "Contact financial institutions through verified channels. Ask what a notification does to access and what evidence is required for the next action.",
+        "Preserve essential household services while asking about transfer or closure. Do not cancel every payment or service indiscriminately.",
+        "Keep a dated log of requests, reference numbers, documents sent, response dates and the authorized person handling each task."
+      ]
+    },
+    {
+      "kind": "table",
+      "heading": "Who belongs on the working list",
+      "columns": [
+        "Contact",
+        "Reason to notify",
+        "Question for the first contact"
+      ],
+      "rows": [
+        [
+          "SSA and relevant benefits agencies",
+          "Stop or correct benefits and ask about survivor processes.",
+          "Has a report already been made, and which payments need review?"
+        ],
+        [
+          "Employer or retirement provider",
+          "Pay, benefits, pension and possible dependent coverage changes.",
+          "Who handles bereavement administration and deadlines?"
+        ],
+        [
+          "Bank, card and investment providers",
+          "Protect accounts and establish the next authorized process.",
+          "What does notification change, and what documents are needed?"
+        ],
+        [
+          "Insurers",
+          "Claims and continuity of property or other necessary cover.",
+          "What notice and evidence does the policy require?"
+        ],
+        [
+          "Credit bureaus",
+          "Deceased-account reporting and identity concerns.",
+          "What is the current reporting procedure and how is it confirmed?"
+        ],
+        [
+          "Utilities, phone and memberships",
+          "Transfer, preserve or close services as appropriate.",
+          "Will closure affect residents, security or other accounts?"
+        ],
+        [
+          "Tax and motor-vehicle authorities",
+          "Final filings, identification and ownership procedures.",
+          "Which process applies and who may complete it?"
+        ]
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "Verify the government notification chain",
+      "paragraphs": [
+        "[USAGov](https://www.usa.gov/report-a-death?_hsmi=330340981) says the funeral director should report the death to SSA; if that does not happen, it should be reported promptly. SSA notifies Medicare. Other benefit programs can need separate contact. Record the actual reporting status instead of assuming every agency is informed by one death certificate.",
+        "Do not spend or return a benefit deposit based only on the date it arrived. Ask the payer which benefit period it covers and what repayment or correction procedure applies. Notification is also an opportunity to ask about survivor benefits, but eligibility and applications are separate from stopping the deceased person's payment."
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "Example: the order changes with the household",
+      "paragraphs": [
+        "Invented example: a daughter is helping after her father dies. She confirms that the funeral director will handle SSA reporting, then prioritizes his employer because her mother's health coverage may be affected. She also calls the home insurer because the house will be unoccupied. A seldom-used club membership waits while those questions are resolved.",
+        "Her log distinguishes \"death reported\" from \"claim submitted\" and \"account closed.\" When a provider asks for authority documents she does not yet have, she records the request and refers it to the person handling the estate. She does not represent herself as executor solely because the will names her."
+      ]
+    },
+    {
+      "kind": "scripts",
+      "heading": "Use one factual opening",
+      "items": [
+        {
+          "situation": "Provider notification",
+          "line": "I am reporting the death of the account holder. Please explain your bereavement process, what happens to the service or account now, and what evidence the authorized representative needs for the next step."
+        },
+        {
+          "situation": "Delegating personal news",
+          "line": "Could you let these people know and tell them who to contact about arrangements? Please do not share private financial details or forward documents."
+        }
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "Notification is not permission to close or transfer",
+      "paragraphs": [
+        "A family member may be able to report a death without having authority to transact, distribute property or sign closure instructions. Ask each institution to distinguish those steps. Joint ownership, beneficiary claims and estate assets may follow different processes. Do not use the deceased person's online identity to make changes as if they were still acting.",
+        "Before shutting a phone number or email service, consider how remaining account recovery and correspondence will be handled through permitted provider processes. That is not a reason to bypass access rules. Similarly, keep water, heating or security services appropriate for any occupied or vulnerable property until the responsible person agrees the next step."
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "Documents: ask before ordering or sending",
+      "paragraphs": [
+        "There is no universally correct number of certified death certificates to order. List institutions, ask what evidence they need, whether a certified copy is returned and whether a permitted alternative works. Keep copies and dispatch records where appropriate. Do not send an irreplaceable original document without understanding the process.",
+        "Use official portals, verified postal addresses or numbers taken independently from statements and provider websites. A caller who knows the deceased person's name is not thereby legitimate. Limit the personal details in obituaries and broadly shared messages, and avoid sending identity documents in an unverified reply."
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "Stop when the request becomes a liability question",
+      "paragraphs": [
+        "The [FTC](https://consumer.ftc.gov/articles/debts-and-deceased-relatives?mod=article_inline) explains that relatives usually do not pay a deceased person's debts from their own funds, but exceptions exist. Do not promise personal payment because a collector is insistent. Ask for written information and direct estate matters to the authorized representative.",
+        "Get qualified help for a shutoff threat, disputed debt, unclear authority, benefits overpayment, an unoccupied property risk or a deadline notice. Do not let a suggested ordering list override a real notice with a response date. Keep that document and obtain advice specific to the situation."
+      ]
+    },
+    {
+      "kind": "faq",
+      "items": [
+        {
+          "q": "Do I need to tell every government agency separately?",
+          "a": "Not necessarily, but do not assume a single report reaches every program. Confirm SSA reporting and identify each other benefit or public service the person used. USAGov provides a useful starting list. Keep the reporting status and any separate application or repayment request distinct in your notes."
+        },
+        {
+          "q": "Should I close all accounts immediately?",
+          "a": "No blanket closure rule is appropriate. Ask what notification changes and what the authorized representative should do next. Some accounts support an occupied home or another person's needs. Closing, transferring and making a beneficiary claim are different actions and may require different evidence."
+        },
+        {
+          "q": "How many death certificates should I order?",
+          "a": "Build the institution list and ask what each one currently requires before choosing a number. Some need certified copies and others may use different verification. Note whether documents are returned. A fixed national recommendation can cause unnecessary cost or still leave you short for your actual circumstances."
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "name": "USAGov: agencies to notify when someone dies",
+      "url": "https://www.usa.gov/report-a-death?_hsmi=330340981",
+      "retrieved": "2026-11-17",
+      "note": "Official page text returned through search: funeral director reporting to SSA, Medicare notification, benefits agencies, financial institutions, and final tax return."
+    },
+    {
+      "name": "FTC: debts and deceased relatives",
+      "url": "https://consumer.ftc.gov/articles/debts-and-deceased-relatives?mod=article_inline",
+      "retrieved": "2026-11-17",
+      "note": "Official article text returned through search: estate debts, limited exceptions to family non-liability, and limits on collector contacts. No individualized liability assessment."
+    }
+  ],
+  "visuals": [
+    {
+      "title": "Reported is not completed",
+      "kicker": "Notification status",
+      "kind": "record",
+      "steps": [
+        {
+          "label": "Reported",
+          "detail": "Record that the institution received the news."
+        },
+        {
+          "label": "Requirements",
+          "detail": "Capture the documents and authority it requests."
+        },
+        {
+          "label": "Action",
+          "detail": "Track the claim, transfer or closure separately."
+        },
+        {
+          "label": "Confirmed",
+          "detail": "Retain written confirmation and any remaining task."
+        }
+      ],
+      "caption": "A completed phone call may leave several administrative steps open.",
+      "alt": "Four notification states distinguish reporting a death from documents, authorized action and completion confirmation."
+    },
+    {
+      "title": "Prioritize the real risk",
+      "kicker": "Death notification order",
+      "kind": "sequence",
+      "steps": [
+        {
+          "label": "Immediate care",
+          "detail": "Cover dependents, animals and property access."
+        },
+        {
+          "label": "Benefits and coverage",
+          "detail": "Check reporting, payments and survivor processes."
+        },
+        {
+          "label": "Financial providers",
+          "detail": "Establish protection and authorized next steps."
+        },
+        {
+          "label": "Services",
+          "detail": "Preserve, transfer or close according to actual need."
+        }
+      ],
+      "caption": "A policy deadline or immediate risk can change the order.",
+      "alt": "A risk-based notification sequence covers care, benefits, financial providers and household services."
+    }
+  ],
+  "worksheet": {
+    "title": "Death notification and follow-up log",
+    "prompt": "Track reporting separately from claims, transfers and closures.",
+    "fields": [
+      "Institution and verified contact",
+      "Person handling the task",
+      "Date reported and reference",
+      "Documents or authority requested",
+      "Immediate service or payment effect",
+      "Actual deadline and source",
+      "Next action and follow-up date",
+      "Completion confirmation location"
+    ]
+  },
+  "research": {
+    "primaryQuery": "who to notify when someone dies",
+    "supportingQueries": [
+      "bereavement notification checklist us",
+      "who needs death certificate",
+      "report death to banks and benefits"
+    ],
+    "intent": "Provide a risk-based US notification list without invented national deadlines or automatic closure advice.",
+    "sourceChecks": [
+      {
+        "url": "https://www.usa.gov/report-a-death?_hsmi=330340981",
+        "verified": "Official page text returned through search: funeral director reporting to SSA, Medicare notification, benefits agencies, financial institutions, and final tax return."
+      },
+      {
+        "url": "https://consumer.ftc.gov/articles/debts-and-deceased-relatives?mod=article_inline",
+        "verified": "Official article text returned through search: estate debts, limited exceptions to family non-liability, and limits on collector contacts. No individualized liability assessment."
+      }
+    ],
+    "limitations": [
+      "No individual benefits entitlement, estate authority or personal debt liability was determined. Timing depends on actual notices and policies.",
+      "Saved search leads were reviewed for reader language only, not authority or prevalence. Quora was blocked in saved research. No search-volume or ranking estimate is available."
+    ]
+  }
+}

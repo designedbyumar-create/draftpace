@@ -1,0 +1,205 @@
+{
+  "slug": "glove-box-checklist-what-to-keep",
+  "title": "What to keep in your glove box and leave at home",
+  "dek": "Keep current driving documents and useful contact details easy to find. Leave ownership papers, spare keys and unnecessary personal records elsewhere.",
+  "metaDescription": "Keep current driving documents and useful contact details easy to find. Leave ownership papers, spare keys and unnecessary personal records elsewhere.",
+  "updatedAt": "2026-11-17",
+  "body": [
+    {
+      "kind": "paragraphs",
+      "paragraphs": [
+        "Keep the driving documents your jurisdiction requires, a current insurer and roadside contact, a pen and a way to consult the owner manual. Add a tire-pressure gauge if it fits safely. Store the title, spare keys and unrelated personal paperwork securely elsewhere. A convenience card supplements required documents; it does not replace them.",
+        "A glove box often becomes an archive just when you need it to function as a small working folder. The goal is that someone using the car can find the current document without sorting old policies and receipts. This guide is US-focused; carrying and electronic-document rules must be checked locally."
+      ]
+    },
+    {
+      "kind": "table",
+      "heading": "Sort the contents by purpose",
+      "columns": [
+        "Place",
+        "Items",
+        "Reason"
+      ],
+      "rows": [
+        [
+          "Glove-box document sleeve",
+          "Current registration or other required proof; current insurance evidence",
+          "Keep the applicable documents together and readable"
+        ],
+        [
+          "Small contact card",
+          "Insurer claims number, roadside provider and useful vehicle identifier",
+          "Numbers remain reachable without searching an account"
+        ],
+        [
+          "Small tools space",
+          "Pen, notepad and gauge if securely stored",
+          "Useful without burying the papers"
+        ],
+        [
+          "Secure home storage",
+          "Title, spare key, full invoice archive and unrelated identity papers",
+          "Not needed for ordinary roadside access"
+        ],
+        [
+          "Secured vehicle kit storage",
+          "Larger emergency supplies appropriate to the vehicle",
+          "Bulky items should not crowd or fall from the glove box"
+        ]
+      ]
+    },
+    {
+      "kind": "list",
+      "heading": "Do one clear-out with the current documents",
+      "checkable": true,
+      "items": [
+        "Remove everything and separate current papers from expired ones. Check that each belongs to this car.",
+        "Use the [state motor vehicle directory](https://www.usa.gov/state-motor-vehicle-services) to verify what you must carry and which formats are accepted.",
+        "Ask the insurer for a current proof-of-coverage document and confirm its effective dates.",
+        "Make a short contact card from official provider details, not an old advertisement or search result.",
+        "Keep a manual or an accessible manufacturer copy; record any essential specifications only after checking the correct manual.",
+        "Return only the useful current set, then archive evidence you need to retain elsewhere.",
+        "Show another regular driver where the current sleeve and contacts are."
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "Invented example: a borrowed family car",
+      "paragraphs": [
+        "A fictional driver borrows the family hatchback and finds three insurance cards in the glove box. The top one expired last year. During the clear-out, the household compares the current card with the policy, removes old roadside copies and labels the sleeve for the hatchback. The new contact card says \"roadside provider: number copied from current plan\" rather than an invented working number.",
+        "The card also states when it was checked. A dated mileage note is useful context at a service counter, but it is not a live odometer reading. An oil specification copied for another engine is worse than an empty field, so unfamiliar specifications remain blank until checked."
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "Paper and phone are different failure points",
+      "paragraphs": [
+        "Check whether your jurisdiction accepts electronic proof and what presentation is required. Do not rely on a nationwide claim that every officer, office or border crossing must accept the same phone screen. An insurer app being available does not establish the local legal rule.",
+        "A current paper backup is a practical option where appropriate because batteries, access and accounts can fail. Conversely, a damaged or illegible paper card is not made useful by being paper. Replace both copies when the actual coverage or document changes, and avoid publishing a full policy in a general car-sharing message thread."
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "Avoid adding unnecessary personal information",
+      "paragraphs": [
+        "A vehicle identifier is not a secret password; the VIN is often visible on the car. The practical privacy task is to avoid carrying extra addresses, payment information, identity documents and full household records for no driving purpose. Keep legally required documents intact rather than redacting them into an invalid form.",
+        "A service receipt archive can live at home or in a secure folder. If a specific invoice is needed for a visit, bring it deliberately and return it afterward. Do not confuse a copy of your title with current registration, or treat a maintenance summary as proof of insurance."
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "Safety comes before reaching for the folder",
+      "paragraphs": [
+        "Do not retrieve or update papers while driving. In a roadside emergency, choose a safe response to the actual situation before gathering administrative details. If a document appears missing or expired, verify status through the issuing agency or insurer; a neat sleeve cannot establish that driving is lawful.",
+        "The [NHTSA tire page](https://www.nhtsa.gov/vehicle-safety/tires) explains cold-pressure checking and using vehicle specifications. A gauge in the glove box is a useful reminder, not a substitute for that check. Keep larger seasonal supplies in an appropriate secured location and use the [winter preparation guide](/guides/winter-car-prep-checklist) when conditions call for it."
+      ]
+    },
+    {
+      "kind": "faq",
+      "items": [
+        {
+          "q": "Should my car title stay in the glove box?",
+          "a": "Keep ownership documents securely elsewhere rather than as part of the everyday driving folder. Check the official transfer instructions when selling or changing ownership. Registration and title serve different purposes, so do not assume one can stand in for the other."
+        },
+        {
+          "q": "Can a contact card replace my insurance card?",
+          "a": "No. A card you make is an address book, not insurer-issued evidence of coverage. Carry or access the accepted proof required where you drive. Verify that its details and dates are current instead of relying on an old policy number."
+        },
+        {
+          "q": "How often should I check the glove box?",
+          "a": "Do it whenever a replacement document arrives, a vehicle changes hands or the regular driver changes. An occasional clear-out can catch other clutter, but the important trigger is a changed fact. Remove obsolete roadside copies without discarding records you need to retain elsewhere."
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "name": "USAGov: State motor vehicle services",
+      "url": "https://www.usa.gov/state-motor-vehicle-services",
+      "retrieved": "2026-11-17",
+      "note": "Official directory checked; links readers to their own jurisdiction, not a universal deadline or insurance rule."
+    },
+    {
+      "name": "NHTSA: Tires",
+      "url": "https://www.nhtsa.gov/vehicle-safety/tires",
+      "retrieved": "2026-11-17",
+      "note": "Page checked: at least monthly cold-pressure checks, door placard pressure and tire selection."
+    }
+  ],
+  "visuals": [
+    {
+      "title": "Keep, move, remove",
+      "kicker": "A glove box is a working folder",
+      "kind": "compare",
+      "steps": [
+        {
+          "label": "Keep",
+          "detail": "Retain current required driving proof and useful contacts."
+        },
+        {
+          "label": "Move",
+          "detail": "Archive title and service evidence securely elsewhere."
+        },
+        {
+          "label": "Remove",
+          "detail": "Take out obsolete roadside copies and unrelated clutter."
+        }
+      ],
+      "caption": "Confirm local document rules before deciding what stays.",
+      "alt": "A glove-box sorting comparison separates current driving essentials, home records and obsolete clutter."
+    },
+    {
+      "title": "Replace both copies",
+      "kicker": "A renewal is also a document check",
+      "kind": "sequence",
+      "steps": [
+        {
+          "label": "Confirm",
+          "detail": "Read the effective dates and vehicle identity."
+        },
+        {
+          "label": "Replace",
+          "detail": "Update accepted paper and phone copies as applicable."
+        },
+        {
+          "label": "Archive",
+          "detail": "Retain needed evidence outside the working sleeve."
+        }
+      ],
+      "caption": "A newer card is useful only after its details have been checked.",
+      "alt": "A renewal sequence checks vehicle details, updates active copies and archives retained evidence."
+    }
+  ],
+  "worksheet": {
+    "title": "Glove-box contents and document check",
+    "prompt": "Decide what must travel with this vehicle and remove unnecessary personal paperwork.",
+    "fields": [
+      "Vehicle label",
+      "Local document rule and official link",
+      "Current proof and effective dates",
+      "Insurer claims contact",
+      "Roadside provider and contact",
+      "Manual access",
+      "Items moved to secure storage",
+      "Checked date and next trigger"
+    ]
+  },
+  "research": {
+    "primaryQuery": "what to keep in your glove box",
+    "supportingQueries": [
+      "glove compartment documents checklist",
+      "keep car title at home",
+      "paper insurance card backup"
+    ],
+    "intent": "Create a compact glove-box kit while separating state document rules from useful optional items.",
+    "sourceChecks": [
+      "https://www.usa.gov/state-motor-vehicle-services - Official directory checked; links readers to their own jurisdiction, not a universal deadline or insurance rule.",
+      "https://www.nhtsa.gov/vehicle-safety/tires - Page checked: at least monthly cold-pressure checks, door placard pressure and tire selection."
+    ],
+    "limitations": [
+      "US-focused administration; requirements and individual circumstances vary.",
+      "Saved Reddit leads informed reader-language only; no anecdotes treated as factual authority. Quora was blocked in the saved research.",
+      "No keyword-volume dataset or ranking guarantee. Product registry inspected, but live product workflows not tested."
+    ]
+  }
+}

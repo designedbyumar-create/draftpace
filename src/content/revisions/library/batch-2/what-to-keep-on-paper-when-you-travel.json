@@ -1,0 +1,204 @@
+{
+  "slug": "what-to-keep-on-paper-when-you-travel",
+  "title": "What to print before you travel: the useful basics",
+  "dek": "Make a contact page that works without your phone, then keep identity copies separate. Include local addresses, booking dates, and key numbers.",
+  "metaDescription": "Make a contact page that works without your phone, then keep identity copies separate. Include local addresses, booking dates, and key numbers.",
+  "updatedAt": "2026-11-17",
+  "body": [
+    {
+      "kind": "paragraphs",
+      "paragraphs": [
+        "Print a short contact and booking summary, plus any documents your carrier or destination specifically requires on paper. Keep passport or identity copies separately and securely. The contact summary helps when your phone fails; a photocopy does not replace an original passport or guarantee admission or boarding.",
+        "The useful test is a late arrival with a dead battery. Can you show a driver the correct address, reach the property, and prove which dates you booked? A carefully chosen page solves that problem better than printing an entire inbox."
+      ]
+    },
+    {
+      "kind": "list",
+      "heading": "Build the contact summary",
+      "checkable": true,
+      "items": [
+        "Write traveler names, trip dates, and the date this page was last updated.",
+        "Copy each accommodation's exact address in the local writing system where useful.",
+        "Add property phone numbers, booking names, references, and check-in dates.",
+        "List key flight and transfer details with the operator's contact information.",
+        "Add your insurer's assistance number and policy reference if you have coverage.",
+        "Include a trusted contact at home and an agreed way to share changes.",
+        "Store identity copies separately from this frequently handled page."
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "Give the address enough context",
+      "paragraphs": [
+        "Use the property's own address rather than a map pin you cannot interpret offline. Include its name and telephone number, not just a street. For multi-stop trips, put the next stay first or clearly label dates so a tired traveler does not head to yesterday's hotel.",
+        "Write numbers in internationally usable form with the country code, then verify them against the provider's information. Do not invent a telephone number to make the page look complete. A missing number marked 'verify before departure' is safer than a plausible-looking placeholder."
+      ]
+    },
+    {
+      "kind": "table",
+      "heading": "Invented example: a booking entry",
+      "columns": [
+        "Field",
+        "What the traveler writes"
+      ],
+      "rows": [
+        [
+          "Stay",
+          "Harbor Guesthouse, November 18-21; booking under A. Reed"
+        ],
+        [
+          "Address",
+          "Exact local-language address copied from the property's confirmation"
+        ],
+        [
+          "Contact",
+          "Verified property number in +[country code] [number] format"
+        ],
+        [
+          "Reservation",
+          "Booking reference from the confirmed reservation"
+        ],
+        [
+          "Late arrival",
+          "Written arrival instructions and the channel agreed with the property"
+        ]
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "Keep two different kinds of paper",
+      "paragraphs": [
+        "The everyday page is for showing a driver or reading to an operator. Leave off card numbers, passwords, recovery codes, and detailed identity information. A reservation reference can also be sensitive, so share only the part another person needs.",
+        "Identity copies belong in a more private packet, separate from your original documents. The [State Department's preparation brochure](https://travel.state.gov/content/dam/travel/cna_pdf/student-travel-brochure-pdf%20%281%29.pdf) recommends copies at home and a carried copy apart from originals. Protect the packet from casual access, and use secure disposal when you no longer need it."
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "Make the backup survive a single loss",
+      "paragraphs": [
+        "Carry the contact page where you can reach it without opening every bag. Keep another copy with a travel partner or in a separate secure place. Two copies inside the same passport wallet do not protect against losing that wallet.",
+        "Save the same summary offline on your phone and send the current version to your trusted contact if appropriate. Open the saved file with network access off before leaving. If the booking changes, update the paper or cross out the obsolete entry clearly. An old printed transfer time can create a new problem."
+      ]
+    },
+    {
+      "kind": "scripts",
+      "heading": "Two useful messages",
+      "items": [
+        {
+          "situation": "Confirming an arrival",
+          "line": "Our reservation is under [name] for [dates]. Please confirm the full arrival address, a number we can call from abroad, and the late check-in process."
+        },
+        {
+          "situation": "Updating the home contact",
+          "line": "This version replaces the earlier itinerary. The changed stay is [name and dates]. Please keep this copy private."
+        }
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "When the page is not enough",
+      "paragraphs": [
+        "Check required originals, visas, child-travel permissions, and carrier document rules separately. Do not shrink identity copies to fit the contact sheet if that makes them unreadable. Different travelers may need different documentation, even on one booking.",
+        "If an original document is lost or stolen, contact the relevant issuing authority or consular service and carrier for current instructions. Paper details can assist that conversation but cannot promise a same-day replacement. Use the [travel document checklist](/guides/travel-document-checklist) for the broader document task."
+      ]
+    },
+    {
+      "kind": "faq",
+      "items": [
+        {
+          "q": "Do I need to print every booking email?",
+          "a": "Usually you can make a shorter summary for everyday reference, but check any explicit carrier or provider requirements before discarding paper documents. Keep enough detail to identify the booking and reach the operator. Separate important conditions or tickets if the summary would omit them."
+        },
+        {
+          "q": "Should I put passport numbers on the contact page?",
+          "a": "Avoid putting them on a page you expect to show to strangers. Keep necessary identity copies or details in a separate secure packet. Think about what a person finding the page could do with it, not only how convenient it would be for you."
+        },
+        {
+          "q": "Are screenshots enough?",
+          "a": "Screenshots are useful offline backups but still depend on a working device and battery. Keep the highest-value contacts and arrival information on paper as well. Test that screenshots contain the relevant dates and addresses rather than only the top of an email."
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "name": "US Department of State: before you go",
+      "url": "https://travel.state.gov/content/dam/travel/cna_pdf/student-travel-brochure-pdf%20%281%29.pdf",
+      "retrieved": "2026-11-17",
+      "note": "Advises keeping document copies at home and carrying another set separate from originals."
+    }
+  ],
+  "visuals": [
+    {
+      "title": "Two paper packets",
+      "kicker": "Different access needs",
+      "kind": "compare",
+      "steps": [
+        {
+          "label": "Contact page",
+          "detail": "Carry addresses, booking dates, references, and verified contact numbers."
+        },
+        {
+          "label": "Identity copies",
+          "detail": "Keep readable copies private and separate from originals."
+        },
+        {
+          "label": "Required originals",
+          "detail": "Carry the actual documents required for your journey."
+        }
+      ],
+      "caption": "A useful backup is not a substitute for required original documents.",
+      "alt": "Contact details, private identity copies, and required originals have different uses and storage needs."
+    },
+    {
+      "title": "One loss should not remove everything",
+      "kicker": "Backup placement",
+      "kind": "sequence",
+      "steps": [
+        {
+          "label": "Carry",
+          "detail": "Keep the arrival summary accessible."
+        },
+        {
+          "label": "Separate",
+          "detail": "Store private copies away from original documents."
+        },
+        {
+          "label": "Share",
+          "detail": "Leave a current version with a trusted contact if appropriate."
+        }
+      ],
+      "caption": "Copies in the same lost wallet offer no separate fallback.",
+      "alt": "A travel backup is divided between an accessible contact page, separate private copies, and a trusted contact."
+    }
+  ],
+  "worksheet": {
+    "title": "Offline arrival and contact summary",
+    "prompt": "Fill in verified details for the next arrival, leaving sensitive identity data off this page.",
+    "fields": [
+      "Traveler and travel dates",
+      "Stay dates and booking name",
+      "Local-language address",
+      "Property phone with country code",
+      "Flight or transfer reference",
+      "Insurance assistance contact",
+      "Trusted home contact",
+      "Last verified date"
+    ]
+  },
+  "research": {
+    "primaryQuery": "what to print before you travel",
+    "supportingQueries": [
+      "paper travel backup checklist",
+      "printed hotel address and booking details"
+    ],
+    "intent": "Prepare an offline paper fallback without confusing copies with accepted travel documents.",
+    "sourceChecks": [
+      "https://travel.state.gov/content/dam/travel/cna_pdf/student-travel-brochure-pdf%20%281%29.pdf - Advises keeping document copies at home and carrying another set separate from originals."
+    ],
+    "limitations": [
+      "Practical organization suggestions are not individualized professional advice.",
+      "Saved Reddit leads are qualitative only; Quora was blocked in saved research. No keyword-volume or ranking claims."
+    ]
+  }
+}

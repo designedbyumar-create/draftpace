@@ -1,0 +1,222 @@
+{
+  "slug": "how-to-budget-with-irregular-income",
+  "title": "How to budget with irregular income",
+  "dek": "Separate money received from money expected, cover a low-income month, and use a holding buffer only when it is genuinely funded.",
+  "metaDescription": "Separate money received from money expected, cover a low-income month, and use a holding buffer only when it is genuinely funded.",
+  "updatedAt": "2026-11-17",
+  "body": [
+    {
+      "kind": "paragraphs",
+      "paragraphs": [
+        "With irregular income, base near-term spending on money you have received and protect essentials before making discretionary commitments. Use past low-income periods to stress-test a baseline, not to guarantee future earnings. A holding buffer can smooth transfers to your spending account only while it has enough cash.",
+        "One good month can make a fixed monthly salary for yourself look easy. The harder question is what happens after two late clients or a quiet season. This guide covers the household planning method, not a tax rate or a promise that income will repeat."
+      ]
+    },
+    {
+      "kind": "list",
+      "heading": "Build the low-income plan",
+      "checkable": true,
+      "items": [
+        "List received deposits by month and distinguish gross business receipts from money available personally.",
+        "Identify essential household costs and their actual payment dates.",
+        "Reserve business costs and tax obligations using appropriate local advice.",
+        "Write a conservative baseline and test it against a weak month.",
+        "Keep invoices and hoped-for work outside spendable cash until received.",
+        "Decide how much of a funded buffer can cover a slow period.",
+        "Review the plan when income or costs change, not only on a fixed quarterly date."
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "Do not confuse a forecast with available cash",
+      "paragraphs": [
+        "A signed contract or issued invoice can be useful for forecasting, but it is not money you can spend today. Keep expected receipts on a separate list with dates and uncertainty. If a client is late, revise the forecast rather than quietly increasing what you assume the account holds.",
+        "[MoneyHelper's irregular-income guidance](https://www.moneyhelper.org.uk/en/everyday-money/budgeting/how-to-budget-for-an-irregular-income) recommends planning around lower income. It is UK guidance; its tax or benefits details should not be transferred to another country. The same caution applies to a generic percentage set aside for tax."
+      ]
+    },
+    {
+      "kind": "table",
+      "heading": "Invented example: a buffer that helps, then shrinks",
+      "columns": [
+        "Month",
+        "Received for household use",
+        "Transfer to spending",
+        "Buffer after transfer"
+      ],
+      "rows": [
+        [
+          "Opening",
+          "Already saved",
+          "None",
+          "$900"
+        ],
+        [
+          "January",
+          "$2,900",
+          "$2,300",
+          "$1,500"
+        ],
+        [
+          "February",
+          "$1,850",
+          "$2,300",
+          "$1,050"
+        ],
+        [
+          "March",
+          "$1,200",
+          "$2,300",
+          "-$50 without a change"
+        ]
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "The buffer does not create income",
+      "paragraphs": [
+        "In this example, January and February work because the opening $900 was real. March would exceed available funds by $50. The household must change the transfer, obtain other resources, or agree changes to commitments; it cannot keep paying itself $2,300 just because that was the chosen baseline.",
+        "A separate account can make the buffer easier to see, but it is optional. Check fees, access, transfer times, and any account restrictions. A clear record within an existing setup may be enough. Do not reserve the same money simultaneously as tax, emergency savings, and income smoothing."
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "Choose a baseline you can explain",
+      "paragraphs": [
+        "Start with the essential spending floor, then compare it with current resources and plausible weak periods. Historical low months help identify risk, but a new business, seasonal change, or lost contract can make them unrepresentative. With little history, plan a shorter interval and update it as evidence arrives.",
+        "Avoid rounding a baseline upward merely to make it look like a salary. If your low-month estimate is below essential costs, show the gap directly. Changing a number in the plan does not remove rent, childcare, or a debt payment."
+      ]
+    },
+    {
+      "kind": "scripts",
+      "heading": "Use a deposit-allocation note",
+      "items": [
+        {
+          "situation": "When money arrives",
+          "line": "Received [amount] on [date]. Business and tax obligations use [amount]. Household bills need [amount]. Buffer contribution is [amount]. Remaining uncommitted cash is [amount]."
+        },
+        {
+          "situation": "When income is late",
+          "line": "The expected receipt has not arrived. Current cash covers commitments through [date]. I need to follow up with [client] and address [specific shortfall] before [deadline]."
+        }
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "Check timing within the month",
+      "paragraphs": [
+        "A monthly surplus can still leave checking short on rent day. Walk current cash forward using actual bill dates and confirmed transfer availability. Treat anticipated income as a separate scenario, not a hidden assumption in the funded plan.",
+        "A useful review trigger is a missed expected deposit, a shrinking buffer, or a new essential commitment. One strong month is a chance to rebuild capacity, not automatic evidence that ongoing spending can rise. Set aside known annual costs before calling the remainder spare."
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "When a holding account is not enough",
+      "paragraphs": [
+        "A sustained income shortfall requires action beyond rearranging accounts. Contact billers early about available arrangements, consider support you may qualify for, and seek qualified debt or tax advice where relevant. Do not skip essential payments merely to preserve a nominal buffer target.",
+        "For the longer-term surprise fund, see [building a first emergency fund](/guides/how-to-build-a-first-1000-emergency-fund). An income-smoothing buffer covers uneven timing; emergency savings address shocks. You may choose one account, but give each part one clear job."
+      ]
+    },
+    {
+      "kind": "faq",
+      "items": [
+        {
+          "q": "Should I use my lowest month or average income?",
+          "a": "Use historical figures to test scenarios, not as a universal answer. An average can hide slow months; the lowest month may also be an unusual event. Compare essential costs with current cash and credible weak periods, then keep uncertainty visible."
+        },
+        {
+          "q": "How much tax should I put aside?",
+          "a": "That depends on your jurisdiction, business structure, income, deductions, and other circumstances. Ask the relevant tax authority or a qualified professional. Separate the amount needed for those obligations before treating receipts as available for household spending."
+        },
+        {
+          "q": "What if I have no buffer yet?",
+          "a": "Do not schedule transfers that assume one exists. Allocate received cash to imminent essentials, monitor dates closely, and build a buffer when there is genuine room. If current income cannot cover essentials, seek suitable assistance rather than treating account separation as the solution."
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "name": "MoneyHelper: budgeting for irregular income",
+      "url": "https://www.moneyhelper.org.uk/en/everyday-money/budgeting/how-to-budget-for-an-irregular-income",
+      "retrieved": "2026-11-17",
+      "note": "UK public guidance discusses budgeting against lower income and preparing for good and bad months; tax and benefit rules remain jurisdiction-specific."
+    }
+  ],
+  "visuals": [
+    {
+      "title": "Expected is not received",
+      "kicker": "Two income records",
+      "kind": "compare",
+      "steps": [
+        {
+          "label": "Expected",
+          "detail": "Invoices and forecasts show possible future receipts."
+        },
+        {
+          "label": "Received",
+          "detail": "Cleared funds support today's spending decisions."
+        },
+        {
+          "label": "Reserved",
+          "detail": "Obligations reduce what a deposit makes available."
+        }
+      ],
+      "caption": "Forecasting is useful without turning uncertain receipts into spendable cash.",
+      "alt": "A comparison distinguishes expected income, received money, and obligations reserved from each deposit."
+    },
+    {
+      "title": "A buffer has a limit",
+      "kicker": "Income smoothing",
+      "kind": "timeline",
+      "steps": [
+        {
+          "label": "Opening",
+          "detail": "Record the buffer that actually exists."
+        },
+        {
+          "label": "Good month",
+          "detail": "Replenish it from genuine surplus."
+        },
+        {
+          "label": "Slow month",
+          "detail": "Use only the amount it can fund."
+        },
+        {
+          "label": "Review",
+          "detail": "Change the plan before the balance runs out."
+        }
+      ],
+      "caption": "A fixed transfer is sustainable only while resources support it.",
+      "alt": "A timeline shows the opening buffer, replenishment, drawdown, and the point for reviewing transfers."
+    }
+  ],
+  "worksheet": {
+    "title": "Irregular-income deposit and buffer plan",
+    "prompt": "Allocate a received deposit and test the next weak-income period.",
+    "fields": [
+      "Received amount and date",
+      "Expected income kept separate",
+      "Business and tax reserves",
+      "Essential costs and due dates",
+      "Actual opening buffer",
+      "Proposed household transfer",
+      "Weak-period shortfall",
+      "Review trigger and next action"
+    ]
+  },
+  "research": {
+    "primaryQuery": "how to budget with irregular income",
+    "supportingQueries": [
+      "budget freelance income uneven payments",
+      "irregular income holding account"
+    ],
+    "intent": "Build an uneven-income spending plan without presenting historical averages or a holding account as a guarantee.",
+    "sourceChecks": [
+      "https://www.moneyhelper.org.uk/en/everyday-money/budgeting/how-to-budget-for-an-irregular-income - UK public guidance discusses budgeting against lower income and preparing for good and bad months; tax and benefit rules remain jurisdiction-specific."
+    ],
+    "limitations": [
+      "Practical organization suggestions are not individualized professional advice.",
+      "Saved Reddit leads are qualitative only; Quora was blocked in saved research. No keyword-volume or ranking claims."
+    ]
+  }
+}

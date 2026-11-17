@@ -1,0 +1,239 @@
+{
+  "slug": "what-is-due-on-my-car-right-now",
+  "title": "What maintenance is due on my car right now?",
+  "dek": "Use your vehicle's schedule, a fresh odometer reading and last-service evidence to identify due, upcoming and unknown maintenance without guessing.",
+  "metaDescription": "Use your vehicle's schedule, a fresh odometer reading and last-service evidence to identify due, upcoming and unknown maintenance without guessing.",
+  "updatedAt": "2026-11-17",
+  "body": [
+    {
+      "kind": "paragraphs",
+      "paragraphs": [
+        "A maintenance task is due when it reaches the mileage or time limit specified for your vehicle, whichever applies first where the schedule gives both. Compare the current reading and date with reliable last-service evidence. If that evidence is missing, mark the task unknown, not safe to postpone. Warning signs and safety concerns need assessment even when a schedule says a task is not due.",
+        "The reminder sticker, manual and shop recommendation may each describe something different. Your first job is to identify the correct vehicle schedule and the facts behind the last service, then calculate what remains. This guide explains that administrative check; it cannot diagnose the vehicle, supply universal intervals or certify that it is safe to drive."
+      ]
+    },
+    {
+      "kind": "list",
+      "heading": "Work out the status one task at a time",
+      "checkable": true,
+      "items": [
+        "Identify the exact year, model, engine or powertrain and relevant schedule. Use the manufacturer's information, including applicable driving-condition provisions.",
+        "Read the current odometer and record the date and units. Do not combine a kilometer reading with a mileage interval.",
+        "Find the last-service date, odometer and task description on the receipt, your record or the servicing shop's evidence. Distinguish inspection from replacement.",
+        "Copy the actual applicable interval or manufacturer service-life instruction. Some systems use a monitor rather than a simple repeated arithmetic interval.",
+        "Calculate mileage and date thresholds where the schedule provides them. Reaching either applicable limit makes the task due; both do not have to be reached.",
+        "Separate due, upcoming and unknown tasks, then discuss uncertainty or symptoms with a qualified mechanic. Save the completed work and evidence for the next check."
+      ]
+    },
+    {
+      "kind": "table",
+      "heading": "Example: one car on November 17, 2026 at 52,300 miles",
+      "columns": [
+        "Task",
+        "Invented interval and last service",
+        "Thresholds",
+        "Status"
+      ],
+      "rows": [
+        [
+          "Oil and filter",
+          "5,000 miles or 6 months; May 1 at 48,100",
+          "53,100 miles or November 1",
+          "Due by time, even with 800 miles remaining."
+        ],
+        [
+          "Tire rotation",
+          "7,500 miles; January 15 at 44,900",
+          "52,400 miles",
+          "100 miles remaining under this example interval."
+        ],
+        [
+          "Cabin filter",
+          "15,000 miles or 12 months; January 10 at 40,000",
+          "55,000 miles or January 10, 2027",
+          "2,700 miles and the stated date remain."
+        ],
+        [
+          "Brake fluid",
+          "Service evidence missing",
+          "Cannot establish the last-service baseline",
+          "Unknown; ask about assessment and the correct schedule."
+        ]
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "The table is arithmetic, not a service schedule",
+      "paragraphs": [
+        "Every interval and service record in the table is invented. Do not copy these numbers to your car. The oil example is already due by the date limit even though mileage remains. The cabin-filter example gives both remaining thresholds; it does not predict which will arrive first without knowing future use.",
+        "Add the mileage interval to the last recorded mileage to find the next mileage threshold. Add the applicable calendar interval to the actual last-service date to find the date threshold, following the manufacturer's instructions. For one-limit tasks, use the specified limit rather than inventing a second one."
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "The manufacturer schedule is the starting point",
+      "paragraphs": [
+        "The [FTC auto-repair guide](https://www.bulkorder.ftc.gov/system/files/publications/pdf-0078-auto-repair.pdf) recommends following the manufacturer's maintenance schedule for your type of driving. Confirm which conditions and schedule apply to the exact vehicle. Do not automatically shorten every interval because one journey was dusty or assume a generic normal schedule covers sustained demanding use.",
+        "If a shop recommends earlier work, ask whether it is based on a schedule, an observed condition, a diagnostic result or shop policy. Those can all be different from a factory interval. Record the explanation and proposed work before authorization. An inspection finding may require action even when the scheduled replacement point has not arrived."
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "Unknown is not the same as not due",
+      "paragraphs": [
+        "A missing receipt does not prove work was never performed, but it also does not establish that the task can wait. Ask prior shops or the seller for records and keep estimates clearly labelled as unverified. Do not reset a service clock to today just because today is when you began using a tracker.",
+        "For unknown safety-critical maintenance, ask a qualified mechanic how to establish an appropriate baseline now. Some tasks cannot be verified merely by looking at the component. Keep the distinction between history recovered, condition assessed and work actually completed. The [used-car records guide](/guides/used-car-no-service-records-what-to-do) addresses that broader history problem."
+      ]
+    },
+    {
+      "kind": "scripts",
+      "heading": "Ask why work is recommended",
+      "items": [
+        {
+          "situation": "Schedule versus finding",
+          "line": "Is this task due under the manufacturer schedule for this vehicle and driving, or are you recommending it because of a specific finding? Please show me the interval or explain the finding and the consequence of waiting."
+        },
+        {
+          "situation": "Unknown history",
+          "line": "I do not have reliable evidence of the last service. What can you establish, what remains unknown and what baseline work or inspection do you recommend before I rely on the vehicle?"
+        }
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "Do not calculate past a warning sign",
+      "paragraphs": [
+        "A date comparison is not a diagnosis. A warning light, leak, braking or steering concern, overheating, unusual vibration or other safety issue needs the response described by the owner's manual and appropriate professional help. Do not continue driving merely because the maintenance table looks green.",
+        "For tire pressure, [NHTSA](https://www.nhtsa.gov/summer-driving-tips) points to the vehicle placard or manual, checked cold, not the maximum marked on the tire. That is a separate practical check, not something the last oil receipt settles. If the vehicle may be unsafe, arrange assistance rather than driving it to meet an appointment."
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "Keep the next check auditable",
+      "paragraphs": [
+        "After work, record the date, odometer, exact task and receipt location. Note whether an item was inspected, adjusted or replaced. Refresh the current reading before another due check or a long trip; stale mileage can make an apparently upcoming task already due.",
+        "[Vehicle Maintenance Companion](/shop/vehicle-maintenance-companion) can organize entered intervals and history, but its published listing does not claim live vehicle data or a factory schedule lookup. Whatever tool you choose, the schedule and evidence you enter determine the usefulness of the result."
+      ]
+    },
+    {
+      "kind": "faq",
+      "items": [
+        {
+          "q": "Is service due only when both miles and months pass?",
+          "a": "No. Where the manufacturer specifies either limit, reaching either one makes the task due. A low-mileage vehicle can reach a time limit first. If the manufacturer provides only one limit or uses a service-life system, follow that instruction rather than forcing it into a two-number template."
+        },
+        {
+          "q": "Can an unknown task be overdue?",
+          "a": "It may be, but missing history prevents a reliable scheduled comparison. Mark it unknown and seek records or professional advice rather than calling it not due. Do not wait indefinitely for a future service to create a baseline where a safety-critical task needs assessment now."
+        },
+        {
+          "q": "Should I use the shop's interval or the manual?",
+          "a": "Start with the correct manufacturer schedule and ask why the shop recommends a different action. A specific condition or diagnostic finding may matter independently of routine timing. Keep the schedule, finding and authorization distinct, and get another qualified opinion where the explanation is unclear or consequential."
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "name": "FTC: auto repair basics",
+      "url": "https://www.bulkorder.ftc.gov/system/files/publications/pdf-0078-auto-repair.pdf",
+      "retrieved": "2026-11-17",
+      "note": "Official PDF search text: follow manufacturer maintenance schedule for the type of driving. No vehicle-specific service intervals verified."
+    },
+    {
+      "name": "NHTSA: summer driving and road trip tips",
+      "url": "https://www.nhtsa.gov/summer-driving-tips",
+      "retrieved": "2026-11-17",
+      "note": "Official text returned through search: use vehicle placard for cold tire pressure, inspect spare, allow rest and driver changes. Not a universal daily driving limit."
+    }
+  ],
+  "visuals": [
+    {
+      "title": "Either limit can make it due",
+      "kicker": "Maintenance arithmetic",
+      "kind": "compare",
+      "steps": [
+        {
+          "label": "Mileage reached",
+          "detail": "The applicable distance threshold makes the task due."
+        },
+        {
+          "label": "Time reached",
+          "detail": "The applicable date threshold makes the task due."
+        },
+        {
+          "label": "Neither reached",
+          "detail": "The task may be upcoming, but condition concerns remain separate."
+        },
+        {
+          "label": "History missing",
+          "detail": "Unknown requires evidence or assessment, not an all-clear."
+        }
+      ],
+      "caption": "Use the vehicle's actual instructions; the worked numbers are not recommendations.",
+      "alt": "Four maintenance states distinguish mileage due, time due, upcoming and unknown history."
+    },
+    {
+      "title": "Build a reliable next-service record",
+      "kicker": "One task at a time",
+      "kind": "record",
+      "steps": [
+        {
+          "label": "Schedule",
+          "detail": "Copy the correct vehicle-specific instruction."
+        },
+        {
+          "label": "Baseline",
+          "detail": "Keep the last completed task, date and reading."
+        },
+        {
+          "label": "Current",
+          "detail": "Refresh the odometer and date before comparing."
+        },
+        {
+          "label": "Evidence",
+          "detail": "Save the completed work and supporting receipt."
+        }
+      ],
+      "caption": "A tracker cannot establish facts that were never entered or verified.",
+      "alt": "Four record components connect the manufacturer schedule, last service, current reading and completed-work evidence."
+    }
+  ],
+  "worksheet": {
+    "title": "Maintenance due and unknown-history check",
+    "prompt": "Calculate only from the correct schedule and identifiable evidence.",
+    "fields": [
+      "Vehicle, powertrain and units",
+      "Current date and odometer",
+      "Task and applicable manufacturer instruction",
+      "Last-service date, reading and evidence",
+      "Next mileage threshold",
+      "Next date threshold",
+      "Due, upcoming or unknown status",
+      "Finding or question for mechanic"
+    ]
+  },
+  "research": {
+    "primaryQuery": "what maintenance is due on my car",
+    "supportingQueries": [
+      "car service miles or months first",
+      "unknown maintenance history due now",
+      "calculate next car service date mileage"
+    ],
+    "intent": "Determine due status correctly while separating arithmetic, missing history and condition-based safety concerns.",
+    "sourceChecks": [
+      {
+        "url": "https://www.bulkorder.ftc.gov/system/files/publications/pdf-0078-auto-repair.pdf",
+        "verified": "Official PDF search text: follow manufacturer maintenance schedule for the type of driving. No vehicle-specific service intervals verified."
+      },
+      {
+        "url": "https://www.nhtsa.gov/summer-driving-tips",
+        "verified": "Official text returned through search: use vehicle placard for cold tire pressure, inspect spare, allow rest and driver changes. Not a universal daily driving limit."
+      }
+    ],
+    "limitations": [
+      "All service intervals and records in the worked table are invented. No vehicle-specific manual, condition, service monitor or mechanic recommendation was assessed.",
+      "Saved search leads were reviewed for reader language only, not authority or prevalence. Quora was blocked in saved research. No search-volume or ranking estimate is available."
+    ]
+  }
+}

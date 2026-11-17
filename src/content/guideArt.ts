@@ -1,4 +1,5 @@
 import generated from "./guideArt.generated.json";
+import libraryArt from "./revisions/library-art.generated.json";
 import type { Guide, GuideBlock } from "./guides";
 
 /**
@@ -18,7 +19,28 @@ export type GuideArt = {
   caption: string;
 };
 
-const ENTRIES = generated as Record<string, GuideArt>;
+const ENTRIES: Record<string, GuideArt> = {
+  ...generated,
+  ...(libraryArt as Record<string, GuideArt>),
+  "doctor-appointment-prep-checklist": {
+    hero: "/guides/img/doctor-appointment-share-v4.webp",
+    thumb: "/guides/img/doctor-appointment-thumb-v4.webp",
+    figure: "/guides/img/doctor-appointment-sheet-v4.webp",
+    figureWidth: 1200,
+    figureHeight: 900,
+    alt: "A blank appointment worksheet with room for the main concern, dated changes, medicines and allergies, and the agreed plan.",
+    caption: "",
+  },
+  "four-day-homeschool-week": {
+    hero: "/guides/img/four-day-homeschool-share-v4.webp",
+    thumb: "/guides/img/four-day-homeschool-thumb-v4.webp",
+    figure: "/guides/img/four-day-homeschool-rhythm-v4.webp",
+    figureWidth: 1200,
+    figureHeight: 900,
+    alt: "A four-day learning rhythm separates recurring practice, rotating projects and an intentionally open day, with a 144-day calendar check.",
+    caption: "",
+  },
+};
 
 export function guideArt(slug: string): GuideArt | undefined {
   return ENTRIES[slug];

@@ -2,6 +2,11 @@ import { ImageResponse } from "next/og";
 import { LIFE_AREAS, getAreaBySlug } from "@/content/areas";
 import { GUIDES, SERIES, getGuideBySlug } from "@/content/guides";
 import { guideSeoTitle } from "@/content/guideMeta";
+import { guideArt } from "@/content/guideArt";
+import { readFile } from "node:fs/promises";
+import { join } from "node:path";
+import { libraryInfo } from "@/content/revisions/library";
+import sharp from "sharp";
 
 /**
  * The share card for every guide and area hub.
@@ -45,6 +50,15 @@ export function generateStaticParams() {
 
 export default async function Image({ params }: { params: Promise<{ guideSlug: string }> }) {
   const { guideSlug } = await params;
+  if (libraryInfo[guideSlug] || ["doctor-appointment-prep-checklist", "four-day-homeschool-week"].includes(guideSlug)) {
+    const art = guideArt(guideSlug)!;
+    const bytes = await readFile(join(process.cwd(), "public", art.hero));
+    // Serve the existing card as PNG; the OG renderer cannot decode WebP.
+    const png = await sharp(bytes).png().toBuffer();
+    return new Response(new Uint8Array(png), {
+      headers: { "Content-Type": contentType },
+    });
+  }
 
   const area = getAreaBySlug(guideSlug);
   const guide = area ? undefined : getGuideBySlug(guideSlug);

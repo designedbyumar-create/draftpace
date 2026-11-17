@@ -1,0 +1,219 @@
+{
+  "slug": "how-to-plan-a-group-trip",
+  "title": "How to plan a group trip without owning every task",
+  "dek": "Agree the budget and booking rules, name who handles each reservation, and record who is included so changes do not become everyone's guess.",
+  "metaDescription": "Agree the budget and booking rules, name who handles each reservation, and record who is included so changes do not become everyone's guess.",
+  "updatedAt": "2026-11-17",
+  "body": [
+    {
+      "kind": "paragraphs",
+      "paragraphs": [
+        "Plan a group trip by agreeing the essentials before anyone pays: dates, spending limits, who is definitely joining, who can book and what happens if someone withdraws. Then keep a booking list with one responsible person and the travelers actually included on each reservation.",
+        "The person who starts the chat can become the unpaid answer desk. A shared page helps only if decisions and responsibilities are settled first. This guide is for a small group arranging its own trip, not a commercial tour or a promise that every friend will want the same holiday."
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "Agree boundaries before collecting deposits",
+      "paragraphs": [
+        "Ask each person privately or through a simple reply for their affordable total, including transport, lodging, meals and planned activities. Agree whether the group is choosing a shared maximum, separate options or a smaller core trip. Nobody should need to disclose their income to explain a budget limit.",
+        "Before a shared booking, write the price, payment deadline, cancellation terms and proposed cost split. Confirm consent rather than treating silence as agreement. A person paying the deposit may be accepting the supplier's liability even if friends intend to reimburse them."
+      ]
+    },
+    {
+      "kind": "list",
+      "heading": "Settle the first decisions",
+      "checkable": true,
+      "items": [
+        "Confirm dates and definite participants, with a response deadline for undecided people.",
+        "Agree a realistic spending range and which costs remain individual.",
+        "Identify essential accessibility, room, transport and dietary arrangements with the traveler's consent.",
+        "Give each booking one named handler and a backup contact.",
+        "Get explicit agreement before anyone commits other people's money.",
+        "Mark activities optional unless the group has agreed otherwise.",
+        "Choose one current itinerary location and a method for announcing changes."
+      ]
+    },
+    {
+      "kind": "table",
+      "heading": "Invented example: six people, different bookings",
+      "columns": [
+        "Reservation",
+        "Handler",
+        "Included travelers",
+        "Open check"
+      ],
+      "rows": [
+        [
+          "Lodging",
+          "Nia",
+          "All six",
+          "Bed layout confirmed by each traveler"
+        ],
+        [
+          "Rental car",
+          "Owen",
+          "Three named passengers",
+          "Driver eligibility and luggage space"
+        ],
+        [
+          "Friday dinner",
+          "Jules",
+          "Five, not Owen",
+          "Dietary request confirmed"
+        ],
+        [
+          "Airport transfer",
+          "Nia",
+          "Four arriving together",
+          "Separate plan for later arrivals"
+        ]
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "Write names, not 'everyone'",
+      "paragraphs": [
+        "The car row matters because being in the group chat does not mean being on the booking. Confirm who is a passenger, authorized driver, named guest or ticket holder as appropriate. A reservation under one lead name may have separate rules for the others.",
+        "Record the provider and useful reference, but avoid exposing sensitive documents or payment details. Share only the personal requirements needed to arrange the trip. Someone can request step-free access without making a medical history part of a shared itinerary."
+      ]
+    },
+    {
+      "kind": "scripts",
+      "heading": "Messages that settle a decision",
+      "items": [
+        {
+          "situation": "Booking deadline",
+          "line": "I will book for the people who have confirmed by Sunday at 6 pm. Before that, please agree to the price and cancellation terms on the booking note."
+        },
+        {
+          "situation": "Withdrawal",
+          "line": "Thanks for telling us. I will check the supplier's cancellation and change options before we confirm what is refundable or what the group still owes."
+        },
+        {
+          "situation": "Changed transport",
+          "line": "The arrival time changed. I am checking the transfer and check-in arrangements, then I will post the confirmed update for the affected travelers."
+        }
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "When somebody leaves or a plan moves",
+      "paragraphs": [
+        "Do not immediately remove a traveler from a paid booking or promise their money back. Check whether cancellation, name changes or transfers are allowed and what charges apply. Then apply the group's prior agreement and document any new one.",
+        "Notify the people affected by a change, not only the whole chat. If four arrive on a delayed flight and two travel separately, the two may still need to check into the lodging. Dependencies can involve other people's roles as well as times. Use [multi-stop planning](/guides/organising-a-multi-stop-trip-without-a-spreadsheet) where the route itself becomes complicated."
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "Close the planning loop",
+      "paragraphs": [
+        "Send a short current itinerary with local dates, meeting points, handlers and included travelers. Ask people to confirm the part they rely on rather than simply reacting to a message. Retain an offline version and make it clear which version is current.",
+        "For international travel, each person remains responsible for checking their documents and entry eligibility. The [State Department checklist](https://travel.state.gov/en/international-travel/planning/checklist.html) is a starting point for US travelers, not a group-wide clearance. Stop a shared booking if consent, affordability or a critical access requirement remains unresolved."
+      ]
+    },
+    {
+      "kind": "faq",
+      "items": [
+        {
+          "q": "Who should be the organizer?",
+          "a": "Choose a coordinator for the shared record, but distribute actual booking work to named handlers. The coordinator need not pay for everything, know every personal detail or make decisions for absent travelers. Agree the limits of the role before the trip becomes a stream of unanswered questions."
+        },
+        {
+          "q": "What if somebody never confirms?",
+          "a": "Use the agreed response deadline and book only for people who have explicitly joined and accepted the relevant cost. Tell the undecided person what would need checking if they join later. Do not assume another person's silence authorizes a nonrefundable booking."
+        },
+        {
+          "q": "How should we split cancellation costs?",
+          "a": "Read supplier terms and agree the group's arrangement before paying. Equal splitting, individual responsibility and replacement-traveler arrangements have different consequences. If someone withdraws, check actual refunds and transfer options before deciding what remains owed; the itinerary alone cannot settle a disputed obligation."
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "name": "U.S. Department of State: International travel checklist",
+      "url": "https://travel.state.gov/en/international-travel/planning/checklist.html",
+      "retrieved": "2026-11-17",
+      "note": "Destination research, required documents and insurance; specific entry rules need separate checks."
+    }
+  ],
+  "visuals": [
+    {
+      "title": "Agreement before payment",
+      "kicker": "Four group decisions",
+      "steps": [
+        {
+          "label": "People",
+          "detail": "Confirm who is actually joining."
+        },
+        {
+          "label": "Budget",
+          "detail": "Agree costs and approval limits."
+        },
+        {
+          "label": "Responsibility",
+          "detail": "Name a handler for each booking."
+        },
+        {
+          "label": "Withdrawal",
+          "detail": "Read terms and agree the group's approach."
+        }
+      ],
+      "caption": "A group chat is not consent to an expense.",
+      "alt": "Four decisions cover participants, budget, booking ownership and withdrawal terms.",
+      "kind": "sequence"
+    },
+    {
+      "title": "One group, different reservations",
+      "kicker": "Check inclusion by booking",
+      "steps": [
+        {
+          "label": "Flight",
+          "detail": "List actual ticketed travelers."
+        },
+        {
+          "label": "Car",
+          "detail": "Confirm passengers and eligible drivers."
+        },
+        {
+          "label": "Activity",
+          "detail": "Mark participation as confirmed or optional."
+        }
+      ],
+      "caption": "Membership in the trip does not establish inclusion in every booking.",
+      "alt": "Three booking types show why traveler names must be checked separately.",
+      "kind": "compare"
+    }
+  ],
+  "worksheet": {
+    "title": "Group booking agreement record",
+    "prompt": "Settle one reservation before anyone commits shared money.",
+    "fields": [
+      "Booking and provider",
+      "Included travelers",
+      "Handler and backup",
+      "Price and agreed split",
+      "Explicit approvals",
+      "Payment deadline",
+      "Cancellation or withdrawal terms",
+      "Open access or timing check"
+    ]
+  },
+  "research": {
+    "primaryQuery": "how to plan a group trip",
+    "supportingQueries": [
+      "group trip booking responsibilities",
+      "organize friends trip shared itinerary"
+    ],
+    "intent": "Group consent, ownership and traveler inclusion, not detailed multi-stop route sequencing.",
+    "sourceChecks": [
+      "https://travel.state.gov/en/international-travel/planning/checklist.html - Destination research, required documents and insurance; specific entry rules need separate checks."
+    ],
+    "limitations": [
+      "No travel price forecast, cancellation entitlement or booking transferability is asserted.",
+      "Cost allocation is an agreed group arrangement, not legal or financial advice.",
+      "No keyword-volume dataset was available. Saved Reddit leads were qualitative only; Quora was blocked in the saved research."
+    ]
+  }
+}

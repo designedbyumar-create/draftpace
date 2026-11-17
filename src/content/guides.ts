@@ -1,5 +1,8 @@
 import { LIFE_AREAS } from "./areas";
 import { blockStrings } from "./guideText";
+import { doctorAppointmentRevision } from "./revisions/doctor-appointment";
+import { fourDayHomeschoolRevision } from "./revisions/four-day-homeschool";
+import { libraryRevisions } from "./revisions/library";
 
 /**
  * Guides: the layer between the marketing site and the app.
@@ -207,6 +210,8 @@ export type Guide = {
    * things people type.
    */
   locale?: "us" | "uk";
+  /** Country-specific scope without implying a translated counterpart exists. */
+  scopeCountry?: "us" | "uk";
   body: GuideBlock[];
 };
 
@@ -246,7 +251,7 @@ export function seriesGuides(): Guide[] {
   return GUIDES.filter((guide) => guide.areaSlug === SERIES);
 }
 
-export const GUIDES: Guide[] = [
+const BASE_GUIDES: Guide[] = [
   // ---------------------------------------------------------------- batch 1
   // The ten highest-priority guides from the content plan. Two of them,
   // the parent-dies pair, were flagged in the fit verification as
@@ -23228,13 +23233,17 @@ export const GUIDES: Guide[] = [
   },
 ];
 
-/**
- * Words per minute used for reading time.
- *
- * 225 is the middle of the usual adult silent-reading range for
- * non-technical prose. The exact figure matters less than the fact that
- * it is applied consistently and derived rather than typed.
- */
+export const GUIDES: Guide[] = BASE_GUIDES.map((guide) =>
+  guide.slug === "doctor-appointment-prep-checklist"
+    ? { ...guide, ...doctorAppointmentRevision }
+    : guide.slug === "four-day-homeschool-week"
+      ? { ...guide, ...fourDayHomeschoolRevision }
+      : libraryRevisions[guide.slug]
+        ? { ...guide, ...libraryRevisions[guide.slug] }
+        : guide,
+);
+
+/** Reading time is derived from the current published content. */
 const WORDS_PER_MINUTE = 225;
 
 /**

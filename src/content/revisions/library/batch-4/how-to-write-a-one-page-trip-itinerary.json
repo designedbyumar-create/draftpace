@@ -1,0 +1,211 @@
+{
+  "slug": "how-to-write-a-one-page-trip-itinerary",
+  "title": "How to write a useful one-page trip itinerary",
+  "dek": "Put confirmed bookings, local times, arrival instructions and references on one page, with enough context to use it when your phone is unavailable.",
+  "metaDescription": "Put confirmed bookings, local times, arrival instructions and references on one page, with enough context to use it when your phone is unavailable.",
+  "updatedAt": "2026-11-17",
+  "body": [
+    {
+      "kind": "paragraphs",
+      "paragraphs": [
+        "Write a one-page trip itinerary in date order, using one short entry per confirmed movement or booking. Include local date and time, place, traveler, reference and any arrival condition that could stop the plan working. Keep optional ideas elsewhere and put a last-updated date on the page.",
+        "The useful itinerary is the one you can read while tired at a station, not the one with the most places on it. It should answer where you need to be next and what you need to get there. This guide organizes existing bookings; it does not verify a connection, replace tickets or guarantee that an operator will accept a printout."
+      ]
+    },
+    {
+      "kind": "list",
+      "heading": "Build the page from confirmations",
+      "checkable": true,
+      "items": [
+        "Collect current confirmations and identify the version that supersedes any changed booking. Separate confirmed arrangements from requests still awaiting a reply.",
+        "Copy each event's local date and time, then label the location or time zone where confusion is possible. Check overnight arrivals carefully.",
+        "Write the exact station, airport or lodging location needed to act. Include the first accommodation's address rather than only a hotel nickname.",
+        "Put the relevant booking reference beside the event and identify who is included if the group splits.",
+        "Add critical conditions: check-in window, last transfer departure or a pending confirmation. Keep detailed terms in the supporting booking file.",
+        "Date the page, save an accessible offline version and share only the details each recipient needs. Recheck after any booking change."
+      ]
+    },
+    {
+      "kind": "table",
+      "heading": "Example: an overnight flight and arrival gap",
+      "columns": [
+        "Local date and time",
+        "Confirmed event",
+        "Reference and condition"
+      ],
+      "rows": [
+        [
+          "May 4, 18:40, departure city",
+          "Flight to destination",
+          "Sample ref FL-271; terminal to recheck."
+        ],
+        [
+          "May 5, 07:55, destination",
+          "Flight arrival",
+          "Allow time for border and baggage processes."
+        ],
+        [
+          "May 5, 10:00, destination",
+          "Reserved transfer",
+          "Sample ref TR-884; provider contact in booking file."
+        ],
+        [
+          "May 5, 15:00, destination",
+          "Hotel check-in",
+          "Sample ref HT-302; exact address on itinerary."
+        ]
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "What the example reveals",
+      "paragraphs": [
+        "These are invented bookings, not a workable route recommendation. The different dates prevent an overnight flight from appearing to land before it departs. The hotel check-in time shows a gap after arrival; it does not promise early room access. If luggage storage matters, confirm it separately and record the answer.",
+        "The transfer depends on the arrival, but the page should not imply that two hours is always sufficient. Border processing, delays, accessibility needs and provider rules vary. Check the actual route and terms. A neat itinerary can reveal a question without answering it."
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "Include the details that prevent a dead end",
+      "paragraphs": [
+        "A place name alone can be too vague in a city with several stations or hotels with similar names. Use the actual boarding or arrival location shown by the current booking, and mark details that still require confirmation. Do not copy an old terminal from an earlier email as if it is fixed.",
+        "For a group, add initials to a line when only some travelers are included. Keep sensitive identification numbers, payment details and access codes off a broadly shared itinerary. Booking references can also be sensitive, so give a driver or friend a task-specific version rather than distributing the whole file automatically."
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "One page is a constraint, not a reason to hide information",
+      "paragraphs": [
+        "Remove unbooked sightseeing ideas, long descriptions and duplicate confirmations first. Keep arrival instructions or an essential address even if it means a second page. For a long trip, use a short overall summary and one page per stage instead of shrinking type until the record is unreadable.",
+        "The [State Department checklist](https://travel.state.gov/en/international-travel/planning/checklist.html) recommends separate copies of important travel documents. Your itinerary complements that backup; it is not the passport, visa, ticket or any other document the journey requires. Keep the actual documents and their copies according to the relevant requirements."
+      ]
+    },
+    {
+      "kind": "scripts",
+      "heading": "Confirm an arrival condition",
+      "items": [
+        {
+          "situation": "Lodging arrival",
+          "line": "Our current booking shows arrival before your published check-in time. Is luggage storage available, and what should we do if the flight changes? Please confirm the correct arrival address and contact route."
+        }
+      ]
+    },
+    {
+      "kind": "paragraphs",
+      "heading": "Update the chain, not just one line",
+      "paragraphs": [
+        "If a flight or train changes, inspect transfers, lodging arrival, rental pickup and reservations built around it. Mark what is still awaiting a reply. The [flight-change guide](/guides/flight-changed-what-else-is-affected) covers that check in more detail.",
+        "[Travel Companion](/shop/travel-companion) is an optional place to record bookings and dependencies. Its published listing does not claim live flight status or notifications, so operator checks remain your job. The one-page format above works in an ordinary document."
+      ]
+    },
+    {
+      "kind": "faq",
+      "items": [
+        {
+          "q": "Should an itinerary contain every activity?",
+          "a": "No. Prioritize confirmed movements, stays and time-specific commitments. Keep flexible ideas separately unless someone needs them to coordinate care or access. An itinerary should make the next action clear, not suggest that every unfilled hour is a booking you forgot to make."
+        },
+        {
+          "q": "How should I show time zones?",
+          "a": "Use each event's local date and time and label the location when needed. Check overnight journeys against the actual confirmation. Do not assume an arrival belongs to the departure date, or silently convert everything into home time and create a mismatch with the booking."
+        },
+        {
+          "q": "Is a printed itinerary enough to travel?",
+          "a": "No. It is an information backup, not a substitute for required documents or accepted tickets. Check the operator's presentation requirements and keep actual travel documents accessible. Reprint or replace the itinerary when arrangements change, retaining the current version rather than several contradictory sheets."
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "name": "U.S. Department of State: international travel checklist",
+      "url": "https://travel.state.gov/en/international-travel/planning/checklist.html",
+      "retrieved": "2026-11-17",
+      "note": "Current official search text: destination-specific entry and passport checks, separate document copies, and STEP. No blanket six-month rule or processing-time promise used."
+    }
+  ],
+  "visuals": [
+    {
+      "title": "One booking, one actionable entry",
+      "kicker": "Itinerary record",
+      "kind": "record",
+      "steps": [
+        {
+          "label": "When",
+          "detail": "Use the event's local date and time."
+        },
+        {
+          "label": "Where",
+          "detail": "Identify the exact place needed for the next action."
+        },
+        {
+          "label": "Which",
+          "detail": "Keep the reference and included travelers beside it."
+        },
+        {
+          "label": "Condition",
+          "detail": "Record arrival limits or unresolved confirmation."
+        }
+      ],
+      "caption": "The page should make the next action possible.",
+      "alt": "Four itinerary fields show local time, exact location, booking reference and critical arrival conditions."
+    },
+    {
+      "title": "Arrival is not room access",
+      "kicker": "An overnight journey",
+      "kind": "timeline",
+      "steps": [
+        {
+          "label": "Departure",
+          "detail": "Check the local departure date."
+        },
+        {
+          "label": "Arrival",
+          "detail": "Use the destination date and allow arrival processes."
+        },
+        {
+          "label": "Transfer",
+          "detail": "Confirm timing and delay arrangements."
+        },
+        {
+          "label": "Check-in",
+          "detail": "Record when lodging access actually begins."
+        }
+      ],
+      "caption": "A visible gap invites a specific question before departure.",
+      "alt": "An overnight travel timeline separates departure, arrival, transfer and the lodging check-in window."
+    }
+  ],
+  "worksheet": {
+    "title": "One-page itinerary entry builder",
+    "prompt": "Record confirmed arrangements and the conditions that affect the next booking.",
+    "fields": [
+      "Last updated date",
+      "Local event date and time",
+      "Exact departure or arrival place",
+      "Included travelers",
+      "Booking reference",
+      "Critical condition or pending reply",
+      "Official contact and supporting file location"
+    ]
+  },
+  "research": {
+    "primaryQuery": "one page trip itinerary",
+    "supportingQueries": [
+      "one page travel itinerary format",
+      "trip itinerary local time zones",
+      "booking reference itinerary"
+    ],
+    "intent": "Create an actionable booking summary rather than a sightseeing schedule or replacement travel document.",
+    "sourceChecks": [
+      {
+        "url": "https://travel.state.gov/en/international-travel/planning/checklist.html",
+        "verified": "Current official search text: destination-specific entry and passport checks, separate document copies, and STEP. No blanket six-month rule or processing-time promise used."
+      }
+    ],
+    "limitations": [
+      "All booking times are invented. No route, connection or individual booking condition was verified.",
+      "Saved search leads were reviewed for reader language only, not authority or prevalence. Quora was blocked in saved research. No search-volume or ranking estimate is available."
+    ]
+  }
+}
