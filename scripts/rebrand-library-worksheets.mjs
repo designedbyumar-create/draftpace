@@ -1,10 +1,11 @@
 // Re-skins every generic library worksheet (public/guides/print/library/*.html)
-// with real Draftpace branding, a numbered print-tuned layout, a product
-// upsell band (for the printed artifact, which can't show a popup), and a
-// click-triggered modal on the Print button (for the on-screen moment) that
-// offers the real matching product at its real price before printing.
-// Preserves the exact field set, title, prompt and footer copy each already
-// has. Safe to re-run: it parses its OWN output, not the pre-rebrand template.
+// with real Draftpace branding, a numbered print-tuned layout, a one-line
+// product band (screen only, excluded from print), and a click-triggered
+// modal on the Print button carrying the real product's own screenshot
+// carousel (public/store/<product>-{2,3,4}-screen.webp) and real price
+// before anything actually prints. Preserves the exact field set, title,
+// prompt and footer copy each already has. Safe to re-run: it parses its
+// OWN output, not the pre-rebrand template.
 //
 // Prices are read once from src/shop/products/*.ts at generation time and
 // baked into these static files — re-run this script after any price change
@@ -60,15 +61,8 @@ function build({ areaSlug, backHref, title, intro, fields, footer }) {
       return `<li><span class="n">${n}</span><div class="f"><h2>${label}</h2><div class="lines${tall ? " tall" : ""}"></div></div></li>`;
     })
     .join("");
-  const shopHref = area.product ? `/shop/${area.product}` : "/shop";
-  const bandBody = area.product
-    ? `You just filled this in by hand, once. ${escapeHtml(area.productTitle)} is the same kind of record, kept in one place and easy to update instead of reprinted, with the rest of ${escapeHtml(area.label.toLowerCase())} alongside it. See what's actually inside before you decide.`
-    : `You just filled in one page by hand. Draftpace is nine companions like this one, each built around a single part of life people are never taught to manage. See the one that fits before you decide.`;
-  const ctaLabel = area.product ? `See ${escapeHtml(area.productTitle)}` : "See all nine companions";
-  const modalExploreLabel = area.product ? `Explore ${escapeHtml(area.productTitle)}` : "Explore all nine companions";
-  const priceHtml = area.price
-    ? `<p class="modal-price"><span class="now">$${area.price}</span><span class="was">$${area.compareAt}</span></p>`
-    : "";
+  const shopHref = `/shop/${area.product}`;
+  const screens = [2, 3, 4].map((n) => `/store/${area.product}-${n}-screen.webp`);
   return `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>${escapeHtml(title)} | Draftpace</title>
 <style>
 :root{--ink:#1c1917;--muted:#55504a;--rule:#d8d3cb;--accent:${area.accent};--soft:${area.soft}}
@@ -82,7 +76,6 @@ header{display:flex;align-items:center;justify-content:space-between;gap:16px;ma
 .screen a{color:var(--accent);font-weight:700;text-decoration:none;white-space:nowrap}
 .screen a:hover{text-decoration:underline}
 #printBtn{font:700 12.5px/1 Arial,Helvetica,sans-serif;background:var(--accent);color:#fff;border:none;padding:9px 16px;border-radius:999px;cursor:pointer;white-space:nowrap}
-.screen .note{width:100%;text-align:right;margin:2px 0 0;font-size:11.5px}
 .eyebrow{font:700 11px/1 Arial,Helvetica,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin:0 0 10px}
 h1{font-family:Georgia,'Iowan Old Style','Palatino Linotype',serif;font-size:30px;line-height:1.22;letter-spacing:-.01em;margin:0 0 10px;color:var(--ink)}
 .prompt{margin:0 0 30px;color:var(--muted);font-size:15px;max-width:58ch}
@@ -94,19 +87,27 @@ ol.fields li:last-child{border-bottom:none;padding-bottom:0}
 .f h2{font-size:14.5px;font-weight:700;margin:0 0 8px;color:var(--ink)}
 .lines{height:30px;border-bottom:1px solid #a8a29a}
 .lines.tall{height:52px}
-.upsell{margin-top:30px;padding:22px 24px;border-radius:12px;background:var(--soft);border:1px solid var(--accent)}
-.upsell .k{font:700 10.5px/1 Arial,Helvetica,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin:0 0 9px}
-.upsell h3{font-family:Georgia,'Iowan Old Style','Palatino Linotype',serif;font-size:19px;line-height:1.3;margin:0 0 8px;color:var(--ink)}
-.upsell p{margin:0 0 14px;font-size:13.5px;color:var(--muted);max-width:52ch}
-.upsell .cta{display:inline-flex;align-items:center;gap:7px;background:var(--accent);color:#fff;font:700 13px/1 Arial,Helvetica,sans-serif;padding:11px 20px;border-radius:999px;text-decoration:none}
-.upsell .url{margin:10px 0 0;font-size:11px;color:var(--muted)}
+/* Band: horizontal split, one line, screen-only (excluded from print below) */
+.upsell{margin-top:30px;display:flex;align-items:center;justify-content:space-between;gap:20px;padding:18px 22px;border-radius:12px;background:var(--soft);border:1px solid var(--accent)}
+.upsell .txt{min-width:0}
+.upsell .k{font:700 10px/1 Arial,Helvetica,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin:0 0 5px}
+.upsell .h{font-family:Georgia,'Iowan Old Style','Palatino Linotype',serif;font-size:16.5px;margin:0;color:var(--ink);line-height:1.3}
+.upsell .cta{flex:0 0 auto;background:var(--accent);color:#fff;font:700 12.5px/1 Arial,Helvetica,sans-serif;padding:11px 18px;border-radius:999px;text-decoration:none;white-space:nowrap}
 footer{margin-top:24px;padding-top:16px;border-top:1px solid var(--rule);font-size:11.5px;line-height:1.5;color:var(--muted);display:flex;align-items:center;gap:10px}
 footer svg{flex:0 0 auto;opacity:.55}
-.modal-overlay{position:fixed;inset:0;background:rgba(28,25,23,.55);display:flex;align-items:center;justify-content:center;padding:20px;z-index:50}
+/* Modal */
+.modal-overlay{position:fixed;inset:0;background:rgba(28,25,23,.6);display:flex;align-items:center;justify-content:center;padding:20px;z-index:50}
 .modal-overlay[hidden]{display:none}
-.modal{position:relative;background:#fff;border-radius:16px;max-width:400px;width:100%;padding:30px 28px 26px;box-shadow:0 20px 60px rgba(0,0,0,.25)}
-.modal-close{position:absolute;top:14px;right:14px;width:30px;height:30px;border-radius:999px;border:none;background:var(--soft);color:var(--ink);font-size:16px;line-height:1;cursor:pointer}
-.modal .k{font:700 10.5px/1 Arial,Helvetica,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin:0 0 10px}
+.modal{position:relative;background:#fff;border-radius:18px;max-width:420px;width:100%;overflow:hidden;box-shadow:0 24px 70px rgba(0,0,0,.3)}
+.modal-close{position:absolute;top:14px;right:14px;width:30px;height:30px;border-radius:999px;border:none;background:rgba(255,255,255,.85);color:var(--ink);font-size:16px;cursor:pointer;z-index:2}
+.carousel{position:relative;background:var(--soft);aspect-ratio:4/3;overflow:hidden}
+.carousel img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .3s ease}
+.carousel img.active{opacity:1}
+.dots{display:flex;justify-content:center;gap:6px;padding:12px 0 0}
+.dots button{width:7px;height:7px;border-radius:999px;border:none;background:var(--rule);padding:0;cursor:pointer}
+.dots button.active{background:var(--accent);width:18px;border-radius:4px}
+.modal-body{padding:22px 26px 26px}
+.modal .k{font:700 10.5px/1 Arial,Helvetica,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin:0 0 9px}
 .modal h3{font-family:Georgia,'Iowan Old Style','Palatino Linotype',serif;font-size:21px;line-height:1.3;margin:0 0 8px;color:var(--ink)}
 .modal .modal-pitch{margin:0 0 14px;font-size:13.5px;color:var(--muted)}
 .modal-price{display:flex;align-items:baseline;gap:9px;margin:0 0 18px}
@@ -125,8 +126,7 @@ footer svg{flex:0 0 auto;opacity:.55}
   ol.fields li{padding-bottom:10px;break-inside:avoid}
   .lines{height:24px}
   .lines.tall{height:40px}
-  .upsell{margin-top:20px;padding:16px 18px;break-inside:avoid}
-  .upsell .cta{padding:9px 16px}
+  .upsell{display:none}
   footer{margin-top:16px}
   .modal-overlay{display:none!important}
   @page{size:A4;margin:12mm}
@@ -135,14 +135,14 @@ footer svg{flex:0 0 auto;opacity:.55}
   body{padding:28px 18px 28px}
   header{flex-direction:column;align-items:flex-start;gap:10px}
   .screen{width:100%;justify-content:space-between}
-  .screen .note{text-align:left}
+  .upsell{flex-direction:column;align-items:flex-start}
 }
 </style></head>
 <body>
 <div class="topbar"></div>
 <header>
   <div class="brand">${logoSvg(24)}<span>Draftpace</span></div>
-  <nav class="screen"><a href="${backHref}">Back to the guide</a><button type="button" id="printBtn">Print / save as PDF</button><p class="note">Nothing you write here is sent to Draftpace.</p></nav>
+  <nav class="screen"><a href="${backHref}">Back to the guide</a><button type="button" id="printBtn">Print / save as PDF</button></nav>
 </header>
 <main>
   <p class="eyebrow">${escapeHtml(area.label)} worksheet</p>
@@ -150,23 +150,31 @@ footer svg{flex:0 0 auto;opacity:.55}
   <p class="prompt">${escapeHtml(intro)}</p>
   <ol class="fields">${fieldsHtml}</ol>
   <section class="upsell">
-    <p class="k">This is one page</p>
-    <h3>${escapeHtml(area.productTitle)}: ${escapeHtml(area.pitch)}</h3>
-    <p>${bandBody}</p>
-    <a class="cta" href="${shopHref}">${ctaLabel} &rarr;</a>
-    <p class="url">draftpace.com${shopHref}</p>
+    <div class="txt">
+      <p class="k">This is one page</p>
+      <p class="h">${escapeHtml(area.productTitle)} holds this for you &mdash; not just at print time.</p>
+    </div>
+    <a class="cta" href="${shopHref}">See it &rarr;</a>
   </section>
   <footer>${logoSvg(16)}<span>${escapeHtml(footer)}</span></footer>
 </main>
 <div class="modal-overlay" id="modalOverlay" hidden>
   <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" tabindex="-1">
     <button type="button" class="modal-close" id="modalClose" aria-label="Close">&times;</button>
-    <p class="k">Before you print</p>
-    <h3 id="modalTitle">${escapeHtml(area.productTitle)}</h3>
-    <p class="modal-pitch">${escapeHtml(area.pitch)}.</p>
-    ${priceHtml}
-    <a class="cta" href="${shopHref}">${modalExploreLabel} &rarr;</a>
-    <button type="button" class="ghost" id="modalPrint">Just print the worksheet</button>
+    <div class="carousel">
+      <img src="${screens[0]}" class="active" data-i="0" alt="${escapeHtml(area.productTitle)} screen">
+      <img src="${screens[1]}" data-i="1" alt="${escapeHtml(area.productTitle)} screen">
+      <img src="${screens[2]}" data-i="2" alt="${escapeHtml(area.productTitle)} screen">
+    </div>
+    <div class="dots"><button class="active" data-i="0" aria-label="Screen 1"></button><button data-i="1" aria-label="Screen 2"></button><button data-i="2" aria-label="Screen 3"></button></div>
+    <div class="modal-body">
+      <p class="k">Before you print</p>
+      <h3 id="modalTitle">${escapeHtml(area.productTitle)}</h3>
+      <p class="modal-pitch">${escapeHtml(area.pitch)}.</p>
+      <p class="modal-price"><span class="now">$${area.price}</span><span class="was">$${area.compareAt}</span></p>
+      <a class="cta" href="${shopHref}">Explore ${escapeHtml(area.productTitle)} &rarr;</a>
+      <button type="button" class="ghost" id="modalPrint">Just print the worksheet</button>
+    </div>
   </div>
 </div>
 <script>
@@ -175,7 +183,10 @@ footer svg{flex:0 0 auto;opacity:.55}
   var overlay=document.getElementById('modalOverlay');
   var closeBtn=document.getElementById('modalClose');
   var printLink=document.getElementById('modalPrint');
-  if(!btn||!overlay)return;
+  var imgs=[].slice.call(document.querySelectorAll('.carousel img'));
+  var dots=[].slice.call(document.querySelectorAll('.dots button'));
+  function show(i){imgs.forEach(function(im){im.classList.toggle('active',+im.dataset.i===i)});dots.forEach(function(d){d.classList.toggle('active',+d.dataset.i===i)});}
+  dots.forEach(function(d){d.addEventListener('click',function(){show(+d.dataset.i)})});
   function openModal(){overlay.hidden=false;document.body.style.overflow='hidden';var d=overlay.querySelector('.modal');if(d)d.focus();}
   function closeModal(){overlay.hidden=true;document.body.style.overflow='';btn.focus();}
   btn.addEventListener('click',openModal);
