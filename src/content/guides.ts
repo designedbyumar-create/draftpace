@@ -9961,7 +9961,7 @@ const BASE_GUIDES: Guide[] = [
         kind: "paragraphs",
         heading: "One move, as an example",
         paragraphs: [
-          "Say you move house in March. The obvious task is telling the post office. Less obvious: the bank mails your new card to the old address, the car insurance renewal quote still has the old postcode on it, a dentist reminder never arrives, and a parcel you were waiting on gets sent back to the sender. None of that sat on a list called change of address. It surfaced over about six weeks, one call at a time, each thread caught only because someone happened to notice it before it became a fee or a missed appointment.",
+          "Say you move house in March. The obvious task is telling the post office. Less obvious: the bank mails your new card to the old address, the car insurance renewal quote still has the old postcode on it, a dentist reminder never arrives, and a parcel you were waiting on gets sent back to the sender. None of that sat on a list called change of address. It surfaced over about six weeks, one call at a time, each thread caught only because someone happened to notice it before it became a fee or a missed appointment. For the single most common form this work takes, see [how to make a phone call you have been avoiding](/guides/how-to-make-a-phone-call-you-have-been-avoiding).",
         ],
       },
       {
@@ -9991,7 +9991,7 @@ const BASE_GUIDES: Guide[] = [
         kind: "paragraphs",
         heading: "Who ends up carrying it",
         paragraphs: [
-          "In many households, one person tracks most of this without it ever being discussed or assigned. A 2019 study of cognitive labor in different-gender couples found that women did more of the anticipating and monitoring work, the parts that happen before anything visible gets done, even among couples who described their split as even. Calling that being naturally organized turns a workload into a compliment; naming it as work is the first step toward splitting it on purpose instead of by default.",
+          "In many households, one person tracks most of this without it ever being discussed or assigned. A 2019 study of cognitive labor in different-gender couples found that women did more of the anticipating and monitoring work, the parts that happen before anything visible gets done, even among couples who described their split as even. Calling that being naturally organized turns a workload into a compliment; naming it as work is the first step toward splitting it on purpose instead of by default. [The if something happens to me file](/guides/the-if-something-happens-to-me-file) is one way to move what one person carries in their head into something the rest of the household can actually find.",
         ],
       },
       {
@@ -10116,7 +10116,7 @@ const BASE_GUIDES: Guide[] = [
         kind: "paragraphs",
         heading: "Interruptions cost more than the interruption itself",
         paragraphs: [
-          "Life admin rarely arrives as a scheduled session. It shows up as a call while you're doing something else, a letter you open between two other things, a form due while you're mid-task on something unrelated. Research on task switching backs up why that costs more than the few minutes the interruption itself takes: workers who get pulled off a task can take close to half an hour to return to it at the same level of focus, and the switch itself raises the odds of a mistake. A tool that assumes admin happens in one dedicated block is planning for a session that, in practice, rarely comes.",
+          "Life admin rarely arrives as a scheduled session. It shows up as a call while you're doing something else, a letter you open between two other things, a form due while you're mid-task on something unrelated. Research on task switching backs up why that costs more than the few minutes the interruption itself takes: workers who get pulled off a task can take close to half an hour to return to it at the same level of focus, and the switch itself raises the odds of a mistake. A tool that assumes admin happens in one dedicated block is planning for a session that, in practice, rarely comes. For the call itself, see [how to make a phone call you have been avoiding](/guides/how-to-make-a-phone-call-you-have-been-avoiding).",
         ],
       },
       {
@@ -10128,7 +10128,7 @@ const BASE_GUIDES: Guide[] = [
           "Work out what's due from stored facts and real dates, rather than asking you to rank a list by hand.",
           "Stay roughly accurate after being ignored for a month, because it will be, more than once.",
           "Say plainly when nothing is due, and mean it, rather than manufacturing a reason to open the app.",
-          "Hold the connections between items across areas, not just a title and a due date.",
+          "Hold the connections between items across areas, not just a title and a due date. [The if something happens to me file](/guides/the-if-something-happens-to-me-file) is one worked example of what that record would need to contain.",
         ],
       },
       {

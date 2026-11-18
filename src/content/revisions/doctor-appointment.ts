@@ -1,7 +1,7 @@
 import type { Guide } from "../guides";
 
 export const doctorAppointmentRevision: Partial<Guide> = {
-  title: "Doctor appointment checklist: what to bring and ask",
+  title: "Doctor visit and appointment checklist: what to bring",
   dek: "You remember the question on the way home. This time, bring it with you: a doctor visit checklist, a free prep sheet, and room for the answers.",
   updatedAt: "2026-11-17",
   metaDescription: "Prepare for a doctor visit with a practical appointment checklist: what to bring, questions to ask, and a free printable sheet for notes and next steps.",
