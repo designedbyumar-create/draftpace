@@ -12,8 +12,8 @@
   "width": 1080,
   "height": 1920,
   "fps": 30,
-  "durationInFrames": 682,
-  "structure": "situationMoment",
+  "durationInFrames": 761,
+  "structure": "situationChecklist",
   "angle": {
     "text": "How much of my money is actually safe to spend",
     "source": "searchedProblems[2].phrase"
@@ -44,7 +44,7 @@
     {
       "id": "moment",
       "kind": "title",
-      "variant": "editorial",
+      "variant": "label",
       "copy": [
         {
           "text": "How much of my money is actually safe to spend",
@@ -57,7 +57,7 @@
       "why": "Opens on the moment in the person's own words, as the listing records people searching it.",
       "from": 0,
       "dur": 99,
-      "ground": "ink",
+      "ground": "light",
       "transition": "cut",
       "sfx": [],
       "lines": [
@@ -66,6 +66,52 @@
           "is actually safe",
           "to spend"
         ]
+      ]
+    },
+    {
+      "id": "what-to-do",
+      "kind": "list",
+      "variant": "checklist",
+      "copy": [
+        {
+          "text": "Choose the end date: usually the next reliable income date.",
+          "source": "guide:how-much-of-your-money-is-actually-safe-to-spend/body[1].items[0]#0"
+        },
+        {
+          "text": "Start with cash actually usable in the payment account.",
+          "source": "guide:how-much-of-your-money-is-actually-safe-to-spend/body[1].items[1]#0"
+        },
+        {
+          "text": "Check pending debits, outstanding checks and transfers.",
+          "source": "guide:how-much-of-your-money-is-actually-safe-to-spend/body[1].items[2]#0"
+        }
+      ],
+      "why": "What to do about it, from the guide \"How much money is safe to spend after your bills?\": its own checklist, the first sentence of each item.",
+      "from": 87,
+      "dur": 293,
+      "ground": "accent",
+      "transition": "lineWipe",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "tick",
+          "volume": 0.6
+        },
+        {
+          "at": 10,
+          "cue": "tick",
+          "volume": 0.45
+        },
+        {
+          "at": 83,
+          "cue": "tick",
+          "volume": 0.45
+        },
+        {
+          "at": 156,
+          "cue": "tick",
+          "volume": 0.45
+        }
       ]
     },
     {
@@ -93,15 +139,15 @@
         "text": "Monthly Money Reset",
         "source": "title"
       },
-      "from": 87,
+      "from": 368,
       "dur": 287,
       "ground": "light",
-      "transition": "lineWipe",
+      "transition": "blurDissolve",
       "sfx": [
         {
           "at": 0,
-          "cue": "tick",
-          "volume": 0.6
+          "cue": "whoosh",
+          "volume": 0.32
         },
         {
           "at": 12,
@@ -112,47 +158,6 @@
           "at": 129,
           "cue": "tap",
           "volume": 0.55
-        }
-      ]
-    },
-    {
-      "id": "what-to-do",
-      "kind": "list",
-      "variant": "checklist",
-      "copy": [
-        {
-          "text": "It comes out negative.",
-          "source": "guide:how-much-of-your-money-is-actually-safe-to-spend/body[4].items[0]#0"
-        },
-        {
-          "text": "Money is coming but hasn't landed.",
-          "source": "guide:how-much-of-your-money-is-actually-safe-to-spend/body[4].items[1]#0"
-        }
-      ],
-      "eyebrow": {
-        "text": "When the number is wrong or misleading",
-        "source": "guide:how-much-of-your-money-is-actually-safe-to-spend/body[4].heading"
-      },
-      "why": "What to do about it, from the guide \"How much money is safe to spend after your bills?\": its own checklist.",
-      "from": 362,
-      "dur": 214,
-      "ground": "light",
-      "transition": "blurDissolve",
-      "sfx": [
-        {
-          "at": 0,
-          "cue": "whoosh",
-          "volume": 0.32
-        },
-        {
-          "at": 10,
-          "cue": "tick",
-          "volume": 0.45
-        },
-        {
-          "at": 81,
-          "cue": "tick",
-          "volume": 0.45
         }
       ]
     },
@@ -175,7 +180,7 @@
         "source": "micro"
       },
       "why": "Ends on where to read the whole guide, with the product beneath it: the viewer leaves with the next step, not only a pitch.",
-      "from": 564,
+      "from": 643,
       "dur": 118,
       "ground": "ink",
       "transition": "blurDissolve",
@@ -226,13 +231,13 @@
     },
     {
       "topic": "Structure",
-      "decision": "The moment: The moment as it feels, set dark, then the help in the light, then what to do next.",
-      "because": "Best fit for a awareness film on YouTube Short (platform fit 2, goal fit 3, already used on YouTube Short ×2). Other candidates: What to do first (-5.6), In their words (-5.6)."
+      "decision": "What to do first: The moment, the guide's own checklist for it, then the product that keeps track of it.",
+      "because": "Best fit for a awareness film on YouTube Short (platform fit 3, goal fit 3, already used for this product ×1, already used on YouTube Short ×2). Other candidates: In their words (-5.6), The moment (-6.3)."
     },
     {
       "topic": "Angle",
       "decision": "\"How much of my money is actually safe to spend\"",
-      "because": "The moment \"How much of my money is actually safe to spend\", then how Monthly Money Reset helps, then what the guide \"How much money is safe to spend after your bills?\" says to do."
+      "because": "The moment \"How much of my money is actually safe to spend\", the checklist from \"How much money is safe to spend after your bills?\", then how Monthly Money Reset helps."
     },
     {
       "topic": "Transitions",
@@ -256,7 +261,7 @@
     },
     {
       "topic": "Length",
-      "decision": "22.7s, 4 scenes",
+      "decision": "25.4s, 4 scenes",
       "because": "Each scene is held for the time its words take to read on YouTube Short (0.26s a word), inside 15–40s."
     }
   ]

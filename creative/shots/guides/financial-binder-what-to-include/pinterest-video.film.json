@@ -11,15 +11,15 @@
   "width": 1000,
   "height": 1500,
   "fps": 30,
-  "durationInFrames": 961,
-  "structure": "guideSteps",
+  "durationInFrames": 528,
+  "structure": "guideQuestion",
   "angle": {
-    "text": "financial binder what to include",
-    "source": "guide:financial-binder-what-to-include/primaryQuery"
+    "text": "How often should balances be updated?",
+    "source": "guide:financial-binder-what-to-include/body[10].items[2].q"
   },
   "treatment": {
     "voice": "editorial",
-    "camera": "float",
+    "camera": "dolly",
     "transitions": [
       "cardSlide",
       "wipe",
@@ -41,84 +41,44 @@
   },
   "scenes": [
     {
-      "id": "hook",
+      "id": "q",
       "kind": "title",
       "variant": "quote",
       "copy": [
         {
-          "text": "financial binder what to include",
-          "source": "guide:financial-binder-what-to-include/primaryQuery"
+          "text": "How often should balances be updated?",
+          "source": "guide:financial-binder-what-to-include/body[10].items[2].q"
         }
       ],
-      "why": "Opens on the exact phrase the guide is written to win, typed out the way it is typed into a search box.",
+      "why": "The question as people ask it; the guide carries it because people search it.",
       "from": 0,
-      "dur": 79,
-      "ground": "ink",
+      "dur": 90,
+      "ground": "light",
       "transition": "cut",
       "sfx": [],
       "lines": [
         [
-          "financial binder",
-          "what to include"
+          "How often should",
+          "balances be updated?"
         ]
       ]
     },
     {
-      "id": "step-1",
+      "id": "a",
       "kind": "title",
-      "variant": "editorial",
+      "variant": "label",
       "copy": [
         {
-          "text": "List your accounts and rough balances.",
-          "source": "guide:financial-binder-what-to-include/body[4].items[0]#0"
+          "text": "Update them when the decision needs current information.",
+          "source": "guide:financial-binder-what-to-include/body[10].items[2].a#0"
         }
       ],
-      "eyebrow": {
-        "text": "1",
-        "source": "micro"
-      },
       "emphasis": [
-        "accounts"
+        "information"
       ],
-      "why": "Step 1 of the guide's numbered list, numbered as the guide numbers it, its first sentence: the instruction itself.",
-      "from": 67,
-      "dur": 126,
-      "ground": "light",
-      "transition": "cardSlide",
-      "sfx": [
-        {
-          "at": 0,
-          "cue": "swish",
-          "volume": 0.192
-        }
-      ],
-      "lines": [
-        [
-          "List your accounts",
-          "and rough balances."
-        ]
-      ]
-    },
-    {
-      "id": "step-2",
-      "kind": "title",
-      "variant": "editorial",
-      "copy": [
-        {
-          "text": "Note your income and when it next arrives.",
-          "source": "guide:financial-binder-what-to-include/body[4].items[1]#0"
-        }
-      ],
-      "eyebrow": {
-        "text": "2",
-        "source": "micro"
-      },
-      "emphasis": [
-        "arrives"
-      ],
-      "why": "Step 2 of the guide's numbered list, numbered as the guide numbers it, its first sentence: the instruction itself.",
-      "from": 181,
-      "dur": 148,
+      "why": "The guide's answer, its first sentence: the plain answer before any detail.",
+      "from": 78,
+      "dur": 112,
       "ground": "light",
       "transition": "wipe",
       "sfx": [
@@ -130,84 +90,9 @@
       ],
       "lines": [
         [
-          "Note your income",
-          "and when it next",
-          "arrives."
-        ]
-      ]
-    },
-    {
-      "id": "step-3",
-      "kind": "title",
-      "variant": "editorial",
-      "copy": [
-        {
-          "text": "Write down the required bills and their due rules.",
-          "source": "guide:financial-binder-what-to-include/body[4].items[2]#0"
-        }
-      ],
-      "eyebrow": {
-        "text": "3",
-        "source": "micro"
-      },
-      "emphasis": [
-        "required"
-      ],
-      "why": "Step 3 of the guide's numbered list, numbered as the guide numbers it, its first sentence: the instruction itself.",
-      "from": 317,
-      "dur": 159,
-      "ground": "accent",
-      "transition": "cardSlide",
-      "sfx": [
-        {
-          "at": 0,
-          "cue": "swish",
-          "volume": 0.192
-        }
-      ],
-      "lines": [
-        [
-          "Write down the",
-          "required bills and",
-          "their due rules."
-        ]
-      ]
-    },
-    {
-      "id": "step-4",
-      "kind": "title",
-      "variant": "editorial",
-      "copy": [
-        {
-          "text": "List your subscriptions and give each one a decision.",
-          "source": "guide:financial-binder-what-to-include/body[4].items[3]#0"
-        }
-      ],
-      "eyebrow": {
-        "text": "4",
-        "source": "micro"
-      },
-      "emphasis": [
-        "one"
-      ],
-      "why": "Step 4 of the guide's numbered list, numbered as the guide numbers it, its first sentence: the instruction itself.",
-      "from": 464,
-      "dur": 159,
-      "ground": "ink",
-      "transition": "cardSlide",
-      "sfx": [
-        {
-          "at": 0,
-          "cue": "swish",
-          "volume": 0.192
-        }
-      ],
-      "lines": [
-        [
-          "List your",
-          "subscriptions and",
-          "give each one a",
-          "decision."
+          "Update them when the",
+          "decision needs",
+          "current information."
         ]
       ]
     },
@@ -222,7 +107,7 @@
       },
       "screen": {
         "src": "screens/personal-finance-companion-printables.png",
-        "pose": "tiltLeft",
+        "pose": "tiltRight",
         "focus": {
           "at": 0.45,
           "y": 369,
@@ -236,14 +121,14 @@
         "text": "Personal Finance Companion",
         "source": "title"
       },
-      "from": 611,
+      "from": 178,
       "dur": 212,
-      "ground": "light",
-      "transition": "wipe",
+      "ground": "accent",
+      "transition": "blurDissolve",
       "sfx": [
         {
           "at": 0,
-          "cue": "swish",
+          "cue": "whoosh",
           "volume": 0.192
         },
         {
@@ -277,14 +162,14 @@
         "source": "micro"
       },
       "why": "Ends on where to read the whole guide, with the product beneath it: the viewer leaves with the next step, not only a pitch.",
-      "from": 811,
+      "from": 378,
       "dur": 150,
-      "ground": "light",
-      "transition": "blurDissolve",
+      "ground": "ink",
+      "transition": "cardSlide",
       "sfx": [
         {
           "at": 0,
-          "cue": "whoosh",
+          "cue": "swish",
           "volume": 0.192
         },
         {
@@ -308,8 +193,8 @@
     },
     {
       "topic": "Guide",
-      "decision": "\"Financial binder: what to include and how often to update\" (draftpace.com/guides/financial-binder-what-to-include)",
-      "because": "Teaches from the guide first; Personal Finance Companion is the product the guide hands over to. 3 lists and timelines, 5 questions to draw from."
+      "decision": "\"Financial binder: what to include and keep current\" (draftpace.com/guides/financial-binder-what-to-include)",
+      "because": "Teaches from the guide first; Personal Finance Companion is the product the guide hands over to. 1 lists and timelines, 3 questions to draw from."
     },
     {
       "topic": "Stage",
@@ -328,13 +213,13 @@
     },
     {
       "topic": "Structure",
-      "decision": "Do this: Open on the search itself, then the guide's own numbered steps, then the product.",
-      "because": "Best fit for a awareness film on Pinterest video pin (platform fit 3, goal fit 3, already used for this product ×1, already used on Pinterest video pin ×2). Other candidates: In order (-6.5), The checklist (-8.4)."
+      "decision": "The question people ask: One of the guide's own questions, its plain answer, then the product.",
+      "because": "Best fit for a awareness film on Pinterest video pin (platform fit 2, goal fit 2, already used for this product ×4, already used on Pinterest video pin ×6). Other candidates: The checklist (-38.6)."
     },
     {
       "topic": "Angle",
-      "decision": "\"financial binder what to include\"",
-      "because": "Search-led: \"financial binder what to include\", answered by 4 of the guide's numbered steps (\"A ten minute starting path\")."
+      "decision": "\"How often should balances be updated?\"",
+      "because": "A question from the guide's FAQ, \"How often should balances be updated?\", and the first sentence of its answer."
     },
     {
       "topic": "Transitions",
@@ -343,13 +228,28 @@
     },
     {
       "topic": "Camera",
-      "decision": "Camera \"float\"",
-      "because": "Camera \"float\": a gentle float that keeps a held frame alive without demanding attention."
+      "decision": "Camera \"locked\"",
+      "because": "Camera \"locked\": still and precise, so a slow, reading audience is never chasing the frame."
     },
     {
       "topic": "Colour",
       "decision": "Grounds ink → light → light → accent",
       "because": "Grounds ink → light → light → accent: a cool accent, so a darker ground is used for contrast at a turn."
+    },
+    {
+      "topic": "Variation",
+      "decision": "Rotated the ground rhythm",
+      "because": "Its shape was 0.74 similar to guide-how-to-cancel-subscriptions--pinterest-video; a different film, not the same one re-coloured."
+    },
+    {
+      "topic": "Variation",
+      "decision": "Changed the camera",
+      "because": "Its shape was 1.00 similar to guide-how-to-cancel-subscriptions--pinterest-video; a different film, not the same one re-coloured."
+    },
+    {
+      "topic": "Variation",
+      "decision": "Reordered the transitions",
+      "because": "Its shape was 0.90 similar to guide-how-to-cancel-subscriptions--pinterest-video; a different film, not the same one re-coloured."
     },
     {
       "topic": "Sound",
@@ -358,7 +258,7 @@
     },
     {
       "topic": "Length",
-      "decision": "32.0s, 7 scenes",
+      "decision": "17.6s, 4 scenes",
       "because": "Each scene is held for the time its words take to read on Pinterest video pin (0.32s a word), inside 12–35s."
     }
   ]

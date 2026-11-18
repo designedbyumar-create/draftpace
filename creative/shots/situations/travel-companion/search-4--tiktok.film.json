@@ -164,7 +164,7 @@
     },
     {
       "topic": "Guide",
-      "decision": "\"Hotel can't find your reservation: what to say\" (draftpace.com/guides/hotel-cannot-find-your-reservation)",
+      "decision": "\"Hotel cannot find your reservation: what to do now\" (draftpace.com/guides/hotel-cannot-find-your-reservation)",
       "because": "The guide that covers this moment: what to do comes from it, and the film ends on it."
     },
     {
@@ -180,12 +180,12 @@
     {
       "topic": "Structure",
       "decision": "In their words: The moment typed the way a person searches it, then what to do about it, then the product doing it.",
-      "because": "Best fit for a awareness film on TikTok (platform fit 2, goal fit 3, already used for this product ×1, already used on TikTok ×1). Other candidates: The moment (-13.6), Inside the tool (-23.4)."
+      "because": "Best fit for a awareness film on TikTok (platform fit 2, goal fit 3, already used for this product ×2, already used on TikTok ×1). Other candidates: Inside the tool (-15.3), The moment (-16.0)."
     },
     {
       "topic": "Angle",
       "decision": "\"The hotel cannot find my reservation\"",
-      "because": "A situation people search for, \"The hotel cannot find my reservation\", with the steps from \"Hotel can't find your reservation: what to say\", and how Travel Companion helps."
+      "because": "A situation people search for, \"The hotel cannot find my reservation\", with the steps from \"Hotel cannot find your reservation: what to do now\", and how Travel Companion helps."
     },
     {
       "topic": "Transitions",

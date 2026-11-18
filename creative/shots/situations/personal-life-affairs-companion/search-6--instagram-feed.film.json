@@ -13,14 +13,14 @@
   "height": 1350,
   "fps": 30,
   "durationInFrames": 638,
-  "structure": "situationWords",
+  "structure": "situationMoment",
   "angle": {
     "text": "Nobody would know where to find anything if I died tomorrow",
     "source": "searchedProblems[5].phrase"
   },
   "treatment": {
     "voice": "editorial",
-    "camera": "locked",
+    "camera": "float",
     "transitions": [
       "pageTurn",
       "blurDissolve",
@@ -44,7 +44,7 @@
     {
       "id": "moment",
       "kind": "title",
-      "variant": "quote",
+      "variant": "editorial",
       "copy": [
         {
           "text": "Nobody would know where to find anything if I died tomorrow",
@@ -57,7 +57,7 @@
       "why": "Opens on the moment in the person's own words, as the listing records people searching it.",
       "from": 0,
       "dur": 138,
-      "ground": "accent",
+      "ground": "light",
       "transition": "cut",
       "sfx": [],
       "lines": [
@@ -135,7 +135,7 @@
       "why": "Ends on where to read the whole guide, with the product beneath it: the viewer leaves with the next step, not only a pitch.",
       "from": 483,
       "dur": 155,
-      "ground": "light",
+      "ground": "ink",
       "transition": "blurDissolve",
       "sfx": [
         {
@@ -169,7 +169,7 @@
     },
     {
       "topic": "Guide",
-      "decision": "\"Life admin binder: what to include, in 8 sections\" (draftpace.com/guides/life-admin-binder-what-goes-in-it)",
+      "decision": "\"Life admin binder: what belongs in each section\" (draftpace.com/guides/life-admin-binder-what-goes-in-it)",
       "because": "The guide that covers this moment: what to do comes from it, and the film ends on it."
     },
     {
@@ -184,13 +184,13 @@
     },
     {
       "topic": "Structure",
-      "decision": "In their words: The moment typed the way a person searches it, then what to do about it, then the product doing it.",
-      "because": "Best fit for a awareness film on Instagram feed video (platform fit 2, goal fit 3, already used for this product ×2, already used on Instagram feed video ×1). Other candidates: Inside the tool (-13.4), The moment (-20.3)."
+      "decision": "The moment: The moment as it feels, set dark, then the help in the light, then what to do next.",
+      "because": "Best fit for a awareness film on Instagram feed video (platform fit 2, goal fit 3, already used on Instagram feed video ×3). Other candidates: In their words (-12.5), Inside the tool (-16.4)."
     },
     {
       "topic": "Angle",
       "decision": "\"Nobody would know where to find anything if I died tomorrow\"",
-      "because": "A situation people search for, \"Nobody would know where to find anything if I died tomorrow\", with the steps from \"Life admin binder: what to include, in 8 sections\", and how Personal Life Affairs Companion helps."
+      "because": "The moment \"Nobody would know where to find anything if I died tomorrow\", then how Personal Life Affairs Companion helps, then what the guide \"Life admin binder: what belongs in each section\" says to do."
     },
     {
       "topic": "Transitions",
@@ -210,12 +210,7 @@
     {
       "topic": "Variation",
       "decision": "Rotated the ground rhythm",
-      "because": "Its shape was 0.78 similar to sit-homeschooling-companion-search-1--instagram-feed; a different film, not the same one re-coloured."
-    },
-    {
-      "topic": "Variation",
-      "decision": "Changed the camera",
-      "because": "Its shape was 0.78 similar to sit-personal-finance-companion-search-2--youtube-short; a different film, not the same one re-coloured."
+      "because": "Its shape was 0.78 similar to sit-homeschooling-companion-problem-1--instagram-feed; a different film, not the same one re-coloured."
     },
     {
       "topic": "Sound",

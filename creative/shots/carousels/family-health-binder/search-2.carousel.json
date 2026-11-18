@@ -14,12 +14,12 @@
         "appointment"
       ],
       "promise": {
-        "text": "Doctor appointment checklist for the day before",
+        "text": "Doctor visit and appointment checklist: what to bring",
         "source": "guide:doctor-appointment-prep-checklist/title"
       },
       "art": {
         "motif": "doctor",
-        "why": "the carousel's topic: the moment and its guide name \"doctor\", \"appointment\"",
+        "why": "the carousel's topic: the moment and its guide name \"doctor\", \"appointment\", \"visit\"",
         "also": "checklist"
       }
     },
@@ -31,11 +31,11 @@
       },
       "lines": [
         {
-          "text": "What to write down, gather and bring the day before a doctor visit, and where to keep the notes after it.",
+          "text": "You remember the question on the way home.",
           "source": "guide:doctor-appointment-prep-checklist/dek#0"
         },
         {
-          "text": "A paperwork list, not medical advice.",
+          "text": "This time, bring it with you: a doctor visit checklist, a free prep sheet, and room for the answers.",
           "source": "guide:doctor-appointment-prep-checklist/dek#1"
         }
       ],
@@ -45,118 +45,67 @@
       }
     },
     {
-      "kind": "step",
+      "kind": "checklist",
       "eyebrow": {
-        "text": "The night before",
-        "source": "guide:doctor-appointment-prep-checklist/body[4].steps[0].when"
+        "text": "Only have five minutes? Start here",
+        "source": "guide:doctor-appointment-prep-checklist/body[1].heading"
       },
-      "head": {
-        "text": "Write the reason, then your questions in order.",
-        "source": "guide:doctor-appointment-prep-checklist/body[4].steps[0].what#0"
-      },
-      "body": [
+      "items": [
         {
-          "text": "Write what has changed, with dates.",
-          "source": "guide:doctor-appointment-prep-checklist/body[4].steps[0].what#1"
+          "text": "Write the one concern you most need answered.",
+          "source": "guide:doctor-appointment-prep-checklist/body[1].items[0]#0"
+        },
+        {
+          "text": "List what you take now: medicines, over-the-counter products, vitamins and supplements.",
+          "source": "guide:doctor-appointment-prep-checklist/body[1].items[1]#0"
+        },
+        {
+          "text": "Note allergies and what reaction you had.",
+          "source": "guide:doctor-appointment-prep-checklist/body[1].items[2]#0"
+        },
+        {
+          "text": "Write what changed and when.",
+          "source": "guide:doctor-appointment-prep-checklist/body[1].items[3]#0"
         }
       ],
-      "emphasis": [
-        "questions"
-      ],
-      "art": {
-        "motif": "notebook",
-        "why": "the slide names \"write\""
-      }
-    },
-    {
-      "kind": "step",
-      "eyebrow": {
-        "text": "Same evening",
-        "source": "guide:doctor-appointment-prep-checklist/body[4].steps[1].when"
-      },
-      "head": {
-        "text": "List every medicine, vitamin and supplement from the labels.",
-        "source": "guide:doctor-appointment-prep-checklist/body[4].steps[1].what#0"
-      },
-      "body": [
-        {
-          "text": "Put the bottles in the bag.",
-          "source": "guide:doctor-appointment-prep-checklist/body[4].steps[1].what#1"
-        }
-      ],
-      "emphasis": [
-        "supplement"
-      ],
+      "ticks": true,
       "art": {
         "motif": "pills",
-        "why": "the slide names \"medicine\", \"vitamin\""
+        "why": "the slide names \"medicine\", \"vitamin\", \"allerg\", \"reaction\""
       }
     },
     {
-      "kind": "step",
+      "kind": "checklist",
       "eyebrow": {
-        "text": "Morning of",
-        "source": "guide:doctor-appointment-prep-checklist/body[4].steps[2].when"
+        "text": "What should I bring to a doctor's appointment?",
+        "source": "guide:doctor-appointment-prep-checklist/body[5].heading"
       },
-      "head": {
-        "text": "Add photo ID and your insurance card.",
-        "source": "guide:doctor-appointment-prep-checklist/body[4].steps[2].what#0"
-      },
-      "body": [
+      "items": [
         {
-          "text": "If someone is coming with you, tell them the top question.",
-          "source": "guide:doctor-appointment-prep-checklist/body[4].steps[2].what#1"
+          "text": "Your questions, with the most important marked.",
+          "source": "guide:doctor-appointment-prep-checklist/body[5].items[0]#0"
+        },
+        {
+          "text": "Your current medicine and supplement list, including doses and frequency, plus allergies and reactions.",
+          "source": "guide:doctor-appointment-prep-checklist/body[5].items[1]#0"
+        },
+        {
+          "text": "Relevant records or results the clinic does not already have.",
+          "source": "guide:doctor-appointment-prep-checklist/body[5].items[2]#0"
+        },
+        {
+          "text": "Photo ID, insurance details, referral or authorization if required.",
+          "source": "guide:doctor-appointment-prep-checklist/body[5].items[3]#0"
+        },
+        {
+          "text": "A support person if you want one and the clinic allows it.",
+          "source": "guide:doctor-appointment-prep-checklist/body[5].items[5]#0"
         }
       ],
-      "emphasis": [
-        "insurance"
-      ],
-      "art": {
-        "motif": "card",
-        "why": "the slide names \"card\""
-      }
-    },
-    {
-      "kind": "step",
-      "eyebrow": {
-        "text": "At check-in",
-        "source": "guide:doctor-appointment-prep-checklist/body[4].steps[3].when"
-      },
-      "head": {
-        "text": "Tell the desk or the nurse you have questions, so the time can be planned around them.",
-        "source": "guide:doctor-appointment-prep-checklist/body[4].steps[3].what#0"
-      },
-      "body": [],
-      "emphasis": [
-        "questions"
-      ],
+      "ticks": true,
       "art": {
         "motif": "doctor",
-        "why": "the slide names \"nurse\""
-      }
-    },
-    {
-      "kind": "step",
-      "eyebrow": {
-        "text": "In the room",
-        "source": "guide:doctor-appointment-prep-checklist/body[4].steps[4].when"
-      },
-      "head": {
-        "text": "Start with your most important question.",
-        "source": "guide:doctor-appointment-prep-checklist/body[4].steps[4].what#0"
-      },
-      "body": [
-        {
-          "text": "Take notes, or let the person with you take them.",
-          "source": "guide:doctor-appointment-prep-checklist/body[4].steps[4].what#1"
-        }
-      ],
-      "emphasis": [
-        "important"
-      ],
-      "art": {
-        "motif": "speech",
-        "why": "the slide names \"question\""
+        "why": "the slide names \"doctor\", \"appointment\", \"clinic\""
       }
     },
     {
@@ -185,7 +134,7 @@
         "source": "micro"
       },
       "title": {
-        "text": "Doctor appointment checklist for the day before",
+        "text": "Doctor visit and appointment checklist: what to bring",
         "source": "guide:doctor-appointment-prep-checklist/title"
       },
       "url": {
@@ -202,21 +151,19 @@
       },
       "art": {
         "motif": "doctor",
-        "why": "the carousel's topic: the moment and its guide name \"doctor\", \"appointment\""
+        "why": "the carousel's topic: the moment and its guide name \"doctor\", \"appointment\", \"visit\""
       }
     }
   ],
   "notes": [
     "Cover: \"What should I bring to a doctor's appointment\" (searchedProblems[1].phrase), as people search it.",
-    "Steps: 5 of 7 from the guide's timeline \"Before, during and after\", one per slide, each with the guide's own explanation.",
+    "Checklist: 4 items from \"Only have five minutes? Start here\".",
+    "Checklist: 5 items from \"What should I bring to a doctor's appointment?\".",
     "Help: \"A Visit page for that person: your questions with a box to tick each, what is taken now, recent symptoms, and room for notes.\" (searchedProblems[1].answer), on screens/family-health-binder-printables.png (\"Print\").",
-    "Illustration on the cover: doctor with checklist, because the carousel's topic: the moment and its guide name \"doctor\", \"appointment\".",
+    "Illustration on the cover: doctor with checklist, because the carousel's topic: the moment and its guide name \"doctor\", \"appointment\", \"visit\".",
     "Illustration on the answer: doctor, because the slide names \"doctor\", \"visit\".",
-    "Illustration on the step: notebook, because the slide names \"write\".",
-    "Illustration on the step: pills, because the slide names \"medicine\", \"vitamin\".",
-    "Illustration on the step: card, because the slide names \"card\".",
-    "Illustration on the step: doctor, because the slide names \"nurse\".",
-    "Illustration on the step: speech, because the slide names \"question\".",
-    "Illustration on the close: doctor, because the carousel's topic: the moment and its guide name \"doctor\", \"appointment\"."
+    "Illustration on the checklist: pills, because the slide names \"medicine\", \"vitamin\", \"allerg\", \"reaction\".",
+    "Illustration on the checklist: doctor, because the slide names \"doctor\", \"appointment\", \"clinic\".",
+    "Illustration on the close: doctor, because the carousel's topic: the moment and its guide name \"doctor\", \"appointment\", \"visit\"."
   ]
 }

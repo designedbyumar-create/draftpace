@@ -1,0 +1,141 @@
+{
+  "id": "car-homeschooling-companion-search-1",
+  "product": "homeschooling-companion",
+  "guide": "homeschool-record-keeping-requirements-by-state",
+  "situation": "searchedProblems[0].phrase",
+  "slides": [
+    {
+      "kind": "cover",
+      "quote": {
+        "text": "What homeschool records am I actually required to keep",
+        "source": "searchedProblems[0].phrase"
+      },
+      "emphasis": [
+        "homeschool"
+      ],
+      "promise": {
+        "text": "How to verify homeschool requirements by state",
+        "source": "guide:homeschool-record-keeping-requirements-by-state/title"
+      },
+      "art": {
+        "motif": "books",
+        "why": "the carousel's topic: the moment and its guide name \"homeschool\"",
+        "also": "notebook"
+      }
+    },
+    {
+      "kind": "answer",
+      "eyebrow": {
+        "text": "In short",
+        "source": "micro"
+      },
+      "lines": [
+        {
+          "text": "Verify your homeschool route using official state sources and three limited examples.",
+          "source": "guide:homeschool-record-keeping-requirements-by-state/dek#0"
+        },
+        {
+          "text": "This is not an exhaustive 50-state legal summary.",
+          "source": "guide:homeschool-record-keeping-requirements-by-state/dek#1"
+        }
+      ],
+      "art": {
+        "motif": "route",
+        "why": "the slide names \"route\""
+      }
+    },
+    {
+      "kind": "checklist",
+      "eyebrow": {
+        "text": "Build a requirement record you can actually use",
+        "source": "guide:homeschool-record-keeping-requirements-by-state/body[2].heading"
+      },
+      "items": [
+        {
+          "text": "Write the state, child's age or grade, education route and school year at the top.",
+          "source": "guide:homeschool-record-keeping-requirements-by-state/body[2].items[0]#0"
+        },
+        {
+          "text": "Record the notice or application recipient, current form, filing trigger and deadline.",
+          "source": "guide:homeschool-record-keeping-requirements-by-state/body[2].items[1]#0"
+        },
+        {
+          "text": "List attendance, days, hours or subject requirements only where the relevant official rule calls for them.",
+          "source": "guide:homeschool-record-keeping-requirements-by-state/body[2].items[2]#0"
+        },
+        {
+          "text": "Separate records retained at home from material submitted annually or produced on request.",
+          "source": "guide:homeschool-record-keeping-requirements-by-state/body[2].items[3]#0"
+        },
+        {
+          "text": "Record assessment options, who can assess, covered grades, due date and where evidence goes.",
+          "source": "guide:homeschool-record-keeping-requirements-by-state/body[2].items[4]#0"
+        },
+        {
+          "text": "Find retention requirements and any rules for moving, ending a program or returning to school.",
+          "source": "guide:homeschool-record-keeping-requirements-by-state/body[2].items[5]#0"
+        }
+      ],
+      "ticks": true,
+      "art": {
+        "motif": "calendar",
+        "why": "the slide names \"date\", \"day\", \"deadline\", \"due\", \"year\""
+      }
+    },
+    {
+      "kind": "help",
+      "eyebrow": {
+        "text": "How it helps",
+        "source": "micro"
+      },
+      "name": {
+        "text": "Homeschooling Companion",
+        "source": "title"
+      },
+      "line": {
+        "text": "Name your state and the printed record carries what it asks for, each line set against what you have already recorded.",
+        "source": "searchedProblems[0].answer"
+      },
+      "ui": {
+        "kind": "screen",
+        "src": "screens/homeschooling-companion-kids.png"
+      }
+    },
+    {
+      "kind": "close",
+      "eyebrow": {
+        "text": "The full guide",
+        "source": "micro"
+      },
+      "title": {
+        "text": "How to verify homeschool requirements by state",
+        "source": "guide:homeschool-record-keeping-requirements-by-state/title"
+      },
+      "url": {
+        "text": "draftpace.com/guides/homeschool-record-keeping-requirements-by-state",
+        "source": "guide:homeschool-record-keeping-requirements-by-state/url"
+      },
+      "link": {
+        "text": "Free to read. Link in bio.",
+        "source": "micro"
+      },
+      "save": {
+        "text": "Save this for later.",
+        "source": "micro"
+      },
+      "art": {
+        "motif": "books",
+        "why": "the carousel's topic: the moment and its guide name \"homeschool\""
+      }
+    }
+  ],
+  "notes": [
+    "Cover: \"What homeschool records am I actually required to keep\" (searchedProblems[0].phrase), as people search it.",
+    "Checklist: 6 items from \"Build a requirement record you can actually use\".",
+    "Help: \"Name your state and the printed record carries what it asks for, each line set against what you have already recorded.\" (searchedProblems[0].answer), on screens/homeschooling-companion-kids.png (\"Your children.\").",
+    "Illustration on the cover: books with notebook, because the carousel's topic: the moment and its guide name \"homeschool\".",
+    "Illustration on the answer: route, because the slide names \"route\".",
+    "Illustration on the checklist: calendar, because the slide names \"date\", \"day\", \"deadline\", \"due\", \"year\".",
+    "Illustration on the close: books, because the carousel's topic: the moment and its guide name \"homeschool\"."
+  ]
+}

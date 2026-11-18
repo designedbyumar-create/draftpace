@@ -57,7 +57,7 @@
       "why": "Opens on the moment in the person's own words, as the listing records people searching it.",
       "from": 0,
       "dur": 124,
-      "ground": "ink",
+      "ground": "light",
       "transition": "cut",
       "sfx": [],
       "lines": [
@@ -136,7 +136,7 @@
       "why": "Ends on where to read the whole guide, with the product beneath it: the viewer leaves with the next step, not only a pitch.",
       "from": 411,
       "dur": 139,
-      "ground": "light",
+      "ground": "ink",
       "transition": "blurDissolve",
       "sfx": [
         {
@@ -170,7 +170,7 @@
     },
     {
       "topic": "Guide",
-      "decision": "\"What to print before you travel: a one-page paper list\" (draftpace.com/guides/what-to-keep-on-paper-when-you-travel)",
+      "decision": "\"What to print before you travel: the useful basics\" (draftpace.com/guides/what-to-keep-on-paper-when-you-travel)",
       "because": "The guide that covers this moment: what to do comes from it, and the film ends on it."
     },
     {
@@ -186,12 +186,12 @@
     {
       "topic": "Structure",
       "decision": "The moment: The moment as it feels, set dark, then the help in the light, then what to do next.",
-      "because": "Best fit for a awareness film on Pinterest video pin (platform fit 1, goal fit 3, already used on Pinterest video pin ×5). Other candidates: In their words (-19.0), Inside the tool (-21.0)."
+      "because": "Best fit for a awareness film on Pinterest video pin (platform fit 1, goal fit 3, already used on Pinterest video pin ×5). Other candidates: Inside the tool (-17.7), In their words (-29.8)."
     },
     {
       "topic": "Angle",
       "decision": "\"What should I keep on paper when I travel\"",
-      "because": "The moment \"What should I keep on paper when I travel\", then how Travel Companion helps, then what the guide \"What to print before you travel: a one-page paper list\" says to do."
+      "because": "The moment \"What should I keep on paper when I travel\", then how Travel Companion helps, then what the guide \"What to print before you travel: the useful basics\" says to do."
     },
     {
       "topic": "Transitions",
@@ -207,6 +207,11 @@
       "topic": "Colour",
       "decision": "Grounds ink → light → light → accent",
       "because": "Grounds ink → light → light → accent: a cool accent, so a darker ground is used for contrast at a turn."
+    },
+    {
+      "topic": "Variation",
+      "decision": "Rotated the ground rhythm",
+      "because": "Its shape was 0.78 similar to sit-family-health-binder-search-6--youtube-short; a different film, not the same one re-coloured."
     },
     {
       "topic": "Sound",

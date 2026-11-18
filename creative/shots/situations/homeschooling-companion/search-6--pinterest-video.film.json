@@ -12,8 +12,8 @@
   "width": 1000,
   "height": 1500,
   "fps": 30,
-  "durationInFrames": 703,
-  "structure": "situationInside",
+  "durationInFrames": 616,
+  "structure": "situationMoment",
   "angle": {
     "text": "Homeschool planners are too heavy and I always quit",
     "source": "searchedProblems[5].phrase"
@@ -44,7 +44,7 @@
     {
       "id": "moment",
       "kind": "title",
-      "variant": "label",
+      "variant": "editorial",
       "copy": [
         {
           "text": "Homeschool planners are too heavy and I always quit",
@@ -95,7 +95,7 @@
       },
       "from": 112,
       "dur": 377,
-      "ground": "light",
+      "ground": "ink",
       "transition": "lineWipe",
       "sfx": [
         {
@@ -110,49 +110,6 @@
         },
         {
           "at": 170,
-          "cue": "tap",
-          "volume": 0.33
-        }
-      ]
-    },
-    {
-      "id": "also",
-      "kind": "phone",
-      "variant": "proof",
-      "copy": [],
-      "caption": {
-        "text": "Add a child",
-        "source": "tasks[1].label"
-      },
-      "screen": {
-        "src": "screens/homeschooling-companion-kids.png",
-        "pose": "tiltLeft",
-        "focus": {
-          "at": 0.45,
-          "y": 159,
-          "h": 126,
-          "region": "state"
-        },
-        "scroll": []
-      },
-      "why": "One more real thing an owner does here, in the listing's own task wording, on the screen it happens on. Screen: \"Your children.\" (Each child with their age and subjects, and the state's homeschool requirements kept alongside.) chosen because it is the real screen closest to \"Add a child\"; focus on \"Oregon · Moderate regulation\".",
-      "from": 477,
-      "dur": 99,
-      "ground": "accent",
-      "transition": "slideUp",
-      "sfx": [
-        {
-          "at": 0,
-          "cue": "swish",
-          "volume": 0.192
-        },
-        {
-          "at": 12,
-          "cue": "pop",
-          "volume": 0.252
-        },
-        {
-          "at": 45,
           "cue": "tap",
           "volume": 0.33
         }
@@ -177,9 +134,9 @@
         "source": "micro"
       },
       "why": "Ends on where to read the whole guide, with the product beneath it: the viewer leaves with the next step, not only a pitch.",
-      "from": 564,
+      "from": 477,
       "dur": 139,
-      "ground": "accent",
+      "ground": "ink",
       "transition": "blurDissolve",
       "sfx": [
         {
@@ -213,7 +170,7 @@
     },
     {
       "topic": "Guide",
-      "decision": "\"A simple homeschool record keeping system you will keep\" (draftpace.com/guides/simple-homeschool-record-keeping-system)",
+      "decision": "\"A simple homeschool record keeping system\" (draftpace.com/guides/simple-homeschool-record-keeping-system)",
       "because": "The guide that covers this moment: what to do comes from it, and the film ends on it."
     },
     {
@@ -228,13 +185,13 @@
     },
     {
       "topic": "Structure",
-      "decision": "Inside the tool: The moment, then how the product helps on its real screen, then one more real thing an owner does in it.",
-      "because": "Best fit for a awareness film on Pinterest video pin (platform fit 2, goal fit 2, already used for this product ×1, already used on Pinterest video pin ×2). Other candidates: The moment (-10.4), In their words (-11.3)."
+      "decision": "The moment: The moment as it feels, set dark, then the help in the light, then what to do next.",
+      "because": "Best fit for a awareness film on Pinterest video pin (platform fit 1, goal fit 3, already used on Pinterest video pin ×2). Other candidates: In their words (-11.3), Inside the tool (-12.7)."
     },
     {
       "topic": "Angle",
       "decision": "\"Homeschool planners are too heavy and I always quit\"",
-      "because": "The moment \"Homeschool planners are too heavy and I always quit\", how Homeschooling Companion helps, and one more real thing it does: \"Add a child\"."
+      "because": "The moment \"Homeschool planners are too heavy and I always quit\", then how Homeschooling Companion helps, then what the guide \"A simple homeschool record keeping system\" says to do."
     },
     {
       "topic": "Transitions",
@@ -254,7 +211,7 @@
     {
       "topic": "Variation",
       "decision": "Rotated the ground rhythm",
-      "because": "Its shape was 0.74 similar to sit-family-health-binder-search-4--pinterest-video; a different film, not the same one re-coloured."
+      "because": "Its shape was 0.88 similar to sit-home-management-companion-search-2--instagram-feed; a different film, not the same one re-coloured."
     },
     {
       "topic": "Sound",
@@ -263,7 +220,7 @@
     },
     {
       "topic": "Length",
-      "decision": "23.4s, 4 scenes",
+      "decision": "20.5s, 3 scenes",
       "because": "Each scene is held for the time its words take to read on Pinterest video pin (0.32s a word), inside 10–32s."
     }
   ]

@@ -13,17 +13,16 @@
 | **Situation** | "Registration, insurance and the inspection all come round on different days." | One real moment from Vehicle Maintenance Companion's listing (problemsSolved[4].problem). The film is about this moment and how the product helps with it: "Record each date and where the paper is. They show on Due as they get close, and go on a one-page glove box card with your registration plate, tire size and roadside number." |
 | **Stage** | Before launch: helpful and relatable only | Nobody knows Draftpace yet, so films show how it helps with real moments. Who it is not for, questions before buying, what you get and the price wait until there are users to sell to. |
 | **Audience** | You own more than one vehicle, or a vehicle with a maintenance history you already know by heart but have never written down anywhere. / You have bought a used car or inherited one, and its real service history is genuinely unknown to you. | The listing's own audience lines; the director writes for them. |
-| **Structure** | Inside the tool: The moment, then how the product helps on its real screen, then one more real thing an owner does in it. | Best fit for a awareness film on Instagram feed video (platform fit 3, goal fit 2, already used for this product ×3, already used on Instagram feed video ×4). Other candidates: The moment (-35.6). |
+| **Structure** | Inside the tool: The moment, then how the product helps on its real screen, then one more real thing an owner does in it. | Best fit for a awareness film on Instagram feed video (platform fit 3, goal fit 2, already used for this product ×2, already used on Instagram feed video ×5). Other candidates: The moment (-33.2). |
 | **Angle** | "Registration, insurance and the inspection all come round on different days." | The moment "Registration, insurance and the inspection all come round on different days.", how Vehicle Maintenance Companion helps, and one more real thing it does: "Print my service history for a buyer". |
 | **Transitions** | Transitions follow the product's own identity motif, "gauge" | Transitions follow the product's own identity motif, "gauge": a gauge sweeps, so scenes are revealed by a radial sweep. |
 | **Camera** | Camera "float" | Camera "float": a gentle float that keeps a held frame alive without demanding attention. |
 | **Colour** | Grounds light → light → accent → light | Grounds light → light → accent → light: a warm accent, so light grounds lead and the accent is saved for the turns. |
 | **Variation** | Rotated the ground rhythm | Its shape was 0.74 similar to sit-home-management-companion-problem-4--youtube-short; a different film, not the same one re-coloured. |
-| **Variation** | Changed the camera | Its shape was 0.74 similar to sit-vehicle-maintenance-companion-search-5--pinterest-video; a different film, not the same one re-coloured. |
 | **Sound** | Light sound design, low-energy bed | Most of this audience never unmutes, so nothing depends on sound; cues are kept quieter and sparser for those who do. |
 | **Length** | 26.1s, 4 scenes | Each scene is held for the time its words take to read on Instagram feed video (0.3s a word), inside 10–30s. |
 
-Treatment: voice `editorial`, camera `locked`, motif `gauge`, transitions `radial` → `zoomThrough` → `radial`, music bed at 0.16 (low energy).
+Treatment: voice `editorial`, camera `float`, motif `gauge`, transitions `radial` → `zoomThrough` → `radial`, music bed at 0.16 (low energy).
 
 ## Script, scene by scene
 

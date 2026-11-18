@@ -11,15 +11,15 @@
   "width": 1080,
   "height": 1350,
   "fps": 30,
-  "durationInFrames": 497,
-  "structure": "situationMoment",
+  "durationInFrames": 623,
+  "structure": "situationInside",
   "angle": {
     "text": "The expensive stuff, the water heater, the gutters, the outside tap, gets caught too late, as a repair.",
     "source": "problemsSolved[1].problem"
   },
   "treatment": {
     "voice": "editorial",
-    "camera": "locked",
+    "camera": "dolly",
     "transitions": [
       "slideUp",
       "cardSlide",
@@ -43,7 +43,7 @@
     {
       "id": "moment",
       "kind": "title",
-      "variant": "editorial",
+      "variant": "label",
       "copy": [
         {
           "text": "The expensive stuff, the water heater, the gutters, the outside tap, gets caught too late, as a repair.",
@@ -95,7 +95,7 @@
       },
       "from": 198,
       "dur": 214,
-      "ground": "ink",
+      "ground": "light",
       "transition": "slideUp",
       "sfx": [
         {
@@ -116,6 +116,48 @@
       ]
     },
     {
+      "id": "also",
+      "kind": "phone",
+      "variant": "proof",
+      "copy": [],
+      "caption": {
+        "text": "Find out whether anything needs me this week",
+        "source": "tasks[0].label"
+      },
+      "screen": {
+        "src": "screens/home-management-companion-workspace.png",
+        "pose": "float",
+        "focus": {
+          "at": 0.45,
+          "y": 222,
+          "h": 25,
+          "region": "status"
+        }
+      },
+      "why": "One more real thing an owner does here, in the listing's own task wording, on the screen it happens on. Screen: \"A couple of things need a look\" (Your home now: what's wrong, what to care for, what's coming up and what's handled, with the fridge and a dripping tap flagged.) chosen because it is the real screen closest to \"Find out whether anything needs me this week\"; focus on \"Wrong, To care for, Coming up, Handled\".",
+      "from": 400,
+      "dur": 138,
+      "ground": "accent",
+      "transition": "cardSlide",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "swish",
+          "volume": 0.192
+        },
+        {
+          "at": 12,
+          "cue": "pop",
+          "volume": 0.252
+        },
+        {
+          "at": 62,
+          "cue": "tap",
+          "volume": 0.33
+        }
+      ]
+    },
+    {
       "id": "cta",
       "kind": "cta",
       "variant": "soft",
@@ -130,9 +172,9 @@
         }
       ],
       "why": "Instagram feed video punishes an obvious ad; a soft close names the product and where to find it.",
-      "from": 400,
+      "from": 526,
       "dur": 97,
-      "ground": "ink",
+      "ground": "accent",
       "transition": "blurDissolve",
       "sfx": [
         {
@@ -176,13 +218,13 @@
     },
     {
       "topic": "Structure",
-      "decision": "The moment: The moment as it feels, set dark, then the help in the light, then what to do next.",
-      "because": "Best fit for a awareness film on Instagram feed video (platform fit 2, goal fit 3, already used for this product ×1, already used on Instagram feed video ×2). Other candidates: Inside the tool (-15.6)."
+      "decision": "Inside the tool: The moment, then how the product helps on its real screen, then one more real thing an owner does in it.",
+      "because": "Best fit for a awareness film on Instagram feed video (platform fit 3, goal fit 2, already used for this product ×1, already used on Instagram feed video ×2). Other candidates: The moment (-14.0)."
     },
     {
       "topic": "Angle",
       "decision": "\"The expensive stuff, the water heater, the gutters, the outside tap, gets caught too late, as a repair.\"",
-      "because": "The moment \"The expensive stuff, the water heater, the gutters, the outside tap, gets caught too late, as a repair.\", then how Home Base helps."
+      "because": "The moment \"The expensive stuff, the water heater, the gutters, the outside tap, gets caught too late, as a repair.\", how Home Base helps, and one more real thing it does: \"Find out whether anything needs me this week\"."
     },
     {
       "topic": "Transitions",
@@ -202,7 +244,12 @@
     {
       "topic": "Variation",
       "decision": "Rotated the ground rhythm",
-      "because": "Its shape was 0.78 similar to sit-home-management-companion-search-2--instagram-feed; a different film, not the same one re-coloured."
+      "because": "Its shape was 0.74 similar to sit-home-management-companion-search-3--pinterest-video; a different film, not the same one re-coloured."
+    },
+    {
+      "topic": "Variation",
+      "decision": "Changed the camera",
+      "because": "Its shape was 0.74 similar to sit-alongside-problem-4--instagram-feed; a different film, not the same one re-coloured."
     },
     {
       "topic": "Sound",
@@ -211,7 +258,7 @@
     },
     {
       "topic": "Length",
-      "decision": "16.6s, 3 scenes",
+      "decision": "20.8s, 4 scenes",
       "because": "Each scene is held for the time its words take to read on Instagram feed video (0.3s a word), inside 10–30s."
     }
   ]

@@ -19,7 +19,7 @@
   },
   "treatment": {
     "voice": "editorial",
-    "camera": "locked",
+    "camera": "float",
     "transitions": [
       "radial",
       "zoomThrough",
@@ -218,7 +218,7 @@
     {
       "topic": "Structure",
       "decision": "Inside the tool: The moment, then how the product helps on its real screen, then one more real thing an owner does in it.",
-      "because": "Best fit for a awareness film on Instagram feed video (platform fit 3, goal fit 2, already used for this product ×3, already used on Instagram feed video ×4). Other candidates: The moment (-35.6)."
+      "because": "Best fit for a awareness film on Instagram feed video (platform fit 3, goal fit 2, already used for this product ×2, already used on Instagram feed video ×5). Other candidates: The moment (-33.2)."
     },
     {
       "topic": "Angle",
@@ -244,11 +244,6 @@
       "topic": "Variation",
       "decision": "Rotated the ground rhythm",
       "because": "Its shape was 0.74 similar to sit-home-management-companion-problem-4--youtube-short; a different film, not the same one re-coloured."
-    },
-    {
-      "topic": "Variation",
-      "decision": "Changed the camera",
-      "because": "Its shape was 0.74 similar to sit-vehicle-maintenance-companion-search-5--pinterest-video; a different film, not the same one re-coloured."
     },
     {
       "topic": "Sound",

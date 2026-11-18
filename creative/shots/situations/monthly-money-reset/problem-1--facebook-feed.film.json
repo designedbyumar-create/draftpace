@@ -56,7 +56,7 @@
       "why": "Opens on the moment as the listing describes it: the situation the viewer is in right now.",
       "from": 0,
       "dur": 190,
-      "ground": "ink",
+      "ground": "light",
       "transition": "cut",
       "sfx": [],
       "lines": [
@@ -116,7 +116,7 @@
       "why": "A free product closes on starting free; there is no price to state.",
       "from": 454,
       "dur": 103,
-      "ground": "light",
+      "ground": "ink",
       "transition": "blurDissolve",
       "sfx": [
         {
@@ -182,6 +182,11 @@
       "topic": "Colour",
       "decision": "Grounds light → accent → light → ink",
       "because": "Grounds light → accent → light → ink: a cool accent, so a darker ground is used for contrast at a turn."
+    },
+    {
+      "topic": "Variation",
+      "decision": "Rotated the ground rhythm",
+      "because": "Its shape was 0.78 similar to sit-monthly-money-reset-search-4--facebook-feed; a different film, not the same one re-coloured."
     },
     {
       "topic": "Sound",

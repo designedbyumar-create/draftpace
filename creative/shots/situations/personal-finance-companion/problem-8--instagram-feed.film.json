@@ -11,8 +11,8 @@
   "width": 1080,
   "height": 1350,
   "fps": 30,
-  "durationInFrames": 728,
-  "structure": "situationMoment",
+  "durationInFrames": 854,
+  "structure": "situationInside",
   "angle": {
     "text": "You split bills with somebody and neither of you can remember what was actually squared up last time.",
     "source": "problemsSolved[7].problem"
@@ -43,7 +43,7 @@
     {
       "id": "moment",
       "kind": "title",
-      "variant": "editorial",
+      "variant": "label",
       "copy": [
         {
           "text": "You split bills with somebody and neither of you can remember what was actually squared up last time.",
@@ -79,7 +79,7 @@
       },
       "screen": {
         "src": "screens/personal-finance-companion-bills.png",
-        "pose": "tiltLeft",
+        "pose": "tiltRight",
         "focus": {
           "at": 0.45,
           "y": 229,
@@ -95,6 +95,48 @@
       "from": 198,
       "dur": 442,
       "ground": "light",
+      "transition": "wipe",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "swish",
+          "volume": 0.192
+        },
+        {
+          "at": 12,
+          "cue": "pop",
+          "volume": 0.252
+        },
+        {
+          "at": 199,
+          "cue": "tap",
+          "volume": 0.33
+        }
+      ]
+    },
+    {
+      "id": "also",
+      "kind": "phone",
+      "variant": "proof",
+      "copy": [],
+      "caption": {
+        "text": "Bring in a bank statement without retyping it",
+        "source": "tasks[6].label"
+      },
+      "screen": {
+        "src": "screens/personal-finance-companion-records.png",
+        "pose": "tiltLeft",
+        "focus": {
+          "at": 0.45,
+          "y": 222,
+          "h": 119,
+          "region": "accounts"
+        }
+      },
+      "why": "One more real thing an owner does here, in the listing's own task wording, on the screen it happens on. Screen: \"Records\" (What's actually true right now, area by area: accounts, income, bills, subscriptions, transactions, debt.) chosen because it is the real screen closest to \"Bring in a bank statement without retyping it\"; focus on \"Accounts\".",
+      "from": 628,
+      "dur": 138,
+      "ground": "accent",
       "transition": "blurDissolve",
       "sfx": [
         {
@@ -108,7 +150,7 @@
           "volume": 0.252
         },
         {
-          "at": 199,
+          "at": 62,
           "cue": "tap",
           "volume": 0.33
         }
@@ -129,7 +171,7 @@
         }
       ],
       "why": "Instagram feed video punishes an obvious ad; a soft close names the product and where to find it.",
-      "from": 628,
+      "from": 754,
       "dur": 100,
       "ground": "ink",
       "transition": "cardSlide",
@@ -175,13 +217,13 @@
     },
     {
       "topic": "Structure",
-      "decision": "The moment: The moment as it feels, set dark, then the help in the light, then what to do next.",
-      "because": "Best fit for a awareness film on Instagram feed video (platform fit 2, goal fit 3, already used for this product ×4, already used on Instagram feed video ×4). Other candidates: Inside the tool (-37.3)."
+      "decision": "Inside the tool: The moment, then how the product helps on its real screen, then one more real thing an owner does in it.",
+      "because": "Best fit for a awareness film on Instagram feed video (platform fit 3, goal fit 2, already used for this product ×5, already used on Instagram feed video ×3). Other candidates: The moment (-39.3)."
     },
     {
       "topic": "Angle",
       "decision": "\"You split bills with somebody and neither of you can remember what was actually squared up last time.\"",
-      "because": "The moment \"You split bills with somebody and neither of you can remember what was actually squared up last time.\", then how Personal Finance Companion helps."
+      "because": "The moment \"You split bills with somebody and neither of you can remember what was actually squared up last time.\", how Personal Finance Companion helps, and one more real thing it does: \"Bring in a bank statement without retyping it\"."
     },
     {
       "topic": "Transitions",
@@ -201,17 +243,32 @@
     {
       "topic": "Variation",
       "decision": "Rotated the ground rhythm",
-      "because": "Its shape was 0.88 similar to sit-personal-finance-companion-problem-5--instagram-reel; a different film, not the same one re-coloured."
+      "because": "Its shape was 0.82 similar to sit-personal-finance-companion-search-8--pinterest-video; a different film, not the same one re-coloured."
     },
     {
       "topic": "Variation",
       "decision": "Changed the camera",
-      "because": "Its shape was 0.78 similar to sit-homeschooling-companion-problem-1--instagram-feed; a different film, not the same one re-coloured."
+      "because": "Its shape was 0.74 similar to sit-home-management-companion-problem-2--instagram-feed; a different film, not the same one re-coloured."
     },
     {
       "topic": "Variation",
       "decision": "Reordered the transitions",
-      "because": "Its shape was 0.78 similar to sit-home-management-companion-problem-2--instagram-feed; a different film, not the same one re-coloured."
+      "because": "Its shape was 0.74 similar to sit-alongside-problem-4--instagram-feed; a different film, not the same one re-coloured."
+    },
+    {
+      "topic": "Variation",
+      "decision": "Switched the brand reveal",
+      "because": "Its shape was 0.74 similar to sit-alongside-problem-4--instagram-feed; a different film, not the same one re-coloured."
+    },
+    {
+      "topic": "Variation",
+      "decision": "Re-posed the phones",
+      "because": "Its shape was 0.74 similar to sit-alongside-problem-4--instagram-feed; a different film, not the same one re-coloured."
+    },
+    {
+      "topic": "Variation",
+      "decision": "Set the grounds against the accent",
+      "because": "Its shape was 0.74 similar to sit-alongside-problem-4--instagram-feed; a different film, not the same one re-coloured."
     },
     {
       "topic": "Sound",
@@ -220,7 +277,7 @@
     },
     {
       "topic": "Length",
-      "decision": "24.3s, 3 scenes",
+      "decision": "28.5s, 4 scenes",
       "because": "Each scene is held for the time its words take to read on Instagram feed video (0.3s a word), inside 10–30s."
     }
   ]

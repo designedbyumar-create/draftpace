@@ -14,7 +14,7 @@
         "maintenance"
       ],
       "promise": {
-        "text": "How to know what maintenance your car is due for",
+        "text": "What maintenance is due on my car right now?",
         "source": "guide:what-is-due-on-my-car-right-now/title"
       },
       "art": {
@@ -31,105 +31,47 @@
       },
       "lines": [
         {
-          "text": "Work out what is due by miles and by months, whichever comes first, using the intervals in your owner's manual and one recorded date.",
+          "text": "Use your vehicle's schedule, a fresh odometer reading and last-service evidence to identify due, upcoming and unknown maintenance without guessing.",
           "source": "guide:what-is-due-on-my-car-right-now/dek#0"
         }
       ],
       "art": {
+        "motif": "car",
+        "why": "the slide names \"vehicle\", \"odometer\""
+      }
+    },
+    {
+      "kind": "checklist",
+      "eyebrow": {
+        "text": "Work out the status one task at a time",
+        "source": "guide:what-is-due-on-my-car-right-now/body[1].heading"
+      },
+      "items": [
+        {
+          "text": "Identify the exact year, model, engine or powertrain and relevant schedule.",
+          "source": "guide:what-is-due-on-my-car-right-now/body[1].items[0]#0"
+        },
+        {
+          "text": "Read the current odometer and record the date and units.",
+          "source": "guide:what-is-due-on-my-car-right-now/body[1].items[1]#0"
+        },
+        {
+          "text": "Copy the actual applicable interval or manufacturer service-life instruction.",
+          "source": "guide:what-is-due-on-my-car-right-now/body[1].items[3]#0"
+        },
+        {
+          "text": "Calculate mileage and date thresholds where the schedule provides them.",
+          "source": "guide:what-is-due-on-my-car-right-now/body[1].items[4]#0"
+        },
+        {
+          "text": "Separate due, upcoming and unknown tasks, then discuss uncertainty or symptoms with a qualified mechanic.",
+          "source": "guide:what-is-due-on-my-car-right-now/body[1].items[5]#0"
+        }
+      ],
+      "ticks": true,
+      "art": {
         "motif": "calendar",
-        "why": "the slide names \"date\", \"month\", \"due\""
-      }
-    },
-    {
-      "kind": "step",
-      "eyebrow": {
-        "text": "The method, five steps",
-        "source": "guide:what-is-due-on-my-car-right-now/body[3].heading"
-      },
-      "number": {
-        "text": "1",
-        "source": "micro"
-      },
-      "head": {
-        "text": "Find the intervals.",
-        "source": "guide:what-is-due-on-my-car-right-now/body[3].items[0]#0"
-      },
-      "body": [
-        {
-          "text": "Your owner's manual lists each job by miles, by months, or both.",
-          "source": "guide:what-is-due-on-my-car-right-now/body[3].items[0]#1"
-        },
-        {
-          "text": "Many manuals also have a second, shorter schedule for severe driving, such as towing, mostly short trips, heavy dust or extreme heat or cold.",
-          "source": "guide:what-is-due-on-my-car-right-now/body[3].items[0]#2"
-        }
-      ],
-      "emphasis": [
-        "intervals"
-      ],
-      "art": {
-        "motif": "car",
-        "why": "the slide names \"driving\", \"miles\", \"tow\""
-      }
-    },
-    {
-      "kind": "step",
-      "eyebrow": {
-        "text": "The method, five steps",
-        "source": "guide:what-is-due-on-my-car-right-now/body[3].heading"
-      },
-      "number": {
-        "text": "2",
-        "source": "micro"
-      },
-      "head": {
-        "text": "Write down when each job was last done and the odometer reading at the time.",
-        "source": "guide:what-is-due-on-my-car-right-now/body[3].items[1]#0"
-      },
-      "body": [
-        {
-          "text": "A receipt, a sticker on the windshield or a shop's records can supply it.",
-          "source": "guide:what-is-due-on-my-car-right-now/body[3].items[1]#1"
-        },
-        {
-          "text": "If you did it yourself, your own note does.",
-          "source": "guide:what-is-due-on-my-car-right-now/body[3].items[1]#2"
-        }
-      ],
-      "emphasis": [
-        "odometer"
-      ],
-      "art": {
-        "motif": "notebook",
-        "why": "the slide names \"write\", \"note\", \"record\""
-      }
-    },
-    {
-      "kind": "step",
-      "eyebrow": {
-        "text": "The method, five steps",
-        "source": "guide:what-is-due-on-my-car-right-now/body[3].heading"
-      },
-      "number": {
-        "text": "3",
-        "source": "micro"
-      },
-      "head": {
-        "text": "Read the odometer today.",
-        "source": "guide:what-is-due-on-my-car-right-now/body[3].items[2]#0"
-      },
-      "body": [
-        {
-          "text": "Write the number down beside the date, because the answer is only as good as this reading.",
-          "source": "guide:what-is-due-on-my-car-right-now/body[3].items[2]#1"
-        }
-      ],
-      "emphasis": [
-        "odometer"
-      ],
-      "art": {
-        "motif": "car",
-        "why": "the slide names \"odometer\""
+        "why": "the slide names \"date\", \"due\", \"year\", \"schedule\""
       }
     },
     {
@@ -158,7 +100,7 @@
         "source": "micro"
       },
       "title": {
-        "text": "How to know what maintenance your car is due for",
+        "text": "What maintenance is due on my car right now?",
         "source": "guide:what-is-due-on-my-car-right-now/title"
       },
       "url": {
@@ -181,13 +123,11 @@
   ],
   "notes": [
     "Cover: \"What maintenance is due on my car right now\" (searchedProblems[4].phrase), as people search it.",
-    "Steps: 3 of 6 from the guide's numbered steps \"The method, five steps\", one per slide, each with the guide's own explanation.",
+    "Checklist: 5 items from \"Work out the status one task at a time\".",
     "Help: \"One ranked view across every vehicle you own, worked out from your intervals and your recorded dates and mileage, never from a guess.\" (searchedProblems[4].answer), on screens/vehicle-maintenance-companion-vehicles.png (\"Vehicles\").",
     "Illustration on the cover: calendar with car, because the carousel's topic: the moment and its guide name \"due\".",
-    "Illustration on the answer: calendar, because the slide names \"date\", \"month\", \"due\".",
-    "Illustration on the step: car, because the slide names \"driving\", \"miles\", \"tow\".",
-    "Illustration on the step: notebook, because the slide names \"write\", \"note\", \"record\".",
-    "Illustration on the step: car, because the slide names \"odometer\".",
+    "Illustration on the answer: car, because the slide names \"vehicle\", \"odometer\".",
+    "Illustration on the checklist: calendar, because the slide names \"date\", \"due\", \"year\", \"schedule\".",
     "Illustration on the close: calendar, because the carousel's topic: the moment and its guide name \"due\"."
   ]
 }

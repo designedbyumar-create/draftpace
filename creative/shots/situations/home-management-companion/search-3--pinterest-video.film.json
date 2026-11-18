@@ -57,7 +57,7 @@
       "why": "Opens on the moment in the person's own words, as the listing records people searching it.",
       "from": 0,
       "dur": 112,
-      "ground": "light",
+      "ground": "accent",
       "transition": "cut",
       "sfx": [],
       "lines": [
@@ -138,7 +138,7 @@
       "why": "One more real thing an owner does here, in the listing's own task wording, on the screen it happens on. Screen: \"What's been done\" (Your home's memory: what was taken care of, when, who did it and what it cost.) chosen because it is the real screen closest to \"Look up who came out and what it cost\"; focus on \"Annual service and safety check\".",
       "from": 443,
       "dur": 155,
-      "ground": "accent",
+      "ground": "light",
       "transition": "cardSlide",
       "sfx": [
         {
@@ -213,7 +213,7 @@
     },
     {
       "topic": "Guide",
-      "decision": "\"Home maintenance schedule: how often to service each system\" (draftpace.com/guides/how-often-home-systems-need-servicing)",
+      "decision": "\"Home maintenance schedule: set real service dates\" (draftpace.com/guides/how-often-home-systems-need-servicing)",
       "because": "The guide that covers this moment: what to do comes from it, and the film ends on it."
     },
     {
@@ -229,7 +229,7 @@
     {
       "topic": "Structure",
       "decision": "Inside the tool: The moment, then how the product helps on its real screen, then one more real thing an owner does in it.",
-      "because": "Best fit for a awareness film on Pinterest video pin (platform fit 2, goal fit 2, already used on Pinterest video pin ×1). Other candidates: The moment (-4.3), In their words (-4.5)."
+      "because": "Best fit for a awareness film on Pinterest video pin (platform fit 2, goal fit 2, already used on Pinterest video pin ×1). Other candidates: In their words (-4.5), The moment (-6.7)."
     },
     {
       "topic": "Angle",
@@ -250,11 +250,6 @@
       "topic": "Colour",
       "decision": "Grounds light → light → ink → accent",
       "because": "Grounds light → light → ink → accent: a cool accent, so a darker ground is used for contrast at a turn."
-    },
-    {
-      "topic": "Variation",
-      "decision": "Rotated the ground rhythm",
-      "because": "Its shape was 0.74 similar to sit-alongside-search-4--instagram-feed; a different film, not the same one re-coloured."
     },
     {
       "topic": "Sound",

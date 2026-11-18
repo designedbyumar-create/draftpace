@@ -1084,7 +1084,7 @@ export function direct(brief: Brief, d: Dossier, slate: Slate = []): Film {
     ["re-posed the phones", () => { const poses = ["float", "tiltLeft", "tiltRight", "flat"] as const; scenes.forEach((x) => x.screen && x.screen.pose !== "pair" && (x.screen.pose = poses[(poses.indexOf(x.screen.pose as typeof poses[number]) + 1) % poses.length])); }],
     ["set the grounds against the accent", () => scenes.forEach((x, i) => i > 0 && x.kind !== "phone" && (x.ground = x.ground === "light" ? "accent" : x.ground === "accent" ? "ink" : "light"))],
   ];
-  for (let m = 0; m < moves.length * 2; m++) {
+  for (let m = 0; m < moves.length * 10; m++) {
     const near = twin();
     if (!near || near.sim < MAX_SIMILARITY) break;
     const [what, apply] = moves[m % moves.length];

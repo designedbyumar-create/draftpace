@@ -79,7 +79,7 @@
       },
       "screen": {
         "src": "screens/family-health-binder-members.png",
-        "pose": "float",
+        "pose": "tiltLeft",
         "focus": {
           "at": 0.45,
           "y": 528,
@@ -125,7 +125,7 @@
       },
       "screen": {
         "src": "screens/family-health-binder-printables.png",
-        "pose": "tiltLeft",
+        "pose": "tiltRight",
         "focus": {
           "at": 0.45,
           "y": 294,
@@ -173,7 +173,7 @@
       "why": "YouTube Short punishes an obvious ad; a soft close names the product and where to find it.",
       "from": 523,
       "dur": 84,
-      "ground": "accent",
+      "ground": "ink",
       "transition": "cardSlide",
       "sfx": [
         {
@@ -218,7 +218,7 @@
     {
       "topic": "Structure",
       "decision": "Inside the tool: The moment, then how the product helps on its real screen, then one more real thing an owner does in it.",
-      "because": "Best fit for a awareness film on YouTube Short (platform fit 2, goal fit 2, already used for this product ×2). Other candidates: The moment (-25.5)."
+      "because": "Best fit for a awareness film on YouTube Short (platform fit 2, goal fit 2, already used for this product ×4). Other candidates: The moment (-25.2)."
     },
     {
       "topic": "Angle",
@@ -254,6 +254,21 @@
       "topic": "Variation",
       "decision": "Reordered the transitions",
       "because": "Its shape was 0.74 similar to sit-family-health-binder-search-3--instagram-feed; a different film, not the same one re-coloured."
+    },
+    {
+      "topic": "Variation",
+      "decision": "Switched the brand reveal",
+      "because": "Its shape was 0.74 similar to sit-family-health-binder-search-5--instagram-reel; a different film, not the same one re-coloured."
+    },
+    {
+      "topic": "Variation",
+      "decision": "Re-posed the phones",
+      "because": "Its shape was 0.74 similar to sit-family-health-binder-search-5--instagram-reel; a different film, not the same one re-coloured."
+    },
+    {
+      "topic": "Variation",
+      "decision": "Set the grounds against the accent",
+      "because": "Its shape was 0.74 similar to sit-alongside-problem-5--facebook-feed; a different film, not the same one re-coloured."
     },
     {
       "topic": "Sound",

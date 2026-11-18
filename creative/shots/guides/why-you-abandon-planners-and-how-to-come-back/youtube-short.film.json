@@ -11,15 +11,15 @@
   "width": 1080,
   "height": 1920,
   "fps": 30,
-  "durationInFrames": 1083,
-  "structure": "guideTimeline",
+  "durationInFrames": 820,
+  "structure": "guideChecklist",
   "angle": {
-    "text": "Why you stop using planners, and how to come back",
+    "text": "Why you abandon planners and how to return",
     "source": "guide:why-you-abandon-planners-and-how-to-come-back/title"
   },
   "treatment": {
     "voice": "editorial",
-    "camera": "float",
+    "camera": "dolly",
     "transitions": [
       "iris",
       "blurDissolve",
@@ -27,8 +27,8 @@
     ],
     "motif": "focus",
     "grounds": [
+      "accent",
       "light",
-      "ink",
       "light",
       "accent"
     ],
@@ -46,7 +46,7 @@
       "variant": "editorial",
       "copy": [
         {
-          "text": "Why you stop using planners, and how to come back",
+          "text": "Why you abandon planners and how to return",
           "source": "guide:why-you-abandon-planners-and-how-to-come-back/title"
         }
       ],
@@ -55,164 +55,75 @@
       ],
       "why": "The hook is the guide's own title: the question it answers, as a person would put it.",
       "from": 0,
-      "dur": 99,
-      "ground": "light",
+      "dur": 83,
+      "ground": "accent",
       "transition": "cut",
       "sfx": [],
       "lines": [
         [
-          "Why you stop using",
-          "planners, and how",
-          "to come back"
+          "Why you abandon",
+          "planners and how to",
+          "return"
         ]
       ]
     },
     {
-      "id": "when-1",
-      "kind": "title",
-      "variant": "label",
+      "id": "list",
+      "kind": "list",
+      "variant": "checklist",
       "copy": [
         {
-          "text": "Leave the whole book as it is, gaps and all.",
-          "source": "guide:why-you-abandon-planners-and-how-to-come-back/body[4].steps[0].what#0"
+          "text": "Open the existing planner and check for still-relevant deadlines or serious notices.",
+          "source": "guide:why-you-abandon-planners-and-how-to-come-back/body[2].items[0]#0"
+        },
+        {
+          "text": "Mark completed, superseded and uncertain entries rather than copying everything forward.",
+          "source": "guide:why-you-abandon-planners-and-how-to-come-back/body[2].items[1]#0"
+        },
+        {
+          "text": "Choose one page or list that still contains useful information.",
+          "source": "guide:why-you-abandon-planners-and-how-to-come-back/body[2].items[2]#0"
+        },
+        {
+          "text": "Write where the work stopped and the next action needed.",
+          "source": "guide:why-you-abandon-planners-and-how-to-come-back/body[2].items[3]#0"
         }
       ],
       "eyebrow": {
-        "text": "Don't reset it",
-        "source": "guide:why-you-abandon-planners-and-how-to-come-back/body[4].steps[0].when"
+        "text": "Return without rebuilding everything",
+        "source": "guide:why-you-abandon-planners-and-how-to-come-back/body[2].heading"
       },
-      "emphasis": [
-        "Leave"
-      ],
-      "why": "Marker 1: \"Don't reset it\", with the first sentence of what the guide says to do then.",
-      "from": 87,
-      "dur": 143,
-      "ground": "ink",
-      "transition": "iris",
-      "sfx": [
-        {
-          "at": 0,
-          "cue": "whoosh",
-          "volume": 0.32
-        }
-      ],
-      "lines": [
-        [
-          "Leave the whole book",
-          "as it is, gaps and",
-          "all."
-        ]
-      ]
-    },
-    {
-      "id": "when-2",
-      "kind": "title",
-      "variant": "label",
-      "copy": [
-        {
-          "text": "Look for the single page or list that still has something on it you care about.",
-          "source": "guide:why-you-abandon-planners-and-how-to-come-back/body[4].steps[1].what#0"
-        }
-      ],
-      "eyebrow": {
-        "text": "Find the one page",
-        "source": "guide:why-you-abandon-planners-and-how-to-come-back/body[4].steps[1].when"
-      },
-      "emphasis": [
-        "something"
-      ],
-      "why": "Marker 2: \"Find the one page\", with the first sentence of what the guide says to do then.",
-      "from": 218,
-      "dur": 198,
-      "ground": "light",
+      "why": "The guide's own checklist, the first sentence of each item, ticked in as it is read.",
+      "from": 71,
+      "dur": 508,
+      "ground": "accent",
       "transition": "blurDissolve",
       "sfx": [
         {
           "at": 0,
           "cue": "whoosh",
           "volume": 0.32
-        }
-      ],
-      "lines": [
-        [
-          "Look for the single page or",
-          "list that still has something",
-          "on it you care about."
-        ]
-      ]
-    },
-    {
-      "id": "when-3",
-      "kind": "title",
-      "variant": "label",
-      "copy": [
+        },
         {
-          "text": "One sentence at the top: I stopped after the school form, next is the dentist call.",
-          "source": "guide:why-you-abandon-planners-and-how-to-come-back/body[4].steps[2].what#0"
-        }
-      ],
-      "eyebrow": {
-        "text": "Write where you got to",
-        "source": "guide:why-you-abandon-planners-and-how-to-come-back/body[4].steps[2].when"
-      },
-      "emphasis": [
-        "One"
-      ],
-      "why": "Marker 3: \"Write where you got to\", with the first sentence of what the guide says to do then.",
-      "from": 404,
-      "dur": 206,
-      "ground": "accent",
-      "transition": "iris",
-      "sfx": [
+          "at": 10,
+          "cue": "pop",
+          "volume": 0.45
+        },
         {
-          "at": 0,
-          "cue": "whoosh",
-          "volume": 0.32
-        }
-      ],
-      "lines": [
-        [
-          "One sentence at the top: I",
-          "stopped after the school form,",
-          "next is the dentist call."
-        ]
-      ]
-    },
-    {
-      "id": "when-4",
-      "kind": "title",
-      "variant": "label",
-      "copy": [
+          "at": 112,
+          "cue": "pop",
+          "volume": 0.45
+        },
         {
-          "text": "Choose one thing on the page and write its first physical step next to it.",
-          "source": "guide:why-you-abandon-planners-and-how-to-come-back/body[4].steps[3].what#0"
-        }
-      ],
-      "eyebrow": {
-        "text": "Pick one item",
-        "source": "guide:why-you-abandon-planners-and-how-to-come-back/body[4].steps[3].when"
-      },
-      "emphasis": [
-        "one"
-      ],
-      "why": "Marker 4: \"Pick one item\", with the first sentence of what the guide says to do then.",
-      "from": 598,
-      "dur": 182,
-      "ground": "light",
-      "transition": "iris",
-      "sfx": [
+          "at": 214,
+          "cue": "pop",
+          "volume": 0.45
+        },
         {
-          "at": 0,
-          "cue": "whoosh",
-          "volume": 0.32
+          "at": 316,
+          "cue": "pop",
+          "volume": 0.45
         }
-      ],
-      "lines": [
-        [
-          "Choose one thing on the",
-          "page and write its first",
-          "physical step next to it."
-        ]
       ]
     },
     {
@@ -221,27 +132,26 @@
       "variant": "proof",
       "copy": [],
       "caption": {
-        "text": "A single page per thing you are holding, with everything about it in one place",
-        "source": "expectedOutputs[3]"
+        "text": "How it went changes what happens next.",
+        "source": "howItWorks[5]#0"
       },
       "screen": {
-        "src": "screens/alongside-workspace.png",
-        "pose": "tiltLeft",
+        "src": "screens/alongside-life.png",
+        "pose": "float",
         "focus": {
           "at": 0.45,
-          "y": 222,
-          "h": 294,
-          "region": "one-thing"
-        },
-        "scroll": []
+          "y": 192,
+          "h": 330,
+          "region": "to-do"
+        }
       },
-      "why": "The turn: the product the guide itself hands over to, named and shown on its real screen, captioned with its listing's line closest to what the guide teaches. Screen: \"Book the six-month dental check\" (One thing at a time: a single next step, Book the six-month dental check, with Do this with me, Not now and It is sorted.) chosen because it is the real screen closest to \"A single page per thing you are holding, with everything about it in one place W\"; focus on \"Book the six-month dental check\".",
+      "why": "The turn: the product the guide itself hands over to, named and shown on its real screen, captioned with its listing's line closest to what the guide teaches. Screen: \"Everything you are holding\" (Everything being held, sorted into something to do, waiting on someone, something ongoing, each with Do this with me.) chosen because it is the real screen closest to \"How it went changes what happens next. Why you abandon planners and how to retur\"; focus on \"Something to do\".",
       "eyebrow": {
         "text": "ADHD Life Companion",
         "source": "title"
       },
-      "from": 768,
-      "dur": 209,
+      "from": 567,
+      "dur": 147,
       "ground": "ink",
       "transition": "blurDissolve",
       "sfx": [
@@ -256,7 +166,7 @@
           "volume": 0.42
         },
         {
-          "at": 94,
+          "at": 66,
           "cue": "tap",
           "volume": 0.55
         }
@@ -281,10 +191,10 @@
         "source": "micro"
       },
       "why": "Ends on where to read the whole guide, with the product beneath it: the viewer leaves with the next step, not only a pitch.",
-      "from": 965,
+      "from": 702,
       "dur": 118,
       "ground": "light",
-      "transition": "blurDissolve",
+      "transition": "iris",
       "sfx": [
         {
           "at": 0,
@@ -312,8 +222,8 @@
     },
     {
       "topic": "Guide",
-      "decision": "\"Why you stop using planners, and how to come back\" (draftpace.com/guides/why-you-abandon-planners-and-how-to-come-back)",
-      "because": "Teaches from the guide first; ADHD Life Companion is the product the guide hands over to. 2 lists and timelines, 5 questions to draw from."
+      "decision": "\"Why you abandon planners and how to return\" (draftpace.com/guides/why-you-abandon-planners-and-how-to-come-back)",
+      "because": "Teaches from the guide first; ADHD Life Companion is the product the guide hands over to. 1 lists and timelines, 3 questions to draw from."
     },
     {
       "topic": "Stage",
@@ -332,13 +242,13 @@
     },
     {
       "topic": "Structure",
-      "decision": "In order: Walk the guide's own timeline, one marker at a time, then show the product that keeps it.",
-      "because": "Best fit for a awareness film on YouTube Short (platform fit 3, goal fit 3, already used for this product ×2, already used on YouTube Short ×5). Other candidates: The checklist (-26.3), The question people ask (-36.6)."
+      "decision": "The checklist: The guide's checklist on one screen, item by item, then the product that holds it.",
+      "because": "Best fit for a awareness film on YouTube Short (platform fit 2, goal fit 3, already used for this product ×4, already used on YouTube Short ×12). Other candidates: The question people ask (-59.7)."
     },
     {
       "topic": "Angle",
-      "decision": "\"Why you stop using planners, and how to come back\"",
-      "because": "The guide's timeline \"How to come back without starting over\": 4 of its 6 markers, in order."
+      "decision": "\"Why you abandon planners and how to return\"",
+      "because": "A checklist from the guide, \"Return without rebuilding everything\": 4 of its 7 items."
     },
     {
       "topic": "Transitions",
@@ -352,8 +262,48 @@
     },
     {
       "topic": "Colour",
-      "decision": "Grounds light → ink → light → accent",
-      "because": "Grounds light → ink → light → accent: a warm accent, so light grounds lead and the accent is saved for the turns."
+      "decision": "Grounds accent → light → light → accent",
+      "because": "Grounds accent → light → light → accent: a warm accent, so light grounds lead and the accent is saved for the turns."
+    },
+    {
+      "topic": "Variation",
+      "decision": "Rotated the ground rhythm",
+      "because": "Its shape was 0.74 similar to guide-where-to-look-for-a-will--youtube-short; a different film, not the same one re-coloured."
+    },
+    {
+      "topic": "Variation",
+      "decision": "Changed the camera",
+      "because": "Its shape was 0.74 similar to guide-you-missed-a-payment-what-to-do-next--youtube-short; a different film, not the same one re-coloured."
+    },
+    {
+      "topic": "Variation",
+      "decision": "Reordered the transitions",
+      "because": "Its shape was 0.82 similar to guide-scripts-for-the-admin-calls-everyone-dreads--youtube-short; a different film, not the same one re-coloured."
+    },
+    {
+      "topic": "Variation",
+      "decision": "Switched the brand reveal",
+      "because": "Its shape was 0.90 similar to guide-the-email-you-keep-not-sending-and-how-to-chase-a-reply--pinterest-video; a different film, not the same one re-coloured."
+    },
+    {
+      "topic": "Variation",
+      "decision": "Re-posed the phones",
+      "because": "Its shape was 0.90 similar to guide-the-email-you-keep-not-sending-and-how-to-chase-a-reply--pinterest-video; a different film, not the same one re-coloured."
+    },
+    {
+      "topic": "Variation",
+      "decision": "Set the grounds against the accent",
+      "because": "Its shape was 1.00 similar to guide-the-email-you-keep-not-sending-and-how-to-chase-a-reply--pinterest-video; a different film, not the same one re-coloured."
+    },
+    {
+      "topic": "Variation",
+      "decision": "Rotated the ground rhythm",
+      "because": "Its shape was 0.82 similar to guide-the-email-you-keep-not-sending-and-how-to-chase-a-reply--pinterest-video; a different film, not the same one re-coloured."
+    },
+    {
+      "topic": "Variation",
+      "decision": "Changed the camera",
+      "because": "Its shape was 0.74 similar to guide-how-to-build-a-first-1000-emergency-fund--youtube-short; a different film, not the same one re-coloured."
     },
     {
       "topic": "Sound",
@@ -362,7 +312,7 @@
     },
     {
       "topic": "Length",
-      "decision": "36.1s, 7 scenes",
+      "decision": "27.3s, 4 scenes",
       "because": "Each scene is held for the time its words take to read on YouTube Short (0.26s a word), inside 18–45s."
     }
   ]

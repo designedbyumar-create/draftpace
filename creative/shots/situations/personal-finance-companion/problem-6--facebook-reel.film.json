@@ -11,15 +11,15 @@
   "width": 1080,
   "height": 1920,
   "fps": 30,
-  "durationInFrames": 675,
-  "structure": "situationInside",
+  "durationInFrames": 567,
+  "structure": "situationMoment",
   "angle": {
     "text": "You can't tell if a number reflects your real bank balance or just your own tracking.",
     "source": "problemsSolved[5].problem"
   },
   "treatment": {
     "voice": "editorial",
-    "camera": "float",
+    "camera": "dolly",
     "transitions": [
       "cardSlide",
       "wipe",
@@ -43,7 +43,7 @@
     {
       "id": "moment",
       "kind": "title",
-      "variant": "label",
+      "variant": "editorial",
       "copy": [
         {
           "text": "You can't tell if a number reflects your real bank balance or just your own tracking.",
@@ -115,48 +115,6 @@
       ]
     },
     {
-      "id": "also",
-      "kind": "phone",
-      "variant": "proof",
-      "copy": [],
-      "caption": {
-        "text": "Bring in a bank statement without retyping it",
-        "source": "tasks[6].label"
-      },
-      "screen": {
-        "src": "screens/personal-finance-companion-records.png",
-        "pose": "tiltRight",
-        "focus": {
-          "at": 0.45,
-          "y": 222,
-          "h": 119,
-          "region": "accounts"
-        }
-      },
-      "why": "One more real thing an owner does here, in the listing's own task wording, on the screen it happens on. Screen: \"Records\" (What's actually true right now, area by area: accounts, income, bills, subscriptions, transactions, debt.) chosen because it is the real screen closest to \"Bring in a bank statement without retyping it\"; focus on \"Accounts\".",
-      "from": 480,
-      "dur": 120,
-      "ground": "ink",
-      "transition": "wipe",
-      "sfx": [
-        {
-          "at": 0,
-          "cue": "swish",
-          "volume": 0.192
-        },
-        {
-          "at": 12,
-          "cue": "pop",
-          "volume": 0.252
-        },
-        {
-          "at": 54,
-          "cue": "tap",
-          "volume": 0.33
-        }
-      ]
-    },
-    {
       "id": "cta",
       "kind": "cta",
       "variant": "soft",
@@ -171,10 +129,10 @@
         }
       ],
       "why": "Facebook Reel punishes an obvious ad; a soft close names the product and where to find it.",
-      "from": 588,
+      "from": 480,
       "dur": 87,
-      "ground": "accent",
-      "transition": "cardSlide",
+      "ground": "ink",
+      "transition": "wipe",
       "sfx": [
         {
           "at": 0,
@@ -217,13 +175,13 @@
     },
     {
       "topic": "Structure",
-      "decision": "Inside the tool: The moment, then how the product helps on its real screen, then one more real thing an owner does in it.",
-      "because": "Best fit for a awareness film on Facebook Reel (platform fit 2, goal fit 2, already used for this product ×3, already used on Facebook Reel ×1). Other candidates: The moment (-26.7)."
+      "decision": "The moment: The moment as it feels, set dark, then the help in the light, then what to do next.",
+      "because": "Best fit for a awareness film on Facebook Reel (platform fit 3, goal fit 3, already used for this product ×4, already used on Facebook Reel ×1). Other candidates: Inside the tool (-27.8)."
     },
     {
       "topic": "Angle",
       "decision": "\"You can't tell if a number reflects your real bank balance or just your own tracking.\"",
-      "because": "The moment \"You can't tell if a number reflects your real bank balance or just your own tracking.\", how Personal Finance Companion helps, and one more real thing it does: \"Bring in a bank statement without retyping it\"."
+      "because": "The moment \"You can't tell if a number reflects your real bank balance or just your own tracking.\", then how Personal Finance Companion helps."
     },
     {
       "topic": "Transitions",
@@ -243,12 +201,7 @@
     {
       "topic": "Variation",
       "decision": "Rotated the ground rhythm",
-      "because": "Its shape was 0.82 similar to sit-personal-finance-companion-problem-3--instagram-reel; a different film, not the same one re-coloured."
-    },
-    {
-      "topic": "Variation",
-      "decision": "Changed the camera",
-      "because": "Its shape was 0.74 similar to sit-personal-finance-companion-problem-3--instagram-reel; a different film, not the same one re-coloured."
+      "because": "Its shape was 0.88 similar to sit-personal-finance-companion-problem-5--instagram-reel; a different film, not the same one re-coloured."
     },
     {
       "topic": "Sound",
@@ -257,7 +210,7 @@
     },
     {
       "topic": "Length",
-      "decision": "22.5s, 4 scenes",
+      "decision": "18.9s, 3 scenes",
       "because": "Each scene is held for the time its words take to read on Facebook Reel (0.3s a word), inside 12–35s."
     }
   ]

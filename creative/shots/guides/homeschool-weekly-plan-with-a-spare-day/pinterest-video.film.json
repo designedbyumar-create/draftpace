@@ -11,11 +11,11 @@
   "width": 1000,
   "height": 1500,
   "fps": 30,
-  "durationInFrames": 1008,
-  "structure": "guideChecklist",
+  "durationInFrames": 507,
+  "structure": "guideQuestion",
   "angle": {
-    "text": "Homeschool weekly schedule with a spare day built in",
-    "source": "guide:homeschool-weekly-plan-with-a-spare-day/title"
+    "text": "What if we do not need the spare day?",
+    "source": "guide:homeschool-weekly-plan-with-a-spare-day/body[10].items[1].q"
   },
   "treatment": {
     "voice": "editorial",
@@ -27,10 +27,10 @@
     ],
     "motif": "register",
     "grounds": [
-      "ink",
       "light",
+      "accent",
       "light",
-      "accent"
+      "ink"
     ],
     "pace": 1.15
   },
@@ -41,57 +41,44 @@
   },
   "scenes": [
     {
-      "id": "hook",
+      "id": "q",
       "kind": "title",
-      "variant": "editorial",
+      "variant": "quote",
       "copy": [
         {
-          "text": "Homeschool weekly schedule with a spare day built in",
-          "source": "guide:homeschool-weekly-plan-with-a-spare-day/title"
+          "text": "What if we do not need the spare day?",
+          "source": "guide:homeschool-weekly-plan-with-a-spare-day/body[10].items[1].q"
         }
       ],
-      "emphasis": [
-        "Homeschool"
-      ],
-      "why": "The hook is the guide's own title: the question it answers, as a person would put it.",
+      "why": "The question as people ask it; the guide carries it because people search it.",
       "from": 0,
       "dur": 124,
-      "ground": "light",
+      "ground": "accent",
       "transition": "cut",
       "sfx": [],
       "lines": [
         [
-          "Homeschool weekly",
-          "schedule with a",
-          "spare day built in"
+          "What if we do not",
+          "need the spare day?"
         ]
       ]
     },
     {
-      "id": "list",
-      "kind": "list",
-      "variant": "checklist",
+      "id": "a",
+      "kind": "title",
+      "variant": "label",
       "copy": [
         {
-          "text": "On a short day we always do: (two or three things, no more).",
-          "source": "guide:homeschool-weekly-plan-with-a-spare-day/body[5].items[0]#0"
-        },
-        {
-          "text": "On a very short day we always do: (one thing).",
-          "source": "guide:homeschool-weekly-plan-with-a-spare-day/body[5].items[1]#0"
-        },
-        {
-          "text": "The subject we drop first is: (name it now, not on the day).",
-          "source": "guide:homeschool-weekly-plan-with-a-spare-day/body[5].items[2]#0"
+          "text": "It can remain light or unused.",
+          "source": "guide:homeschool-weekly-plan-with-a-spare-day/body[10].items[1].a#0"
         }
       ],
-      "eyebrow": {
-        "text": "Decide the short-day list before you need it",
-        "source": "guide:homeschool-weekly-plan-with-a-spare-day/body[5].heading"
-      },
-      "why": "The guide's own checklist, the first sentence of each item, ticked in as it is read.",
+      "emphasis": [
+        "remain"
+      ],
+      "why": "The guide's answer, its first sentence: the plain answer before any detail.",
       "from": 112,
-      "dur": 613,
+      "dur": 90,
       "ground": "light",
       "transition": "lineWipe",
       "sfx": [
@@ -99,22 +86,13 @@
           "at": 0,
           "cue": "tick",
           "volume": 0.36
-        },
-        {
-          "at": 10,
-          "cue": "tick",
-          "volume": 0.27
-        },
-        {
-          "at": 163,
-          "cue": "tick",
-          "volume": 0.27
-        },
-        {
-          "at": 316,
-          "cue": "tick",
-          "volume": 0.27
         }
+      ],
+      "lines": [
+        [
+          "It can remain light",
+          "or unused."
+        ]
       ]
     },
     {
@@ -123,28 +101,27 @@
       "variant": "proof",
       "copy": [],
       "caption": {
-        "text": "Set how often each subject runs.",
-        "source": "howItWorks[2]#0"
+        "text": "A dated record of what was actually done",
+        "source": "expectedOutputs[1]"
       },
       "screen": {
-        "src": "screens/homeschooling-companion-kids.png",
+        "src": "screens/homeschooling-companion-record.png",
         "pose": "float",
         "focus": {
           "at": 0.45,
-          "y": 159,
-          "h": 126,
-          "region": "state"
-        },
-        "scroll": []
+          "y": 320,
+          "h": 406,
+          "region": "record"
+        }
       },
-      "why": "The turn: the product the guide itself hands over to, named and shown on its real screen, captioned with its listing's line closest to what the guide teaches. Screen: \"Your children.\" (Each child with their age and subjects, and the state's homeschool requirements kept alongside.) chosen because it is the real screen closest to \"Set how often each subject runs. Homeschool weekly schedule with a spare day bui\"; focus on \"Oregon · Moderate regulation\".",
+      "why": "The turn: the product the guide itself hands over to, named and shown on its real screen, captioned with its listing's line closest to what the guide teaches. Screen: \"What has happened.\" (The record: sessions across subjects, a printable homeschool record, and dated notes of what was done.) chosen because it is the real screen closest to \"A dated record of what was actually done Homeschool weekly plan with a protected\"; focus on \"My Homeschool Record\".",
       "eyebrow": {
         "text": "Homeschooling Companion",
         "source": "title"
       },
-      "from": 713,
-      "dur": 168,
-      "ground": "accent",
+      "from": 190,
+      "dur": 190,
+      "ground": "ink",
       "transition": "slideUp",
       "sfx": [
         {
@@ -158,7 +135,7 @@
           "volume": 0.252
         },
         {
-          "at": 76,
+          "at": 86,
           "cue": "tap",
           "volume": 0.33
         }
@@ -183,9 +160,9 @@
         "source": "micro"
       },
       "why": "Ends on where to read the whole guide, with the product beneath it: the viewer leaves with the next step, not only a pitch.",
-      "from": 869,
+      "from": 368,
       "dur": 139,
-      "ground": "ink",
+      "ground": "light",
       "transition": "blurDissolve",
       "sfx": [
         {
@@ -214,8 +191,8 @@
     },
     {
       "topic": "Guide",
-      "decision": "\"Homeschool weekly schedule with a spare day built in\" (draftpace.com/guides/homeschool-weekly-plan-with-a-spare-day)",
-      "because": "Teaches from the guide first; Homeschooling Companion is the product the guide hands over to. 1 lists and timelines, 5 questions to draw from."
+      "decision": "\"Homeschool weekly plan with a protected spare day\" (draftpace.com/guides/homeschool-weekly-plan-with-a-spare-day)",
+      "because": "Teaches from the guide first; Homeschooling Companion is the product the guide hands over to. 1 lists and timelines, 3 questions to draw from."
     },
     {
       "topic": "Stage",
@@ -234,13 +211,13 @@
     },
     {
       "topic": "Structure",
-      "decision": "The checklist: The guide's checklist on one screen, item by item, then the product that holds it.",
-      "because": "Best fit for a awareness film on Pinterest video pin (platform fit 3, goal fit 3, already used on Pinterest video pin ×5). Other candidates: The question people ask (-40.3)."
+      "decision": "The question people ask: One of the guide's own questions, its plain answer, then the product.",
+      "because": "Best fit for a awareness film on Pinterest video pin (platform fit 2, goal fit 2, already used for this product ×1, already used on Pinterest video pin ×9). Other candidates: The checklist (-33.0)."
     },
     {
       "topic": "Angle",
-      "decision": "\"Homeschool weekly schedule with a spare day built in\"",
-      "because": "A checklist from the guide, \"Decide the short-day list before you need it\": 3 of its 3 items."
+      "decision": "\"What if we do not need the spare day?\"",
+      "because": "A question from the guide's FAQ, \"What if we do not need the spare day?\", and the first sentence of its answer."
     },
     {
       "topic": "Transitions",
@@ -254,13 +231,13 @@
     },
     {
       "topic": "Colour",
-      "decision": "Grounds ink → light → light → accent",
-      "because": "Grounds ink → light → light → accent: a cool accent, so a darker ground is used for contrast at a turn."
+      "decision": "Grounds light → accent → light → ink",
+      "because": "Grounds light → accent → light → ink: a cool accent, so a darker ground is used for contrast at a turn."
     },
     {
       "topic": "Variation",
       "decision": "Rotated the ground rhythm",
-      "because": "Its shape was 0.74 similar to guide-home-maintenance-log-template--pinterest-video; a different film, not the same one re-coloured."
+      "because": "Its shape was 0.74 similar to guide-how-to-budget-with-irregular-income--pinterest-video; a different film, not the same one re-coloured."
     },
     {
       "topic": "Sound",
@@ -269,7 +246,7 @@
     },
     {
       "topic": "Length",
-      "decision": "33.6s, 4 scenes",
+      "decision": "16.9s, 4 scenes",
       "because": "Each scene is held for the time its words take to read on Pinterest video pin (0.32s a word), inside 12–35s."
     }
   ]

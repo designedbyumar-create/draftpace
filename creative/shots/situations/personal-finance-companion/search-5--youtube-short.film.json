@@ -12,8 +12,8 @@
   "width": 1080,
   "height": 1920,
   "fps": 30,
-  "durationInFrames": 618,
-  "structure": "situationMoment",
+  "durationInFrames": 796,
+  "structure": "situationInside",
   "angle": {
     "text": "I have no idea where my money went",
     "source": "searchedProblems[4].phrase"
@@ -28,9 +28,9 @@
     ],
     "motif": "index",
     "grounds": [
-      "light",
-      "light",
       "ink",
+      "light",
+      "light",
       "accent"
     ],
     "pace": 1
@@ -44,7 +44,7 @@
     {
       "id": "moment",
       "kind": "title",
-      "variant": "editorial",
+      "variant": "label",
       "copy": [
         {
           "text": "I have no idea where my money went",
@@ -57,7 +57,7 @@
       "why": "Opens on the moment in the person's own words, as the listing records people searching it.",
       "from": 0,
       "dur": 83,
-      "ground": "ink",
+      "ground": "accent",
       "transition": "cut",
       "sfx": [],
       "lines": [
@@ -114,61 +114,68 @@
       ]
     },
     {
-      "id": "step-1",
-      "kind": "title",
-      "variant": "editorial",
-      "copy": [
-        {
-          "text": "Download whole calendar months.",
-          "source": "guide:bank-statement-csv-to-budget/body[3].items[0]#0"
-        }
-      ],
-      "eyebrow": {
-        "text": "1",
-        "source": "micro"
+      "id": "also",
+      "kind": "phone",
+      "variant": "proof",
+      "copy": [],
+      "caption": {
+        "text": "Tick off a bill I have paid",
+        "source": "tasks[2].label"
       },
-      "emphasis": [
-        "Download"
-      ],
-      "why": "Step 1 from the guide \"How to import a bank statement CSV: check the file first\", numbered as the guide numbers it.",
+      "screen": {
+        "src": "screens/personal-finance-companion-bills.png",
+        "pose": "flat",
+        "focus": {
+          "at": 0.45,
+          "y": 229,
+          "h": 224,
+          "region": "totals"
+        }
+      },
+      "why": "One more real thing an owner does here, in the listing's own task wording, on the screen it happens on. Screen: \"Bills\" (What's owed on a schedule: the monthly total, what's left to pay, and each bill marked ready or essential.) chosen because it is the real screen closest to \"Tick off a bill I have paid\"; focus on \"Monthly total, Left to pay this month\".",
       "from": 315,
-      "dur": 81,
-      "ground": "ink",
+      "dur": 103,
+      "ground": "light",
       "transition": "wipe",
       "sfx": [
         {
           "at": 0,
           "cue": "swish",
           "volume": 0.32
+        },
+        {
+          "at": 12,
+          "cue": "pop",
+          "volume": 0.42
+        },
+        {
+          "at": 46,
+          "cue": "tap",
+          "volume": 0.55
         }
-      ],
-      "lines": [
-        [
-          "Download whole",
-          "calendar months."
-        ]
       ]
     },
     {
-      "id": "step-2",
-      "kind": "title",
-      "variant": "editorial",
+      "id": "what-to-do",
+      "kind": "list",
+      "variant": "checklist",
       "copy": [
         {
-          "text": "Open a copy in a text editor, not a spreadsheet.",
-          "source": "guide:bank-statement-csv-to-budget/body[3].items[1]#0"
+          "text": "Preview the file without enabling formulas or active content.",
+          "source": "guide:bank-statement-csv-to-budget/body[1].items[2]#0"
+        },
+        {
+          "text": "Identify the date format, currency, delimiter and amount or debit/credit columns.",
+          "source": "guide:bank-statement-csv-to-budget/body[1].items[3]#0"
         }
       ],
       "eyebrow": {
-        "text": "2",
-        "source": "micro"
+        "text": "Run the import in this order",
+        "source": "guide:bank-statement-csv-to-budget/body[1].heading"
       },
-      "emphasis": [
-        "spreadsheet"
-      ],
-      "why": "Step 2 from the guide \"How to import a bank statement CSV: check the file first\", numbered as the guide numbers it.",
-      "from": 384,
-      "dur": 128,
+      "why": "What to do about it, from the guide \"Bank statement CSV to budget: check before importing\": its own checklist.",
+      "from": 406,
+      "dur": 284,
       "ground": "accent",
       "transition": "cardSlide",
       "sfx": [
@@ -176,14 +183,17 @@
           "at": 0,
           "cue": "swish",
           "volume": 0.32
+        },
+        {
+          "at": 10,
+          "cue": "pop",
+          "volume": 0.45
+        },
+        {
+          "at": 105,
+          "cue": "pop",
+          "volume": 0.45
         }
-      ],
-      "lines": [
-        [
-          "Open a copy in a",
-          "text editor, not",
-          "a spreadsheet."
-        ]
       ]
     },
     {
@@ -205,9 +215,9 @@
         "source": "micro"
       },
       "why": "Ends on where to read the whole guide, with the product beneath it: the viewer leaves with the next step, not only a pitch.",
-      "from": 500,
+      "from": 678,
       "dur": 118,
-      "ground": "light",
+      "ground": "ink",
       "transition": "blurDissolve",
       "sfx": [
         {
@@ -241,7 +251,7 @@
     },
     {
       "topic": "Guide",
-      "decision": "\"How to import a bank statement CSV: check the file first\" (draftpace.com/guides/bank-statement-csv-to-budget)",
+      "decision": "\"Bank statement CSV to budget: check before importing\" (draftpace.com/guides/bank-statement-csv-to-budget)",
       "because": "The guide that covers this moment: what to do comes from it, and the film ends on it."
     },
     {
@@ -256,13 +266,13 @@
     },
     {
       "topic": "Structure",
-      "decision": "The moment: The moment as it feels, set dark, then the help in the light, then what to do next.",
-      "because": "Best fit for a awareness film on YouTube Short (platform fit 2, goal fit 3, already used on YouTube Short ×4). Other candidates: Inside the tool (-13.5), In their words (-15.0)."
+      "decision": "Inside the tool: The moment, then how the product helps on its real screen, then one more real thing an owner does in it.",
+      "because": "Best fit for a awareness film on YouTube Short (platform fit 2, goal fit 2, already used on YouTube Short ×2). Other candidates: The moment (-10.2), In their words (-15.3)."
     },
     {
       "topic": "Angle",
       "decision": "\"I have no idea where my money went\"",
-      "because": "The moment \"I have no idea where my money went\", then how Personal Finance Companion helps, then what the guide \"How to import a bank statement CSV: check the file first\" says to do."
+      "because": "The moment \"I have no idea where my money went\", how Personal Finance Companion helps, and one more real thing it does: \"Tick off a bill I have paid\"."
     },
     {
       "topic": "Transitions",
@@ -276,8 +286,8 @@
     },
     {
       "topic": "Colour",
-      "decision": "Grounds light → light → ink → accent",
-      "because": "Grounds light → light → ink → accent: a cool accent, so a darker ground is used for contrast at a turn."
+      "decision": "Grounds ink → light → light → accent",
+      "because": "Grounds ink → light → light → accent: a cool accent, so a darker ground is used for contrast at a turn."
     },
     {
       "topic": "Sound",
@@ -286,7 +296,7 @@
     },
     {
       "topic": "Length",
-      "decision": "20.6s, 5 scenes",
+      "decision": "26.5s, 5 scenes",
       "because": "Each scene is held for the time its words take to read on YouTube Short (0.26s a word), inside 15–40s."
     }
   ]

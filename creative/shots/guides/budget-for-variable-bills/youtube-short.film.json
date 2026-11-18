@@ -11,15 +11,15 @@
   "width": 1080,
   "height": 1920,
   "fps": 30,
-  "durationInFrames": 1030,
-  "structure": "guideTimeline",
+  "durationInFrames": 540,
+  "structure": "guideQuestion",
   "angle": {
-    "text": "How to budget for bills that change every month",
-    "source": "guide:budget-for-variable-bills/title"
+    "text": "Should I use the average or the highest bill?",
+    "source": "guide:budget-for-variable-bills/body[9].items[0].q"
   },
   "treatment": {
     "voice": "editorial",
-    "camera": "dolly",
+    "camera": "float",
     "transitions": [
       "cardSlide",
       "wipe",
@@ -27,9 +27,9 @@
     ],
     "motif": "index",
     "grounds": [
+      "light",
+      "light",
       "ink",
-      "light",
-      "light",
       "accent"
     ],
     "pace": 1
@@ -41,90 +41,46 @@
   },
   "scenes": [
     {
-      "id": "hook",
+      "id": "q",
       "kind": "title",
-      "variant": "editorial",
+      "variant": "quote",
       "copy": [
         {
-          "text": "How to budget for bills that change every month",
-          "source": "guide:budget-for-variable-bills/title"
+          "text": "Should I use the average or the highest bill?",
+          "source": "guide:budget-for-variable-bills/body[9].items[0].q"
         }
       ],
-      "emphasis": [
-        "every"
-      ],
-      "why": "The hook is the guide's own title: the question it answers, as a person would put it.",
+      "why": "The question as people ask it; the guide carries it because people search it.",
       "from": 0,
-      "dur": 91,
-      "ground": "ink",
+      "dur": 98,
+      "ground": "light",
       "transition": "cut",
       "sfx": [],
       "lines": [
         [
-          "How to budget for",
-          "bills that change",
-          "every month"
+          "Should I use the",
+          "average or the",
+          "highest bill?"
         ]
       ]
     },
     {
-      "id": "when-1",
+      "id": "a",
       "kind": "title",
       "variant": "label",
       "copy": [
         {
-          "text": "Log in to the provider and download or list the last twelve bills.",
-          "source": "guide:budget-for-variable-bills/body[3].steps[0].what#0"
+          "text": "Use history to inform a contribution, then test its timing and affordability.",
+          "source": "guide:budget-for-variable-bills/body[9].items[0].a#0"
         }
       ],
-      "eyebrow": {
-        "text": "Pull twelve bills",
-        "source": "guide:budget-for-variable-bills/body[3].steps[0].when"
-      },
       "emphasis": [
-        "twelve"
+        "affordability"
       ],
-      "why": "Marker 1: \"Pull twelve bills\", with the first sentence of what the guide says to do then.",
-      "from": 79,
-      "dur": 167,
-      "ground": "light",
-      "transition": "cardSlide",
-      "sfx": [
-        {
-          "at": 0,
-          "cue": "swish",
-          "volume": 0.32
-        }
-      ],
-      "lines": [
-        [
-          "Log in to the provider",
-          "and download or list",
-          "the last twelve bills."
-        ]
-      ]
-    },
-    {
-      "id": "when-2",
-      "kind": "title",
-      "variant": "label",
-      "copy": [
-        {
-          "text": "Write down the biggest and smallest bill and the month each landed.",
-          "source": "guide:budget-for-variable-bills/body[3].steps[2].what#0"
-        }
-      ],
-      "eyebrow": {
-        "text": "Note the high and the low",
-        "source": "guide:budget-for-variable-bills/body[3].steps[2].when"
-      },
-      "emphasis": [
-        "smallest"
-      ],
-      "why": "Marker 2: \"Note the high and the low\", with the first sentence of what the guide says to do then.",
-      "from": 234,
-      "dur": 182,
-      "ground": "light",
+      "why": "The guide's answer, its first sentence: the plain answer before any detail.",
+      "from": 86,
+      "dur": 121,
+      "ground": "ink",
       "transition": "wipe",
       "sfx": [
         {
@@ -135,83 +91,9 @@
       ],
       "lines": [
         [
-          "Write down the biggest",
-          "and smallest bill",
-          "and the month each",
-          "landed."
-        ]
-      ]
-    },
-    {
-      "id": "when-3",
-      "kind": "title",
-      "variant": "label",
-      "copy": [
-        {
-          "text": "With no spare money, plan toward the high.",
-          "source": "guide:budget-for-variable-bills/body[3].steps[3].what#0"
-        }
-      ],
-      "eyebrow": {
-        "text": "Pick your planning figure",
-        "source": "guide:budget-for-variable-bills/body[3].steps[3].when"
-      },
-      "emphasis": [
-        "toward"
-      ],
-      "why": "Marker 3: \"Pick your planning figure\", with the first sentence of what the guide says to do then.",
-      "from": 404,
-      "dur": 136,
-      "ground": "accent",
-      "transition": "cardSlide",
-      "sfx": [
-        {
-          "at": 0,
-          "cue": "swish",
-          "volume": 0.32
-        }
-      ],
-      "lines": [
-        [
-          "With no spare money,",
-          "plan toward the high."
-        ]
-      ]
-    },
-    {
-      "id": "when-4",
-      "kind": "title",
-      "variant": "label",
-      "copy": [
-        {
-          "text": "Once a quarter, compare the last three bills with the same months last year.",
-          "source": "guide:budget-for-variable-bills/body[3].steps[5].what#0"
-        }
-      ],
-      "eyebrow": {
-        "text": "Recheck each season",
-        "source": "guide:budget-for-variable-bills/body[3].steps[5].when"
-      },
-      "emphasis": [
-        "three"
-      ],
-      "why": "Marker 4: \"Recheck each season\", with the first sentence of what the guide says to do then.",
-      "from": 528,
-      "dur": 175,
-      "ground": "ink",
-      "transition": "cardSlide",
-      "sfx": [
-        {
-          "at": 0,
-          "cue": "swish",
-          "volume": 0.32
-        }
-      ],
-      "lines": [
-        [
-          "Once a quarter, compare the",
-          "last three bills with the",
-          "same months last year."
+          "Use history to inform a",
+          "contribution, then test its",
+          "timing and affordability."
         ]
       ]
     },
@@ -226,7 +108,7 @@
       },
       "screen": {
         "src": "screens/personal-finance-companion-bills.png",
-        "pose": "tiltRight",
+        "pose": "flat",
         "focus": {
           "at": 0.45,
           "y": 229,
@@ -239,14 +121,14 @@
         "text": "Personal Finance Companion",
         "source": "title"
       },
-      "from": 691,
-      "dur": 233,
-      "ground": "light",
-      "transition": "wipe",
+      "from": 195,
+      "dur": 239,
+      "ground": "accent",
+      "transition": "blurDissolve",
       "sfx": [
         {
           "at": 0,
-          "cue": "swish",
+          "cue": "whoosh",
           "volume": 0.32
         },
         {
@@ -255,7 +137,7 @@
           "volume": 0.42
         },
         {
-          "at": 105,
+          "at": 108,
           "cue": "tap",
           "volume": 0.55
         }
@@ -280,14 +162,14 @@
         "source": "micro"
       },
       "why": "Ends on where to read the whole guide, with the product beneath it: the viewer leaves with the next step, not only a pitch.",
-      "from": 912,
+      "from": 422,
       "dur": 118,
       "ground": "light",
-      "transition": "blurDissolve",
+      "transition": "cardSlide",
       "sfx": [
         {
           "at": 0,
-          "cue": "whoosh",
+          "cue": "swish",
           "volume": 0.32
         },
         {
@@ -312,7 +194,7 @@
     {
       "topic": "Guide",
       "decision": "\"How to budget for bills that change every month\" (draftpace.com/guides/budget-for-variable-bills)",
-      "because": "Teaches from the guide first; Personal Finance Companion is the product the guide hands over to. 3 lists and timelines, 5 questions to draw from."
+      "because": "Teaches from the guide first; Personal Finance Companion is the product the guide hands over to. 1 lists and timelines, 3 questions to draw from."
     },
     {
       "topic": "Stage",
@@ -331,13 +213,13 @@
     },
     {
       "topic": "Structure",
-      "decision": "In order: Walk the guide's own timeline, one marker at a time, then show the product that keeps it.",
-      "because": "Best fit for a awareness film on YouTube Short (platform fit 3, goal fit 3, already used for this product ×1, already used on YouTube Short ×4). Other candidates: The checklist (-16.9), The question people ask (-30.5)."
+      "decision": "The question people ask: One of the guide's own questions, its plain answer, then the product.",
+      "because": "Best fit for a awareness film on YouTube Short (platform fit 2, goal fit 2, already used for this product ×5, already used on YouTube Short ×9). Other candidates: The checklist (-64.8)."
     },
     {
       "topic": "Angle",
-      "decision": "\"How to budget for bills that change every month\"",
-      "because": "The guide's timeline \"The method\": 4 of its 6 markers, in order."
+      "decision": "\"Should I use the average or the highest bill?\"",
+      "because": "A question from the guide's FAQ, \"Should I use the average or the highest bill?\", and the first sentence of its answer."
     },
     {
       "topic": "Transitions",
@@ -351,8 +233,33 @@
     },
     {
       "topic": "Colour",
-      "decision": "Grounds ink → light → light → accent",
-      "because": "Grounds ink → light → light → accent: a cool accent, so a darker ground is used for contrast at a turn."
+      "decision": "Grounds light → light → ink → accent",
+      "because": "Grounds light → light → ink → accent: a cool accent, so a darker ground is used for contrast at a turn."
+    },
+    {
+      "topic": "Variation",
+      "decision": "Rotated the ground rhythm",
+      "because": "Its shape was 0.74 similar to guide-what-to-do-when-a-parent-dies--youtube-short; a different film, not the same one re-coloured."
+    },
+    {
+      "topic": "Variation",
+      "decision": "Changed the camera",
+      "because": "Its shape was 0.90 similar to guide-what-to-check-before-each-direct-debit-date--youtube-short; a different film, not the same one re-coloured."
+    },
+    {
+      "topic": "Variation",
+      "decision": "Reordered the transitions",
+      "because": "Its shape was 0.82 similar to guide-what-to-check-before-each-direct-debit-date--youtube-short; a different film, not the same one re-coloured."
+    },
+    {
+      "topic": "Variation",
+      "decision": "Switched the brand reveal",
+      "because": "Its shape was 0.74 similar to guide-which-documents-to-keep-and-where-to-put-them--youtube-short; a different film, not the same one re-coloured."
+    },
+    {
+      "topic": "Variation",
+      "decision": "Re-posed the phones",
+      "because": "Its shape was 0.74 similar to guide-which-documents-to-keep-and-where-to-put-them--youtube-short; a different film, not the same one re-coloured."
     },
     {
       "topic": "Sound",
@@ -361,7 +268,7 @@
     },
     {
       "topic": "Length",
-      "decision": "34.3s, 7 scenes",
+      "decision": "18.0s, 4 scenes",
       "because": "Each scene is held for the time its words take to read on YouTube Short (0.26s a word), inside 18–45s."
     }
   ]

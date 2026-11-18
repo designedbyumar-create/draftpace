@@ -19,7 +19,7 @@
   },
   "treatment": {
     "voice": "editorial",
-    "camera": "dolly",
+    "camera": "float",
     "transitions": [
       "pageTurn",
       "blurDissolve",
@@ -78,7 +78,7 @@
       },
       "screen": {
         "src": "screens/personal-life-affairs-companion-workspace.png",
-        "pose": "tiltLeft",
+        "pose": "tiltRight",
         "focus": {
           "at": 0.45,
           "y": 82,
@@ -95,11 +95,11 @@
       "from": 95,
       "dur": 295,
       "ground": "light",
-      "transition": "pageTurn",
+      "transition": "blurDissolve",
       "sfx": [
         {
           "at": 0,
-          "cue": "page",
+          "cue": "whoosh",
           "volume": 0.32
         },
         {
@@ -131,12 +131,12 @@
       "why": "Instagram Reel punishes an obvious ad; a soft close names the product and where to find it.",
       "from": 378,
       "dur": 89,
-      "ground": "ink",
-      "transition": "blurDissolve",
+      "ground": "light",
+      "transition": "pageTurn",
       "sfx": [
         {
           "at": 0,
-          "cue": "whoosh",
+          "cue": "page",
           "volume": 0.32
         },
         {
@@ -176,7 +176,7 @@
     {
       "topic": "Structure",
       "decision": "The moment: The moment as it feels, set dark, then the help in the light, then what to do next.",
-      "because": "Best fit for a awareness film on Instagram Reel (platform fit 3, goal fit 3, already used for this product ×1, already used on Instagram Reel ×4). Other candidates: Inside the tool (-21.4)."
+      "because": "Best fit for a awareness film on Instagram Reel (platform fit 3, goal fit 3, already used for this product ×1, already used on Instagram Reel ×5). Other candidates: Inside the tool (-22.0)."
     },
     {
       "topic": "Angle",
@@ -202,6 +202,31 @@
       "topic": "Variation",
       "decision": "Rotated the ground rhythm",
       "because": "Its shape was 0.78 similar to sit-alongside-problem-1--instagram-reel; a different film, not the same one re-coloured."
+    },
+    {
+      "topic": "Variation",
+      "decision": "Changed the camera",
+      "because": "Its shape was 0.78 similar to sit-monthly-money-reset-problem-2--youtube-short; a different film, not the same one re-coloured."
+    },
+    {
+      "topic": "Variation",
+      "decision": "Reordered the transitions",
+      "because": "Its shape was 0.78 similar to sit-personal-life-affairs-companion-search-6--instagram-feed; a different film, not the same one re-coloured."
+    },
+    {
+      "topic": "Variation",
+      "decision": "Switched the brand reveal",
+      "because": "Its shape was 0.78 similar to sit-personal-finance-companion-problem-1--youtube-short; a different film, not the same one re-coloured."
+    },
+    {
+      "topic": "Variation",
+      "decision": "Re-posed the phones",
+      "because": "Its shape was 0.78 similar to sit-personal-finance-companion-problem-1--youtube-short; a different film, not the same one re-coloured."
+    },
+    {
+      "topic": "Variation",
+      "decision": "Set the grounds against the accent",
+      "because": "Its shape was 0.78 similar to sit-personal-finance-companion-problem-1--youtube-short; a different film, not the same one re-coloured."
     },
     {
       "topic": "Sound",

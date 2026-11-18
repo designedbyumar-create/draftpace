@@ -12,15 +12,15 @@
   "width": 1000,
   "height": 1500,
   "fps": 30,
-  "durationInFrames": 907,
-  "structure": "situationChecklist",
+  "durationInFrames": 605,
+  "structure": "situationWords",
   "angle": {
     "text": "My flight is delayed and I have a connection",
     "source": "searchedProblems[1].phrase"
   },
   "treatment": {
     "voice": "editorial",
-    "camera": "float",
+    "camera": "dolly",
     "transitions": [
       "slideLeft",
       "whip",
@@ -28,9 +28,9 @@
     ],
     "motif": "timeline",
     "grounds": [
-      "light",
-      "light",
       "ink",
+      "light",
+      "light",
       "accent"
     ],
     "pace": 1.15
@@ -44,7 +44,7 @@
     {
       "id": "moment",
       "kind": "title",
-      "variant": "label",
+      "variant": "quote",
       "copy": [
         {
           "text": "My flight is delayed and I have a connection",
@@ -66,47 +66,6 @@
           "and I have a",
           "connection"
         ]
-      ]
-    },
-    {
-      "id": "what-to-do",
-      "kind": "list",
-      "variant": "checklist",
-      "copy": [
-        {
-          "text": "Booking reference, and the name it's under.",
-          "source": "guide:flight-delayed-with-a-connection-what-to-do-first/body[7].items[0]#0"
-        },
-        {
-          "text": "Your onward flight number and its departure time.",
-          "source": "guide:flight-delayed-with-a-connection-what-to-do-first/body[7].items[1]#0"
-        }
-      ],
-      "eyebrow": {
-        "text": "What to have in hand",
-        "source": "guide:flight-delayed-with-a-connection-what-to-do-first/body[7].heading"
-      },
-      "why": "What to do about it, from the guide \"Flight delayed with a connection: what to do first\": its own checklist, the first sentence of each item.",
-      "from": 112,
-      "dur": 314,
-      "ground": "light",
-      "transition": "slideLeft",
-      "sfx": [
-        {
-          "at": 0,
-          "cue": "swish",
-          "volume": 0.192
-        },
-        {
-          "at": 10,
-          "cue": "pop",
-          "volume": 0.27
-        },
-        {
-          "at": 115,
-          "cue": "pop",
-          "volume": 0.27
-        }
       ]
     },
     {
@@ -133,10 +92,10 @@
         "text": "Travel Companion",
         "source": "title"
       },
-      "from": 414,
+      "from": 112,
       "dur": 366,
-      "ground": "ink",
-      "transition": "whip",
+      "ground": "light",
+      "transition": "slideLeft",
       "sfx": [
         {
           "at": 0,
@@ -174,9 +133,9 @@
         "source": "micro"
       },
       "why": "Ends on where to read the whole guide, with the product beneath it: the viewer leaves with the next step, not only a pitch.",
-      "from": 768,
+      "from": 466,
       "dur": 139,
-      "ground": "accent",
+      "ground": "ink",
       "transition": "blurDissolve",
       "sfx": [
         {
@@ -225,13 +184,13 @@
     },
     {
       "topic": "Structure",
-      "decision": "What to do first: The moment, the guide's own checklist for it, then the product that keeps track of it.",
-      "because": "Best fit for a awareness film on Pinterest video pin (platform fit 3, goal fit 3, already used on Pinterest video pin ×3). Other candidates: In their words (-12.8), Inside the tool (-14.8)."
+      "decision": "In their words: The moment typed the way a person searches it, then what to do about it, then the product doing it.",
+      "because": "Best fit for a awareness film on Pinterest video pin (platform fit 3, goal fit 3, already used for this product ×1, already used on Pinterest video pin ×5). Other candidates: The moment (-16.6), Inside the tool (-17.7)."
     },
     {
       "topic": "Angle",
       "decision": "\"My flight is delayed and I have a connection\"",
-      "because": "The moment \"My flight is delayed and I have a connection\", the checklist from \"Flight delayed with a connection: what to do first\", then how Travel Companion helps."
+      "because": "A situation people search for, \"My flight is delayed and I have a connection\", with the steps from \"Flight delayed with a connection: what to do first\", and how Travel Companion helps."
     },
     {
       "topic": "Transitions",
@@ -240,18 +199,23 @@
     },
     {
       "topic": "Camera",
-      "decision": "Camera \"float\"",
-      "because": "Camera \"float\": a gentle float that keeps a held frame alive without demanding attention."
+      "decision": "Camera \"locked\"",
+      "because": "Camera \"locked\": still and precise, so a slow, reading audience is never chasing the frame."
     },
     {
       "topic": "Colour",
-      "decision": "Grounds light → light → ink → accent",
-      "because": "Grounds light → light → ink → accent: a cool accent, so a darker ground is used for contrast at a turn."
+      "decision": "Grounds ink → light → light → accent",
+      "because": "Grounds ink → light → light → accent: a cool accent, so a darker ground is used for contrast at a turn."
     },
     {
-      "topic": "Edit",
-      "decision": "Trimmed \"what-to-do\" to 2 items",
-      "because": "Fewer items read properly beats more items skimmed."
+      "topic": "Variation",
+      "decision": "Rotated the ground rhythm",
+      "because": "Its shape was 0.78 similar to sit-travel-companion-search-1--facebook-feed; a different film, not the same one re-coloured."
+    },
+    {
+      "topic": "Variation",
+      "decision": "Changed the camera",
+      "because": "Its shape was 0.78 similar to sit-personal-finance-companion-search-4--pinterest-video; a different film, not the same one re-coloured."
     },
     {
       "topic": "Sound",
@@ -260,7 +224,7 @@
     },
     {
       "topic": "Length",
-      "decision": "30.2s, 4 scenes",
+      "decision": "20.2s, 3 scenes",
       "because": "Each scene is held for the time its words take to read on Pinterest video pin (0.32s a word), inside 10–32s."
     }
   ]

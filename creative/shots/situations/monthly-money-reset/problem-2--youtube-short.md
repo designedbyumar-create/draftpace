@@ -18,6 +18,7 @@
 | **Transitions** | Transitions follow the product's own identity motif, "ledger" | Transitions follow the product's own identity motif, "ledger": a ledger is ruled lines, so scenes are revealed row by row. |
 | **Camera** | Camera "dolly" | Camera "dolly": constant forward movement for a high-energy feed. |
 | **Colour** | Grounds ink → light → light → accent | Grounds ink → light → light → accent: a cool accent, so a darker ground is used for contrast at a turn. |
+| **Variation** | Rotated the ground rhythm | Its shape was 0.78 similar to sit-family-health-binder-search-6--youtube-short; a different film, not the same one re-coloured. |
 | **Sound** | Full sound design, mid-energy bed | Sound-on placement: every transition, landing and reveal has a cue, and the bed ducks under the brand moment. |
 | **Length** | 15.0s, 3 scenes | Each scene is held for the time its words take to read on YouTube Short (0.26s a word), inside 15–40s. |
 
@@ -27,7 +28,7 @@ Treatment: voice `editorial`, camera `dolly`, motif `ledger`, transitions `lineW
 
 ### 1. moment — 0:00.00 to 0:04.40 (frames 0–132, 4.4s)
 
-- **Shot:** title / editorial on a ink ground, in by `cut`
+- **Shot:** title / editorial on a light ground, in by `cut`
 - **On screen:** "A bill you haven't paid yet still feels like money you have." — `problemsSolved[1].problem`
 - **Set as:** `A bill you haven't` / `paid yet still feels` / `like money you have.` (accent on "haven't")
 - **Why:** Opens on the moment as the listing describes it: the situation the viewer is in right now.
@@ -43,7 +44,7 @@ Treatment: voice `editorial`, camera `dolly`, motif `ledger`, transitions `lineW
 
 ### 3. cta — 0:12.20 to 0:15.00 (frames 366–450, 2.8s)
 
-- **Shot:** cta / free on a light ground, in by `blurDissolve`
+- **Shot:** cta / free on a ink ground, in by `blurDissolve`
 - **On screen:** "Monthly Money Reset" — `title`
 - **On screen:** "Start free." — `micro`
 - **Sound:** whoosh @+0f (0.32), settle @+8f (0.50)

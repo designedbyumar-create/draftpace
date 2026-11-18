@@ -12,8 +12,8 @@
   "width": 1000,
   "height": 1500,
   "fps": 30,
-  "durationInFrames": 714,
-  "structure": "situationInside",
+  "durationInFrames": 616,
+  "structure": "situationWords",
   "angle": {
     "text": "What does a babysitter or grandparent need to know about my child",
     "source": "searchedProblems[3].phrase"
@@ -44,7 +44,7 @@
     {
       "id": "moment",
       "kind": "title",
-      "variant": "label",
+      "variant": "quote",
       "copy": [
         {
           "text": "What does a babysitter or grandparent need to know about my child",
@@ -57,7 +57,7 @@
       "why": "Opens on the moment in the person's own words, as the listing records people searching it.",
       "from": 0,
       "dur": 157,
-      "ground": "accent",
+      "ground": "light",
       "transition": "cut",
       "sfx": [],
       "lines": [
@@ -96,7 +96,7 @@
       },
       "from": 145,
       "dur": 333,
-      "ground": "light",
+      "ground": "ink",
       "transition": "cardSlide",
       "sfx": [
         {
@@ -111,48 +111,6 @@
         },
         {
           "at": 150,
-          "cue": "tap",
-          "volume": 0.33
-        }
-      ]
-    },
-    {
-      "id": "also",
-      "kind": "phone",
-      "variant": "proof",
-      "copy": [],
-      "caption": {
-        "text": "Add somebody to the binder",
-        "source": "tasks[1].label"
-      },
-      "screen": {
-        "src": "screens/family-health-binder-members.png",
-        "pose": "float",
-        "focus": {
-          "at": 0.45,
-          "y": 216,
-          "h": 180,
-          "region": "person"
-        }
-      },
-      "why": "One more real thing an owner does here, in the listing's own task wording, on the screen it happens on. Screen: \"Family\" (One person's card: age, allergies, medications, and tabs for health, vaccines and care team.) chosen because it is the real screen closest to \"Add somebody to the binder\"; focus on \"Sam (example)\".",
-      "from": 466,
-      "dur": 110,
-      "ground": "light",
-      "transition": "blurDissolve",
-      "sfx": [
-        {
-          "at": 0,
-          "cue": "whoosh",
-          "volume": 0.192
-        },
-        {
-          "at": 12,
-          "cue": "pop",
-          "volume": 0.252
-        },
-        {
-          "at": 50,
           "cue": "tap",
           "volume": 0.33
         }
@@ -177,9 +135,9 @@
         "source": "micro"
       },
       "why": "Ends on where to read the whole guide, with the product beneath it: the viewer leaves with the next step, not only a pitch.",
-      "from": 564,
+      "from": 466,
       "dur": 150,
-      "ground": "accent",
+      "ground": "light",
       "transition": "blurDissolve",
       "sfx": [
         {
@@ -213,7 +171,7 @@
     },
     {
       "topic": "Guide",
-      "decision": "\"Babysitter information sheet: what to put on it\" (draftpace.com/guides/babysitter-and-grandparent-info-sheet)",
+      "decision": "\"Babysitter information sheet for a real handover\" (draftpace.com/guides/babysitter-and-grandparent-info-sheet)",
       "because": "The guide that covers this moment: what to do comes from it, and the film ends on it."
     },
     {
@@ -228,13 +186,13 @@
     },
     {
       "topic": "Structure",
-      "decision": "Inside the tool: The moment, then how the product helps on its real screen, then one more real thing an owner does in it.",
-      "because": "Best fit for a awareness film on Pinterest video pin (platform fit 2, goal fit 2, already used for this product ×1). Other candidates: The moment (-3.2), In their words (-4.0)."
+      "decision": "In their words: The moment typed the way a person searches it, then what to do about it, then the product doing it.",
+      "because": "Best fit for a awareness film on Pinterest video pin (platform fit 3, goal fit 3, already used for this product ×1, already used on Pinterest video pin ×1). Other candidates: The moment (-2.9), Inside the tool (-5.2)."
     },
     {
       "topic": "Angle",
       "decision": "\"What does a babysitter or grandparent need to know about my child\"",
-      "because": "The moment \"What does a babysitter or grandparent need to know about my child\", how Family Health Binder helps, and one more real thing it does: \"Add somebody to the binder\"."
+      "because": "A situation people search for, \"What does a babysitter or grandparent need to know about my child\", with the steps from \"Babysitter information sheet for a real handover\", and how Family Health Binder helps."
     },
     {
       "topic": "Transitions",
@@ -258,7 +216,7 @@
     },
     {
       "topic": "Length",
-      "decision": "23.8s, 4 scenes",
+      "decision": "20.5s, 3 scenes",
       "because": "Each scene is held for the time its words take to read on Pinterest video pin (0.32s a word), inside 10–32s."
     }
   ]

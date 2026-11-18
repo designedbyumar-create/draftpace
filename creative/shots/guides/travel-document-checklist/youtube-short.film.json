@@ -11,11 +11,11 @@
   "width": 1080,
   "height": 1920,
   "fps": 30,
-  "durationInFrames": 694,
-  "structure": "guideTimeline",
+  "durationInFrames": 540,
+  "structure": "guideQuestion",
   "angle": {
-    "text": "Travel document checklist: what to carry and where",
-    "source": "guide:travel-document-checklist/title"
+    "text": "Does every passport need six months left?",
+    "source": "guide:travel-document-checklist/body[11].items[0].q"
   },
   "treatment": {
     "voice": "editorial",
@@ -28,9 +28,9 @@
     "motif": "timeline",
     "grounds": [
       "light",
-      "accent",
       "light",
-      "ink"
+      "ink",
+      "accent"
     ],
     "pace": 1
   },
@@ -41,160 +41,44 @@
   },
   "scenes": [
     {
-      "id": "hook",
+      "id": "q",
       "kind": "title",
-      "variant": "editorial",
+      "variant": "quote",
       "copy": [
         {
-          "text": "Travel document checklist: what to carry and where",
-          "source": "guide:travel-document-checklist/title"
+          "text": "Does every passport need six months left?",
+          "source": "guide:travel-document-checklist/body[11].items[0].q"
         }
       ],
-      "emphasis": [
-        "checklist"
-      ],
-      "why": "The hook is the guide's own title: the question it answers, as a person would put it.",
+      "why": "The question as people ask it; the guide carries it because people search it.",
       "from": 0,
-      "dur": 83,
+      "dur": 109,
       "ground": "light",
       "transition": "cut",
       "sfx": [],
       "lines": [
         [
-          "Travel document",
-          "checklist: what to",
-          "carry and where"
+          "Does every passport",
+          "need six months left?"
         ]
       ]
     },
     {
-      "id": "when-1",
+      "id": "a",
       "kind": "title",
       "variant": "label",
       "copy": [
         {
-          "text": "Read each passport's expiry.",
-          "source": "guide:travel-document-checklist/body[4].steps[0].what#0"
+          "text": "No universal six-month rule applies to every international route.",
+          "source": "guide:travel-document-checklist/body[11].items[0].a#0"
         }
       ],
-      "eyebrow": {
-        "text": "6 months before",
-        "source": "guide:travel-document-checklist/body[4].steps[0].when"
-      },
       "emphasis": [
-        "passport's"
+        "every"
       ],
-      "why": "Marker 1: \"6 months before\", with the first sentence of what the guide says to do then.",
-      "from": 71,
-      "dur": 97,
-      "ground": "accent",
-      "transition": "slideLeft",
-      "sfx": [
-        {
-          "at": 0,
-          "cue": "swish",
-          "volume": 0.32
-        }
-      ],
-      "lines": [
-        [
-          "Read each passport's",
-          "expiry."
-        ]
-      ]
-    },
-    {
-      "id": "when-2",
-      "kind": "title",
-      "variant": "label",
-      "copy": [
-        {
-          "text": "Start any renewal, visa or authorization.",
-          "source": "guide:travel-document-checklist/body[4].steps[1].what#0"
-        }
-      ],
-      "eyebrow": {
-        "text": "3 months before",
-        "source": "guide:travel-document-checklist/body[4].steps[1].when"
-      },
-      "emphasis": [
-        "authorization"
-      ],
-      "why": "Marker 2: \"3 months before\", with the first sentence of what the guide says to do then.",
-      "from": 156,
-      "dur": 112,
-      "ground": "light",
-      "transition": "whip",
-      "sfx": [
-        {
-          "at": 0,
-          "cue": "swish",
-          "volume": 0.32
-        }
-      ],
-      "lines": [
-        [
-          "Start any renewal,",
-          "visa or authorization."
-        ]
-      ]
-    },
-    {
-      "id": "when-3",
-      "kind": "title",
-      "variant": "label",
-      "copy": [
-        {
-          "text": "Confirm names on tickets.",
-          "source": "guide:travel-document-checklist/body[4].steps[2].what#0"
-        }
-      ],
-      "eyebrow": {
-        "text": "1 month before",
-        "source": "guide:travel-document-checklist/body[4].steps[2].when"
-      },
-      "emphasis": [
-        "Confirm"
-      ],
-      "why": "Marker 3: \"1 month before\", with the first sentence of what the guide says to do then.",
-      "from": 256,
-      "dur": 97,
-      "ground": "ink",
-      "transition": "slideLeft",
-      "sfx": [
-        {
-          "at": 0,
-          "cue": "swish",
-          "volume": 0.32
-        }
-      ],
-      "lines": [
-        [
-          "Confirm names",
-          "on tickets."
-        ]
-      ]
-    },
-    {
-      "id": "when-4",
-      "kind": "title",
-      "variant": "label",
-      "copy": [
-        {
-          "text": "Print the page.",
-          "source": "guide:travel-document-checklist/body[4].steps[3].what#0"
-        }
-      ],
-      "eyebrow": {
-        "text": "Night before",
-        "source": "guide:travel-document-checklist/body[4].steps[3].when"
-      },
-      "emphasis": [
-        "Print"
-      ],
-      "why": "Marker 4: \"Night before\", with the first sentence of what the guide says to do then.",
-      "from": 341,
-      "dur": 81,
+      "why": "The guide's answer, its first sentence: the plain answer before any detail.",
+      "from": 97,
+      "dur": 123,
       "ground": "light",
       "transition": "slideLeft",
       "sfx": [
@@ -206,7 +90,9 @@
       ],
       "lines": [
         [
-          "Print the page."
+          "No universal six-month",
+          "rule applies to every",
+          "international route."
         ]
       ]
     },
@@ -216,28 +102,27 @@
       "variant": "proof",
       "copy": [],
       "caption": {
-        "text": "A printable trip book, as long as your trip needs and no longer",
-        "source": "expectedOutputs[7]"
+        "text": "Today's state of the trip, in plain sentences that each trace to something you recorded",
+        "source": "expectedOutputs[0]"
       },
       "screen": {
-        "src": "screens/travel-companion-printables.png",
-        "pose": "tiltLeft",
+        "src": "screens/travel-companion-trip.png",
+        "pose": "float",
         "focus": {
           "at": 0.45,
-          "y": 292,
-          "h": 161,
-          "region": "trip-book"
-        },
-        "scroll": []
+          "y": 187,
+          "h": 126,
+          "region": "status"
+        }
       },
-      "why": "The turn: the product the guide itself hands over to, named and shown on its real screen, captioned with its listing's line closest to what the guide teaches. Screen: \"My Trip Book\" (My Trip Book: a blank, printable travel planner, generated fresh each time.) chosen because it is the real screen closest to \"A printable trip book, as long as your trip needs and no longer Travel document \"; focus on \"My Trip Book\".",
+      "why": "The turn: the product the guide itself hands over to, named and shown on its real screen, captioned with its listing's line closest to what the guide teaches. Screen: \"Lisbon and Porto\" (The trip: where you are now, destinations, and every booking with its reference, with Record a change on each.) chosen because it is the real screen closest to \"Today's state of the trip, in plain sentences that each trace to something you r\"; focus on \"Not currently at a recorded destination\".",
       "eyebrow": {
         "text": "Travel Companion",
         "source": "title"
       },
-      "from": 410,
-      "dur": 186,
-      "ground": "accent",
+      "from": 208,
+      "dur": 234,
+      "ground": "ink",
       "transition": "whip",
       "sfx": [
         {
@@ -251,7 +136,7 @@
           "volume": 0.42
         },
         {
-          "at": 84,
+          "at": 105,
           "cue": "tap",
           "volume": 0.55
         }
@@ -276,9 +161,9 @@
         "source": "micro"
       },
       "why": "Ends on where to read the whole guide, with the product beneath it: the viewer leaves with the next step, not only a pitch.",
-      "from": 584,
+      "from": 430,
       "dur": 110,
-      "ground": "light",
+      "ground": "accent",
       "transition": "blurDissolve",
       "sfx": [
         {
@@ -307,8 +192,8 @@
     },
     {
       "topic": "Guide",
-      "decision": "\"Travel document checklist: what to carry and where\" (draftpace.com/guides/travel-document-checklist)",
-      "because": "Teaches from the guide first; Travel Companion is the product the guide hands over to. 3 lists and timelines, 5 questions to draw from."
+      "decision": "\"Travel document checklist: verify each traveler\" (draftpace.com/guides/travel-document-checklist)",
+      "because": "Teaches from the guide first; Travel Companion is the product the guide hands over to. 1 lists and timelines, 3 questions to draw from."
     },
     {
       "topic": "Stage",
@@ -322,13 +207,13 @@
     },
     {
       "topic": "Structure",
-      "decision": "In order: Walk the guide's own timeline, one marker at a time, then show the product that keeps it.",
-      "because": "Best fit for a awareness film on YouTube Short (platform fit 3, goal fit 3, already used on YouTube Short ×1). Other candidates: The checklist (3.4), The question people ask (-2.9)."
+      "decision": "The question people ask: One of the guide's own questions, its plain answer, then the product.",
+      "because": "Best fit for a awareness film on YouTube Short (platform fit 2, goal fit 2, already used on YouTube Short ×2). Other candidates: The checklist (-2.1)."
     },
     {
       "topic": "Angle",
-      "decision": "\"Travel document checklist: what to carry and where\"",
-      "because": "The guide's timeline \"When to do it\": 4 of its 4 markers, in order."
+      "decision": "\"Does every passport need six months left?\"",
+      "because": "A question from the guide's FAQ, \"Does every passport need six months left?\", and the first sentence of its answer."
     },
     {
       "topic": "Transitions",
@@ -342,8 +227,8 @@
     },
     {
       "topic": "Colour",
-      "decision": "Grounds light → accent → light → ink",
-      "because": "Grounds light → accent → light → ink: a cool accent, so a darker ground is used for contrast at a turn."
+      "decision": "Grounds light → light → ink → accent",
+      "because": "Grounds light → light → ink → accent: a cool accent, so a darker ground is used for contrast at a turn."
     },
     {
       "topic": "Sound",
@@ -352,7 +237,7 @@
     },
     {
       "topic": "Length",
-      "decision": "23.1s, 7 scenes",
+      "decision": "18.0s, 4 scenes",
       "because": "Each scene is held for the time its words take to read on YouTube Short (0.26s a word), inside 18–45s."
     }
   ]

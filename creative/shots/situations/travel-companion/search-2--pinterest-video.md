@@ -1,6 +1,6 @@
 # sit-travel-companion-search-2--pinterest-video
 
-**Pinterest video pin** · awareness · 1000×1500 · 30.2s · structure: **situationChecklist**
+**Pinterest video pin** · awareness · 1000×1500 · 20.2s · structure: **situationWords**
 
 Teaches from the guide [flight-delayed-with-a-connection-what-to-do-first](https://draftpace.com/guides/flight-delayed-with-a-connection-what-to-do-first), then hands over to **travel-companion**.
 
@@ -16,47 +16,39 @@ Teaches from the guide [flight-delayed-with-a-connection-what-to-do-first](https
 | **Guide** | "Flight delayed with a connection: what to do first" (draftpace.com/guides/flight-delayed-with-a-connection-what-to-do-first) | The guide that covers this moment: what to do comes from it, and the film ends on it. |
 | **Stage** | Before launch: helpful and relatable only | Nobody knows Draftpace yet, so films show how it helps with real moments. Who it is not for, questions before buying, what you get and the price wait until there are users to sell to. |
 | **Audience** | You are travelling with other people, and you are the one everybody asks what happens next. / Your trip has more than three moving parts: flights, transfers, stays and reservations that were booked around each other. | The listing's own audience lines; the director writes for them. |
-| **Structure** | What to do first: The moment, the guide's own checklist for it, then the product that keeps track of it. | Best fit for a awareness film on Pinterest video pin (platform fit 3, goal fit 3, already used on Pinterest video pin ×3). Other candidates: In their words (-12.8), Inside the tool (-14.8). |
-| **Angle** | "My flight is delayed and I have a connection" | The moment "My flight is delayed and I have a connection", the checklist from "Flight delayed with a connection: what to do first", then how Travel Companion helps. |
+| **Structure** | In their words: The moment typed the way a person searches it, then what to do about it, then the product doing it. | Best fit for a awareness film on Pinterest video pin (platform fit 3, goal fit 3, already used for this product ×1, already used on Pinterest video pin ×5). Other candidates: The moment (-16.6), Inside the tool (-17.7). |
+| **Angle** | "My flight is delayed and I have a connection" | A situation people search for, "My flight is delayed and I have a connection", with the steps from "Flight delayed with a connection: what to do first", and how Travel Companion helps. |
 | **Transitions** | Transitions follow the product's own identity motif, "timeline" | Transitions follow the product's own identity motif, "timeline": a trip is a line through time, so scenes travel left to right along it. |
-| **Camera** | Camera "float" | Camera "float": a gentle float that keeps a held frame alive without demanding attention. |
-| **Colour** | Grounds light → light → ink → accent | Grounds light → light → ink → accent: a cool accent, so a darker ground is used for contrast at a turn. |
-| **Edit** | Trimmed "what-to-do" to 2 items | Fewer items read properly beats more items skimmed. |
+| **Camera** | Camera "locked" | Camera "locked": still and precise, so a slow, reading audience is never chasing the frame. |
+| **Colour** | Grounds ink → light → light → accent | Grounds ink → light → light → accent: a cool accent, so a darker ground is used for contrast at a turn. |
+| **Variation** | Rotated the ground rhythm | Its shape was 0.78 similar to sit-travel-companion-search-1--facebook-feed; a different film, not the same one re-coloured. |
+| **Variation** | Changed the camera | Its shape was 0.78 similar to sit-personal-finance-companion-search-4--pinterest-video; a different film, not the same one re-coloured. |
 | **Sound** | Light sound design, low-energy bed | Most of this audience never unmutes, so nothing depends on sound; cues are kept quieter and sparser for those who do. |
-| **Length** | 30.2s, 4 scenes | Each scene is held for the time its words take to read on Pinterest video pin (0.32s a word), inside 10–32s. |
+| **Length** | 20.2s, 3 scenes | Each scene is held for the time its words take to read on Pinterest video pin (0.32s a word), inside 10–32s. |
 
-Treatment: voice `editorial`, camera `float`, motif `timeline`, transitions `slideLeft` → `whip` → `slideLeft`, music bed at 0.16 (low energy).
+Treatment: voice `editorial`, camera `dolly`, motif `timeline`, transitions `slideLeft` → `whip` → `slideLeft`, music bed at 0.16 (low energy).
 
 ## Script, scene by scene
 
 ### 1. moment — 0:00.00 to 0:04.13 (frames 0–124, 4.1s)
 
-- **Shot:** title / label on a light ground, in by `cut`
+- **Shot:** title / quote on a light ground, in by `cut`
 - **On screen:** "My flight is delayed and I have a connection" — `searchedProblems[1].phrase`
 - **Set as:** `My flight is delayed` / `and I have a` / `connection` (accent on "connection")
 - **Why:** Opens on the moment in the person's own words, as the listing records people searching it.
 
-### 2. what-to-do — 0:03.73 to 0:14.20 (frames 112–426, 10.5s)
+### 2. help — 0:03.73 to 0:15.93 (frames 112–478, 12.2s)
 
-- **Shot:** list / checklist on a light ground, in by `slideLeft`
-- **Eyebrow:** "What to have in hand" — `guide:flight-delayed-with-a-connection-what-to-do-first/body[7].heading`
-- **On screen:** "Booking reference, and the name it's under." — `guide:flight-delayed-with-a-connection-what-to-do-first/body[7].items[0]#0`
-- **On screen:** "Your onward flight number and its departure time." — `guide:flight-delayed-with-a-connection-what-to-do-first/body[7].items[1]#0`
-- **Sound:** swish @+0f (0.19), pop @+10f (0.27), pop @+115f (0.27)
-- **Why:** What to do about it, from the guide "Flight delayed with a connection: what to do first": its own checklist, the first sentence of each item.
-
-### 3. help — 0:13.80 to 0:26.00 (frames 414–780, 12.2s)
-
-- **Shot:** phone / proof on a ink ground, in by `whip`
+- **Shot:** phone / proof on a light ground, in by `slideLeft`
 - **Eyebrow:** "Travel Companion" — `title`
 - **Real UI:** `screens/travel-companion-itinerary.png`, pose `tiltRight`, focus "flight" (y 264, h 77) at 45%
 - **Caption:** "The connection, the transfer and whatever was booked after them are shown as potentially affected, with a walked-through call for any that need one." — `searchedProblems[1].answer`
 - **Sound:** swish @+0f (0.19), pop @+12f (0.25), tap @+165f (0.33)
 - **Why:** How Travel Companion helps with this moment, in the listing's own words, on the real screen that shows it. Screen: "Itinerary" (The whole trip day by day: Lisbon and Porto, a flight and a hotel on day one, and days with nothing on them said plainly.) chosen because it is the real screen closest to "The connection, the transfer and whatever was booked after them are shown as pot"; focus on "Flight to Lisbon".
 
-### 4. cta — 0:25.60 to 0:30.23 (frames 768–907, 4.6s)
+### 3. cta — 0:15.53 to 0:20.17 (frames 466–605, 4.6s)
 
-- **Shot:** cta / guide on a accent ground, in by `blurDissolve`
+- **Shot:** cta / guide on a ink ground, in by `blurDissolve`
 - **Eyebrow:** "The full guide" — `micro`
 - **On screen:** "Travel Companion" — `title`
 - **On screen:** "draftpace.com/guides/flight-delayed-with-a-connection-what-to-do-first" — `guide:flight-delayed-with-a-connection-what-to-do-first/url`

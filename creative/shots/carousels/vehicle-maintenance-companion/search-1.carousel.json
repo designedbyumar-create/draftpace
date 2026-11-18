@@ -1,0 +1,133 @@
+{
+  "id": "car-vehicle-maintenance-companion-search-1",
+  "product": "vehicle-maintenance-companion",
+  "guide": "used-car-no-service-records-what-to-do",
+  "situation": "searchedProblems[0].phrase",
+  "slides": [
+    {
+      "kind": "cover",
+      "quote": {
+        "text": "I bought a used car with no maintenance records",
+        "source": "searchedProblems[0].phrase"
+      },
+      "emphasis": [
+        "records"
+      ],
+      "promise": {
+        "text": "Bought a used car with no service records? Start here",
+        "source": "guide:used-car-no-service-records-what-to-do/title"
+      },
+      "art": {
+        "motif": "car",
+        "why": "the carousel's topic: the moment and its guide name \"car\", \"used\"",
+        "also": "notebook"
+      }
+    },
+    {
+      "kind": "answer",
+      "eyebrow": {
+        "text": "In short",
+        "source": "micro"
+      },
+      "lines": [
+        {
+          "text": "Recover what you can, separate evidence from guesses, and agree a maintenance baseline with a mechanic.",
+          "source": "guide:used-car-no-service-records-what-to-do/dek#0"
+        },
+        {
+          "text": "Missing paperwork is not a diagnosis.",
+          "source": "guide:used-car-no-service-records-what-to-do/dek#1"
+        }
+      ],
+      "art": {
+        "motif": "document",
+        "why": "the slide names \"paperwork\""
+      }
+    },
+    {
+      "kind": "checklist",
+      "eyebrow": {
+        "text": "The first five things to do",
+        "source": "guide:used-car-no-service-records-what-to-do/body[1].heading"
+      },
+      "items": [
+        {
+          "text": "Record the VIN, year, model, engine or powertrain where known, current odometer reading and date.",
+          "source": "guide:used-car-no-service-records-what-to-do/body[1].items[0]#0"
+        },
+        {
+          "text": "Ask the seller for invoices, digital records and the shops used.",
+          "source": "guide:used-car-no-service-records-what-to-do/body[1].items[1]#0"
+        },
+        {
+          "text": "Get the manufacturer's manual and maintenance schedule for the correct year and version.",
+          "source": "guide:used-car-no-service-records-what-to-do/body[1].items[2]#0"
+        },
+        {
+          "text": "Check official recall information and arrange an independent inspection.",
+          "source": "guide:used-car-no-service-records-what-to-do/body[1].items[3]#0"
+        }
+      ],
+      "ticks": true,
+      "art": {
+        "motif": "calendar",
+        "why": "the slide names \"date\", \"year\", \"schedule\""
+      }
+    },
+    {
+      "kind": "help",
+      "eyebrow": {
+        "text": "How it helps",
+        "source": "micro"
+      },
+      "name": {
+        "text": "Vehicle Maintenance Companion",
+        "source": "title"
+      },
+      "line": {
+        "text": "Mark its history unknown and nothing is assumed done. Items wait, honestly, until you have a real fact to record against them.",
+        "source": "searchedProblems[0].answer"
+      },
+      "ui": {
+        "kind": "screen",
+        "src": "screens/vehicle-maintenance-companion-vehicles.png"
+      }
+    },
+    {
+      "kind": "close",
+      "eyebrow": {
+        "text": "The full guide",
+        "source": "micro"
+      },
+      "title": {
+        "text": "Bought a used car with no service records? Start here",
+        "source": "guide:used-car-no-service-records-what-to-do/title"
+      },
+      "url": {
+        "text": "draftpace.com/guides/used-car-no-service-records-what-to-do",
+        "source": "guide:used-car-no-service-records-what-to-do/url"
+      },
+      "link": {
+        "text": "Free to read. Link in bio.",
+        "source": "micro"
+      },
+      "save": {
+        "text": "Save this for later.",
+        "source": "micro"
+      },
+      "art": {
+        "motif": "car",
+        "why": "the carousel's topic: the moment and its guide name \"car\", \"used\""
+      }
+    }
+  ],
+  "notes": [
+    "Cover: \"I bought a used car with no maintenance records\" (searchedProblems[0].phrase), as people search it.",
+    "Checklist: 4 items from \"The first five things to do\".",
+    "Help: \"Mark its history unknown and nothing is assumed done. Items wait, honestly, until you have a real fact to record against them.\" (searchedProblems[0].answer), on screens/vehicle-maintenance-companion-vehicles.png (\"Vehicles\").",
+    "Illustration on the cover: car with notebook, because the carousel's topic: the moment and its guide name \"car\", \"used\".",
+    "Illustration on the answer: document, because the slide names \"paperwork\".",
+    "Illustration on the checklist: calendar, because the slide names \"date\", \"year\", \"schedule\".",
+    "Illustration on the close: car, because the carousel's topic: the moment and its guide name \"car\", \"used\"."
+  ]
+}

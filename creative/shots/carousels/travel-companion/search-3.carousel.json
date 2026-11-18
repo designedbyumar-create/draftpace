@@ -14,13 +14,13 @@
         "spreadsheet"
       ],
       "promise": {
-        "text": "Multi-stop trip planner: organize it without a spreadsheet",
+        "text": "Plan a multi-stop trip without a spreadsheet",
         "source": "guide:organising-a-multi-stop-trip-without-a-spreadsheet/title"
       },
       "art": {
         "motif": "suitcase",
         "why": "the carousel's topic: the moment and its guide name \"trip\", \"stop\"",
-        "also": "binder"
+        "also": "route"
       }
     },
     {
@@ -31,77 +31,51 @@
       },
       "lines": [
         {
-          "text": "Many stops mean many bookings that rest on each other.",
+          "text": "Keep transport, nights and reservations in one chronological record, with local dates, realistic buffers and the bookings each change may affect.",
           "source": "guide:organising-a-multi-stop-trip-without-a-spreadsheet/dek#0"
-        },
-        {
-          "text": "Record four things per booking, in time order, and skip the rebuild after every change.",
-          "source": "guide:organising-a-multi-stop-trip-without-a-spreadsheet/dek#1"
         }
       ],
       "art": {
         "motif": "ticket",
-        "why": "the slide names \"booking\""
+        "why": "the slide names \"booking\", \"reservation\""
       }
     },
     {
-      "kind": "step",
+      "kind": "checklist",
       "eyebrow": {
-        "text": "The method",
-        "source": "guide:organising-a-multi-stop-trip-without-a-spreadsheet/body[3].heading"
+        "text": "Make the booking record usable",
+        "source": "guide:organising-a-multi-stop-trip-without-a-spreadsheet/body[4].heading"
       },
-      "number": {
-        "text": "1",
-        "source": "micro"
-      },
-      "head": {
-        "text": "List the fixed points first: anything with a reference and a time.",
-        "source": "guide:organising-a-multi-stop-trip-without-a-spreadsheet/body[3].items[0]#0"
-      },
-      "body": [
+      "items": [
         {
-          "text": "Flights, trains, stays, tours and reserved dinners.",
-          "source": "guide:organising-a-multi-stop-trip-without-a-spreadsheet/body[3].items[0]#1"
+          "text": "Assign each stop a name and its arrival, departure and overnight dates.",
+          "source": "guide:organising-a-multi-stop-trip-without-a-spreadsheet/body[4].items[0]#0"
         },
         {
-          "text": "Leave the open days open.",
-          "source": "guide:organising-a-multi-stop-trip-without-a-spreadsheet/body[3].items[0]#2"
+          "text": "Give every confirmed reservation its own line; keep ideas in a separate section.",
+          "source": "guide:organising-a-multi-stop-trip-without-a-spreadsheet/body[4].items[1]#0"
+        },
+        {
+          "text": "Record the actual provider, booking channel and confirmation reference.",
+          "source": "guide:organising-a-multi-stop-trip-without-a-spreadsheet/body[4].items[2]#0"
+        },
+        {
+          "text": "Add local start and end times, exact terminals or stations where relevant, and check-in windows.",
+          "source": "guide:organising-a-multi-stop-trip-without-a-spreadsheet/body[4].items[3]#0"
+        },
+        {
+          "text": "Note cancellation or change deadlines with the applicable time zone.",
+          "source": "guide:organising-a-multi-stop-trip-without-a-spreadsheet/body[4].items[4]#0"
+        },
+        {
+          "text": "Write the nearby bookings that require checking if this one changes.",
+          "source": "guide:organising-a-multi-stop-trip-without-a-spreadsheet/body[4].items[5]#0"
         }
       ],
-      "emphasis": [
-        "reference"
-      ],
+      "ticks": true,
       "art": {
         "motif": "ticket",
-        "why": "the slide names \"reference\""
-      }
-    },
-    {
-      "kind": "step",
-      "eyebrow": {
-        "text": "The method",
-        "source": "guide:organising-a-multi-stop-trip-without-a-spreadsheet/body[3].heading"
-      },
-      "number": {
-        "text": "2",
-        "source": "micro"
-      },
-      "head": {
-        "text": "Put them in time order, not by stop.",
-        "source": "guide:organising-a-multi-stop-trip-without-a-spreadsheet/body[3].items[1]#0"
-      },
-      "body": [
-        {
-          "text": "The order you'll live them in is the order you'll need them.",
-          "source": "guide:organising-a-multi-stop-trip-without-a-spreadsheet/body[3].items[1]#1"
-        }
-      ],
-      "emphasis": [
-        "order"
-      ],
-      "art": {
-        "motif": "route",
-        "why": "the slide names \"order\""
+        "why": "the slide names \"booking\", \"reservation\", \"confirmation\", \"reference\""
       }
     },
     {
@@ -130,7 +104,7 @@
         "source": "micro"
       },
       "title": {
-        "text": "Multi-stop trip planner: organize it without a spreadsheet",
+        "text": "Plan a multi-stop trip without a spreadsheet",
         "source": "guide:organising-a-multi-stop-trip-without-a-spreadsheet/title"
       },
       "url": {
@@ -153,12 +127,11 @@
   ],
   "notes": [
     "Cover: \"How do I organise a multi-stop trip without a spreadsheet\" (searchedProblems[2].phrase), as people search it.",
-    "Steps: 2 of 6 from the guide's numbered steps \"The method\", one per slide, each with the guide's own explanation.",
+    "Checklist: 6 items from \"Make the booking record usable\".",
     "Help: \"Destinations, bookings, travellers and documents in one place, with the shape of the trip held for you rather than in your head.\" (searchedProblems[2].answer), on screens/travel-companion-trip.png (\"Lisbon and Porto\").",
-    "Illustration on the cover: suitcase with binder, because the carousel's topic: the moment and its guide name \"trip\", \"stop\".",
-    "Illustration on the answer: ticket, because the slide names \"booking\".",
-    "Illustration on the step: ticket, because the slide names \"reference\".",
-    "Illustration on the step: route, because the slide names \"order\".",
+    "Illustration on the cover: suitcase with route, because the carousel's topic: the moment and its guide name \"trip\", \"stop\".",
+    "Illustration on the answer: ticket, because the slide names \"booking\", \"reservation\".",
+    "Illustration on the checklist: ticket, because the slide names \"booking\", \"reservation\", \"confirmation\", \"reference\".",
     "Illustration on the close: suitcase, because the carousel's topic: the moment and its guide name \"trip\", \"stop\"."
   ]
 }

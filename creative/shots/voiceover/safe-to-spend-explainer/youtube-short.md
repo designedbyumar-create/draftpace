@@ -13,7 +13,7 @@ Cut to the voice-over script `safe-to-spend-explainer`, timed by the chosen leng
 | | Decision | Because |
 |---|---|---|
 | **Canvas** | YouTube Short, 1080×1920, 55.0s | Your length, not the placement's. YouTube Short's safe areas keep captions clear of its buttons. |
-| **Product** | Monthly Money Reset, with the guide "How much money is safe to spend after your bills?" | 1 real screens, live safeToSpendCard, nextActionCard, 2 guide lists to cut to. |
+| **Product** | Monthly Money Reset, with the guide "How much money is safe to spend after your bills?" | 1 real screens, live safeToSpendCard, nextActionCard, 1 guide lists to cut to. |
 | **Timing** | Spread across the chosen 55s by words | 9 lines, 118 words, read naturally in about 50s. At this length the pace is natural: about 2.2 words a second. Record to the timecodes in the shot list, or add your recording and re-run. |
 | **Visuals** | 13 shots for 9 lines: 3 real screens, 5 live, 0 guide lists, 3 lines set as type, 1 name reveal, then the end card | Each shot shows the visual whose words best match what is being said, never the same one twice in a row; a line over 6s is split at a caption break into two pictures. |
 | **Captions** | Your words, burned in, a phrase at a time | Most people watch muted; each caption is cut from your script at a natural break and shown while it is said. |

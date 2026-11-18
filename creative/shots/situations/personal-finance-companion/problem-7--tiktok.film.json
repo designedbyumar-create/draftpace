@@ -19,7 +19,7 @@
   },
   "treatment": {
     "voice": "native",
-    "camera": "dolly",
+    "camera": "float",
     "transitions": [
       "cut",
       "whip",
@@ -96,8 +96,13 @@
       "from": 73,
       "dur": 208,
       "ground": "light",
-      "transition": "cut",
+      "transition": "whip",
       "sfx": [
+        {
+          "at": 0,
+          "cue": "swish",
+          "volume": 0.32
+        },
         {
           "at": 12,
           "cue": "pop",
@@ -134,11 +139,11 @@
       "from": 275,
       "dur": 84,
       "ground": "accent",
-      "transition": "whip",
+      "transition": "blurDissolve",
       "sfx": [
         {
           "at": 0,
-          "cue": "swish",
+          "cue": "whoosh",
           "volume": 0.32
         },
         {
@@ -171,13 +176,8 @@
       "from": 353,
       "dur": 78,
       "ground": "accent",
-      "transition": "blurDissolve",
+      "transition": "cut",
       "sfx": [
-        {
-          "at": 0,
-          "cue": "whoosh",
-          "volume": 0.32
-        },
         {
           "at": 8,
           "cue": "settle",
@@ -215,7 +215,7 @@
     {
       "topic": "Structure",
       "decision": "Inside the tool: The moment, then how the product helps on its real screen, then one more real thing an owner does in it.",
-      "because": "Best fit for a awareness film on TikTok (platform fit 2, goal fit 2, already used for this product ×4, already used on TikTok ×3). Other candidates: The moment (-33.9)."
+      "because": "Best fit for a awareness film on TikTok (platform fit 2, goal fit 2, already used for this product ×4, already used on TikTok ×4). Other candidates: The moment (-40.2)."
     },
     {
       "topic": "Angle",
@@ -240,7 +240,17 @@
     {
       "topic": "Variation",
       "decision": "Rotated the ground rhythm",
-      "because": "Its shape was 0.74 similar to sit-home-management-companion-problem-1--tiktok; a different film, not the same one re-coloured."
+      "because": "Its shape was 0.74 similar to sit-alongside-search-3--tiktok; a different film, not the same one re-coloured."
+    },
+    {
+      "topic": "Variation",
+      "decision": "Changed the camera",
+      "because": "Its shape was 0.82 similar to sit-family-health-binder-problem-2--tiktok; a different film, not the same one re-coloured."
+    },
+    {
+      "topic": "Variation",
+      "decision": "Reordered the transitions",
+      "because": "Its shape was 0.74 similar to sit-family-health-binder-problem-2--tiktok; a different film, not the same one re-coloured."
     },
     {
       "topic": "Sound",
