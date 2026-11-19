@@ -8190,6 +8190,7 @@
         "heading": "Size and rating both matter",
         "paragraphs": [
           "The size printed on an existing filter is a useful lead, but it may not establish that someone previously installed the correct part. Confirm against the equipment instructions or a qualified technician. Avoid forcing a filter into a slot or leaving gaps around an undersized one.",
+          "Common nominal residential sizes include 16x20x1, 16x25x1, 20x20x1 and 20x25x1; a printed size is nominal, and the actual filter often measures slightly smaller, so check a current filter's actual dimensions if none is installed to compare against.",
           "The [EPA's air-cleaner guidance](https://www.epa.gov/indoor-air-quality-iaq/guide-air-cleaners-home) discusses choosing an appropriate HVAC filter. A higher filtration rating is not automatically an appropriate upgrade for every system. Ask about compatibility rather than choosing the highest number on the shelf."
         ]
       },
@@ -8470,7 +8471,7 @@
   "how-to-budget-with-irregular-income": {
     "title": "How to budget with irregular income",
     "dek": "Separate money received from money expected, cover a low-income month, and use a holding buffer only when it is genuinely funded.",
-    "metaDescription": "Separate money received from money expected, cover a low-income month, and use a holding buffer only when it is genuinely funded.",
+    "metaDescription": "Separate money received from money expected when your income fluctuates, cover a low-income month, and fund a holding buffer properly.",
     "updatedAt": "2026-11-17",
     "body": [
       {
@@ -11027,6 +11028,7 @@
         "kind": "paragraphs",
         "paragraphs": [
           "To use a bank statement CSV for a budget, keep the original download, import a copy with explicit date and amount formats, reconcile its totals and review transfers before categorizing. Then add current balances, future income and unpaid obligations. A transaction file describes a period of activity; it is not a complete forward-looking budget.",
+          "None of this requires Excel specifically. The same checks apply whether the CSV goes into a spreadsheet, a budgeting app's own import, or a plain text editor first: the risk is in the file's formats and categories, not the program that opens it.",
           "A grocery payment shown as income can make a neat chart completely wrong. So can counting both a card purchase and its later card payment as spending. Before choosing categories, establish what each column means and which accounts are included. Banks export different layouts, and some exports include pending entries rather than only posted transactions."
         ]
       },
@@ -20727,7 +20729,7 @@
   "symptom-notes-for-a-doctor-visit": {
     "title": "Symptom notes for a doctor visit: what to record",
     "dek": "Record what happened, when it began, how long it lasted and its effect on daily life. Keep observations distinct from guesses and seek help when needed.",
-    "metaDescription": "Record what happened, when it began, how long it lasted and its effect on daily life. Keep observations distinct from guesses and seek help when needed.",
+    "metaDescription": "Build a simple symptom timeline: what happened, when it began, how long it lasted, and its effect on daily life, kept distinct from guesses.",
     "updatedAt": "2026-11-17",
     "body": [
       {

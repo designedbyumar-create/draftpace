@@ -21990,7 +21990,7 @@ const BASE_GUIDES: Guide[] = [
     slug: "doctor-appointment-prep-checklist",
     title: "Doctor appointment checklist for the day before",
     dek: "What to write down, gather and bring the day before a doctor visit, and where to keep the notes after it. A paperwork list, not medical advice.",
-    primaryQuery: "doctor appointment checklist",
+    primaryQuery: "doctor visit checklist",
     next: { slug: "questions-to-bring-to-the-doctor", reason: "With the paperwork gathered, turn to the questions themselves and how to write them so the important one comes first." },
     related: [
       { slug: "medication-list-what-to-write-down", reason: "Doctors ask what is taken now, and this shows how to write the medication list so it matches the labels." },
