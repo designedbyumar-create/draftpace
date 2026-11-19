@@ -64,7 +64,7 @@
           "source": "guide:named-executor-what-you-agreed-to/body[1].items[5]#0"
         }
       ],
-      "ticks": true,
+      "ticks": false,
       "art": {
         "motif": "calendar",
         "why": "the slide names \"date\""

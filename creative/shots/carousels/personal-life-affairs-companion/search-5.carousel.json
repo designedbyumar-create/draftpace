@@ -72,7 +72,7 @@
           "source": "guide:talking-to-your-parents-about-their-affairs/body[3].items[5]#0"
         }
       ],
-      "ticks": true,
+      "ticks": false,
       "art": {
         "motif": "document",
         "why": "the slide names \"document\", \"will\""

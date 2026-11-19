@@ -1145,7 +1145,7 @@
       {
         "kind": "list",
         "heading": "Work through the available paper trail",
-        "checkable": true,
+        "checkable": false,
         "items": [
           "Gather a year of bank and card statements where lawfully available. A longer view can reveal annual insurance premiums or infrequent transfers that a single month misses.",
           "List incoming pensions, investment distributions and transfers separately from premiums, loan payments and recurring charges. Do not classify every debit as an asset.",
@@ -1623,7 +1623,7 @@
       {
         "kind": "list",
         "heading": "Before substantive administration",
-        "checkable": true,
+        "checkable": false,
         "items": [
           "Find the original will and amendments, identify every named executor and check any substitute appointment. Preserve documents rather than annotating or dividing them.",
           "Establish the relevant jurisdiction and ask about cross-border property or domicile uncertainty. Do not select a court only because it is nearest to you.",
@@ -1803,7 +1803,7 @@
       {
         "kind": "list",
         "heading": "Before accepting transactions as routine",
-        "checkable": true,
+        "checkable": false,
         "items": [
           "Locate the original will and any amendments. Identify co-nominees and alternates without deciding contested validity yourself.",
           "Ask the relevant court about will-deposit duties, the appointment process, any small-estate alternative, required notices and urgent deadlines.",
@@ -1985,7 +1985,7 @@
       {
         "kind": "list",
         "heading": "Start with people and immediate risks",
-        "checkable": true,
+        "checkable": false,
         "items": [
           "For a hospital or care-home death, ask staff who will explain verification, certification and release arrangements. For an expected home death, use the care plan or GP contact instructions. If there is an emergency or uncertainty about whether the person has died, call 999.",
           "Arrange support for any surviving dependent, and care for pets. Check whether someone needs food, medication access, keys or transport tonight.",
@@ -2154,7 +2154,7 @@
       {
         "kind": "list",
         "heading": "The first safety and contact check",
-        "checkable": true,
+        "checkable": false,
         "items": [
           "In a hospital or care facility, ask staff who handles the next paperwork and release arrangements. For an expected hospice death at home, follow the hospice plan and call its designated number. If the death is unexpected or you are unsure whether the person has died, call 911 and follow instructions.",
           "Check whether a surviving partner, child or other dependent needs someone present, food, medicines or transport. Arrange pet care and a responsible contact for the next night.",
@@ -2504,7 +2504,7 @@
       {
         "kind": "list",
         "heading": "Search without changing the evidence",
-        "checkable": true,
+        "checkable": false,
         "items": [
           "Ask the person coordinating the estate whether an original, copy, later amendment or attorney contact is already known. Agree who will record the search.",
           "Check accessible files, document boxes and other places you are entitled to search. Keep papers together and note where each document was found.",
@@ -3042,7 +3042,7 @@
       {
         "kind": "list",
         "heading": "Preserve the starting position",
-        "checkable": true,
+        "checkable": false,
         "items": [
           "Keep devices, storage media and existing documentation secure without trying repeated passcode guesses.",
           "Record the services you know exist and the evidence for each, using only lawful access.",
@@ -5316,7 +5316,7 @@
       {
         "kind": "list",
         "heading": "Ask only what serves the purpose",
-        "checkable": true,
+        "checkable": false,
         "items": [
           "Where is the current will, and who holds the original?",
           "Who should be contacted first in an emergency or period of incapacity?",
@@ -14799,7 +14799,7 @@
       {
         "kind": "list",
         "heading": "Choose, document and communicate",
-        "checkable": true,
+        "checkable": false,
         "items": [
           "List one or two possible people and consider their willingness, communication, reliability and ability to follow your preferences.",
           "Ask directly before naming anyone. Give them time to decline or ask questions; agreement to receive a call is not agreement to be a proxy.",
@@ -15786,7 +15786,7 @@
       {
         "kind": "list",
         "heading": "Prepare the two-week handoff",
-        "checkable": true,
+        "checkable": false,
         "items": [
           "List bills falling within the likely absence and a little beyond it. Record provider, date, approximate or confirmed amount, and payment method.",
           "Identify the payment account without putting full numbers or credentials on a widely shared sheet. Check scheduled transfers and available funds.",
@@ -17380,7 +17380,7 @@
       {
         "kind": "list",
         "heading": "Create an access record now",
-        "checkable": true,
+        "checkable": false,
         "items": [
           "Identify the institution and exact branch, or the type and location of a home safe. Keep detailed identifiers in a protected record where appropriate.",
           "Review who is actually named on the current box agreement and what their status means. Do not substitute a family understanding for the agreement.",
@@ -17712,7 +17712,7 @@
       {
         "kind": "list",
         "heading": "Make the first-day plan usable",
-        "checkable": true,
+        "checkable": false,
         "items": [
           "Ask an immediate caregiver and a backup, explaining the animals, location and likely tasks rather than simply asking for a general favor.",
           "Arrange permitted home access and test it. Identify where carriers, leads, food and current veterinary instructions are kept.",
@@ -18065,7 +18065,7 @@
       {
         "kind": "list",
         "heading": "Start with a manageable notification pass",
-        "checkable": true,
+        "checkable": false,
         "items": [
           "Tell close family and the people responsible for children, dependents, animals or an unattended home. Delegate personal messages if helpful.",
           "Ask the funeral director whether the death has been reported to Social Security, if relevant. Record who is reporting and what remains to be done.",
@@ -18258,7 +18258,7 @@
       {
         "kind": "list",
         "heading": "Work through the guardian decision",
-        "checkable": true,
+        "checkable": false,
         "items": [
           "Consider the child's existing relationships, stability, cultural and language connections, support needs and the effect of moving.",
           "Assess the proposed caregiver's willingness and practical capacity, not just their finances or family position. Ask how the change affects their household.",
@@ -22281,7 +22281,7 @@
       {
         "kind": "list",
         "heading": "Make a useful first page",
-        "checkable": true,
+        "checkable": false,
         "items": [
           "Choose who should know that the file exists, and ask whether they are willing to help. Do not assume a relative can or wants to take on every task.",
           "Write the location of your current legal documents and the professional or office to contact. Identify originals separately from copies.",
