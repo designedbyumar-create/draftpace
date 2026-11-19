@@ -17,14 +17,13 @@
 .compare ol { grid-template-columns: repeat(2,minmax(0,1fr)); }
 .compare li { flex-direction: column; gap: 12px; }
 .sequence ol { grid-template-columns: 1fr; }
-.sequence li { padding-right: 25px; }
-.sequence .connector { transform: rotate(90deg); bottom: -10px; right: 8px; }
+.sequence .connector { left: 13px; bottom: -11px; transform: rotate(90deg); background: var(--surface); padding: 2px 0; }
 .record li > div:last-of-type { display: grid; grid-template-columns: .8fr 1.2fr; gap: 20px; }
 .record li p { margin-top: 0; }
 .timeline li + li { border-top: 0; }
 .timeline li + li::before { content: ''; position: absolute; left: 12px; top: -15px; height: 30px; border-left: 1px solid var(--border-strong); }
 .record li { display: grid; grid-template-columns: 30px minmax(0,1fr); }
-.connector { position: absolute; right: 0; bottom: 5px; color: var(--area); }
+.connector { position: absolute; color: var(--area); z-index: 1; }
 .actions { list-style: none; padding: 0; margin-top: 22px; }
 .actions li { display: flex; align-items: start; gap: 16px; padding: 18px 0; border-top: 1px solid var(--border); }
 .actions p { font-size: 16px; line-height: 1.8; }
