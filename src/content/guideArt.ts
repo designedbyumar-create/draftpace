@@ -1,5 +1,4 @@
 import generated from "./guideArt.generated.json";
-import libraryArt from "./revisions/library-art.generated.json";
 import type { Guide, GuideBlock } from "./guides";
 
 /**
@@ -21,7 +20,6 @@ export type GuideArt = {
 
 const ENTRIES: Record<string, GuideArt> = {
   ...generated,
-  ...(libraryArt as Record<string, GuideArt>),
   "doctor-appointment-prep-checklist": {
     hero: "/guides/img/doctor-appointment-share-v4.webp",
     thumb: "/guides/img/doctor-appointment-thumb-v4.webp",
