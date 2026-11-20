@@ -20,9 +20,10 @@ import { buildProductStructuredData, buildFaqStructuredData, coverImagePath } fr
 import { GuidesForCompanion } from "@/components/public/guides/GuideLinks";
 import {
   OverviewScreenMockup,
-  CheckScreenMockup,
-  AddChildScreenMockup,
-  BookScreenMockup,
+  TaskRowCard,
+  CheckResultCard,
+  AddChildCard,
+  BookCover,
 } from "../shop/[productSlug]/homeschoolingCompanionVisuals";
 
 const SLUG = "homeschooling-companion";
@@ -143,14 +144,15 @@ export default async function HomeschoolingCompanionPage({
               </p>
             </div>
 
-            {/* Two real screens, the second peeking from behind the first:
-                the closest honest equivalent to a tablet-plus-phone
-                composition without a device frame this project doesn't
-                have. Both are real recreations of the shipped UI, never a
-                photo or a generic dashboard. */}
+            {/* The real Today screen, with one of its own task cards
+                floating free beside it for depth: the same two
+                presentations (full phone, bare card) the showcase below
+                uses throughout, introduced here rather than two phones
+                stacked on each other. Both real recreations of the
+                shipped UI, never a photo or a generic dashboard. */}
             <div className="relative mx-auto w-full max-w-[360px] py-6">
-              <div className="absolute -right-6 top-10 w-[78%] opacity-90 blur-[0.3px]">
-                <BookScreenMockup />
+              <div className="absolute -right-8 bottom-6 w-[62%] rotate-3">
+                <TaskRowCard />
               </div>
               <div className="relative">
                 <OverviewScreenMockup />
@@ -229,45 +231,73 @@ export default async function HomeschoolingCompanionPage({
             See exactly what you&apos;re getting.
           </h2>
           <p className="mt-4 max-w-[60ch] text-body leading-relaxed text-[var(--muted)]">
-            Four real screens from the shipped product: not mockups of a plan, the actual interface.
+            Four real pieces of the shipped product, shown four different ways: a full screen, two cards pulled out
+            of it, and the printed book as the paper object it actually is.
           </p>
 
           <div className="mt-10 flex flex-col gap-16">
-            {[
-              {
-                Screen: OverviewScreenMockup,
-                title: "Today, grouped by child",
-                body: "What's scheduled this morning, per child, with where each task came from. Nothing scheduled means nothing shown: it never invents work to display.",
-              },
-              {
-                Screen: AddChildScreenMockup,
-                title: "Adding a child takes about a minute",
-                body: "Name, age, and how they're schooled: three questions, one at a time. Only ever an age is stored, never a birth date.",
-              },
-              {
-                Screen: CheckScreenMockup,
-                title: "An honest check, not a score",
-                body: "You supply the questions; it reports per topic, including the honest answer that there isn't enough evidence to say anything yet. It never produces a percentage.",
-              },
-              {
-                Screen: BookScreenMockup,
-                title: "The printed half",
-                body: "The Homeschool Year: a 30 page book of method and undated working pages, plus a per-child printable record that sets your state's requirements beside what you've actually recorded.",
-              },
-            ].map(({ Screen, title, body }, i) => (
-              <div
-                key={title}
-                className={`grid items-center gap-10 sm:grid-cols-[260px_1fr] ${i % 2 === 1 ? "sm:[direction:rtl]" : ""}`}
-              >
-                <div className="mx-auto w-full max-w-[220px] sm:[direction:ltr]">
-                  <Screen />
-                </div>
-                <div className="sm:[direction:ltr]">
-                  <h3 className="font-serif text-heading-sm font-semibold tracking-tight">{title}</h3>
-                  <p className="mt-3 max-w-[48ch] text-body leading-relaxed text-[var(--muted)]">{body}</p>
+            {/* Row 1: the full phone, the one place on the page the whole interface earns a complete screen. */}
+            <div className="grid items-center gap-10 sm:grid-cols-[260px_1fr]">
+              <div className="mx-auto w-full max-w-[220px]">
+                <OverviewScreenMockup />
+              </div>
+              <div>
+                <h3 className="font-serif text-heading-sm font-semibold tracking-tight">Today, grouped by child</h3>
+                <p className="mt-3 max-w-[48ch] text-body leading-relaxed text-[var(--muted)]">
+                  What&apos;s scheduled this morning, per child, with where each task came from. Nothing scheduled
+                  means nothing shown: it never invents work to display.
+                </p>
+              </div>
+            </div>
+
+            {/* Row 2: the question itself, pulled out of the phone as its own card. */}
+            <div className="grid items-center gap-10 sm:grid-cols-[260px_1fr] sm:[direction:rtl]">
+              <div className="mx-auto flex w-full max-w-[260px] justify-center sm:[direction:ltr]">
+                <div className="-rotate-2">
+                  <AddChildCard />
                 </div>
               </div>
-            ))}
+              <div className="sm:[direction:ltr]">
+                <h3 className="font-serif text-heading-sm font-semibold tracking-tight">Adding a child takes about a minute</h3>
+                <p className="mt-3 max-w-[48ch] text-body leading-relaxed text-[var(--muted)]">
+                  Name, age, and how they&apos;re schooled: three questions, one at a time. Only ever an age is
+                  stored, never a birth date.
+                </p>
+              </div>
+            </div>
+
+            {/* Row 3: the check result, the same bare-card treatment, tilted the other way for rhythm. */}
+            <div className="grid items-center gap-10 sm:grid-cols-[260px_1fr]">
+              <div className="mx-auto flex w-full max-w-[260px] justify-center">
+                <div className="rotate-2">
+                  <CheckResultCard />
+                </div>
+              </div>
+              <div>
+                <h3 className="font-serif text-heading-sm font-semibold tracking-tight">An honest check, not a score</h3>
+                <p className="mt-3 max-w-[48ch] text-body leading-relaxed text-[var(--muted)]">
+                  You supply the questions; it reports per topic, including the honest answer that there isn&apos;t
+                  enough evidence to say anything yet. It never produces a percentage.
+                </p>
+              </div>
+            </div>
+
+            {/* Row 4: the printed book, as paper, not a phone screen. */}
+            <div className="grid items-center gap-10 sm:grid-cols-[260px_1fr] sm:[direction:rtl]">
+              <div className="mx-auto flex w-full max-w-[260px] justify-center sm:[direction:ltr]">
+                <div className="-rotate-1">
+                  <BookCover />
+                </div>
+              </div>
+              <div className="sm:[direction:ltr]">
+                <h3 className="font-serif text-heading-sm font-semibold tracking-tight">The printed half</h3>
+                <p className="mt-3 max-w-[48ch] text-body leading-relaxed text-[var(--muted)]">
+                  The Homeschool Year: a 30 page book of method and undated working pages, plus a per-child
+                  printable record that sets your state&apos;s requirements beside what you&apos;ve actually
+                  recorded.
+                </p>
+              </div>
+            </div>
           </div>
         </section>
 
