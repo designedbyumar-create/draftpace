@@ -20,6 +20,7 @@
  * child being behind or ahead.
  */
 import PhoneFrame from "../PhoneFrame";
+import TabletFrame from "../TabletFrame";
 import { Check } from "@/design-system/Icon";
 
 const INK = "#1a1d24";
@@ -161,21 +162,6 @@ function TodayContent() {
   );
 }
 
-/** Just the Math task row, Today's own "worth going over again" callout, as a standalone floating card: no phone chrome, for a section that wants the interface without another whole bezel on the page. */
-export function TaskRowCard() {
-  return (
-    <div className="w-full max-w-[280px] rounded-xl border bg-white p-3 shadow-[0_18px_32px_-16px_rgba(26,29,36,0.35)]" style={{ borderColor: LINE }}>
-      <TaskRow
-        subject="Math"
-        detail="Fractions, Unit 4"
-        source="Your curriculum"
-        status="Did not get to it"
-        flag="Worth going over again. Last time you said this was difficult."
-      />
-    </div>
-  );
-}
-
 /**
  * Screen 1: Today. Grouped by child, each with its own recorded count and
  * a link to their page, and every row a tap-to-mark circle rather than a
@@ -200,20 +186,21 @@ const CHECK_ROWS = [
 ];
 
 /**
- * The check result, as its own floating card: no phone chrome, no tab
- * bar, so a section that wants the interface without stacking another
- * whole phone bezel on the page can show just the result list.
+ * Screen 2: a check result. The heart of the product's trust claim, so
+ * it draws the thing every competitor gets wrong: a topic with too few
+ * answers, reported as such rather than guessed at.
  */
-export function CheckResultCard() {
+function CheckContent() {
   return (
-    <div className="w-full max-w-[300px] rounded-xl border bg-white p-4 shadow-[0_18px_32px_-16px_rgba(26,29,36,0.35)]" style={{ borderColor: LINE }}>
+    <>
       <Eyebrow>What came back</Eyebrow>
-      <h3 className="mt-2 font-serif text-[15px] leading-[1.2]" style={{ color: INK }}>
+      <h3 className="mt-2 font-serif text-[16px] leading-[1.15]" style={{ color: INK }}>
         One thing here is worth going over again.
       </h3>
-      <div className="mt-3 flex flex-col gap-2.5">
+
+      <div className="mt-3.5 flex flex-col gap-2.5">
         {CHECK_ROWS.map((row) => (
-          <div key={row.tag} className="border-b pb-2.5 last:border-0 last:pb-0" style={{ borderColor: LINE }}>
+          <div key={row.tag} className="border-b pb-2.5" style={{ borderColor: LINE }}>
             <div className="flex items-baseline justify-between gap-2">
               <span className="flex-1 text-[9.5px]" style={{ color: INK }}>
                 {row.line}
@@ -228,52 +215,43 @@ export function CheckResultCard() {
           </div>
         ))}
       </div>
-    </div>
+
+      <p className="mt-2.5 text-[8px] leading-relaxed" style={{ color: FAINT }}>
+        This is a short check you ran at home, not an assessment. It says what came back from these questions on
+        this day, and nothing about Emma.
+      </p>
+    </>
   );
 }
 
-/**
- * Screen 2: a check result. The heart of the product's trust claim, so
- * it draws the thing every competitor gets wrong: a topic with too few
- * answers, reported as such rather than guessed at.
- */
 export function CheckScreenMockup() {
   return (
     <PhoneFrame accent={PLUM}>
       <div className="flex h-full flex-col px-4 pb-4 pt-9" style={{ backgroundColor: PAPER }}>
         <StatusBar />
         <div className="mt-5">
-          <Eyebrow>What came back</Eyebrow>
-          <h3 className="mt-2 font-serif text-[16px] leading-[1.15]" style={{ color: INK }}>
-            One thing here is worth going over again.
-          </h3>
-
-          <div className="mt-3.5 flex flex-col gap-2.5">
-            {CHECK_ROWS.map((row) => (
-              <div key={row.tag} className="border-b pb-2.5" style={{ borderColor: LINE }}>
-                <div className="flex items-baseline justify-between gap-2">
-                  <span className="flex-1 text-[9.5px]" style={{ color: INK }}>
-                    {row.line}
-                  </span>
-                  <span className="shrink-0 text-[7px] font-semibold uppercase tracking-[0.08em]" style={{ color: PLUM }}>
-                    {row.tag}
-                  </span>
-                </div>
-                <p className="mt-0.5 text-[7.5px]" style={{ color: FAINT }}>
-                  {row.ev}
-                </p>
-              </div>
-            ))}
-          </div>
-
-          <p className="mt-2.5 text-[8px] leading-relaxed" style={{ color: FAINT }}>
-            This is a short check you ran at home, not an assessment. It says what came back from these questions on
-            this day, and nothing about Emma.
-          </p>
+          <CheckContent />
         </div>
         <TabBar current="Kids" />
       </div>
     </PhoneFrame>
+  );
+}
+
+/** The check result, on a tablet: the same real screen, centered in the wider frame rather than stretched to fill it -- this product has no separate tablet-specific layout, so showing one would be inventing UI that doesn't exist. */
+export function CheckTabletMockup() {
+  return (
+    <TabletFrame accent={PLUM}>
+      <div className="flex h-full flex-col px-8 pb-6 pt-7" style={{ backgroundColor: PAPER }}>
+        <StatusBar />
+        <div className="mx-auto mt-6 w-full max-w-[280px]">
+          <CheckContent />
+        </div>
+        <div className="mx-auto mt-auto w-full max-w-[280px]">
+          <TabBar current="Kids" />
+        </div>
+      </div>
+    </TabletFrame>
   );
 }
 
@@ -308,15 +286,6 @@ function AddChildContent() {
   );
 }
 
-/** The add-a-child question, as its own floating card: no phone chrome, for a section that wants the interface without another whole bezel on the page. */
-export function AddChildCard() {
-  return (
-    <div className="w-full max-w-[300px] rounded-xl border bg-white p-4 shadow-[0_18px_32px_-16px_rgba(26,29,36,0.35)]" style={{ borderColor: LINE }}>
-      <AddChildContent />
-    </div>
-  );
-}
-
 /**
  * Screen 3: adding a child, drawn from AddChildFlow.tsx's real shape:
  * one question live at a time, what's answered standing above it, and
@@ -337,6 +306,23 @@ export function AddChildScreenMockup() {
         <TabBar current="Kids" />
       </div>
     </PhoneFrame>
+  );
+}
+
+/** Adding a child, on a tablet: the same real screen, centered in the wider frame rather than stretched to fill it -- this product has no separate tablet-specific layout, so showing one would be inventing UI that doesn't exist. */
+export function AddChildTabletMockup() {
+  return (
+    <TabletFrame accent={PLUM}>
+      <div className="flex h-full flex-col px-8 pb-6 pt-7" style={{ backgroundColor: PAPER }}>
+        <StatusBar />
+        <div className="mx-auto mt-6 w-full max-w-[280px]">
+          <AddChildContent />
+        </div>
+        <div className="mx-auto mt-auto w-full max-w-[280px]">
+          <TabBar current="Kids" />
+        </div>
+      </div>
+    </TabletFrame>
   );
 }
 

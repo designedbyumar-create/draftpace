@@ -20,9 +20,8 @@ import { buildProductStructuredData, buildFaqStructuredData, coverImagePath } fr
 import { GuidesForCompanion } from "@/components/public/guides/GuideLinks";
 import {
   OverviewScreenMockup,
-  TaskRowCard,
-  CheckResultCard,
-  AddChildCard,
+  AddChildTabletMockup,
+  CheckTabletMockup,
   BookCover,
 } from "../shop/[productSlug]/homeschoolingCompanionVisuals";
 
@@ -144,19 +143,9 @@ export default async function HomeschoolingCompanionPage({
               </p>
             </div>
 
-            {/* The real Today screen, with one of its own task cards
-                floating free beside it for depth: the same two
-                presentations (full phone, bare card) the showcase below
-                uses throughout, introduced here rather than two phones
-                stacked on each other. Both real recreations of the
-                shipped UI, never a photo or a generic dashboard. */}
-            <div className="relative mx-auto w-full max-w-[360px] py-6">
-              <div className="absolute -right-8 bottom-6 w-[62%] rotate-3">
-                <TaskRowCard />
-              </div>
-              <div className="relative">
-                <OverviewScreenMockup />
-              </div>
+            {/* The real Today screen. One clean phone, no tricks. */}
+            <div className="mx-auto w-full max-w-[300px] py-6">
+              <OverviewScreenMockup />
             </div>
           </div>
         </Container>
@@ -231,12 +220,12 @@ export default async function HomeschoolingCompanionPage({
             See exactly what you&apos;re getting.
           </h2>
           <p className="mt-4 max-w-[60ch] text-body leading-relaxed text-[var(--muted)]">
-            Four real pieces of the shipped product, shown four different ways: a full screen, two cards pulled out
-            of it, and the printed book as the paper object it actually is.
+            Four real pieces of the shipped product: on phone, on tablet, and the printed book as the paper object
+            it actually is.
           </p>
 
           <div className="mt-10 flex flex-col gap-16">
-            {/* Row 1: the full phone, the one place on the page the whole interface earns a complete screen. */}
+            {/* Row 1: the full phone. */}
             <div className="grid items-center gap-10 sm:grid-cols-[260px_1fr]">
               <div className="mx-auto w-full max-w-[220px]">
                 <OverviewScreenMockup />
@@ -250,12 +239,10 @@ export default async function HomeschoolingCompanionPage({
               </div>
             </div>
 
-            {/* Row 2: the question itself, pulled out of the phone as its own card. */}
-            <div className="grid items-center gap-10 sm:grid-cols-[260px_1fr] sm:[direction:rtl]">
-              <div className="mx-auto flex w-full max-w-[260px] justify-center sm:[direction:ltr]">
-                <div className="-rotate-2">
-                  <AddChildCard />
-                </div>
+            {/* Row 2: the same real screen, on a tablet. */}
+            <div className="grid items-center gap-10 sm:grid-cols-[300px_1fr] sm:[direction:rtl]">
+              <div className="mx-auto w-full max-w-[280px] sm:[direction:ltr]">
+                <AddChildTabletMockup />
               </div>
               <div className="sm:[direction:ltr]">
                 <h3 className="font-serif text-heading-sm font-semibold tracking-tight">Adding a child takes about a minute</h3>
@@ -266,12 +253,10 @@ export default async function HomeschoolingCompanionPage({
               </div>
             </div>
 
-            {/* Row 3: the check result, the same bare-card treatment, tilted the other way for rhythm. */}
-            <div className="grid items-center gap-10 sm:grid-cols-[260px_1fr]">
-              <div className="mx-auto flex w-full max-w-[260px] justify-center">
-                <div className="rotate-2">
-                  <CheckResultCard />
-                </div>
+            {/* Row 3: the check result, also on a tablet. */}
+            <div className="grid items-center gap-10 sm:grid-cols-[300px_1fr]">
+              <div className="mx-auto w-full max-w-[280px]">
+                <CheckTabletMockup />
               </div>
               <div>
                 <h3 className="font-serif text-heading-sm font-semibold tracking-tight">An honest check, not a score</h3>
@@ -282,12 +267,10 @@ export default async function HomeschoolingCompanionPage({
               </div>
             </div>
 
-            {/* Row 4: the printed book, as paper, not a phone screen. */}
+            {/* Row 4: the printed book, as paper, not a phone or tablet screen. */}
             <div className="grid items-center gap-10 sm:grid-cols-[260px_1fr] sm:[direction:rtl]">
               <div className="mx-auto flex w-full max-w-[260px] justify-center sm:[direction:ltr]">
-                <div className="-rotate-1">
-                  <BookCover />
-                </div>
+                <BookCover />
               </div>
               <div className="sm:[direction:ltr]">
                 <h3 className="font-serif text-heading-sm font-semibold tracking-tight">The printed half</h3>
