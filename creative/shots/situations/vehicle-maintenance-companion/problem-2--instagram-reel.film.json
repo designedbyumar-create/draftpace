@@ -11,8 +11,8 @@
   "width": 1080,
   "height": 1920,
   "fps": 30,
-  "durationInFrames": 392,
-  "structure": "situationMoment",
+  "durationInFrames": 483,
+  "structure": "situationInside",
   "angle": {
     "text": "A used or inherited car has no honest service history to check.",
     "source": "problemsSolved[1].problem"
@@ -43,7 +43,7 @@
     {
       "id": "moment",
       "kind": "title",
-      "variant": "editorial",
+      "variant": "label",
       "copy": [
         {
           "text": "A used or inherited car has no honest service history to check.",
@@ -56,7 +56,7 @@
       "why": "Opens on the moment as the listing describes it: the situation the viewer is in right now.",
       "from": 0,
       "dur": 115,
-      "ground": "light",
+      "ground": "accent",
       "transition": "cut",
       "sfx": [],
       "lines": [
@@ -115,6 +115,49 @@
       ]
     },
     {
+      "id": "also",
+      "kind": "phone",
+      "variant": "proof",
+      "copy": [],
+      "caption": {
+        "text": "Print my service history for a buyer",
+        "source": "tasks[5].label"
+      },
+      "screen": {
+        "src": "screens/vehicle-maintenance-companion-history.png",
+        "pose": "float",
+        "focus": {
+          "at": 0.45,
+          "y": 236,
+          "h": 364,
+          "region": "log"
+        },
+        "scroll": []
+      },
+      "why": "One more real thing an owner does here, in the listing's own task wording, on the screen it happens on. Screen: \"History\" (What has been done and when: each service dated, with the mileage, the shop and the cost.) chosen because it is the real screen closest to \"Print my service history for a buyer\"; focus on \"Oil and filter change\".",
+      "from": 308,
+      "dur": 103,
+      "ground": "light",
+      "transition": "zoomThrough",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "whoosh",
+          "volume": 0.32
+        },
+        {
+          "at": 12,
+          "cue": "pop",
+          "volume": 0.42
+        },
+        {
+          "at": 46,
+          "cue": "tap",
+          "volume": 0.55
+        }
+      ]
+    },
+    {
       "id": "cta",
       "kind": "cta",
       "variant": "soft",
@@ -129,14 +172,14 @@
         }
       ],
       "why": "Instagram Reel punishes an obvious ad; a soft close names the product and where to find it.",
-      "from": 308,
+      "from": 399,
       "dur": 84,
-      "ground": "ink",
-      "transition": "zoomThrough",
+      "ground": "accent",
+      "transition": "radial",
       "sfx": [
         {
           "at": 0,
-          "cue": "whoosh",
+          "cue": "swish",
           "volume": 0.32
         },
         {
@@ -175,13 +218,13 @@
     },
     {
       "topic": "Structure",
-      "decision": "The moment: The moment as it feels, set dark, then the help in the light, then what to do next.",
-      "because": "Best fit for a awareness film on Instagram Reel (platform fit 3, goal fit 3, already used for this product ×1, already used on Instagram Reel ×7). Other candidates: Inside the tool (-29.0)."
+      "decision": "Inside the tool: The moment, then how the product helps on its real screen, then one more real thing an owner does in it.",
+      "because": "Best fit for a awareness film on Instagram Reel (platform fit 2, goal fit 2, already used for this product ×1, already used on Instagram Reel ×5). Other candidates: The moment (-26.3)."
     },
     {
       "topic": "Angle",
       "decision": "\"A used or inherited car has no honest service history to check.\"",
-      "because": "The moment \"A used or inherited car has no honest service history to check.\", then how Vehicle Maintenance Companion helps."
+      "because": "The moment \"A used or inherited car has no honest service history to check.\", how Vehicle Maintenance Companion helps, and one more real thing it does: \"Print my service history for a buyer\"."
     },
     {
       "topic": "Transitions",
@@ -199,18 +242,13 @@
       "because": "Grounds light → ink → light → accent: a warm accent, so light grounds lead and the accent is saved for the turns."
     },
     {
-      "topic": "Variation",
-      "decision": "Rotated the ground rhythm",
-      "because": "Its shape was 0.88 similar to sit-vehicle-maintenance-companion-search-6--instagram-reel; a different film, not the same one re-coloured."
-    },
-    {
       "topic": "Sound",
       "decision": "Full sound design, mid-energy bed",
       "because": "Sound-on placement: every transition, landing and reveal has a cue, and the bed ducks under the brand moment."
     },
     {
       "topic": "Length",
-      "decision": "13.1s, 3 scenes",
+      "decision": "16.1s, 4 scenes",
       "because": "Each scene is held for the time its words take to read on Instagram Reel (0.26s a word), inside 12–35s."
     }
   ]

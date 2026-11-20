@@ -11,8 +11,8 @@
   "width": 1080,
   "height": 1920,
   "fps": 30,
-  "durationInFrames": 446,
-  "structure": "situationMoment",
+  "durationInFrames": 511,
+  "structure": "situationInside",
   "angle": {
     "text": "A sitter or grandparent needs to know what to avoid and who to call, and a text message is not enough.",
     "source": "problemsSolved[1].problem"
@@ -43,7 +43,7 @@
     {
       "id": "moment",
       "kind": "title",
-      "variant": "native",
+      "variant": "label",
       "copy": [
         {
           "text": "A sitter or grandparent needs to know what to avoid and who to call, and a text message is not enough.",
@@ -111,6 +111,48 @@
       ]
     },
     {
+      "id": "also",
+      "kind": "phone",
+      "variant": "proof",
+      "copy": [],
+      "caption": {
+        "text": "Add somebody to the binder",
+        "source": "tasks[1].label"
+      },
+      "screen": {
+        "src": "screens/family-health-binder-members.png",
+        "pose": "tiltRight",
+        "focus": {
+          "at": 0.45,
+          "y": 216,
+          "h": 180,
+          "region": "person"
+        }
+      },
+      "why": "One more real thing an owner does here, in the listing's own task wording, on the screen it happens on. Screen: \"Family\" (One person's card: age, allergies, medications, and tabs for health, vaccines and care team.) chosen because it is the real screen closest to \"Add somebody to the binder\"; focus on \"Sam (example)\".",
+      "from": 368,
+      "dur": 71,
+      "ground": "accent",
+      "transition": "whip",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "swish",
+          "volume": 0.32
+        },
+        {
+          "at": 12,
+          "cue": "pop",
+          "volume": 0.42
+        },
+        {
+          "at": 32,
+          "cue": "tap",
+          "volume": 0.55
+        }
+      ]
+    },
+    {
       "id": "cta",
       "kind": "cta",
       "variant": "soft",
@@ -125,9 +167,9 @@
         }
       ],
       "why": "TikTok punishes an obvious ad; a soft close names the product and where to find it.",
-      "from": 368,
+      "from": 433,
       "dur": 78,
-      "ground": "ink",
+      "ground": "accent",
       "transition": "blurDissolve",
       "sfx": [
         {
@@ -171,13 +213,13 @@
     },
     {
       "topic": "Structure",
-      "decision": "The moment: The moment as it feels, set dark, then the help in the light, then what to do next.",
-      "because": "Best fit for a awareness film on TikTok (platform fit 3, goal fit 3, already used for this product ×2, already used on TikTok ×2). Other candidates: Inside the tool (-11.5)."
+      "decision": "Inside the tool: The moment, then how the product helps on its real screen, then one more real thing an owner does in it.",
+      "because": "Best fit for a awareness film on TikTok (platform fit 2, goal fit 2, already used for this product ×2, already used on TikTok ×1). Other candidates: The moment (-17.4)."
     },
     {
       "topic": "Angle",
       "decision": "\"A sitter or grandparent needs to know what to avoid and who to call, and a text message is not enough.\"",
-      "because": "The moment \"A sitter or grandparent needs to know what to avoid and who to call, and a text message is not enough.\", then how Family Health Binder helps."
+      "because": "The moment \"A sitter or grandparent needs to know what to avoid and who to call, and a text message is not enough.\", how Family Health Binder helps, and one more real thing it does: \"Add somebody to the binder\"."
     },
     {
       "topic": "Transitions",
@@ -197,7 +239,7 @@
     {
       "topic": "Variation",
       "decision": "Rotated the ground rhythm",
-      "because": "Its shape was 0.88 similar to sit-alongside-problem-3--tiktok; a different film, not the same one re-coloured."
+      "because": "Its shape was 0.74 similar to sit-alongside-search-3--tiktok; a different film, not the same one re-coloured."
     },
     {
       "topic": "Sound",
@@ -206,7 +248,7 @@
     },
     {
       "topic": "Length",
-      "decision": "14.9s, 3 scenes",
+      "decision": "17.0s, 4 scenes",
       "because": "Each scene is held for the time its words take to read on TikTok (0.24s a word), inside 12–35s."
     }
   ]

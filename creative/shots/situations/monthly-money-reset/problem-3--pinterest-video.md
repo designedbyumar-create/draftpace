@@ -18,9 +18,9 @@
 | **Transitions** | Transitions follow the product's own identity motif, "ledger" | Transitions follow the product's own identity motif, "ledger": a ledger is ruled lines, so scenes are revealed row by row. |
 | **Camera** | Camera "float" | Camera "float": a gentle float that keeps a held frame alive without demanding attention. |
 | **Colour** | Grounds ink → light → light → accent | Grounds ink → light → light → accent: a cool accent, so a darker ground is used for contrast at a turn. |
-| **Variation** | Rotated the ground rhythm | Its shape was 0.88 similar to sit-homeschooling-companion-search-2--pinterest-video; a different film, not the same one re-coloured. |
-| **Variation** | Changed the camera | Its shape was 0.78 similar to sit-homeschooling-companion-problem-1--instagram-feed; a different film, not the same one re-coloured. |
-| **Variation** | Reordered the transitions | Its shape was 0.88 similar to sit-homeschooling-companion-problem-4--pinterest-video; a different film, not the same one re-coloured. |
+| **Variation** | Rotated the ground rhythm | Its shape was 0.78 similar to sit-homeschooling-companion-problem-1--instagram-feed; a different film, not the same one re-coloured. |
+| **Variation** | Changed the camera | Its shape was 0.78 similar to sit-monthly-money-reset-problem-1--facebook-feed; a different film, not the same one re-coloured. |
+| **Variation** | Reordered the transitions | Its shape was 0.78 similar to sit-monthly-money-reset-problem-2--youtube-short; a different film, not the same one re-coloured. |
 | **Sound** | Light sound design, low-energy bed | Most of this audience never unmutes, so nothing depends on sound; cues are kept quieter and sparser for those who do. |
 | **Length** | 21.2s, 3 scenes | Each scene is held for the time its words take to read on Pinterest video pin (0.32s a word), inside 10–32s. |
 

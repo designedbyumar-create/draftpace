@@ -12,7 +12,7 @@
   "width": 1080,
   "height": 1920,
   "fps": 30,
-  "durationInFrames": 906,
+  "durationInFrames": 837,
   "structure": "situationWords",
   "angle": {
     "text": "I can never remember my child's medications at the doctor",
@@ -69,25 +69,30 @@
       ]
     },
     {
-      "id": "step-1",
-      "kind": "title",
-      "variant": "label",
+      "id": "what-to-do",
+      "kind": "list",
+      "variant": "checklist",
       "copy": [
         {
-          "text": "New prescription, new dose or a stop: update the page that day.",
-          "source": "guide:medication-list-what-to-write-down/body[4].steps[0].what#0"
+          "text": "Identify the person and write the date of this check.",
+          "source": "guide:medication-list-what-to-write-down/body[2].items[0]#0"
+        },
+        {
+          "text": "Write actual use separately if it differs from the instruction.",
+          "source": "guide:medication-list-what-to-write-down/body[2].items[3]#0"
+        },
+        {
+          "text": "Separate active, stopped and uncertain entries.",
+          "source": "guide:medication-list-what-to-write-down/body[2].items[5]#0"
         }
       ],
       "eyebrow": {
-        "text": "The day something changes",
-        "source": "guide:medication-list-what-to-write-down/body[4].steps[0].when"
+        "text": "Build and check the list",
+        "source": "guide:medication-list-what-to-write-down/body[2].heading"
       },
-      "emphasis": [
-        "prescription"
-      ],
-      "why": "What to do, in order, from the guide \"How to keep a family medication list\": \"The day something changes\".",
+      "why": "What to do about it, from the guide \"How to keep an accurate medication list\": its own checklist.",
       "from": 87,
-      "dur": 167,
+      "dur": 353,
       "ground": "light",
       "transition": "cardSlide",
       "sfx": [
@@ -95,87 +100,22 @@
           "at": 0,
           "cue": "swish",
           "volume": 0.32
-        }
-      ],
-      "lines": [
-        [
-          "New prescription, new",
-          "dose or a stop: update",
-          "the page that day."
-        ]
-      ]
-    },
-    {
-      "id": "step-2",
-      "kind": "title",
-      "variant": "label",
-      "copy": [
+        },
         {
-          "text": "Look at the bottles and correct the list.",
-          "source": "guide:medication-list-what-to-write-down/body[4].steps[1].what#0"
-        }
-      ],
-      "eyebrow": {
-        "text": "Before any visit or form",
-        "source": "guide:medication-list-what-to-write-down/body[4].steps[1].when"
-      },
-      "emphasis": [
-        "bottles"
-      ],
-      "why": "What to do, in order, from the guide \"How to keep a family medication list\": \"Before any visit or form\".",
-      "from": 242,
-      "dur": 143,
-      "ground": "light",
-      "transition": "blurDissolve",
-      "sfx": [
+          "at": 10,
+          "cue": "pop",
+          "volume": 0.45
+        },
         {
-          "at": 0,
-          "cue": "whoosh",
-          "volume": 0.32
-        }
-      ],
-      "lines": [
-        [
-          "Look at the bottles",
-          "and correct the list."
-        ]
-      ]
-    },
-    {
-      "id": "step-3",
-      "kind": "title",
-      "variant": "label",
-      "copy": [
+          "at": 98,
+          "cue": "pop",
+          "volume": 0.45
+        },
         {
-          "text": "Read it against the bottles, even if nothing changed.",
-          "source": "guide:medication-list-what-to-write-down/body[4].steps[2].what#0"
+          "at": 186,
+          "cue": "pop",
+          "volume": 0.45
         }
-      ],
-      "eyebrow": {
-        "text": "Every few months",
-        "source": "guide:medication-list-what-to-write-down/body[4].steps[2].when"
-      },
-      "emphasis": [
-        "nothing"
-      ],
-      "why": "What to do, in order, from the guide \"How to keep a family medication list\": \"Every few months\".",
-      "from": 373,
-      "dur": 136,
-      "ground": "accent",
-      "transition": "cardSlide",
-      "sfx": [
-        {
-          "at": 0,
-          "cue": "swish",
-          "volume": 0.32
-        }
-      ],
-      "lines": [
-        [
-          "Read it against the",
-          "bottles, even if",
-          "nothing changed."
-        ]
       ]
     },
     {
@@ -189,7 +129,7 @@
       },
       "screen": {
         "src": "screens/family-health-binder-members.png",
-        "pose": "tiltLeft",
+        "pose": "tiltRight",
         "focus": {
           "at": 0.45,
           "y": 528,
@@ -202,14 +142,14 @@
         "text": "Family Health Binder",
         "source": "title"
       },
-      "from": 497,
+      "from": 428,
       "dur": 303,
-      "ground": "accent",
-      "transition": "cardSlide",
+      "ground": "light",
+      "transition": "blurDissolve",
       "sfx": [
         {
           "at": 0,
-          "cue": "swish",
+          "cue": "whoosh",
           "volume": 0.32
         },
         {
@@ -243,9 +183,9 @@
         "source": "micro"
       },
       "why": "Ends on where to read the whole guide, with the product beneath it: the viewer leaves with the next step, not only a pitch.",
-      "from": 788,
+      "from": 719,
       "dur": 118,
-      "ground": "light",
+      "ground": "accent",
       "transition": "blurDissolve",
       "sfx": [
         {
@@ -279,7 +219,7 @@
     },
     {
       "topic": "Guide",
-      "decision": "\"How to keep a family medication list\" (draftpace.com/guides/medication-list-what-to-write-down)",
+      "decision": "\"How to keep an accurate medication list\" (draftpace.com/guides/medication-list-what-to-write-down)",
       "because": "The guide that covers this moment: what to do comes from it, and the film ends on it."
     },
     {
@@ -295,12 +235,12 @@
     {
       "topic": "Structure",
       "decision": "In their words: The moment typed the way a person searches it, then what to do about it, then the product doing it.",
-      "because": "Best fit for a awareness film on YouTube Short (platform fit 3, goal fit 3). Other candidates: Inside the tool (3.7), The moment (-0.2)."
+      "because": "Best fit for a awareness film on YouTube Short (platform fit 3, goal fit 3). Other candidates: What to do first (4.7), Inside the tool (3.5)."
     },
     {
       "topic": "Angle",
       "decision": "\"I can never remember my child's medications at the doctor\"",
-      "because": "A situation people search for, \"I can never remember my child's medications at the doctor\", with the steps from \"How to keep a family medication list\", and how Family Health Binder helps."
+      "because": "A situation people search for, \"I can never remember my child's medications at the doctor\", with the steps from \"How to keep an accurate medication list\", and how Family Health Binder helps."
     },
     {
       "topic": "Transitions",
@@ -324,7 +264,7 @@
     },
     {
       "topic": "Length",
-      "decision": "30.2s, 6 scenes",
+      "decision": "27.9s, 4 scenes",
       "because": "Each scene is held for the time its words take to read on YouTube Short (0.26s a word), inside 15–40s."
     }
   ]

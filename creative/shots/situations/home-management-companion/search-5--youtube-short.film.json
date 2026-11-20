@@ -12,7 +12,7 @@
   "width": 1080,
   "height": 1920,
   "fps": 30,
-  "durationInFrames": 835,
+  "durationInFrames": 766,
   "structure": "situationChecklist",
   "angle": {
     "text": "I don't know which filter or part my appliance takes",
@@ -74,29 +74,25 @@
       "variant": "checklist",
       "copy": [
         {
-          "text": "The original receipt or order confirmation email.",
-          "source": "guide:how-to-find-the-model-number-on-any-appliance/body[7].items[0]#0"
+          "text": "Use the manufacturer's model-locator instructions for that product type.",
+          "source": "guide:how-to-find-the-model-number-on-any-appliance/body[2].items[1]#0"
         },
         {
-          "text": "The manual or the box, if either survived.",
-          "source": "guide:how-to-find-the-model-number-on-any-appliance/body[7].items[1]#0"
+          "text": "Photograph the full plate and a readable close view, keeping all suffixes.",
+          "source": "guide:how-to-find-the-model-number-on-any-appliance/body[2].items[3]#0"
         },
         {
-          "text": "A past repair invoice.",
-          "source": "guide:how-to-find-the-model-number-on-any-appliance/body[7].items[2]#0"
-        },
-        {
-          "text": "The retailer's account or the maker's registration, if you registered the product.",
-          "source": "guide:how-to-find-the-model-number-on-any-appliance/body[7].items[3]#0"
+          "text": "Copy model and serial into separate labeled fields.",
+          "source": "guide:how-to-find-the-model-number-on-any-appliance/body[2].items[4]#0"
         }
       ],
       "eyebrow": {
-        "text": "When the label is gone or unreadable",
-        "source": "guide:how-to-find-the-model-number-on-any-appliance/body[7].heading"
+        "text": "Capture the identifier correctly",
+        "source": "guide:how-to-find-the-model-number-on-any-appliance/body[2].heading"
       },
-      "why": "What to do about it, from the guide \"How to find the model number on any appliance\": its own checklist, the first sentence of each item.",
+      "why": "What to do about it, from the guide \"How to find an appliance model number safely\": its own checklist, the first sentence of each item.",
       "from": 87,
-      "dur": 437,
+      "dur": 368,
       "ground": "accent",
       "transition": "slideUp",
       "sfx": [
@@ -111,17 +107,12 @@
           "volume": 0.45
         },
         {
-          "at": 97,
+          "at": 102,
           "cue": "pop",
           "volume": 0.45
         },
         {
-          "at": 184,
-          "cue": "pop",
-          "volume": 0.45
-        },
-        {
-          "at": 271,
+          "at": 194,
           "cue": "pop",
           "volume": 0.45
         }
@@ -151,7 +142,7 @@
         "text": "Home Base",
         "source": "title"
       },
-      "from": 512,
+      "from": 443,
       "dur": 225,
       "ground": "light",
       "transition": "cardSlide",
@@ -192,7 +183,7 @@
         "source": "micro"
       },
       "why": "Ends on where to read the whole guide, with the product beneath it: the viewer leaves with the next step, not only a pitch.",
-      "from": 725,
+      "from": 656,
       "dur": 110,
       "ground": "ink",
       "transition": "blurDissolve",
@@ -228,7 +219,7 @@
     },
     {
       "topic": "Guide",
-      "decision": "\"How to find the model number on any appliance\" (draftpace.com/guides/how-to-find-the-model-number-on-any-appliance)",
+      "decision": "\"How to find an appliance model number safely\" (draftpace.com/guides/how-to-find-the-model-number-on-any-appliance)",
       "because": "The guide that covers this moment: what to do comes from it, and the film ends on it."
     },
     {
@@ -244,12 +235,12 @@
     {
       "topic": "Structure",
       "decision": "What to do first: The moment, the guide's own checklist for it, then the product that keeps track of it.",
-      "because": "Best fit for a awareness film on YouTube Short (platform fit 3, goal fit 3, already used on YouTube Short ×1). Other candidates: Inside the tool (-6.0), The moment (-7.7)."
+      "because": "Best fit for a awareness film on YouTube Short (platform fit 3, goal fit 3, already used for this product ×1, already used on YouTube Short ×1). Other candidates: In their words (-1.9), Inside the tool (-6.6)."
     },
     {
       "topic": "Angle",
       "decision": "\"I don't know which filter or part my appliance takes\"",
-      "because": "The moment \"I don't know which filter or part my appliance takes\", the checklist from \"How to find the model number on any appliance\", then how Home Base helps."
+      "because": "The moment \"I don't know which filter or part my appliance takes\", the checklist from \"How to find an appliance model number safely\", then how Home Base helps."
     },
     {
       "topic": "Transitions",
@@ -273,7 +264,7 @@
     },
     {
       "topic": "Length",
-      "decision": "27.8s, 4 scenes",
+      "decision": "25.5s, 4 scenes",
       "because": "Each scene is held for the time its words take to read on YouTube Short (0.26s a word), inside 15–40s."
     }
   ]

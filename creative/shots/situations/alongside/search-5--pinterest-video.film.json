@@ -12,8 +12,8 @@
   "width": 1000,
   "height": 1500,
   "fps": 30,
-  "durationInFrames": 866,
-  "structure": "situationWords",
+  "durationInFrames": 725,
+  "structure": "situationInside",
   "angle": {
     "text": "I have brain fog and can't face life admin",
     "source": "searchedProblems[4].phrase"
@@ -44,7 +44,7 @@
     {
       "id": "moment",
       "kind": "title",
-      "variant": "quote",
+      "variant": "label",
       "copy": [
         {
           "text": "I have brain fog and can't face life admin",
@@ -65,79 +65,6 @@
           "I have brain fog",
           "and can't face",
           "life admin"
-        ]
-      ]
-    },
-    {
-      "id": "step-1",
-      "kind": "title",
-      "variant": "editorial",
-      "copy": [
-        {
-          "text": "Put the details outside your head.",
-          "source": "guide:life-admin-with-brain-fog/body[3].items[0]#0"
-        }
-      ],
-      "eyebrow": {
-        "text": "1",
-        "source": "micro"
-      },
-      "emphasis": [
-        "details"
-      ],
-      "why": "Step 1 from the guide \"Life admin with brain fog: long covid, illness, grief\", numbered as the guide numbers it.",
-      "from": 112,
-      "dur": 126,
-      "ground": "light",
-      "transition": "iris",
-      "sfx": [
-        {
-          "at": 0,
-          "cue": "whoosh",
-          "volume": 0.192
-        }
-      ],
-      "lines": [
-        [
-          "Put the details",
-          "outside your head."
-        ]
-      ]
-    },
-    {
-      "id": "step-2",
-      "kind": "title",
-      "variant": "editorial",
-      "copy": [
-        {
-          "text": "Write the next physical action, not the goal.",
-          "source": "guide:life-admin-with-brain-fog/body[3].items[1]#0"
-        }
-      ],
-      "eyebrow": {
-        "text": "2",
-        "source": "micro"
-      },
-      "emphasis": [
-        "physical"
-      ],
-      "why": "Step 2 from the guide \"Life admin with brain fog: long covid, illness, grief\", numbered as the guide numbers it.",
-      "from": 226,
-      "dur": 148,
-      "ground": "light",
-      "transition": "blurDissolve",
-      "sfx": [
-        {
-          "at": 0,
-          "cue": "whoosh",
-          "volume": 0.192
-        }
-      ],
-      "lines": [
-        [
-          "Write the next",
-          "physical action,",
-          "not the goal."
         ]
       ]
     },
@@ -165,9 +92,9 @@
         "text": "ADHD Life Companion",
         "source": "title"
       },
-      "from": 362,
+      "from": 112,
       "dur": 366,
-      "ground": "accent",
+      "ground": "light",
       "transition": "iris",
       "sfx": [
         {
@@ -182,6 +109,48 @@
         },
         {
           "at": 165,
+          "cue": "tap",
+          "volume": 0.33
+        }
+      ]
+    },
+    {
+      "id": "also",
+      "kind": "phone",
+      "variant": "proof",
+      "copy": [],
+      "caption": {
+        "text": "Get through a call I'm dreading",
+        "source": "tasks[1].label"
+      },
+      "screen": {
+        "src": "screens/alongside-help.png",
+        "pose": "tiltLeft",
+        "focus": {
+          "at": 0.45,
+          "y": 84,
+          "h": 50,
+          "region": "question"
+        }
+      },
+      "why": "One more real thing an owner does here, in the listing's own task wording, on the screen it happens on. Screen: \"What do you need to do?\" (The help picker: plain-language situations to choose from, like a call that has been sitting there or something too big to start.) chosen because it is the real screen closest to \"Get through a call I'm dreading\"; focus on \"What do you need to do?\".",
+      "from": 466,
+      "dur": 121,
+      "ground": "light",
+      "transition": "blurDissolve",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "whoosh",
+          "volume": 0.192
+        },
+        {
+          "at": 12,
+          "cue": "pop",
+          "volume": 0.252
+        },
+        {
+          "at": 54,
           "cue": "tap",
           "volume": 0.33
         }
@@ -206,7 +175,7 @@
         "source": "micro"
       },
       "why": "Ends on where to read the whole guide, with the product beneath it: the viewer leaves with the next step, not only a pitch.",
-      "from": 716,
+      "from": 575,
       "dur": 150,
       "ground": "accent",
       "transition": "blurDissolve",
@@ -242,7 +211,7 @@
     },
     {
       "topic": "Guide",
-      "decision": "\"Life admin with brain fog: long covid, illness, grief\" (draftpace.com/guides/life-admin-with-brain-fog)",
+      "decision": "\"Life admin with brain fog: keep your place\" (draftpace.com/guides/life-admin-with-brain-fog)",
       "because": "The guide that covers this moment: what to do comes from it, and the film ends on it."
     },
     {
@@ -257,13 +226,13 @@
     },
     {
       "topic": "Structure",
-      "decision": "In their words: The moment typed the way a person searches it, then what to do about it, then the product doing it.",
-      "because": "Best fit for a awareness film on Pinterest video pin (platform fit 3, goal fit 3, already used for this product ×1, already used on Pinterest video pin ×1). Other candidates: The moment (-1.8), Inside the tool (-7.4)."
+      "decision": "Inside the tool: The moment, then how the product helps on its real screen, then one more real thing an owner does in it.",
+      "because": "Best fit for a awareness film on Pinterest video pin (platform fit 2, goal fit 2, already used for this product ×1). Other candidates: In their words (-1.2), The moment (-1.8)."
     },
     {
       "topic": "Angle",
       "decision": "\"I have brain fog and can't face life admin\"",
-      "because": "A situation people search for, \"I have brain fog and can't face life admin\", with the steps from \"Life admin with brain fog: long covid, illness, grief\", and how ADHD Life Companion helps."
+      "because": "The moment \"I have brain fog and can't face life admin\", how ADHD Life Companion helps, and one more real thing it does: \"Get through a call I'm dreading\"."
     },
     {
       "topic": "Transitions",
@@ -281,18 +250,13 @@
       "because": "Grounds accent → light → light → accent: a warm accent, so light grounds lead and the accent is saved for the turns."
     },
     {
-      "topic": "Edit",
-      "decision": "Cut \"step-3\"",
-      "because": "It would run past 32s, the most Pinterest video pin holds attention for."
-    },
-    {
       "topic": "Sound",
       "decision": "Light sound design, low-energy bed",
       "because": "Most of this audience never unmutes, so nothing depends on sound; cues are kept quieter and sparser for those who do."
     },
     {
       "topic": "Length",
-      "decision": "28.9s, 5 scenes",
+      "decision": "24.2s, 4 scenes",
       "because": "Each scene is held for the time its words take to read on Pinterest video pin (0.32s a word), inside 10–32s."
     }
   ]

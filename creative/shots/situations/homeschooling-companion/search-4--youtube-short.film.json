@@ -12,7 +12,7 @@
   "width": 1080,
   "height": 1920,
   "fps": 30,
-  "durationInFrames": 837,
+  "durationInFrames": 822,
   "structure": "situationWords",
   "angle": {
     "text": "What goes in a homeschool portfolio",
@@ -73,25 +73,25 @@
       "variant": "checklist",
       "copy": [
         {
-          "text": "A log of educational activities, with reading materials named by title.",
-          "source": "guide:what-goes-in-a-homeschool-portfolio/body[2].items[0]#0"
+          "text": "Locate the current official instructions for that purpose.",
+          "source": "guide:what-goes-in-a-homeschool-portfolio/body[1].items[1]#0"
         },
         {
-          "text": "A list of subjects covered and the materials or curriculum used.",
-          "source": "guide:what-goes-in-a-homeschool-portfolio/body[2].items[2]#0"
+          "text": "Choose a date range and keep one child's evidence identifiable.",
+          "source": "guide:what-goes-in-a-homeschool-portfolio/body[1].items[2]#0"
         },
         {
-          "text": "Attendance or days schooled, where your state counts them.",
-          "source": "guide:what-goes-in-a-homeschool-portfolio/body[2].items[3]#0"
+          "text": "Check that the log and samples agree.",
+          "source": "guide:what-goes-in-a-homeschool-portfolio/body[1].items[4]#0"
         }
       ],
       "eyebrow": {
-        "text": "The core contents",
-        "source": "guide:what-goes-in-a-homeschool-portfolio/body[2].heading"
+        "text": "Find the purpose before choosing the pages",
+        "source": "guide:what-goes-in-a-homeschool-portfolio/body[1].heading"
       },
-      "why": "What to do about it, from the guide \"What to include in a homeschool portfolio, by subject\": its own checklist.",
+      "why": "What to do about it, from the guide \"What goes in a homeschool portfolio? Keep the evidence\": its own checklist.",
       "from": 56,
-      "dur": 376,
+      "dur": 361,
       "ground": "light",
       "transition": "lineWipe",
       "sfx": [
@@ -106,12 +106,12 @@
           "volume": 0.45
         },
         {
-          "at": 104,
+          "at": 100,
           "cue": "tick",
           "volume": 0.45
         },
         {
-          "at": 198,
+          "at": 190,
           "cue": "tick",
           "volume": 0.45
         }
@@ -141,7 +141,7 @@
         "text": "Homeschooling Companion",
         "source": "title"
       },
-      "from": 420,
+      "from": 405,
       "dur": 319,
       "ground": "light",
       "transition": "slideUp",
@@ -182,7 +182,7 @@
         "source": "micro"
       },
       "why": "Ends on where to read the whole guide, with the product beneath it: the viewer leaves with the next step, not only a pitch.",
-      "from": 727,
+      "from": 712,
       "dur": 110,
       "ground": "accent",
       "transition": "blurDissolve",
@@ -218,7 +218,7 @@
     },
     {
       "topic": "Guide",
-      "decision": "\"What to include in a homeschool portfolio, by subject\" (draftpace.com/guides/what-goes-in-a-homeschool-portfolio)",
+      "decision": "\"What goes in a homeschool portfolio? Keep the evidence\" (draftpace.com/guides/what-goes-in-a-homeschool-portfolio)",
       "because": "The guide that covers this moment: what to do comes from it, and the film ends on it."
     },
     {
@@ -234,12 +234,12 @@
     {
       "topic": "Structure",
       "decision": "In their words: The moment typed the way a person searches it, then what to do about it, then the product doing it.",
-      "because": "Best fit for a awareness film on YouTube Short (platform fit 3, goal fit 3, already used for this product ×1, already used on YouTube Short ×1). Other candidates: Inside the tool (-3.4), What to do first (-5.3)."
+      "because": "Best fit for a awareness film on YouTube Short (platform fit 3, goal fit 3, already used for this product ×1, already used on YouTube Short ×1). Other candidates: The moment (-2.6), What to do first (-4.7)."
     },
     {
       "topic": "Angle",
       "decision": "\"What goes in a homeschool portfolio\"",
-      "because": "A situation people search for, \"What goes in a homeschool portfolio\", with the steps from \"What to include in a homeschool portfolio, by subject\", and how Homeschooling Companion helps."
+      "because": "A situation people search for, \"What goes in a homeschool portfolio\", with the steps from \"What goes in a homeschool portfolio? Keep the evidence\", and how Homeschooling Companion helps."
     },
     {
       "topic": "Transitions",
@@ -263,7 +263,7 @@
     },
     {
       "topic": "Length",
-      "decision": "27.9s, 4 scenes",
+      "decision": "27.4s, 4 scenes",
       "because": "Each scene is held for the time its words take to read on YouTube Short (0.26s a word), inside 15–40s."
     }
   ]

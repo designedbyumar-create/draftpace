@@ -4,16 +4,14 @@ import Link from "next/link";
 import Container from "@/design-system/Container";
 import TextLink from "@/design-system/TextLink";
 import Badge from "@/design-system/Badge";
-import Button from "@/design-system/Button";
-import { ArrowRight, Check, Lock, X } from "@/design-system/Icon";
+import { Check, Lock, X } from "@/design-system/Icon";
 import { shopRegistry } from "@/shop/registry";
-import { allQuestions, discountPercent, formatCompareAtPrice, formatPrice, questionsForStage, type ShopProduct } from "@/shop/definition";
+import { discountPercent, formatCompareAtPrice, formatPrice, questionsForStage, type ShopProduct } from "@/shop/definition";
 import SearchedProblems from "./SearchedProblems";
 import { ensureShopRegistered } from "@/shop/ensureRegistered";
 import RichSection from "./RichSection";
 import type { ReactNode } from "react";
 import ProblemCards from "./ProblemCards";
-import GetFreeProductButton from "../GetFreeProductButton";
 import ProductGallery from "./ProductGallery";
 import ProductScreenCarousel from "./ProductScreenCarousel";
 import DetailTabs, { type DetailTab } from "./DetailTabs";
@@ -23,18 +21,16 @@ import { productRegistry } from "@/product-framework/registry";
 import { ensureProductsRegistered } from "@/products/manifest";
 import { productThemeStyle, PRODUCT_THEME_ATTRIBUTE } from "@/product-framework/themeExtension";
 import { deriveDarkTones } from "@/design-system/accentTone";
-import { createSupabaseServerClient } from "@/lib/supabase/server";
-import { getLemonSqueezyCheckoutUrl, hasLemonSqueezyCheckout } from "@/shop/lemonSqueezyCheckout";
-import CheckoutButton from "@/components/shop/CheckoutButton";
 import { getAreaForProduct } from "@/content/areas";
 import { jsonLd } from "@/lib/structuredData";
 import { GuidesForCompanion } from "@/components/public/guides/GuideLinks";
 import { getGuideBySlug } from "@/content/guides";
 import { withPreservedUtm } from "@/lib/analytics/utm";
 import ViewProductTracker from "@/components/analytics/ViewProductTracker";
-import TrackedLink from "@/components/analytics/TrackedLink";
 import PwaInstallSection from "@/components/public/shop/PwaInstallSection";
 import InclusionsGrid from "./InclusionsGrid";
+import { GetAction, resolveCheckout } from "../GetAction";
+import { coverImagePath, buildProductStructuredData, buildFaqStructuredData } from "../productStructuredData";
 
 export const dynamic = "force-dynamic";
 
@@ -59,7 +55,7 @@ export async function generateMetadata({
    * wasted impression in the one place a link is judged before it is
    * opened. Each cover already names the product and carries its accent.
    */
-  const cover = STORE_COVERS.has(product.slug) ? `/store/${product.slug}-1-cover.webp` : "/og-image.png";
+  const cover = coverImagePath(product.slug);
 
   return {
     title: product.seo.title,
@@ -83,23 +79,6 @@ export async function generateMetadata({
 }
 
 /**
- * Slugs with a generated store cover in public/store. Listed rather than
- * probed: a missing file would otherwise be advertised to every crawler
- * and link unfurler as this product's image.
- */
-const STORE_COVERS = new Set([
-  "personal-finance-companion",
-  "home-management-companion",
-  "alongside",
-  "homeschooling-companion",
-  "personal-life-affairs-companion",
-  "travel-companion",
-  "vehicle-maintenance-companion",
-  "family-health-binder",
-  "monthly-money-reset",
-]);
-
-/**
  * The product page. Its one job is to make one person want one product, and to
  * resolve their distrust as desire builds. Visual-first, the get action stays
  * within reach, and the objection movement sits near the decision. See
@@ -119,11 +98,15 @@ export default async function ShopProductPage({
   if (!product) notFound();
 
   /**
-   * A free product's real page is /free, not a detail page inside a
-   * priced catalogue. Permanent, so the old URL stops competing with the
-   * page that replaced it and passes its authority on rather than
-   * splitting it. Deep links, old shares and anything already indexed
-   * keep working.
+   * A free product's real page is /free, and a product with a bespoke
+   * landing page (canonicalPath) lives there instead of this generic
+   * detail page. Permanent, so the old URL stops competing with the page
+   * that replaced it and passes its authority on rather than splitting
+   * it. Deep links, old shares and anything already indexed keep
+   * working, and so does every generic surface that still builds
+   * `/shop/${slug}` directly (the Shop grid, a guide's cross-sell card,
+   * the sitemap): they resolve through this redirect rather than needing
+   * to know a particular slug now lives somewhere else.
    *
    * UTM parameters ride along: a Pinterest Pin naming this old slug
    * directly still lands with its campaign attribution intact, since
@@ -132,11 +115,12 @@ export default async function ShopProductPage({
    * missing-but-recoverable event.
    */
   if (product.access === "free") permanentRedirect(withPreservedUtm("/free", await searchParams));
+  if (product.canonicalPath) permanentRedirect(withPreservedUtm(product.canonicalPath, await searchParams));
 
   const priceLabel = formatPrice(product);
   const compareAtLabel = formatCompareAtPrice(product);
   const savingsPercent = discountPercent(product);
-  const structuredData = buildStructuredData(product);
+  const structuredData = buildProductStructuredData(product, `https://draftpace.com/shop/${product.slug}`);
   const faqStructuredData = buildFaqStructuredData(product);
   const decidingQuestions = questionsForStage(product, "deciding");
 
@@ -162,7 +146,7 @@ export default async function ShopProductPage({
   // Resolved once per request, server-side, so every GetAction on this page
   // agrees on the exact same checkout link rather than each independently
   // re-deriving it.
-  const checkout = await resolveCheckout(product, resolvedSearchParams);
+  const checkout = await resolveCheckout(product, resolvedSearchParams, `/shop/${product.slug}`);
 
   const detailTabs = buildDetailTabs(product, { accent, installedName, installable, decidingQuestions });
 
@@ -549,203 +533,3 @@ function buildDetailTabs(
   return tabs;
 }
 
-/**
- * Resolved once per request (not per GetAction instance, of which a page
- * can have three) so the hero, mid-page, and final CTA all agree on the
- * exact same checkout link. "signed-out" only fires when a real checkout
- * URL is actually configured: an unauthenticated visitor should never be
- * sent to sign up for a purchase that isn't live yet.
- */
-type CheckoutStatus =
-  | { kind: "not-applicable" }
-  | { kind: "not-configured" }
-  | { kind: "signed-out"; redirectTo: string }
-  | { kind: "ready"; href: string };
-
-async function resolveCheckout(product: ShopProduct, searchParams: Record<string, string | string[] | undefined>): Promise<CheckoutStatus> {
-  if (product.access !== "paid" || product.purchaseAction?.href) return { kind: "not-applicable" };
-  if (!hasLemonSqueezyCheckout(product.slug)) return { kind: "not-configured" };
-
-  const supabase = await createSupabaseServerClient();
-  const {
-    data: { user },
-  } = await supabase.auth.getUser();
-
-  if (!user) {
-    // withPreservedUtm before encodeURIComponent: the campaign has to
-    // survive the round trip through signup and back to this exact
-    // product page, or a Pinterest visitor who signs up mid-visit is the
-    // one visitor this whole system silently fails to attribute.
-    const backTo = withPreservedUtm(`/shop/${product.slug}`, searchParams);
-    return { kind: "signed-out", redirectTo: `/signup?redirectTo=${encodeURIComponent(backTo)}` };
-  }
-
-  const href = getLemonSqueezyCheckoutUrl(product.slug, { userId: user.id, email: user.email ?? null });
-  return href ? { kind: "ready", href } : { kind: "not-configured" };
-}
-
-/** The get action. Free adds the product to the visitor's account; paid
- * links to the real Lemon Squeezy checkout once it's configured and the
- * visitor is signed in. A coming-soon product shows a disabled state
- * instead of a live action. */
-function GetAction({
-  product,
-  checkout,
-  productCategory,
-  size = "md",
-  center = false,
-  fullWidth = false,
-}: {
-  product: ShopProduct;
-  checkout: CheckoutStatus;
-  /** The area label (Money, Home, Travel, ...) this product's page already computed once, passed down rather than re-derived per render. */
-  productCategory: string;
-  size?: "sm" | "md" | "lg";
-  center?: boolean;
-  /** Fills its column, so the buy box reads as one block rather than a button floating in it. */
-  fullWidth?: boolean;
-}) {
-  if (product.availability === "coming-soon") {
-    return (
-      <div className={center ? "inline-flex flex-col items-center gap-1.5" : "flex flex-col gap-1.5"}>
-        <Button size={size} disabled>
-          Coming soon
-        </Button>
-        <p className="text-[12px] text-[var(--faint)]">Not available to get just yet.</p>
-      </div>
-    );
-  }
-
-  const label = product.purchaseAction?.label ?? (product.access === "free" ? "Get it, free" : "Get Lifetime Access");
-
-  // A free product's own Shop page has already made the full case for it.
-  // Posting straight to the activation endpoint (the same one
-  // /app/activate/[productSlug]'s <form> already posts to) skips a second,
-  // near-duplicate "Get {title}, free" confirmation screen for a decision
-  // the visitor already made here. /app/activate/[productSlug] stays
-  // intact as the confirmation screen for paid products (where a distinct
-  // "you're about to be charged" moment still matters) and as a safe
-  // fallback entry point.
-  if (product.access === "free") {
-    return <GetFreeProductButton slug={product.slug} label={label} size={size} analytics={{ productName: product.title }} />;
-  }
-
-  // Paid, with a static href already set on the listing itself (e.g. a
-  // future non-Lemon-Squeezy checkout), unrelated to per-visitor checkout
-  // resolution, so it always wins if present.
-  if (product.purchaseAction?.href) {
-    return (
-      <Button href={product.purchaseAction.href} size={size} fullWidth={fullWidth} iconRight={<ArrowRight size={15} aria-hidden />}>
-        {label}
-      </Button>
-    );
-  }
-
-  if (checkout.kind === "ready") {
-    return (
-      <CheckoutButton
-        href={checkout.href}
-        size={size}
-        fullWidth={fullWidth}
-        iconRight={<ArrowRight size={15} aria-hidden />}
-        analytics={{ productId: product.id, productName: product.title, productCategory, cta: label }}
-      >
-        {label}
-      </CheckoutButton>
-    );
-  }
-
-  if (checkout.kind === "signed-out") {
-    return (
-      <TrackedLink
-        href={checkout.redirectTo}
-        size={size}
-        fullWidth={fullWidth}
-        iconRight={<ArrowRight size={15} aria-hidden />}
-        eventName="product_cta_click"
-        eventParams={{ product_id: product.id, product_name: product.title, cta: label }}
-      >
-        {label}
-      </TrackedLink>
-    );
-  }
-
-  // Checkout isn't configured yet (Lemon Squeezy product/checkout link not
-  // created), or this product isn't paid at all: shown as pending rather
-  // than a dead or fake link.
-  return (
-    <div className={center ? "inline-flex flex-col items-center gap-1.5" : "flex flex-col gap-1.5"}>
-      <Button size={size} disabled iconRight={<ArrowRight size={15} aria-hidden />}>
-        {label}
-      </Button>
-      <p className="text-[12px] text-[var(--faint)]">Checkout opens soon.</p>
-    </div>
-  );
-}
-
-/**
- * Hero product visual: a real screenshot framed in a browser window, the way
- * a live web product actually reaches people, rather than a bare cropped
- * image. A labeled placeholder still shows when a product has no media yet.
- */
-function buildStructuredData(product: ShopProduct) {
-  if (!(product.structuredDataEligible && product.publicationStatus === "published")) return null;
-  const url = `https://draftpace.com/shop/${product.slug}`;
-  return {
-    "@context": "https://schema.org",
-    "@type": "Product",
-    name: product.title,
-    description: product.seo.description,
-    // Google will not show a Product rich result without an image, which
-    // is why this was previously ineligible however complete the rest of
-    // it looked. Absolute, because a crawler does not resolve relative
-    // paths inside JSON-LD.
-    ...(STORE_COVERS.has(product.slug)
-      ? { image: [`https://draftpace.com/store/${product.slug}-1-cover.webp`] }
-      : {}),
-    brand: { "@type": "Brand", name: "Draftpace" },
-    sku: product.slug,
-    url,
-    offers: {
-      "@type": "Offer",
-      url,
-      price: product.access === "free" ? "0" : product.price?.amount.toString(),
-      priceCurrency: product.access === "free" ? "USD" : product.price?.currency,
-      availability: product.availability === "available" ? "https://schema.org/InStock" : "https://schema.org/PreOrder",
-      // One payment, no licence term. Stated so a crawler does not have to
-      // infer it from a price alone.
-      priceValidUntil: "2027-12-31",
-    },
-  };
-}
-
-/**
- * FAQPage schema from the listing's own real questions (whichever field
- * they live in, migrated or not), never a separate hand-authored copy:
- * the same eligibility gate as the Product schema above (published, and
- * structuredDataEligible so an unfinished listing's placeholder answers
- * can never render as a rich result), so the two schemas always appear
- * or stay absent together. Returns null rather than an empty FAQPage
- * when a listing has no questions at all, since Google treats an
- * eligible-but-empty FAQPage as a policy violation, not a shorter valid
- * one.
- */
-function buildFaqStructuredData(product: ShopProduct) {
-  if (!(product.structuredDataEligible && product.publicationStatus === "published")) return null;
-  // allQuestions(), not product.faqs directly: a migrated listing empties
-  // objections/faqs and keeps every question in the new unified
-  // `questions` field instead (see src/shop/definition.ts). Reading
-  // .faqs alone would have rendered an empty FAQPage for every listing
-  // that has already migrated, which is most of them.
-  const questions = allQuestions(product);
-  if (questions.length === 0) return null;
-  return {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    mainEntity: questions.map((q) => ({
-      "@type": "Question",
-      name: q.question,
-      acceptedAnswer: { "@type": "Answer", text: q.answer },
-    })),
-  };
-}

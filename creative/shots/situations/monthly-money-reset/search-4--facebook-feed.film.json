@@ -13,7 +13,7 @@
   "height": 1350,
   "fps": 30,
   "durationInFrames": 638,
-  "structure": "situationWords",
+  "structure": "situationMoment",
   "angle": {
     "text": "My balance says I have money but a bill is coming",
     "source": "searchedProblems[3].phrase"
@@ -44,7 +44,7 @@
     {
       "id": "moment",
       "kind": "title",
-      "variant": "quote",
+      "variant": "editorial",
       "copy": [
         {
           "text": "My balance says I have money but a bill is coming",
@@ -155,7 +155,7 @@
     },
     {
       "topic": "Guide",
-      "decision": "\"Available vs current balance: which one can you spend?\" (draftpace.com/guides/available-balance-vs-current-balance)",
+      "decision": "\"Available vs current balance: what can you spend?\" (draftpace.com/guides/available-balance-vs-current-balance)",
       "because": "The guide that covers this moment: what to do comes from it, and the film ends on it."
     },
     {
@@ -170,13 +170,13 @@
     },
     {
       "topic": "Structure",
-      "decision": "In their words: The moment typed the way a person searches it, then what to do about it, then the product doing it.",
-      "because": "Best fit for a awareness film on Facebook feed video (platform fit 2, goal fit 3, already used for this product ×1). Other candidates: The moment (-10.1)."
+      "decision": "The moment: The moment as it feels, set dark, then the help in the light, then what to do next.",
+      "because": "Best fit for a awareness film on Facebook feed video (platform fit 2, goal fit 3, already used on Facebook feed video ×1). Other candidates: In their words (-4.7)."
     },
     {
       "topic": "Angle",
       "decision": "\"My balance says I have money but a bill is coming\"",
-      "because": "A situation people search for, \"My balance says I have money but a bill is coming\", with the steps from \"Available vs current balance: which one can you spend?\", and how Monthly Money Reset helps."
+      "because": "The moment \"My balance says I have money but a bill is coming\", then how Monthly Money Reset helps, then what the guide \"Available vs current balance: what can you spend?\" says to do."
     },
     {
       "topic": "Transitions",

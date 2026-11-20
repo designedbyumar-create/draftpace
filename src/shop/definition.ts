@@ -120,6 +120,18 @@ const shopProductObjectSchema = z.object({
   id: z.string().min(1),
   slug: z.string().regex(/^[a-z0-9][a-z0-9-]*$/, "Slugs must be lowercase, alphanumeric, and hyphenated."),
   publicationStatus: z.enum(["draft", "published", "archived"]),
+  /**
+   * A bespoke landing page this product has instead of the generic
+   * /shop/[productSlug] detail page, e.g. "/homeschooling-companion".
+   * When set, /shop/[slug] permanently redirects there rather than
+   * rendering, the same mechanism a free product already uses to send
+   * /shop/[slug] on to /free: one canonical page per product, old and
+   * generic links (the Shop grid, a guide's cross-sell card, the
+   * sitemap) keep working unchanged because they still resolve through
+   * the redirect, and nothing has to special-case this product's slug
+   * to know where it actually lives.
+   */
+  canonicalPath: z.string().regex(/^\//, "canonicalPath must be a root-relative path, e.g. /homeschooling-companion.").optional(),
   title: z.string().min(1),
   promise: z.string().min(1),
   problem: z.string().min(1),

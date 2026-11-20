@@ -138,7 +138,13 @@ describe("Guide-driven films", () => {
     for (const f of guideFilms) {
       expect(f.product, `${f.id} hands over to ${f.product}, but its guide hands over to ${productForGuide(f.guide!).product}`).toBe(productForGuide(f.guide!).product);
       const body = JSON.stringify(guideBySlug(f.guide!).body);
-      const linked = body.includes(`/shop/${f.product}`) || (f.product === "monthly-money-reset" && body.includes("](/free)"));
+      // A product with its own bespoke landing page (canonicalPath) is
+      // linked there instead of the generic /shop/[slug] detail page --
+      // /shop/[slug] itself just permanently redirects to it now, so a
+      // guide written since that page shipped links the real destination
+      // directly rather than bouncing through the redirect.
+      const canonicalPath = SHOP_LISTINGS[f.product]?.canonicalPath ?? `/shop/${f.product}`;
+      const linked = body.includes(canonicalPath) || (f.product === "monthly-money-reset" && body.includes("](/free)"));
       expect(linked, `${f.id}: the guide never links ${f.product}, so the film recommends something the guide does not`).toBe(true);
     }
   });

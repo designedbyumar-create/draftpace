@@ -11,15 +11,15 @@
   "width": 1080,
   "height": 1920,
   "fps": 30,
-  "durationInFrames": 530,
-  "structure": "situationInside",
+  "durationInFrames": 450,
+  "structure": "situationMoment",
   "angle": {
     "text": "Your money is scattered across bank apps, statements, memory, and habit.",
     "source": "problemsSolved[0].problem"
   },
   "treatment": {
     "voice": "editorial",
-    "camera": "dolly",
+    "camera": "float",
     "transitions": [
       "cardSlide",
       "wipe",
@@ -43,7 +43,7 @@
     {
       "id": "moment",
       "kind": "title",
-      "variant": "label",
+      "variant": "editorial",
       "copy": [
         {
           "text": "Your money is scattered across bank apps, statements, memory, and habit.",
@@ -55,8 +55,8 @@
       ],
       "why": "Opens on the moment as the listing describes it: the situation the viewer is in right now.",
       "from": 0,
-      "dur": 107,
-      "ground": "accent",
+      "dur": 113,
+      "ground": "light",
       "transition": "cut",
       "sfx": [],
       "lines": [
@@ -91,14 +91,14 @@
         "text": "Personal Finance Companion",
         "source": "title"
       },
-      "from": 95,
-      "dur": 272,
+      "from": 101,
+      "dur": 277,
       "ground": "light",
-      "transition": "cardSlide",
+      "transition": "blurDissolve",
       "sfx": [
         {
           "at": 0,
-          "cue": "swish",
+          "cue": "whoosh",
           "volume": 0.32
         },
         {
@@ -107,50 +107,7 @@
           "volume": 0.42
         },
         {
-          "at": 122,
-          "cue": "tap",
-          "volume": 0.55
-        }
-      ]
-    },
-    {
-      "id": "also",
-      "kind": "phone",
-      "variant": "proof",
-      "copy": [],
-      "caption": {
-        "text": "Print what we have and haven't settled",
-        "source": "tasks[5].label"
-      },
-      "screen": {
-        "src": "screens/personal-finance-companion-printables.png",
-        "pose": "flat",
-        "focus": {
-          "at": 0.45,
-          "y": 369,
-          "h": 287,
-          "region": "printables"
-        },
-        "scroll": []
-      },
-      "why": "One more real thing an owner does here, in the listing's own task wording, on the screen it happens on. Screen: \"Printable Finance Companion\" (The paper version: printable finance companion in US Letter and A4, and a shared responsibility statement.) chosen because it is the real screen closest to \"Print what we have and haven't settled\"; focus on \"Printable Finance Companion\".",
-      "from": 355,
-      "dur": 103,
-      "ground": "light",
-      "transition": "wipe",
-      "sfx": [
-        {
-          "at": 0,
-          "cue": "swish",
-          "volume": 0.32
-        },
-        {
-          "at": 12,
-          "cue": "pop",
-          "volume": 0.42
-        },
-        {
-          "at": 46,
+          "at": 125,
           "cue": "tap",
           "volume": 0.55
         }
@@ -171,14 +128,14 @@
         }
       ],
       "why": "YouTube Short punishes an obvious ad; a soft close names the product and where to find it.",
-      "from": 446,
+      "from": 366,
       "dur": 84,
       "ground": "ink",
-      "transition": "blurDissolve",
+      "transition": "cardSlide",
       "sfx": [
         {
           "at": 0,
-          "cue": "whoosh",
+          "cue": "swish",
           "volume": 0.32
         },
         {
@@ -217,13 +174,13 @@
     },
     {
       "topic": "Structure",
-      "decision": "Inside the tool: The moment, then how the product helps on its real screen, then one more real thing an owner does in it.",
-      "because": "Best fit for a awareness film on YouTube Short (platform fit 2, goal fit 2, already used for this product ×1, already used on YouTube Short ×3). Other candidates: The moment (-18.9)."
+      "decision": "The moment: The moment as it feels, set dark, then the help in the light, then what to do next.",
+      "because": "Best fit for a awareness film on YouTube Short (platform fit 2, goal fit 3, already used for this product ×1, already used on YouTube Short ×4). Other candidates: Inside the tool (-20.1)."
     },
     {
       "topic": "Angle",
       "decision": "\"Your money is scattered across bank apps, statements, memory, and habit.\"",
-      "because": "The moment \"Your money is scattered across bank apps, statements, memory, and habit.\", how Personal Finance Companion helps, and one more real thing it does: \"Print what we have and haven't settled\"."
+      "because": "The moment \"Your money is scattered across bank apps, statements, memory, and habit.\", then how Personal Finance Companion helps."
     },
     {
       "topic": "Transitions",
@@ -241,13 +198,28 @@
       "because": "Grounds light → accent → light → ink: a cool accent, so a darker ground is used for contrast at a turn."
     },
     {
+      "topic": "Variation",
+      "decision": "Rotated the ground rhythm",
+      "because": "Its shape was 0.78 similar to sit-alongside-problem-1--instagram-reel; a different film, not the same one re-coloured."
+    },
+    {
+      "topic": "Variation",
+      "decision": "Changed the camera",
+      "because": "Its shape was 0.78 similar to sit-family-health-binder-problem-1--facebook-reel; a different film, not the same one re-coloured."
+    },
+    {
+      "topic": "Variation",
+      "decision": "Reordered the transitions",
+      "because": "Its shape was 0.78 similar to sit-family-health-binder-problem-6--pinterest-video; a different film, not the same one re-coloured."
+    },
+    {
       "topic": "Sound",
       "decision": "Full sound design, mid-energy bed",
       "because": "Sound-on placement: every transition, landing and reveal has a cue, and the bed ducks under the brand moment."
     },
     {
       "topic": "Length",
-      "decision": "17.7s, 4 scenes",
+      "decision": "15.0s, 3 scenes",
       "because": "Each scene is held for the time its words take to read on YouTube Short (0.26s a word), inside 15–40s."
     }
   ]

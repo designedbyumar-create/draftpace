@@ -14,7 +14,7 @@
         "will"
       ],
       "promise": {
-        "text": "Beneficiary vs will: which one decides who gets it?",
+        "text": "Beneficiary vs will: what controls each account?",
         "source": "guide:beneficiary-forms-override-your-will/title"
       },
       "art": {
@@ -31,47 +31,51 @@
       },
       "lines": [
         {
-          "text": "A 401(k), IRA or life insurance policy pays whoever is named on the form, not whoever your will names.",
+          "text": "Check which assets follow a beneficiary designation, which may enter your estate, and when spouse rights or conflicting paperwork need advice.",
           "source": "guide:beneficiary-forms-override-your-will/dek#0"
-        },
-        {
-          "text": "What passes how, and how to check yours.",
-          "source": "guide:beneficiary-forms-override-your-will/dek#1"
         }
       ],
       "art": {
-        "motif": "bank",
-        "why": "the slide names \"401\", \"ira\""
+        "motif": "scale",
+        "why": "the slide names \"which\", \"estate\""
       }
     },
     {
       "kind": "checklist",
       "eyebrow": {
-        "text": "Check your own forms, in this order",
-        "source": "guide:beneficiary-forms-override-your-will/body[4].heading"
+        "text": "Audit the provider records",
+        "source": "guide:beneficiary-forms-override-your-will/body[3].heading"
       },
       "items": [
         {
-          "text": "List every retirement account you have ever had, including 401(k)s and 403(b)s from jobs you've left.",
-          "source": "guide:beneficiary-forms-override-your-will/body[4].items[0]#0"
+          "text": "List current and former employers' retirement plans, personal retirement accounts and insurance policies.",
+          "source": "guide:beneficiary-forms-override-your-will/body[3].items[0]#0"
         },
         {
-          "text": "List every life insurance policy, including any provided through an employer.",
-          "source": "guide:beneficiary-forms-override-your-will/body[4].items[1]#0"
+          "text": "Ask each provider for the primary and contingent beneficiaries currently accepted on file.",
+          "source": "guide:beneficiary-forms-override-your-will/body[3].items[1]#0"
         },
         {
-          "text": "List any payable-on-death bank account or transfer-on-death brokerage account you've set up.",
-          "source": "guide:beneficiary-forms-override-your-will/body[4].items[2]#0"
+          "text": "Ask what happens if a beneficiary has died, cannot be found or is not eligible.",
+          "source": "guide:beneficiary-forms-override-your-will/body[3].items[3]#0"
         },
         {
-          "text": "Update anything that's wrong, blank, or names someone who has since died.",
-          "source": "guide:beneficiary-forms-override-your-will/body[4].items[4]#0"
+          "text": "Check consent, signature and submission requirements before making a change.",
+          "source": "guide:beneficiary-forms-override-your-will/body[3].items[4]#0"
+        },
+        {
+          "text": "Submit through the official process and retain acceptance confirmation.",
+          "source": "guide:beneficiary-forms-override-your-will/body[3].items[5]#0"
+        },
+        {
+          "text": "Record the check date and where confirmation is stored; set a review after significant life changes.",
+          "source": "guide:beneficiary-forms-override-your-will/body[3].items[6]#0"
         }
       ],
       "ticks": true,
       "art": {
         "motif": "bank",
-        "why": "the slide names \"bank\", \"account\", \"401\", \"retirement\""
+        "why": "the slide names \"account\", \"beneficiar\", \"retirement\""
       }
     },
     {
@@ -90,7 +94,7 @@
       },
       "ui": {
         "kind": "screen",
-        "src": "screens/personal-life-affairs-companion-affairs.png"
+        "src": "screens/personal-life-affairs-companion-workspace.png"
       }
     },
     {
@@ -100,7 +104,7 @@
         "source": "micro"
       },
       "title": {
-        "text": "Beneficiary vs will: which one decides who gets it?",
+        "text": "Beneficiary vs will: what controls each account?",
         "source": "guide:beneficiary-forms-override-your-will/title"
       },
       "url": {
@@ -123,11 +127,11 @@
   ],
   "notes": [
     "Cover: \"My pension goes to whoever is named on the form, not my will\" (searchedProblems[2].phrase), as people search it.",
-    "Checklist: 4 items from \"Check your own forms, in this order\".",
-    "Help: \"Who is named on the forms that override a will is one of the first things it raises, because it is the one most often years out of date.\" (searchedProblems[2].answer), on screens/personal-life-affairs-companion-affairs.png (\"What you have established so far.\").",
+    "Checklist: 6 items from \"Audit the provider records\".",
+    "Help: \"Who is named on the forms that override a will is one of the first things it raises, because it is the one most often years out of date.\" (searchedProblems[2].answer), on screens/personal-life-affairs-companion-workspace.png (\"Write down who should be called first.\").",
     "Illustration on the cover: document with bank, because the carousel's topic: the moment and its guide name \"form\", \"will\".",
-    "Illustration on the answer: bank, because the slide names \"401\", \"ira\".",
-    "Illustration on the checklist: bank, because the slide names \"bank\", \"account\", \"401\", \"retirement\".",
+    "Illustration on the answer: scale, because the slide names \"which\", \"estate\".",
+    "Illustration on the checklist: bank, because the slide names \"account\", \"beneficiar\", \"retirement\".",
     "Illustration on the close: document, because the carousel's topic: the moment and its guide name \"form\", \"will\"."
   ]
 }

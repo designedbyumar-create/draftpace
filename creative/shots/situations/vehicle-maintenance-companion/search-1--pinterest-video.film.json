@@ -12,15 +12,15 @@
   "width": 1000,
   "height": 1500,
   "fps": 30,
-  "durationInFrames": 874,
-  "structure": "situationChecklist",
+  "durationInFrames": 605,
+  "structure": "situationWords",
   "angle": {
     "text": "I bought a used car with no maintenance records",
     "source": "searchedProblems[0].phrase"
   },
   "treatment": {
     "voice": "editorial",
-    "camera": "float",
+    "camera": "locked",
     "transitions": [
       "radial",
       "zoomThrough",
@@ -44,7 +44,7 @@
     {
       "id": "moment",
       "kind": "title",
-      "variant": "label",
+      "variant": "quote",
       "copy": [
         {
           "text": "I bought a used car with no maintenance records",
@@ -69,47 +69,6 @@
       ]
     },
     {
-      "id": "what-to-do",
-      "kind": "list",
-      "variant": "checklist",
-      "copy": [
-        {
-          "text": "Assuming the best and doing nothing.",
-          "source": "guide:used-car-no-service-records-what-to-do/body[6].items[1]#0"
-        },
-        {
-          "text": "Writing down a date you don't have.",
-          "source": "guide:used-car-no-service-records-what-to-do/body[6].items[2]#0"
-        }
-      ],
-      "eyebrow": {
-        "text": "What can go wrong",
-        "source": "guide:used-car-no-service-records-what-to-do/body[6].heading"
-      },
-      "why": "What to do about it, from the guide \"Bought a used car with no service records? What to do\": its own checklist, the first sentence of each item.",
-      "from": 112,
-      "dur": 281,
-      "ground": "ink",
-      "transition": "radial",
-      "sfx": [
-        {
-          "at": 0,
-          "cue": "swish",
-          "volume": 0.192
-        },
-        {
-          "at": 10,
-          "cue": "pop",
-          "volume": 0.27
-        },
-        {
-          "at": 104,
-          "cue": "pop",
-          "volume": 0.27
-        }
-      ]
-    },
-    {
       "id": "help",
       "kind": "phone",
       "variant": "proof",
@@ -120,7 +79,7 @@
       },
       "screen": {
         "src": "screens/vehicle-maintenance-companion-vehicles.png",
-        "pose": "float",
+        "pose": "flat",
         "focus": {
           "at": 0.45,
           "y": 922,
@@ -133,14 +92,14 @@
         "text": "Vehicle Maintenance Companion",
         "source": "title"
       },
-      "from": 381,
+      "from": 112,
       "dur": 355,
-      "ground": "light",
-      "transition": "zoomThrough",
+      "ground": "ink",
+      "transition": "radial",
       "sfx": [
         {
           "at": 0,
-          "cue": "whoosh",
+          "cue": "swish",
           "volume": 0.192
         },
         {
@@ -174,9 +133,9 @@
         "source": "micro"
       },
       "why": "Ends on where to read the whole guide, with the product beneath it: the viewer leaves with the next step, not only a pitch.",
-      "from": 724,
+      "from": 455,
       "dur": 150,
-      "ground": "accent",
+      "ground": "light",
       "transition": "blurDissolve",
       "sfx": [
         {
@@ -210,7 +169,7 @@
     },
     {
       "topic": "Guide",
-      "decision": "\"Bought a used car with no service records? What to do\" (draftpace.com/guides/used-car-no-service-records-what-to-do)",
+      "decision": "\"Bought a used car with no service records? Start here\" (draftpace.com/guides/used-car-no-service-records-what-to-do)",
       "because": "The guide that covers this moment: what to do comes from it, and the film ends on it."
     },
     {
@@ -225,13 +184,13 @@
     },
     {
       "topic": "Structure",
-      "decision": "What to do first: The moment, the guide's own checklist for it, then the product that keeps track of it.",
-      "because": "Best fit for a awareness film on Pinterest video pin (platform fit 3, goal fit 3, already used on Pinterest video pin ×4). Other candidates: In their words (-7.1), Inside the tool (-18.9)."
+      "decision": "In their words: The moment typed the way a person searches it, then what to do about it, then the product doing it.",
+      "because": "Best fit for a awareness film on Pinterest video pin (platform fit 3, goal fit 3, already used on Pinterest video pin ×6). Other candidates: Inside the tool (-19.3), The moment (-22.9)."
     },
     {
       "topic": "Angle",
       "decision": "\"I bought a used car with no maintenance records\"",
-      "because": "The moment \"I bought a used car with no maintenance records\", the checklist from \"Bought a used car with no service records? What to do\", then how Vehicle Maintenance Companion helps."
+      "because": "A situation people search for, \"I bought a used car with no maintenance records\", with the steps from \"Bought a used car with no service records? Start here\", and how Vehicle Maintenance Companion helps."
     },
     {
       "topic": "Transitions",
@@ -240,23 +199,13 @@
     },
     {
       "topic": "Camera",
-      "decision": "Camera \"float\"",
-      "because": "Camera \"float\": a gentle float that keeps a held frame alive without demanding attention."
+      "decision": "Camera \"locked\"",
+      "because": "Camera \"locked\": still and precise, so a slow, reading audience is never chasing the frame."
     },
     {
       "topic": "Colour",
       "decision": "Grounds light → ink → light → accent",
       "because": "Grounds light → ink → light → accent: a warm accent, so light grounds lead and the accent is saved for the turns."
-    },
-    {
-      "topic": "Edit",
-      "decision": "Trimmed \"what-to-do\" to 3 items",
-      "because": "Fewer items read properly beats more items skimmed."
-    },
-    {
-      "topic": "Edit",
-      "decision": "Trimmed \"what-to-do\" to 2 items",
-      "because": "Fewer items read properly beats more items skimmed."
     },
     {
       "topic": "Sound",
@@ -265,7 +214,7 @@
     },
     {
       "topic": "Length",
-      "decision": "29.1s, 4 scenes",
+      "decision": "20.2s, 3 scenes",
       "because": "Each scene is held for the time its words take to read on Pinterest video pin (0.32s a word), inside 10–32s."
     }
   ]

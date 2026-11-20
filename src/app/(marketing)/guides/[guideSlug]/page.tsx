@@ -203,7 +203,7 @@ export default async function GuideOrHubPage({ params }: { params: Promise<{ gui
 
           {revised && <div className={editorial.kicker}><span>Draftpace fieldnotes</span><span>{fieldnote ? guideArea?.label ?? "Life administration" : isHomeschool ? "Family & learning / 02" : "Family health / 01"}</span></div>}
 
-          <div className={`mt-5 grid gap-8 lg:items-center lg:gap-12 ${revised ? "" : art ? "lg:grid-cols-[minmax(0,1fr)_340px]" : "lg:grid-cols-[minmax(0,1fr)_180px]"}`}>
+          <div className={`mt-5 grid gap-8 lg:items-center lg:gap-12 ${art ? "lg:grid-cols-[minmax(0,1fr)_340px]" : revised ? "" : "lg:grid-cols-[minmax(0,1fr)_180px]"}`}>
             <div>
               <h1 className="max-w-[26ch] text-heading-lg font-serif font-semibold tracking-tight text-balance">
                 {guide.title}
@@ -245,7 +245,7 @@ export default async function GuideOrHubPage({ params }: { params: Promise<{ gui
 
             {/* The area mark. Decorative, and hidden on phones where the
                 headline should own the whole first screen. */}
-            <div className={revised ? "hidden" : "hidden text-[var(--area)] lg:block"}>
+            <div className="hidden text-[var(--area)] lg:block">
               {art ? (
                 <Image
                   src={art.thumb}

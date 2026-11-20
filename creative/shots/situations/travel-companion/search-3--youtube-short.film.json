@@ -12,8 +12,8 @@
   "width": 1080,
   "height": 1920,
   "fps": 30,
-  "durationInFrames": 747,
-  "structure": "situationInside",
+  "durationInFrames": 937,
+  "structure": "situationChecklist",
   "angle": {
     "text": "How do I organise a multi-stop trip without a spreadsheet",
     "source": "searchedProblems[2].phrase"
@@ -57,7 +57,7 @@
       "why": "Opens on the moment in the person's own words, as the listing records people searching it.",
       "from": 0,
       "dur": 99,
-      "ground": "accent",
+      "ground": "ink",
       "transition": "cut",
       "sfx": [],
       "lines": [
@@ -66,6 +66,65 @@
           "multi-stop trip",
           "without a spreadsheet"
         ]
+      ]
+    },
+    {
+      "id": "what-to-do",
+      "kind": "list",
+      "variant": "checklist",
+      "copy": [
+        {
+          "text": "Assign each stop a name and its arrival, departure and overnight dates.",
+          "source": "guide:organising-a-multi-stop-trip-without-a-spreadsheet/body[4].items[0]#0"
+        },
+        {
+          "text": "Record the actual provider, booking channel and confirmation reference.",
+          "source": "guide:organising-a-multi-stop-trip-without-a-spreadsheet/body[4].items[2]#0"
+        },
+        {
+          "text": "Note cancellation or change deadlines with the applicable time zone.",
+          "source": "guide:organising-a-multi-stop-trip-without-a-spreadsheet/body[4].items[4]#0"
+        },
+        {
+          "text": "Write the nearby bookings that require checking if this one changes.",
+          "source": "guide:organising-a-multi-stop-trip-without-a-spreadsheet/body[4].items[5]#0"
+        }
+      ],
+      "eyebrow": {
+        "text": "Make the booking record usable",
+        "source": "guide:organising-a-multi-stop-trip-without-a-spreadsheet/body[4].heading"
+      },
+      "why": "What to do about it, from the guide \"Plan a multi-stop trip without a spreadsheet\": its own checklist, the first sentence of each item.",
+      "from": 87,
+      "dur": 508,
+      "ground": "light",
+      "transition": "slideLeft",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "swish",
+          "volume": 0.32
+        },
+        {
+          "at": 10,
+          "cue": "pop",
+          "volume": 0.45
+        },
+        {
+          "at": 112,
+          "cue": "pop",
+          "volume": 0.45
+        },
+        {
+          "at": 214,
+          "cue": "pop",
+          "volume": 0.45
+        },
+        {
+          "at": 316,
+          "cue": "pop",
+          "volume": 0.45
+        }
       ]
     },
     {
@@ -92,10 +151,10 @@
         "text": "Travel Companion",
         "source": "title"
       },
-      "from": 87,
+      "from": 583,
       "dur": 256,
       "ground": "light",
-      "transition": "slideLeft",
+      "transition": "whip",
       "sfx": [
         {
           "at": 0,
@@ -112,122 +171,6 @@
           "cue": "tap",
           "volume": 0.55
         }
-      ]
-    },
-    {
-      "id": "also",
-      "kind": "phone",
-      "variant": "proof",
-      "copy": [],
-      "caption": {
-        "text": "Print the trip to carry",
-        "source": "tasks[6].label"
-      },
-      "screen": {
-        "src": "screens/travel-companion-printables.png",
-        "pose": "flat",
-        "focus": {
-          "at": 0.45,
-          "y": 292,
-          "h": 161,
-          "region": "trip-book"
-        },
-        "scroll": []
-      },
-      "why": "One more real thing an owner does here, in the listing's own task wording, on the screen it happens on. Screen: \"My Trip Book\" (My Trip Book: a blank, printable travel planner, generated fresh each time.) chosen because it is the real screen closest to \"Print the trip to carry\"; focus on \"My Trip Book\".",
-      "from": 331,
-      "dur": 87,
-      "ground": "light",
-      "transition": "whip",
-      "sfx": [
-        {
-          "at": 0,
-          "cue": "swish",
-          "volume": 0.32
-        },
-        {
-          "at": 12,
-          "cue": "pop",
-          "volume": 0.42
-        },
-        {
-          "at": 39,
-          "cue": "tap",
-          "volume": 0.55
-        }
-      ]
-    },
-    {
-      "id": "step-1",
-      "kind": "title",
-      "variant": "editorial",
-      "copy": [
-        {
-          "text": "List the fixed points first: anything with a reference and a time.",
-          "source": "guide:organising-a-multi-stop-trip-without-a-spreadsheet/body[3].items[0]#0"
-        }
-      ],
-      "eyebrow": {
-        "text": "1",
-        "source": "micro"
-      },
-      "emphasis": [
-        "reference"
-      ],
-      "why": "Step 1 from the guide \"Multi-stop trip planner: organize it without a spreadsheet\", numbered as the guide numbers it.",
-      "from": 406,
-      "dur": 143,
-      "ground": "accent",
-      "transition": "slideLeft",
-      "sfx": [
-        {
-          "at": 0,
-          "cue": "swish",
-          "volume": 0.32
-        }
-      ],
-      "lines": [
-        [
-          "List the fixed points",
-          "first: anything with a",
-          "reference and a time."
-        ]
-      ]
-    },
-    {
-      "id": "step-2",
-      "kind": "title",
-      "variant": "editorial",
-      "copy": [
-        {
-          "text": "Put them in time order, not by stop.",
-          "source": "guide:organising-a-multi-stop-trip-without-a-spreadsheet/body[3].items[1]#0"
-        }
-      ],
-      "eyebrow": {
-        "text": "2",
-        "source": "micro"
-      },
-      "emphasis": [
-        "order"
-      ],
-      "why": "Step 2 from the guide \"Multi-stop trip planner: organize it without a spreadsheet\", numbered as the guide numbers it.",
-      "from": 537,
-      "dur": 112,
-      "ground": "ink",
-      "transition": "slideLeft",
-      "sfx": [
-        {
-          "at": 0,
-          "cue": "swish",
-          "volume": 0.32
-        }
-      ],
-      "lines": [
-        [
-          "Put them in time",
-          "order, not by stop."
-        ]
       ]
     },
     {
@@ -249,9 +192,9 @@
         "source": "micro"
       },
       "why": "Ends on where to read the whole guide, with the product beneath it: the viewer leaves with the next step, not only a pitch.",
-      "from": 637,
+      "from": 827,
       "dur": 110,
-      "ground": "light",
+      "ground": "accent",
       "transition": "blurDissolve",
       "sfx": [
         {
@@ -285,7 +228,7 @@
     },
     {
       "topic": "Guide",
-      "decision": "\"Multi-stop trip planner: organize it without a spreadsheet\" (draftpace.com/guides/organising-a-multi-stop-trip-without-a-spreadsheet)",
+      "decision": "\"Plan a multi-stop trip without a spreadsheet\" (draftpace.com/guides/organising-a-multi-stop-trip-without-a-spreadsheet)",
       "because": "The guide that covers this moment: what to do comes from it, and the film ends on it."
     },
     {
@@ -300,13 +243,13 @@
     },
     {
       "topic": "Structure",
-      "decision": "Inside the tool: The moment, then how the product helps on its real screen, then one more real thing an owner does in it.",
-      "because": "Best fit for a awareness film on YouTube Short (platform fit 2, goal fit 2, already used on YouTube Short ×4). Other candidates: What to do first (-12.5), In their words (-12.7)."
+      "decision": "What to do first: The moment, the guide's own checklist for it, then the product that keeps track of it.",
+      "because": "Best fit for a awareness film on YouTube Short (platform fit 3, goal fit 3, already used on YouTube Short ×4). Other candidates: Inside the tool (-12.9), The moment (-15.1)."
     },
     {
       "topic": "Angle",
       "decision": "\"How do I organise a multi-stop trip without a spreadsheet\"",
-      "because": "The moment \"How do I organise a multi-stop trip without a spreadsheet\", how Travel Companion helps, and one more real thing it does: \"Print the trip to carry\"."
+      "because": "The moment \"How do I organise a multi-stop trip without a spreadsheet\", the checklist from \"Plan a multi-stop trip without a spreadsheet\", then how Travel Companion helps."
     },
     {
       "topic": "Transitions",
@@ -330,7 +273,7 @@
     },
     {
       "topic": "Length",
-      "decision": "24.9s, 6 scenes",
+      "decision": "31.2s, 4 scenes",
       "because": "Each scene is held for the time its words take to read on YouTube Short (0.26s a word), inside 15–40s."
     }
   ]

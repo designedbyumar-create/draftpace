@@ -1,0 +1,141 @@
+{
+  "id": "car-travel-companion-search-6",
+  "product": "travel-companion",
+  "guide": "what-to-keep-on-paper-when-you-travel",
+  "situation": "searchedProblems[5].phrase",
+  "slides": [
+    {
+      "kind": "cover",
+      "quote": {
+        "text": "What should I keep on paper when I travel",
+        "source": "searchedProblems[5].phrase"
+      },
+      "emphasis": [
+        "travel"
+      ],
+      "promise": {
+        "text": "What to print before you travel: the useful basics",
+        "source": "guide:what-to-keep-on-paper-when-you-travel/title"
+      },
+      "art": {
+        "motif": "suitcase",
+        "why": "the carousel's topic: the moment and its guide name \"travel\"",
+        "also": "notebook"
+      }
+    },
+    {
+      "kind": "answer",
+      "eyebrow": {
+        "text": "In short",
+        "source": "micro"
+      },
+      "lines": [
+        {
+          "text": "Make a contact page that works without your phone, then keep identity copies separate.",
+          "source": "guide:what-to-keep-on-paper-when-you-travel/dek#0"
+        },
+        {
+          "text": "Include local addresses, booking dates, and key numbers.",
+          "source": "guide:what-to-keep-on-paper-when-you-travel/dek#1"
+        }
+      ],
+      "art": {
+        "motif": "phone",
+        "why": "the slide names \"phone\""
+      }
+    },
+    {
+      "kind": "checklist",
+      "eyebrow": {
+        "text": "Build the contact summary",
+        "source": "guide:what-to-keep-on-paper-when-you-travel/body[1].heading"
+      },
+      "items": [
+        {
+          "text": "Write traveler names, trip dates, and the date this page was last updated.",
+          "source": "guide:what-to-keep-on-paper-when-you-travel/body[1].items[0]#0"
+        },
+        {
+          "text": "Copy each accommodation's exact address in the local writing system where useful.",
+          "source": "guide:what-to-keep-on-paper-when-you-travel/body[1].items[1]#0"
+        },
+        {
+          "text": "Add property phone numbers, booking names, references, and check-in dates.",
+          "source": "guide:what-to-keep-on-paper-when-you-travel/body[1].items[2]#0"
+        },
+        {
+          "text": "List key flight and transfer details with the operator's contact information.",
+          "source": "guide:what-to-keep-on-paper-when-you-travel/body[1].items[3]#0"
+        },
+        {
+          "text": "Add your insurer's assistance number and policy reference if you have coverage.",
+          "source": "guide:what-to-keep-on-paper-when-you-travel/body[1].items[4]#0"
+        },
+        {
+          "text": "Include a trusted contact at home and an agreed way to share changes.",
+          "source": "guide:what-to-keep-on-paper-when-you-travel/body[1].items[5]#0"
+        }
+      ],
+      "ticks": true,
+      "art": {
+        "motif": "calendar",
+        "why": "the slide names \"date\""
+      }
+    },
+    {
+      "kind": "help",
+      "eyebrow": {
+        "text": "How it helps",
+        "source": "micro"
+      },
+      "name": {
+        "text": "Travel Companion",
+        "source": "title"
+      },
+      "line": {
+        "text": "My Trip Book prints exactly that: the whole trip, structured, as long as your trip needs and no longer.",
+        "source": "searchedProblems[5].answer"
+      },
+      "ui": {
+        "kind": "screen",
+        "src": "screens/travel-companion-printables.png"
+      }
+    },
+    {
+      "kind": "close",
+      "eyebrow": {
+        "text": "The full guide",
+        "source": "micro"
+      },
+      "title": {
+        "text": "What to print before you travel: the useful basics",
+        "source": "guide:what-to-keep-on-paper-when-you-travel/title"
+      },
+      "url": {
+        "text": "draftpace.com/guides/what-to-keep-on-paper-when-you-travel",
+        "source": "guide:what-to-keep-on-paper-when-you-travel/url"
+      },
+      "link": {
+        "text": "Free to read. Link in bio.",
+        "source": "micro"
+      },
+      "save": {
+        "text": "Save this for later.",
+        "source": "micro"
+      },
+      "art": {
+        "motif": "suitcase",
+        "why": "the carousel's topic: the moment and its guide name \"travel\""
+      }
+    }
+  ],
+  "notes": [
+    "Cover: \"What should I keep on paper when I travel\" (searchedProblems[5].phrase), as people search it.",
+    "Checklist: 6 items from \"Build the contact summary\".",
+    "Help: \"My Trip Book prints exactly that: the whole trip, structured, as long as your trip needs and no longer.\" (searchedProblems[5].answer), on screens/travel-companion-printables.png (\"My Trip Book\").",
+    "Illustration on the cover: suitcase with notebook, because the carousel's topic: the moment and its guide name \"travel\".",
+    "Illustration on the answer: phone, because the slide names \"phone\".",
+    "Illustration on the checklist: calendar, because the slide names \"date\".",
+    "Illustration on the close: suitcase, because the carousel's topic: the moment and its guide name \"travel\"."
+  ]
+}

@@ -11,15 +11,15 @@
   "width": 1000,
   "height": 1500,
   "fps": 30,
-  "durationInFrames": 886,
-  "structure": "guideChecklist",
+  "durationInFrames": 877,
+  "structure": "guideTimeline",
   "angle": {
-    "text": "A weekly reset that survives a bad week",
+    "text": "A weekly reset that still works after a bad week",
     "source": "guide:a-weekly-reset-that-survives-a-bad-week/title"
   },
   "treatment": {
     "voice": "editorial",
-    "camera": "float",
+    "camera": "locked",
     "transitions": [
       "iris",
       "blurDissolve",
@@ -46,51 +46,47 @@
       "variant": "editorial",
       "copy": [
         {
-          "text": "A weekly reset that survives a bad week",
+          "text": "A weekly reset that still works after a bad week",
           "source": "guide:a-weekly-reset-that-survives-a-bad-week/title"
         }
       ],
       "emphasis": [
-        "survives"
+        "weekly"
       ],
       "why": "The hook is the guide's own title: the question it answers, as a person would put it.",
       "from": 0,
-      "dur": 112,
+      "dur": 135,
       "ground": "accent",
       "transition": "cut",
       "sfx": [],
       "lines": [
         [
           "A weekly reset that",
-          "survives a bad week"
+          "still works after",
+          "a bad week"
         ]
       ]
     },
     {
-      "id": "list",
-      "kind": "list",
-      "variant": "checklist",
+      "id": "when-1",
+      "kind": "title",
+      "variant": "label",
       "copy": [
         {
-          "text": "The floor: open the pile and pick one thing.",
-          "source": "guide:a-weekly-reset-that-survives-a-bad-week/body[7].items[0]#0"
-        },
-        {
-          "text": "Add a day and the first physical step, and you're at the middle.",
-          "source": "guide:a-weekly-reset-that-survives-a-bad-week/body[7].items[1]#0"
-        },
-        {
-          "text": "Stop at the ceiling.",
-          "source": "guide:a-weekly-reset-that-survives-a-bad-week/body[7].items[3]#0"
+          "text": "Open the calendar and relevant action list; identify what changed.",
+          "source": "guide:a-weekly-reset-that-survives-a-bad-week/body[1].steps[1].what#0"
         }
       ],
       "eyebrow": {
-        "text": "A floor and a ceiling",
-        "source": "guide:a-weekly-reset-that-survives-a-bad-week/body[7].heading"
+        "text": "Next few minutes",
+        "source": "guide:a-weekly-reset-that-survives-a-bad-week/body[1].steps[1].when"
       },
-      "why": "The guide's own checklist, the first sentence of each item, ticked in as it is read.",
-      "from": 100,
-      "dur": 470,
+      "emphasis": [
+        "calendar"
+      ],
+      "why": "Marker 1: \"Next few minutes\", with the first sentence of what the guide says to do then.",
+      "from": 123,
+      "dur": 192,
       "ground": "light",
       "transition": "iris",
       "sfx": [
@@ -98,22 +94,52 @@
           "at": 0,
           "cue": "whoosh",
           "volume": 0.192
-        },
-        {
-          "at": 10,
-          "cue": "pop",
-          "volume": 0.27
-        },
-        {
-          "at": 128,
-          "cue": "pop",
-          "volume": 0.27
-        },
-        {
-          "at": 246,
-          "cue": "pop",
-          "volume": 0.27
         }
+      ],
+      "lines": [
+        [
+          "Open the calendar",
+          "and relevant action",
+          "list; identify what",
+          "changed."
+        ]
+      ]
+    },
+    {
+      "id": "when-2",
+      "kind": "title",
+      "variant": "label",
+      "copy": [
+        {
+          "text": "Select one realistic action after urgent matters have a plan.",
+          "source": "guide:a-weekly-reset-that-survives-a-bad-week/body[1].steps[2].what#0"
+        }
+      ],
+      "eyebrow": {
+        "text": "Choose",
+        "source": "guide:a-weekly-reset-that-survives-a-bad-week/body[1].steps[2].when"
+      },
+      "emphasis": [
+        "one"
+      ],
+      "why": "Marker 2: \"Choose\", with the first sentence of what the guide says to do then.",
+      "from": 303,
+      "dur": 170,
+      "ground": "light",
+      "transition": "blurDissolve",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "whoosh",
+          "volume": 0.192
+        }
+      ],
+      "lines": [
+        [
+          "Select one realistic",
+          "action after urgent",
+          "matters have a plan."
+        ]
       ]
     },
     {
@@ -122,28 +148,29 @@
       "variant": "proof",
       "copy": [],
       "caption": {
-        "text": "How it went changes what happens next.",
-        "source": "howItWorks[5]#0"
+        "text": "A single page per thing you are holding, with everything about it in one place",
+        "source": "expectedOutputs[3]"
       },
       "screen": {
-        "src": "screens/alongside-life.png",
-        "pose": "flat",
+        "src": "screens/alongside-workspace.png",
+        "pose": "tiltLeft",
         "focus": {
           "at": 0.45,
-          "y": 192,
-          "h": 330,
-          "region": "to-do"
-        }
+          "y": 222,
+          "h": 294,
+          "region": "one-thing"
+        },
+        "scroll": []
       },
-      "why": "The turn: the product the guide itself hands over to, named and shown on its real screen, captioned with its listing's line closest to what the guide teaches. Screen: \"Everything you are holding\" (Everything being held, sorted into something to do, waiting on someone, something ongoing, each with Do this with me.) chosen because it is the real screen closest to \"How it went changes what happens next. A weekly reset that survives a bad week\"; focus on \"Something to do\".",
+      "why": "The turn: the product the guide itself hands over to, named and shown on its real screen, captioned with its listing's line closest to what the guide teaches. Screen: \"Book the six-month dental check\" (One thing at a time: a single next step, Book the six-month dental check, with Do this with me, Not now and It is sorted.) chosen because it is the real screen closest to \"A single page per thing you are holding, with everything about it in one place A\"; focus on \"Book the six-month dental check\".",
       "eyebrow": {
         "text": "ADHD Life Companion",
         "source": "title"
       },
-      "from": 558,
-      "dur": 190,
-      "ground": "light",
-      "transition": "blurDissolve",
+      "from": 461,
+      "dur": 278,
+      "ground": "accent",
+      "transition": "iris",
       "sfx": [
         {
           "at": 0,
@@ -156,7 +183,7 @@
           "volume": 0.252
         },
         {
-          "at": 86,
+          "at": 125,
           "cue": "tap",
           "volume": 0.33
         }
@@ -181,7 +208,7 @@
         "source": "micro"
       },
       "why": "Ends on where to read the whole guide, with the product beneath it: the viewer leaves with the next step, not only a pitch.",
-      "from": 736,
+      "from": 727,
       "dur": 150,
       "ground": "accent",
       "transition": "blurDissolve",
@@ -212,8 +239,8 @@
     },
     {
       "topic": "Guide",
-      "decision": "\"A weekly reset that survives a bad week\" (draftpace.com/guides/a-weekly-reset-that-survives-a-bad-week)",
-      "because": "Teaches from the guide first; ADHD Life Companion is the product the guide hands over to. 2 lists and timelines, 5 questions to draw from."
+      "decision": "\"A weekly reset that still works after a bad week\" (draftpace.com/guides/a-weekly-reset-that-survives-a-bad-week)",
+      "because": "Teaches from the guide first; ADHD Life Companion is the product the guide hands over to. 2 lists and timelines, 3 questions to draw from."
     },
     {
       "topic": "Stage",
@@ -232,13 +259,13 @@
     },
     {
       "topic": "Structure",
-      "decision": "The checklist: The guide's checklist on one screen, item by item, then the product that holds it.",
-      "because": "Best fit for a awareness film on Pinterest video pin (platform fit 3, goal fit 3, already used for this product ×1, already used on Pinterest video pin ×4). Other candidates: In order (-15.5), The question people ask (-34.3)."
+      "decision": "In order: Walk the guide's own timeline, one marker at a time, then show the product that keeps it.",
+      "because": "Best fit for a awareness film on Pinterest video pin (platform fit 2, goal fit 3). Other candidates: The checklist (-44.3), The question people ask (-50.1)."
     },
     {
       "topic": "Angle",
-      "decision": "\"A weekly reset that survives a bad week\"",
-      "because": "A checklist from the guide, \"A floor and a ceiling\": 3 of its 4 items."
+      "decision": "\"A weekly reset that still works after a bad week\"",
+      "because": "The guide's timeline \"A short reset with a safety floor\": 3 of its 4 markers, in order."
     },
     {
       "topic": "Transitions",
@@ -247,13 +274,18 @@
     },
     {
       "topic": "Camera",
-      "decision": "Camera \"float\"",
-      "because": "Camera \"float\": a gentle float that keeps a held frame alive without demanding attention."
+      "decision": "Camera \"locked\"",
+      "because": "Camera \"locked\": still and precise, so a slow, reading audience is never chasing the frame."
     },
     {
       "topic": "Colour",
       "decision": "Grounds accent → light → light → accent",
       "because": "Grounds accent → light → light → accent: a warm accent, so light grounds lead and the accent is saved for the turns."
+    },
+    {
+      "topic": "Edit",
+      "decision": "Cut \"when-3\"",
+      "because": "It would run past 35s, the most Pinterest video pin holds attention for."
     },
     {
       "topic": "Sound",
@@ -262,7 +294,7 @@
     },
     {
       "topic": "Length",
-      "decision": "29.5s, 4 scenes",
+      "decision": "29.2s, 5 scenes",
       "because": "Each scene is held for the time its words take to read on Pinterest video pin (0.32s a word), inside 12–35s."
     }
   ]

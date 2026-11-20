@@ -11,7 +11,7 @@
   "width": 1080,
   "height": 1920,
   "fps": 30,
-  "durationInFrames": 607,
+  "durationInFrames": 600,
   "structure": "situationInside",
   "angle": {
     "text": "Nobody remembers who came out, what they did, or what it cost.",
@@ -120,8 +120,8 @@
       "variant": "proof",
       "copy": [],
       "caption": {
-        "text": "Find out whether anything needs me this week",
-        "source": "tasks[0].label"
+        "text": "Record what filter or part something takes",
+        "source": "tasks[2].label"
       },
       "screen": {
         "src": "screens/home-management-companion-workspace.png",
@@ -133,9 +133,9 @@
           "region": "status"
         }
       },
-      "why": "One more real thing an owner does here, in the listing's own task wording, on the screen it happens on. Screen: \"A couple of things need a look\" (Your home now: what's wrong, what to care for, what's coming up and what's handled, with the fridge and a dripping tap flagged.) chosen because it is the real screen closest to \"Find out whether anything needs me this week\"; focus on \"Wrong, To care for, Coming up, Handled\".",
+      "why": "One more real thing an owner does here, in the listing's own task wording, on the screen it happens on. Screen: \"A couple of things need a look\" (Your home now: what's wrong, what to care for, what's coming up and what's handled, with the fridge and a dripping tap flagged.) chosen because it is the real screen closest to \"Record what filter or part something takes\"; focus on \"Wrong, To care for, Coming up, Handled\".",
       "from": 425,
-      "dur": 110,
+      "dur": 103,
       "ground": "light",
       "transition": "cardSlide",
       "sfx": [
@@ -150,7 +150,7 @@
           "volume": 0.42
         },
         {
-          "at": 50,
+          "at": 46,
           "cue": "tap",
           "volume": 0.55
         }
@@ -171,7 +171,7 @@
         }
       ],
       "why": "YouTube Short punishes an obvious ad; a soft close names the product and where to find it.",
-      "from": 523,
+      "from": 516,
       "dur": 84,
       "ground": "ink",
       "transition": "blurDissolve",
@@ -223,7 +223,7 @@
     {
       "topic": "Angle",
       "decision": "\"Nobody remembers who came out, what they did, or what it cost.\"",
-      "because": "The moment \"Nobody remembers who came out, what they did, or what it cost.\", how Home Base helps, and one more real thing it does: \"Find out whether anything needs me this week\"."
+      "because": "The moment \"Nobody remembers who came out, what they did, or what it cost.\", how Home Base helps, and one more real thing it does: \"Record what filter or part something takes\"."
     },
     {
       "topic": "Transitions",
@@ -247,7 +247,7 @@
     },
     {
       "topic": "Length",
-      "decision": "20.2s, 4 scenes",
+      "decision": "20.0s, 4 scenes",
       "because": "Each scene is held for the time its words take to read on YouTube Short (0.26s a word), inside 15–40s."
     }
   ]

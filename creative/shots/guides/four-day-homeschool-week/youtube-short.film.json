@@ -14,12 +14,12 @@
   "durationInFrames": 540,
   "structure": "guideQuestion",
   "angle": {
-    "text": "Which day should be the one left free?",
-    "source": "guide:four-day-homeschool-week/body[5].items[1].q"
+    "text": "Can a four-day homeschool week work for high school?",
+    "source": "guide:four-day-homeschool-week/body[13].items[0].q"
   },
   "treatment": {
     "voice": "editorial",
-    "camera": "float",
+    "camera": "locked",
     "transitions": [
       "lineWipe",
       "slideUp",
@@ -46,20 +46,21 @@
       "variant": "quote",
       "copy": [
         {
-          "text": "Which day should be the one left free?",
-          "source": "guide:four-day-homeschool-week/body[5].items[1].q"
+          "text": "Can a four-day homeschool week work for high school?",
+          "source": "guide:four-day-homeschool-week/body[13].items[0].q"
         }
       ],
       "why": "The question as people ask it; the guide carries it because people search it.",
       "from": 0,
-      "dur": 121,
+      "dur": 132,
       "ground": "light",
       "transition": "cut",
       "sfx": [],
       "lines": [
         [
-          "Which day should be",
-          "the one left free?"
+          "Can a four-day",
+          "homeschool week work",
+          "for high school?"
         ]
       ]
     },
@@ -69,17 +70,17 @@
       "variant": "label",
       "copy": [
         {
-          "text": "Whichever day a co-op, an outside class, or another family's schedule already fixes for you.",
-          "source": "guide:four-day-homeschool-week/body[5].items[1].a#0"
+          "text": "It may, but this elementary-level example is not a high-school course plan.",
+          "source": "guide:four-day-homeschool-week/body[13].items[0].a#0"
         }
       ],
       "emphasis": [
-        "Whichever"
+        "elementary-level"
       ],
       "why": "The guide's answer, its first sentence: the plain answer before any detail.",
-      "from": 109,
-      "dur": 176,
-      "ground": "light",
+      "from": 120,
+      "dur": 155,
+      "ground": "accent",
       "transition": "slideUp",
       "sfx": [
         {
@@ -90,10 +91,10 @@
       ],
       "lines": [
         [
-          "Whichever day a co-op,",
-          "an outside class, or another",
-          "family's schedule already",
-          "fixes for you."
+          "It may, but this",
+          "elementary-level example",
+          "is not a high-school course",
+          "plan."
         ]
       ]
     },
@@ -103,27 +104,26 @@
       "variant": "proof",
       "copy": [],
       "caption": {
-        "text": "Set how often each subject runs.",
-        "source": "howItWorks[2]#0"
+        "text": "Run a check when you want one.",
+        "source": "howItWorks[6]#0"
       },
       "screen": {
-        "src": "screens/homeschooling-companion-kids.png",
+        "src": "screens/homeschooling-companion-record.png",
         "pose": "float",
         "focus": {
           "at": 0.45,
-          "y": 159,
-          "h": 126,
-          "region": "state"
-        },
-        "scroll": []
+          "y": 320,
+          "h": 406,
+          "region": "record"
+        }
       },
-      "why": "The turn: the product the guide itself hands over to, named and shown on its real screen, captioned with its listing's line closest to what the guide teaches. Screen: \"Your children.\" (Each child with their age and subjects, and the state's homeschool requirements kept alongside.) chosen because it is the real screen closest to \"Set how often each subject runs. Four-day homeschool week: how many days each su\"; focus on \"Oregon · Moderate regulation\".",
+      "why": "The turn: the product the guide itself hands over to, named and shown on its real screen, captioned with its listing's line closest to what the guide teaches. Screen: \"What has happened.\" (The record: sessions across subjects, a printable homeschool record, and dated notes of what was done.) chosen because it is the real screen closest to \"Run a check when you want one. Four-day homeschool week: a schedule that adds up\"; focus on \"My Homeschool Record\".",
       "eyebrow": {
         "text": "Homeschooling Companion",
         "source": "title"
       },
-      "from": 273,
-      "dur": 169,
+      "from": 263,
+      "dur": 179,
       "ground": "accent",
       "transition": "blurDissolve",
       "sfx": [
@@ -138,7 +138,7 @@
           "volume": 0.42
         },
         {
-          "at": 76,
+          "at": 81,
           "cue": "tap",
           "volume": 0.55
         }
@@ -165,7 +165,7 @@
       "why": "Ends on where to read the whole guide, with the product beneath it: the viewer leaves with the next step, not only a pitch.",
       "from": 430,
       "dur": 110,
-      "ground": "ink",
+      "ground": "light",
       "transition": "lineWipe",
       "sfx": [
         {
@@ -194,8 +194,8 @@
     },
     {
       "topic": "Guide",
-      "decision": "\"Four-day homeschool week: how many days each subject gets\" (draftpace.com/guides/four-day-homeschool-week)",
-      "because": "Teaches from the guide first; Homeschooling Companion is the product the guide hands over to. 1 lists and timelines, 5 questions to draw from."
+      "decision": "\"Four-day homeschool week: a schedule that adds up\" (draftpace.com/guides/four-day-homeschool-week)",
+      "because": "Teaches from the guide first; Homeschooling Companion is the product the guide hands over to. 2 lists and timelines, 3 questions to draw from."
     },
     {
       "topic": "Stage",
@@ -215,12 +215,12 @@
     {
       "topic": "Structure",
       "decision": "The question people ask: One of the guide's own questions, its plain answer, then the product.",
-      "because": "Best fit for a awareness film on YouTube Short (platform fit 2, goal fit 2, already used for this product ×4, already used on YouTube Short ×8). Other candidates: ."
+      "because": "Best fit for a awareness film on YouTube Short (platform fit 2, goal fit 2, already used for this product ×2, already used on YouTube Short ×12). Other candidates: The checklist (-46.4)."
     },
     {
       "topic": "Angle",
-      "decision": "\"Which day should be the one left free?\"",
-      "because": "A question from the guide's FAQ, \"Which day should be the one left free?\", and the first sentence of its answer."
+      "decision": "\"Can a four-day homeschool week work for high school?\"",
+      "because": "A question from the guide's FAQ, \"Can a four-day homeschool week work for high school?\", and the first sentence of its answer."
     },
     {
       "topic": "Transitions",
@@ -229,8 +229,8 @@
     },
     {
       "topic": "Camera",
-      "decision": "Camera \"dolly\"",
-      "because": "Camera \"dolly\": constant forward movement for a high-energy feed."
+      "decision": "Camera \"float\"",
+      "because": "Camera \"float\": a gentle float that keeps a held frame alive without demanding attention."
     },
     {
       "topic": "Colour",
@@ -240,17 +240,32 @@
     {
       "topic": "Variation",
       "decision": "Rotated the ground rhythm",
-      "because": "Its shape was 0.82 similar to guide-home-maintenance-you-skip-that-costs-the-most--youtube-short; a different film, not the same one re-coloured."
+      "because": "Its shape was 0.90 similar to guide-homeschool-attendance-what-to-track--pinterest-video; a different film, not the same one re-coloured."
     },
     {
       "topic": "Variation",
       "decision": "Changed the camera",
-      "because": "Its shape was 0.74 similar to guide-homeschool-attendance-what-to-track--youtube-short; a different film, not the same one re-coloured."
+      "because": "Its shape was 0.74 similar to guide-what-to-record-when-you-buy-an-appliance--pinterest-video; a different film, not the same one re-coloured."
     },
     {
       "topic": "Variation",
       "decision": "Reordered the transitions",
-      "because": "Its shape was 0.74 similar to guide-how-to-start-homeschooling-first-month-paperwork--youtube-short; a different film, not the same one re-coloured."
+      "because": "Its shape was 0.74 similar to guide-how-to-cancel-subscriptions--pinterest-video; a different film, not the same one re-coloured."
+    },
+    {
+      "topic": "Variation",
+      "decision": "Switched the brand reveal",
+      "because": "Its shape was 0.74 similar to guide-winterize-your-house-checklist--pinterest-video; a different film, not the same one re-coloured."
+    },
+    {
+      "topic": "Variation",
+      "decision": "Re-posed the phones",
+      "because": "Its shape was 0.74 similar to guide-winterize-your-house-checklist--pinterest-video; a different film, not the same one re-coloured."
+    },
+    {
+      "topic": "Variation",
+      "decision": "Set the grounds against the accent",
+      "because": "Its shape was 0.74 similar to guide-what-to-record-when-you-buy-an-appliance--pinterest-video; a different film, not the same one re-coloured."
     },
     {
       "topic": "Sound",

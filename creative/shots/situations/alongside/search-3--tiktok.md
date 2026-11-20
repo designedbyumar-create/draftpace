@@ -1,6 +1,6 @@
 # sit-alongside-search-3--tiktok
 
-**TikTok** · awareness · 1080×1920 · 22.4s · structure: **situationInside**
+**TikTok** · awareness · 1080×1920 · 16.4s · structure: **situationInside**
 
 Teaches from the guide [how-to-make-a-phone-call-you-have-been-avoiding](https://draftpace.com/guides/how-to-make-a-phone-call-you-have-been-avoiding), then hands over to **alongside**.
 
@@ -22,7 +22,7 @@ Teaches from the guide [how-to-make-a-phone-call-you-have-been-avoiding](https:/
 | **Camera** | Camera "dolly" | Camera "dolly": constant forward movement for a high-energy feed. |
 | **Colour** | Grounds light → ink → light → accent | Grounds light → ink → light → accent: a warm accent, so light grounds lead and the accent is saved for the turns. |
 | **Sound** | Full sound design, high-energy bed | Sound-on placement: every transition, landing and reveal has a cue, and the bed ducks under the brand moment. |
-| **Length** | 22.4s, 6 scenes | Each scene is held for the time its words take to read on TikTok (0.24s a word), inside 12–35s. |
+| **Length** | 16.4s, 4 scenes | Each scene is held for the time its words take to read on TikTok (0.24s a word), inside 12–35s. |
 
 Treatment: voice `native`, camera `dolly`, motif `focus`, transitions `cut` → `whip` → `iris`, music bed at 0.24 (high energy).
 
@@ -52,26 +52,9 @@ Treatment: voice `native`, camera `dolly`, motif `focus`, transitions `cut` → 
 - **Sound:** swish @+0f (0.32), pop @+12f (0.42), tap @+46f (0.55)
 - **Why:** One more real thing an owner does here, in the listing's own task wording, on the screen it happens on. Screen: "Everything you are holding" (Everything being held, sorted into something to do, waiting on someone, something ongoing, each with Do this with me.) chosen because it is the real screen closest to "Put something down so it comes back when it matters"; focus on "Something to do".
 
-### 4. step-1 — 0:12.60 to 0:15.67 (frames 378–470, 3.1s)
+### 4. cta — 0:12.60 to 0:16.37 (frames 378–491, 3.8s)
 
-- **Shot:** title / native on a accent ground, in by `iris`
-- **Eyebrow:** "1" — `micro`
-- **On screen:** "What it's about, in one line." — `guide:how-to-make-a-phone-call-you-have-been-avoiding/body[3].items[0]#0`
-- **Set as:** `What it's about,` / `in one line.` (accent on "one")
-- **Sound:** whoosh @+0f (0.32)
-- **Why:** Step 1 from the guide "How to make a phone call you keep avoiding", numbered as the guide numbers it.
-
-### 5. step-2 — 0:15.47 to 0:18.80 (frames 464–564, 3.3s)
-
-- **Shot:** title / native on a light ground, in by `cut`
-- **Eyebrow:** "2" — `micro`
-- **On screen:** "The result you want, in one line." — `guide:how-to-make-a-phone-call-you-have-been-avoiding/body[3].items[1]#0`
-- **Set as:** `The result you` / `want, in one line.` (accent on "one")
-- **Why:** Step 2 from the guide "How to make a phone call you keep avoiding", numbered as the guide numbers it.
-
-### 6. cta — 0:18.60 to 0:22.37 (frames 558–671, 3.8s)
-
-- **Shot:** cta / guide on a ink ground, in by `blurDissolve`
+- **Shot:** cta / guide on a accent ground, in by `blurDissolve`
 - **Eyebrow:** "The full guide" — `micro`
 - **On screen:** "ADHD Life Companion" — `title`
 - **On screen:** "draftpace.com/guides/how-to-make-a-phone-call-you-have-been-avoiding" — `guide:how-to-make-a-phone-call-you-have-been-avoiding/url`

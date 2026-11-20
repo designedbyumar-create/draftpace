@@ -1,0 +1,137 @@
+{
+  "id": "car-home-management-companion-search-3",
+  "product": "home-management-companion",
+  "guide": "how-often-home-systems-need-servicing",
+  "situation": "searchedProblems[2].phrase",
+  "slides": [
+    {
+      "kind": "cover",
+      "quote": {
+        "text": "How often do home systems actually need servicing",
+        "source": "searchedProblems[2].phrase"
+      },
+      "emphasis": [
+        "home"
+      ],
+      "promise": {
+        "text": "Home maintenance schedule: set real service dates",
+        "source": "guide:how-often-home-systems-need-servicing/title"
+      },
+      "art": {
+        "motif": "house",
+        "why": "the carousel's topic: the moment and its guide name \"home\"",
+        "also": "calendar"
+      }
+    },
+    {
+      "kind": "answer",
+      "eyebrow": {
+        "text": "In short",
+        "source": "micro"
+      },
+      "lines": [
+        {
+          "text": "Build a service schedule from your actual equipment, last confirmed work and local conditions, separating monthly checks from seasonal and specialist jobs.",
+          "source": "guide:how-often-home-systems-need-servicing/dek#0"
+        }
+      ],
+      "art": {
+        "motif": "calendar",
+        "why": "the slide names \"schedule\""
+      }
+    },
+    {
+      "kind": "checklist",
+      "eyebrow": {
+        "text": "Create the first usable schedule",
+        "source": "guide:how-often-home-systems-need-servicing/body[3].heading"
+      },
+      "items": [
+        {
+          "text": "List heating, cooling, hot water, alarms, drainage and the appliances actually present.",
+          "source": "guide:how-often-home-systems-need-servicing/body[3].items[0]#0"
+        },
+        {
+          "text": "Find the brand, model and correct manual.",
+          "source": "guide:how-often-home-systems-need-servicing/body[3].items[1]#0"
+        },
+        {
+          "text": "Recover the last service report and record its actual scope.",
+          "source": "guide:how-often-home-systems-need-servicing/body[3].items[2]#0"
+        },
+        {
+          "text": "Copy each required inspection, cleaning, test or replacement into a separate task with its source.",
+          "source": "guide:how-often-home-systems-need-servicing/body[3].items[3]#0"
+        },
+        {
+          "text": "Put seasonal work before the local weather or usage period that matters.",
+          "source": "guide:how-often-home-systems-need-servicing/body[3].items[4]#0"
+        },
+        {
+          "text": "Book unknown or concerning systems for assessment, then use the findings to set the next action.",
+          "source": "guide:how-often-home-systems-need-servicing/body[3].items[5]#0"
+        }
+      ],
+      "ticks": true,
+      "art": {
+        "motif": "bulb",
+        "why": "the slide names \"appliance\", \"manual\""
+      }
+    },
+    {
+      "kind": "help",
+      "eyebrow": {
+        "text": "How it helps",
+        "source": "micro"
+      },
+      "name": {
+        "text": "Home Base",
+        "source": "title"
+      },
+      "line": {
+        "text": "A hand-built schedule for 122 kinds of thing found in homes, including the jobs that belong to a month rather than a timer.",
+        "source": "searchedProblems[2].answer"
+      },
+      "ui": {
+        "kind": "screen",
+        "src": "screens/home-management-companion-seasons.png"
+      }
+    },
+    {
+      "kind": "close",
+      "eyebrow": {
+        "text": "The full guide",
+        "source": "micro"
+      },
+      "title": {
+        "text": "Home maintenance schedule: set real service dates",
+        "source": "guide:how-often-home-systems-need-servicing/title"
+      },
+      "url": {
+        "text": "draftpace.com/guides/how-often-home-systems-need-servicing",
+        "source": "guide:how-often-home-systems-need-servicing/url"
+      },
+      "link": {
+        "text": "Free to read. Link in bio.",
+        "source": "micro"
+      },
+      "save": {
+        "text": "Save this for later.",
+        "source": "micro"
+      },
+      "art": {
+        "motif": "house",
+        "why": "the carousel's topic: the moment and its guide name \"home\""
+      }
+    }
+  ],
+  "notes": [
+    "Cover: \"How often do home systems actually need servicing\" (searchedProblems[2].phrase), as people search it.",
+    "Checklist: 6 items from \"Create the first usable schedule\".",
+    "Help: \"A hand-built schedule for 122 kinds of thing found in homes, including the jobs that belong to a month rather than a timer.\" (searchedProblems[2].answer), on screens/home-management-companion-seasons.png (\"Fall home maintenance checklist\").",
+    "Illustration on the cover: house with calendar, because the carousel's topic: the moment and its guide name \"home\".",
+    "Illustration on the answer: calendar, because the slide names \"schedule\".",
+    "Illustration on the checklist: bulb, because the slide names \"appliance\", \"manual\".",
+    "Illustration on the close: house, because the carousel's topic: the moment and its guide name \"home\"."
+  ]
+}

@@ -57,7 +57,7 @@
       "why": "Opens on the moment in the person's own words, as the listing records people searching it.",
       "from": 0,
       "dur": 117,
-      "ground": "light",
+      "ground": "accent",
       "transition": "cut",
       "sfx": [],
       "lines": [
@@ -95,7 +95,7 @@
       },
       "from": 105,
       "dur": 317,
-      "ground": "accent",
+      "ground": "light",
       "transition": "lineWipe",
       "sfx": [
         {
@@ -170,7 +170,7 @@
     },
     {
       "topic": "Guide",
-      "decision": "\"Homeschool requirements by state: what records to keep\" (draftpace.com/guides/homeschool-record-keeping-requirements-by-state)",
+      "decision": "\"How to verify homeschool requirements by state\" (draftpace.com/guides/homeschool-record-keeping-requirements-by-state)",
       "because": "The guide that covers this moment: what to do comes from it, and the film ends on it."
     },
     {
@@ -186,12 +186,12 @@
     {
       "topic": "Structure",
       "decision": "In their words: The moment typed the way a person searches it, then what to do about it, then the product doing it.",
-      "because": "Best fit for a awareness film on Instagram feed video (platform fit 2, goal fit 3). Other candidates: Inside the tool (-4.2), The moment (-5.1)."
+      "because": "Best fit for a awareness film on Instagram feed video (platform fit 2, goal fit 3). Other candidates: The moment (-2.7), Inside the tool (-4.8)."
     },
     {
       "topic": "Angle",
       "decision": "\"What homeschool records am I actually required to keep\"",
-      "because": "A situation people search for, \"What homeschool records am I actually required to keep\", with the steps from \"Homeschool requirements by state: what records to keep\", and how Homeschooling Companion helps."
+      "because": "A situation people search for, \"What homeschool records am I actually required to keep\", with the steps from \"How to verify homeschool requirements by state\", and how Homeschooling Companion helps."
     },
     {
       "topic": "Transitions",
@@ -207,6 +207,11 @@
       "topic": "Colour",
       "decision": "Grounds light → accent → light → ink",
       "because": "Grounds light → accent → light → ink: a cool accent, so a darker ground is used for contrast at a turn."
+    },
+    {
+      "topic": "Variation",
+      "decision": "Rotated the ground rhythm",
+      "because": "Its shape was 0.78 similar to sit-family-health-binder-search-4--pinterest-video; a different film, not the same one re-coloured."
     },
     {
       "topic": "Sound",

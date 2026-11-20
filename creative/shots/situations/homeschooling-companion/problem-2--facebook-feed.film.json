@@ -11,8 +11,8 @@
   "width": 1080,
   "height": 1350,
   "fps": 30,
-  "durationInFrames": 485,
-  "structure": "situationMoment",
+  "durationInFrames": 583,
+  "structure": "situationInside",
   "angle": {
     "text": "You're not sure whether something actually landed.",
     "source": "problemsSolved[1].problem"
@@ -43,7 +43,7 @@
     {
       "id": "moment",
       "kind": "title",
-      "variant": "editorial",
+      "variant": "label",
       "copy": [
         {
           "text": "You're not sure whether something actually landed.",
@@ -56,7 +56,7 @@
       "why": "Opens on the moment as the listing describes it: the situation the viewer is in right now.",
       "from": 0,
       "dur": 101,
-      "ground": "ink",
+      "ground": "accent",
       "transition": "cut",
       "sfx": [],
       "lines": [
@@ -114,6 +114,49 @@
       ]
     },
     {
+      "id": "also",
+      "kind": "phone",
+      "variant": "proof",
+      "copy": [],
+      "caption": {
+        "text": "See what today looks like",
+        "source": "tasks[0].label"
+      },
+      "screen": {
+        "src": "screens/homeschooling-companion-workspace.png",
+        "pose": "flat",
+        "focus": {
+          "at": 0.45,
+          "y": 166,
+          "h": 364,
+          "region": "ava"
+        },
+        "scroll": []
+      },
+      "why": "One more real thing an owner does here, in the listing's own task wording, on the screen it happens on. Screen: \"What we are doing today.\" (Today, per child: each lesson in the plan, and what is worth going over again.) chosen because it is the real screen closest to \"See what today looks like\"; focus on \"Ava\".",
+      "from": 388,
+      "dur": 110,
+      "ground": "light",
+      "transition": "slideUp",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "swish",
+          "volume": 0.192
+        },
+        {
+          "at": 12,
+          "cue": "pop",
+          "volume": 0.252
+        },
+        {
+          "at": 50,
+          "cue": "tap",
+          "volume": 0.33
+        }
+      ]
+    },
+    {
       "id": "cta",
       "kind": "cta",
       "variant": "soft",
@@ -128,15 +171,15 @@
         }
       ],
       "why": "Facebook feed video punishes an obvious ad; a soft close names the product and where to find it.",
-      "from": 388,
+      "from": 486,
       "dur": 97,
-      "ground": "ink",
-      "transition": "slideUp",
+      "ground": "accent",
+      "transition": "lineWipe",
       "sfx": [
         {
           "at": 0,
-          "cue": "swish",
-          "volume": 0.192
+          "cue": "tick",
+          "volume": 0.36
         },
         {
           "at": 8,
@@ -174,13 +217,13 @@
     },
     {
       "topic": "Structure",
-      "decision": "The moment: The moment as it feels, set dark, then the help in the light, then what to do next.",
-      "because": "Best fit for a awareness film on Facebook feed video (platform fit 2, goal fit 3, already used for this product ×2, already used on Facebook feed video ×1). Other candidates: Inside the tool (-14.4)."
+      "decision": "Inside the tool: The moment, then how the product helps on its real screen, then one more real thing an owner does in it.",
+      "because": "Best fit for a awareness film on Facebook feed video (platform fit 3, goal fit 2, already used for this product ×1, already used on Facebook feed video ×2). Other candidates: The moment (-12.9)."
     },
     {
       "topic": "Angle",
       "decision": "\"You're not sure whether something actually landed.\"",
-      "because": "The moment \"You're not sure whether something actually landed.\", then how Homeschooling Companion helps."
+      "because": "The moment \"You're not sure whether something actually landed.\", how Homeschooling Companion helps, and one more real thing it does: \"See what today looks like\"."
     },
     {
       "topic": "Transitions",
@@ -204,7 +247,7 @@
     },
     {
       "topic": "Length",
-      "decision": "16.2s, 3 scenes",
+      "decision": "19.4s, 4 scenes",
       "because": "Each scene is held for the time its words take to read on Facebook feed video (0.32s a word), inside 10–30s."
     }
   ]

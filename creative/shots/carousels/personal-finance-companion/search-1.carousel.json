@@ -11,10 +11,10 @@
         "source": "searchedProblems[0].phrase"
       },
       "emphasis": [
-        "scattered"
+        "finances"
       ],
       "promise": {
-        "text": "How to organize your finances when everything is scattered",
+        "text": "Organize your finances from scratch, one gap at a time",
         "source": "guide:organize-your-finances-from-scratch/title"
       },
       "art": {
@@ -31,137 +31,127 @@
       },
       "lines": [
         {
-          "text": "Bank apps, statements, a notes file and a lot in your head: a ten minute starting page you can fill in from memory, with the gaps marked.",
+          "text": "Make a provisional money map, mark what you do not know, and verify the next obligations before treating a balance as money you can spend.",
           "source": "guide:organize-your-finances-from-scratch/dek#0"
         }
       ],
       "art": {
-        "motif": "mind",
-        "why": "the slide names \"head\", \"memory\""
-      }
-    },
-    {
-      "kind": "step",
-      "eyebrow": {
-        "text": "Minutes 0 to 2",
-        "source": "guide:organize-your-finances-from-scratch/body[3].steps[0].when"
-      },
-      "head": {
-        "text": "List where your money information lives: bank apps, a statements folder, notes, a spreadsheet, a drawer, your head.",
-        "source": "guide:organize-your-finances-from-scratch/body[3].steps[0].what#0"
-      },
-      "body": [
-        {
-          "text": "Don't open any of them yet.",
-          "source": "guide:organize-your-finances-from-scratch/body[3].steps[0].what#1"
-        }
-      ],
-      "emphasis": [
-        "information"
-      ],
-      "art": {
-        "motif": "laptop",
-        "why": "the slide names \"app\", \"apps\", \"spreadsheet\""
-      }
-    },
-    {
-      "kind": "step",
-      "eyebrow": {
-        "text": "Minutes 2 to 6",
-        "source": "guide:organize-your-finances-from-scratch/body[3].steps[1].when"
-      },
-      "head": {
-        "text": "Fill in the six areas from memory.",
-        "source": "guide:organize-your-finances-from-scratch/body[3].steps[1].what#0"
-      },
-      "body": [
-        {
-          "text": "Round numbers are fine.",
-          "source": "guide:organize-your-finances-from-scratch/body[3].steps[1].what#1"
-        },
-        {
-          "text": "Write a question mark next to anything you'd be guessing.",
-          "source": "guide:organize-your-finances-from-scratch/body[3].steps[1].what#2"
-        }
-      ],
-      "emphasis": [
-        "memory"
-      ],
-      "art": {
-        "motif": "mind",
-        "why": "the slide names \"memory\""
-      }
-    },
-    {
-      "kind": "step",
-      "eyebrow": {
-        "text": "Minute 7",
-        "source": "guide:organize-your-finances-from-scratch/body[3].steps[2].when"
-      },
-      "head": {
-        "text": "Circle the number you most want: either what's free to spend, or when a debt ends.",
-        "source": "guide:organize-your-finances-from-scratch/body[3].steps[2].what#0"
-      },
-      "body": [
-        {
-          "text": "That decides which question mark you chase first.",
-          "source": "guide:organize-your-finances-from-scratch/body[3].steps[2].what#1"
-        }
-      ],
-      "emphasis": [
-        "Circle"
-      ],
-      "art": {
         "motif": "wallet",
-        "why": "the slide names \"spend\""
+        "why": "the slide names \"money\", \"spend\""
       }
     },
     {
       "kind": "step",
       "eyebrow": {
-        "text": "Minutes 7 to 9",
-        "source": "guide:organize-your-finances-from-scratch/body[3].steps[3].when"
+        "text": "Payment uncertainty",
+        "source": "guide:organize-your-finances-from-scratch/body[7].steps[0].when"
       },
       "head": {
-        "text": "Close one gap.",
-        "source": "guide:organize-your-finances-from-scratch/body[3].steps[3].what#0"
+        "text": "Build a dated bill list and identify the paying accounts.",
+        "source": "guide:organize-your-finances-from-scratch/body[7].steps[0].what#0"
       },
-      "body": [
-        {
-          "text": "A good first one is a bill with no due date, since a missed date is what costs a fee.",
-          "source": "guide:organize-your-finances-from-scratch/body[3].steps[3].what#1"
-        }
-      ],
+      "body": [],
       "emphasis": [
-        "Close"
+        "identify"
       ],
       "art": {
         "motif": "calendar",
-        "why": "the slide names \"date\", \"due\""
+        "why": "the slide names \"date\""
       }
     },
     {
       "kind": "step",
       "eyebrow": {
-        "text": "Minute 10",
-        "source": "guide:organize-your-finances-from-scratch/body[3].steps[4].when"
+        "text": "Unknown transactions",
+        "source": "guide:organize-your-finances-from-scratch/body[7].steps[1].when"
       },
       "head": {
-        "text": "Pick a day to look at the page again: weekly if you're catching up, monthly once things are steady.",
-        "source": "guide:organize-your-finances-from-scratch/body[3].steps[4].what#0"
+        "text": "Review the statement and investigate unfamiliar charges through official channels.",
+        "source": "guide:organize-your-finances-from-scratch/body[7].steps[1].what#0"
       },
-      "body": [
-        {
-          "text": "Put it in your calendar, with the page's location.",
-          "source": "guide:organize-your-finances-from-scratch/body[3].steps[4].what#1"
-        }
-      ],
+      "body": [],
       "emphasis": [
-        "catching"
+        "investigate"
       ],
       "art": {
-        "motif": "notebook",
-        "why": "the slide names \"page\""
+        "motif": "receipt",
+        "why": "the slide names \"statement\", \"charge\""
+      }
+    },
+    {
+      "kind": "step",
+      "eyebrow": {
+        "text": "Debt uncertainty",
+        "source": "guide:organize-your-finances-from-scratch/body[7].steps[2].when"
+      },
+      "head": {
+        "text": "Collect balances, rates, required payments and special terms before comparing strategies.",
+        "source": "guide:organize-your-finances-from-scratch/body[7].steps[2].what#0"
+      },
+      "body": [],
+      "emphasis": [
+        "strategies"
+      ],
+      "art": {
+        "motif": "bank",
+        "why": "the slide names \"balance\""
+      }
+    },
+    {
+      "kind": "step",
+      "eyebrow": {
+        "text": "Stable information",
+        "source": "guide:organize-your-finances-from-scratch/body[7].steps[3].when"
+      },
+      "head": {
+        "text": "Move from the map to a budget and a short repeating review.",
+        "source": "guide:organize-your-finances-from-scratch/body[7].steps[3].what#0"
+      },
+      "body": [],
+      "emphasis": [
+        "repeating"
+      ],
+      "art": {
+        "motif": "wallet",
+        "why": "the slide names \"budget\""
+      }
+    },
+    {
+      "kind": "checklist",
+      "eyebrow": {
+        "text": "Make the first pass small enough to finish",
+        "source": "guide:organize-your-finances-from-scratch/body[2].heading"
+      },
+      "items": [
+        {
+          "text": "Write the six headings in one place you can reopen.",
+          "source": "guide:organize-your-finances-from-scratch/body[2].items[0]#0"
+        },
+        {
+          "text": "List the accounts and providers you remember without trying to make the page look complete.",
+          "source": "guide:organize-your-finances-from-scratch/body[2].items[1]#0"
+        },
+        {
+          "text": "Label remembered figures as estimates and date the page.",
+          "source": "guide:organize-your-finances-from-scratch/body[2].items[2]#0"
+        },
+        {
+          "text": "Circle any possible payment, notice or safety issue that cannot wait.",
+          "source": "guide:organize-your-finances-from-scratch/body[2].items[3]#0"
+        },
+        {
+          "text": "Choose one gap with an immediate consequence, such as the next bill date.",
+          "source": "guide:organize-your-finances-from-scratch/body[2].items[4]#0"
+        },
+        {
+          "text": "Verify it using a current statement or the provider's official account page.",
+          "source": "guide:organize-your-finances-from-scratch/body[2].items[5]#0"
+        }
+      ],
+      "ticks": true,
+      "art": {
+        "motif": "calendar",
+        "why": "the slide names \"date\""
       }
     },
     {
@@ -190,7 +180,7 @@
         "source": "micro"
       },
       "title": {
-        "text": "How to organize your finances when everything is scattered",
+        "text": "Organize your finances from scratch, one gap at a time",
         "source": "guide:organize-your-finances-from-scratch/title"
       },
       "url": {
@@ -213,15 +203,16 @@
   ],
   "notes": [
     "Cover: \"My finances are scattered across too many apps\" (searchedProblems[0].phrase), as people search it.",
-    "Steps: 5 of 5 from the guide's timeline \"The ten minutes, in order\", one per slide, each with the guide's own explanation.",
+    "Steps: 4 of 4 from the guide's timeline \"Choose the next session by the gap\", one per slide, each with the guide's own explanation.",
+    "Checklist: 6 items from \"Make the first pass small enough to finish\".",
     "Help: \"One place holding accounts, income, bills, subscriptions, transactions, debt and savings, with a single figure for what is actually available.\" (searchedProblems[0].answer), on screens/personal-finance-companion-records.png (\"Records\").",
     "Illustration on the cover: laptop with binder, because the carousel's topic: the moment and its guide name \"app\", \"apps\".",
-    "Illustration on the answer: mind, because the slide names \"head\", \"memory\".",
-    "Illustration on the step: laptop, because the slide names \"app\", \"apps\", \"spreadsheet\".",
-    "Illustration on the step: mind, because the slide names \"memory\".",
-    "Illustration on the step: wallet, because the slide names \"spend\".",
-    "Illustration on the step: calendar, because the slide names \"date\", \"due\".",
-    "Illustration on the step: notebook, because the slide names \"page\".",
+    "Illustration on the answer: wallet, because the slide names \"money\", \"spend\".",
+    "Illustration on the step: calendar, because the slide names \"date\".",
+    "Illustration on the step: receipt, because the slide names \"statement\", \"charge\".",
+    "Illustration on the step: bank, because the slide names \"balance\".",
+    "Illustration on the step: wallet, because the slide names \"budget\".",
+    "Illustration on the checklist: calendar, because the slide names \"date\".",
     "Illustration on the close: laptop, because the carousel's topic: the moment and its guide name \"app\", \"apps\"."
   ]
 }

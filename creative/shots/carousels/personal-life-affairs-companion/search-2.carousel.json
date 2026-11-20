@@ -1,0 +1,129 @@
+{
+  "id": "car-personal-life-affairs-companion-search-2",
+  "product": "personal-life-affairs-companion",
+  "guide": "the-if-something-happens-to-me-file",
+  "situation": "searchedProblems[1].phrase",
+  "slides": [
+    {
+      "kind": "cover",
+      "quote": {
+        "text": "How do I make an if-something-happens-to-me file",
+        "source": "searchedProblems[1].phrase"
+      },
+      "emphasis": [
+        "file"
+      ],
+      "promise": {
+        "text": "The if-something-happens-to-me file: where to start",
+        "source": "guide:the-if-something-happens-to-me-file/title"
+      },
+      "art": {
+        "motif": "binder",
+        "why": "the carousel's topic: the moment and its guide name \"file\"",
+        "also": "magnifier"
+      }
+    },
+    {
+      "kind": "answer",
+      "eyebrow": {
+        "text": "In short",
+        "source": "micro"
+      },
+      "lines": [
+        {
+          "text": "Give someone a way to find the right people, papers and household details without putting every secret in one folder.",
+          "source": "guide:the-if-something-happens-to-me-file/dek#0"
+        },
+        {
+          "text": "Start with one useful page.",
+          "source": "guide:the-if-something-happens-to-me-file/dek#1"
+        }
+      ],
+      "art": {
+        "motif": "notebook",
+        "why": "the slide names \"page\", \"paper\""
+      }
+    },
+    {
+      "kind": "checklist",
+      "eyebrow": {
+        "text": "Check the file after a meaningful change",
+        "source": "guide:the-if-something-happens-to-me-file/body[9].heading"
+      },
+      "items": [
+        {
+          "text": "Replace superseded directions clearly rather than leaving conflicting versions in several folders.",
+          "source": "guide:the-if-something-happens-to-me-file/body[9].items[1]#0"
+        },
+        {
+          "text": "Review access after changing a lock, device, provider or security arrangement.",
+          "source": "guide:the-if-something-happens-to-me-file/body[9].items[2]#0"
+        },
+        {
+          "text": "Ask the appropriate person whether the directions are understandable.",
+          "source": "guide:the-if-something-happens-to-me-file/body[9].items[3]#0"
+        }
+      ],
+      "ticks": false,
+      "art": {
+        "motif": "binder",
+        "why": "the slide names \"folder\", \"file\""
+      }
+    },
+    {
+      "kind": "help",
+      "eyebrow": {
+        "text": "How it helps",
+        "source": "micro"
+      },
+      "name": {
+        "text": "Personal Life Affairs Companion",
+        "source": "title"
+      },
+      "line": {
+        "text": "This is that file, kept current rather than written once, and printable as a book somebody could pick up and use.",
+        "source": "searchedProblems[1].answer"
+      },
+      "ui": {
+        "kind": "screen",
+        "src": "screens/personal-life-affairs-companion-affairs.png"
+      }
+    },
+    {
+      "kind": "close",
+      "eyebrow": {
+        "text": "The full guide",
+        "source": "micro"
+      },
+      "title": {
+        "text": "The if-something-happens-to-me file: where to start",
+        "source": "guide:the-if-something-happens-to-me-file/title"
+      },
+      "url": {
+        "text": "draftpace.com/guides/the-if-something-happens-to-me-file",
+        "source": "guide:the-if-something-happens-to-me-file/url"
+      },
+      "link": {
+        "text": "Free to read. Link in bio.",
+        "source": "micro"
+      },
+      "save": {
+        "text": "Save this for later.",
+        "source": "micro"
+      },
+      "art": {
+        "motif": "binder",
+        "why": "the carousel's topic: the moment and its guide name \"file\""
+      }
+    }
+  ],
+  "notes": [
+    "Cover: \"How do I make an if-something-happens-to-me file\" (searchedProblems[1].phrase), as people search it.",
+    "Checklist: 3 items from \"Check the file after a meaningful change\".",
+    "Help: \"This is that file, kept current rather than written once, and printable as a book somebody could pick up and use.\" (searchedProblems[1].answer), on screens/personal-life-affairs-companion-affairs.png (\"What you have established so far.\").",
+    "Illustration on the cover: binder with magnifier, because the carousel's topic: the moment and its guide name \"file\".",
+    "Illustration on the answer: notebook, because the slide names \"page\", \"paper\".",
+    "Illustration on the checklist: binder, because the slide names \"folder\", \"file\".",
+    "Illustration on the close: binder, because the carousel's topic: the moment and its guide name \"file\"."
+  ]
+}

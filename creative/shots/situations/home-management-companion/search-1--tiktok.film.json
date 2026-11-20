@@ -12,7 +12,7 @@
   "width": 1080,
   "height": 1920,
   "fps": 30,
-  "durationInFrames": 640,
+  "durationInFrames": 660,
   "structure": "situationWords",
   "angle": {
     "text": "I keep forgetting home maintenance",
@@ -29,9 +29,9 @@
     "motif": "tag",
     "grounds": [
       "light",
-      "accent",
       "light",
-      "ink"
+      "ink",
+      "accent"
     ],
     "pace": 0.85
   },
@@ -68,106 +68,48 @@
       ]
     },
     {
-      "id": "step-1",
-      "kind": "title",
-      "variant": "label",
+      "id": "what-to-do",
+      "kind": "list",
+      "variant": "checklist",
       "copy": [
         {
-          "text": "Walk the outside once the snow is gone.",
-          "source": "guide:home-maintenance-checklist-by-month/body[1].steps[2].what#0"
+          "text": "Collect manuals and service records before assigning intervals.",
+          "source": "guide:home-maintenance-checklist-by-month/body[1].items[1]#0"
+        },
+        {
+          "text": "Add local freeze, heavy-rain, heat and storm periods.",
+          "source": "guide:home-maintenance-checklist-by-month/body[1].items[2]#0"
+        },
+        {
+          "text": "Separate safe owner observations from professional maintenance.",
+          "source": "guide:home-maintenance-checklist-by-month/body[1].items[3]#0"
         }
       ],
       "eyebrow": {
-        "text": "March",
-        "source": "guide:home-maintenance-checklist-by-month/body[1].steps[2].when"
+        "text": "Set up the calendar first",
+        "source": "guide:home-maintenance-checklist-by-month/body[1].heading"
       },
-      "emphasis": [
-        "outside"
-      ],
-      "why": "What to do, in order, from the guide \"Home maintenance checklist by month (short version)\": \"March\".",
+      "why": "What to do about it, from the guide \"Home maintenance by month: a flexible checklist\": its own checklist.",
       "from": 51,
-      "dur": 107,
-      "ground": "accent",
-      "transition": "cut",
-      "sfx": [],
-      "lines": [
-        [
-          "Walk the outside",
-          "once the snow",
-          "is gone."
-        ]
-      ]
-    },
-    {
-      "id": "step-2",
-      "kind": "title",
-      "variant": "label",
-      "copy": [
-        {
-          "text": "Have the AC serviced if you haven't.",
-          "source": "guide:home-maintenance-checklist-by-month/body[1].steps[4].what#0"
-        }
-      ],
-      "eyebrow": {
-        "text": "May",
-        "source": "guide:home-maintenance-checklist-by-month/body[1].steps[4].when"
-      },
-      "emphasis": [
-        "serviced"
-      ],
-      "why": "What to do, in order, from the guide \"Home maintenance checklist by month (short version)\": \"May\".",
-      "from": 152,
-      "dur": 100,
+      "dur": 286,
       "ground": "light",
-      "transition": "whip",
+      "transition": "cut",
       "sfx": [
         {
-          "at": 0,
-          "cue": "swish",
-          "volume": 0.32
-        }
-      ],
-      "lines": [
-        [
-          "Have the AC",
-          "serviced if you",
-          "haven't."
-        ]
-      ]
-    },
-    {
-      "id": "step-3",
-      "kind": "title",
-      "variant": "label",
-      "copy": [
+          "at": 10,
+          "cue": "pop",
+          "volume": 0.45
+        },
         {
-          "text": "A light month.",
-          "source": "guide:home-maintenance-checklist-by-month/body[1].steps[5].what#0"
-        }
-      ],
-      "eyebrow": {
-        "text": "June",
-        "source": "guide:home-maintenance-checklist-by-month/body[1].steps[5].when"
-      },
-      "emphasis": [
-        "light"
-      ],
-      "why": "What to do, in order, from the guide \"Home maintenance checklist by month (short version)\": \"June\".",
-      "from": 246,
-      "dur": 71,
-      "ground": "ink",
-      "transition": "slideUp",
-      "sfx": [
+          "at": 82,
+          "cue": "pop",
+          "volume": 0.45
+        },
         {
-          "at": 0,
-          "cue": "swish",
-          "volume": 0.32
+          "at": 154,
+          "cue": "pop",
+          "volume": 0.45
         }
-      ],
-      "lines": [
-        [
-          "A light month."
-        ]
       ]
     },
     {
@@ -181,7 +123,7 @@
       },
       "screen": {
         "src": "screens/home-management-companion-seasons.png",
-        "pose": "flat",
+        "pose": "float",
         "focus": {
           "at": 0.45,
           "y": 82,
@@ -195,11 +137,16 @@
         "text": "Home Base",
         "source": "title"
       },
-      "from": 311,
+      "from": 331,
       "dur": 229,
-      "ground": "light",
-      "transition": "cut",
+      "ground": "ink",
+      "transition": "whip",
       "sfx": [
+        {
+          "at": 0,
+          "cue": "swish",
+          "volume": 0.32
+        },
         {
           "at": 12,
           "cue": "pop",
@@ -231,7 +178,7 @@
         "source": "micro"
       },
       "why": "Ends on where to read the whole guide, with the product beneath it: the viewer leaves with the next step, not only a pitch.",
-      "from": 534,
+      "from": 554,
       "dur": 106,
       "ground": "accent",
       "transition": "blurDissolve",
@@ -267,7 +214,7 @@
     },
     {
       "topic": "Guide",
-      "decision": "\"Home maintenance checklist by month (short version)\" (draftpace.com/guides/home-maintenance-checklist-by-month)",
+      "decision": "\"Home maintenance by month: a flexible checklist\" (draftpace.com/guides/home-maintenance-checklist-by-month)",
       "because": "The guide that covers this moment: what to do comes from it, and the film ends on it."
     },
     {
@@ -283,12 +230,12 @@
     {
       "topic": "Structure",
       "decision": "In their words: The moment typed the way a person searches it, then what to do about it, then the product doing it.",
-      "because": "Best fit for a awareness film on TikTok (platform fit 2, goal fit 3). Other candidates: Inside the tool (0.2), The moment (-2.4)."
+      "because": "Best fit for a awareness film on TikTok (platform fit 2, goal fit 3). Other candidates: What to do first (3.9), The moment (0.0)."
     },
     {
       "topic": "Angle",
       "decision": "\"I keep forgetting home maintenance\"",
-      "because": "A situation people search for, \"I keep forgetting home maintenance\", with the steps from \"Home maintenance checklist by month (short version)\", and how Home Base helps."
+      "because": "A situation people search for, \"I keep forgetting home maintenance\", with the steps from \"Home maintenance by month: a flexible checklist\", and how Home Base helps."
     },
     {
       "topic": "Transitions",
@@ -302,8 +249,8 @@
     },
     {
       "topic": "Colour",
-      "decision": "Grounds light → accent → light → ink",
-      "because": "Grounds light → accent → light → ink: a cool accent, so a darker ground is used for contrast at a turn."
+      "decision": "Grounds light → light → ink → accent",
+      "because": "Grounds light → light → ink → accent: a cool accent, so a darker ground is used for contrast at a turn."
     },
     {
       "topic": "Sound",
@@ -312,7 +259,7 @@
     },
     {
       "topic": "Length",
-      "decision": "21.3s, 6 scenes",
+      "decision": "22.0s, 4 scenes",
       "because": "Each scene is held for the time its words take to read on TikTok (0.24s a word), inside 12–35s."
     }
   ]

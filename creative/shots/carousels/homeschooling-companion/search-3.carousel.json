@@ -14,13 +14,13 @@
         "learned"
       ],
       "promise": {
-        "text": "How to tell if your homeschooler actually learned it",
+        "text": "Is my homeschooler learning? Check one skill",
         "source": "guide:how-to-check-if-your-child-learned-something/title"
       },
       "art": {
         "motif": "books",
         "why": "the carousel's topic: the moment and its guide name \"learn\", \"child\"",
-        "also": "speech"
+        "also": "notebook"
       }
     },
     {
@@ -31,160 +31,51 @@
       },
       "lines": [
         {
-          "text": "Covered is not learned.",
+          "text": "Use a short explanation, demonstration and later revisit to understand one learning goal without turning a handful of answers into a diagnosis.",
           "source": "guide:how-to-check-if-your-child-learned-something/dek#0"
+        }
+      ],
+      "art": {
+        "motif": "target",
+        "why": "the slide names \"goal\""
+      }
+    },
+    {
+      "kind": "checklist",
+      "eyebrow": {
+        "text": "Run a useful short check",
+        "source": "guide:how-to-check-if-your-child-learned-something/body[2].heading"
+      },
+      "items": [
+        {
+          "text": "Write the exact skill or idea you want to observe.",
+          "source": "guide:how-to-check-if-your-child-learned-something/body[2].items[0]#0"
         },
         {
-          "text": "Ask four questions a week or more later, write the answers down, and know when a result is not enough to say.",
-          "source": "guide:how-to-check-if-your-child-learned-something/dek#1"
-        }
-      ],
-      "art": {
-        "motif": "speech",
-        "why": "the slide names \"say\", \"ask\", \"question\""
-      }
-    },
-    {
-      "kind": "step",
-      "eyebrow": {
-        "text": "Five ways to check it landed",
-        "source": "guide:how-to-check-if-your-child-learned-something/body[2].heading"
-      },
-      "number": {
-        "text": "1",
-        "source": "micro"
-      },
-      "head": {
-        "text": "Ask them to teach it back to you.",
-        "source": "guide:how-to-check-if-your-child-learned-something/body[2].items[0]#0"
-      },
-      "body": [
-        {
-          "text": "If they can explain a step to a stuffed animal or a younger sibling, they understand it.",
-          "source": "guide:how-to-check-if-your-child-learned-something/body[2].items[0]#1"
+          "text": "Choose a familiar example and a related new example.",
+          "source": "guide:how-to-check-if-your-child-learned-something/body[2].items[1]#0"
         },
         {
-          "text": "If they can only repeat a memorized line, they don't yet.",
-          "source": "guide:how-to-check-if-your-child-learned-something/body[2].items[0]#2"
-        }
-      ],
-      "emphasis": [
-        "teach"
-      ],
-      "art": {
-        "motif": "books",
-        "why": "the slide names \"teach\""
-      }
-    },
-    {
-      "kind": "step",
-      "eyebrow": {
-        "text": "Five ways to check it landed",
-        "source": "guide:how-to-check-if-your-child-learned-something/body[2].heading"
-      },
-      "number": {
-        "text": "2",
-        "source": "micro"
-      },
-      "head": {
-        "text": "Have them narrate what they just read or did, in their own words, without looking.",
-        "source": "guide:how-to-check-if-your-child-learned-something/body[2].items[1]#0"
-      },
-      "body": [
-        {
-          "text": "A summary that includes why something happened, not just what happened, is the stronger sign.",
-          "source": "guide:how-to-check-if-your-child-learned-something/body[2].items[1]#1"
-        }
-      ],
-      "emphasis": [
-        "narrate"
-      ],
-      "art": {
-        "motif": "speech",
-        "why": "the slide names \"words\""
-      }
-    },
-    {
-      "kind": "step",
-      "eyebrow": {
-        "text": "Five ways to check it landed",
-        "source": "guide:how-to-check-if-your-child-learned-something/body[2].heading"
-      },
-      "number": {
-        "text": "3",
-        "source": "micro"
-      },
-      "head": {
-        "text": "Ask a few oral questions that mix recall and reasoning.",
-        "source": "guide:how-to-check-if-your-child-learned-something/body[2].items[2]#0"
-      },
-      "body": [
-        {
-          "text": "\"What's 6 times 7\" checks recall.",
-          "source": "guide:how-to-check-if-your-child-learned-something/body[2].items[2]#1"
+          "text": "Ask for a response without supplying the answer in your question.",
+          "source": "guide:how-to-check-if-your-child-learned-something/body[2].items[2]#0"
         },
         {
-          "text": "\"Why does that work\" checks understanding.",
-          "source": "guide:how-to-check-if-your-child-learned-something/body[2].items[2]#2"
-        }
-      ],
-      "emphasis": [
-        "reasoning"
-      ],
-      "art": {
-        "motif": "speech",
-        "why": "the slide names \"ask\", \"question\""
-      }
-    },
-    {
-      "kind": "step",
-      "eyebrow": {
-        "text": "Five ways to check it landed",
-        "source": "guide:how-to-check-if-your-child-learned-something/body[2].heading"
-      },
-      "number": {
-        "text": "4",
-        "source": "micro"
-      },
-      "head": {
-        "text": "Do a short spot check from the workbook itself: cover the answer, have them solve it again a different way than the book showed.",
-        "source": "guide:how-to-check-if-your-child-learned-something/body[2].items[3]#0"
-      },
-      "body": [],
-      "emphasis": [
-        "different"
-      ],
-      "art": {
-        "motif": "books",
-        "why": "the slide names \"workbook\""
-      }
-    },
-    {
-      "kind": "step",
-      "eyebrow": {
-        "text": "Five ways to check it landed",
-        "source": "guide:how-to-check-if-your-child-learned-something/body[2].heading"
-      },
-      "number": {
-        "text": "5",
-        "source": "micro"
-      },
-      "head": {
-        "text": "Ask for a two-minute demonstration: build it, draw it, or show the step on paper.",
-        "source": "guide:how-to-check-if-your-child-learned-something/body[2].items[4]#0"
-      },
-      "body": [
+          "text": "Invite a reason, drawing or demonstration where appropriate.",
+          "source": "guide:how-to-check-if-your-child-learned-something/body[2].items[3]#0"
+        },
         {
-          "text": "Watching them do it catches things a spoken answer hides.",
-          "source": "guide:how-to-check-if-your-child-learned-something/body[2].items[4]#1"
+          "text": "Record prompts, tools and other help used, not only right or wrong.",
+          "source": "guide:how-to-check-if-your-child-learned-something/body[2].items[4]#0"
+        },
+        {
+          "text": "Give feedback or reteach the specific gap.",
+          "source": "guide:how-to-check-if-your-child-learned-something/body[2].items[5]#0"
         }
       ],
-      "emphasis": [
-        "demonstration"
-      ],
+      "ticks": true,
       "art": {
-        "motif": "clock",
-        "why": "the slide names \"minute\""
+        "motif": "notebook",
+        "why": "the slide names \"write\", \"record\""
       }
     },
     {
@@ -213,7 +104,7 @@
         "source": "micro"
       },
       "title": {
-        "text": "How to tell if your homeschooler actually learned it",
+        "text": "Is my homeschooler learning? Check one skill",
         "source": "guide:how-to-check-if-your-child-learned-something/title"
       },
       "url": {
@@ -236,15 +127,11 @@
   ],
   "notes": [
     "Cover: \"How do I know if my child actually learned something\" (searchedProblems[2].phrase), as people search it.",
-    "Steps: 5 of 5 from the guide's numbered steps \"Five ways to check it landed\", one per slide, each with the guide's own explanation.",
+    "Checklist: 6 items from \"Run a useful short check\".",
     "Help: \"A check of eight questions you supply and mark, reported one topic at a time, including the honest answer that there is not enough to say.\" (searchedProblems[2].answer), on screens/homeschooling-companion-record.png (\"What has happened.\").",
-    "Illustration on the cover: books with speech, because the carousel's topic: the moment and its guide name \"learn\", \"child\".",
-    "Illustration on the answer: speech, because the slide names \"say\", \"ask\", \"question\".",
-    "Illustration on the step: books, because the slide names \"teach\".",
-    "Illustration on the step: speech, because the slide names \"words\".",
-    "Illustration on the step: speech, because the slide names \"ask\", \"question\".",
-    "Illustration on the step: books, because the slide names \"workbook\".",
-    "Illustration on the step: clock, because the slide names \"minute\".",
+    "Illustration on the cover: books with notebook, because the carousel's topic: the moment and its guide name \"learn\", \"child\".",
+    "Illustration on the answer: target, because the slide names \"goal\".",
+    "Illustration on the checklist: notebook, because the slide names \"write\", \"record\".",
     "Illustration on the close: books, because the carousel's topic: the moment and its guide name \"learn\", \"child\"."
   ]
 }

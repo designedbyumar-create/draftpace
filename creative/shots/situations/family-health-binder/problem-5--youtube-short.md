@@ -13,7 +13,7 @@
 | **Situation** | "A medication that was stopped in the spring is still on the list you hand over in the fall." | One real moment from Family Health Binder's listing (problemsSolved[4].problem). The film is about this moment and how the product helps with it: "Mark it stopped. It stays in the record and leaves every printed page. The list also says when you last checked it." |
 | **Stage** | Before launch: helpful and relatable only | Nobody knows Draftpace yet, so films show how it helps with real moments. Who it is not for, questions before buying, what you get and the price wait until there are users to sell to. |
 | **Audience** | You are the one who fills in every form, and everyone's allergies, medications and insurance number live only in your head. / You have more than one child, or a child and an aging parent, whose facts you are both responsible for. | The listing's own audience lines; the director writes for them. |
-| **Structure** | Inside the tool: The moment, then how the product helps on its real screen, then one more real thing an owner does in it. | Best fit for a awareness film on YouTube Short (platform fit 2, goal fit 2, already used for this product ×2). Other candidates: The moment (-25.5). |
+| **Structure** | Inside the tool: The moment, then how the product helps on its real screen, then one more real thing an owner does in it. | Best fit for a awareness film on YouTube Short (platform fit 2, goal fit 2, already used for this product ×4). Other candidates: The moment (-25.2). |
 | **Angle** | "A medication that was stopped in the spring is still on the list you hand over in the fall." | The moment "A medication that was stopped in the spring is still on the list you hand over in the fall.", how Family Health Binder helps, and one more real thing it does: "Print a page for school, a sitter or an appointment". |
 | **Transitions** | Transitions follow the product's own identity motif, "card" | Transitions follow the product's own identity motif, "card": a binder of cards, so scenes slide in like the next card. |
 | **Camera** | Camera "dolly" | Camera "dolly": constant forward movement for a high-energy feed. |
@@ -21,6 +21,9 @@
 | **Variation** | Rotated the ground rhythm | Its shape was 0.82 similar to sit-family-health-binder-search-3--instagram-feed; a different film, not the same one re-coloured. |
 | **Variation** | Changed the camera | Its shape was 0.82 similar to sit-family-health-binder-search-3--instagram-feed; a different film, not the same one re-coloured. |
 | **Variation** | Reordered the transitions | Its shape was 0.74 similar to sit-family-health-binder-search-3--instagram-feed; a different film, not the same one re-coloured. |
+| **Variation** | Switched the brand reveal | Its shape was 0.74 similar to sit-family-health-binder-search-5--instagram-reel; a different film, not the same one re-coloured. |
+| **Variation** | Re-posed the phones | Its shape was 0.74 similar to sit-family-health-binder-search-5--instagram-reel; a different film, not the same one re-coloured. |
+| **Variation** | Set the grounds against the accent | Its shape was 0.74 similar to sit-alongside-problem-5--facebook-feed; a different film, not the same one re-coloured. |
 | **Sound** | Full sound design, mid-energy bed | Sound-on placement: every transition, landing and reveal has a cue, and the bed ducks under the brand moment. |
 | **Length** | 20.2s, 4 scenes | Each scene is held for the time its words take to read on YouTube Short (0.26s a word), inside 15–40s. |
 
@@ -39,7 +42,7 @@ Treatment: voice `editorial`, camera `float`, motif `card`, transitions `cardSli
 
 - **Shot:** phone / proof on a light ground, in by `blurDissolve`
 - **Eyebrow:** "Family Health Binder" — `title`
-- **Real UI:** `screens/family-health-binder-members.png`, pose `float`, focus "health" (y 528, h 258) at 45%
+- **Real UI:** `screens/family-health-binder-members.png`, pose `tiltLeft`, focus "health" (y 528, h 258) at 45%
 - **Caption:** "Mark it stopped. It stays in the record and leaves every printed page. The list also says when you last checked it." — `problemsSolved[4].solution`
 - **Sound:** whoosh @+0f (0.32), pop @+12f (0.42), tap @+119f (0.55)
 - **Why:** How Family Health Binder helps with this moment, in the listing's own words, on the real screen that shows it. Screen: "Family" (One person's card: age, allergies, medications, and tabs for health, vaccines and care team.) chosen because it is the real screen closest to "Mark it stopped. It stays in the record and leaves every printed page. The list "; focus on "Allergies, Conditions, Medications".
@@ -47,14 +50,14 @@ Treatment: voice `editorial`, camera `float`, motif `card`, transitions `cardSli
 ### 3. also — 0:13.63 to 0:17.83 (frames 409–535, 4.2s)
 
 - **Shot:** phone / proof on a accent ground, in by `blurDissolve`
-- **Real UI:** `screens/family-health-binder-printables.png`, pose `tiltLeft`, focus "forms-sheet" (y 294, h 150) at 45%
+- **Real UI:** `screens/family-health-binder-printables.png`, pose `tiltRight`, focus "forms-sheet" (y 294, h 150) at 45%
 - **Caption:** "Print a page for school, a sitter or an appointment" — `tasks[7].label`
 - **Sound:** whoosh @+0f (0.32), pop @+12f (0.42), tap @+57f (0.55)
 - **Why:** One more real thing an owner does here, in the listing's own task wording, on the screen it happens on. Screen: "Print" (The pages that leave the house: forms sheet, caregiver sheet, emergency card, visit page, intake summary, each with Make it.) chosen because it is the real screen closest to "Print a page for school, a sitter or an appointment"; focus on "Forms sheet".
 
 ### 4. cta — 0:17.43 to 0:20.23 (frames 523–607, 2.8s)
 
-- **Shot:** cta / soft on a accent ground, in by `cardSlide`
+- **Shot:** cta / soft on a ink ground, in by `cardSlide`
 - **On screen:** "Family Health Binder" — `title`
 - **On screen:** "Available now." — `micro`
 - **Sound:** swish @+0f (0.32), settle @+8f (0.50)

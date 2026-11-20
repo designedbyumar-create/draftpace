@@ -1,6 +1,6 @@
 {
   "id": "guide-you-missed-a-payment-what-to-do-next--youtube-short",
-  "product": "monthly-money-reset",
+  "product": "personal-finance-companion",
   "guide": "you-missed-a-payment-what-to-do-next",
   "runtime": {
     "min": 18,
@@ -11,21 +11,21 @@
   "width": 1080,
   "height": 1920,
   "fps": 30,
-  "durationInFrames": 612,
-  "structure": "guideTimeline",
+  "durationInFrames": 812,
+  "structure": "guideChecklist",
   "angle": {
-    "text": "You missed a payment. What to do in the next 48 hours",
+    "text": "Missed a payment? What to check and do next",
     "source": "guide:you-missed-a-payment-what-to-do-next/title"
   },
   "treatment": {
     "voice": "editorial",
-    "camera": "dolly",
+    "camera": "float",
     "transitions": [
-      "lineWipe",
-      "blurDissolve",
-      "lineWipe"
+      "cardSlide",
+      "wipe",
+      "cardSlide"
     ],
-    "motif": "ledger",
+    "motif": "index",
     "grounds": [
       "light",
       "light",
@@ -46,161 +46,128 @@
       "variant": "editorial",
       "copy": [
         {
-          "text": "You missed a payment. What to do in the next 48 hours",
+          "text": "Missed a payment? What to check and do next",
           "source": "guide:you-missed-a-payment-what-to-do-next/title"
         }
       ],
       "emphasis": [
-        "48"
+        "payment"
       ],
       "why": "The hook is the guide's own title: the question it answers, as a person would put it.",
       "from": 0,
-      "dur": 115,
+      "dur": 91,
       "ground": "light",
       "transition": "cut",
       "sfx": [],
       "lines": [
         [
-          "You missed a payment.",
-          "What to do in the",
-          "next 48 hours"
+          "Missed a payment? What",
+          "to check and do next"
         ]
       ]
     },
     {
-      "id": "when-1",
-      "kind": "title",
-      "variant": "label",
+      "id": "list",
+      "kind": "list",
+      "variant": "checklist",
       "copy": [
         {
-          "text": "Confirm it failed.",
-          "source": "guide:you-missed-a-payment-what-to-do-next/body[2].steps[0].what#0"
+          "text": "Identify the provider, account type, original due date and current notice.",
+          "source": "guide:you-missed-a-payment-what-to-do-next/body[2].items[0]#0"
+        },
+        {
+          "text": "Confirm whether the payment is failed, pending, returned or already posted.",
+          "source": "guide:you-missed-a-payment-what-to-do-next/body[2].items[1]#0"
+        },
+        {
+          "text": "Check essential spending and other bills before promising payment.",
+          "source": "guide:you-missed-a-payment-what-to-do-next/body[2].items[3]#0"
+        },
+        {
+          "text": "If affordable, pay through a verified route and retain confirmation.",
+          "source": "guide:you-missed-a-payment-what-to-do-next/body[2].items[4]#0"
         }
       ],
       "eyebrow": {
-        "text": "Right now",
-        "source": "guide:you-missed-a-payment-what-to-do-next/body[2].steps[0].when"
+        "text": "The first recovery check",
+        "source": "guide:you-missed-a-payment-what-to-do-next/body[2].heading"
       },
-      "emphasis": [
-        "Confirm"
-      ],
-      "why": "Marker 1: \"Right now\", with the first sentence of what the guide says to do then.",
-      "from": 103,
-      "dur": 81,
+      "why": "The guide's own checklist, the first sentence of each item, ticked in as it is read.",
+      "from": 79,
+      "dur": 492,
       "ground": "light",
-      "transition": "lineWipe",
+      "transition": "cardSlide",
       "sfx": [
         {
           "at": 0,
-          "cue": "tick",
-          "volume": 0.6
-        }
-      ],
-      "lines": [
-        [
-          "Confirm it failed."
-        ]
-      ]
-    },
-    {
-      "id": "when-2",
-      "kind": "title",
-      "variant": "label",
-      "copy": [
-        {
-          "text": "Call the lender.",
-          "source": "guide:you-missed-a-payment-what-to-do-next/body[2].steps[3].what#0"
-        }
-      ],
-      "eyebrow": {
-        "text": "Day 1, if you can't pay",
-        "source": "guide:you-missed-a-payment-what-to-do-next/body[2].steps[3].when"
-      },
-      "emphasis": [
-        "lender"
-      ],
-      "why": "Marker 2: \"Day 1, if you can't pay\", with the first sentence of what the guide says to do then.",
-      "from": 172,
-      "dur": 112,
-      "ground": "ink",
-      "transition": "blurDissolve",
-      "sfx": [
-        {
-          "at": 0,
-          "cue": "whoosh",
+          "cue": "swish",
           "volume": 0.32
-        }
-      ],
-      "lines": [
-        [
-          "Call the lender."
-        ]
-      ]
-    },
-    {
-      "id": "when-3",
-      "kind": "title",
-      "variant": "label",
-      "copy": [
+        },
         {
-          "text": "Log in again.",
-          "source": "guide:you-missed-a-payment-what-to-do-next/body[2].steps[5].what#0"
-        }
-      ],
-      "eyebrow": {
-        "text": "Day 2",
-        "source": "guide:you-missed-a-payment-what-to-do-next/body[2].steps[5].when"
-      },
-      "emphasis": [
-        "again"
-      ],
-      "why": "Marker 3: \"Day 2\", with the first sentence of what the guide says to do then.",
-      "from": 272,
-      "dur": 81,
-      "ground": "accent",
-      "transition": "lineWipe",
-      "sfx": [
+          "at": 10,
+          "cue": "pop",
+          "volume": 0.45
+        },
         {
-          "at": 0,
-          "cue": "tick",
-          "volume": 0.6
+          "at": 108,
+          "cue": "pop",
+          "volume": 0.45
+        },
+        {
+          "at": 206,
+          "cue": "pop",
+          "volume": 0.45
+        },
+        {
+          "at": 304,
+          "cue": "pop",
+          "volume": 0.45
         }
-      ],
-      "lines": [
-        [
-          "Log in again."
-        ]
       ]
     },
     {
       "id": "tool",
-      "kind": "live",
-      "variant": "after",
+      "kind": "phone",
+      "variant": "proof",
       "copy": [],
       "caption": {
-        "text": "One recommended next action at a time",
-        "source": "expectedOutputs[3]"
+        "text": "One dominant next action at a time",
+        "source": "expectedOutputs[2]"
       },
-      "live": "nextActionCard",
+      "screen": {
+        "src": "screens/personal-finance-companion-bills.png",
+        "pose": "flat",
+        "focus": {
+          "at": 0.45,
+          "y": 229,
+          "h": 224,
+          "region": "totals"
+        }
+      },
+      "why": "The turn: the product the guide itself hands over to, named and shown on its real screen, captioned with its listing's line closest to what the guide teaches. Screen: \"Bills\" (What's owed on a schedule: the monthly total, what's left to pay, and each bill marked ready or essential.) chosen because it is the real screen closest to \"One dominant next action at a time Missed a payment? What to check and do next\"; focus on \"Monthly total, Left to pay this month\".",
       "eyebrow": {
-        "text": "Monthly Money Reset",
+        "text": "Personal Finance Companion",
         "source": "title"
       },
-      "why": "The turn: the product the guide hands over to, as its real component computing a real number, captioned with its listing's line closest to what the guide teaches.",
-      "from": 341,
-      "dur": 165,
-      "ground": "light",
-      "transition": "lineWipe",
+      "from": 559,
+      "dur": 147,
+      "ground": "ink",
+      "transition": "wipe",
       "sfx": [
         {
           "at": 0,
-          "cue": "tick",
-          "volume": 0.6
+          "cue": "swish",
+          "volume": 0.32
         },
         {
           "at": 12,
           "cue": "pop",
           "volume": 0.42
+        },
+        {
+          "at": 66,
+          "cue": "tap",
+          "volume": 0.55
         }
       ]
     },
@@ -210,7 +177,7 @@
       "variant": "guide",
       "copy": [
         {
-          "text": "Monthly Money Reset",
+          "text": "Personal Finance Companion",
           "source": "title"
         },
         {
@@ -223,9 +190,9 @@
         "source": "micro"
       },
       "why": "Ends on where to read the whole guide, with the product beneath it: the viewer leaves with the next step, not only a pitch.",
-      "from": 494,
+      "from": 694,
       "dur": 118,
-      "ground": "light",
+      "ground": "accent",
       "transition": "blurDissolve",
       "sfx": [
         {
@@ -249,13 +216,13 @@
     },
     {
       "topic": "Product",
-      "decision": "Monthly Money Reset: free, motif \"ledger\", calm personality, cool accent #214b3e",
-      "because": "From its definition and Shop listing. 1 real screens and live components (safeToSpendCard, nextActionCard) to show."
+      "decision": "Personal Finance Companion: $49 (list $99), motif \"index\", calm personality, cool accent #0d3b2e",
+      "because": "From its definition and Shop listing. 4 real screens to show."
     },
     {
       "topic": "Guide",
-      "decision": "\"You missed a payment. What to do in the next 48 hours\" (draftpace.com/guides/you-missed-a-payment-what-to-do-next)",
-      "because": "Teaches from the guide first; Monthly Money Reset is the product the guide hands over to. 2 lists and timelines, 5 questions to draw from."
+      "decision": "\"Missed a payment? What to check and do next\" (draftpace.com/guides/you-missed-a-payment-what-to-do-next)",
+      "because": "Teaches from the guide first; Personal Finance Companion is the product the guide hands over to. 1 lists and timelines, 3 questions to draw from."
     },
     {
       "topic": "Stage",
@@ -264,28 +231,28 @@
     },
     {
       "topic": "Audience",
-      "decision": "You want one clear number for what's actually safe to spend, not a full budget system. / You have a mix of bills, some paid automatically and some not, that you'd rather not accidentally spend past.",
+      "decision": "You have more than one account, bill, or income source and want them tracked in one real place, not five apps. / You want a next step handed to you, not a dashboard you have to interpret yourself every time.",
       "because": "The listing's own audience lines; the director writes for them."
     },
     {
       "topic": "Structure",
-      "decision": "In order: Walk the guide's own timeline, one marker at a time, then show the product that keeps it.",
-      "because": "Best fit for a awareness film on YouTube Short (platform fit 3, goal fit 3). Other candidates: The checklist (6.0), The question people ask (5.0)."
+      "decision": "The checklist: The guide's checklist on one screen, item by item, then the product that holds it.",
+      "because": "Best fit for a awareness film on YouTube Short (platform fit 2, goal fit 3). Other candidates: The question people ask (5.0)."
     },
     {
       "topic": "Angle",
-      "decision": "\"You missed a payment. What to do in the next 48 hours\"",
-      "because": "The guide's timeline \"The first 48 hours, in order\": 3 of its 6 markers, in order."
+      "decision": "\"Missed a payment? What to check and do next\"",
+      "because": "A checklist from the guide, \"The first recovery check\": 4 of its 7 items."
     },
     {
       "topic": "Transitions",
-      "decision": "Transitions follow the product's own identity motif, \"ledger\"",
-      "because": "Transitions follow the product's own identity motif, \"ledger\": a ledger is ruled lines, so scenes are revealed row by row."
+      "decision": "Transitions follow the product's own identity motif, \"index\"",
+      "because": "Transitions follow the product's own identity motif, \"index\": an index of tabs, so scenes slide in like the next tab."
     },
     {
       "topic": "Camera",
-      "decision": "Camera \"dolly\"",
-      "because": "Camera \"dolly\": constant forward movement for a high-energy feed."
+      "decision": "Camera \"float\"",
+      "because": "Camera \"float\": a gentle float that keeps a held frame alive without demanding attention."
     },
     {
       "topic": "Colour",
@@ -299,7 +266,7 @@
     },
     {
       "topic": "Length",
-      "decision": "20.4s, 6 scenes",
+      "decision": "27.1s, 4 scenes",
       "because": "Each scene is held for the time its words take to read on YouTube Short (0.26s a word), inside 18–45s."
     }
   ]

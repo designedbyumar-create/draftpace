@@ -25,7 +25,7 @@ const block = z.discriminatedUnion('kind', [
 const schema = z.object({slug:str,title:str.min(30).max(60),dek:str.min(110).max(155),metaDescription:str.min(110).max(155),updatedAt:str,body:z.array(block).min(5),sources:z.array(z.object({name:str,url:z.url(),retrieved:str,note:str.optional()})).max(8),visuals:z.array(z.object({title:str,kicker:str,steps:z.array(z.object({label:str,detail:str})).min(3).max(4),caption:z.string(),alt:str.min(40).max(160),kind:z.enum(['sequence','compare','timeline','record'])})).length(2),worksheet:z.object({title:str,prompt:str,fields:z.array(str).min(5).max(8)}),research:z.object({primaryQuery:str,supportingQueries:z.array(str),intent:str,sourceChecks:z.array(z.union([str,z.record(z.string(),str)])),limitations:z.array(str)})});
 const escape = (s) => String(s).replace(/[&<>"']/g,(c)=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 function walk(folder) { return fs.existsSync(folder) ? fs.readdirSync(folder,{withFileTypes:true}).flatMap((e)=>e.isDirectory()?walk(path.join(folder,e.name)):e.name.endsWith('.json')?[path.join(folder,e.name)]:[]) : []; }
-const revisions={}, info={}, art={}, issues=[];
+const revisions={}, info={}, issues=[];
 fs.mkdirSync('public/guides/print/library',{recursive:true});
 for (const file of walk(path.join(dir,'library')).sort()) {
   let raw;
@@ -65,10 +65,9 @@ for (const file of walk(path.join(dir,'library')).sort()) {
   }
   revisions[raw.slug]=revision;
   info[raw.slug]={printHref,worksheetTitle:raw.worksheet.title,worksheetPrompt:raw.worksheet.prompt,diagrams,research:raw.research,areaSlug:guide.areaSlug};
-  art[raw.slug]={hero:`/guides/img/library/${raw.slug}-share.webp`,thumb:`/guides/img/library/${raw.slug}-thumb.webp`,figure:diagrams[0].src,figureWidth:1200,figureHeight:900,alt:diagrams[0].alt,caption:diagrams[0].caption};
   const print=`<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>${escape(raw.worksheet.title)} | Draftpace</title><style>body{font:16px/1.6 Arial,sans-serif;max-width:760px;margin:30px auto;padding:0 24px;color:#202526}h1{font-size:28px;line-height:1.2}h2{font-size:15px;margin:22px 0 5px}.lines{height:55px;border-bottom:1px solid #778585}a{color:#0a565c}footer{font-size:12px;margin-top:25px}@media print{.screen{display:none}body{margin:0;font-size:11pt}h2{break-after:avoid}.lines{height:42px}section{break-inside:avoid}@page{size:A4;margin:14mm}}</style><body><nav class="screen"><a href="/guides/${escape(raw.slug)}">Back to the guide</a><p>Print or save as PDF using your browser. Nothing you write on this sheet is sent to Draftpace.</p></nav><h1>${escape(raw.worksheet.title)}</h1><p>${escape(raw.worksheet.prompt)}</p>${raw.worksheet.fields.map(f=>`<section><h2>${escape(f)}</h2><div class="lines"></div></section>`).join('')}<footer>Keep this with the relevant records. Use the source guidance and exceptions in the article; a completed worksheet is not a professional assessment or official certification.</footer></body></html>`;
   fs.writeFileSync(path.join(root,'public',printHref),print);
 }
-for(const [file,value] of [['library.generated.json',revisions],['library-info.generated.json',info],['library-art.generated.json',art]]) fs.writeFileSync(path.join(dir,file),JSON.stringify(value,null,2)+'\n');
+for(const [file,value] of [['library.generated.json',revisions],['library-info.generated.json',info]]) fs.writeFileSync(path.join(dir,file),JSON.stringify(value,null,2)+'\n');
 fs.writeFileSync('audit-2026-11-16/library-validation-issues.json',JSON.stringify(issues,null,2)+'\n');
 console.log(JSON.stringify({assembled:Object.keys(revisions).length,rejected:issues.length,issues},null,2));

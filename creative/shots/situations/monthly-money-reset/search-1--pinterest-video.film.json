@@ -12,7 +12,7 @@
   "width": 1000,
   "height": 1500,
   "fps": 30,
-  "durationInFrames": 917,
+  "durationInFrames": 939,
   "structure": "situationChecklist",
   "angle": {
     "text": "I hate budgeting and I've tried everything",
@@ -74,21 +74,21 @@
       "variant": "checklist",
       "copy": [
         {
-          "text": "Has any income come in or changed?",
-          "source": "guide:how-to-budget-for-beginners/body[5].items[0]#0"
+          "text": "List recurring bills, debt payments, and non-monthly costs.",
+          "source": "guide:how-to-budget-for-beginners/body[1].items[2]#0"
         },
         {
-          "text": "Has a bill changed or been paid?",
-          "source": "guide:how-to-budget-for-beginners/body[5].items[1]#0"
+          "text": "Estimate groceries, transport, and other essentials from recent spending.",
+          "source": "guide:how-to-budget-for-beginners/body[1].items[3]#0"
         }
       ],
       "eyebrow": {
-        "text": "The five minute weekly check-in",
-        "source": "guide:how-to-budget-for-beginners/body[5].heading"
+        "text": "Build the first version",
+        "source": "guide:how-to-budget-for-beginners/body[1].heading"
       },
       "why": "What to do about it, from the guide \"How to make a monthly budget for the first time\": its own checklist, the first sentence of each item.",
       "from": 89,
-      "dur": 303,
+      "dur": 325,
       "ground": "light",
       "transition": "lineWipe",
       "sfx": [
@@ -103,7 +103,7 @@
           "volume": 0.27
         },
         {
-          "at": 111,
+          "at": 118,
           "cue": "tick",
           "volume": 0.27
         }
@@ -124,7 +124,7 @@
         "source": "title"
       },
       "why": "How Monthly Money Reset helps, in the listing's own words, as the real component computing a real number.",
-      "from": 380,
+      "from": 402,
       "dur": 399,
       "ground": "ink",
       "transition": "blurDissolve",
@@ -160,7 +160,7 @@
         "source": "micro"
       },
       "why": "Ends on where to read the whole guide, with the product beneath it: the viewer leaves with the next step, not only a pitch.",
-      "from": 767,
+      "from": 789,
       "dur": 150,
       "ground": "accent",
       "transition": "blurDissolve",
@@ -212,7 +212,7 @@
     {
       "topic": "Structure",
       "decision": "What to do first: The moment, the guide's own checklist for it, then the product that keeps track of it.",
-      "because": "Best fit for a awareness film on Pinterest video pin (platform fit 3, goal fit 3, already used on Pinterest video pin ×1). Other candidates: In their words (0.6), The moment (-7.7)."
+      "because": "Best fit for a awareness film on Pinterest video pin (platform fit 3, goal fit 3). Other candidates: In their words (0.6), The moment (-7.7)."
     },
     {
       "topic": "Angle",
@@ -236,11 +236,6 @@
     },
     {
       "topic": "Edit",
-      "decision": "Trimmed \"what-to-do\" to 3 items",
-      "because": "Fewer items read properly beats more items skimmed."
-    },
-    {
-      "topic": "Edit",
       "decision": "Trimmed \"what-to-do\" to 2 items",
       "because": "Fewer items read properly beats more items skimmed."
     },
@@ -251,7 +246,7 @@
     },
     {
       "topic": "Length",
-      "decision": "30.6s, 4 scenes",
+      "decision": "31.3s, 4 scenes",
       "because": "Each scene is held for the time its words take to read on Pinterest video pin (0.32s a word), inside 10–32s."
     }
   ]

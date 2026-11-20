@@ -12,6 +12,17 @@ const eslintConfig = defineConfig([
       "react-hooks/static-components": "off",
     },
   },
+  {
+    // One-off report/rebuild scripts, deliberately plain Node CommonJS (the
+    // .cjs extension signals that): they patch `require.extensions` to load
+    // guides.ts and its git history through CommonJS's own module loader, a
+    // trick ESM has no equivalent for. require() here is the point, not a
+    // mistake the rule should flag.
+    files: ["scripts/*.cjs"],
+    rules: {
+      "@typescript-eslint/no-require-imports": "off",
+    },
+  },
   // Override default ignores of eslint-config-next.
   globalIgnores([
     // Default ignores of eslint-config-next:

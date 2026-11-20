@@ -12,8 +12,8 @@
   "width": 1080,
   "height": 1920,
   "fps": 30,
-  "durationInFrames": 757,
-  "structure": "situationChecklist",
+  "durationInFrames": 485,
+  "structure": "situationInside",
   "angle": {
     "text": "Where do I keep everyone's allergies and reactions",
     "source": "searchedProblems[4].phrase"
@@ -28,10 +28,10 @@
     ],
     "motif": "card",
     "grounds": [
-      "light",
-      "light",
       "accent",
-      "light"
+      "light",
+      "light",
+      "accent"
     ],
     "pace": 1
   },
@@ -69,65 +69,6 @@
       ]
     },
     {
-      "id": "what-to-do",
-      "kind": "list",
-      "variant": "checklist",
-      "copy": [
-        {
-          "text": "A stopped medicine stays on the page.",
-          "source": "guide:what-goes-in-a-family-health-binder/body[7].items[0]#0"
-        },
-        {
-          "text": "Insurance is last year's.",
-          "source": "guide:what-goes-in-a-family-health-binder/body[7].items[1]#0"
-        },
-        {
-          "text": "Vaccine dates were typed from memory.",
-          "source": "guide:what-goes-in-a-family-health-binder/body[7].items[2]#0"
-        },
-        {
-          "text": "The full page goes everywhere.",
-          "source": "guide:what-goes-in-a-family-health-binder/body[7].items[3]#0"
-        }
-      ],
-      "eyebrow": {
-        "text": "What goes wrong with these pages",
-        "source": "guide:what-goes-in-a-family-health-binder/body[7].heading"
-      },
-      "why": "What to do about it, from the guide \"What to put in a family medical binder\": its own checklist, the first sentence of each item.",
-      "from": 71,
-      "dur": 359,
-      "ground": "light",
-      "transition": "cardSlide",
-      "sfx": [
-        {
-          "at": 0,
-          "cue": "swish",
-          "volume": 0.32
-        },
-        {
-          "at": 10,
-          "cue": "pop",
-          "volume": 0.45
-        },
-        {
-          "at": 82,
-          "cue": "pop",
-          "volume": 0.45
-        },
-        {
-          "at": 154,
-          "cue": "pop",
-          "volume": 0.45
-        },
-        {
-          "at": 226,
-          "cue": "pop",
-          "volume": 0.45
-        }
-      ]
-    },
-    {
       "id": "help",
       "kind": "phone",
       "variant": "proof",
@@ -138,7 +79,7 @@
       },
       "screen": {
         "src": "screens/family-health-binder-members.png",
-        "pose": "flat",
+        "pose": "float",
         "focus": {
           "at": 0.45,
           "y": 528,
@@ -151,8 +92,51 @@
         "text": "Family Health Binder",
         "source": "title"
       },
-      "from": 418,
+      "from": 71,
       "dur": 233,
+      "ground": "light",
+      "transition": "cardSlide",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "swish",
+          "volume": 0.32
+        },
+        {
+          "at": 12,
+          "cue": "pop",
+          "volume": 0.42
+        },
+        {
+          "at": 105,
+          "cue": "tap",
+          "volume": 0.55
+        }
+      ]
+    },
+    {
+      "id": "also",
+      "kind": "phone",
+      "variant": "proof",
+      "copy": [],
+      "caption": {
+        "text": "See everyone at a glance",
+        "source": "tasks[0].label"
+      },
+      "screen": {
+        "src": "screens/family-health-binder-workspace.png",
+        "pose": "flat",
+        "focus": {
+          "at": 0.45,
+          "y": 156,
+          "h": 336,
+          "region": "people"
+        },
+        "scroll": []
+      },
+      "why": "One more real thing an owner does here, in the listing's own task wording, on the screen it happens on. Screen: \"Overview\" (Everyone at a glance: each person's card with allergies, the latest symptom, and what the forms sheet is missing.) chosen because it is the real screen closest to \"See everyone at a glance\"; focus on \"Sam (example), Mia (example)\".",
+      "from": 292,
+      "dur": 87,
       "ground": "accent",
       "transition": "blurDissolve",
       "sfx": [
@@ -167,7 +151,7 @@
           "volume": 0.42
         },
         {
-          "at": 105,
+          "at": 39,
           "cue": "tap",
           "volume": 0.55
         }
@@ -192,9 +176,9 @@
         "source": "micro"
       },
       "why": "Ends on where to read the whole guide, with the product beneath it: the viewer leaves with the next step, not only a pitch.",
-      "from": 639,
+      "from": 367,
       "dur": 118,
-      "ground": "light",
+      "ground": "accent",
       "transition": "cardSlide",
       "sfx": [
         {
@@ -243,13 +227,13 @@
     },
     {
       "topic": "Structure",
-      "decision": "What to do first: The moment, the guide's own checklist for it, then the product that keeps track of it.",
-      "because": "Best fit for a awareness film on Instagram Reel (platform fit 2, goal fit 3). Other candidates: In their words (-0.7), The moment (-5.1)."
+      "decision": "Inside the tool: The moment, then how the product helps on its real screen, then one more real thing an owner does in it.",
+      "because": "Best fit for a awareness film on Instagram Reel (platform fit 2, goal fit 2, already used for this product ×1). Other candidates: The moment (-4.8), In their words (-6.7)."
     },
     {
       "topic": "Angle",
       "decision": "\"Where do I keep everyone's allergies and reactions\"",
-      "because": "The moment \"Where do I keep everyone's allergies and reactions\", the checklist from \"What to put in a family medical binder\", then how Family Health Binder helps."
+      "because": "The moment \"Where do I keep everyone's allergies and reactions\", how Family Health Binder helps, and one more real thing it does: \"See everyone at a glance\"."
     },
     {
       "topic": "Transitions",
@@ -258,13 +242,23 @@
     },
     {
       "topic": "Camera",
-      "decision": "Camera \"float\"",
-      "because": "Camera \"float\": a gentle float that keeps a held frame alive without demanding attention."
+      "decision": "Camera \"dolly\"",
+      "because": "Camera \"dolly\": constant forward movement for a high-energy feed."
     },
     {
       "topic": "Colour",
-      "decision": "Grounds light → light → accent → light",
-      "because": "Grounds light → light → accent → light: a warm accent, so light grounds lead and the accent is saved for the turns."
+      "decision": "Grounds accent → light → light → accent",
+      "because": "Grounds accent → light → light → accent: a warm accent, so light grounds lead and the accent is saved for the turns."
+    },
+    {
+      "topic": "Variation",
+      "decision": "Rotated the ground rhythm",
+      "because": "Its shape was 0.74 similar to sit-family-health-binder-search-3--instagram-feed; a different film, not the same one re-coloured."
+    },
+    {
+      "topic": "Variation",
+      "decision": "Changed the camera",
+      "because": "Its shape was 0.74 similar to sit-family-health-binder-search-3--instagram-feed; a different film, not the same one re-coloured."
     },
     {
       "topic": "Sound",
@@ -273,7 +267,7 @@
     },
     {
       "topic": "Length",
-      "decision": "25.2s, 4 scenes",
+      "decision": "16.2s, 4 scenes",
       "because": "Each scene is held for the time its words take to read on Instagram Reel (0.26s a word), inside 12–35s."
     }
   ]

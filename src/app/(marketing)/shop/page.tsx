@@ -11,25 +11,7 @@ import { ensureShopRegistered } from "@/shop/ensureRegistered";
 import { LIFE_AREAS } from "@/content/areas";
 import ShopGrid, { type ShopFilterArea, type ShopGridEntry } from "./ShopGrid";
 import { collectionStructuredData, jsonLd } from "@/lib/structuredData";
-
-/**
- * Slugs with generated store images in public/store. Listed rather than
- * probed, because a missing file would otherwise render as a broken image
- * on the Shop's front page with nothing to catch it. A Shop fixture, or a
- * product added before its images are generated, falls through to the
- * honest placeholder instead.
- */
-const STORE_COVERS = new Set([
-  "personal-finance-companion",
-  "home-management-companion",
-  "alongside",
-  "homeschooling-companion",
-  "personal-life-affairs-companion",
-  "travel-companion",
-  "vehicle-maintenance-companion",
-  "family-health-binder",
-  "monthly-money-reset",
-]);
+import { STORE_COVERS } from "./productStructuredData";
 
 export const metadata: Metadata = {
   title: "Shop",

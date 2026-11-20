@@ -12,15 +12,15 @@
   "width": 1080,
   "height": 1350,
   "fps": 30,
-  "durationInFrames": 736,
-  "structure": "situationInside",
+  "durationInFrames": 593,
+  "structure": "situationChecklist",
   "angle": {
     "text": "How do I make an if-something-happens-to-me file",
     "source": "searchedProblems[1].phrase"
   },
   "treatment": {
     "voice": "editorial",
-    "camera": "locked",
+    "camera": "float",
     "transitions": [
       "pageTurn",
       "blurDissolve",
@@ -29,9 +29,9 @@
     "motif": "book",
     "grounds": [
       "light",
+      "accent",
       "light",
-      "ink",
-      "accent"
+      "ink"
     ],
     "pace": 1.15
   },
@@ -57,7 +57,7 @@
       "why": "Opens on the moment in the person's own words, as the listing records people searching it.",
       "from": 0,
       "dur": 101,
-      "ground": "accent",
+      "ground": "light",
       "transition": "cut",
       "sfx": [],
       "lines": [
@@ -94,7 +94,7 @@
       },
       "from": 89,
       "dur": 355,
-      "ground": "light",
+      "ground": "accent",
       "transition": "pageTurn",
       "sfx": [
         {
@@ -109,49 +109,6 @@
         },
         {
           "at": 160,
-          "cue": "tap",
-          "volume": 0.33
-        }
-      ]
-    },
-    {
-      "id": "also",
-      "kind": "phone",
-      "variant": "proof",
-      "copy": [],
-      "caption": {
-        "text": "Do the next thing without deciding what it is",
-        "source": "tasks[0].label"
-      },
-      "screen": {
-        "src": "screens/personal-life-affairs-companion-workspace.png",
-        "pose": "float",
-        "focus": {
-          "at": 0.45,
-          "y": 82,
-          "h": 427,
-          "region": "question"
-        },
-        "scroll": []
-      },
-      "why": "One more real thing an owner does here, in the listing's own task wording, on the screen it happens on. Screen: \"Write down who should be called first.\" (One question at a time: write down who should be called first, with Start, Not relevant to me and Later.) chosen because it is the real screen closest to \"Do the next thing without deciding what it is\"; focus on \"Write down who should be called first.\".",
-      "from": 432,
-      "dur": 155,
-      "ground": "light",
-      "transition": "blurDissolve",
-      "sfx": [
-        {
-          "at": 0,
-          "cue": "whoosh",
-          "volume": 0.192
-        },
-        {
-          "at": 12,
-          "cue": "pop",
-          "volume": 0.252
-        },
-        {
-          "at": 70,
           "cue": "tap",
           "volume": 0.33
         }
@@ -176,14 +133,14 @@
         "source": "micro"
       },
       "why": "Ends on where to read the whole guide, with the product beneath it: the viewer leaves with the next step, not only a pitch.",
-      "from": 575,
+      "from": 432,
       "dur": 161,
-      "ground": "accent",
-      "transition": "pageTurn",
+      "ground": "light",
+      "transition": "blurDissolve",
       "sfx": [
         {
           "at": 0,
-          "cue": "page",
+          "cue": "whoosh",
           "volume": 0.192
         },
         {
@@ -212,7 +169,7 @@
     },
     {
       "topic": "Guide",
-      "decision": "\"The if-something-happens-to-me file: what goes in it\" (draftpace.com/guides/the-if-something-happens-to-me-file)",
+      "decision": "\"The if-something-happens-to-me file: where to start\" (draftpace.com/guides/the-if-something-happens-to-me-file)",
       "because": "The guide that covers this moment: what to do comes from it, and the film ends on it."
     },
     {
@@ -227,13 +184,13 @@
     },
     {
       "topic": "Structure",
-      "decision": "Inside the tool: The moment, then how the product helps on its real screen, then one more real thing an owner does in it.",
-      "because": "Best fit for a awareness film on Facebook feed video (platform fit 3, goal fit 2, already used on Facebook feed video ×2). Other candidates: In their words (-6.2), The moment (-9.2)."
+      "decision": "What to do first: The moment, the guide's own checklist for it, then the product that keeps track of it.",
+      "because": "Best fit for a awareness film on Facebook feed video (platform fit 3, goal fit 3, already used on Facebook feed video ×2). Other candidates: In their words (-6.2), Inside the tool (-7.8)."
     },
     {
       "topic": "Angle",
       "decision": "\"How do I make an if-something-happens-to-me file\"",
-      "because": "The moment \"How do I make an if-something-happens-to-me file\", how Personal Life Affairs Companion helps, and one more real thing it does: \"Do the next thing without deciding what it is\"."
+      "because": "The moment \"How do I make an if-something-happens-to-me file\", the checklist from \"The if-something-happens-to-me file: where to start\", then how Personal Life Affairs Companion helps."
     },
     {
       "topic": "Transitions",
@@ -242,13 +199,23 @@
     },
     {
       "topic": "Camera",
-      "decision": "Camera \"locked\"",
-      "because": "Camera \"locked\": still and precise, so a slow, reading audience is never chasing the frame."
+      "decision": "Camera \"float\"",
+      "because": "Camera \"float\": a gentle float that keeps a held frame alive without demanding attention."
     },
     {
       "topic": "Colour",
-      "decision": "Grounds light → light → ink → accent",
-      "because": "Grounds light → light → ink → accent: a cool accent, so a darker ground is used for contrast at a turn."
+      "decision": "Grounds light → accent → light → ink",
+      "because": "Grounds light → accent → light → ink: a cool accent, so a darker ground is used for contrast at a turn."
+    },
+    {
+      "topic": "Edit",
+      "decision": "Trimmed \"what-to-do\" to 2 items",
+      "because": "Fewer items read properly beats more items skimmed."
+    },
+    {
+      "topic": "Edit",
+      "decision": "Cut \"what-to-do\"",
+      "because": "It would run past 30s, the most Facebook feed video holds attention for."
     },
     {
       "topic": "Sound",
@@ -257,7 +224,7 @@
     },
     {
       "topic": "Length",
-      "decision": "24.5s, 4 scenes",
+      "decision": "19.8s, 3 scenes",
       "because": "Each scene is held for the time its words take to read on Facebook feed video (0.32s a word), inside 10–30s."
     }
   ]

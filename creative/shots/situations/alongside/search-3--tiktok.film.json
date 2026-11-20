@@ -12,7 +12,7 @@
   "width": 1080,
   "height": 1920,
   "fps": 30,
-  "durationInFrames": 671,
+  "durationInFrames": 491,
   "structure": "situationInside",
   "angle": {
     "text": "I've been avoiding a phone call for weeks",
@@ -152,72 +152,6 @@
       ]
     },
     {
-      "id": "step-1",
-      "kind": "title",
-      "variant": "native",
-      "copy": [
-        {
-          "text": "What it's about, in one line.",
-          "source": "guide:how-to-make-a-phone-call-you-have-been-avoiding/body[3].items[0]#0"
-        }
-      ],
-      "eyebrow": {
-        "text": "1",
-        "source": "micro"
-      },
-      "emphasis": [
-        "one"
-      ],
-      "why": "Step 1 from the guide \"How to make a phone call you keep avoiding\", numbered as the guide numbers it.",
-      "from": 378,
-      "dur": 92,
-      "ground": "accent",
-      "transition": "iris",
-      "sfx": [
-        {
-          "at": 0,
-          "cue": "whoosh",
-          "volume": 0.32
-        }
-      ],
-      "lines": [
-        [
-          "What it's about,",
-          "in one line."
-        ]
-      ]
-    },
-    {
-      "id": "step-2",
-      "kind": "title",
-      "variant": "native",
-      "copy": [
-        {
-          "text": "The result you want, in one line.",
-          "source": "guide:how-to-make-a-phone-call-you-have-been-avoiding/body[3].items[1]#0"
-        }
-      ],
-      "eyebrow": {
-        "text": "2",
-        "source": "micro"
-      },
-      "emphasis": [
-        "one"
-      ],
-      "why": "Step 2 from the guide \"How to make a phone call you keep avoiding\", numbered as the guide numbers it.",
-      "from": 464,
-      "dur": 100,
-      "ground": "light",
-      "transition": "cut",
-      "sfx": [],
-      "lines": [
-        [
-          "The result you",
-          "want, in one line."
-        ]
-      ]
-    },
-    {
       "id": "cta",
       "kind": "cta",
       "variant": "guide",
@@ -236,9 +170,9 @@
         "source": "micro"
       },
       "why": "Ends on where to read the whole guide, with the product beneath it: the viewer leaves with the next step, not only a pitch.",
-      "from": 558,
+      "from": 378,
       "dur": 113,
-      "ground": "ink",
+      "ground": "accent",
       "transition": "blurDissolve",
       "sfx": [
         {
@@ -317,7 +251,7 @@
     },
     {
       "topic": "Length",
-      "decision": "22.4s, 6 scenes",
+      "decision": "16.4s, 4 scenes",
       "because": "Each scene is held for the time its words take to read on TikTok (0.24s a word), inside 12–35s."
     }
   ]

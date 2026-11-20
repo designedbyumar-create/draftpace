@@ -28,8 +28,8 @@
     ],
     "motif": "gauge",
     "grounds": [
-      "accent",
       "light",
+      "ink",
       "light",
       "accent"
     ],
@@ -57,7 +57,7 @@
       "why": "Opens on the moment in the person's own words, as the listing records people searching it.",
       "from": 0,
       "dur": 124,
-      "ground": "accent",
+      "ground": "light",
       "transition": "cut",
       "sfx": [],
       "lines": [
@@ -79,7 +79,7 @@
       },
       "screen": {
         "src": "screens/vehicle-maintenance-companion-vehicles.png",
-        "pose": "flat",
+        "pose": "tiltLeft",
         "focus": {
           "at": 0.45,
           "y": 922,
@@ -136,7 +136,7 @@
       "why": "One more real thing an owner does here, in the listing's own task wording, on the screen it happens on. Screen: \"Print\" (The Service Boundary: a dated, mileage-stamped page you hand over before a shop touches the car, with what you're asking for and a limit.) chosen because it is the real screen closest to \"Put a limit in writing before a shop visit\"; focus on \"Service Boundary\".",
       "from": 466,
       "dur": 155,
-      "ground": "light",
+      "ground": "accent",
       "transition": "zoomThrough",
       "sfx": [
         {
@@ -211,7 +211,7 @@
     },
     {
       "topic": "Guide",
-      "decision": "\"How to know what maintenance your car is due for\" (draftpace.com/guides/what-is-due-on-my-car-right-now)",
+      "decision": "\"What maintenance is due on my car right now?\" (draftpace.com/guides/what-is-due-on-my-car-right-now)",
       "because": "The guide that covers this moment: what to do comes from it, and the film ends on it."
     },
     {
@@ -227,7 +227,7 @@
     {
       "topic": "Structure",
       "decision": "Inside the tool: The moment, then how the product helps on its real screen, then one more real thing an owner does in it.",
-      "because": "Best fit for a awareness film on Pinterest video pin (platform fit 2, goal fit 2, already used on Pinterest video pin ×6). Other candidates: In their words (-19.8), The moment (-20.5)."
+      "because": "Best fit for a awareness film on Pinterest video pin (platform fit 2, goal fit 2, already used on Pinterest video pin ×6). Other candidates: The moment (-22.9), In their words (-27.0)."
     },
     {
       "topic": "Angle",
@@ -246,13 +246,13 @@
     },
     {
       "topic": "Colour",
-      "decision": "Grounds accent → light → light → accent",
-      "because": "Grounds accent → light → light → accent: a warm accent, so light grounds lead and the accent is saved for the turns."
+      "decision": "Grounds light → ink → light → accent",
+      "because": "Grounds light → ink → light → accent: a warm accent, so light grounds lead and the accent is saved for the turns."
     },
     {
-      "topic": "Edit",
-      "decision": "Cut \"what-to-do\"",
-      "because": "It would run past 32s, the most Pinterest video pin holds attention for."
+      "topic": "Variation",
+      "decision": "Rotated the ground rhythm",
+      "because": "Its shape was 0.74 similar to sit-personal-finance-companion-search-8--pinterest-video; a different film, not the same one re-coloured."
     },
     {
       "topic": "Sound",

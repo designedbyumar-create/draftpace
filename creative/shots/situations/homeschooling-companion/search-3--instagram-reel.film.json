@@ -12,7 +12,7 @@
   "width": 1080,
   "height": 1920,
   "fps": 30,
-  "durationInFrames": 796,
+  "durationInFrames": 936,
   "structure": "situationChecklist",
   "angle": {
     "text": "How do I know if my child actually learned something",
@@ -74,29 +74,29 @@
       "variant": "checklist",
       "copy": [
         {
-          "text": "Asking right after the lesson.",
-          "source": "guide:how-to-check-if-your-child-learned-something/body[5].items[0]#0"
+          "text": "Write the exact skill or idea you want to observe.",
+          "source": "guide:how-to-check-if-your-child-learned-something/body[2].items[0]#0"
         },
         {
-          "text": "Asking one question.",
-          "source": "guide:how-to-check-if-your-child-learned-something/body[5].items[1]#0"
+          "text": "Choose a familiar example and a related new example.",
+          "source": "guide:how-to-check-if-your-child-learned-something/body[2].items[1]#0"
         },
         {
-          "text": "Turning three answers into a percentage.",
-          "source": "guide:how-to-check-if-your-child-learned-something/body[5].items[2]#0"
+          "text": "Ask for a response without supplying the answer in your question.",
+          "source": "guide:how-to-check-if-your-child-learned-something/body[2].items[2]#0"
         },
         {
-          "text": "Making it feel like a test.",
-          "source": "guide:how-to-check-if-your-child-learned-something/body[5].items[3]#0"
+          "text": "Invite a reason, drawing or demonstration where appropriate.",
+          "source": "guide:how-to-check-if-your-child-learned-something/body[2].items[3]#0"
         }
       ],
       "eyebrow": {
-        "text": "What throws off a check",
-        "source": "guide:how-to-check-if-your-child-learned-something/body[5].heading"
+        "text": "Run a useful short check",
+        "source": "guide:how-to-check-if-your-child-learned-something/body[2].heading"
       },
-      "why": "What to do about it, from the guide \"How to tell if your homeschooler actually learned it\": its own checklist, the first sentence of each item.",
+      "why": "What to do about it, from the guide \"Is my homeschooler learning? Check one skill\": its own checklist, the first sentence of each item.",
       "from": 87,
-      "dur": 336,
+      "dur": 476,
       "ground": "light",
       "transition": "lineWipe",
       "sfx": [
@@ -111,17 +111,17 @@
           "volume": 0.45
         },
         {
-          "at": 77,
+          "at": 105,
           "cue": "tick",
           "volume": 0.45
         },
         {
-          "at": 144,
+          "at": 200,
           "cue": "tick",
           "volume": 0.45
         },
         {
-          "at": 211,
+          "at": 295,
           "cue": "tick",
           "volume": 0.45
         }
@@ -151,7 +151,7 @@
         "text": "Homeschooling Companion",
         "source": "title"
       },
-      "from": 411,
+      "from": 551,
       "dur": 287,
       "ground": "light",
       "transition": "slideUp",
@@ -192,7 +192,7 @@
         "source": "micro"
       },
       "why": "Ends on where to read the whole guide, with the product beneath it: the viewer leaves with the next step, not only a pitch.",
-      "from": 686,
+      "from": 826,
       "dur": 110,
       "ground": "accent",
       "transition": "lineWipe",
@@ -228,7 +228,7 @@
     },
     {
       "topic": "Guide",
-      "decision": "\"How to tell if your homeschooler actually learned it\" (draftpace.com/guides/how-to-check-if-your-child-learned-something)",
+      "decision": "\"Is my homeschooler learning? Check one skill\" (draftpace.com/guides/how-to-check-if-your-child-learned-something)",
       "because": "The guide that covers this moment: what to do comes from it, and the film ends on it."
     },
     {
@@ -244,12 +244,12 @@
     {
       "topic": "Structure",
       "decision": "What to do first: The moment, the guide's own checklist for it, then the product that keeps track of it.",
-      "because": "Best fit for a awareness film on Instagram Reel (platform fit 2, goal fit 3, already used on Instagram Reel ×1). Other candidates: Inside the tool (-0.9), In their words (-4.1)."
+      "because": "Best fit for a awareness film on Instagram Reel (platform fit 2, goal fit 3, already used on Instagram Reel ×1). Other candidates: The moment (-1.1), In their words (-1.7)."
     },
     {
       "topic": "Angle",
       "decision": "\"How do I know if my child actually learned something\"",
-      "because": "The moment \"How do I know if my child actually learned something\", the checklist from \"How to tell if your homeschooler actually learned it\", then how Homeschooling Companion helps."
+      "because": "The moment \"How do I know if my child actually learned something\", the checklist from \"Is my homeschooler learning? Check one skill\", then how Homeschooling Companion helps."
     },
     {
       "topic": "Transitions",
@@ -273,7 +273,7 @@
     },
     {
       "topic": "Length",
-      "decision": "26.5s, 4 scenes",
+      "decision": "31.2s, 4 scenes",
       "because": "Each scene is held for the time its words take to read on Instagram Reel (0.26s a word), inside 12–35s."
     }
   ]

@@ -14,13 +14,13 @@
         "tracker"
       ],
       "promise": {
-        "text": "Monthly bills list: include the bills that are not monthly",
+        "text": "Monthly bills list: amounts, dates and annual costs",
         "source": "guide:monthly-bills-list/title"
       },
       "art": {
-        "motif": "checklist",
-        "why": "the carousel's topic: the moment and its guide name \"list\"",
-        "also": "chart"
+        "motif": "calendar",
+        "why": "the carousel's topic: the moment and its guide name \"date\", \"annual\"",
+        "also": "checklist"
       }
     },
     {
@@ -31,96 +31,51 @@
       },
       "lines": [
         {
-          "text": "A six column list, plus the math for turning quarterly and annual bills into a monthly amount: $612 every three months is $204 a month.",
+          "text": "List every recurring commitment once, keep its real payment date, and separate a monthly planning amount from the money due next.",
           "source": "guide:monthly-bills-list/dek#0"
         }
       ],
       "art": {
         "motif": "calendar",
-        "why": "the slide names \"month\", \"annual\""
+        "why": "the slide names \"date\", \"due\""
       }
     },
     {
-      "kind": "step",
+      "kind": "checklist",
       "eyebrow": {
-        "text": "Build it in four passes",
-        "source": "guide:monthly-bills-list/body[3].heading"
+        "text": "Build the list from evidence",
+        "source": "guide:monthly-bills-list/body[1].heading"
       },
-      "number": {
-        "text": "1",
-        "source": "micro"
-      },
-      "head": {
-        "text": "Open three months of statements and pull out every charge that repeated, with its amount.",
-        "source": "guide:monthly-bills-list/body[3].items[0]#0"
-      },
-      "body": [
+      "items": [
         {
-          "text": "Three months catches everything monthly.",
-          "source": "guide:monthly-bills-list/body[3].items[0]#1"
+          "text": "Gather recent statements from every account or card used for household bills.",
+          "source": "guide:monthly-bills-list/body[1].items[0]#0"
         },
         {
-          "text": "It won't catch the rest, which is what the next pass is for.",
-          "source": "guide:monthly-bills-list/body[3].items[0]#2"
+          "text": "Write each recurring commitment once, including subscriptions and required debt payments.",
+          "source": "guide:monthly-bills-list/body[1].items[1]#0"
+        },
+        {
+          "text": "Check a longer history and renewal notices for quarterly, six-monthly and annual charges.",
+          "source": "guide:monthly-bills-list/body[1].items[2]#0"
+        },
+        {
+          "text": "Record the next real due date, not just the month you remember paying last time.",
+          "source": "guide:monthly-bills-list/body[1].items[3]#0"
+        },
+        {
+          "text": "Add the payment account, automatic or manual method, and any shared contribution.",
+          "source": "guide:monthly-bills-list/body[1].items[4]#0"
+        },
+        {
+          "text": "Mark uncertain amounts or dates as unconfirmed and assign a lookup task.",
+          "source": "guide:monthly-bills-list/body[1].items[5]#0"
         }
       ],
-      "emphasis": [
-        "statements"
-      ],
+      "ticks": true,
       "art": {
         "motif": "receipt",
         "why": "the slide names \"statement\", \"charge\""
-      }
-    },
-    {
-      "kind": "step",
-      "eyebrow": {
-        "text": "Build it in four passes",
-        "source": "guide:monthly-bills-list/body[3].heading"
-      },
-      "number": {
-        "text": "2",
-        "source": "micro"
-      },
-      "head": {
-        "text": "Add the bills that don't come monthly.",
-        "source": "guide:monthly-bills-list/body[3].items[1]#0"
-      },
-      "body": [],
-      "emphasis": [
-        "monthly"
-      ],
-      "art": {
-        "motif": "checklist",
-        "why": "the slide names nothing drawable; the carousel's topic (the moment and its guide name \"list\")"
-      }
-    },
-    {
-      "kind": "step",
-      "eyebrow": {
-        "text": "Build it in four passes",
-        "source": "guide:monthly-bills-list/body[3].heading"
-      },
-      "number": {
-        "text": "3",
-        "source": "micro"
-      },
-      "head": {
-        "text": "Write a due day against every row: the day of the month for monthly bills, a real date for the others.",
-        "source": "guide:monthly-bills-list/body[3].items[2]#0"
-      },
-      "body": [
-        {
-          "text": "Anything you can't date goes on a short second list titled find the date, because a bill with no date can't be planned around.",
-          "source": "guide:monthly-bills-list/body[3].items[2]#1"
-        }
-      ],
-      "emphasis": [
-        "monthly"
-      ],
-      "art": {
-        "motif": "calendar",
-        "why": "the slide names \"date\", \"day\", \"month\", \"due\""
       }
     },
     {
@@ -149,7 +104,7 @@
         "source": "micro"
       },
       "title": {
-        "text": "Monthly bills list: include the bills that are not monthly",
+        "text": "Monthly bills list: amounts, dates and annual costs",
         "source": "guide:monthly-bills-list/title"
       },
       "url": {
@@ -165,20 +120,18 @@
         "source": "micro"
       },
       "art": {
-        "motif": "checklist",
-        "why": "the carousel's topic: the moment and its guide name \"list\""
+        "motif": "calendar",
+        "why": "the carousel's topic: the moment and its guide name \"date\", \"annual\""
       }
     }
   ],
   "notes": [
     "Cover: \"I need a bill tracker that shows what I have paid\" (searchedProblems[3].phrase), as people search it.",
-    "Steps: 3 of 4 from the guide's numbered steps \"Build it in four passes\", one per slide, each with the guide's own explanation.",
+    "Checklist: 6 items from \"Build the list from evidence\".",
     "Help: \"Bills you tick paid for the month, with what is left to pay worked out from the ticks.\" (searchedProblems[3].answer), on screens/personal-finance-companion-bills.png (\"Bills\").",
-    "Illustration on the cover: checklist with chart, because the carousel's topic: the moment and its guide name \"list\".",
-    "Illustration on the answer: calendar, because the slide names \"month\", \"annual\".",
-    "Illustration on the step: receipt, because the slide names \"statement\", \"charge\".",
-    "Illustration on the step: checklist, because the slide names nothing drawable; the carousel's topic (the moment and its guide name \"list\").",
-    "Illustration on the step: calendar, because the slide names \"date\", \"day\", \"month\", \"due\".",
-    "Illustration on the close: checklist, because the carousel's topic: the moment and its guide name \"list\"."
+    "Illustration on the cover: calendar with checklist, because the carousel's topic: the moment and its guide name \"date\", \"annual\".",
+    "Illustration on the answer: calendar, because the slide names \"date\", \"due\".",
+    "Illustration on the checklist: receipt, because the slide names \"statement\", \"charge\".",
+    "Illustration on the close: calendar, because the carousel's topic: the moment and its guide name \"date\", \"annual\"."
   ]
 }

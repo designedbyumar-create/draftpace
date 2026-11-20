@@ -11,8 +11,8 @@
   "width": 1080,
   "height": 1920,
   "fps": 30,
-  "durationInFrames": 518,
-  "structure": "situationMoment",
+  "durationInFrames": 602,
+  "structure": "situationInside",
   "angle": {
     "text": "You cannot see what a normal month looks like once everything is counted.",
     "source": "problemsSolved[3].problem"
@@ -43,7 +43,7 @@
     {
       "id": "moment",
       "kind": "title",
-      "variant": "native",
+      "variant": "label",
       "copy": [
         {
           "text": "You cannot see what a normal month looks like once everything is counted.",
@@ -95,11 +95,48 @@
       "from": 109,
       "dur": 337,
       "ground": "light",
-      "transition": "blurDissolve",
+      "transition": "cut",
+      "sfx": [
+        {
+          "at": 12,
+          "cue": "pop",
+          "volume": 0.42
+        },
+        {
+          "at": 152,
+          "cue": "tap",
+          "volume": 0.55
+        }
+      ]
+    },
+    {
+      "id": "also",
+      "kind": "phone",
+      "variant": "proof",
+      "copy": [],
+      "caption": {
+        "text": "Find out when my debt could be gone",
+        "source": "tasks[1].label"
+      },
+      "screen": {
+        "src": "screens/personal-finance-companion-debt.png",
+        "pose": "float",
+        "focus": {
+          "at": 0.45,
+          "y": 208,
+          "h": 154,
+          "region": "totals"
+        }
+      },
+      "why": "One more real thing an owner does here, in the listing's own task wording, on the screen it happens on. Screen: \"Debt\" (What you owe and when it could be gone: totals, a payoff plan worked out from your own numbers, and the debt-free date.) chosen because it is the real screen closest to \"Find out when my debt could be gone\"; focus on \"Total balance, Minimum payments\".",
+      "from": 440,
+      "dur": 90,
+      "ground": "ink",
+      "transition": "whip",
       "sfx": [
         {
           "at": 0,
-          "cue": "whoosh",
+          "cue": "swish",
           "volume": 0.32
         },
         {
@@ -108,7 +145,7 @@
           "volume": 0.42
         },
         {
-          "at": 152,
+          "at": 41,
           "cue": "tap",
           "volume": 0.55
         }
@@ -129,11 +166,16 @@
         }
       ],
       "why": "TikTok punishes an obvious ad; a soft close names the product and where to find it.",
-      "from": 440,
+      "from": 524,
       "dur": 78,
-      "ground": "ink",
-      "transition": "cut",
+      "ground": "accent",
+      "transition": "blurDissolve",
       "sfx": [
+        {
+          "at": 0,
+          "cue": "whoosh",
+          "volume": 0.32
+        },
         {
           "at": 8,
           "cue": "settle",
@@ -170,13 +212,13 @@
     },
     {
       "topic": "Structure",
-      "decision": "The moment: The moment as it feels, set dark, then the help in the light, then what to do next.",
-      "because": "Best fit for a awareness film on TikTok (platform fit 3, goal fit 3, already used for this product ×2, already used on TikTok ×3). Other candidates: Inside the tool (-26.2)."
+      "decision": "Inside the tool: The moment, then how the product helps on its real screen, then one more real thing an owner does in it.",
+      "because": "Best fit for a awareness film on TikTok (platform fit 2, goal fit 2, already used for this product ×3, already used on TikTok ×3). Other candidates: The moment (-27.4)."
     },
     {
       "topic": "Angle",
       "decision": "\"You cannot see what a normal month looks like once everything is counted.\"",
-      "because": "The moment \"You cannot see what a normal month looks like once everything is counted.\", then how Personal Finance Companion helps."
+      "because": "The moment \"You cannot see what a normal month looks like once everything is counted.\", how Personal Finance Companion helps, and one more real thing it does: \"Find out when my debt could be gone\"."
     },
     {
       "topic": "Transitions",
@@ -196,17 +238,12 @@
     {
       "topic": "Variation",
       "decision": "Rotated the ground rhythm",
-      "because": "Its shape was 0.88 similar to sit-alongside-problem-3--tiktok; a different film, not the same one re-coloured."
+      "because": "Its shape was 0.82 similar to sit-alongside-search-3--tiktok; a different film, not the same one re-coloured."
     },
     {
       "topic": "Variation",
       "decision": "Changed the camera",
-      "because": "Its shape was 0.88 similar to sit-family-health-binder-problem-2--tiktok; a different film, not the same one re-coloured."
-    },
-    {
-      "topic": "Variation",
-      "decision": "Reordered the transitions",
-      "because": "Its shape was 0.78 similar to sit-family-health-binder-problem-2--tiktok; a different film, not the same one re-coloured."
+      "because": "Its shape was 0.74 similar to sit-alongside-search-3--tiktok; a different film, not the same one re-coloured."
     },
     {
       "topic": "Sound",
@@ -215,7 +252,7 @@
     },
     {
       "topic": "Length",
-      "decision": "17.3s, 3 scenes",
+      "decision": "20.1s, 4 scenes",
       "because": "Each scene is held for the time its words take to read on TikTok (0.24s a word), inside 12–35s."
     }
   ]

@@ -19,7 +19,7 @@
   },
   "treatment": {
     "voice": "native",
-    "camera": "float",
+    "camera": "dolly",
     "transitions": [
       "cut",
       "whip",
@@ -56,7 +56,7 @@
       "why": "Opens on the moment as the listing describes it: the situation the viewer is in right now.",
       "from": 0,
       "dur": 122,
-      "ground": "light",
+      "ground": "accent",
       "transition": "cut",
       "sfx": [],
       "lines": [
@@ -132,7 +132,7 @@
       "why": "One more real thing an owner does here, in the listing's own task wording, on the screen it happens on. Screen: \"Your children.\" (Each child with their age and subjects, and the state's homeschool requirements kept alongside.) chosen because it is the real screen closest to \"Add a child\"; focus on \"Oregon · Moderate regulation\".",
       "from": 332,
       "dur": 59,
-      "ground": "ink",
+      "ground": "light",
       "transition": "whip",
       "sfx": [
         {
@@ -169,7 +169,7 @@
       "why": "TikTok punishes an obvious ad; a soft close names the product and where to find it.",
       "from": 385,
       "dur": 71,
-      "ground": "accent",
+      "ground": "ink",
       "transition": "blurDissolve",
       "sfx": [
         {
@@ -214,7 +214,7 @@
     {
       "topic": "Structure",
       "decision": "Inside the tool: The moment, then how the product helps on its real screen, then one more real thing an owner does in it.",
-      "because": "Best fit for a awareness film on TikTok (platform fit 2, goal fit 2, already used for this product ×4, already used on TikTok ×2). Other candidates: The moment (-28.6)."
+      "because": "Best fit for a awareness film on TikTok (platform fit 2, goal fit 2, already used for this product ×3, already used on TikTok ×2). Other candidates: The moment (-28.6)."
     },
     {
       "topic": "Angle",
@@ -235,16 +235,6 @@
       "topic": "Colour",
       "decision": "Grounds light → accent → light → ink",
       "because": "Grounds light → accent → light → ink: a cool accent, so a darker ground is used for contrast at a turn."
-    },
-    {
-      "topic": "Variation",
-      "decision": "Rotated the ground rhythm",
-      "because": "Its shape was 1.00 similar to sit-home-management-companion-problem-1--tiktok; a different film, not the same one re-coloured."
-    },
-    {
-      "topic": "Variation",
-      "decision": "Changed the camera",
-      "because": "Its shape was 0.74 similar to sit-home-management-companion-problem-1--tiktok; a different film, not the same one re-coloured."
     },
     {
       "topic": "Sound",

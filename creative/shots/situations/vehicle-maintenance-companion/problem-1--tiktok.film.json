@@ -11,15 +11,15 @@
   "width": 1080,
   "height": 1920,
   "fps": 30,
-  "durationInFrames": 430,
-  "structure": "situationInside",
+  "durationInFrames": 360,
+  "structure": "situationMoment",
   "angle": {
     "text": "Nobody remembers the exact interval they were quoted for this specific vehicle.",
     "source": "problemsSolved[0].problem"
   },
   "treatment": {
     "voice": "native",
-    "camera": "dolly",
+    "camera": "float",
     "transitions": [
       "cut",
       "whip",
@@ -43,7 +43,7 @@
     {
       "id": "moment",
       "kind": "title",
-      "variant": "label",
+      "variant": "native",
       "copy": [
         {
           "text": "Nobody remembers the exact interval they were quoted for this specific vehicle.",
@@ -55,7 +55,7 @@
       ],
       "why": "Opens on the moment as the listing describes it: the situation the viewer is in right now.",
       "from": 0,
-      "dur": 107,
+      "dur": 111,
       "ground": "light",
       "transition": "cut",
       "sfx": [],
@@ -79,7 +79,7 @@
       },
       "screen": {
         "src": "screens/vehicle-maintenance-companion-vehicles.png",
-        "pose": "tiltLeft",
+        "pose": "tiltRight",
         "focus": {
           "at": 0.45,
           "y": 922,
@@ -92,52 +92,9 @@
         "text": "Vehicle Maintenance Companion",
         "source": "title"
       },
-      "from": 101,
-      "dur": 179,
+      "from": 105,
+      "dur": 183,
       "ground": "accent",
-      "transition": "blurDissolve",
-      "sfx": [
-        {
-          "at": 0,
-          "cue": "whoosh",
-          "volume": 0.32
-        },
-        {
-          "at": 12,
-          "cue": "pop",
-          "volume": 0.42
-        },
-        {
-          "at": 81,
-          "cue": "tap",
-          "volume": 0.55
-        }
-      ]
-    },
-    {
-      "id": "also",
-      "kind": "phone",
-      "variant": "proof",
-      "copy": [],
-      "caption": {
-        "text": "Print my service history for a buyer",
-        "source": "tasks[5].label"
-      },
-      "screen": {
-        "src": "screens/vehicle-maintenance-companion-history.png",
-        "pose": "float",
-        "focus": {
-          "at": 0.45,
-          "y": 236,
-          "h": 364,
-          "region": "log"
-        },
-        "scroll": []
-      },
-      "why": "One more real thing an owner does here, in the listing's own task wording, on the screen it happens on. Screen: \"History\" (What has been done and when: each service dated, with the mileage, the shop and the cost.) chosen because it is the real screen closest to \"Print my service history for a buyer\"; focus on \"Oil and filter change\".",
-      "from": 274,
-      "dur": 84,
-      "ground": "ink",
       "transition": "cut",
       "sfx": [
         {
@@ -146,7 +103,7 @@
           "volume": 0.42
         },
         {
-          "at": 38,
+          "at": 82,
           "cue": "tap",
           "volume": 0.55
         }
@@ -167,14 +124,14 @@
         }
       ],
       "why": "TikTok punishes an obvious ad; a soft close names the product and where to find it.",
-      "from": 352,
+      "from": 282,
       "dur": 78,
       "ground": "light",
-      "transition": "whip",
+      "transition": "blurDissolve",
       "sfx": [
         {
           "at": 0,
-          "cue": "swish",
+          "cue": "whoosh",
           "volume": 0.32
         },
         {
@@ -213,13 +170,13 @@
     },
     {
       "topic": "Structure",
-      "decision": "Inside the tool: The moment, then how the product helps on its real screen, then one more real thing an owner does in it.",
-      "because": "Best fit for a awareness film on TikTok (platform fit 2, goal fit 2, already used for this product ×1, already used on TikTok ×6). Other candidates: The moment (-26.2)."
+      "decision": "The moment: The moment as it feels, set dark, then the help in the light, then what to do next.",
+      "because": "Best fit for a awareness film on TikTok (platform fit 3, goal fit 3, already used on TikTok ×6). Other candidates: Inside the tool (-27.9)."
     },
     {
       "topic": "Angle",
       "decision": "\"Nobody remembers the exact interval they were quoted for this specific vehicle.\"",
-      "because": "The moment \"Nobody remembers the exact interval they were quoted for this specific vehicle.\", how Vehicle Maintenance Companion helps, and one more real thing it does: \"Print my service history for a buyer\"."
+      "because": "The moment \"Nobody remembers the exact interval they were quoted for this specific vehicle.\", then how Vehicle Maintenance Companion helps."
     },
     {
       "topic": "Transitions",
@@ -239,47 +196,72 @@
     {
       "topic": "Variation",
       "decision": "Rotated the ground rhythm",
-      "because": "Its shape was 0.74 similar to sit-home-management-companion-problem-1--tiktok; a different film, not the same one re-coloured."
+      "because": "Its shape was 0.88 similar to sit-alongside-problem-3--tiktok; a different film, not the same one re-coloured."
     },
     {
       "topic": "Variation",
       "decision": "Changed the camera",
-      "because": "Its shape was 0.90 similar to sit-personal-finance-companion-problem-7--tiktok; a different film, not the same one re-coloured."
+      "because": "Its shape was 0.88 similar to sit-home-management-companion-problem-1--tiktok; a different film, not the same one re-coloured."
     },
     {
       "topic": "Variation",
       "decision": "Reordered the transitions",
-      "because": "Its shape was 0.82 similar to sit-personal-finance-companion-problem-7--tiktok; a different film, not the same one re-coloured."
+      "because": "Its shape was 0.78 similar to sit-home-management-companion-problem-1--tiktok; a different film, not the same one re-coloured."
     },
     {
       "topic": "Variation",
       "decision": "Switched the brand reveal",
-      "because": "Its shape was 0.82 similar to sit-personal-life-affairs-companion-problem-3--tiktok; a different film, not the same one re-coloured."
+      "because": "Its shape was 0.78 similar to sit-personal-life-affairs-companion-problem-3--tiktok; a different film, not the same one re-coloured."
     },
     {
       "topic": "Variation",
       "decision": "Re-posed the phones",
-      "because": "Its shape was 0.82 similar to sit-personal-life-affairs-companion-problem-3--tiktok; a different film, not the same one re-coloured."
+      "because": "Its shape was 0.78 similar to sit-personal-life-affairs-companion-problem-3--tiktok; a different film, not the same one re-coloured."
     },
     {
       "topic": "Variation",
       "decision": "Set the grounds against the accent",
-      "because": "Its shape was 0.82 similar to sit-personal-life-affairs-companion-problem-3--tiktok; a different film, not the same one re-coloured."
+      "because": "Its shape was 0.78 similar to sit-personal-life-affairs-companion-problem-3--tiktok; a different film, not the same one re-coloured."
     },
     {
       "topic": "Variation",
       "decision": "Rotated the ground rhythm",
-      "because": "Its shape was 0.74 similar to sit-personal-life-affairs-companion-problem-3--tiktok; a different film, not the same one re-coloured."
+      "because": "Its shape was 0.88 similar to sit-personal-life-affairs-companion-problem-6--tiktok; a different film, not the same one re-coloured."
     },
     {
       "topic": "Variation",
       "decision": "Changed the camera",
-      "because": "Its shape was 0.90 similar to sit-personal-life-affairs-companion-problem-6--tiktok; a different film, not the same one re-coloured."
+      "because": "Its shape was 0.88 similar to sit-personal-life-affairs-companion-problem-6--tiktok; a different film, not the same one re-coloured."
     },
     {
       "topic": "Variation",
       "decision": "Reordered the transitions",
-      "because": "Its shape was 0.82 similar to sit-personal-life-affairs-companion-problem-6--tiktok; a different film, not the same one re-coloured."
+      "because": "Its shape was 0.78 similar to sit-personal-life-affairs-companion-problem-6--tiktok; a different film, not the same one re-coloured."
+    },
+    {
+      "topic": "Variation",
+      "decision": "Switched the brand reveal",
+      "because": "Its shape was 0.88 similar to sit-alongside-problem-3--tiktok; a different film, not the same one re-coloured."
+    },
+    {
+      "topic": "Variation",
+      "decision": "Re-posed the phones",
+      "because": "Its shape was 0.88 similar to sit-alongside-problem-3--tiktok; a different film, not the same one re-coloured."
+    },
+    {
+      "topic": "Variation",
+      "decision": "Set the grounds against the accent",
+      "because": "Its shape was 0.88 similar to sit-home-management-companion-problem-1--tiktok; a different film, not the same one re-coloured."
+    },
+    {
+      "topic": "Variation",
+      "decision": "Rotated the ground rhythm",
+      "because": "Its shape was 0.88 similar to sit-home-management-companion-problem-1--tiktok; a different film, not the same one re-coloured."
+    },
+    {
+      "topic": "Variation",
+      "decision": "Changed the camera",
+      "because": "Its shape was 0.78 similar to sit-home-management-companion-problem-1--tiktok; a different film, not the same one re-coloured."
     },
     {
       "topic": "Sound",
@@ -288,7 +270,7 @@
     },
     {
       "topic": "Length",
-      "decision": "14.3s, 4 scenes",
+      "decision": "12.0s, 3 scenes",
       "because": "Each scene is held for the time its words take to read on TikTok (0.24s a word), inside 12–35s."
     }
   ]

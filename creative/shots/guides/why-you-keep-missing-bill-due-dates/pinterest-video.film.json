@@ -11,11 +11,11 @@
   "width": 1000,
   "height": 1500,
   "fps": 30,
-  "durationInFrames": 928,
-  "structure": "guideSteps",
+  "durationInFrames": 551,
+  "structure": "guideQuestion",
   "angle": {
-    "text": "why you keep missing bill due dates",
-    "source": "guide:why-you-keep-missing-bill-due-dates/primaryQuery"
+    "text": "Why do I miss dates even when I have the money?",
+    "source": "guide:why-you-keep-missing-bill-due-dates/body[10].items[0].q"
   },
   "treatment": {
     "voice": "editorial",
@@ -41,86 +41,46 @@
   },
   "scenes": [
     {
-      "id": "hook",
+      "id": "q",
       "kind": "title",
       "variant": "quote",
       "copy": [
         {
-          "text": "why you keep missing bill due dates",
-          "source": "guide:why-you-keep-missing-bill-due-dates/primaryQuery"
+          "text": "Why do I miss dates even when I have the money?",
+          "source": "guide:why-you-keep-missing-bill-due-dates/body[10].items[0].q"
         }
       ],
-      "why": "Opens on the exact phrase the guide is written to win, typed out the way it is typed into a search box.",
+      "why": "The question as people ask it; the guide carries it because people search it.",
       "from": 0,
-      "dur": 101,
-      "ground": "light",
+      "dur": 146,
+      "ground": "ink",
       "transition": "cut",
       "sfx": [],
       "lines": [
         [
-          "why you keep missing",
-          "bill due dates"
+          "Why do I miss dates",
+          "even when I have",
+          "the money?"
         ]
       ]
     },
     {
-      "id": "step-1",
+      "id": "a",
       "kind": "title",
-      "variant": "editorial",
+      "variant": "label",
       "copy": [
         {
-          "text": "List every recurring bill with its due date.",
-          "source": "guide:why-you-keep-missing-bill-due-dates/body[3].items[0]#0"
+          "text": "Inspect the route from notice to payment.",
+          "source": "guide:why-you-keep-missing-bill-due-dates/body[10].items[0].a#0"
         }
       ],
-      "eyebrow": {
-        "text": "1",
-        "source": "micro"
-      },
       "emphasis": [
-        "every"
+        "Inspect"
       ],
-      "why": "Step 1 of the guide's numbered list, numbered as the guide numbers it, its first sentence: the instruction itself.",
-      "from": 89,
-      "dur": 148,
-      "ground": "ink",
-      "transition": "iris",
-      "sfx": [
-        {
-          "at": 0,
-          "cue": "whoosh",
-          "volume": 0.192
-        }
-      ],
-      "lines": [
-        [
-          "List every recurring",
-          "bill with its due",
-          "date."
-        ]
-      ]
-    },
-    {
-      "id": "step-2",
-      "kind": "title",
-      "variant": "editorial",
-      "copy": [
-        {
-          "text": "Line the dates up with your paydays.",
-          "source": "guide:why-you-keep-missing-bill-due-dates/body[3].items[1]#0"
-        }
-      ],
-      "eyebrow": {
-        "text": "2",
-        "source": "micro"
-      },
-      "emphasis": [
-        "paydays"
-      ],
-      "why": "Step 2 of the guide's numbered list, numbered as the guide numbers it, its first sentence: the instruction itself.",
-      "from": 225,
-      "dur": 137,
-      "ground": "light",
+      "why": "The guide's answer, its first sentence: the plain answer before any detail.",
+      "from": 134,
+      "dur": 101,
+      "ground": "accent",
       "transition": "blurDissolve",
       "sfx": [
         {
@@ -131,81 +91,9 @@
       ],
       "lines": [
         [
-          "Line the dates up",
-          "with your paydays."
-        ]
-      ]
-    },
-    {
-      "id": "step-3",
-      "kind": "title",
-      "variant": "editorial",
-      "copy": [
-        {
-          "text": "Decide what runs on autopay and what doesn't.",
-          "source": "guide:why-you-keep-missing-bill-due-dates/body[3].items[2]#0"
-        }
-      ],
-      "eyebrow": {
-        "text": "3",
-        "source": "micro"
-      },
-      "emphasis": [
-        "autopay"
-      ],
-      "why": "Step 3 of the guide's numbered list, numbered as the guide numbers it, its first sentence: the instruction itself.",
-      "from": 350,
-      "dur": 148,
-      "ground": "accent",
-      "transition": "iris",
-      "sfx": [
-        {
-          "at": 0,
-          "cue": "whoosh",
-          "volume": 0.192
-        }
-      ],
-      "lines": [
-        [
-          "Decide what runs",
-          "on autopay and",
-          "what doesn't."
-        ]
-      ]
-    },
-    {
-      "id": "step-4",
-      "kind": "title",
-      "variant": "editorial",
-      "copy": [
-        {
-          "text": "Put the date on the item.",
-          "source": "guide:why-you-keep-missing-bill-due-dates/body[3].items[3]#0"
-        }
-      ],
-      "eyebrow": {
-        "text": "4",
-        "source": "micro"
-      },
-      "emphasis": [
-        "date"
-      ],
-      "why": "Step 4 of the guide's numbered list, numbered as the guide numbers it, its first sentence: the instruction itself.",
-      "from": 486,
-      "dur": 126,
-      "ground": "light",
-      "transition": "iris",
-      "sfx": [
-        {
-          "at": 0,
-          "cue": "whoosh",
-          "volume": 0.192
-        }
-      ],
-      "lines": [
-        [
-          "Put the date",
-          "on the item."
+          "Inspect the route",
+          "from notice to",
+          "payment."
         ]
       ]
     },
@@ -219,25 +107,24 @@
         "source": "howItWorks[5]#0"
       },
       "screen": {
-        "src": "screens/alongside-workspace.png",
-        "pose": "tiltRight",
+        "src": "screens/alongside-life.png",
+        "pose": "float",
         "focus": {
           "at": 0.45,
-          "y": 222,
-          "h": 294,
-          "region": "one-thing"
-        },
-        "scroll": []
+          "y": 192,
+          "h": 330,
+          "region": "to-do"
+        }
       },
-      "why": "The turn: the product the guide itself hands over to, named and shown on its real screen, captioned with its listing's line closest to what the guide teaches. Screen: \"Book the six-month dental check\" (One thing at a time: a single next step, Book the six-month dental check, with Do this with me, Not now and It is sorted.) chosen because it is the real screen closest to \"How it went changes what happens next. Why you keep missing bill due dates (and \"; focus on \"Book the six-month dental check\".",
+      "why": "The turn: the product the guide itself hands over to, named and shown on its real screen, captioned with its listing's line closest to what the guide teaches. Screen: \"Everything you are holding\" (Everything being held, sorted into something to do, waiting on someone, something ongoing, each with Do this with me.) chosen because it is the real screen closest to \"How it went changes what happens next. Why bill due dates get missed and what to\"; focus on \"Something to do\".",
       "eyebrow": {
         "text": "ADHD Life Companion",
         "source": "title"
       },
-      "from": 600,
+      "from": 223,
       "dur": 190,
-      "ground": "ink",
-      "transition": "blurDissolve",
+      "ground": "light",
+      "transition": "iris",
       "sfx": [
         {
           "at": 0,
@@ -275,9 +162,9 @@
         "source": "micro"
       },
       "why": "Ends on where to read the whole guide, with the product beneath it: the viewer leaves with the next step, not only a pitch.",
-      "from": 778,
+      "from": 401,
       "dur": 150,
-      "ground": "light",
+      "ground": "accent",
       "transition": "blurDissolve",
       "sfx": [
         {
@@ -306,8 +193,8 @@
     },
     {
       "topic": "Guide",
-      "decision": "\"Why you keep missing bill due dates (and a better system)\" (draftpace.com/guides/why-you-keep-missing-bill-due-dates)",
-      "because": "Teaches from the guide first; ADHD Life Companion is the product the guide hands over to. 1 lists and timelines, 5 questions to draw from."
+      "decision": "\"Why bill due dates get missed and what to change\" (draftpace.com/guides/why-you-keep-missing-bill-due-dates)",
+      "because": "Teaches from the guide first; ADHD Life Companion is the product the guide hands over to. 1 lists and timelines, 3 questions to draw from."
     },
     {
       "topic": "Stage",
@@ -326,13 +213,13 @@
     },
     {
       "topic": "Structure",
-      "decision": "Do this: Open on the search itself, then the guide's own numbered steps, then the product.",
-      "because": "Best fit for a awareness film on Pinterest video pin (platform fit 3, goal fit 3, already used for this product ×3, already used on Pinterest video pin ×3). Other candidates: The question people ask (-34.2)."
+      "decision": "The question people ask: One of the guide's own questions, its plain answer, then the product.",
+      "because": "Best fit for a awareness film on Pinterest video pin (platform fit 2, goal fit 2, already used for this product ×5, already used on Pinterest video pin ×8). Other candidates: The checklist (-50.5)."
     },
     {
       "topic": "Angle",
-      "decision": "\"why you keep missing bill due dates\"",
-      "because": "Search-led: \"why you keep missing bill due dates\", answered by 4 of the guide's numbered steps (\"A system that doesn't rely on remembering\")."
+      "decision": "\"Why do I miss dates even when I have the money?\"",
+      "because": "A question from the guide's FAQ, \"Why do I miss dates even when I have the money?\", and the first sentence of its answer."
     },
     {
       "topic": "Transitions",
@@ -350,13 +237,83 @@
       "because": "Grounds light → ink → light → accent: a warm accent, so light grounds lead and the accent is saved for the turns."
     },
     {
+      "topic": "Variation",
+      "decision": "Rotated the ground rhythm",
+      "because": "Its shape was 0.82 similar to guide-paperwork-pile-where-to-start--youtube-short; a different film, not the same one re-coloured."
+    },
+    {
+      "topic": "Variation",
+      "decision": "Changed the camera",
+      "because": "Its shape was 0.90 similar to guide-why-to-do-lists-make-it-worse--pinterest-video; a different film, not the same one re-coloured."
+    },
+    {
+      "topic": "Variation",
+      "decision": "Reordered the transitions",
+      "because": "Its shape was 1.00 similar to guide-why-to-do-lists-make-it-worse--pinterest-video; a different film, not the same one re-coloured."
+    },
+    {
+      "topic": "Variation",
+      "decision": "Switched the brand reveal",
+      "because": "Its shape was 0.82 similar to guide-why-to-do-lists-make-it-worse--pinterest-video; a different film, not the same one re-coloured."
+    },
+    {
+      "topic": "Variation",
+      "decision": "Re-posed the phones",
+      "because": "Its shape was 0.82 similar to guide-why-to-do-lists-make-it-worse--pinterest-video; a different film, not the same one re-coloured."
+    },
+    {
+      "topic": "Variation",
+      "decision": "Set the grounds against the accent",
+      "because": "Its shape was 0.82 similar to guide-diagnosed-with-adhd-as-an-adult--youtube-short; a different film, not the same one re-coloured."
+    },
+    {
+      "topic": "Variation",
+      "decision": "Rotated the ground rhythm",
+      "because": "Its shape was 0.74 similar to guide-how-to-say-no-or-give-bad-news-on-the-phone--youtube-short; a different film, not the same one re-coloured."
+    },
+    {
+      "topic": "Variation",
+      "decision": "Changed the camera",
+      "because": "Its shape was 0.90 similar to guide-how-to-say-no-or-give-bad-news-on-the-phone--youtube-short; a different film, not the same one re-coloured."
+    },
+    {
+      "topic": "Variation",
+      "decision": "Reordered the transitions",
+      "because": "Its shape was 0.90 similar to guide-how-to-say-no-or-give-bad-news-on-the-phone--youtube-short; a different film, not the same one re-coloured."
+    },
+    {
+      "topic": "Variation",
+      "decision": "Switched the brand reveal",
+      "because": "Its shape was 0.90 similar to guide-first-physical-step-20-examples--youtube-short; a different film, not the same one re-coloured."
+    },
+    {
+      "topic": "Variation",
+      "decision": "Re-posed the phones",
+      "because": "Its shape was 0.90 similar to guide-first-physical-step-20-examples--youtube-short; a different film, not the same one re-coloured."
+    },
+    {
+      "topic": "Variation",
+      "decision": "Set the grounds against the accent",
+      "because": "Its shape was 0.90 similar to guide-first-physical-step-20-examples--youtube-short; a different film, not the same one re-coloured."
+    },
+    {
+      "topic": "Variation",
+      "decision": "Rotated the ground rhythm",
+      "because": "Its shape was 0.74 similar to guide-first-physical-step-20-examples--youtube-short; a different film, not the same one re-coloured."
+    },
+    {
+      "topic": "Variation",
+      "decision": "Changed the camera",
+      "because": "Its shape was 0.74 similar to guide-home-maintenance-you-skip-that-costs-the-most--youtube-short; a different film, not the same one re-coloured."
+    },
+    {
       "topic": "Sound",
       "decision": "Light sound design, low-energy bed",
       "because": "Most of this audience never unmutes, so nothing depends on sound; cues are kept quieter and sparser for those who do."
     },
     {
       "topic": "Length",
-      "decision": "30.9s, 7 scenes",
+      "decision": "18.4s, 4 scenes",
       "because": "Each scene is held for the time its words take to read on Pinterest video pin (0.32s a word), inside 12–35s."
     }
   ]

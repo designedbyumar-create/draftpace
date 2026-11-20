@@ -30,6 +30,7 @@ export const homeschoolingCompanionShopProduct: ShopProductInput = {
   id: "homeschooling-companion",
   slug: "homeschooling-companion",
   publicationStatus: "published",
+  canonicalPath: "/homeschooling-companion",
   title: "Homeschooling Companion",
   promise:
     "A printed handbook and an app that remembers. You decide what your children learn; this keeps track of what you actually did, tells you the next useful thing, and helps you check whether it landed.",
