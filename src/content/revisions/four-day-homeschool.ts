@@ -71,7 +71,7 @@ export const fourDayHomeschoolRevision: Partial<Guide> = {
     ] },
     { kind: "paragraphs", heading: "A week you can find again later", paragraphs: [
       "You can run this on a sheet of paper. The [free worksheet](/guides/print/four-day-homeschool.html) gives you a weekly rhythm, a pacing check and somewhere to note what changed. Keep it with the records you already use rather than starting a second system you will have to maintain.",
-      "If keeping each child's subjects and learning records straight is the part that keeps slipping, [Homeschooling Companion](/shop/homeschooling-companion) is an optional next step. It is a handbook and app for organising the work and records, not a curriculum. It does not choose what your child should learn or make a four-day plan legally sufficient. The schedule, calculator and worksheet here work without buying it.",
+      "If keeping each child's subjects and learning records straight is the part that keeps slipping, [Homeschooling Companion](/homeschooling-companion) is an optional next step. It is a handbook and app for organising the work and records, not a curriculum. It does not choose what your child should learn or make a four-day plan legally sufficient. The schedule, calculator and worksheet here work without buying it.",
       "A spare day is useful when it gives the week room to hold. Keep the room. Just make sure the lessons and records have somewhere to go, too.",
     ] },
   ],

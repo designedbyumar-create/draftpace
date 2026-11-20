@@ -20,6 +20,7 @@
  * child being behind or ahead.
  */
 import PhoneFrame from "../PhoneFrame";
+import { Check } from "@/design-system/Icon";
 
 const INK = "#1a1d24";
 const MUTED = "#4a5262";
@@ -214,7 +215,55 @@ export function CheckScreenMockup() {
 }
 
 /**
- * Screen 3: the printed half. Drawn as the book actually sets, because
+ * Screen 3: adding a child, drawn from AddChildFlow.tsx's real shape:
+ * one question live at a time, what's answered standing above it, and
+ * the real schooling-type options from learning.ts's SCHOOLING_LABEL.
+ * Added for the bespoke /homeschooling-companion landing page, which
+ * needed a fourth real screen to cover onboarding specifically; kept
+ * here rather than one-off in that page so the Shop page and manual can
+ * draw it too without a second drawing of the same screen existing.
+ */
+export function AddChildScreenMockup() {
+  return (
+    <PhoneFrame accent={PLUM}>
+      <div className="flex h-full flex-col px-4 pb-4 pt-9" style={{ backgroundColor: PAPER }}>
+        <StatusBar />
+        <div className="mt-5">
+          <Eyebrow>Adding Maya · Question 2 of 3</Eyebrow>
+          <div className="mt-2 flex items-center gap-1.5 text-[8px]" style={{ color: FAINT }}>
+            <Check size={10} style={{ color: PLUM }} aria-hidden />
+            <span>Name: Maya</span>
+          </div>
+          <h3 className="mt-3 font-serif text-[16px] leading-[1.15]" style={{ color: INK }}>
+            How is Maya schooled?
+          </h3>
+          <div className="mt-3.5 flex flex-col gap-1.5">
+            {(["Homeschool", "A mix of home and school", "Private school", "Public school"] as const).map((label, i) => (
+              <div
+                key={label}
+                className="rounded-lg border px-3 py-2.5 text-[10px] font-semibold"
+                style={
+                  i === 0
+                    ? { borderColor: PLUM, backgroundColor: PLUM_SOFT, color: PLUM }
+                    : { borderColor: LINE, color: INK }
+                }
+              >
+                {label}
+              </div>
+            ))}
+          </div>
+          <p className="mt-3 text-[7.5px] leading-relaxed" style={{ color: FAINT }}>
+            Only ever an age is stored, never a birth date.
+          </p>
+        </div>
+        <TabBar current="Kids" />
+      </div>
+    </PhoneFrame>
+  );
+}
+
+/**
+ * Screen 4: the printed half. Drawn as the book actually sets, because
  * the claim on this listing is that it would be worth buying alone.
  */
 export function BookScreenMockup() {
