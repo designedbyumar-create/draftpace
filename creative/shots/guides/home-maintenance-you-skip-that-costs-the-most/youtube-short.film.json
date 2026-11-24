@@ -14,8 +14,8 @@
   "durationInFrames": 540,
   "structure": "guideQuestion",
   "angle": {
-    "text": "How do I know if my furnace filter needs changing?",
-    "source": "guide:home-maintenance-you-skip-that-costs-the-most/body[4].items[2].q"
+    "text": "Which task should I do first when everything is overdue?",
+    "source": "guide:home-maintenance-you-skip-that-costs-the-most/body[10].items[0].q"
   },
   "treatment": {
     "voice": "editorial",
@@ -46,21 +46,21 @@
       "variant": "quote",
       "copy": [
         {
-          "text": "How do I know if my furnace filter needs changing?",
-          "source": "guide:home-maintenance-you-skip-that-costs-the-most/body[4].items[2].q"
+          "text": "Which task should I do first when everything is overdue?",
+          "source": "guide:home-maintenance-you-skip-that-costs-the-most/body[10].items[0].q"
         }
       ],
       "why": "The question as people ask it; the guide carries it because people search it.",
       "from": 0,
-      "dur": 129,
+      "dur": 153,
       "ground": "ink",
       "transition": "cut",
       "sfx": [],
       "lines": [
         [
-          "How do I know if",
-          "my furnace filter",
-          "needs changing?"
+          "Which task should I",
+          "do first when",
+          "everything is overdue?"
         ]
       ]
     },
@@ -70,16 +70,16 @@
       "variant": "label",
       "copy": [
         {
-          "text": "Hold it up to a light.",
-          "source": "guide:home-maintenance-you-skip-that-costs-the-most/body[4].items[2].a#0"
+          "text": "First rule out immediate hazards and active damage.",
+          "source": "guide:home-maintenance-you-skip-that-costs-the-most/body[10].items[0].a#0"
         }
       ],
       "emphasis": [
-        "light"
+        "immediate"
       ],
       "why": "The guide's answer, its first sentence: the plain answer before any detail.",
-      "from": 117,
-      "dur": 98,
+      "from": 141,
+      "dur": 136,
       "ground": "light",
       "transition": "slideUp",
       "sfx": [
@@ -91,7 +91,9 @@
       ],
       "lines": [
         [
-          "Hold it up to a light."
+          "First rule out",
+          "immediate hazards",
+          "and active damage."
         ]
       ]
     },
@@ -101,8 +103,8 @@
       "variant": "proof",
       "copy": [],
       "caption": {
-        "text": "It suggests the care each one usually needs and you untick anything that does not apply.",
-        "source": "howItWorks[1]#0"
+        "text": "Something broken rather than due?",
+        "source": "howItWorks[5]#0"
       },
       "screen": {
         "src": "screens/home-management-companion-workspace.png",
@@ -114,13 +116,13 @@
           "region": "status"
         }
       },
-      "why": "The turn: the product the guide itself hands over to, named and shown on its real screen, captioned with its listing's line closest to what the guide teaches. Screen: \"A couple of things need a look\" (Your home now: what's wrong, what to care for, what's coming up and what's handled, with the fridge and a dripping tap flagged.) chosen because it is the real screen closest to \"It suggests the care each one usually needs and you untick anything that does no\"; focus on \"Wrong, To care for, Coming up, Handled\".",
+      "why": "The turn: the product the guide itself hands over to, named and shown on its real screen, captioned with its listing's line closest to what the guide teaches. Screen: \"A couple of things need a look\" (Your home now: what's wrong, what to care for, what's coming up and what's handled, with the fridge and a dripping tap flagged.) chosen because it is the real screen closest to \"Something broken rather than due? Home maintenance jobs that matter most to chec\"; focus on \"Wrong, To care for, Coming up, Handled\".",
       "eyebrow": {
         "text": "Home Base",
         "source": "title"
       },
-      "from": 203,
-      "dur": 239,
+      "from": 265,
+      "dur": 177,
       "ground": "light",
       "transition": "cardSlide",
       "sfx": [
@@ -135,7 +137,7 @@
           "volume": 0.42
         },
         {
-          "at": 108,
+          "at": 80,
           "cue": "tap",
           "volume": 0.55
         }
@@ -191,8 +193,8 @@
     },
     {
       "topic": "Guide",
-      "decision": "\"Home maintenance jobs that cost the most to skip\" (draftpace.com/guides/home-maintenance-you-skip-that-costs-the-most)",
-      "because": "Teaches from the guide first; Home Base is the product the guide hands over to. 0 lists and timelines, 4 questions to draw from."
+      "decision": "\"Home maintenance jobs that matter most to check\" (draftpace.com/guides/home-maintenance-you-skip-that-costs-the-most)",
+      "because": "Teaches from the guide first; Home Base is the product the guide hands over to. 1 lists and timelines, 3 questions to draw from."
     },
     {
       "topic": "Stage",
@@ -211,8 +213,8 @@
     },
     {
       "topic": "Angle",
-      "decision": "\"How do I know if my furnace filter needs changing?\"",
-      "because": "A question from the guide's FAQ, \"How do I know if my furnace filter needs changing?\", and the first sentence of its answer."
+      "decision": "\"Which task should I do first when everything is overdue?\"",
+      "because": "A question from the guide's FAQ, \"Which task should I do first when everything is overdue?\", and the first sentence of its answer."
     },
     {
       "topic": "Transitions",

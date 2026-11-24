@@ -12,8 +12,8 @@
   "width": 1000,
   "height": 1500,
   "fps": 30,
-  "durationInFrames": 694,
-  "structure": "situationMoment",
+  "durationInFrames": 781,
+  "structure": "situationInside",
   "angle": {
     "text": "I have not kept any records and need to catch up",
     "source": "searchedProblems[1].phrase"
@@ -44,7 +44,7 @@
     {
       "id": "moment",
       "kind": "title",
-      "variant": "editorial",
+      "variant": "label",
       "copy": [
         {
           "text": "I have not kept any records and need to catch up",
@@ -57,7 +57,7 @@
       "why": "Opens on the moment in the person's own words, as the listing records people searching it.",
       "from": 0,
       "dur": 146,
-      "ground": "ink",
+      "ground": "accent",
       "transition": "cut",
       "sfx": [],
       "lines": [
@@ -116,6 +116,49 @@
       ]
     },
     {
+      "id": "also",
+      "kind": "phone",
+      "variant": "proof",
+      "copy": [],
+      "caption": {
+        "text": "Add a child",
+        "source": "tasks[1].label"
+      },
+      "screen": {
+        "src": "screens/homeschooling-companion-kids.png",
+        "pose": "tiltRight",
+        "focus": {
+          "at": 0.45,
+          "y": 159,
+          "h": 126,
+          "region": "state"
+        },
+        "scroll": []
+      },
+      "why": "One more real thing an owner does here, in the listing's own task wording, on the screen it happens on. Screen: \"Your children.\" (Each child with their age and subjects, and the state's homeschool requirements kept alongside.) chosen because it is the real screen closest to \"Add a child\"; focus on \"Oregon · Moderate regulation\".",
+      "from": 555,
+      "dur": 99,
+      "ground": "light",
+      "transition": "slideUp",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "swish",
+          "volume": 0.192
+        },
+        {
+          "at": 12,
+          "cue": "pop",
+          "volume": 0.252
+        },
+        {
+          "at": 45,
+          "cue": "tap",
+          "volume": 0.33
+        }
+      ]
+    },
+    {
       "id": "cta",
       "kind": "cta",
       "variant": "guide",
@@ -134,9 +177,9 @@
         "source": "micro"
       },
       "why": "Ends on where to read the whole guide, with the product beneath it: the viewer leaves with the next step, not only a pitch.",
-      "from": 555,
+      "from": 642,
       "dur": 139,
-      "ground": "light",
+      "ground": "ink",
       "transition": "blurDissolve",
       "sfx": [
         {
@@ -170,7 +213,7 @@
     },
     {
       "topic": "Guide",
-      "decision": "\"How to catch up on homeschool records you did not keep\" (draftpace.com/guides/how-to-catch-up-on-homeschool-records)",
+      "decision": "\"Catch up on homeschool records without inventing dates\" (draftpace.com/guides/how-to-catch-up-on-homeschool-records)",
       "because": "The guide that covers this moment: what to do comes from it, and the film ends on it."
     },
     {
@@ -185,13 +228,13 @@
     },
     {
       "topic": "Structure",
-      "decision": "The moment: The moment as it feels, set dark, then the help in the light, then what to do next.",
-      "because": "Best fit for a awareness film on Pinterest video pin (platform fit 1, goal fit 3, already used on Pinterest video pin ×1). Other candidates: Inside the tool (-3.4), In their words (-5.0)."
+      "decision": "Inside the tool: The moment, then how the product helps on its real screen, then one more real thing an owner does in it.",
+      "because": "Best fit for a awareness film on Pinterest video pin (platform fit 2, goal fit 2, already used on Pinterest video pin ×2). Other candidates: The moment (-4.0), In their words (-5.0)."
     },
     {
       "topic": "Angle",
       "decision": "\"I have not kept any records and need to catch up\"",
-      "because": "The moment \"I have not kept any records and need to catch up\", then how Homeschooling Companion helps, then what the guide \"How to catch up on homeschool records you did not keep\" says to do."
+      "because": "The moment \"I have not kept any records and need to catch up\", how Homeschooling Companion helps, and one more real thing it does: \"Add a child\"."
     },
     {
       "topic": "Transitions",
@@ -215,7 +258,7 @@
     },
     {
       "topic": "Length",
-      "decision": "23.1s, 3 scenes",
+      "decision": "26.0s, 4 scenes",
       "because": "Each scene is held for the time its words take to read on Pinterest video pin (0.32s a word), inside 10–32s."
     }
   ]

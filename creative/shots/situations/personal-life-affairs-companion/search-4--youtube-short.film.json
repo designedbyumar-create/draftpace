@@ -12,15 +12,15 @@
   "width": 1080,
   "height": 1920,
   "fps": 30,
-  "durationInFrames": 916,
-  "structure": "situationChecklist",
+  "durationInFrames": 874,
+  "structure": "situationInside",
   "angle": {
     "text": "I have been named executor and do not know what that involves",
     "source": "searchedProblems[3].phrase"
   },
   "treatment": {
     "voice": "editorial",
-    "camera": "float",
+    "camera": "dolly",
     "transitions": [
       "pageTurn",
       "blurDissolve",
@@ -70,61 +70,6 @@
       ]
     },
     {
-      "id": "what-to-do",
-      "kind": "list",
-      "variant": "checklist",
-      "copy": [
-        {
-          "text": "Certified copies of the death certificate, more than you think you need.",
-          "source": "guide:named-executor-what-you-agreed-to/body[9].items[0]#0"
-        },
-        {
-          "text": "The original will, not a copy.",
-          "source": "guide:named-executor-what-you-agreed-to/body[9].items[1]#0"
-        },
-        {
-          "text": "Details of any funeral plan already paid for.",
-          "source": "guide:named-executor-what-you-agreed-to/body[9].items[4]#0"
-        },
-        {
-          "text": "Contact details for their accountant, attorney, or financial adviser.",
-          "source": "guide:named-executor-what-you-agreed-to/body[9].items[5]#0"
-        }
-      ],
-      "why": "What to do about it, from the guide \"Named executor of a will: what you agreed to (US)\": its own checklist, the first sentence of each item.",
-      "from": 103,
-      "dur": 393,
-      "ground": "light",
-      "transition": "blurDissolve",
-      "sfx": [
-        {
-          "at": 0,
-          "cue": "whoosh",
-          "volume": 0.32
-        },
-        {
-          "at": 10,
-          "cue": "pop",
-          "volume": 0.45
-        },
-        {
-          "at": 89,
-          "cue": "pop",
-          "volume": 0.45
-        },
-        {
-          "at": 168,
-          "cue": "pop",
-          "volume": 0.45
-        },
-        {
-          "at": 247,
-          "cue": "pop",
-          "volume": 0.45
-        }
-      ]
-    },
-    {
       "id": "help",
       "kind": "phone",
       "variant": "proof",
@@ -148,9 +93,51 @@
         "text": "Personal Life Affairs Companion",
         "source": "title"
       },
-      "from": 484,
+      "from": 103,
       "dur": 319,
-      "ground": "ink",
+      "ground": "light",
+      "transition": "pageTurn",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "page",
+          "volume": 0.32
+        },
+        {
+          "at": 12,
+          "cue": "pop",
+          "volume": 0.42
+        },
+        {
+          "at": 144,
+          "cue": "tap",
+          "volume": 0.55
+        }
+      ]
+    },
+    {
+      "id": "also",
+      "kind": "phone",
+      "variant": "proof",
+      "copy": [],
+      "caption": {
+        "text": "Print the book to hand to somebody",
+        "source": "tasks[4].label"
+      },
+      "screen": {
+        "src": "screens/personal-life-affairs-companion-printables.png",
+        "pose": "flat",
+        "focus": {
+          "at": 0.45,
+          "y": 264,
+          "h": 168,
+          "region": "book"
+        }
+      },
+      "why": "One more real thing an owner does here, in the listing's own task wording, on the screen it happens on. Screen: \"Nothing in it yet, and you can still print it.\" (My Affairs book: a printable handoff book that says where the paperwork is.) chosen because it is the real screen closest to \"Print the book to hand to somebody\"; focus on \"My Affairs\".",
+      "from": 410,
+      "dur": 103,
+      "ground": "light",
       "transition": "blurDissolve",
       "sfx": [
         {
@@ -164,9 +151,50 @@
           "volume": 0.42
         },
         {
-          "at": 144,
+          "at": 46,
           "cue": "tap",
           "volume": 0.55
+        }
+      ]
+    },
+    {
+      "id": "what-to-do",
+      "kind": "list",
+      "variant": "checklist",
+      "copy": [
+        {
+          "text": "Locate the original will and any amendments.",
+          "source": "guide:named-executor-what-you-agreed-to/body[1].items[0]#0"
+        },
+        {
+          "text": "If unsure about serving, ask about declining before undertaking substantive administration.",
+          "source": "guide:named-executor-what-you-agreed-to/body[1].items[2]#0"
+        }
+      ],
+      "eyebrow": {
+        "text": "Before accepting transactions as routine",
+        "source": "guide:named-executor-what-you-agreed-to/body[1].heading"
+      },
+      "why": "What to do about it, from the guide \"Named executor of a will: first decisions (US)\": its own checklist.",
+      "from": 501,
+      "dur": 260,
+      "ground": "ink",
+      "transition": "pageTurn",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "page",
+          "volume": 0.32
+        },
+        {
+          "at": 10,
+          "cue": "pop",
+          "volume": 0.45
+        },
+        {
+          "at": 97,
+          "cue": "pop",
+          "volume": 0.45
         }
       ]
     },
@@ -189,14 +217,14 @@
         "source": "micro"
       },
       "why": "Ends on where to read the whole guide, with the product beneath it: the viewer leaves with the next step, not only a pitch.",
-      "from": 791,
+      "from": 749,
       "dur": 125,
       "ground": "light",
-      "transition": "pageTurn",
+      "transition": "blurDissolve",
       "sfx": [
         {
           "at": 0,
-          "cue": "page",
+          "cue": "whoosh",
           "volume": 0.32
         },
         {
@@ -225,7 +253,7 @@
     },
     {
       "topic": "Guide",
-      "decision": "\"Named executor of a will: what you agreed to (US)\" (draftpace.com/guides/named-executor-what-you-agreed-to)",
+      "decision": "\"Named executor of a will: first decisions (US)\" (draftpace.com/guides/named-executor-what-you-agreed-to)",
       "because": "The guide that covers this moment: what to do comes from it, and the film ends on it."
     },
     {
@@ -240,13 +268,13 @@
     },
     {
       "topic": "Structure",
-      "decision": "What to do first: The moment, the guide's own checklist for it, then the product that keeps track of it.",
-      "because": "Best fit for a awareness film on YouTube Short (platform fit 3, goal fit 3, already used on YouTube Short ×3). Other candidates: The moment (-14.0), Inside the tool (-17.4)."
+      "decision": "Inside the tool: The moment, then how the product helps on its real screen, then one more real thing an owner does in it.",
+      "because": "Best fit for a awareness film on YouTube Short (platform fit 2, goal fit 2, already used on YouTube Short ×3). Other candidates: What to do first (-11.6), The moment (-14.0)."
     },
     {
       "topic": "Angle",
       "decision": "\"I have been named executor and do not know what that involves\"",
-      "because": "The moment \"I have been named executor and do not know what that involves\", the checklist from \"Named executor of a will: what you agreed to (US)\", then how Personal Life Affairs Companion helps."
+      "because": "The moment \"I have been named executor and do not know what that involves\", how Personal Life Affairs Companion helps, and one more real thing it does: \"Print the book to hand to somebody\"."
     },
     {
       "topic": "Transitions",
@@ -264,28 +292,13 @@
       "because": "Grounds light → accent → light → ink: a cool accent, so a darker ground is used for contrast at a turn."
     },
     {
-      "topic": "Variation",
-      "decision": "Rotated the ground rhythm",
-      "because": "Its shape was 0.82 similar to sit-home-management-companion-search-5--youtube-short; a different film, not the same one re-coloured."
-    },
-    {
-      "topic": "Variation",
-      "decision": "Changed the camera",
-      "because": "Its shape was 0.74 similar to sit-monthly-money-reset-search-5--pinterest-video; a different film, not the same one re-coloured."
-    },
-    {
-      "topic": "Variation",
-      "decision": "Reordered the transitions",
-      "because": "Its shape was 0.74 similar to sit-monthly-money-reset-search-5--pinterest-video; a different film, not the same one re-coloured."
-    },
-    {
       "topic": "Sound",
       "decision": "Full sound design, mid-energy bed",
       "because": "Sound-on placement: every transition, landing and reveal has a cue, and the bed ducks under the brand moment."
     },
     {
       "topic": "Length",
-      "decision": "30.5s, 4 scenes",
+      "decision": "29.1s, 5 scenes",
       "because": "Each scene is held for the time its words take to read on YouTube Short (0.26s a word), inside 15–40s."
     }
   ]

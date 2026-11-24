@@ -4,7 +4,7 @@
 
 Teaches from the guide [paperwork-pile-where-to-start](https://draftpace.com/guides/paperwork-pile-where-to-start), then hands over to **alongside**.
 
-> Angle: "What is a doom pile?" — `guide:paperwork-pile-where-to-start/body[7].items[1].q`
+> Angle: "What goes in the clarification folder?" — `guide:paperwork-pile-where-to-start/body[9].items[1].q`
 
 ## Analysis and decisions
 
@@ -12,11 +12,11 @@ Teaches from the guide [paperwork-pile-where-to-start](https://draftpace.com/gui
 |---|---|---|
 | **Placement** | YouTube Short, 1080×1920, 18–45s, hook by 1.2s, sound on | Search-adjacent audience that will watch a slightly longer explanation if it starts strong. Loops by default. |
 | **Product** | ADHD Life Companion: $49 (list $99), motif "focus", calm personality, warm accent #86586a | From its definition and Shop listing. 3 real screens to show. |
-| **Guide** | "Paperwork pile you are avoiding: where to start" (draftpace.com/guides/paperwork-pile-where-to-start) | Teaches from the guide first; ADHD Life Companion is the product the guide hands over to. 2 lists and timelines, 5 questions to draw from. |
+| **Guide** | "Paperwork pile: start by finding what needs action" (draftpace.com/guides/paperwork-pile-where-to-start) | Teaches from the guide first; ADHD Life Companion is the product the guide hands over to. 1 lists and timelines, 3 questions to draw from. |
 | **Stage** | Before launch: helpful and relatable only | Nobody knows Draftpace yet, so films show how it helps with real moments. Who it is not for, questions before buying, what you get and the price wait until there are users to sell to. |
 | **Audience** | You have ADHD, or executive function that works like it does, and most productivity tools have made that worse rather than better. / You are dealing with brain fog from long covid, a concussion, chronic illness, grief, new parenthood, menopause, or depression, and holding a plan in your head has stopped being reliable. | The listing's own audience lines; the director writes for them. |
-| **Structure** | The question people ask: One of the guide's own questions, its plain answer, then the product. | Best fit for a awareness film on YouTube Short (platform fit 2, goal fit 2). Other candidates: In order (5.0). |
-| **Angle** | "What is a doom pile?" | A question from the guide's FAQ, "What is a doom pile?", and the first sentence of its answer. |
+| **Structure** | The question people ask: One of the guide's own questions, its plain answer, then the product. | Best fit for a awareness film on YouTube Short (platform fit 2, goal fit 2). Other candidates: The checklist (3.5). |
+| **Angle** | "What goes in the clarification folder?" | A question from the guide's FAQ, "What goes in the clarification folder?", and the first sentence of its answer. |
 | **Transitions** | Transitions follow the product's own identity motif, "focus" | Transitions follow the product's own identity motif, "focus": it is about one thing at a time, so scenes open like an iris onto one thing. |
 | **Camera** | Camera "dolly" | Camera "dolly": constant forward movement for a high-energy feed. |
 | **Colour** | Grounds light → ink → light → accent | Grounds light → ink → light → accent: a warm accent, so light grounds lead and the accent is saved for the turns. |
@@ -27,28 +27,28 @@ Treatment: voice `editorial`, camera `dolly`, motif `focus`, transitions `iris` 
 
 ## Script, scene by scene
 
-### 1. q — 0:00.00 to 0:02.57 (frames 0–77, 2.6s)
+### 1. q — 0:00.00 to 0:03.20 (frames 0–96, 3.2s)
 
 - **Shot:** title / quote on a light ground, in by `cut`
-- **On screen:** "What is a doom pile?" — `guide:paperwork-pile-where-to-start/body[7].items[1].q`
-- **Set as:** `What is a doom pile?`
+- **On screen:** "What goes in the clarification folder?" — `guide:paperwork-pile-where-to-start/body[9].items[1].q`
+- **Set as:** `What goes in the` / `clarification folder?`
 - **Why:** The question as people ask it; the guide carries it because people search it.
 
-### 2. a — 0:02.17 to 0:07.33 (frames 65–220, 5.2s)
+### 2. a — 0:02.80 to 0:07.00 (frames 84–210, 4.2s)
 
 - **Shot:** title / label on a ink ground, in by `iris`
-- **On screen:** "It's a name for a stack of unsorted things moved somewhere to clear a surface." — `guide:paperwork-pile-where-to-start/body[7].items[1].a#0`
-- **Set as:** `It's a name for a stack of` / `unsorted things moved` / `somewhere to clear a surface.` (accent on "somewhere")
+- **On screen:** "Anything whose meaning or next step you cannot establish yet." — `guide:paperwork-pile-where-to-start/body[9].items[1].a#0`
+- **Set as:** `Anything whose meaning` / `or next step you` / `cannot establish yet.` (accent on "establish")
 - **Sound:** whoosh @+0f (0.32)
 - **Why:** The guide's answer, its first sentence: the plain answer before any detail.
 
-### 3. tool — 0:06.93 to 0:14.47 (frames 208–434, 7.5s)
+### 3. tool — 0:06.60 to 0:14.47 (frames 198–434, 7.9s)
 
 - **Shot:** phone / proof on a light ground, in by `blurDissolve`
 - **Eyebrow:** "ADHD Life Companion" — `title`
 - **Real UI:** `screens/alongside-workspace.png`, pose `float`, focus "one-thing" (y 222, h 294) at 45%
 - **Caption:** "A single page per thing you are holding, with everything about it in one place" — `expectedOutputs[3]`
-- **Sound:** whoosh @+0f (0.32), pop @+12f (0.42), tap @+102f (0.55)
+- **Sound:** whoosh @+0f (0.32), pop @+12f (0.42), tap @+106f (0.55)
 - **Why:** The turn: the product the guide itself hands over to, named and shown on its real screen, captioned with its listing's line closest to what the guide teaches. Screen: "Book the six-month dental check" (One thing at a time: a single next step, Book the six-month dental check, with Do this with me, Not now and It is sorted.) chosen because it is the real screen closest to "A single page per thing you are holding, with everything about it in one place P"; focus on "Book the six-month dental check".
 
 ### 4. cta — 0:14.07 to 0:18.00 (frames 422–540, 3.9s)

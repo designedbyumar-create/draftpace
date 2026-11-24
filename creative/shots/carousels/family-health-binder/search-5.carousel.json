@@ -31,156 +31,55 @@
       },
       "lines": [
         {
-          "text": "Eight things to write down for each person, a filled example page, and what belongs in a paper folder instead.",
+          "text": "Keep one dated health summary per person, with current medicines, allergies, contacts and record locations.",
           "source": "guide:what-goes-in-a-family-health-binder/dek#0"
         },
         {
-          "text": "One page per person.",
+          "text": "Share only the pages each reader needs.",
           "source": "guide:what-goes-in-a-family-health-binder/dek#1"
         }
       ],
       "art": {
         "motif": "notebook",
-        "why": "the slide names \"write\", \"page\", \"paper\""
+        "why": "the slide names \"page\", \"record\""
       }
     },
     {
-      "kind": "step",
+      "kind": "checklist",
       "eyebrow": {
-        "text": "Filling in the answers you don't have",
+        "text": "Build the first usable version",
         "source": "guide:what-goes-in-a-family-health-binder/body[3].heading"
       },
-      "number": {
-        "text": "1",
-        "source": "micro"
-      },
-      "head": {
-        "text": "Start with what's in your wallet: the insurance card gives you the insurer, the member ID and the group number.",
-        "source": "guide:what-goes-in-a-family-health-binder/body[3].items[0]#0"
-      },
-      "body": [
+      "items": [
         {
-          "text": "Copy it exactly, letters and zeros included.",
-          "source": "guide:what-goes-in-a-family-health-binder/body[3].items[0]#1"
-        }
-      ],
-      "emphasis": [
-        "insurance"
-      ],
-      "art": {
-        "motif": "card",
-        "why": "the slide names \"card\""
-      }
-    },
-    {
-      "kind": "step",
-      "eyebrow": {
-        "text": "Filling in the answers you don't have",
-        "source": "guide:what-goes-in-a-family-health-binder/body[3].heading"
-      },
-      "number": {
-        "text": "2",
-        "source": "micro"
-      },
-      "head": {
-        "text": "Pull the medicine names from the labels, not from memory.",
-        "source": "guide:what-goes-in-a-family-health-binder/body[3].items[1]#0"
-      },
-      "body": [
-        {
-          "text": "Write the name, the dose as printed, and how often.",
-          "source": "guide:what-goes-in-a-family-health-binder/body[3].items[1]#1"
-        }
-      ],
-      "emphasis": [
-        "medicine"
-      ],
-      "art": {
-        "motif": "pills",
-        "why": "the slide names \"medicine\", \"dose\""
-      }
-    },
-    {
-      "kind": "step",
-      "eyebrow": {
-        "text": "Filling in the answers you don't have",
-        "source": "guide:what-goes-in-a-family-health-binder/body[3].heading"
-      },
-      "number": {
-        "text": "3",
-        "source": "micro"
-      },
-      "head": {
-        "text": "Ask the doctor's office and the pharmacy for their phone numbers if you don't have them saved, and write down which one is which.",
-        "source": "guide:what-goes-in-a-family-health-binder/body[3].items[2]#0"
-      },
-      "body": [],
-      "emphasis": [
-        "pharmacy"
-      ],
-      "art": {
-        "motif": "phone",
-        "why": "the slide names \"phone\""
-      }
-    },
-    {
-      "kind": "step",
-      "eyebrow": {
-        "text": "Filling in the answers you don't have",
-        "source": "guide:what-goes-in-a-family-health-binder/body[3].heading"
-      },
-      "number": {
-        "text": "4",
-        "source": "micro"
-      },
-      "head": {
-        "text": "For vaccines, ask the clinic that gave them for a copy of the record, then type the names and dates in as written.",
-        "source": "guide:what-goes-in-a-family-health-binder/body[3].items[3]#0"
-      },
-      "body": [
-        {
-          "text": "If a clinic is gone, the CDC says it doesn't hold vaccination records itself, and points you to your state's immunization information system, your provider or your state health department.",
-          "source": "guide:what-goes-in-a-family-health-binder/body[3].items[3]#1"
-        }
-      ],
-      "emphasis": [
-        "vaccines"
-      ],
-      "art": {
-        "motif": "health",
-        "why": "the slide names \"health\", \"vaccin\""
-      }
-    },
-    {
-      "kind": "step",
-      "eyebrow": {
-        "text": "Filling in the answers you don't have",
-        "source": "guide:what-goes-in-a-family-health-binder/body[3].heading"
-      },
-      "number": {
-        "text": "5",
-        "source": "micro"
-      },
-      "head": {
-        "text": "Add allergies last, and add what happens as well as what they're allergic to.",
-        "source": "guide:what-goes-in-a-family-health-binder/body[3].items[4]#0"
-      },
-      "body": [
-        {
-          "text": "\"Peanuts\" is a fact.",
-          "source": "guide:what-goes-in-a-family-health-binder/body[3].items[4]#1"
+          "text": "Ask each adult what information they want help keeping and who may see it.",
+          "source": "guide:what-goes-in-a-family-health-binder/body[3].items[0]#0"
         },
         {
-          "text": "\"Peanuts (hives)\" is something a sitter can use.",
-          "source": "guide:what-goes-in-a-family-health-binder/body[3].items[4]#2"
+          "text": "Start with current safety-relevant facts and contacts, not the entire history.",
+          "source": "guide:what-goes-in-a-family-health-binder/body[3].items[2]#0"
+        },
+        {
+          "text": "Collect the medication information and mark any disagreement for pharmacist or prescriber review.",
+          "source": "guide:what-goes-in-a-family-health-binder/body[3].items[3]#0"
+        },
+        {
+          "text": "Request missing official records rather than recreating vaccination dates or test results from memory.",
+          "source": "guide:what-goes-in-a-family-health-binder/body[3].items[4]#0"
+        },
+        {
+          "text": "Write where the source documents live and how an authorized helper can obtain them.",
+          "source": "guide:what-goes-in-a-family-health-binder/body[3].items[5]#0"
+        },
+        {
+          "text": "Choose one master, a backup and a replacement process for handed-out copies.",
+          "source": "guide:what-goes-in-a-family-health-binder/body[3].items[6]#0"
         }
       ],
-      "emphasis": [
-        "allergies"
-      ],
+      "ticks": true,
       "art": {
-        "motif": "pills",
-        "why": "the slide names \"allerg\""
+        "motif": "magnifier",
+        "why": "the slide names \"review\", \"missing\", \"where\""
       }
     },
     {
@@ -232,15 +131,11 @@
   ],
   "notes": [
     "Cover: \"Where do I keep everyone's allergies and reactions\" (searchedProblems[4].phrase), as people search it.",
-    "Steps: 5 of 6 from the guide's numbered steps \"Filling in the answers you don't have\", one per slide, each with the guide's own explanation.",
+    "Checklist: 6 items from \"Build the first usable version\".",
     "Help: \"Per person, with what happens recorded alongside, in one place you can reach without a clinic portal login.\" (searchedProblems[4].answer), on screens/family-health-binder-members.png (\"Family\").",
     "Illustration on the cover: pills with people, because the carousel's topic: the moment and its guide name \"allerg\", \"reaction\".",
-    "Illustration on the answer: notebook, because the slide names \"write\", \"page\", \"paper\".",
-    "Illustration on the step: card, because the slide names \"card\".",
-    "Illustration on the step: pills, because the slide names \"medicine\", \"dose\".",
-    "Illustration on the step: phone, because the slide names \"phone\".",
-    "Illustration on the step: health, because the slide names \"health\", \"vaccin\".",
-    "Illustration on the step: pills, because the slide names \"allerg\".",
+    "Illustration on the answer: notebook, because the slide names \"page\", \"record\".",
+    "Illustration on the checklist: magnifier, because the slide names \"review\", \"missing\", \"where\".",
     "Illustration on the close: pills, because the carousel's topic: the moment and its guide name \"allerg\", \"reaction\"."
   ]
 }

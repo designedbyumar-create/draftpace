@@ -128,10 +128,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   // Only published, PAID Shop listings. Draft, archived, and dev-preview
   // fixtures never reach here, see src/shop/registry.ts and docs/SHOP.md.
-  // A free product's /shop URL permanently redirects to /free, and
-  // listing a redirect in a sitemap asks a crawler to index a hop.
+  // A free product's /shop URL permanently redirects to /free, and a
+  // product with its own bespoke landing page (canonicalPath) permanently
+  // redirects /shop/[slug] there too -- either way, listing a redirect in
+  // a sitemap asks a crawler to index a hop instead of the real page.
   const shopRoutes: Route[] = shopRegistry.listPublishedPaid().map((product) => ({
-    route: `/shop/${product.slug}`,
+    route: product.canonicalPath ?? `/shop/${product.slug}`,
     changeFrequency: "weekly",
     priority: 0.7,
   }));

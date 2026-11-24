@@ -14,7 +14,7 @@
         "parents"
       ],
       "promise": {
-        "text": "How to talk to your parents about their will and finances",
+        "text": "How to talk to your parents about their will",
         "source": "guide:talking-to-your-parents-about-their-affairs/title"
       },
       "art": {
@@ -31,51 +31,51 @@
       },
       "lines": [
         {
-          "text": "What to open with, which documents to ask about, what to do if they say no, and scripts for a conversation that usually takes several tries.",
+          "text": "Ask permission, start with document locations and trusted contacts, and agree the next step without treating the conversation as access to their money.",
           "source": "guide:talking-to-your-parents-about-their-affairs/dek#0"
         }
       ],
       "art": {
-        "motif": "speech",
-        "why": "the slide names \"say\", \"conversation\", \"script\", \"ask\""
+        "motif": "steps",
+        "why": "the slide names \"step\", \"start\", \"next\""
       }
     },
     {
       "kind": "checklist",
       "eyebrow": {
-        "text": "What to ask about, once they're willing",
+        "text": "Ask only what serves the purpose",
         "source": "guide:talking-to-your-parents-about-their-affairs/body[3].heading"
       },
       "items": [
         {
-          "text": "Where the will is kept, and whether it's the current one.",
+          "text": "Where is the current will, and who holds the original?",
           "source": "guide:talking-to-your-parents-about-their-affairs/body[3].items[0]#0"
         },
         {
-          "text": "Which bank or banks they use, by name only.",
+          "text": "Who should be contacted first in an emergency or period of incapacity?",
           "source": "guide:talking-to-your-parents-about-their-affairs/body[3].items[1]#0"
         },
         {
-          "text": "Who their lawyer or financial advisor is, if they have one.",
+          "text": "Are healthcare or financial decision arrangements already made, and where are the relevant documents?",
           "source": "guide:talking-to-your-parents-about-their-affairs/body[3].items[2]#0"
         },
         {
-          "text": "Who they've named to make medical decisions if they can't.",
+          "text": "Which professional advisers may be contacted, with permission?",
           "source": "guide:talking-to-your-parents-about-their-affairs/body[3].items[3]#0"
         },
         {
-          "text": "Whether a power of attorney exists, and who holds it.",
+          "text": "Where are the important insurance, property and identity records?",
           "source": "guide:talking-to-your-parents-about-their-affairs/body[3].items[4]#0"
         },
         {
-          "text": "Where the paperwork for the house or car is kept.",
+          "text": "Is there a protected digital-access plan or provider legacy arrangement?",
           "source": "guide:talking-to-your-parents-about-their-affairs/body[3].items[5]#0"
         }
       ],
-      "ticks": true,
+      "ticks": false,
       "art": {
         "motif": "document",
-        "why": "the slide names \"paperwork\", \"will\""
+        "why": "the slide names \"document\", \"will\""
       }
     },
     {
@@ -104,7 +104,7 @@
         "source": "micro"
       },
       "title": {
-        "text": "How to talk to your parents about their will and finances",
+        "text": "How to talk to your parents about their will",
         "source": "guide:talking-to-your-parents-about-their-affairs/title"
       },
       "url": {
@@ -127,11 +127,11 @@
   ],
   "notes": [
     "Cover: \"How do I talk to my parents about their affairs\" (searchedProblems[4].phrase), as people search it.",
-    "Checklist: 6 items from \"What to ask about, once they're willing\".",
+    "Checklist: 6 items from \"Ask only what serves the purpose\".",
     "Help: \"Give them something with a first step small enough to take. One question at a time, and everything that does not apply to them never appears.\" (searchedProblems[4].answer), on screens/personal-life-affairs-companion-workspace.png (\"Write down who should be called first.\").",
     "Illustration on the cover: speech with people, because the carousel's topic: the moment and its guide name \"talk\".",
-    "Illustration on the answer: speech, because the slide names \"say\", \"conversation\", \"script\", \"ask\".",
-    "Illustration on the checklist: document, because the slide names \"paperwork\", \"will\".",
+    "Illustration on the answer: steps, because the slide names \"step\", \"start\", \"next\".",
+    "Illustration on the checklist: document, because the slide names \"document\", \"will\".",
     "Illustration on the close: speech, because the carousel's topic: the moment and its guide name \"talk\"."
   ]
 }

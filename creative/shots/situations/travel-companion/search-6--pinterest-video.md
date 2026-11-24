@@ -13,14 +13,15 @@ Teaches from the guide [what-to-keep-on-paper-when-you-travel](https://draftpace
 | **Placement** | Pinterest video pin, 1000×1500, 10–32s, hook by 1s, sound off | People are planning, not scrolling: idea-led, calm and save-worthy, worded like what they searched for. Muted, looping, slow; a hard sell reads as an ad and loses the save. |
 | **Product** | Travel Companion: $34 (list $69), motif "timeline", calm personality, cool accent #00626f | From its definition and Shop listing. 4 real screens to show. |
 | **Situation** | "What should I keep on paper when I travel" | One real moment from Travel Companion's listing (searchedProblems[5].phrase). The film is about this moment and how the product helps with it: "My Trip Book prints exactly that: the whole trip, structured, as long as your trip needs and no longer." |
-| **Guide** | "What to print before you travel: a one-page paper list" (draftpace.com/guides/what-to-keep-on-paper-when-you-travel) | The guide that covers this moment: what to do comes from it, and the film ends on it. |
+| **Guide** | "What to print before you travel: the useful basics" (draftpace.com/guides/what-to-keep-on-paper-when-you-travel) | The guide that covers this moment: what to do comes from it, and the film ends on it. |
 | **Stage** | Before launch: helpful and relatable only | Nobody knows Draftpace yet, so films show how it helps with real moments. Who it is not for, questions before buying, what you get and the price wait until there are users to sell to. |
 | **Audience** | You are travelling with other people, and you are the one everybody asks what happens next. / Your trip has more than three moving parts: flights, transfers, stays and reservations that were booked around each other. | The listing's own audience lines; the director writes for them. |
-| **Structure** | The moment: The moment as it feels, set dark, then the help in the light, then what to do next. | Best fit for a awareness film on Pinterest video pin (platform fit 1, goal fit 3, already used on Pinterest video pin ×5). Other candidates: In their words (-19.0), Inside the tool (-21.0). |
-| **Angle** | "What should I keep on paper when I travel" | The moment "What should I keep on paper when I travel", then how Travel Companion helps, then what the guide "What to print before you travel: a one-page paper list" says to do. |
+| **Structure** | The moment: The moment as it feels, set dark, then the help in the light, then what to do next. | Best fit for a awareness film on Pinterest video pin (platform fit 1, goal fit 3, already used on Pinterest video pin ×5). Other candidates: Inside the tool (-17.7), In their words (-29.8). |
+| **Angle** | "What should I keep on paper when I travel" | The moment "What should I keep on paper when I travel", then how Travel Companion helps, then what the guide "What to print before you travel: the useful basics" says to do. |
 | **Transitions** | Transitions follow the product's own identity motif, "timeline" | Transitions follow the product's own identity motif, "timeline": a trip is a line through time, so scenes travel left to right along it. |
 | **Camera** | Camera "locked" | Camera "locked": still and precise, so a slow, reading audience is never chasing the frame. |
 | **Colour** | Grounds ink → light → light → accent | Grounds ink → light → light → accent: a cool accent, so a darker ground is used for contrast at a turn. |
+| **Variation** | Rotated the ground rhythm | Its shape was 0.78 similar to sit-family-health-binder-search-6--youtube-short; a different film, not the same one re-coloured. |
 | **Sound** | Light sound design, low-energy bed | Most of this audience never unmutes, so nothing depends on sound; cues are kept quieter and sparser for those who do. |
 | **Length** | 18.3s, 3 scenes | Each scene is held for the time its words take to read on Pinterest video pin (0.32s a word), inside 10–32s. |
 
@@ -30,7 +31,7 @@ Treatment: voice `editorial`, camera `locked`, motif `timeline`, transitions `sl
 
 ### 1. moment — 0:00.00 to 0:04.13 (frames 0–124, 4.1s)
 
-- **Shot:** title / editorial on a ink ground, in by `cut`
+- **Shot:** title / editorial on a light ground, in by `cut`
 - **On screen:** "What should I keep on paper when I travel" — `searchedProblems[5].phrase`
 - **Set as:** `What should I` / `keep on paper` / `when I travel` (accent on "should")
 - **Why:** Opens on the moment in the person's own words, as the listing records people searching it.
@@ -46,7 +47,7 @@ Treatment: voice `editorial`, camera `locked`, motif `timeline`, transitions `sl
 
 ### 3. cta — 0:13.70 to 0:18.33 (frames 411–550, 4.6s)
 
-- **Shot:** cta / guide on a light ground, in by `blurDissolve`
+- **Shot:** cta / guide on a ink ground, in by `blurDissolve`
 - **Eyebrow:** "The full guide" — `micro`
 - **On screen:** "Travel Companion" — `title`
 - **On screen:** "draftpace.com/guides/what-to-keep-on-paper-when-you-travel" — `guide:what-to-keep-on-paper-when-you-travel/url`

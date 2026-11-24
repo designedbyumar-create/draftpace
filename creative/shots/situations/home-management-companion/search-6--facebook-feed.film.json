@@ -12,8 +12,8 @@
   "width": 1080,
   "height": 1350,
   "fps": 30,
-  "durationInFrames": 807,
-  "structure": "situationChecklist",
+  "durationInFrames": 538,
+  "structure": "situationWords",
   "angle": {
     "text": "Homeownership feels like a full-time job",
     "source": "searchedProblems[5].phrase"
@@ -28,9 +28,9 @@
     ],
     "motif": "tag",
     "grounds": [
+      "light",
+      "light",
       "ink",
-      "light",
-      "light",
       "accent"
     ],
     "pace": 1.15
@@ -44,7 +44,7 @@
     {
       "id": "moment",
       "kind": "title",
-      "variant": "label",
+      "variant": "quote",
       "copy": [
         {
           "text": "Homeownership feels like a full-time job",
@@ -57,7 +57,7 @@
       "why": "Opens on the moment in the person's own words, as the listing records people searching it.",
       "from": 0,
       "dur": 90,
-      "ground": "ink",
+      "ground": "light",
       "transition": "cut",
       "sfx": [],
       "lines": [
@@ -65,47 +65,6 @@
           "Homeownership feels",
           "like a full-time job"
         ]
-      ]
-    },
-    {
-      "id": "what-to-do",
-      "kind": "list",
-      "variant": "checklist",
-      "copy": [
-        {
-          "text": "Closing documents, or your lease if you rent.",
-          "source": "guide:how-to-make-a-home-binder/body[4].items[0]#0"
-        },
-        {
-          "text": "The home inspection report.",
-          "source": "guide:how-to-make-a-home-binder/body[4].items[1]#0"
-        }
-      ],
-      "eyebrow": {
-        "text": "Papers worth keeping as paper",
-        "source": "guide:how-to-make-a-home-binder/body[4].heading"
-      },
-      "why": "What to do about it, from the guide \"How to make a home binder: what goes in and what stays out\": its own checklist, the first sentence of each item.",
-      "from": 78,
-      "dur": 281,
-      "ground": "light",
-      "transition": "slideUp",
-      "sfx": [
-        {
-          "at": 0,
-          "cue": "swish",
-          "volume": 0.192
-        },
-        {
-          "at": 10,
-          "cue": "pop",
-          "volume": 0.27
-        },
-        {
-          "at": 104,
-          "cue": "pop",
-          "volume": 0.27
-        }
       ]
     },
     {
@@ -132,10 +91,10 @@
         "text": "Home Base",
         "source": "title"
       },
-      "from": 347,
+      "from": 78,
       "dur": 333,
       "ground": "light",
-      "transition": "cardSlide",
+      "transition": "slideUp",
       "sfx": [
         {
           "at": 0,
@@ -173,10 +132,10 @@
         "source": "micro"
       },
       "why": "Ends on where to read the whole guide, with the product beneath it: the viewer leaves with the next step, not only a pitch.",
-      "from": 668,
+      "from": 399,
       "dur": 139,
-      "ground": "accent",
-      "transition": "slideUp",
+      "ground": "ink",
+      "transition": "cardSlide",
       "sfx": [
         {
           "at": 0,
@@ -209,7 +168,7 @@
     },
     {
       "topic": "Guide",
-      "decision": "\"How to make a home binder: what goes in and what stays out\" (draftpace.com/guides/how-to-make-a-home-binder)",
+      "decision": "\"How to make a home binder you can safely share\" (draftpace.com/guides/how-to-make-a-home-binder)",
       "because": "The guide that covers this moment: what to do comes from it, and the film ends on it."
     },
     {
@@ -224,13 +183,13 @@
     },
     {
       "topic": "Structure",
-      "decision": "What to do first: The moment, the guide's own checklist for it, then the product that keeps track of it.",
-      "because": "Best fit for a awareness film on Facebook feed video (platform fit 3, goal fit 3, already used for this product ×1, already used on Facebook feed video ×1). Other candidates: The moment (-3.0), Inside the tool (-4.4)."
+      "decision": "In their words: The moment typed the way a person searches it, then what to do about it, then the product doing it.",
+      "because": "Best fit for a awareness film on Facebook feed video (platform fit 2, goal fit 3, already used for this product ×1). Other candidates: The moment (-3.0), Inside the tool (-7.4)."
     },
     {
       "topic": "Angle",
       "decision": "\"Homeownership feels like a full-time job\"",
-      "because": "The moment \"Homeownership feels like a full-time job\", the checklist from \"How to make a home binder: what goes in and what stays out\", then how Home Base helps."
+      "because": "A situation people search for, \"Homeownership feels like a full-time job\", with the steps from \"How to make a home binder you can safely share\", and how Home Base helps."
     },
     {
       "topic": "Transitions",
@@ -244,18 +203,8 @@
     },
     {
       "topic": "Colour",
-      "decision": "Grounds ink → light → light → accent",
-      "because": "Grounds ink → light → light → accent: a cool accent, so a darker ground is used for contrast at a turn."
-    },
-    {
-      "topic": "Edit",
-      "decision": "Trimmed \"what-to-do\" to 3 items",
-      "because": "Fewer items read properly beats more items skimmed."
-    },
-    {
-      "topic": "Edit",
-      "decision": "Trimmed \"what-to-do\" to 2 items",
-      "because": "Fewer items read properly beats more items skimmed."
+      "decision": "Grounds light → light → ink → accent",
+      "because": "Grounds light → light → ink → accent: a cool accent, so a darker ground is used for contrast at a turn."
     },
     {
       "topic": "Sound",
@@ -264,7 +213,7 @@
     },
     {
       "topic": "Length",
-      "decision": "26.9s, 4 scenes",
+      "decision": "17.9s, 3 scenes",
       "because": "Each scene is held for the time its words take to read on Facebook feed video (0.32s a word), inside 10–30s."
     }
   ]

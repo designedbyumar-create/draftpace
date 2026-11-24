@@ -11,10 +11,10 @@
   "width": 1080,
   "height": 1920,
   "fps": 30,
-  "durationInFrames": 820,
+  "durationInFrames": 937,
   "structure": "guideChecklist",
   "angle": {
-    "text": "Subscription tracker: the six fields that catch renewals",
+    "text": "Subscription tracker: dates, decisions and proof",
     "source": "guide:subscription-tracker-what-to-track/title"
   },
   "treatment": {
@@ -27,9 +27,9 @@
     ],
     "motif": "index",
     "grounds": [
-      "light",
-      "light",
       "ink",
+      "light",
+      "light",
       "accent"
     ],
     "pace": 1
@@ -46,24 +46,24 @@
       "variant": "editorial",
       "copy": [
         {
-          "text": "Subscription tracker: the six fields that catch renewals",
+          "text": "Subscription tracker: dates, decisions and proof",
           "source": "guide:subscription-tracker-what-to-track/title"
         }
       ],
       "emphasis": [
-        "six"
+        "Subscription"
       ],
       "why": "The hook is the guide's own title: the question it answers, as a person would put it.",
       "from": 0,
-      "dur": 83,
+      "dur": 68,
       "ground": "light",
       "transition": "cut",
       "sfx": [],
       "lines": [
         [
           "Subscription tracker:",
-          "the six fields that",
-          "catch renewals"
+          "dates, decisions",
+          "and proof"
         ]
       ]
     },
@@ -73,31 +73,31 @@
       "variant": "checklist",
       "copy": [
         {
-          "text": "Look at anything renewing in the next two weeks.",
-          "source": "guide:subscription-tracker-what-to-track/body[5].items[0]#0"
+          "text": "Verify the billing channel and next charge in the actual account.",
+          "source": "guide:subscription-tracker-what-to-track/body[2].items[0]#0"
         },
         {
-          "text": "For each one, choose keep or planned to cancel.",
-          "source": "guide:subscription-tracker-what-to-track/body[5].items[1]#0"
+          "text": "Read the cancellation terms and record any cutoff separately.",
+          "source": "guide:subscription-tracker-what-to-track/body[2].items[1]#0"
         },
         {
-          "text": "Open anything marked still deciding and settle at least one.",
-          "source": "guide:subscription-tracker-what-to-track/body[5].items[2]#0"
+          "text": "Enter the full upcoming charge even if you also calculate a monthly equivalent.",
+          "source": "guide:subscription-tracker-what-to-track/body[2].items[2]#0"
         },
         {
-          "text": "Add any subscription you started this month, including trials.",
-          "source": "guide:subscription-tracker-what-to-track/body[5].items[3]#0"
+          "text": "Choose keep, review or cancel, and assign an action date before the cutoff.",
+          "source": "guide:subscription-tracker-what-to-track/body[2].items[3]#0"
         }
       ],
       "eyebrow": {
-        "text": "A five minute monthly check",
-        "source": "guide:subscription-tracker-what-to-track/body[5].heading"
+        "text": "Set up the next action, not just the row",
+        "source": "guide:subscription-tracker-what-to-track/body[2].heading"
       },
       "why": "The guide's own checklist, the first sentence of each item, ticked in as it is read.",
-      "from": 71,
-      "dur": 469,
-      "ground": "ink",
-      "transition": "cardSlide",
+      "from": 56,
+      "dur": 570,
+      "ground": "light",
+      "transition": "wipe",
       "sfx": [
         {
           "at": 0,
@@ -110,17 +110,17 @@
           "volume": 0.45
         },
         {
-          "at": 104,
+          "at": 124,
           "cue": "pop",
           "volume": 0.45
         },
         {
-          "at": 198,
+          "at": 238,
           "cue": "pop",
           "volume": 0.45
         },
         {
-          "at": 292,
+          "at": 352,
           "cue": "pop",
           "volume": 0.45
         }
@@ -132,32 +132,32 @@
       "variant": "proof",
       "copy": [],
       "caption": {
-        "text": "The month you could be debt-free, and the order your debts clear",
-        "source": "expectedOutputs[1]"
+        "text": "Add what you have across the seven areas: accounts, income, bills, subscriptions, transactions, debt, and savings.",
+        "source": "howItWorks[0]#0"
       },
       "screen": {
-        "src": "screens/personal-finance-companion-debt.png",
-        "pose": "tiltRight",
+        "src": "screens/personal-finance-companion-records.png",
+        "pose": "float",
         "focus": {
           "at": 0.45,
-          "y": 208,
-          "h": 154,
-          "region": "totals"
+          "y": 222,
+          "h": 119,
+          "region": "accounts"
         }
       },
-      "why": "The turn: the product the guide itself hands over to, named and shown on its real screen, captioned with its listing's line closest to what the guide teaches. Screen: \"Debt\" (What you owe and when it could be gone: totals, a payoff plan worked out from your own numbers, and the debt-free date.) chosen because it is the real screen closest to \"The month you could be debt-free, and the order your debts clear Subscription tr\"; focus on \"Total balance, Minimum payments\".",
+      "why": "The turn: the product the guide itself hands over to, named and shown on its real screen, captioned with its listing's line closest to what the guide teaches. Screen: \"Records\" (What's actually true right now, area by area: accounts, income, bills, subscriptions, transactions, debt.) chosen because it is the real screen closest to \"Add what you have across the seven areas: accounts, income, bills, subscriptions\"; focus on \"Accounts\".",
       "eyebrow": {
         "text": "Personal Finance Companion",
         "source": "title"
       },
-      "from": 528,
-      "dur": 186,
+      "from": 614,
+      "dur": 217,
       "ground": "accent",
-      "transition": "wipe",
+      "transition": "blurDissolve",
       "sfx": [
         {
           "at": 0,
-          "cue": "swish",
+          "cue": "whoosh",
           "volume": 0.32
         },
         {
@@ -166,7 +166,7 @@
           "volume": 0.42
         },
         {
-          "at": 84,
+          "at": 98,
           "cue": "tap",
           "volume": 0.55
         }
@@ -191,14 +191,14 @@
         "source": "micro"
       },
       "why": "Ends on where to read the whole guide, with the product beneath it: the viewer leaves with the next step, not only a pitch.",
-      "from": 702,
+      "from": 819,
       "dur": 118,
-      "ground": "light",
-      "transition": "blurDissolve",
+      "ground": "ink",
+      "transition": "cardSlide",
       "sfx": [
         {
           "at": 0,
-          "cue": "whoosh",
+          "cue": "swish",
           "volume": 0.32
         },
         {
@@ -222,8 +222,8 @@
     },
     {
       "topic": "Guide",
-      "decision": "\"Subscription tracker: the six fields that catch renewals\" (draftpace.com/guides/subscription-tracker-what-to-track)",
-      "because": "Teaches from the guide first; Personal Finance Companion is the product the guide hands over to. 1 lists and timelines, 5 questions to draw from."
+      "decision": "\"Subscription tracker: dates, decisions and proof\" (draftpace.com/guides/subscription-tracker-what-to-track)",
+      "because": "Teaches from the guide first; Personal Finance Companion is the product the guide hands over to. 1 lists and timelines, 3 questions to draw from."
     },
     {
       "topic": "Stage",
@@ -236,14 +236,19 @@
       "because": "The listing's own audience lines; the director writes for them."
     },
     {
+      "topic": "Material",
+      "decision": "Allowed real lines up to 4 words longer",
+      "because": "Every structure Personal Finance Companion's copy supports at YouTube Short's normal line length is already used by its other films; a longer real line beats telling the same story twice."
+    },
+    {
       "topic": "Structure",
       "decision": "The checklist: The guide's checklist on one screen, item by item, then the product that holds it.",
-      "because": "Best fit for a awareness film on YouTube Short (platform fit 2, goal fit 3, already used on YouTube Short ×5). Other candidates: The question people ask (-24.2)."
+      "because": "Best fit for a awareness film on YouTube Short (platform fit 2, goal fit 3, already used for this product ×3, already used on YouTube Short ×10). Other candidates: The question people ask (-44.9)."
     },
     {
       "topic": "Angle",
-      "decision": "\"Subscription tracker: the six fields that catch renewals\"",
-      "because": "A checklist from the guide, \"A five minute monthly check\": 4 of its 5 items."
+      "decision": "\"Subscription tracker: dates, decisions and proof\"",
+      "because": "A checklist from the guide, \"Set up the next action, not just the row\": 4 of its 7 items."
     },
     {
       "topic": "Transitions",
@@ -252,18 +257,28 @@
     },
     {
       "topic": "Camera",
-      "decision": "Camera \"float\"",
-      "because": "Camera \"float\": a gentle float that keeps a held frame alive without demanding attention."
+      "decision": "Camera \"dolly\"",
+      "because": "Camera \"dolly\": constant forward movement for a high-energy feed."
     },
     {
       "topic": "Colour",
-      "decision": "Grounds light → light → ink → accent",
-      "because": "Grounds light → light → ink → accent: a cool accent, so a darker ground is used for contrast at a turn."
+      "decision": "Grounds ink → light → light → accent",
+      "because": "Grounds ink → light → light → accent: a cool accent, so a darker ground is used for contrast at a turn."
     },
     {
       "topic": "Variation",
       "decision": "Rotated the ground rhythm",
-      "because": "Its shape was 0.74 similar to guide-what-to-do-when-a-parent-dies--youtube-short; a different film, not the same one re-coloured."
+      "because": "Its shape was 0.74 similar to guide-fall-home-maintenance-checklist--youtube-short; a different film, not the same one re-coloured."
+    },
+    {
+      "topic": "Variation",
+      "decision": "Changed the camera",
+      "because": "Its shape was 0.82 similar to guide-where-is-my-water-shutoff--youtube-short; a different film, not the same one re-coloured."
+    },
+    {
+      "topic": "Variation",
+      "decision": "Reordered the transitions",
+      "because": "Its shape was 0.74 similar to guide-you-missed-a-payment-what-to-do-next--youtube-short; a different film, not the same one re-coloured."
     },
     {
       "topic": "Sound",
@@ -272,7 +287,7 @@
     },
     {
       "topic": "Length",
-      "decision": "27.3s, 4 scenes",
+      "decision": "31.2s, 4 scenes",
       "because": "Each scene is held for the time its words take to read on YouTube Short (0.26s a word), inside 18–45s."
     }
   ]

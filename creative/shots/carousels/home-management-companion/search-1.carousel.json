@@ -14,7 +14,7 @@
         "maintenance"
       ],
       "promise": {
-        "text": "Home maintenance checklist by month (short version)",
+        "text": "Home maintenance by month: a flexible checklist",
         "source": "guide:home-maintenance-checklist-by-month/title"
       },
       "art": {
@@ -31,145 +31,51 @@
       },
       "lines": [
         {
-          "text": "January to December in one short list: only the jobs that belong to a month and cause damage if skipped.",
+          "text": "Build a month-by-month home maintenance plan around weather, equipment instructions and last-done dates, with safe limits for DIY work.",
           "source": "guide:home-maintenance-checklist-by-month/dek#0"
-        },
-        {
-          "text": "US home, northern hemisphere.",
-          "source": "guide:home-maintenance-checklist-by-month/dek#1"
         }
       ],
       "art": {
         "motif": "calendar",
-        "why": "the slide names \"month\", \"january\", \"december\""
+        "why": "the slide names \"date\", \"month\""
       }
     },
     {
-      "kind": "step",
+      "kind": "checklist",
       "eyebrow": {
-        "text": "February",
-        "source": "guide:home-maintenance-checklist-by-month/body[1].steps[1].when"
+        "text": "Set up the calendar first",
+        "source": "guide:home-maintenance-checklist-by-month/body[1].heading"
       },
-      "head": {
-        "text": "Look for tree limbs over the roof or near power lines.",
-        "source": "guide:home-maintenance-checklist-by-month/body[1].steps[1].what#0"
-      },
-      "body": [
+      "items": [
         {
-          "text": "Book any pruning now, before spring growth.",
-          "source": "guide:home-maintenance-checklist-by-month/body[1].steps[1].what#1"
-        }
-      ],
-      "emphasis": [
-        "limbs"
-      ],
-      "art": {
-        "motif": "house",
-        "why": "the slide names \"roof\""
-      }
-    },
-    {
-      "kind": "step",
-      "eyebrow": {
-        "text": "March",
-        "source": "guide:home-maintenance-checklist-by-month/body[1].steps[2].when"
-      },
-      "head": {
-        "text": "Walk the outside once the snow is gone.",
-        "source": "guide:home-maintenance-checklist-by-month/body[1].steps[2].what#0"
-      },
-      "body": [
-        {
-          "text": "Check that downspouts drain away from the house and that the soil hasn't sunk toward the foundation.",
-          "source": "guide:home-maintenance-checklist-by-month/body[1].steps[2].what#1"
-        }
-      ],
-      "emphasis": [
-        "outside"
-      ],
-      "art": {
-        "motif": "water",
-        "why": "the slide names \"drain\""
-      }
-    },
-    {
-      "kind": "step",
-      "eyebrow": {
-        "text": "April",
-        "source": "guide:home-maintenance-checklist-by-month/body[1].steps[3].when"
-      },
-      "head": {
-        "text": "Look at the roof from the ground for lifted or missing shingles.",
-        "source": "guide:home-maintenance-checklist-by-month/body[1].steps[3].what#0"
-      },
-      "body": [
-        {
-          "text": "Clear the gutters.",
-          "source": "guide:home-maintenance-checklist-by-month/body[1].steps[3].what#1"
+          "text": "List the systems actually present, including any septic, well, sump pump, fireplace or irrigation.",
+          "source": "guide:home-maintenance-checklist-by-month/body[1].items[0]#0"
         },
         {
-          "text": "Book air conditioning service.",
-          "source": "guide:home-maintenance-checklist-by-month/body[1].steps[3].what#2"
+          "text": "Collect manuals and service records before assigning intervals.",
+          "source": "guide:home-maintenance-checklist-by-month/body[1].items[1]#0"
         },
         {
-          "text": "Switch ceiling fans to summer direction and dust the blades.",
-          "source": "guide:home-maintenance-checklist-by-month/body[1].steps[3].what#3"
-        }
-      ],
-      "emphasis": [
-        "shingles"
-      ],
-      "art": {
-        "motif": "house",
-        "why": "the slide names \"roof\", \"gutter\""
-      }
-    },
-    {
-      "kind": "step",
-      "eyebrow": {
-        "text": "May",
-        "source": "guide:home-maintenance-checklist-by-month/body[1].steps[4].when"
-      },
-      "head": {
-        "text": "Have the AC serviced if you haven't.",
-        "source": "guide:home-maintenance-checklist-by-month/body[1].steps[4].what#0"
-      },
-      "body": [
+          "text": "Add local freeze, heavy-rain, heat and storm periods.",
+          "source": "guide:home-maintenance-checklist-by-month/body[1].items[2]#0"
+        },
         {
-          "text": "Reconnect hoses and turn outdoor water back on, then look for drips at the faucet.",
-          "source": "guide:home-maintenance-checklist-by-month/body[1].steps[4].what#1"
-        }
-      ],
-      "emphasis": [
-        "serviced"
-      ],
-      "art": {
-        "motif": "water",
-        "why": "the slide names \"water\", \"faucet\", \"hose\""
-      }
-    },
-    {
-      "kind": "step",
-      "eyebrow": {
-        "text": "June",
-        "source": "guide:home-maintenance-checklist-by-month/body[1].steps[5].when"
-      },
-      "head": {
-        "text": "A light month.",
-        "source": "guide:home-maintenance-checklist-by-month/body[1].steps[5].what#0"
-      },
-      "body": [
+          "text": "Separate safe owner observations from professional maintenance.",
+          "source": "guide:home-maintenance-checklist-by-month/body[1].items[3]#0"
+        },
         {
-          "text": "Touch up exterior paint or caulk while the weather is dry.",
-          "source": "guide:home-maintenance-checklist-by-month/body[1].steps[5].what#1"
+          "text": "For each planned task, record last done, next trigger and who is responsible.",
+          "source": "guide:home-maintenance-checklist-by-month/body[1].items[4]#0"
+        },
+        {
+          "text": "Schedule a short monthly review and leave room for a newly discovered problem.",
+          "source": "guide:home-maintenance-checklist-by-month/body[1].items[5]#0"
         }
       ],
-      "emphasis": [
-        "light"
-      ],
+      "ticks": true,
       "art": {
-        "motif": "calendar",
-        "why": "the slide names \"month\""
+        "motif": "notebook",
+        "why": "the slide names \"record\""
       }
     },
     {
@@ -198,7 +104,7 @@
         "source": "micro"
       },
       "title": {
-        "text": "Home maintenance checklist by month (short version)",
+        "text": "Home maintenance by month: a flexible checklist",
         "source": "guide:home-maintenance-checklist-by-month/title"
       },
       "url": {
@@ -221,15 +127,11 @@
   ],
   "notes": [
     "Cover: \"I keep forgetting home maintenance\" (searchedProblems[0].phrase), as people search it.",
-    "Steps: 5 of 11 from the guide's timeline \"The year, month by month\", one per slide, each with the guide's own explanation.",
+    "Checklist: 6 items from \"Set up the calendar first\".",
     "Help: \"It holds the timing for you and raises a job when it is worth doing, then goes quiet again. Nothing sits on screen permanently.\" (searchedProblems[0].answer), on screens/home-management-companion-seasons.png (\"Fall home maintenance checklist\").",
     "Illustration on the cover: house with toolbox, because the carousel's topic: the moment and its guide name \"home\".",
-    "Illustration on the answer: calendar, because the slide names \"month\", \"january\", \"december\".",
-    "Illustration on the step: house, because the slide names \"roof\".",
-    "Illustration on the step: water, because the slide names \"drain\".",
-    "Illustration on the step: house, because the slide names \"roof\", \"gutter\".",
-    "Illustration on the step: water, because the slide names \"water\", \"faucet\", \"hose\".",
-    "Illustration on the step: calendar, because the slide names \"month\".",
+    "Illustration on the answer: calendar, because the slide names \"date\", \"month\".",
+    "Illustration on the checklist: notebook, because the slide names \"record\".",
     "Illustration on the close: house, because the carousel's topic: the moment and its guide name \"home\"."
   ]
 }

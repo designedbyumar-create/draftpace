@@ -56,7 +56,7 @@
       "why": "Opens on the moment as the listing describes it: the situation the viewer is in right now.",
       "from": 0,
       "dur": 223,
-      "ground": "accent",
+      "ground": "light",
       "transition": "cut",
       "sfx": [],
       "lines": [
@@ -137,7 +137,7 @@
       "why": "One more real thing an owner does here, in the listing's own task wording, on the screen it happens on. Screen: \"What you have established so far.\" (Important documents, each with where it is kept: the will, lasting power of attorney, passports, insurance, deeds.) chosen because it is the real screen closest to \"Look at everything I've recorded so far\"; focus on \"Important documents\".",
       "from": 521,
       "dur": 132,
-      "ground": "light",
+      "ground": "accent",
       "transition": "blurDissolve",
       "sfx": [
         {
@@ -219,7 +219,7 @@
     {
       "topic": "Structure",
       "decision": "Inside the tool: The moment, then how the product helps on its real screen, then one more real thing an owner does in it.",
-      "because": "Best fit for a awareness film on Pinterest video pin (platform fit 2, goal fit 2, already used for this product ×1, already used on Pinterest video pin ×4). Other candidates: The moment (-21.8)."
+      "because": "Best fit for a awareness film on Pinterest video pin (platform fit 2, goal fit 2, already used for this product ×1, already used on Pinterest video pin ×5). Other candidates: The moment (-21.8)."
     },
     {
       "topic": "Angle",
@@ -240,6 +240,11 @@
       "topic": "Colour",
       "decision": "Grounds ink → light → light → accent",
       "because": "Grounds ink → light → light → accent: a cool accent, so a darker ground is used for contrast at a turn."
+    },
+    {
+      "topic": "Variation",
+      "decision": "Rotated the ground rhythm",
+      "because": "Its shape was 0.74 similar to sit-personal-finance-companion-search-8--pinterest-video; a different film, not the same one re-coloured."
     },
     {
       "topic": "Sound",

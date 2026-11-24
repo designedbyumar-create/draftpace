@@ -12,8 +12,8 @@
   "width": 1000,
   "height": 1500,
   "fps": 30,
-  "durationInFrames": 703,
-  "structure": "situationInside",
+  "durationInFrames": 583,
+  "structure": "situationWords",
   "angle": {
     "text": "I need a bill tracker that shows what I have paid",
     "source": "searchedProblems[3].phrase"
@@ -44,7 +44,7 @@
     {
       "id": "moment",
       "kind": "title",
-      "variant": "label",
+      "variant": "quote",
       "copy": [
         {
           "text": "I need a bill tracker that shows what I have paid",
@@ -79,7 +79,7 @@
       },
       "screen": {
         "src": "screens/personal-finance-companion-bills.png",
-        "pose": "tiltLeft",
+        "pose": "flat",
         "focus": {
           "at": 0.45,
           "y": 229,
@@ -115,49 +115,6 @@
       ]
     },
     {
-      "id": "also",
-      "kind": "phone",
-      "variant": "proof",
-      "copy": [],
-      "caption": {
-        "text": "Print what we have and haven't settled",
-        "source": "tasks[5].label"
-      },
-      "screen": {
-        "src": "screens/personal-finance-companion-printables.png",
-        "pose": "tiltRight",
-        "focus": {
-          "at": 0.45,
-          "y": 369,
-          "h": 287,
-          "region": "printables"
-        },
-        "scroll": []
-      },
-      "why": "One more real thing an owner does here, in the listing's own task wording, on the screen it happens on. Screen: \"Printable Finance Companion\" (The paper version: printable finance companion in US Letter and A4, and a shared responsibility statement.) chosen because it is the real screen closest to \"Print what we have and haven't settled\"; focus on \"Printable Finance Companion\".",
-      "from": 433,
-      "dur": 132,
-      "ground": "accent",
-      "transition": "wipe",
-      "sfx": [
-        {
-          "at": 0,
-          "cue": "swish",
-          "volume": 0.192
-        },
-        {
-          "at": 12,
-          "cue": "pop",
-          "volume": 0.252
-        },
-        {
-          "at": 59,
-          "cue": "tap",
-          "volume": 0.33
-        }
-      ]
-    },
-    {
       "id": "cta",
       "kind": "cta",
       "variant": "guide",
@@ -176,9 +133,9 @@
         "source": "micro"
       },
       "why": "Ends on where to read the whole guide, with the product beneath it: the viewer leaves with the next step, not only a pitch.",
-      "from": 553,
+      "from": 433,
       "dur": 150,
-      "ground": "accent",
+      "ground": "ink",
       "transition": "blurDissolve",
       "sfx": [
         {
@@ -212,7 +169,7 @@
     },
     {
       "topic": "Guide",
-      "decision": "\"Monthly bills list: include the bills that are not monthly\" (draftpace.com/guides/monthly-bills-list)",
+      "decision": "\"Monthly bills list: amounts, dates and annual costs\" (draftpace.com/guides/monthly-bills-list)",
       "because": "The guide that covers this moment: what to do comes from it, and the film ends on it."
     },
     {
@@ -227,13 +184,13 @@
     },
     {
       "topic": "Structure",
-      "decision": "Inside the tool: The moment, then how the product helps on its real screen, then one more real thing an owner does in it.",
-      "because": "Best fit for a awareness film on Pinterest video pin (platform fit 2, goal fit 2, already used on Pinterest video pin ×3). Other candidates: What to do first (-8.9), The moment (-11.5)."
+      "decision": "In their words: The moment typed the way a person searches it, then what to do about it, then the product doing it.",
+      "because": "Best fit for a awareness film on Pinterest video pin (platform fit 3, goal fit 3, already used for this product ×1, already used on Pinterest video pin ×3). Other candidates: Inside the tool (-9.9), The moment (-11.5)."
     },
     {
       "topic": "Angle",
       "decision": "\"I need a bill tracker that shows what I have paid\"",
-      "because": "The moment \"I need a bill tracker that shows what I have paid\", how Personal Finance Companion helps, and one more real thing it does: \"Print what we have and haven't settled\"."
+      "because": "A situation people search for, \"I need a bill tracker that shows what I have paid\", with the steps from \"Monthly bills list: amounts, dates and annual costs\", and how Personal Finance Companion helps."
     },
     {
       "topic": "Transitions",
@@ -242,28 +199,13 @@
     },
     {
       "topic": "Camera",
-      "decision": "Camera \"float\"",
-      "because": "Camera \"float\": a gentle float that keeps a held frame alive without demanding attention."
+      "decision": "Camera \"locked\"",
+      "because": "Camera \"locked\": still and precise, so a slow, reading audience is never chasing the frame."
     },
     {
       "topic": "Colour",
       "decision": "Grounds light → light → ink → accent",
       "because": "Grounds light → light → ink → accent: a cool accent, so a darker ground is used for contrast at a turn."
-    },
-    {
-      "topic": "Edit",
-      "decision": "Cut \"what-to-do\"",
-      "because": "It would run past 32s, the most Pinterest video pin holds attention for."
-    },
-    {
-      "topic": "Variation",
-      "decision": "Rotated the ground rhythm",
-      "because": "Its shape was 0.82 similar to sit-family-health-binder-search-4--pinterest-video; a different film, not the same one re-coloured."
-    },
-    {
-      "topic": "Variation",
-      "decision": "Changed the camera",
-      "because": "Its shape was 0.74 similar to sit-homeschooling-companion-search-6--pinterest-video; a different film, not the same one re-coloured."
     },
     {
       "topic": "Sound",
@@ -272,7 +214,7 @@
     },
     {
       "topic": "Length",
-      "decision": "23.4s, 4 scenes",
+      "decision": "19.4s, 3 scenes",
       "because": "Each scene is held for the time its words take to read on Pinterest video pin (0.32s a word), inside 10–32s."
     }
   ]

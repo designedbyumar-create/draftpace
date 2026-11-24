@@ -13,11 +13,12 @@
 | **Situation** | "You've meant to sort this out for years and never found a first step small enough to take." | One real moment from Personal Life Affairs Companion's listing (problemsSolved[0].problem). The film is about this moment and how the product helps with it: "One question on screen at a time, chosen for you, instead of a blank folder to organise yourself." |
 | **Stage** | Before launch: helpful and relatable only | Nobody knows Draftpace yet, so films show how it helps with real moments. Who it is not for, questions before buying, what you get and the price wait until there are users to sell to. |
 | **Audience** | You have been meaning to sort this out for a while and have never found a first step small enough to take. / You would rather be asked one question at a time than handed a folder and told to fill it in. | The listing's own audience lines; the director writes for them. |
-| **Structure** | Inside the tool: The moment, then how the product helps on its real screen, then one more real thing an owner does in it. | Best fit for a awareness film on Pinterest video pin (platform fit 2, goal fit 2, already used for this product ×1, already used on Pinterest video pin ×4). Other candidates: The moment (-21.8). |
+| **Structure** | Inside the tool: The moment, then how the product helps on its real screen, then one more real thing an owner does in it. | Best fit for a awareness film on Pinterest video pin (platform fit 2, goal fit 2, already used for this product ×1, already used on Pinterest video pin ×5). Other candidates: The moment (-21.8). |
 | **Angle** | "You've meant to sort this out for years and never found a first step small enough to take." | The moment "You've meant to sort this out for years and never found a first step small enough to take.", how Personal Life Affairs Companion helps, and one more real thing it does: "Look at everything I've recorded so far". |
 | **Transitions** | Transitions follow the product's own identity motif, "book" | Transitions follow the product's own identity motif, "book": a handoff book, so scenes turn like pages. |
 | **Camera** | Camera "float" | Camera "float": a gentle float that keeps a held frame alive without demanding attention. |
 | **Colour** | Grounds ink → light → light → accent | Grounds ink → light → light → accent: a cool accent, so a darker ground is used for contrast at a turn. |
+| **Variation** | Rotated the ground rhythm | Its shape was 0.74 similar to sit-personal-finance-companion-search-8--pinterest-video; a different film, not the same one re-coloured. |
 | **Sound** | Light sound design, low-energy bed | Most of this audience never unmutes, so nothing depends on sound; cues are kept quieter and sparser for those who do. |
 | **Length** | 25.9s, 4 scenes | Each scene is held for the time its words take to read on Pinterest video pin (0.32s a word), inside 10–32s. |
 
@@ -27,7 +28,7 @@ Treatment: voice `editorial`, camera `float`, motif `book`, transitions `pageTur
 
 ### 1. moment — 0:00.00 to 0:07.43 (frames 0–223, 7.4s)
 
-- **Shot:** title / label on a accent ground, in by `cut`
+- **Shot:** title / label on a light ground, in by `cut`
 - **On screen:** "You've meant to sort this out for years and never found a first step small enough to take." — `problemsSolved[0].problem`
 - **Set as:** `You've meant to sort this` / `out for years and never` / `found a first step small` / `enough to take.` (accent on "never")
 - **Why:** Opens on the moment as the listing describes it: the situation the viewer is in right now.
@@ -43,7 +44,7 @@ Treatment: voice `editorial`, camera `float`, motif `book`, transitions `pageTur
 
 ### 3. also — 0:17.37 to 0:21.77 (frames 521–653, 4.4s)
 
-- **Shot:** phone / proof on a light ground, in by `blurDissolve`
+- **Shot:** phone / proof on a accent ground, in by `blurDissolve`
 - **Real UI:** `screens/personal-life-affairs-companion-affairs.png`, pose `flat`, focus "documents" (y 264, h 462) at 45%
 - **Caption:** "Look at everything I've recorded so far" — `tasks[1].label`
 - **Sound:** whoosh @+0f (0.19), pop @+12f (0.25), tap @+59f (0.33)

@@ -12,7 +12,7 @@
   "width": 1080,
   "height": 1920,
   "fps": 30,
-  "durationInFrames": 646,
+  "durationInFrames": 624,
   "structure": "situationMoment",
   "angle": {
     "text": "What should I bring to a doctor's appointment",
@@ -111,25 +111,26 @@
       ]
     },
     {
-      "id": "step-1",
-      "kind": "title",
-      "variant": "label",
+      "id": "what-to-do",
+      "kind": "list",
+      "variant": "checklist",
       "copy": [
         {
-          "text": "Write the reason, then your questions in order.",
-          "source": "guide:doctor-appointment-prep-checklist/body[4].steps[0].what#0"
+          "text": "Write the one concern you most need answered.",
+          "source": "guide:doctor-appointment-prep-checklist/body[1].items[0]#0"
+        },
+        {
+          "text": "Note allergies and what reaction you had.",
+          "source": "guide:doctor-appointment-prep-checklist/body[1].items[2]#0"
         }
       ],
       "eyebrow": {
-        "text": "The night before",
-        "source": "guide:doctor-appointment-prep-checklist/body[4].steps[0].when"
+        "text": "Only have five minutes? Start here",
+        "source": "guide:doctor-appointment-prep-checklist/body[1].heading"
       },
-      "emphasis": [
-        "questions"
-      ],
-      "why": "What to do, in order, from the guide \"Doctor appointment checklist for the day before\": \"The night before\".",
+      "why": "What to do about it, from the guide \"Doctor visit and appointment checklist: what to bring\": its own checklist.",
       "from": 303,
-      "dur": 121,
+      "dur": 214,
       "ground": "light",
       "transition": "whip",
       "sfx": [
@@ -137,53 +138,17 @@
           "at": 0,
           "cue": "swish",
           "volume": 0.32
-        }
-      ],
-      "lines": [
-        [
-          "Write the reason,",
-          "then your",
-          "questions in",
-          "order."
-        ]
-      ]
-    },
-    {
-      "id": "step-2",
-      "kind": "title",
-      "variant": "label",
-      "copy": [
+        },
         {
-          "text": "List every medicine, vitamin and supplement from the labels.",
-          "source": "guide:doctor-appointment-prep-checklist/body[4].steps[1].what#0"
-        }
-      ],
-      "eyebrow": {
-        "text": "Same evening",
-        "source": "guide:doctor-appointment-prep-checklist/body[4].steps[1].when"
-      },
-      "emphasis": [
-        "every"
-      ],
-      "why": "What to do, in order, from the guide \"Doctor appointment checklist for the day before\": \"Same evening\".",
-      "from": 418,
-      "dur": 121,
-      "ground": "accent",
-      "transition": "cardSlide",
-      "sfx": [
+          "at": 10,
+          "cue": "pop",
+          "volume": 0.45
+        },
         {
-          "at": 0,
-          "cue": "swish",
-          "volume": 0.32
+          "at": 81,
+          "cue": "pop",
+          "volume": 0.45
         }
-      ],
-      "lines": [
-        [
-          "List every",
-          "medicine, vitamin",
-          "and supplement",
-          "from the labels."
-        ]
       ]
     },
     {
@@ -205,9 +170,9 @@
         "source": "micro"
       },
       "why": "Ends on where to read the whole guide, with the product beneath it: the viewer leaves with the next step, not only a pitch.",
-      "from": 533,
+      "from": 511,
       "dur": 113,
-      "ground": "light",
+      "ground": "accent",
       "transition": "blurDissolve",
       "sfx": [
         {
@@ -241,7 +206,7 @@
     },
     {
       "topic": "Guide",
-      "decision": "\"Doctor appointment checklist for the day before\" (draftpace.com/guides/doctor-appointment-prep-checklist)",
+      "decision": "\"Doctor visit and appointment checklist: what to bring\" (draftpace.com/guides/doctor-appointment-prep-checklist)",
       "because": "The guide that covers this moment: what to do comes from it, and the film ends on it."
     },
     {
@@ -257,12 +222,12 @@
     {
       "topic": "Structure",
       "decision": "The moment: The moment as it feels, set dark, then the help in the light, then what to do next.",
-      "because": "Best fit for a awareness film on TikTok (platform fit 3, goal fit 3, already used on TikTok ×1). Other candidates: Inside the tool (1.3), In their words (-0.7)."
+      "because": "Best fit for a awareness film on TikTok (platform fit 3, goal fit 3, already used on TikTok ×1). Other candidates: What to do first (4.1), Inside the tool (1.3)."
     },
     {
       "topic": "Angle",
       "decision": "\"What should I bring to a doctor's appointment\"",
-      "because": "The moment \"What should I bring to a doctor's appointment\", then how Family Health Binder helps, then what the guide \"Doctor appointment checklist for the day before\" says to do."
+      "because": "The moment \"What should I bring to a doctor's appointment\", then how Family Health Binder helps, then what the guide \"Doctor visit and appointment checklist: what to bring\" says to do."
     },
     {
       "topic": "Transitions",
@@ -286,7 +251,7 @@
     },
     {
       "topic": "Length",
-      "decision": "21.5s, 5 scenes",
+      "decision": "20.8s, 4 scenes",
       "because": "Each scene is held for the time its words take to read on TikTok (0.24s a word), inside 12–35s."
     }
   ]

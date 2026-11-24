@@ -1093,7 +1093,7 @@ const BASE_GUIDES: Guide[] = [
         kind: "paragraphs",
         heading: "What the Companion does with your state",
         paragraphs: [
-          "Homeschooling Companion reads this same summary to run the state picker on the Kids tab. Pick your state once, and for the 28 states in the Moderate or High groups, your printed My Homeschool Record gains an extra page that lists what your state's note asks for next to what you have actually recorded: a day count, a note count, or a check count. For the 23 None and Low states, your level and note still show on the Kids tab, but there is no extra printed page, because there is less for one to say. See how it looks on the [Homeschooling Companion](/shop/homeschooling-companion) page.",
+          "Homeschooling Companion reads this same summary to run the state picker on the Kids tab. Pick your state once, and for the 28 states in the Moderate or High groups, your printed My Homeschool Record gains an extra page that lists what your state's note asks for next to what you have actually recorded: a day count, a note count, or a check count. For the 23 None and Low states, your level and note still show on the Kids tab, but there is no extra printed page, because there is less for one to say. See how it looks on the [Homeschooling Companion](/homeschooling-companion) page.",
         ],
       },
       {
@@ -3782,7 +3782,7 @@ const BASE_GUIDES: Guide[] = [
         kind: "paragraphs",
         heading: "What the Companion does with these three columns",
         paragraphs: [
-          "Homeschooling Companion is built around the same three things, not the extra ones. Tap a subject done on the Today screen and it dates itself, keeps the subject and position you typed in for it, the same Math, Unit 3, Lesson 12 shape as the table above, and asks one optional question: how did it go, with easy, about right or difficult as the only answers. Add an occasional note in your own words on the Record tab, choose whether it goes on the printed page or stays private, and print a record per child when you want one. See it on the [Homeschooling Companion](/shop/homeschooling-companion) page.",
+          "Homeschooling Companion is built around the same three things, not the extra ones. Tap a subject done on the Today screen and it dates itself, keeps the subject and position you typed in for it, the same Math, Unit 3, Lesson 12 shape as the table above, and asks one optional question: how did it go, with easy, about right or difficult as the only answers. Add an occasional note in your own words on the Record tab, choose whether it goes on the printed page or stays private, and print a record per child when you want one. See it on the [Homeschooling Companion](/homeschooling-companion) page.",
         ],
       },
       {
@@ -3979,7 +3979,7 @@ const BASE_GUIDES: Guide[] = [
       {
         kind: "paragraphs",
         paragraphs: [
-          "Homeschooling Companion keeps this running as you go: tap a subject done and it's dated for you, and an occasional note stays attached to that day, yours to mark private or shareable. When you want the folder itself, [Homeschooling Companion](/shop/homeschooling-companion) prints a My Homeschool Record page per child, covering what was done and what you noted, to go in the folder alongside your own work samples, not instead of them.",
+          "Homeschooling Companion keeps this running as you go: tap a subject done and it's dated for you, and an occasional note stays attached to that day, yours to mark private or shareable. When you want the folder itself, [Homeschooling Companion](/homeschooling-companion) prints a My Homeschool Record page per child, covering what was done and what you noted, to go in the folder alongside your own work samples, not instead of them.",
         ],
       },
       {
@@ -5568,7 +5568,7 @@ const BASE_GUIDES: Guide[] = [
       {
         kind: "paragraphs",
         paragraphs: [
-          "Homeschooling Companion dates every entry with the day you record it, so it can't fill in past weeks for you: reconstruct those on paper or in a note, then use [Homeschooling Companion](/shop/homeschooling-companion) to record forward from today, which takes well under a minute a day once a subject is set up. It has no tally of days missed and no completion percentage to make the gap feel worse than it is.",
+          "Homeschooling Companion dates every entry with the day you record it, so it can't fill in past weeks for you: reconstruct those on paper or in a note, then use [Homeschooling Companion](/homeschooling-companion) to record forward from today, which takes well under a minute a day once a subject is set up. It has no tally of days missed and no completion percentage to make the gap feel worse than it is.",
         ],
       },
       {
@@ -5730,7 +5730,7 @@ const BASE_GUIDES: Guide[] = [
         kind: "paragraphs",
         heading: "Where a Companion fits",
         paragraphs: [
-          "[Homeschooling Companion](/shop/homeschooling-companion) runs a version of this check inside the app. You choose or write the questions per topic, mark each one right, not right or skipped as your child answers, and it reports one of the same four results above, including not enough to say when too few were answered. It never turns the result into a percentage or a grade, and it never compares your child to anyone else. It keeps the standing against the topic, so if the same result turns up twice, it tells you that too.",
+          "[Homeschooling Companion](/homeschooling-companion) runs a version of this check inside the app. You choose or write the questions per topic, mark each one right, not right or skipped as your child answers, and it reports one of the same four results above, including not enough to say when too few were answered. It never turns the result into a percentage or a grade, and it never compares your child to anyone else. It keeps the standing against the topic, so if the same result turns up twice, it tells you that too.",
         ],
       },
       {
@@ -7651,7 +7651,7 @@ const BASE_GUIDES: Guide[] = [
       {
         kind: "paragraphs",
         paragraphs: [
-          "Homeschooling Companion prints a My Homeschool Record page per child covering what was done, when, and what you noted, which gives an evaluator something to read alongside your own work samples. Entries are always dated the day you make them, and its short checks report one of four plain outcomes, including not enough to say, rather than a percentage you'd then have to explain. See it on the [Homeschooling Companion](/shop/homeschooling-companion) page.",
+          "Homeschooling Companion prints a My Homeschool Record page per child covering what was done, when, and what you noted, which gives an evaluator something to read alongside your own work samples. Entries are always dated the day you make them, and its short checks report one of four plain outcomes, including not enough to say, rather than a percentage you'd then have to explain. See it on the [Homeschooling Companion](/homeschooling-companion) page.",
         ],
       },
       {
@@ -8663,7 +8663,7 @@ const BASE_GUIDES: Guide[] = [
         kind: "paragraphs",
         heading: "What the Companion does with a day",
         paragraphs: [
-          "Homeschooling Companion records a subject as done the day you tap it, and a day counts on the printed record as any date with at least one recorded entry, math, reading, a field trip logged as a subject, any of it. It doesn't ask for hours and it has no attendance counter of its own: the count on the printed state page is just the number of distinct days something was recorded. For the habit that keeps a log like this going past the first month, see [a simple homeschool record keeping system you will keep](/guides/simple-homeschool-record-keeping-system). See it on the [Homeschooling Companion](/shop/homeschooling-companion) page.",
+          "Homeschooling Companion records a subject as done the day you tap it, and a day counts on the printed record as any date with at least one recorded entry, math, reading, a field trip logged as a subject, any of it. It doesn't ask for hours and it has no attendance counter of its own: the count on the printed state page is just the number of distinct days something was recorded. For the habit that keeps a log like this going past the first month, see [a simple homeschool record keeping system you will keep](/guides/simple-homeschool-record-keeping-system). See it on the [Homeschooling Companion](/homeschooling-companion) page.",
         ],
       },
       {
@@ -8784,7 +8784,7 @@ const BASE_GUIDES: Guide[] = [
         kind: "paragraphs",
         heading: "What the Companion does with the habit",
         paragraphs: [
-          "Homeschooling Companion is built around the same three things and nothing more. Tap a subject done on the Today screen and it's dated automatically, keeps the subject and position you already typed in, Math, Unit 3, Lesson 12, and asks one optional question, how did it go, with easy, about right, or difficult as the only answers. Marking a subject \"Did not get to it\" still records the day; it just comes back next time as a quiet flag to go over it again, not a blank. Add the occasional bigger note on the Record tab, in your own words, and choose whether it prints or stays private. See it on the [Homeschooling Companion](/shop/homeschooling-companion) page.",
+          "Homeschooling Companion is built around the same three things and nothing more. Tap a subject done on the Today screen and it's dated automatically, keeps the subject and position you already typed in, Math, Unit 3, Lesson 12, and asks one optional question, how did it go, with easy, about right, or difficult as the only answers. Marking a subject \"Did not get to it\" still records the day; it just comes back next time as a quiet flag to go over it again, not a blank. Add the occasional bigger note on the Record tab, in your own words, and choose whether it prints or stays private. See it on the [Homeschooling Companion](/homeschooling-companion) page.",
         ],
       },
       {
@@ -9729,7 +9729,7 @@ const BASE_GUIDES: Guide[] = [
       {
         kind: "paragraphs",
         paragraphs: [
-          "[Homeschooling Companion](/shop/homeschooling-companion) keeps the one piece of paper on that list you can't reconstruct from memory: the log. Every subject you record is dated the day you record it, and the record prints per child, covering what was done and when, for up to the most recent 400 entries in your account. It doesn't store your test results, photos or projects, and it isn't an archive. What it gives you is the dated log to keep alongside whatever paper you decide to hold on to.",
+          "[Homeschooling Companion](/homeschooling-companion) keeps the one piece of paper on that list you can't reconstruct from memory: the log. Every subject you record is dated the day you record it, and the record prints per child, covering what was done and when, for up to the most recent 400 entries in your account. It doesn't store your test results, photos or projects, and it isn't an archive. What it gives you is the dated log to keep alongside whatever paper you decide to hold on to.",
         ],
       },
       {
@@ -9961,7 +9961,7 @@ const BASE_GUIDES: Guide[] = [
         kind: "paragraphs",
         heading: "One move, as an example",
         paragraphs: [
-          "Say you move house in March. The obvious task is telling the post office. Less obvious: the bank mails your new card to the old address, the car insurance renewal quote still has the old postcode on it, a dentist reminder never arrives, and a parcel you were waiting on gets sent back to the sender. None of that sat on a list called change of address. It surfaced over about six weeks, one call at a time, each thread caught only because someone happened to notice it before it became a fee or a missed appointment.",
+          "Say you move house in March. The obvious task is telling the post office. Less obvious: the bank mails your new card to the old address, the car insurance renewal quote still has the old postcode on it, a dentist reminder never arrives, and a parcel you were waiting on gets sent back to the sender. None of that sat on a list called change of address. It surfaced over about six weeks, one call at a time, each thread caught only because someone happened to notice it before it became a fee or a missed appointment. For the single most common form this work takes, see [how to make a phone call you have been avoiding](/guides/how-to-make-a-phone-call-you-have-been-avoiding).",
         ],
       },
       {
@@ -9991,7 +9991,7 @@ const BASE_GUIDES: Guide[] = [
         kind: "paragraphs",
         heading: "Who ends up carrying it",
         paragraphs: [
-          "In many households, one person tracks most of this without it ever being discussed or assigned. A 2019 study of cognitive labor in different-gender couples found that women did more of the anticipating and monitoring work, the parts that happen before anything visible gets done, even among couples who described their split as even. Calling that being naturally organized turns a workload into a compliment; naming it as work is the first step toward splitting it on purpose instead of by default.",
+          "In many households, one person tracks most of this without it ever being discussed or assigned. A 2019 study of cognitive labor in different-gender couples found that women did more of the anticipating and monitoring work, the parts that happen before anything visible gets done, even among couples who described their split as even. Calling that being naturally organized turns a workload into a compliment; naming it as work is the first step toward splitting it on purpose instead of by default. [The if something happens to me file](/guides/the-if-something-happens-to-me-file) is one way to move what one person carries in their head into something the rest of the household can actually find.",
         ],
       },
       {
@@ -10116,7 +10116,7 @@ const BASE_GUIDES: Guide[] = [
         kind: "paragraphs",
         heading: "Interruptions cost more than the interruption itself",
         paragraphs: [
-          "Life admin rarely arrives as a scheduled session. It shows up as a call while you're doing something else, a letter you open between two other things, a form due while you're mid-task on something unrelated. Research on task switching backs up why that costs more than the few minutes the interruption itself takes: workers who get pulled off a task can take close to half an hour to return to it at the same level of focus, and the switch itself raises the odds of a mistake. A tool that assumes admin happens in one dedicated block is planning for a session that, in practice, rarely comes.",
+          "Life admin rarely arrives as a scheduled session. It shows up as a call while you're doing something else, a letter you open between two other things, a form due while you're mid-task on something unrelated. Research on task switching backs up why that costs more than the few minutes the interruption itself takes: workers who get pulled off a task can take close to half an hour to return to it at the same level of focus, and the switch itself raises the odds of a mistake. A tool that assumes admin happens in one dedicated block is planning for a session that, in practice, rarely comes. For the call itself, see [how to make a phone call you have been avoiding](/guides/how-to-make-a-phone-call-you-have-been-avoiding).",
         ],
       },
       {
@@ -10128,7 +10128,7 @@ const BASE_GUIDES: Guide[] = [
           "Work out what's due from stored facts and real dates, rather than asking you to rank a list by hand.",
           "Stay roughly accurate after being ignored for a month, because it will be, more than once.",
           "Say plainly when nothing is due, and mean it, rather than manufacturing a reason to open the app.",
-          "Hold the connections between items across areas, not just a title and a due date.",
+          "Hold the connections between items across areas, not just a title and a due date. [The if something happens to me file](/guides/the-if-something-happens-to-me-file) is one worked example of what that record would need to contain.",
         ],
       },
       {
@@ -16184,7 +16184,7 @@ const BASE_GUIDES: Guide[] = [
         kind: "paragraphs",
         heading: "What the Companion does with the plan",
         paragraphs: [
-          "Homeschooling Companion doesn't build a weekly plan for you, and it has no setting called a spare day. What it does is take the day count you choose for each subject, zero to seven, and show only what's due that day on the Today screen; a day with nothing scheduled reads \"Nothing scheduled today,\" plainly, not as a warning. Recording a subject is one tap, and marking one \"Did not get to it\" still records the day: it comes back next time as a quiet flag, \"Last time this was not finished,\" rather than a gap in the log. See it on the [Homeschooling Companion](/shop/homeschooling-companion) page.",
+          "Homeschooling Companion doesn't build a weekly plan for you, and it has no setting called a spare day. What it does is take the day count you choose for each subject, zero to seven, and show only what's due that day on the Today screen; a day with nothing scheduled reads \"Nothing scheduled today,\" plainly, not as a warning. Recording a subject is one tap, and marking one \"Did not get to it\" still records the day: it comes back next time as a quiet flag, \"Last time this was not finished,\" rather than a gap in the log. See it on the [Homeschooling Companion](/homeschooling-companion) page.",
         ],
       },
       {
@@ -16318,7 +16318,7 @@ const BASE_GUIDES: Guide[] = [
         kind: "paragraphs",
         heading: "What Homeschooling Companion does with the numbers",
         paragraphs: [
-          "In Homeschooling Companion, each subject on a child's page has its own \"How often\" number, a button from 0 to 7 days a week, and that number is the only thing that decides what shows up on Today. Set a subject to 1 and it runs on Wednesday. Set it to 4 and it runs Monday, Tuesday, Thursday and Friday. Set it to 0 and the subject stays on record without ever appearing on Today. It does not choose these numbers for you, and a day with nothing scheduled does not count as missed. See [Homeschooling Companion](/shop/homeschooling-companion).",
+          "In Homeschooling Companion, each subject on a child's page has its own \"How often\" number, a button from 0 to 7 days a week, and that number is the only thing that decides what shows up on Today. Set a subject to 1 and it runs on Wednesday. Set it to 4 and it runs Monday, Tuesday, Thursday and Friday. Set it to 0 and the subject stays on record without ever appearing on Today. It does not choose these numbers for you, and a day with nothing scheduled does not count as missed. See [Homeschooling Companion](/homeschooling-companion).",
         ],
       },
       {
@@ -16462,7 +16462,7 @@ const BASE_GUIDES: Guide[] = [
         kind: "paragraphs",
         heading: "What Homeschooling Companion shows about your state",
         paragraphs: [
-          "Homeschooling Companion includes a summary of what each state typically asks, shown on the Kids tab as None, Low, Moderate or High. It is the product's own summary, not the law, and every state page repeats the same line: laws change, confirm with your state before relying on this. It does not file anything on your behalf and does not check whether you have met a requirement. See [Homeschooling Companion](/shop/homeschooling-companion).",
+          "Homeschooling Companion includes a summary of what each state typically asks, shown on the Kids tab as None, Low, Moderate or High. It is the product's own summary, not the law, and every state page repeats the same line: laws change, confirm with your state before relying on this. It does not file anything on your behalf and does not check whether you have met a requirement. See [Homeschooling Companion](/homeschooling-companion).",
         ],
       },
       {
@@ -16590,7 +16590,7 @@ const BASE_GUIDES: Guide[] = [
         kind: "paragraphs",
         heading: "What the Companion does with a count, if you have one",
         paragraphs: [
-          "Homeschooling Companion does not hold a day or hour number for any state, and it does not do that math for you. Where you have saved a state on the Kids tab and that state has a structured page, [the printed state page](/shop/homeschooling-companion) shows a line for a log or record of instruction, and that line counts the distinct days you recorded something, not hours and not an attendance tally kept separately.",
+          "Homeschooling Companion does not hold a day or hour number for any state, and it does not do that math for you. Where you have saved a state on the Kids tab and that state has a structured page, [the printed state page](/homeschooling-companion) shows a line for a log or record of instruction, and that line counts the distinct days you recorded something, not hours and not an attendance tally kept separately.",
           "It states what is recorded, never whether that is enough, and every state page repeats the same line: laws change, confirm with your state before relying on this.",
         ],
       },
@@ -16744,7 +16744,7 @@ const BASE_GUIDES: Guide[] = [
         kind: "paragraphs",
         heading: "What Homeschooling Companion does with a new child",
         paragraphs: [
-          "Adding a child in Homeschooling Companion starts with how they are schooled. Mark a child as attending public or private school and the curriculum questions never come up at all, since there is nothing to record there yet. Mark a child as homeschooled and it asks one question: are you already following a curriculum? Answer Yes, we have one, No, we are doing our own, or Not sure yet, and for Not sure yet, a suggested starting outline is offered by age, clearly labeled a starting point you can change, keep, or throw away. It does not choose or sell a curriculum. See [Homeschooling Companion](/shop/homeschooling-companion).",
+          "Adding a child in Homeschooling Companion starts with how they are schooled. Mark a child as attending public or private school and the curriculum questions never come up at all, since there is nothing to record there yet. Mark a child as homeschooled and it asks one question: are you already following a curriculum? Answer Yes, we have one, No, we are doing our own, or Not sure yet, and for Not sure yet, a suggested starting outline is offered by age, clearly labeled a starting point you can change, keep, or throw away. It does not choose or sell a curriculum. See [Homeschooling Companion](/homeschooling-companion).",
         ],
       },
       {
@@ -16868,7 +16868,7 @@ const BASE_GUIDES: Guide[] = [
         kind: "paragraphs",
         heading: "What Homeschooling Companion does with more than one child",
         paragraphs: [
-          "Homeschooling Companion keeps a fully separate page for every child under Kids, and Today stacks their sheets one under another, never interleaved, so a shared morning is one tap for each child rather than one tap you have to remember to repeat for the next. On the Record tab, once a second child is added, every note you save asks which child it is about, and the household view is a shared read of separate pages, never a shared page. Printing makes one PDF at a time, for the child you choose. The one real limit: the record and the printed page pull from the most recent 400 lessons and 400 notes for the whole household, not per child, so a family logging for two or three children fills that faster than a family with one. See it at [Homeschooling Companion](/shop/homeschooling-companion).",
+          "Homeschooling Companion keeps a fully separate page for every child under Kids, and Today stacks their sheets one under another, never interleaved, so a shared morning is one tap for each child rather than one tap you have to remember to repeat for the next. On the Record tab, once a second child is added, every note you save asks which child it is about, and the household view is a shared read of separate pages, never a shared page. Printing makes one PDF at a time, for the child you choose. The one real limit: the record and the printed page pull from the most recent 400 lessons and 400 notes for the whole household, not per child, so a family logging for two or three children fills that faster than a family with one. See it at [Homeschooling Companion](/homeschooling-companion).",
         ],
       },
       {
@@ -17001,7 +17001,7 @@ const BASE_GUIDES: Guide[] = [
         kind: "paragraphs",
         heading: "What Homeschooling Companion does with reading",
         paragraphs: [
-          "Homeschooling Companion has no separate reading log screen, and that is worth knowing before you build a habit around one. Reading works the way every other subject does: tap it done on Today, and answer Easy, About right or Difficult if it is worth saying. For the book title itself, use \"Note something\" on the Record tab, dated the day you write it, and choose whether that note appears on the printed record or stays private. It will not keep a running, searchable list of titles on its own; a notebook, a spreadsheet, or the table above is the more reliable way to hold that list. See it at [Homeschooling Companion](/shop/homeschooling-companion).",
+          "Homeschooling Companion has no separate reading log screen, and that is worth knowing before you build a habit around one. Reading works the way every other subject does: tap it done on Today, and answer Easy, About right or Difficult if it is worth saying. For the book title itself, use \"Note something\" on the Record tab, dated the day you write it, and choose whether that note appears on the printed record or stays private. It will not keep a running, searchable list of titles on its own; a notebook, a spreadsheet, or the table above is the more reliable way to hold that list. See it at [Homeschooling Companion](/homeschooling-companion).",
         ],
       },
       {
@@ -17094,7 +17094,7 @@ const BASE_GUIDES: Guide[] = [
         kind: "paragraphs",
         heading: "Where the Companion fits",
         paragraphs: [
-          "[Homeschooling Companion](/shop/homeschooling-companion) tracks the first two steps for you without extra work: mark a session difficult on Today, and it comes back later under \"Worth going over again,\" with the reason \"Last time you said this was difficult\" attached, so you're not relying on memory for which session went badly.",
+          "[Homeschooling Companion](/homeschooling-companion) tracks the first two steps for you without extra work: mark a session difficult on Today, and it comes back later under \"Worth going over again,\" with the reason \"Last time you said this was difficult\" attached, so you're not relying on memory for which session went badly.",
           "For the \"go back one step\" step, tick the exact topic on your child's page, write four or more questions from your own head or your curriculum's test, and mark each answer yourself. The result says a topic looked solid, was mixed, is worth another look, or that there wasn't enough to say yet. It doesn't pick the order for you and it doesn't tell you what's wrong. It only holds what came back, so you can look at the pattern instead of guessing from one bad afternoon.",
         ],
       },
@@ -21990,7 +21990,7 @@ const BASE_GUIDES: Guide[] = [
     slug: "doctor-appointment-prep-checklist",
     title: "Doctor appointment checklist for the day before",
     dek: "What to write down, gather and bring the day before a doctor visit, and where to keep the notes after it. A paperwork list, not medical advice.",
-    primaryQuery: "doctor appointment checklist",
+    primaryQuery: "doctor visit checklist",
     next: { slug: "questions-to-bring-to-the-doctor", reason: "With the paperwork gathered, turn to the questions themselves and how to write them so the important one comes first." },
     related: [
       { slug: "medication-list-what-to-write-down", reason: "Doctors ask what is taken now, and this shows how to write the medication list so it matches the labels." },

@@ -11,8 +11,8 @@
   "width": 1080,
   "height": 1920,
   "fps": 30,
-  "durationInFrames": 567,
-  "structure": "situationInside",
+  "durationInFrames": 468,
+  "structure": "situationMoment",
   "angle": {
     "text": "\"While we had it up on the lift\" turns a routine visit into a much larger bill.",
     "source": "problemsSolved[2].problem"
@@ -43,7 +43,7 @@
     {
       "id": "moment",
       "kind": "title",
-      "variant": "label",
+      "variant": "editorial",
       "copy": [
         {
           "text": "\"While we had it up on the lift\" turns a routine visit into a much larger bill.",
@@ -56,7 +56,7 @@
       "why": "Opens on the moment as the listing describes it: the situation the viewer is in right now.",
       "from": 0,
       "dur": 174,
-      "ground": "accent",
+      "ground": "ink",
       "transition": "cut",
       "sfx": [],
       "lines": [
@@ -114,49 +114,6 @@
       ]
     },
     {
-      "id": "also",
-      "kind": "phone",
-      "variant": "proof",
-      "copy": [],
-      "caption": {
-        "text": "Print my service history for a buyer",
-        "source": "tasks[5].label"
-      },
-      "screen": {
-        "src": "screens/vehicle-maintenance-companion-history.png",
-        "pose": "tiltLeft",
-        "focus": {
-          "at": 0.45,
-          "y": 236,
-          "h": 364,
-          "region": "log"
-        },
-        "scroll": []
-      },
-      "why": "One more real thing an owner does here, in the listing's own task wording, on the screen it happens on. Screen: \"History\" (What has been done and when: each service dated, with the mileage, the shop and the cost.) chosen because it is the real screen closest to \"Print my service history for a buyer\"; focus on \"Oil and filter change\".",
-      "from": 381,
-      "dur": 111,
-      "ground": "light",
-      "transition": "zoomThrough",
-      "sfx": [
-        {
-          "at": 0,
-          "cue": "whoosh",
-          "volume": 0.192
-        },
-        {
-          "at": 12,
-          "cue": "pop",
-          "volume": 0.252
-        },
-        {
-          "at": 50,
-          "cue": "tap",
-          "volume": 0.33
-        }
-      ]
-    },
-    {
       "id": "cta",
       "kind": "cta",
       "variant": "soft",
@@ -171,14 +128,14 @@
         }
       ],
       "why": "Facebook Reel punishes an obvious ad; a soft close names the product and where to find it.",
-      "from": 480,
+      "from": 381,
       "dur": 87,
-      "ground": "light",
-      "transition": "radial",
+      "ground": "accent",
+      "transition": "zoomThrough",
       "sfx": [
         {
           "at": 0,
-          "cue": "swish",
+          "cue": "whoosh",
           "volume": 0.192
         },
         {
@@ -217,13 +174,13 @@
     },
     {
       "topic": "Structure",
-      "decision": "Inside the tool: The moment, then how the product helps on its real screen, then one more real thing an owner does in it.",
-      "because": "Best fit for a awareness film on Facebook Reel (platform fit 2, goal fit 2, already used for this product ×2, already used on Facebook Reel ×2). Other candidates: The moment (-23.1)."
+      "decision": "The moment: The moment as it feels, set dark, then the help in the light, then what to do next.",
+      "because": "Best fit for a awareness film on Facebook Reel (platform fit 3, goal fit 3, already used for this product ×1, already used on Facebook Reel ×3). Other candidates: Inside the tool (-22.2)."
     },
     {
       "topic": "Angle",
       "decision": "\"\"While we had it up on the lift\" turns a routine visit into a much larger bill.\"",
-      "because": "The moment \"\"While we had it up on the lift\" turns a routine visit into a much larger bill.\", how Vehicle Maintenance Companion helps, and one more real thing it does: \"Print my service history for a buyer\"."
+      "because": "The moment \"\"While we had it up on the lift\" turns a routine visit into a much larger bill.\", then how Vehicle Maintenance Companion helps."
     },
     {
       "topic": "Transitions",
@@ -247,7 +204,7 @@
     },
     {
       "topic": "Length",
-      "decision": "18.9s, 4 scenes",
+      "decision": "15.6s, 3 scenes",
       "because": "Each scene is held for the time its words take to read on Facebook Reel (0.3s a word), inside 12–35s."
     }
   ]

@@ -18,6 +18,7 @@
 | **Transitions** | Transitions follow the product's own identity motif, "ledger" | Transitions follow the product's own identity motif, "ledger": a ledger is ruled lines, so scenes are revealed row by row. |
 | **Camera** | Camera "float" | Camera "float": a gentle float that keeps a held frame alive without demanding attention. |
 | **Colour** | Grounds light → accent → light → ink | Grounds light → accent → light → ink: a cool accent, so a darker ground is used for contrast at a turn. |
+| **Variation** | Rotated the ground rhythm | Its shape was 0.78 similar to sit-monthly-money-reset-search-4--facebook-feed; a different film, not the same one re-coloured. |
 | **Sound** | Light sound design, low-energy bed | Most of this audience never unmutes, so nothing depends on sound; cues are kept quieter and sparser for those who do. |
 | **Length** | 18.6s, 3 scenes | Each scene is held for the time its words take to read on Facebook feed video (0.32s a word), inside 10–30s. |
 
@@ -27,7 +28,7 @@ Treatment: voice `editorial`, camera `float`, motif `ledger`, transitions `lineW
 
 ### 1. moment — 0:00.00 to 0:06.33 (frames 0–190, 6.3s)
 
-- **Shot:** title / editorial on a ink ground, in by `cut`
+- **Shot:** title / editorial on a light ground, in by `cut`
 - **On screen:** "You don't know what's actually safe to spend without doing the math yourself, every time." — `problemsSolved[0].problem`
 - **Set as:** `You don't know what's actually` / `safe to spend without doing` / `the math yourself, every time.` (accent on "every")
 - **Why:** Opens on the moment as the listing describes it: the situation the viewer is in right now.
@@ -43,7 +44,7 @@ Treatment: voice `editorial`, camera `float`, motif `ledger`, transitions `lineW
 
 ### 3. cta — 0:15.13 to 0:18.57 (frames 454–557, 3.4s)
 
-- **Shot:** cta / free on a light ground, in by `blurDissolve`
+- **Shot:** cta / free on a ink ground, in by `blurDissolve`
 - **On screen:** "Monthly Money Reset" — `title`
 - **On screen:** "Start free." — `micro`
 - **Sound:** whoosh @+0f (0.19), settle @+8f (0.30)

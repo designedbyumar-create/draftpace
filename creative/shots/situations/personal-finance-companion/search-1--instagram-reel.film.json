@@ -12,7 +12,7 @@
   "width": 1080,
   "height": 1920,
   "fps": 30,
-  "durationInFrames": 626,
+  "durationInFrames": 804,
   "structure": "situationWords",
   "angle": {
     "text": "My finances are scattered across too many apps",
@@ -74,20 +74,20 @@
       "variant": "label",
       "copy": [
         {
-          "text": "Fill in the six areas from memory.",
-          "source": "guide:organize-your-finances-from-scratch/body[3].steps[1].what#0"
+          "text": "Build a dated bill list and identify the paying accounts.",
+          "source": "guide:organize-your-finances-from-scratch/body[7].steps[0].what#0"
         }
       ],
       "eyebrow": {
-        "text": "Minutes 2 to 6",
-        "source": "guide:organize-your-finances-from-scratch/body[3].steps[1].when"
+        "text": "Payment uncertainty",
+        "source": "guide:organize-your-finances-from-scratch/body[7].steps[0].when"
       },
       "emphasis": [
-        "six"
+        "identify"
       ],
-      "why": "What to do, in order, from the guide \"How to organize your finances when everything is scattered\": \"Minutes 2 to 6\".",
+      "why": "What to do, in order, from the guide \"Organize your finances from scratch, one gap at a time\": \"Payment uncertainty\".",
       "from": 71,
-      "dur": 128,
+      "dur": 136,
       "ground": "accent",
       "transition": "cardSlide",
       "sfx": [
@@ -99,8 +99,9 @@
       ],
       "lines": [
         [
-          "Fill in the six areas",
-          "from memory."
+          "Build a dated bill",
+          "list and identify the",
+          "paying accounts."
         ]
       ]
     },
@@ -110,20 +111,20 @@
       "variant": "label",
       "copy": [
         {
-          "text": "Close one gap.",
-          "source": "guide:organize-your-finances-from-scratch/body[3].steps[3].what#0"
+          "text": "Review the statement and investigate unfamiliar charges through official channels.",
+          "source": "guide:organize-your-finances-from-scratch/body[7].steps[1].what#0"
         }
       ],
       "eyebrow": {
-        "text": "Minutes 7 to 9",
-        "source": "guide:organize-your-finances-from-scratch/body[3].steps[3].when"
+        "text": "Unknown transactions",
+        "source": "guide:organize-your-finances-from-scratch/body[7].steps[1].when"
       },
       "emphasis": [
-        "one"
+        "investigate"
       ],
-      "why": "What to do, in order, from the guide \"How to organize your finances when everything is scattered\": \"Minutes 7 to 9\".",
-      "from": 187,
-      "dur": 97,
+      "why": "What to do, in order, from the guide \"Organize your finances from scratch, one gap at a time\": \"Unknown transactions\".",
+      "from": 195,
+      "dur": 136,
       "ground": "light",
       "transition": "wipe",
       "sfx": [
@@ -135,7 +136,47 @@
       ],
       "lines": [
         [
-          "Close one gap."
+          "Review the statement and",
+          "investigate unfamiliar charges",
+          "through official channels."
+        ]
+      ]
+    },
+    {
+      "id": "step-3",
+      "kind": "title",
+      "variant": "label",
+      "copy": [
+        {
+          "text": "Collect balances, rates, required payments and special terms before comparing strategies.",
+          "source": "guide:organize-your-finances-from-scratch/body[7].steps[2].what#0"
+        }
+      ],
+      "eyebrow": {
+        "text": "Debt uncertainty",
+        "source": "guide:organize-your-finances-from-scratch/body[7].steps[2].when"
+      },
+      "emphasis": [
+        "strategies"
+      ],
+      "why": "What to do, in order, from the guide \"Organize your finances from scratch, one gap at a time\": \"Debt uncertainty\".",
+      "from": 319,
+      "dur": 143,
+      "ground": "ink",
+      "transition": "cardSlide",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "swish",
+          "volume": 0.32
+        }
+      ],
+      "lines": [
+        [
+          "Collect balances, rates,",
+          "required payments and special",
+          "terms before comparing",
+          "strategies."
         ]
       ]
     },
@@ -163,9 +204,9 @@
         "text": "Personal Finance Companion",
         "source": "title"
       },
-      "from": 272,
+      "from": 450,
       "dur": 248,
-      "ground": "ink",
+      "ground": "light",
       "transition": "cardSlide",
       "sfx": [
         {
@@ -204,10 +245,10 @@
         "source": "micro"
       },
       "why": "Ends on where to read the whole guide, with the product beneath it: the viewer leaves with the next step, not only a pitch.",
-      "from": 508,
+      "from": 686,
       "dur": 118,
-      "ground": "light",
-      "transition": "cardSlide",
+      "ground": "accent",
+      "transition": "wipe",
       "sfx": [
         {
           "at": 0,
@@ -240,7 +281,7 @@
     },
     {
       "topic": "Guide",
-      "decision": "\"How to organize your finances when everything is scattered\" (draftpace.com/guides/organize-your-finances-from-scratch)",
+      "decision": "\"Organize your finances from scratch, one gap at a time\" (draftpace.com/guides/organize-your-finances-from-scratch)",
       "because": "The guide that covers this moment: what to do comes from it, and the film ends on it."
     },
     {
@@ -256,12 +297,12 @@
     {
       "topic": "Structure",
       "decision": "In their words: The moment typed the way a person searches it, then what to do about it, then the product doing it.",
-      "because": "Best fit for a awareness film on Instagram Reel (platform fit 2, goal fit 3, already used on Instagram Reel ×2). Other candidates: What to do first (-1.6), Inside the tool (-4.7)."
+      "because": "Best fit for a awareness film on Instagram Reel (platform fit 2, goal fit 3, already used on Instagram Reel ×1). Other candidates: What to do first (-1.0), Inside the tool (-5.0)."
     },
     {
       "topic": "Angle",
       "decision": "\"My finances are scattered across too many apps\"",
-      "because": "A situation people search for, \"My finances are scattered across too many apps\", with the steps from \"How to organize your finances when everything is scattered\", and how Personal Finance Companion helps."
+      "because": "A situation people search for, \"My finances are scattered across too many apps\", with the steps from \"Organize your finances from scratch, one gap at a time\", and how Personal Finance Companion helps."
     },
     {
       "topic": "Transitions",
@@ -285,7 +326,7 @@
     },
     {
       "topic": "Length",
-      "decision": "20.9s, 5 scenes",
+      "decision": "26.8s, 6 scenes",
       "because": "Each scene is held for the time its words take to read on Instagram Reel (0.26s a word), inside 12–35s."
     }
   ]

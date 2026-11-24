@@ -11,15 +11,15 @@
   "width": 1000,
   "height": 1500,
   "fps": 30,
-  "durationInFrames": 657,
-  "structure": "situationInside",
+  "durationInFrames": 559,
+  "structure": "situationMoment",
   "angle": {
     "text": "The trip is over, but it's still cluttering the screen you want for the next one.",
     "source": "problemsSolved[8].problem"
   },
   "treatment": {
     "voice": "editorial",
-    "camera": "float",
+    "camera": "locked",
     "transitions": [
       "slideLeft",
       "whip",
@@ -43,7 +43,7 @@
     {
       "id": "moment",
       "kind": "title",
-      "variant": "label",
+      "variant": "editorial",
       "copy": [
         {
           "text": "The trip is over, but it's still cluttering the screen you want for the next one.",
@@ -56,7 +56,7 @@
       "why": "Opens on the moment as the listing describes it: the situation the viewer is in right now.",
       "from": 0,
       "dur": 201,
-      "ground": "accent",
+      "ground": "light",
       "transition": "cut",
       "sfx": [],
       "lines": [
@@ -94,11 +94,11 @@
       "from": 189,
       "dur": 267,
       "ground": "light",
-      "transition": "slideLeft",
+      "transition": "blurDissolve",
       "sfx": [
         {
           "at": 0,
-          "cue": "swish",
+          "cue": "whoosh",
           "volume": 0.192
         },
         {
@@ -108,49 +108,6 @@
         },
         {
           "at": 120,
-          "cue": "tap",
-          "volume": 0.33
-        }
-      ]
-    },
-    {
-      "id": "also",
-      "kind": "phone",
-      "variant": "proof",
-      "copy": [],
-      "caption": {
-        "text": "Print the trip to carry",
-        "source": "tasks[6].label"
-      },
-      "screen": {
-        "src": "screens/travel-companion-printables.png",
-        "pose": "float",
-        "focus": {
-          "at": 0.45,
-          "y": 292,
-          "h": 161,
-          "region": "trip-book"
-        },
-        "scroll": []
-      },
-      "why": "One more real thing an owner does here, in the listing's own task wording, on the screen it happens on. Screen: \"My Trip Book\" (My Trip Book: a blank, printable travel planner, generated fresh each time.) chosen because it is the real screen closest to \"Print the trip to carry\"; focus on \"My Trip Book\".",
-      "from": 444,
-      "dur": 110,
-      "ground": "light",
-      "transition": "whip",
-      "sfx": [
-        {
-          "at": 0,
-          "cue": "swish",
-          "volume": 0.192
-        },
-        {
-          "at": 12,
-          "cue": "pop",
-          "volume": 0.252
-        },
-        {
-          "at": 50,
           "cue": "tap",
           "volume": 0.33
         }
@@ -171,14 +128,14 @@
         }
       ],
       "why": "Pinterest video pin is a planning surface; the close asks for the save, the price stays quiet.",
-      "from": 542,
+      "from": 444,
       "dur": 115,
-      "ground": "accent",
-      "transition": "blurDissolve",
+      "ground": "ink",
+      "transition": "slideLeft",
       "sfx": [
         {
           "at": 0,
-          "cue": "whoosh",
+          "cue": "swish",
           "volume": 0.192
         },
         {
@@ -217,13 +174,13 @@
     },
     {
       "topic": "Structure",
-      "decision": "Inside the tool: The moment, then how the product helps on its real screen, then one more real thing an owner does in it.",
-      "because": "Best fit for a awareness film on Pinterest video pin (platform fit 2, goal fit 2, already used for this product ×5, already used on Pinterest video pin ×5). Other candidates: The moment (-50.5)."
+      "decision": "The moment: The moment as it feels, set dark, then the help in the light, then what to do next.",
+      "because": "Best fit for a awareness film on Pinterest video pin (platform fit 1, goal fit 3, already used for this product ×4, already used on Pinterest video pin ×6). Other candidates: Inside the tool (-49.3)."
     },
     {
       "topic": "Angle",
       "decision": "\"The trip is over, but it's still cluttering the screen you want for the next one.\"",
-      "because": "The moment \"The trip is over, but it's still cluttering the screen you want for the next one.\", how Travel Companion helps, and one more real thing it does: \"Print the trip to carry\"."
+      "because": "The moment \"The trip is over, but it's still cluttering the screen you want for the next one.\", then how Travel Companion helps."
     },
     {
       "topic": "Transitions",
@@ -241,13 +198,28 @@
       "because": "Grounds ink → light → light → accent: a cool accent, so a darker ground is used for contrast at a turn."
     },
     {
+      "topic": "Variation",
+      "decision": "Rotated the ground rhythm",
+      "because": "Its shape was 0.78 similar to sit-homeschooling-companion-problem-1--instagram-feed; a different film, not the same one re-coloured."
+    },
+    {
+      "topic": "Variation",
+      "decision": "Changed the camera",
+      "because": "Its shape was 0.78 similar to sit-family-health-binder-problem-6--pinterest-video; a different film, not the same one re-coloured."
+    },
+    {
+      "topic": "Variation",
+      "decision": "Reordered the transitions",
+      "because": "Its shape was 0.78 similar to sit-travel-companion-search-6--pinterest-video; a different film, not the same one re-coloured."
+    },
+    {
       "topic": "Sound",
       "decision": "Light sound design, low-energy bed",
       "because": "Most of this audience never unmutes, so nothing depends on sound; cues are kept quieter and sparser for those who do."
     },
     {
       "topic": "Length",
-      "decision": "21.9s, 4 scenes",
+      "decision": "18.6s, 3 scenes",
       "because": "Each scene is held for the time its words take to read on Pinterest video pin (0.32s a word), inside 10–32s."
     }
   ]

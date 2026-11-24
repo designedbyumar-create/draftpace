@@ -1,0 +1,247 @@
+{
+  "id": "guide-homeschool-attendance-what-to-track--pinterest-video",
+  "product": "homeschooling-companion",
+  "guide": "homeschool-attendance-what-to-track",
+  "runtime": {
+    "min": 12,
+    "max": 35
+  },
+  "platform": "pinterest-video",
+  "goal": "awareness",
+  "width": 1000,
+  "height": 1500,
+  "fps": 30,
+  "durationInFrames": 552,
+  "structure": "guideQuestion",
+  "angle": {
+    "text": "Can I use one attendance calendar for several children?",
+    "source": "guide:homeschool-attendance-what-to-track/body[10].items[2].q"
+  },
+  "treatment": {
+    "voice": "editorial",
+    "camera": "float",
+    "transitions": [
+      "lineWipe",
+      "slideUp",
+      "lineWipe"
+    ],
+    "motif": "register",
+    "grounds": [
+      "ink",
+      "light",
+      "light",
+      "accent"
+    ],
+    "pace": 1.15
+  },
+  "music": {
+    "bed": "audio/bed-relaxation-05.mp3",
+    "level": 0.16,
+    "energy": "low"
+  },
+  "scenes": [
+    {
+      "id": "q",
+      "kind": "title",
+      "variant": "quote",
+      "copy": [
+        {
+          "text": "Can I use one attendance calendar for several children?",
+          "source": "guide:homeschool-attendance-what-to-track/body[10].items[2].q"
+        }
+      ],
+      "why": "The question as people ask it; the guide carries it because people search it.",
+      "from": 0,
+      "dur": 124,
+      "ground": "ink",
+      "transition": "cut",
+      "sfx": [],
+      "lines": [
+        [
+          "Can I use one",
+          "attendance calendar",
+          "for several",
+          "children?"
+        ]
+      ]
+    },
+    {
+      "id": "a",
+      "kind": "title",
+      "variant": "label",
+      "copy": [
+        {
+          "text": "Yes, if each child's participation and required totals remain clear.",
+          "source": "guide:homeschool-attendance-what-to-track/body[10].items[2].a#0"
+        }
+      ],
+      "emphasis": [
+        "participation"
+      ],
+      "why": "The guide's answer, its first sentence: the plain answer before any detail.",
+      "from": 112,
+      "dur": 135,
+      "ground": "light",
+      "transition": "lineWipe",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "tick",
+          "volume": 0.36
+        }
+      ],
+      "lines": [
+        [
+          "Yes, if each child's",
+          "participation and",
+          "required totals",
+          "remain clear."
+        ]
+      ]
+    },
+    {
+      "id": "tool",
+      "kind": "phone",
+      "variant": "proof",
+      "copy": [],
+      "caption": {
+        "text": "A dated record of what was actually done",
+        "source": "expectedOutputs[1]"
+      },
+      "screen": {
+        "src": "screens/homeschooling-companion-record.png",
+        "pose": "tiltLeft",
+        "focus": {
+          "at": 0.45,
+          "y": 320,
+          "h": 406,
+          "region": "record"
+        }
+      },
+      "why": "The turn: the product the guide itself hands over to, named and shown on its real screen, captioned with its listing's line closest to what the guide teaches. Screen: \"What has happened.\" (The record: sessions across subjects, a printable homeschool record, and dated notes of what was done.) chosen because it is the real screen closest to \"A dated record of what was actually done Homeschool attendance records: what to \"; focus on \"My Homeschool Record\".",
+      "eyebrow": {
+        "text": "Homeschooling Companion",
+        "source": "title"
+      },
+      "from": 235,
+      "dur": 190,
+      "ground": "light",
+      "transition": "slideUp",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "swish",
+          "volume": 0.192
+        },
+        {
+          "at": 12,
+          "cue": "pop",
+          "volume": 0.252
+        },
+        {
+          "at": 86,
+          "cue": "tap",
+          "volume": 0.33
+        }
+      ]
+    },
+    {
+      "id": "cta",
+      "kind": "cta",
+      "variant": "guide",
+      "copy": [
+        {
+          "text": "Homeschooling Companion",
+          "source": "title"
+        },
+        {
+          "text": "draftpace.com/guides/homeschool-attendance-what-to-track",
+          "source": "guide:homeschool-attendance-what-to-track/url"
+        }
+      ],
+      "eyebrow": {
+        "text": "The full guide",
+        "source": "micro"
+      },
+      "why": "Ends on where to read the whole guide, with the product beneath it: the viewer leaves with the next step, not only a pitch.",
+      "from": 413,
+      "dur": 139,
+      "ground": "accent",
+      "transition": "blurDissolve",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "whoosh",
+          "volume": 0.192
+        },
+        {
+          "at": 8,
+          "cue": "settle",
+          "volume": 0.3
+        }
+      ]
+    }
+  ],
+  "reasoning": [
+    {
+      "topic": "Placement",
+      "decision": "Pinterest video pin, 1000×1500, 12–35s, hook by 1s, sound off",
+      "because": "People are planning, not scrolling: idea-led, calm and save-worthy, worded like what they searched for. Muted, looping, slow; a hard sell reads as an ad and loses the save."
+    },
+    {
+      "topic": "Product",
+      "decision": "Homeschooling Companion: $34 (list $69), motif \"register\", calm personality, cool accent #6a4a72",
+      "because": "From its definition and Shop listing. 3 real screens to show."
+    },
+    {
+      "topic": "Guide",
+      "decision": "\"Homeschool attendance records: what to track\" (draftpace.com/guides/homeschool-attendance-what-to-track)",
+      "because": "Teaches from the guide first; Homeschooling Companion is the product the guide hands over to. 1 lists and timelines, 3 questions to draw from."
+    },
+    {
+      "topic": "Stage",
+      "decision": "Before launch: helpful and relatable only",
+      "because": "Nobody knows Draftpace yet, so films show how it helps with real moments. Who it is not for, questions before buying, what you get and the price wait until there are users to sell to."
+    },
+    {
+      "topic": "Audience",
+      "decision": "You already have a curriculum you chose on purpose and you want something that follows it rather than replacing it. / You teach more than one child and keeping their records separate in your head has stopped working.",
+      "because": "The listing's own audience lines; the director writes for them."
+    },
+    {
+      "topic": "Structure",
+      "decision": "The question people ask: One of the guide's own questions, its plain answer, then the product.",
+      "because": "Best fit for a awareness film on Pinterest video pin (platform fit 2, goal fit 2, already used on Pinterest video pin ×2). Other candidates: ."
+    },
+    {
+      "topic": "Angle",
+      "decision": "\"Can I use one attendance calendar for several children?\"",
+      "because": "A question from the guide's FAQ, \"Can I use one attendance calendar for several children?\", and the first sentence of its answer."
+    },
+    {
+      "topic": "Transitions",
+      "decision": "Transitions follow the product's own identity motif, \"register\"",
+      "because": "Transitions follow the product's own identity motif, \"register\": a register is filled line by line, so scenes are written in from the top."
+    },
+    {
+      "topic": "Camera",
+      "decision": "Camera \"float\"",
+      "because": "Camera \"float\": a gentle float that keeps a held frame alive without demanding attention."
+    },
+    {
+      "topic": "Colour",
+      "decision": "Grounds ink → light → light → accent",
+      "because": "Grounds ink → light → light → accent: a cool accent, so a darker ground is used for contrast at a turn."
+    },
+    {
+      "topic": "Sound",
+      "decision": "Light sound design, low-energy bed",
+      "because": "Most of this audience never unmutes, so nothing depends on sound; cues are kept quieter and sparser for those who do."
+    },
+    {
+      "topic": "Length",
+      "decision": "18.4s, 4 scenes",
+      "because": "Each scene is held for the time its words take to read on Pinterest video pin (0.32s a word), inside 12–35s."
+    }
+  ]
+}

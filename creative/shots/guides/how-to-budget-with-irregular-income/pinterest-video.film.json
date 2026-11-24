@@ -1,0 +1,251 @@
+{
+  "id": "guide-how-to-budget-with-irregular-income--pinterest-video",
+  "product": "personal-finance-companion",
+  "guide": "how-to-budget-with-irregular-income",
+  "runtime": {
+    "min": 12,
+    "max": 35
+  },
+  "platform": "pinterest-video",
+  "goal": "awareness",
+  "width": 1000,
+  "height": 1500,
+  "fps": 30,
+  "durationInFrames": 574,
+  "structure": "guideQuestion",
+  "angle": {
+    "text": "Should I use my lowest month or average income?",
+    "source": "guide:how-to-budget-with-irregular-income/body[12].items[0].q"
+  },
+  "treatment": {
+    "voice": "editorial",
+    "camera": "float",
+    "transitions": [
+      "cardSlide",
+      "wipe",
+      "cardSlide"
+    ],
+    "motif": "index",
+    "grounds": [
+      "light",
+      "accent",
+      "light",
+      "ink"
+    ],
+    "pace": 1.15
+  },
+  "music": {
+    "bed": "audio/bed-relaxation-05.mp3",
+    "level": 0.16,
+    "energy": "low"
+  },
+  "scenes": [
+    {
+      "id": "q",
+      "kind": "title",
+      "variant": "quote",
+      "copy": [
+        {
+          "text": "Should I use my lowest month or average income?",
+          "source": "guide:how-to-budget-with-irregular-income/body[12].items[0].q"
+        }
+      ],
+      "why": "The question as people ask it; the guide carries it because people search it.",
+      "from": 0,
+      "dur": 124,
+      "ground": "light",
+      "transition": "cut",
+      "sfx": [],
+      "lines": [
+        [
+          "Should I use my",
+          "lowest month or",
+          "average income?"
+        ]
+      ]
+    },
+    {
+      "id": "a",
+      "kind": "title",
+      "variant": "label",
+      "copy": [
+        {
+          "text": "Use historical figures to test scenarios, not as a universal answer.",
+          "source": "guide:how-to-budget-with-irregular-income/body[12].items[0].a#0"
+        }
+      ],
+      "emphasis": [
+        "historical"
+      ],
+      "why": "The guide's answer, its first sentence: the plain answer before any detail.",
+      "from": 112,
+      "dur": 146,
+      "ground": "accent",
+      "transition": "cardSlide",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "swish",
+          "volume": 0.192
+        }
+      ],
+      "lines": [
+        [
+          "Use historical",
+          "figures to test",
+          "scenarios, not as",
+          "a universal answer."
+        ]
+      ]
+    },
+    {
+      "id": "tool",
+      "kind": "phone",
+      "variant": "proof",
+      "copy": [],
+      "caption": {
+        "text": "A real Attention inbox of genuine gaps",
+        "source": "expectedOutputs[3]"
+      },
+      "screen": {
+        "src": "screens/personal-finance-companion-records.png",
+        "pose": "float",
+        "focus": {
+          "at": 0.45,
+          "y": 222,
+          "h": 119,
+          "region": "accounts"
+        }
+      },
+      "why": "The turn: the product the guide itself hands over to, named and shown on its real screen, captioned with its listing's line closest to what the guide teaches. Screen: \"Records\" (What's actually true right now, area by area: accounts, income, bills, subscriptions, transactions, debt.) chosen because it is the real screen closest to \"A real Attention inbox of genuine gaps How to budget with irregular income\"; focus on \"Accounts\".",
+      "eyebrow": {
+        "text": "Personal Finance Companion",
+        "source": "title"
+      },
+      "from": 246,
+      "dur": 190,
+      "ground": "light",
+      "transition": "wipe",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "swish",
+          "volume": 0.192
+        },
+        {
+          "at": 12,
+          "cue": "pop",
+          "volume": 0.252
+        },
+        {
+          "at": 86,
+          "cue": "tap",
+          "volume": 0.33
+        }
+      ]
+    },
+    {
+      "id": "cta",
+      "kind": "cta",
+      "variant": "guide",
+      "copy": [
+        {
+          "text": "Personal Finance Companion",
+          "source": "title"
+        },
+        {
+          "text": "draftpace.com/guides/how-to-budget-with-irregular-income",
+          "source": "guide:how-to-budget-with-irregular-income/url"
+        }
+      ],
+      "eyebrow": {
+        "text": "The full guide",
+        "source": "micro"
+      },
+      "why": "Ends on where to read the whole guide, with the product beneath it: the viewer leaves with the next step, not only a pitch.",
+      "from": 424,
+      "dur": 150,
+      "ground": "ink",
+      "transition": "blurDissolve",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "whoosh",
+          "volume": 0.192
+        },
+        {
+          "at": 8,
+          "cue": "settle",
+          "volume": 0.3
+        }
+      ]
+    }
+  ],
+  "reasoning": [
+    {
+      "topic": "Placement",
+      "decision": "Pinterest video pin, 1000×1500, 12–35s, hook by 1s, sound off",
+      "because": "People are planning, not scrolling: idea-led, calm and save-worthy, worded like what they searched for. Muted, looping, slow; a hard sell reads as an ad and loses the save."
+    },
+    {
+      "topic": "Product",
+      "decision": "Personal Finance Companion: $49 (list $99), motif \"index\", calm personality, cool accent #0d3b2e",
+      "because": "From its definition and Shop listing. 4 real screens to show."
+    },
+    {
+      "topic": "Guide",
+      "decision": "\"How to budget with irregular income\" (draftpace.com/guides/how-to-budget-with-irregular-income)",
+      "because": "Teaches from the guide first; Personal Finance Companion is the product the guide hands over to. 1 lists and timelines, 3 questions to draw from."
+    },
+    {
+      "topic": "Stage",
+      "decision": "Before launch: helpful and relatable only",
+      "because": "Nobody knows Draftpace yet, so films show how it helps with real moments. Who it is not for, questions before buying, what you get and the price wait until there are users to sell to."
+    },
+    {
+      "topic": "Audience",
+      "decision": "You have more than one account, bill, or income source and want them tracked in one real place, not five apps. / You want a next step handed to you, not a dashboard you have to interpret yourself every time.",
+      "because": "The listing's own audience lines; the director writes for them."
+    },
+    {
+      "topic": "Material",
+      "decision": "Allowed real lines up to 4 words longer",
+      "because": "Every structure Personal Finance Companion's copy supports at Pinterest video pin's normal line length is already used by its other films; a longer real line beats telling the same story twice."
+    },
+    {
+      "topic": "Structure",
+      "decision": "The question people ask: One of the guide's own questions, its plain answer, then the product.",
+      "because": "Best fit for a awareness film on Pinterest video pin (platform fit 2, goal fit 2, already used for this product ×1, already used on Pinterest video pin ×3). Other candidates: The checklist (-11.2)."
+    },
+    {
+      "topic": "Angle",
+      "decision": "\"Should I use my lowest month or average income?\"",
+      "because": "A question from the guide's FAQ, \"Should I use my lowest month or average income?\", and the first sentence of its answer."
+    },
+    {
+      "topic": "Transitions",
+      "decision": "Transitions follow the product's own identity motif, \"index\"",
+      "because": "Transitions follow the product's own identity motif, \"index\": an index of tabs, so scenes slide in like the next tab."
+    },
+    {
+      "topic": "Camera",
+      "decision": "Camera \"float\"",
+      "because": "Camera \"float\": a gentle float that keeps a held frame alive without demanding attention."
+    },
+    {
+      "topic": "Colour",
+      "decision": "Grounds light → accent → light → ink",
+      "because": "Grounds light → accent → light → ink: a cool accent, so a darker ground is used for contrast at a turn."
+    },
+    {
+      "topic": "Sound",
+      "decision": "Light sound design, low-energy bed",
+      "because": "Most of this audience never unmutes, so nothing depends on sound; cues are kept quieter and sparser for those who do."
+    },
+    {
+      "topic": "Length",
+      "decision": "19.1s, 4 scenes",
+      "because": "Each scene is held for the time its words take to read on Pinterest video pin (0.32s a word), inside 12–35s."
+    }
+  ]
+}

@@ -7649,7 +7649,7 @@
   },
   "safe-deposit-box-and-spare-keys-who-can-open-it": {
     "printHref": "/guides/print/library/safe-deposit-box-and-spare-keys-who-can-open-it.html",
-    "worksheetTitle": "Safe, box and spare-key access record",
+    "worksheetTitle": "Safe-deposit box and spare-key access record",
     "worksheetPrompt": "Record the confirmed process without placing combinations on the general index.",
     "diagrams": [
       {
@@ -8214,7 +8214,7 @@
   },
   "car-maintenance-by-mileage-start-with-your-manual": {
     "printHref": "/guides/print/library/car-maintenance-by-mileage-start-with-your-manual.html",
-    "worksheetTitle": "From the manufacturer maintenance schedule",
+    "worksheetTitle": "Manufacturer maintenance schedule worksheet",
     "worksheetPrompt": "Copy one job exactly, including its action, conditions and source reference.",
     "diagrams": [
       {

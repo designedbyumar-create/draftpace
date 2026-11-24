@@ -14,7 +14,7 @@
         "subscriptions"
       ],
       "promise": {
-        "text": "How to find all your subscriptions, including annual ones",
+        "text": "How to find all your paid subscriptions",
         "source": "guide:how-to-find-every-subscription-you-are-paying-for/title"
       },
       "art": {
@@ -31,77 +31,43 @@
       },
       "lines": [
         {
-          "text": "A twelve month statement sweep, plus the places charges hide: Apple and Google lists, PayPal, old cards and free trials that turned into paid plans.",
+          "text": "Search statements, billing platforms and receipts to trace recurring charges, identify who owns each plan, and catch annual renewals a short review misses.",
           "source": "guide:how-to-find-every-subscription-you-are-paying-for/dek#0"
         }
       ],
       "art": {
         "motif": "receipt",
-        "why": "the slide names \"statement\", \"charge\""
+        "why": "the slide names \"receipt\", \"statement\", \"charge\""
       }
     },
     {
-      "kind": "step",
+      "kind": "checklist",
       "eyebrow": {
-        "text": "How to run the sweep",
-        "source": "guide:how-to-find-every-subscription-you-are-paying-for/body[3].heading"
+        "text": "Run a search with a visible boundary",
+        "source": "guide:how-to-find-every-subscription-you-are-paying-for/body[1].heading"
       },
-      "number": {
-        "text": "1",
-        "source": "micro"
-      },
-      "head": {
-        "text": "Download twelve months of statements for every credit card, debit card and checking account you've used.",
-        "source": "guide:how-to-find-every-subscription-you-are-paying-for/body[3].items[0]#0"
-      },
-      "body": [
+      "items": [
         {
-          "text": "Most banks let you pick a date range or download a CSV.",
-          "source": "guide:how-to-find-every-subscription-you-are-paying-for/body[3].items[0]#1"
+          "text": "Review roughly twelve months where available.",
+          "source": "guide:how-to-find-every-subscription-you-are-paying-for/body[1].items[1]#0"
         },
         {
-          "text": "If yours only keeps a few months online, ask for older statements.",
-          "source": "guide:how-to-find-every-subscription-you-are-paying-for/body[3].items[0]#2"
-        }
-      ],
-      "emphasis": [
-        "statements"
-      ],
-      "art": {
-        "motif": "card",
-        "why": "the slide names \"card\", \"credit\", \"debit\""
-      }
-    },
-    {
-      "kind": "step",
-      "eyebrow": {
-        "text": "How to run the sweep",
-        "source": "guide:how-to-find-every-subscription-you-are-paying-for/body[3].heading"
-      },
-      "number": {
-        "text": "2",
-        "source": "micro"
-      },
-      "head": {
-        "text": "Search or scan each statement for repeats.",
-        "source": "guide:how-to-find-every-subscription-you-are-paying-for/body[3].items[1]#0"
-      },
-      "body": [
-        {
-          "text": "Sorting by merchant name puts the same company next to itself.",
-          "source": "guide:how-to-find-every-subscription-you-are-paying-for/body[3].items[1]#1"
+          "text": "Check Apple subscriptions under each relevant Apple Account.",
+          "source": "guide:how-to-find-every-subscription-you-are-paying-for/body[1].items[2]#0"
         },
         {
-          "text": "Write down anything that appears two or more times at the same or a similar amount.",
-          "source": "guide:how-to-find-every-subscription-you-are-paying-for/body[3].items[1]#2"
+          "text": "Check Google Play subscriptions under the Google Account that made the purchase.",
+          "source": "guide:how-to-find-every-subscription-you-are-paying-for/body[1].items[3]#0"
+        },
+        {
+          "text": "Record the service, billing owner, actual amount and cycle, next known charge, and evidence.",
+          "source": "guide:how-to-find-every-subscription-you-are-paying-for/body[1].items[6]#0"
         }
       ],
-      "emphasis": [
-        "statement"
-      ],
+      "ticks": true,
       "art": {
-        "motif": "magnifier",
-        "why": "the slide names \"search\", \"scan\""
+        "motif": "bank",
+        "why": "the slide names \"account\", \"available\""
       }
     },
     {
@@ -130,7 +96,7 @@
         "source": "micro"
       },
       "title": {
-        "text": "How to find all your subscriptions, including annual ones",
+        "text": "How to find all your paid subscriptions",
         "source": "guide:how-to-find-every-subscription-you-are-paying-for/title"
       },
       "url": {
@@ -153,12 +119,11 @@
   ],
   "notes": [
     "Cover: \"I keep getting charged for subscriptions I forgot about\" (searchedProblems[1].phrase), as people search it.",
-    "Steps: 2 of 8 from the guide's numbered steps \"How to run the sweep\", one per slide, each with the guide's own explanation.",
+    "Checklist: 4 items from \"Run a search with a visible boundary\".",
     "Help: \"Subscriptions are their own area, with amounts and renewal dates, and a missing renewal date shows up in Attention rather than being quietly ignored.\" (searchedProblems[1].answer), on screens/personal-finance-companion-records.png (\"Records\").",
     "Illustration on the cover: card with receipt, because the carousel's topic: the moment and its guide name \"subscription\".",
-    "Illustration on the answer: receipt, because the slide names \"statement\", \"charge\".",
-    "Illustration on the step: card, because the slide names \"card\", \"credit\", \"debit\".",
-    "Illustration on the step: magnifier, because the slide names \"search\", \"scan\".",
+    "Illustration on the answer: receipt, because the slide names \"receipt\", \"statement\", \"charge\".",
+    "Illustration on the checklist: bank, because the slide names \"account\", \"available\".",
     "Illustration on the close: card, because the carousel's topic: the moment and its guide name \"subscription\"."
   ]
 }

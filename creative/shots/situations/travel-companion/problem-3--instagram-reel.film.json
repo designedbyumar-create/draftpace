@@ -11,8 +11,8 @@
   "width": 1080,
   "height": 1920,
   "fps": 30,
-  "durationInFrames": 490,
-  "structure": "situationInside",
+  "durationInFrames": 423,
+  "structure": "situationMoment",
   "angle": {
     "text": "Your phone is at four percent in a taxi, and that's the only copy of the plan.",
     "source": "problemsSolved[2].problem"
@@ -43,7 +43,7 @@
     {
       "id": "moment",
       "kind": "title",
-      "variant": "label",
+      "variant": "editorial",
       "copy": [
         {
           "text": "Your phone is at four percent in a taxi, and that's the only copy of the plan.",
@@ -56,7 +56,7 @@
       "why": "Opens on the moment as the listing describes it: the situation the viewer is in right now.",
       "from": 0,
       "dur": 154,
-      "ground": "light",
+      "ground": "ink",
       "transition": "cut",
       "sfx": [],
       "lines": [
@@ -115,48 +115,6 @@
       ]
     },
     {
-      "id": "also",
-      "kind": "phone",
-      "variant": "proof",
-      "copy": [],
-      "caption": {
-        "text": "Start a new trip",
-        "source": "tasks[0].label"
-      },
-      "screen": {
-        "src": "screens/travel-companion-trip.png",
-        "pose": "tiltRight",
-        "focus": {
-          "at": 0.45,
-          "y": 187,
-          "h": 126,
-          "region": "status"
-        }
-      },
-      "why": "One more real thing an owner does here, in the listing's own task wording, on the screen it happens on. Screen: \"Lisbon and Porto\" (The trip: where you are now, destinations, and every booking with its reference, with Record a change on each.) chosen because it is the real screen closest to \"Start a new trip\"; focus on \"Not currently at a recorded destination\".",
-      "from": 339,
-      "dur": 79,
-      "ground": "accent",
-      "transition": "whip",
-      "sfx": [
-        {
-          "at": 0,
-          "cue": "swish",
-          "volume": 0.32
-        },
-        {
-          "at": 12,
-          "cue": "pop",
-          "volume": 0.42
-        },
-        {
-          "at": 36,
-          "cue": "tap",
-          "volume": 0.55
-        }
-      ]
-    },
-    {
       "id": "cta",
       "kind": "cta",
       "variant": "soft",
@@ -171,10 +129,10 @@
         }
       ],
       "why": "Instagram Reel punishes an obvious ad; a soft close names the product and where to find it.",
-      "from": 406,
+      "from": 339,
       "dur": 84,
-      "ground": "accent",
-      "transition": "slideLeft",
+      "ground": "ink",
+      "transition": "whip",
       "sfx": [
         {
           "at": 0,
@@ -217,13 +175,13 @@
     },
     {
       "topic": "Structure",
-      "decision": "Inside the tool: The moment, then how the product helps on its real screen, then one more real thing an owner does in it.",
-      "because": "Best fit for a awareness film on Instagram Reel (platform fit 2, goal fit 2, already used for this product ×2, already used on Instagram Reel ×4). Other candidates: The moment (-28.6)."
+      "decision": "The moment: The moment as it feels, set dark, then the help in the light, then what to do next.",
+      "because": "Best fit for a awareness film on Instagram Reel (platform fit 3, goal fit 3, already used for this product ×1, already used on Instagram Reel ×6). Other candidates: Inside the tool (-27.9)."
     },
     {
       "topic": "Angle",
       "decision": "\"Your phone is at four percent in a taxi, and that's the only copy of the plan.\"",
-      "because": "The moment \"Your phone is at four percent in a taxi, and that's the only copy of the plan.\", how Travel Companion helps, and one more real thing it does: \"Start a new trip\"."
+      "because": "The moment \"Your phone is at four percent in a taxi, and that's the only copy of the plan.\", then how Travel Companion helps."
     },
     {
       "topic": "Transitions",
@@ -241,18 +199,13 @@
       "because": "Grounds light → light → ink → accent: a cool accent, so a darker ground is used for contrast at a turn."
     },
     {
-      "topic": "Variation",
-      "decision": "Rotated the ground rhythm",
-      "because": "Its shape was 0.82 similar to sit-travel-companion-problem-1--instagram-reel; a different film, not the same one re-coloured."
-    },
-    {
       "topic": "Sound",
       "decision": "Full sound design, mid-energy bed",
       "because": "Sound-on placement: every transition, landing and reveal has a cue, and the bed ducks under the brand moment."
     },
     {
       "topic": "Length",
-      "decision": "16.3s, 4 scenes",
+      "decision": "14.1s, 3 scenes",
       "because": "Each scene is held for the time its words take to read on Instagram Reel (0.26s a word), inside 12–35s."
     }
   ]

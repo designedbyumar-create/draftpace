@@ -12,7 +12,7 @@
   "width": 1080,
   "height": 1920,
   "fps": 30,
-  "durationInFrames": 758,
+  "durationInFrames": 673,
   "structure": "situationMoment",
   "angle": {
     "text": "I know exactly what I need to do and still can't start",
@@ -120,20 +120,20 @@
       "variant": "label",
       "copy": [
         {
-          "text": "Pick one task.",
-          "source": "guide:task-paralysis-what-to-do-in-the-next-ten-minutes/body[3].steps[0].what#0"
+          "text": "Choose one task.",
+          "source": "guide:task-paralysis-what-to-do-in-the-next-ten-minutes/body[2].steps[0].what#0"
         }
       ],
       "eyebrow": {
-        "text": "Minute 0 to 1: choose",
-        "source": "guide:task-paralysis-what-to-do-in-the-next-ten-minutes/body[3].steps[0].when"
+        "text": "Minutes 0-2",
+        "source": "guide:task-paralysis-what-to-do-in-the-next-ten-minutes/body[2].steps[0].when"
       },
       "emphasis": [
         "one"
       ],
-      "why": "What to do, in order, from the guide \"ADHD task paralysis: what to do in the next ten minutes\": \"Minute 0 to 1: choose\".",
+      "why": "What to do, in order, from the guide \"ADHD task paralysis: a ten-minute starting plan\": \"Minutes 0-2\".",
       "from": 378,
-      "dur": 104,
+      "dur": 81,
       "ground": "accent",
       "transition": "blurDissolve",
       "sfx": [
@@ -145,7 +145,7 @@
       ],
       "lines": [
         [
-          "Pick one task."
+          "Choose one task."
         ]
       ]
     },
@@ -155,20 +155,20 @@
       "variant": "label",
       "copy": [
         {
-          "text": "Finish this sentence in a few words: \"It's done when...\".",
-          "source": "guide:task-paralysis-what-to-do-in-the-next-ten-minutes/body[3].steps[1].what#0"
+          "text": "Find the first action you could see happen.",
+          "source": "guide:task-paralysis-what-to-do-in-the-next-ten-minutes/body[2].steps[1].what#0"
         }
       ],
       "eyebrow": {
-        "text": "Minute 1 to 2: say where it ends",
-        "source": "guide:task-paralysis-what-to-do-in-the-next-ten-minutes/body[3].steps[1].when"
+        "text": "Minutes 2-4",
+        "source": "guide:task-paralysis-what-to-do-in-the-next-ten-minutes/body[2].steps[1].when"
       },
       "emphasis": [
-        "sentence"
+        "action"
       ],
-      "why": "What to do, in order, from the guide \"ADHD task paralysis: what to do in the next ten minutes\": \"Minute 1 to 2: say where it ends\".",
-      "from": 470,
-      "dur": 182,
+      "why": "What to do, in order, from the guide \"ADHD task paralysis: a ten-minute starting plan\": \"Minutes 2-4\".",
+      "from": 447,
+      "dur": 120,
       "ground": "light",
       "transition": "iris",
       "sfx": [
@@ -180,9 +180,8 @@
       ],
       "lines": [
         [
-          "Finish this sentence",
-          "in a few words: \"It's",
-          "done when...\"."
+          "Find the first action",
+          "you could see happen."
         ]
       ]
     },
@@ -205,7 +204,7 @@
         "source": "micro"
       },
       "why": "Ends on where to read the whole guide, with the product beneath it: the viewer leaves with the next step, not only a pitch.",
-      "from": 640,
+      "from": 555,
       "dur": 118,
       "ground": "light",
       "transition": "blurDissolve",
@@ -241,7 +240,7 @@
     },
     {
       "topic": "Guide",
-      "decision": "\"ADHD task paralysis: what to do in the next ten minutes\" (draftpace.com/guides/task-paralysis-what-to-do-in-the-next-ten-minutes)",
+      "decision": "\"ADHD task paralysis: a ten-minute starting plan\" (draftpace.com/guides/task-paralysis-what-to-do-in-the-next-ten-minutes)",
       "because": "The guide that covers this moment: what to do comes from it, and the film ends on it."
     },
     {
@@ -262,7 +261,7 @@
     {
       "topic": "Angle",
       "decision": "\"I know exactly what I need to do and still can't start\"",
-      "because": "The moment \"I know exactly what I need to do and still can't start\", then how ADHD Life Companion helps, then what the guide \"ADHD task paralysis: what to do in the next ten minutes\" says to do."
+      "because": "The moment \"I know exactly what I need to do and still can't start\", then how ADHD Life Companion helps, then what the guide \"ADHD task paralysis: a ten-minute starting plan\" says to do."
     },
     {
       "topic": "Transitions",
@@ -286,7 +285,7 @@
     },
     {
       "topic": "Length",
-      "decision": "25.3s, 5 scenes",
+      "decision": "22.4s, 5 scenes",
       "because": "Each scene is held for the time its words take to read on YouTube Short (0.26s a word), inside 15–40s."
     }
   ]

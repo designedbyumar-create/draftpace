@@ -1,7 +1,6 @@
 {
   "id": "sit-homeschooling-companion-problem-3--youtube-short",
   "product": "homeschooling-companion",
-  "guide": "homeschool-record-keeping-for-multiple-children",
   "situation": "problemsSolved[2].problem",
   "runtime": {
     "min": 15,
@@ -12,15 +11,15 @@
   "width": 1080,
   "height": 1920,
   "fps": 30,
-  "durationInFrames": 461,
-  "structure": "situationInside",
+  "durationInFrames": 450,
+  "structure": "situationMoment",
   "angle": {
     "text": "Keeping more than one child's records straight in your head has stopped working.",
     "source": "problemsSolved[2].problem"
   },
   "treatment": {
     "voice": "editorial",
-    "camera": "locked",
+    "camera": "float",
     "transitions": [
       "lineWipe",
       "slideUp",
@@ -44,7 +43,7 @@
     {
       "id": "moment",
       "kind": "title",
-      "variant": "label",
+      "variant": "editorial",
       "copy": [
         {
           "text": "Keeping more than one child's records straight in your head has stopped working.",
@@ -56,8 +55,8 @@
       ],
       "why": "Opens on the moment as the listing describes it: the situation the viewer is in right now.",
       "from": 0,
-      "dur": 122,
-      "ground": "light",
+      "dur": 167,
+      "ground": "ink",
       "transition": "cut",
       "sfx": [],
       "lines": [
@@ -79,7 +78,7 @@
       },
       "screen": {
         "src": "screens/homeschooling-companion-workspace.png",
-        "pose": "flat",
+        "pose": "tiltRight",
         "focus": {
           "at": 0.45,
           "y": 166,
@@ -93,15 +92,15 @@
         "text": "Homeschooling Companion",
         "source": "title"
       },
-      "from": 110,
-      "dur": 178,
+      "from": 155,
+      "dur": 223,
       "ground": "light",
-      "transition": "slideUp",
+      "transition": "lineWipe",
       "sfx": [
         {
           "at": 0,
-          "cue": "swish",
-          "volume": 0.32
+          "cue": "tick",
+          "volume": 0.6
         },
         {
           "at": 12,
@@ -109,49 +108,7 @@
           "volume": 0.42
         },
         {
-          "at": 80,
-          "cue": "tap",
-          "volume": 0.55
-        }
-      ]
-    },
-    {
-      "id": "also",
-      "kind": "phone",
-      "variant": "proof",
-      "copy": [],
-      "caption": {
-        "text": "Check whether a topic stuck",
-        "source": "tasks[3].label"
-      },
-      "screen": {
-        "src": "screens/homeschooling-companion-record.png",
-        "pose": "tiltRight",
-        "focus": {
-          "at": 0.45,
-          "y": 320,
-          "h": 406,
-          "region": "record"
-        }
-      },
-      "why": "One more real thing an owner does here, in the listing's own task wording, on the screen it happens on. Screen: \"What has happened.\" (The record: sessions across subjects, a printable homeschool record, and dated notes of what was done.) chosen because it is the real screen closest to \"Check whether a topic stuck\"; focus on \"My Homeschool Record\".",
-      "from": 276,
-      "dur": 87,
-      "ground": "accent",
-      "transition": "blurDissolve",
-      "sfx": [
-        {
-          "at": 0,
-          "cue": "whoosh",
-          "volume": 0.32
-        },
-        {
-          "at": 12,
-          "cue": "pop",
-          "volume": 0.42
-        },
-        {
-          "at": 39,
+          "at": 100,
           "cue": "tap",
           "volume": 0.55
         }
@@ -160,31 +117,27 @@
     {
       "id": "cta",
       "kind": "cta",
-      "variant": "guide",
+      "variant": "soft",
       "copy": [
         {
           "text": "Homeschooling Companion",
           "source": "title"
         },
         {
-          "text": "draftpace.com/guides/homeschool-record-keeping-for-multiple-children",
-          "source": "guide:homeschool-record-keeping-for-multiple-children/url"
+          "text": "Available now.",
+          "source": "micro"
         }
       ],
-      "eyebrow": {
-        "text": "The full guide",
-        "source": "micro"
-      },
-      "why": "Ends on where to read the whole guide, with the product beneath it: the viewer leaves with the next step, not only a pitch.",
-      "from": 351,
-      "dur": 110,
-      "ground": "accent",
-      "transition": "lineWipe",
+      "why": "YouTube Short punishes an obvious ad; a soft close names the product and where to find it.",
+      "from": 366,
+      "dur": 84,
+      "ground": "ink",
+      "transition": "blurDissolve",
       "sfx": [
         {
           "at": 0,
-          "cue": "tick",
-          "volume": 0.6
+          "cue": "whoosh",
+          "volume": 0.32
         },
         {
           "at": 8,
@@ -211,11 +164,6 @@
       "because": "One real moment from Homeschooling Companion's listing (problemsSolved[2].problem). The film is about this moment and how the product helps with it: \"One page each morning that says what today looks like, per child.\""
     },
     {
-      "topic": "Guide",
-      "decision": "\"Homeschool record keeping for multiple children\" (draftpace.com/guides/homeschool-record-keeping-for-multiple-children)",
-      "because": "The guide that covers this moment: what to do comes from it, and the film ends on it."
-    },
-    {
       "topic": "Stage",
       "decision": "Before launch: helpful and relatable only",
       "because": "Nobody knows Draftpace yet, so films show how it helps with real moments. Who it is not for, questions before buying, what you get and the price wait until there are users to sell to."
@@ -227,13 +175,13 @@
     },
     {
       "topic": "Structure",
-      "decision": "Inside the tool: The moment, then how the product helps on its real screen, then one more real thing an owner does in it.",
-      "because": "Best fit for a awareness film on YouTube Short (platform fit 2, goal fit 2, already used for this product ×2, already used on YouTube Short ×2). Other candidates: The moment (-21.5)."
+      "decision": "The moment: The moment as it feels, set dark, then the help in the light, then what to do next.",
+      "because": "Best fit for a awareness film on YouTube Short (platform fit 2, goal fit 3, already used for this product ×2, already used on YouTube Short ×2). Other candidates: Inside the tool (-16.5)."
     },
     {
       "topic": "Angle",
       "decision": "\"Keeping more than one child's records straight in your head has stopped working.\"",
-      "because": "The moment \"Keeping more than one child's records straight in your head has stopped working.\", how Homeschooling Companion helps, and one more real thing it does: \"Check whether a topic stuck\"."
+      "because": "The moment \"Keeping more than one child's records straight in your head has stopped working.\", then how Homeschooling Companion helps."
     },
     {
       "topic": "Transitions",
@@ -251,38 +199,13 @@
       "because": "Grounds light → light → ink → accent: a cool accent, so a darker ground is used for contrast at a turn."
     },
     {
-      "topic": "Variation",
-      "decision": "Rotated the ground rhythm",
-      "because": "Its shape was 0.74 similar to sit-alongside-search-4--instagram-feed; a different film, not the same one re-coloured."
-    },
-    {
-      "topic": "Variation",
-      "decision": "Changed the camera",
-      "because": "Its shape was 0.90 similar to sit-homeschooling-companion-search-6--pinterest-video; a different film, not the same one re-coloured."
-    },
-    {
-      "topic": "Variation",
-      "decision": "Reordered the transitions",
-      "because": "Its shape was 0.82 similar to sit-homeschooling-companion-search-6--pinterest-video; a different film, not the same one re-coloured."
-    },
-    {
-      "topic": "Variation",
-      "decision": "Switched the brand reveal",
-      "because": "Its shape was 0.74 similar to sit-home-management-companion-search-3--pinterest-video; a different film, not the same one re-coloured."
-    },
-    {
-      "topic": "Variation",
-      "decision": "Re-posed the phones",
-      "because": "Its shape was 0.74 similar to sit-home-management-companion-search-3--pinterest-video; a different film, not the same one re-coloured."
-    },
-    {
       "topic": "Sound",
       "decision": "Full sound design, mid-energy bed",
       "because": "Sound-on placement: every transition, landing and reveal has a cue, and the bed ducks under the brand moment."
     },
     {
       "topic": "Length",
-      "decision": "15.4s, 4 scenes",
+      "decision": "15.0s, 3 scenes",
       "because": "Each scene is held for the time its words take to read on YouTube Short (0.26s a word), inside 15–40s."
     }
   ]

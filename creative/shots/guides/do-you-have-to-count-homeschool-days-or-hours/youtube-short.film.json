@@ -11,15 +11,15 @@
   "width": 1080,
   "height": 1920,
   "fps": 30,
-  "durationInFrames": 540,
-  "structure": "guideQuestion",
+  "durationInFrames": 750,
+  "structure": "guideChecklist",
   "angle": {
-    "text": "What is the difference between a day count and an hour count?",
-    "source": "guide:do-you-have-to-count-homeschool-days-or-hours/body[5].items[1].q"
+    "text": "Homeschool days or hours: check what applies",
+    "source": "guide:do-you-have-to-count-homeschool-days-or-hours/title"
   },
   "treatment": {
     "voice": "editorial",
-    "camera": "float",
+    "camera": "dolly",
     "transitions": [
       "lineWipe",
       "slideUp",
@@ -27,9 +27,9 @@
     ],
     "motif": "register",
     "grounds": [
+      "light",
+      "light",
       "ink",
-      "light",
-      "light",
       "accent"
     ],
     "pace": 1
@@ -41,45 +41,61 @@
   },
   "scenes": [
     {
-      "id": "q",
+      "id": "hook",
       "kind": "title",
-      "variant": "quote",
+      "variant": "editorial",
       "copy": [
         {
-          "text": "What is the difference between a day count and an hour count?",
-          "source": "guide:do-you-have-to-count-homeschool-days-or-hours/body[5].items[1].q"
+          "text": "Homeschool days or hours: check what applies",
+          "source": "guide:do-you-have-to-count-homeschool-days-or-hours/title"
         }
       ],
-      "why": "The question as people ask it; the guide carries it because people search it.",
+      "emphasis": [
+        "Homeschool"
+      ],
+      "why": "The hook is the guide's own title: the question it answers, as a person would put it.",
       "from": 0,
-      "dur": 122,
-      "ground": "ink",
+      "dur": 76,
+      "ground": "light",
       "transition": "cut",
       "sfx": [],
       "lines": [
         [
-          "What is the difference",
-          "between a day count",
-          "and an hour count?"
+          "Homeschool days or",
+          "hours: check what",
+          "applies"
         ]
       ]
     },
     {
-      "id": "a",
-      "kind": "title",
-      "variant": "label",
+      "id": "list",
+      "kind": "list",
+      "variant": "checklist",
       "copy": [
         {
-          "text": "A day requirement asks whether you schooled on a given date at all, regardless of how long.",
-          "source": "guide:do-you-have-to-count-homeschool-days-or-hours/body[5].items[1].a#0"
+          "text": "Identify the state, legal route and each child's relevant age or grade.",
+          "source": "guide:do-you-have-to-count-homeschool-days-or-hours/body[3].items[0]#0"
+        },
+        {
+          "text": "Find the official instructional-time or attendance section.",
+          "source": "guide:do-you-have-to-count-homeschool-days-or-hours/body[3].items[1]#0"
+        },
+        {
+          "text": "Write the exact measure: days, hours, either, or combined.",
+          "source": "guide:do-you-have-to-count-homeschool-days-or-hours/body[3].items[2]#0"
+        },
+        {
+          "text": "Find out whether the record is retained, submitted or reviewed and by whom.",
+          "source": "guide:do-you-have-to-count-homeschool-days-or-hours/body[3].items[4]#0"
         }
       ],
-      "emphasis": [
-        "requirement"
-      ],
-      "why": "The guide's answer, its first sentence: the plain answer before any detail.",
-      "from": 110,
-      "dur": 160,
+      "eyebrow": {
+        "text": "Establish your counting rule",
+        "source": "guide:do-you-have-to-count-homeschool-days-or-hours/body[3].heading"
+      },
+      "why": "The guide's own checklist, the first sentence of each item, ticked in as it is read.",
+      "from": 64,
+      "dur": 492,
       "ground": "light",
       "transition": "lineWipe",
       "sfx": [
@@ -87,15 +103,27 @@
           "at": 0,
           "cue": "tick",
           "volume": 0.6
+        },
+        {
+          "at": 10,
+          "cue": "tick",
+          "volume": 0.45
+        },
+        {
+          "at": 108,
+          "cue": "tick",
+          "volume": 0.45
+        },
+        {
+          "at": 206,
+          "cue": "tick",
+          "volume": 0.45
+        },
+        {
+          "at": 304,
+          "cue": "tick",
+          "volume": 0.45
         }
-      ],
-      "lines": [
-        [
-          "A day requirement asks",
-          "whether you schooled on",
-          "a given date at all,",
-          "regardless of how long."
-        ]
       ]
     },
     {
@@ -104,8 +132,8 @@
       "variant": "proof",
       "copy": [],
       "caption": {
-        "text": "What your state asks you to keep, beside what you have got",
-        "source": "expectedOutputs[4]"
+        "text": "Add a child.",
+        "source": "howItWorks[0]#0"
       },
       "screen": {
         "src": "screens/homeschooling-companion-kids.png",
@@ -118,14 +146,14 @@
         },
         "scroll": []
       },
-      "why": "The turn: the product the guide itself hands over to, named and shown on its real screen, captioned with its listing's line closest to what the guide teaches. Screen: \"Your children.\" (Each child with their age and subjects, and the state's homeschool requirements kept alongside.) chosen because it is the real screen closest to \"What your state asks you to keep, beside what you have got Do you have to count \"; focus on \"Oregon · Moderate regulation\".",
+      "why": "The turn: the product the guide itself hands over to, named and shown on its real screen, captioned with its listing's line closest to what the guide teaches. Screen: \"Your children.\" (Each child with their age and subjects, and the state's homeschool requirements kept alongside.) chosen because it is the real screen closest to \"Add a child. Homeschool days or hours: check what applies\"; focus on \"Oregon · Moderate regulation\".",
       "eyebrow": {
         "text": "Homeschooling Companion",
         "source": "title"
       },
-      "from": 258,
-      "dur": 184,
-      "ground": "light",
+      "from": 544,
+      "dur": 108,
+      "ground": "ink",
       "transition": "slideUp",
       "sfx": [
         {
@@ -139,7 +167,7 @@
           "volume": 0.42
         },
         {
-          "at": 83,
+          "at": 49,
           "cue": "tap",
           "volume": 0.55
         }
@@ -164,7 +192,7 @@
         "source": "micro"
       },
       "why": "Ends on where to read the whole guide, with the product beneath it: the viewer leaves with the next step, not only a pitch.",
-      "from": 430,
+      "from": 640,
       "dur": 110,
       "ground": "accent",
       "transition": "blurDissolve",
@@ -195,8 +223,8 @@
     },
     {
       "topic": "Guide",
-      "decision": "\"Do you have to count homeschool days or hours?\" (draftpace.com/guides/do-you-have-to-count-homeschool-days-or-hours)",
-      "because": "Teaches from the guide first; Homeschooling Companion is the product the guide hands over to. 1 lists and timelines, 5 questions to draw from."
+      "decision": "\"Homeschool days or hours: check what applies\" (draftpace.com/guides/do-you-have-to-count-homeschool-days-or-hours)",
+      "because": "Teaches from the guide first; Homeschooling Companion is the product the guide hands over to. 1 lists and timelines, 3 questions to draw from."
     },
     {
       "topic": "Stage",
@@ -215,13 +243,13 @@
     },
     {
       "topic": "Structure",
-      "decision": "The question people ask: One of the guide's own questions, its plain answer, then the product.",
-      "because": "Best fit for a awareness film on YouTube Short (platform fit 2, goal fit 2, already used for this product ×5, already used on YouTube Short ×9). Other candidates: ."
+      "decision": "The checklist: The guide's checklist on one screen, item by item, then the product that holds it.",
+      "because": "Best fit for a awareness film on YouTube Short (platform fit 2, goal fit 3, already used for this product ×2, already used on YouTube Short ×14). Other candidates: The question people ask (-57.3)."
     },
     {
       "topic": "Angle",
-      "decision": "\"What is the difference between a day count and an hour count?\"",
-      "because": "A question from the guide's FAQ, \"What is the difference between a day count and an hour count?\", and the first sentence of its answer."
+      "decision": "\"Homeschool days or hours: check what applies\"",
+      "because": "A checklist from the guide, \"Establish your counting rule\": 4 of its 6 items."
     },
     {
       "topic": "Transitions",
@@ -230,13 +258,13 @@
     },
     {
       "topic": "Camera",
-      "decision": "Camera \"float\"",
-      "because": "Camera \"float\": a gentle float that keeps a held frame alive without demanding attention."
+      "decision": "Camera \"dolly\"",
+      "because": "Camera \"dolly\": constant forward movement for a high-energy feed."
     },
     {
       "topic": "Colour",
-      "decision": "Grounds ink → light → light → accent",
-      "because": "Grounds ink → light → light → accent: a cool accent, so a darker ground is used for contrast at a turn."
+      "decision": "Grounds light → light → ink → accent",
+      "because": "Grounds light → light → ink → accent: a cool accent, so a darker ground is used for contrast at a turn."
     },
     {
       "topic": "Sound",
@@ -245,7 +273,7 @@
     },
     {
       "topic": "Length",
-      "decision": "18.0s, 4 scenes",
+      "decision": "25.0s, 4 scenes",
       "because": "Each scene is held for the time its words take to read on YouTube Short (0.26s a word), inside 18–45s."
     }
   ]

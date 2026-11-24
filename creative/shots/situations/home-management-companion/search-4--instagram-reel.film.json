@@ -12,8 +12,8 @@
   "width": 1080,
   "height": 1920,
   "fps": 30,
-  "durationInFrames": 618,
-  "structure": "situationWords",
+  "durationInFrames": 913,
+  "structure": "situationChecklist",
   "angle": {
     "text": "I lost the manual, the receipt and the warranty",
     "source": "searchedProblems[3].phrase"
@@ -29,9 +29,9 @@
     "motif": "tag",
     "grounds": [
       "light",
-      "accent",
       "light",
-      "ink"
+      "ink",
+      "accent"
     ],
     "pace": 1
   },
@@ -44,7 +44,7 @@
     {
       "id": "moment",
       "kind": "title",
-      "variant": "quote",
+      "variant": "label",
       "copy": [
         {
           "text": "I lost the manual, the receipt and the warranty",
@@ -69,76 +69,62 @@
       ]
     },
     {
-      "id": "step-1",
-      "kind": "title",
-      "variant": "editorial",
+      "id": "what-to-do",
+      "kind": "list",
+      "variant": "checklist",
       "copy": [
         {
-          "text": "Contact the seller first.",
-          "source": "guide:appliance-warranties-what-to-track/body[7].items[0]#0"
+          "text": "Photograph the full rating plate and record the exact model and serial.",
+          "source": "guide:appliance-warranties-what-to-track/body[1].items[0]#0"
+        },
+        {
+          "text": "Save the receipt, order confirmation, delivery and installation evidence available.",
+          "source": "guide:appliance-warranties-what-to-track/body[1].items[1]#0"
+        },
+        {
+          "text": "Record what event starts each coverage period.",
+          "source": "guide:appliance-warranties-what-to-track/body[1].items[3]#0"
+        },
+        {
+          "text": "Separate component, parts and labor periods and any stated limits.",
+          "source": "guide:appliance-warranties-what-to-track/body[1].items[4]#0"
         }
       ],
       "eyebrow": {
-        "text": "1",
-        "source": "micro"
+        "text": "Build one warranty record",
+        "source": "guide:appliance-warranties-what-to-track/body[1].heading"
       },
-      "emphasis": [
-        "Contact"
-      ],
-      "why": "Step 1 from the guide \"How to keep track of appliance warranties\", numbered as the guide numbers it.",
+      "why": "What to do about it, from the guide \"Appliance warranty tracking: dates, terms and claims\": its own checklist, the first sentence of each item.",
       "from": 79,
-      "dur": 81,
-      "ground": "accent",
+      "dur": 476,
+      "ground": "light",
       "transition": "slideUp",
       "sfx": [
         {
           "at": 0,
           "cue": "swish",
           "volume": 0.32
-        }
-      ],
-      "lines": [
-        [
-          "Contact the seller",
-          "first."
-        ]
-      ]
-    },
-    {
-      "id": "step-2",
-      "kind": "title",
-      "variant": "editorial",
-      "copy": [
+        },
         {
-          "text": "If that doesn't work, contact the manufacturer directly.",
-          "source": "guide:appliance-warranties-what-to-track/body[7].items[1]#0"
-        }
-      ],
-      "eyebrow": {
-        "text": "2",
-        "source": "micro"
-      },
-      "emphasis": [
-        "manufacturer"
-      ],
-      "why": "Step 2 from the guide \"How to keep track of appliance warranties\", numbered as the guide numbers it.",
-      "from": 148,
-      "dur": 112,
-      "ground": "light",
-      "transition": "cardSlide",
-      "sfx": [
+          "at": 10,
+          "cue": "pop",
+          "volume": 0.45
+        },
         {
-          "at": 0,
-          "cue": "swish",
-          "volume": 0.32
+          "at": 105,
+          "cue": "pop",
+          "volume": 0.45
+        },
+        {
+          "at": 200,
+          "cue": "pop",
+          "volume": 0.45
+        },
+        {
+          "at": 295,
+          "cue": "pop",
+          "volume": 0.45
         }
-      ],
-      "lines": [
-        [
-          "If that doesn't work,",
-          "contact the",
-          "manufacturer directly."
-        ]
       ]
     },
     {
@@ -152,7 +138,7 @@
       },
       "screen": {
         "src": "screens/home-management-companion-workspace.png",
-        "pose": "flat",
+        "pose": "tiltRight",
         "focus": {
           "at": 0.45,
           "y": 222,
@@ -165,10 +151,10 @@
         "text": "Home Base",
         "source": "title"
       },
-      "from": 248,
+      "from": 543,
       "dur": 272,
       "ground": "ink",
-      "transition": "slideUp",
+      "transition": "cardSlide",
       "sfx": [
         {
           "at": 0,
@@ -206,9 +192,9 @@
         "source": "micro"
       },
       "why": "Ends on where to read the whole guide, with the product beneath it: the viewer leaves with the next step, not only a pitch.",
-      "from": 508,
+      "from": 803,
       "dur": 110,
-      "ground": "light",
+      "ground": "accent",
       "transition": "slideUp",
       "sfx": [
         {
@@ -242,7 +228,7 @@
     },
     {
       "topic": "Guide",
-      "decision": "\"How to keep track of appliance warranties\" (draftpace.com/guides/appliance-warranties-what-to-track)",
+      "decision": "\"Appliance warranty tracking: dates, terms and claims\" (draftpace.com/guides/appliance-warranties-what-to-track)",
       "because": "The guide that covers this moment: what to do comes from it, and the film ends on it."
     },
     {
@@ -257,13 +243,13 @@
     },
     {
       "topic": "Structure",
-      "decision": "In their words: The moment typed the way a person searches it, then what to do about it, then the product doing it.",
-      "because": "Best fit for a awareness film on Instagram Reel (platform fit 2, goal fit 3, already used for this product ×1). Other candidates: Inside the tool (-3.6), The moment (-6.2)."
+      "decision": "What to do first: The moment, the guide's own checklist for it, then the product that keeps track of it.",
+      "because": "Best fit for a awareness film on Instagram Reel (platform fit 2, goal fit 3). Other candidates: In their words (-1.2), The moment (-6.2)."
     },
     {
       "topic": "Angle",
       "decision": "\"I lost the manual, the receipt and the warranty\"",
-      "because": "A situation people search for, \"I lost the manual, the receipt and the warranty\", with the steps from \"How to keep track of appliance warranties\", and how Home Base helps."
+      "because": "The moment \"I lost the manual, the receipt and the warranty\", the checklist from \"Appliance warranty tracking: dates, terms and claims\", then how Home Base helps."
     },
     {
       "topic": "Transitions",
@@ -277,8 +263,8 @@
     },
     {
       "topic": "Colour",
-      "decision": "Grounds light → accent → light → ink",
-      "because": "Grounds light → accent → light → ink: a cool accent, so a darker ground is used for contrast at a turn."
+      "decision": "Grounds light → light → ink → accent",
+      "because": "Grounds light → light → ink → accent: a cool accent, so a darker ground is used for contrast at a turn."
     },
     {
       "topic": "Sound",
@@ -287,7 +273,7 @@
     },
     {
       "topic": "Length",
-      "decision": "20.6s, 5 scenes",
+      "decision": "30.4s, 4 scenes",
       "because": "Each scene is held for the time its words take to read on Instagram Reel (0.26s a word), inside 12–35s."
     }
   ]

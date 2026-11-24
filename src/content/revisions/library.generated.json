@@ -436,6 +436,13 @@
             "a": "Not necessarily. USFA gives a ten-year replacement message for household smoke alarms, but CO and combined units require their own manufacturer instructions. Record the model, manufacture date and end-of-life guidance. An alarm that fails a test or signals a problem needs action even before its expected replacement date."
           }
         ]
+      },
+      {
+        "kind": "paragraphs",
+        "heading": "Track what is overdue, not just what is scheduled",
+        "paragraphs": [
+          "[Home Base](/shop/home-management-companion) can hold the care each item on your equipment list usually needs, and you untick anything that does not apply. It is a tracking aid, not a substitute for your manuals or a professional inspection, especially for gas, electricity, structure or water. The priority order above works from a paper checklist."
+        ]
       }
     ],
     "sources": [
@@ -470,6 +477,7 @@
     "dek": "Verify your homeschool route using official state sources and three limited examples. This is not an exhaustive 50-state legal summary.",
     "metaDescription": "Verify your homeschool route using official state sources and three limited examples. This is not an exhaustive 50-state legal summary.",
     "updatedAt": "2026-11-17",
+    "scopeCountry": "us",
     "body": [
       {
         "kind": "paragraphs",
@@ -1117,6 +1125,7 @@
     "dek": "Trace banks, insurance and retirement benefits using records and free official searches, with an authority check before requesting private information.",
     "metaDescription": "Trace banks, insurance and retirement benefits using records and free official searches, with an authority check before requesting private information.",
     "updatedAt": "2026-11-17",
+    "scopeCountry": "us",
     "body": [
       {
         "kind": "paragraphs",
@@ -1136,7 +1145,7 @@
       {
         "kind": "list",
         "heading": "Work through the available paper trail",
-        "checkable": true,
+        "checkable": false,
         "items": [
           "Gather a year of bank and card statements where lawfully available. A longer view can reveal annual insurance premiums or infrequent transfers that a single month misses.",
           "List incoming pensions, investment distributions and transfers separately from premiums, loan payments and recurring charges. Do not classify every debit as an asset.",
@@ -1251,6 +1260,13 @@
             "q": "Do free searches release the money?",
             "a": "No. A public listing or policy match is only a lead. Claiming funds requires the relevant institution's evidence and entitlement checks. Some restricted records also require estate authority before they are disclosed. Keep public lookup, private record requests and actual claims as three distinct stages."
           }
+        ]
+      },
+      {
+        "kind": "paragraphs",
+        "heading": "Record what you find as you search",
+        "paragraphs": [
+          "[Personal Life Affairs Companion](/shop/personal-life-affairs-companion) is an optional place to record which accounts you have confirmed and what is still outstanding. It does not search for accounts on your behalf or store account numbers; it is deliberately not a vault. The search order above works without buying anything."
         ]
       }
     ],
@@ -1607,7 +1623,7 @@
       {
         "kind": "list",
         "heading": "Before substantive administration",
-        "checkable": true,
+        "checkable": false,
         "items": [
           "Find the original will and amendments, identify every named executor and check any substitute appointment. Preserve documents rather than annotating or dividing them.",
           "Establish the relevant jurisdiction and ask about cross-border property or domicile uncertainty. Do not select a court only because it is nearest to you.",
@@ -1787,7 +1803,7 @@
       {
         "kind": "list",
         "heading": "Before accepting transactions as routine",
-        "checkable": true,
+        "checkable": false,
         "items": [
           "Locate the original will and any amendments. Identify co-nominees and alternates without deciding contested validity yourself.",
           "Ask the relevant court about will-deposit duties, the appointment process, any small-estate alternative, required notices and urgent deadlines.",
@@ -1969,7 +1985,7 @@
       {
         "kind": "list",
         "heading": "Start with people and immediate risks",
-        "checkable": true,
+        "checkable": false,
         "items": [
           "For a hospital or care-home death, ask staff who will explain verification, certification and release arrangements. For an expected home death, use the care plan or GP contact instructions. If there is an emergency or uncertainty about whether the person has died, call 999.",
           "Arrange support for any surviving dependent, and care for pets. Check whether someone needs food, medication access, keys or transport tonight.",
@@ -2138,7 +2154,7 @@
       {
         "kind": "list",
         "heading": "The first safety and contact check",
-        "checkable": true,
+        "checkable": false,
         "items": [
           "In a hospital or care facility, ask staff who handles the next paperwork and release arrangements. For an expected hospice death at home, follow the hospice plan and call its designated number. If the death is unexpected or you are unsure whether the person has died, call 911 and follow instructions.",
           "Check whether a surviving partner, child or other dependent needs someone present, food, medicines or transport. Arrange pet care and a responsible contact for the next night.",
@@ -2264,6 +2280,13 @@
             "q": "Do I have to pay my parent's debts?",
             "a": "Not simply because you are their child. Debts are generally handled through the estate, but joint obligations, co-signing and some state-specific responsibilities can matter. Do not promise personal payment to end an upsetting call. Save the demand and ask an estate attorney about your actual position."
           }
+        ]
+      },
+      {
+        "kind": "paragraphs",
+        "heading": "One next step at a time, not every page at once",
+        "paragraphs": [
+          "[Personal Life Affairs Companion](/shop/personal-life-affairs-companion) is an optional way to record what you find as you go and see the one next step, rather than every task at once. It is not legal advice and does not file anything with a court or bank on your own. The sequence above works on paper without a purchase."
         ]
       }
     ],
@@ -2435,6 +2458,13 @@
             "a": "Do not pull out a heavy or connected appliance, climb onto it or remove service covers just to finish the record. Check the manual, packaging, delivery paperwork or manufacturer locator first. Ask an installer or technician to capture the label during appropriate safe access if necessary."
           }
         ]
+      },
+      {
+        "kind": "paragraphs",
+        "heading": "Keep the model and warranty where you will find it",
+        "paragraphs": [
+          "[Home Base](/shop/home-management-companion) is an optional place to record the model, serial number and warranty terms for each appliance. It does not store receipts or photos itself and is not a place to keep passwords. The record above works in a plain folder without buying anything."
+        ]
       }
     ],
     "sources": [
@@ -2474,7 +2504,7 @@
       {
         "kind": "list",
         "heading": "Search without changing the evidence",
-        "checkable": true,
+        "checkable": false,
         "items": [
           "Ask the person coordinating the estate whether an original, copy, later amendment or attorney contact is already known. Agree who will record the search.",
           "Check accessible files, document boxes and other places you are entitled to search. Keep papers together and note where each document was found.",
@@ -2603,6 +2633,13 @@
             "q": "Can I open a bank box if I have its key?",
             "a": "A key is not a universal authorization. The bank and applicable state law determine who can access a deceased customer's box, what evidence is required and what may be removed. Ask specifically about a will-search procedure and keep any bank record of the access and document handling."
           }
+        ]
+      },
+      {
+        "kind": "paragraphs",
+        "heading": "Record the search, not the document itself",
+        "paragraphs": [
+          "[Personal Life Affairs Companion](/shop/personal-life-affairs-companion) can hold where you have already looked and who you still need to ask. It does not store the will itself or any password, and it is not legal advice about which version controls. The search order above works with a plain notebook."
         ]
       }
     ],
@@ -2812,6 +2849,7 @@
     "dek": "Check which assets follow a beneficiary designation, which may enter your estate, and when spouse rights or conflicting paperwork need advice.",
     "metaDescription": "Check which assets follow a beneficiary designation, which may enter your estate, and when spouse rights or conflicting paperwork need advice.",
     "updatedAt": "2026-11-17",
+    "scopeCountry": "us",
     "body": [
       {
         "kind": "paragraphs",
@@ -3004,7 +3042,7 @@
       {
         "kind": "list",
         "heading": "Preserve the starting position",
-        "checkable": true,
+        "checkable": false,
         "items": [
           "Keep devices, storage media and existing documentation secure without trying repeated passcode guesses.",
           "Record the services you know exist and the evidence for each, using only lawful access.",
@@ -3152,6 +3190,13 @@
             "q": "Does being executor guarantee access?",
             "a": "No universal guarantee follows from that role. Providers may require particular documentation, consent, review or legal process, and different data can be treated differently. Ask for the official requirements and get legal advice if essential records or a disputed claim cannot be resolved administratively."
           }
+        ]
+      },
+      {
+        "kind": "paragraphs",
+        "heading": "Track requests, not credentials",
+        "paragraphs": [
+          "[Personal Life Affairs Companion](/shop/personal-life-affairs-companion) is an optional place to record which provider requests are sent and which are resolved. It never stores a password or account number by design; that stays with the provider's own process. The preservation steps above work without a purchase."
         ]
       }
     ],
@@ -3955,6 +4000,13 @@
             "a": "Sometimes, if there is no urgent next action. First check the deadline and consequences. Leave a note with the current request and next step. A general permission to pause should not be mistaken for advice to ignore a legal, care or essential-service deadline."
           }
         ]
+      },
+      {
+        "kind": "paragraphs",
+        "heading": "Naming it is the first step it holds",
+        "paragraphs": [
+          "[ADHD Life Companion](/shop/alongside) is an optional place to name the delay and the practical question above, then bring it back when the moment is right. It does not resolve the delay for you or track why avoidance happens. The checklist above works without an account."
+        ]
       }
     ],
     "sources": [
@@ -4468,6 +4520,13 @@
             "q": "Is this the complete inherited-house checklist?",
             "a": "No. It intentionally covers maintenance triage and records. Authority, estate administration, title, mortgage, taxes and insurance need separate attention and may have real deadlines. Ask the appropriate court, adviser, servicer or insurer about the actual property rather than assuming the maintenance plan covers those duties."
           }
+        ]
+      },
+      {
+        "kind": "paragraphs",
+        "heading": "Build the equipment baseline as you learn it",
+        "paragraphs": [
+          "[Home Base](/shop/home-management-companion) is an optional place to record what you find about a home's systems as you confirm it, rather than guessing. It suggests the care each item usually needs and you untick what does not apply; it is not a professional inspection. The baseline above works on paper without buying anything."
         ]
       }
     ],
@@ -4985,6 +5044,13 @@
             "a": "Recording laws, consent requirements and provider policies vary. This guide does not determine whether you can lawfully record a particular call. Written contemporaneous notes and requested confirmation are useful without secretly recording; get appropriate advice before relying on recording as your evidence method."
           }
         ]
+      },
+      {
+        "kind": "paragraphs",
+        "heading": "Keep the script where you will use it",
+        "paragraphs": [
+          "[ADHD Life Companion](/shop/alongside) can hold the call you are avoiding and the opening line you chose, ready when the moment comes. It does not make the call for you or store account numbers; that detail belongs to a money or affairs product. The scripts above work from a sticky note just as well."
+        ]
       }
     ],
     "sources": [
@@ -5001,6 +5067,7 @@
     "dek": "Rebuild the next income-to-bills timeline, update payment routes carefully, and separate urgent money administration from decisions needing advice.",
     "metaDescription": "Rebuild the next income-to-bills timeline, update payment routes carefully, and separate urgent money administration from decisions needing advice.",
     "updatedAt": "2026-11-17",
+    "scopeCountry": "us",
     "body": [
       {
         "kind": "paragraphs",
@@ -5249,7 +5316,7 @@
       {
         "kind": "list",
         "heading": "Ask only what serves the purpose",
-        "checkable": true,
+        "checkable": false,
         "items": [
           "Where is the current will, and who holds the original?",
           "Who should be contacted first in an emergency or period of incapacity?",
@@ -5700,6 +5767,13 @@
             "a": "Requirements vary by country, travel arrangement and family circumstances. USAGov says such letters may be needed and recommends checking with the destination embassy or consulate. Ask about language, notarization and any additional evidence rather than assuming a generic letter meets all requirements."
           }
         ]
+      },
+      {
+        "kind": "paragraphs",
+        "heading": "Record what each traveler is carrying",
+        "paragraphs": [
+          "[Travel Companion](/shop/travel-companion) is an optional place to record that a document exists, whose it is and where it is kept, never the document itself: it does not accept uploads and never will. It does not verify entry requirements for you. The verification order above works on paper without buying anything."
+        ]
       }
     ],
     "sources": [
@@ -5722,6 +5796,7 @@
     "dek": "Save the fault, actual work, parts, warranty and unresolved follow-up together, with photos and payment evidence that explain the repair later.",
     "metaDescription": "Save the fault, actual work, parts, warranty and unresolved follow-up together, with photos and payment evidence that explain the repair later.",
     "updatedAt": "2026-11-17",
+    "scopeCountry": "us",
     "body": [
       {
         "kind": "paragraphs",
@@ -5889,6 +5964,13 @@
             "q": "Should I keep a replaced part?",
             "a": "Ask the provider whether there is a safety, warranty-return or disposal reason affecting it. Do not keep hazardous material or interfere with a required return simply for an archive. A written part identifier and suitable photograph may be more useful, but claim requirements vary."
           }
+        ]
+      },
+      {
+        "kind": "paragraphs",
+        "heading": "Keep the fault and the fix together",
+        "paragraphs": [
+          "[Home Base](/shop/home-management-companion) can hold the fault, the work done and any unresolved follow-up against each item you track. It is a tracking aid, not a substitute for the contractor's own paperwork. The record above works in a plain folder without a purchase."
         ]
       }
     ],
@@ -6099,6 +6181,7 @@
     "dek": "Sort household papers by purpose, protect originals and active claims, and use retention rules carefully instead of shredding by age alone.",
     "metaDescription": "Sort household papers by purpose, protect originals and active claims, and use retention rules carefully instead of shredding by age alone.",
     "updatedAt": "2026-11-17",
+    "scopeCountry": "us",
     "body": [
       {
         "kind": "paragraphs",
@@ -6272,6 +6355,13 @@
             "a": "Ask the lawyer or other qualified adviser handling the change. Earlier documents may matter in some circumstances, and validity or revocation questions are not resolved by a filing checklist. Keep current documents clearly identified without independently deciding which legal history should disappear."
           }
         ]
+      },
+      {
+        "kind": "paragraphs",
+        "heading": "Record where things are, not the documents themselves",
+        "paragraphs": [
+          "[Personal Life Affairs Companion](/shop/personal-life-affairs-companion) is an optional way to record where each kept document lives, so someone else could find it. It does not store the document or scan itself, and it is not a substitute for the retention rules above. The sorting approach works in a plain folder."
+        ]
       }
     ],
     "sources": [
@@ -6413,6 +6503,13 @@
             "q": "Does this mean I have ADHD?",
             "a": "No. Thinking about unfinished work without starting can occur for many reasons. Look at the wider pattern and its effect on your life. A clinician can assess persistent difficulties; the record here is simply a way to make one admin task easier to resume."
           }
+        ]
+      },
+      {
+        "kind": "paragraphs",
+        "heading": "Somewhere to put the thought down",
+        "paragraphs": [
+          "[ADHD Life Companion](/shop/alongside) is an optional place to record the task and the one missing piece, so it surfaces again instead of only circling in your head. It holds what you are trying to get done, not a diagnosis, medication or symptom list. The restart point described above works on paper just as well."
         ]
       }
     ],
@@ -6602,6 +6699,14 @@
             "q": "Can I ask for a late-fee waiver?",
             "a": "Yes, through the provider's official route, but the decision is not guaranteed. Confirm any waiver separately from the payment arrangement and keep the result. Do not wait for the waiver decision before addressing the overdue amount or another deadline you can meet."
           }
+        ]
+      },
+      {
+        "kind": "paragraphs",
+        "heading": "Track due dates somewhere other than memory",
+        "paragraphs": [
+          "These steps fix one missed payment. What stops a repeat is seeing every due date before it is late, not remembering better next time. Our [monthly bills list](/guides/monthly-bills-list) and the two-minute check before [each direct debit date](/guides/what-to-check-before-each-direct-debit-date) cover that ongoing job.",
+          "[Personal Finance Companion](/shop/personal-finance-companion) is an optional product for keeping bills, balances and due dates in one place. No product can guarantee funds will be there when a payment is due. The free worksheet on this page works without buying anything."
         ]
       }
     ],
@@ -6961,6 +7066,13 @@
             "a": "That decision depends on your goals, circumstances, and local rules. If seeking adjustments, ask about the formal process and documentation before sharing a full report. Obtain qualified advice for a consequential legal or employment question rather than relying on a general admin guide."
           }
         ]
+      },
+      {
+        "kind": "paragraphs",
+        "heading": "What this product deliberately will not hold",
+        "paragraphs": [
+          "[ADHD Life Companion](/shop/alongside) can hold follow-up actions and the question you want answered at the next appointment. It does not ask about your diagnosis, medication or symptoms, and never will; that stays between you and your clinician. The organizing record above works without buying anything."
+        ]
       }
     ],
     "sources": [
@@ -7135,6 +7247,13 @@
             "q": "What if I have no start-of-month balances?",
             "a": "Use today's verified balances as your first snapshot, noting the accounts and timing included. Review bills and upcoming commitments now; begin the numerical comparison next time. Do not reconstruct an exact starting figure from memory just to complete a table."
           }
+        ]
+      },
+      {
+        "kind": "paragraphs",
+        "heading": "A consistent snapshot, not a forecast",
+        "paragraphs": [
+          "[Personal Finance Companion](/shop/personal-finance-companion) can hold the balance snapshots and unpaid commitments a review carries forward. It never reads your real bank credentials; every figure comes from what you enter. The comparison method above works from statements alone."
         ]
       }
     ],
@@ -7455,6 +7574,13 @@
             "a": "Use the parts relevant to your property: equipment readiness, drainage, alarms, and documented faults can still matter. Freeze-sensitive jobs depend on local exposure and forecasts. Do not assume mild winters mean that a particular cold event cannot require preparation."
           }
         ]
+      },
+      {
+        "kind": "paragraphs",
+        "heading": "Match the list to your own equipment",
+        "paragraphs": [
+          "[Home Base](/shop/home-management-companion) can hold your actual equipment and suggest the care each one usually needs, so the fall list fits your home rather than a generic one. It is a tracking aid, not a substitute for a professional inspection. The sequence above works from a printed checklist."
+        ]
       }
     ],
     "sources": [
@@ -7643,6 +7769,13 @@
             "a": "Begin with the next completed job and recover older entries from real evidence where useful. Mark uncertain dates and missing details. A concise honest history is more useful than an apparently complete one built from assumptions about what usually happens each year."
           }
         ]
+      },
+      {
+        "kind": "paragraphs",
+        "heading": "One place for the asset, the date and the cost",
+        "paragraphs": [
+          "[Home Base](/shop/home-management-companion) can hold the asset, work, date, provider and cost this log calls for, linked to the evidence you keep elsewhere. It is a tracking aid, not a substitute for the original invoices. The columns above work in a plain spreadsheet."
+        ]
       }
     ],
     "sources": []
@@ -7652,6 +7785,7 @@
     "dek": "Record the learning that happened without guessing what counts. Build a dated attendance log around your state's actual requirements.",
     "metaDescription": "Record the learning that happened without guessing what counts. Build a dated attendance log around your state's actual requirements.",
     "updatedAt": "2026-11-17",
+    "scopeCountry": "us",
     "body": [
       {
         "kind": "paragraphs",
@@ -7779,6 +7913,13 @@
             "a": "Yes, if each child's participation and required totals remain clear. Use separate columns or identifiers rather than a single household tick. Keep child-specific samples and reports findable even when the family did the same activity together."
           }
         ]
+      },
+      {
+        "kind": "paragraphs",
+        "heading": "Log it in about thirty seconds",
+        "paragraphs": [
+          "[Homeschooling Companion](/shop/homeschooling-companion) can hold the attendance entries this guide describes, typed in rather than inferred. It does not know your state's specific requirement; naming where you are is still yours to confirm. The log above works in a plain spreadsheet."
+        ]
       }
     ],
     "sources": [
@@ -7795,6 +7936,7 @@
     "dek": "Separate required records, lasting academic evidence, and ordinary work samples. Verify local retention rules before clearing a school-year box.",
     "metaDescription": "Separate required records, lasting academic evidence, and ordinary work samples. Verify local retention rules before clearing a school-year box.",
     "updatedAt": "2026-11-17",
+    "scopeCountry": "us",
     "body": [
       {
         "kind": "paragraphs",
@@ -7939,6 +8081,13 @@
             "a": "Only when the copy serves the needed purpose and your applicable rules accept it. Check readability, completeness, dates, and backup access before discarding originals. Keep attachments independently when an export only links to them, and preserve originals while a specific acceptance question remains unresolved."
           }
         ]
+      },
+      {
+        "kind": "paragraphs",
+        "heading": "Track what is required versus what is useful",
+        "paragraphs": [
+          "[Homeschooling Companion](/shop/homeschooling-companion) is an optional place to keep the records this guide separates by category. It does not verify your state's retention rule; that check stays with the official source. The categories above work in a plain folder without a purchase."
+        ]
       }
     ],
     "sources": [
@@ -8041,6 +8190,7 @@
         "heading": "Size and rating both matter",
         "paragraphs": [
           "The size printed on an existing filter is a useful lead, but it may not establish that someone previously installed the correct part. Confirm against the equipment instructions or a qualified technician. Avoid forcing a filter into a slot or leaving gaps around an undersized one.",
+          "Common nominal residential sizes include 16x20x1, 16x25x1, 20x20x1 and 20x25x1; a printed size is nominal, and the actual filter often measures slightly smaller, so check a current filter's actual dimensions if none is installed to compare against.",
           "The [EPA's air-cleaner guidance](https://www.epa.gov/indoor-air-quality-iaq/guide-air-cleaners-home) discusses choosing an appropriate HVAC filter. A higher filtration rating is not automatically an appropriate upgrade for every system. Ask about compatibility rather than choosing the highest number on the shelf."
         ]
       },
@@ -8110,6 +8260,13 @@
             "q": "Can I clean and reuse my filter?",
             "a": "Only if that filter is designed to be cleaned and reused, and then only by its specified method. Disposable and reusable filters are not interchangeable maintenance tasks. If you cannot identify the type, obtain the instructions or professional help before proceeding."
           }
+        ]
+      },
+      {
+        "kind": "paragraphs",
+        "heading": "Record the size and the actual interval",
+        "paragraphs": [
+          "[Home Base](/shop/home-management-companion) is an optional place to record your filter's real size and the interval you have settled on. It suggests a usual interval and you confirm what applies to your system; it is not a substitute for the manufacturer's own instructions. The record above works on a sticky note."
         ]
       }
     ],
@@ -8314,7 +8471,7 @@
   "how-to-budget-with-irregular-income": {
     "title": "How to budget with irregular income",
     "dek": "Separate money received from money expected, cover a low-income month, and use a holding buffer only when it is genuinely funded.",
-    "metaDescription": "Separate money received from money expected, cover a low-income month, and use a holding buffer only when it is genuinely funded.",
+    "metaDescription": "Separate money received from money expected when your income fluctuates, cover a low-income month, and fund a holding buffer properly.",
     "updatedAt": "2026-11-17",
     "body": [
       {
@@ -8468,6 +8625,13 @@
             "q": "What if I have no buffer yet?",
             "a": "Do not schedule transfers that assume one exists. Allocate received cash to imminent essentials, monitor dates closely, and build a buffer when there is genuine room. If current income cannot cover essentials, seek suitable assistance rather than treating account separation as the solution."
           }
+        ]
+      },
+      {
+        "kind": "paragraphs",
+        "heading": "Separate received from expected, in one place",
+        "paragraphs": [
+          "[Personal Finance Companion](/shop/personal-finance-companion) is an optional place to record money received against money expected as the figures change. It is a planning aid, not financial advice, and every figure recomputes from what you enter. The buffer approach above works in a plain spreadsheet."
         ]
       }
     ],
@@ -8635,6 +8799,13 @@
             "q": "What if I use the fund before reaching the target?",
             "a": "Record the withdrawal and continue from the real balance. Using money for the need it was reserved for is not a reason to abandon the plan. Check whether the cost is likely to recur and adjust the next budget or reserve purpose accordingly."
           }
+        ]
+      },
+      {
+        "kind": "paragraphs",
+        "heading": "Track the pace, not just the total",
+        "paragraphs": [
+          "[Personal Finance Companion](/shop/personal-finance-companion) can hold your saving pace and the bills it is protected from. It does not move money or guarantee you will keep contributing; that part stays with your bank. The feasible pace above works from a plain savings account."
         ]
       }
     ],
@@ -8815,6 +8986,13 @@
             "q": "Can my bank cancel the subscription for me?",
             "a": "The bank may help with payment blocking or a dispute, but that is not necessarily cancellation of the service contract. Notify the billing provider through the appropriate route as well. Ask the bank which payments its action covers and monitor the result."
           }
+        ]
+      },
+      {
+        "kind": "paragraphs",
+        "heading": "Keep the cancellation evidence somewhere findable",
+        "paragraphs": [
+          "[Personal Finance Companion](/shop/personal-finance-companion) is an optional place to record who bills you and the evidence a cancellation actually went through. It does not cancel anything on your behalf or contact the provider. The route above works from an email folder without buying anything."
         ]
       }
     ],
@@ -9017,6 +9195,13 @@
             "q": "What if I cannot save $200?",
             "a": "Do not invent cuts to reach the number. Record what is genuinely feasible and whether it helps now or later. If essential costs still cannot be covered, seek appropriate assistance rather than treating an arbitrary savings target as a personal performance test."
           }
+        ]
+      },
+      {
+        "kind": "paragraphs",
+        "heading": "Compare the real savings, not the sticker price",
+        "paragraphs": [
+          "[Personal Finance Companion](/shop/personal-finance-companion) is an optional place to record what a change actually saves this month after the full cost of switching. It is a planning aid, not financial advice, and does not compare providers for you. The comparison above works with a notebook and a calculator."
         ]
       }
     ],
@@ -9539,6 +9724,7 @@
     "dek": "Keep a short lesson record, a place for evidence, and a weekly check. Build a homeschool system you can restart after missed days.",
     "metaDescription": "Keep a short lesson record, a place for evidence, and a weekly check. Build a homeschool system you can restart after missed days.",
     "updatedAt": "2026-11-17",
+    "scopeCountry": "us",
     "body": [
       {
         "kind": "paragraphs",
@@ -9840,6 +10026,13 @@
             "q": "Does stopping autopay remove what I owe?",
             "a": "No. Stopping a transfer and ending a contract are separate actions. Arrange another way to pay legitimate obligations, and cancel services through the correct provider when that is your intention. Keep records of both processes so they do not get confused."
           }
+        ]
+      },
+      {
+        "kind": "paragraphs",
+        "heading": "Keep the check itself quick",
+        "paragraphs": [
+          "[Personal Finance Companion](/shop/personal-finance-companion) can hold the bills you are watching and the balance you expect before each date. It never reads your real bank credentials and recomputes from what you enter, so a missed entry means a missed warning. The two-minute check above works from a bank app alone."
         ]
       }
     ],
@@ -10172,6 +10365,13 @@
             "a": "That may isolate only the heater, not the home's cold supply or a leak elsewhere. Confirm what the valve controls. Planned isolation or restoration can also involve appliance-specific requirements, so obtain the correct instructions rather than treating a nearby handle as the main shutoff."
           }
         ]
+      },
+      {
+        "kind": "paragraphs",
+        "heading": "Record it once, before it is urgent",
+        "paragraphs": [
+          "[Home Base](/shop/home-management-companion) can hold the shutoff's location and the instructions you confirmed, so it is findable under pressure. It is a tracking aid, not a substitute for a professional check if the valve itself is the problem. The record above works on a printed card."
+        ]
       }
     ],
     "sources": [
@@ -10496,6 +10696,13 @@
             "a": "Do not assume an unoccupied home can safely go without heat or other winter protection. The correct plan depends on the building, plumbing, climate, and applicable policy or management requirements. Arrange appropriate advice and a response plan before leaving."
           }
         ]
+      },
+      {
+        "kind": "paragraphs",
+        "heading": "Record what was actually shut down",
+        "paragraphs": [
+          "[Home Base](/shop/home-management-companion) is an optional place to record which winterizing steps are done and when, so nothing is left half-finished. It does not perform the shutdown or know your local freeze risk. The method above works from a paper checklist without a purchase."
+        ]
       }
     ],
     "sources": [
@@ -10637,6 +10844,13 @@
             "q": "Must wants reach 30%?",
             "a": "No. The reference is not an instruction to spend that amount. Your actual discretionary spending may be lower because essentials are higher or you prioritize a goal. Use the remaining resources and your circumstances to decide, without treating an unused allowance as money you must spend."
           }
+        ]
+      },
+      {
+        "kind": "paragraphs",
+        "heading": "Test the split against your real numbers",
+        "paragraphs": [
+          "[Personal Finance Companion](/shop/personal-finance-companion) is an optional place to run your own numbers against the 50/30/20 split and see where it does not fit. It is a planning aid, not financial advice, and does not decide the right split for you. The inspection above works with a calculator."
         ]
       }
     ],
@@ -10786,6 +11000,13 @@
             "a": "Choose a time with a reasonable chance of being available and leave enough lead time before common obligations. If that time repeatedly fails, move it or use a smaller checkpoint. There is no universally best day, and a Sunday routine is not required."
           }
         ]
+      },
+      {
+        "kind": "paragraphs",
+        "heading": "A reset that does not need a perfect week",
+        "paragraphs": [
+          "[ADHD Life Companion](/shop/alongside) can hold the one realistic action and return point a reset leaves you with, so a bad week does not erase it. It does not run the reset for you or judge how short it was. The short reset above works without an account."
+        ]
       }
     ],
     "sources": [
@@ -10807,6 +11028,7 @@
         "kind": "paragraphs",
         "paragraphs": [
           "To use a bank statement CSV for a budget, keep the original download, import a copy with explicit date and amount formats, reconcile its totals and review transfers before categorizing. Then add current balances, future income and unpaid obligations. A transaction file describes a period of activity; it is not a complete forward-looking budget.",
+          "None of this requires Excel specifically. The same checks apply whether the CSV goes into a spreadsheet, a budgeting app's own import, or a plain text editor first: the risk is in the file's formats and categories, not the program that opens it.",
           "A grocery payment shown as income can make a neat chart completely wrong. So can counting both a card purchase and its later card payment as spending. Before choosing categories, establish what each column means and which accounts are included. Banks export different layouts, and some exports include pending entries rather than only posted transactions."
         ]
       },
@@ -11067,6 +11289,13 @@
             "a": "It primarily changes payment timing, not necessarily the total cost of actual usage. Terms vary, including reviews, credits and settlement. Ask your provider for the current plan rules and any fees, then compare the payment schedule with managing your own reserve."
           }
         ]
+      },
+      {
+        "kind": "paragraphs",
+        "heading": "Plan from your own billing history",
+        "paragraphs": [
+          "[Personal Finance Companion](/shop/personal-finance-companion) can hold the billing history and planning amount this approach is built on. It recomputes from what you enter, so an outdated history gives an outdated number. The seasonal check above works from past statements alone."
+        ]
       }
     ],
     "sources": [
@@ -11199,6 +11428,13 @@
             "q": "Can I just keep paying today's minimum as a fixed amount?",
             "a": "You can consider a fixed payment if it remains at least the required minimum and is affordable. Recheck each statement because the minimum can rise as well as fall. A fixed-payment illustration does not authorize ignoring a larger current requirement or a special repayment arrangement."
           }
+        ]
+      },
+      {
+        "kind": "paragraphs",
+        "heading": "Compare the real payoff timelines",
+        "paragraphs": [
+          "[Personal Finance Companion](/shop/personal-finance-companion) is an optional place to compare a fixed payment against a declining minimum using your own balance and rate. It is a planning aid, not financial advice, and does not negotiate your rate. The comparison above works with a calculator."
         ]
       }
     ],
@@ -11377,6 +11613,7 @@
     "dek": "Build a working money reference with dated facts, visible gaps and secure document pointers, rather than a binder full of unchecked balances.",
     "metaDescription": "Choose financial binder sections for accounts, income, bills, debt and savings, with checked dates, secure storage and a practical update routine.",
     "updatedAt": "2026-11-17",
+    "scopeCountry": "us",
     "body": [
       {
         "kind": "paragraphs",
@@ -11518,6 +11755,13 @@
             "q": "How often should balances be updated?",
             "a": "Update them when the decision needs current information. A monthly reference review may be useful, but it cannot make a month-old checking balance reliable for a payment today. Keep the checked date visible and verify current activity before deciding what can be spent or transferred."
           }
+        ]
+      },
+      {
+        "kind": "paragraphs",
+        "heading": "A working reference, not a vault",
+        "paragraphs": [
+          "[Personal Finance Companion](/shop/personal-finance-companion) is an optional place to keep the dated facts a financial binder needs current. It is a planning aid, not financial advice, and does not store the documents themselves. The binder structure above works in a plain folder."
         ]
       }
     ],
@@ -11734,6 +11978,13 @@
             "a": "For routine work, you can stop after recording what happened and what comes next. First check whether a serious deadline or consequence requires more action or help now. A useful start should not be mistaken for a submitted form, booked appointment or completed payment."
           }
         ]
+      },
+      {
+        "kind": "paragraphs",
+        "heading": "Keep the one step somewhere it returns",
+        "paragraphs": [
+          "[ADHD Life Companion](/shop/alongside) is an optional place to record the first physical step you named, so it comes back up instead of needing to be remembered. It holds what you are trying to get done, not why a task feels stuck. The examples above work on paper just as well."
+        ]
       }
     ],
     "sources": [
@@ -11884,6 +12135,13 @@
             "q": "What if unfinished work fills it every week?",
             "a": "Review the workload, lesson length, prerequisites and fixed commitments. Decide which unfinished work still serves a learning purpose rather than carrying it all forward automatically. If a subject remains difficult, investigate the learning issue or seek suitable support instead of only adding more time."
           }
+        ]
+      },
+      {
+        "kind": "paragraphs",
+        "heading": "Record what actually happened, not just the plan",
+        "paragraphs": [
+          "[Homeschooling Companion](/shop/homeschooling-companion) can hold the actual learning that happened each week, separate from the plan. It supplies no lesson content or curriculum; the structure is what it adds. The weekly plan above works on paper without buying anything."
         ]
       }
     ],
@@ -12201,6 +12459,13 @@
             "a": "Consider confidentiality, urgency and who might hear it. For sensitive everyday news, a neutral callback request may be more appropriate than detailed voicemail. Urgent or formal matters may require another procedure or channel. Do not delay a serious notification merely to follow a preferred communication style."
           }
         ]
+      },
+      {
+        "kind": "paragraphs",
+        "heading": "Hold the line you chose, not the call itself",
+        "paragraphs": [
+          "[ADHD Life Companion](/shop/alongside) is an optional place to keep the boundary and next steps you prepared, so the call does not depend on remembering them live. It does not script the call or guarantee how the other person responds. The preparation above works from a note card without a purchase."
+        ]
       }
     ],
     "sources": []
@@ -12511,6 +12776,7 @@
     "dek": "Record the condition before unpacking, send a clear inventory, and keep proof of delivery alongside your lease, deposit and key records.",
     "metaDescription": "Document a rental move-in with room-by-room photos, a condition inventory, written repair requests, deposit records and proof of delivery.",
     "updatedAt": "2026-11-17",
+    "scopeCountry": "us",
     "body": [
       {
         "kind": "paragraphs",
@@ -12646,6 +12912,13 @@
             "a": "Describe the condition first. Whether it counts as ordinary wear or chargeable damage depends on local rules and circumstances, including the item's condition and use. An exact observation and a linked photo are more useful than a confident legal label that may be wrong."
           }
         ]
+      },
+      {
+        "kind": "paragraphs",
+        "heading": "Keep the move-in record where you can find it",
+        "paragraphs": [
+          "[Home Base](/shop/home-management-companion) is an optional place to record the condition and inventory you documented at move-in. It does not send the inventory to your landlord or store photos itself. The documentation steps above work with a phone camera and a plain email."
+        ]
       }
     ],
     "sources": [
@@ -12668,6 +12941,7 @@
     "dek": "Make a provisional money map, mark what you do not know, and verify the next obligations before treating a balance as money you can spend.",
     "metaDescription": "Organize scattered finances with six headings, clear uncertainty markers and a verification step before making spending or debt decisions.",
     "updatedAt": "2026-11-17",
+    "scopeCountry": "us",
     "body": [
       {
         "kind": "paragraphs",
@@ -12843,6 +13117,7 @@
     "dek": "Open a manageable portion, check dates and consequences, and sort papers into action, reference, clarification and disposal without losing urgent notices.",
     "metaDescription": "Start a paperwork pile with a short safety scan, four sorting destinations and a next-action record, without shredding uncertain or important documents.",
     "updatedAt": "2026-11-17",
+    "scopeCountry": "us",
     "body": [
       {
         "kind": "paragraphs",
@@ -12973,6 +13248,13 @@
             "q": "Can I shred old statements immediately?",
             "a": "Only after checking whether you still need them for tax, legal, insurance, dispute or practical reasons. Age alone is not enough. Preserve uncertain documents while you verify retention requirements, then use appropriate secure disposal for sensitive papers that are no longer needed."
           }
+        ]
+      },
+      {
+        "kind": "paragraphs",
+        "heading": "When the pile itself is the stuck point",
+        "paragraphs": [
+          "[ADHD Life Companion](/shop/alongside) is an optional place to hold what you are trying to get done with this pile and walk through it one step at a time. It does not file your paperwork or know what any document means; sorting the pile into action, reference and discard is still yours to do. The free sorting record above works without buying anything."
         ]
       }
     ],
@@ -13141,6 +13423,13 @@
             "q": "What if I need to borrow from a fund?",
             "a": "Record the withdrawal and recalculate the remaining contribution before the original bill date. Do not leave the old target marked fully funded. If the new contribution is unaffordable, decide explicitly whether to reduce a discretionary target or seek an arrangement for an unavoidable bill."
           }
+        ]
+      },
+      {
+        "kind": "paragraphs",
+        "heading": "Track contributions against a known date",
+        "paragraphs": [
+          "[Personal Finance Companion](/shop/personal-finance-companion) can hold what is already saved and the contributions left before a known bill is due. It does not move money between accounts for you; that step stays with your bank. The reserve approach above works in a labeled savings account."
         ]
       }
     ],
@@ -13443,6 +13732,13 @@
             "a": "Yes. The format matters less than accurate dates, a named action owner and reminders outside a page you may not open. Paper can hold the record; a calendar can carry the action date. Update both when the service changes its price or terms."
           }
         ]
+      },
+      {
+        "kind": "paragraphs",
+        "heading": "One entry per charge, kept current",
+        "paragraphs": [
+          "[Personal Finance Companion](/shop/personal-finance-companion) can hold the renewal dates and cancellation cutoffs this tracker calls for. It recomputes from what you enter rather than reading your statements for you. The columns above work in a plain spreadsheet."
+        ]
       }
     ],
     "sources": [
@@ -13587,6 +13883,13 @@
             "q": "What if I receive another vague update?",
             "a": "Ask what concrete step remains, who owns it and when a response is expected. A date is useful planning information, not a guarantee. If the process is failing, check the official escalation route and keep the message history rather than endlessly rewriting the same request."
           }
+        ]
+      },
+      {
+        "kind": "paragraphs",
+        "heading": "A place for the email that is still a draft",
+        "paragraphs": [
+          "[ADHD Life Companion](/shop/alongside) can hold the request and the follow-up date you chose, so a stalled email stays visible instead of forgotten. It does not write or send anything for you. The draft-then-follow-up approach above works in any inbox without buying anything."
         ]
       }
     ],
@@ -13741,6 +14044,13 @@
             "a": "Record actual durations and what they include, then use a range for the next similar task. Add uncertainty where waiting, travel or access varies. Avoid treating a universal multiplier as a guarantee; the purpose is a more realistic plan and a clear response when it changes."
           }
         ]
+      },
+      {
+        "kind": "paragraphs",
+        "heading": "Hold the leave time, not just the deadline",
+        "paragraphs": [
+          "[ADHD Life Companion](/shop/alongside) is an optional place to record the real deadline and the cue you chose to test, so the leave-time math does not have to be redone each time. It does not calculate travel time or send the reminder itself. The method above works with a plain alarm."
+        ]
       }
     ],
     "sources": [
@@ -13888,6 +14198,13 @@
             "q": "When should I replace the planner?",
             "a": "Replace it when a specific important requirement cannot be met reasonably, such as accessibility, portability or secure shared use. First test a small change if practical. There is no obligation to keep an unsuitable tool, but identify the unmet requirement so the replacement is chosen for a reason."
           }
+        ]
+      },
+      {
+        "kind": "paragraphs",
+        "heading": "Rescue what still matters, skip the rest",
+        "paragraphs": [
+          "[ADHD Life Companion](/shop/alongside) is built to resurface what you are trying to get done rather than demand a caught-up system before it helps again. It is not a planner with more pages, and it will not rebuild old entries for you. The smaller commitment tested above works in any format."
         ]
       }
     ],
@@ -14048,6 +14365,13 @@
             "q": "Is autopay enough on its own?",
             "a": "No. It can reduce manual steps but still depends on correct details, authorization, sufficient funds and the amount selected. Read notices and check that payments post. If income is unpredictable or the account is often short, review the setup rather than assuming automation removes the risk."
           }
+        ]
+      },
+      {
+        "kind": "paragraphs",
+        "heading": "The reminder belongs with the task, not the amount",
+        "paragraphs": [
+          "[ADHD Life Companion](/shop/alongside) can hold the action a bill needs and bring it back at the right moment. It holds no amount, account number or balance by design; that detail belongs to Personal Finance Companion. The connection you build above works with any reminder system."
         ]
       }
     ],
@@ -14221,6 +14545,13 @@
             "a": "Possibly, if essential equipment, climate and a dependable laundry plan fit the actual allowance. The clothing rotation may be similar to a shorter trip, but washing and drying become important dependencies. Do not treat carry-on travel as a requirement when checked baggage is the practical choice."
           }
         ]
+      },
+      {
+        "kind": "paragraphs",
+        "heading": "Track the limit, not just the list",
+        "paragraphs": [
+          "[Travel Companion](/shop/travel-companion) is an optional place to record your fare's bag allowance alongside the list you packed to it. It does not weigh or measure your bag for you. The rotation above works from a printed list without buying anything."
+        ]
       }
     ],
     "sources": [
@@ -14243,6 +14574,7 @@
     "dek": "Check whether your homeschool route requires days, hours or both, then build a record that shows the right measure for each child.",
     "metaDescription": "Check whether your homeschool route requires days, hours or both, then build a record that shows the right measure for each child.",
     "updatedAt": "2026-11-17",
+    "scopeCountry": "us",
     "body": [
       {
         "kind": "paragraphs",
@@ -14389,6 +14721,13 @@
             "a": "Keep the records you do have, such as dated work, calendars and class confirmations. Label reconstructed entries and uncertainty rather than inventing precision. Ask the responsible authority or a qualified adviser how to address a missing required record, especially if a filing or review deadline is close."
           }
         ]
+      },
+      {
+        "kind": "paragraphs",
+        "heading": "Build the record the count actually needs",
+        "paragraphs": [
+          "[Homeschooling Companion](/shop/homeschooling-companion) can hold the days or hours this guide shows you how to track. It does not decide which measure your state requires; that check stays with the official source. The record above works in a plain spreadsheet."
+        ]
       }
     ],
     "sources": [
@@ -14411,6 +14750,7 @@
     "dek": "Choose a willing health care proxy, discuss your priorities and complete the right paperwork without confusing the role with an emergency contact.",
     "metaDescription": "Choose a willing health care proxy, discuss your priorities and complete the right paperwork without confusing the role with an emergency contact.",
     "updatedAt": "2026-11-17",
+    "scopeCountry": "us",
     "body": [
       {
         "kind": "paragraphs",
@@ -14461,7 +14801,7 @@
       {
         "kind": "list",
         "heading": "Choose, document and communicate",
-        "checkable": true,
+        "checkable": false,
         "items": [
           "List one or two possible people and consider their willingness, communication, reliability and ability to follow your preferences.",
           "Ask directly before naming anyone. Give them time to decline or ask questions; agreement to receive a call is not agreement to be a proxy.",
@@ -14565,6 +14905,13 @@
             "q": "What if I cannot choose between two people?",
             "a": "Consider who can best represent your wishes and handle the practical work, then ask about an alternate arrangement permitted by your form. Do not assume naming multiple equal decision makers makes disagreements easier. Discuss any uncertainty with a qualified adviser before creating documents that might conflict."
           }
+        ]
+      },
+      {
+        "kind": "paragraphs",
+        "heading": "Record the choice, not the legal form",
+        "paragraphs": [
+          "[Personal Life Affairs Companion](/shop/personal-life-affairs-companion) is an optional place to record who you named and where the signed paperwork is kept. It does not draft or witness the health care proxy form itself; that step still needs your state's own process. The checklist above works without a purchase."
         ]
       }
     ],
@@ -14742,6 +15089,13 @@
             "a": "There is no universal answer. Some destinations or circumstances require particular cover, and individual policies differ substantially. Verify entry requirements and ask your existing insurer what applies abroad. If buying additional cover, read the actual terms rather than assuming medical assistance, cancellation and evacuation are all included."
           }
         ]
+      },
+      {
+        "kind": "paragraphs",
+        "heading": "Confirm requirements, then record what you checked",
+        "paragraphs": [
+          "[Travel Companion](/shop/travel-companion) can hold which entry and transit requirements you confirmed before booking. It does not look up visa or entry rules for you; that check stays with the official source. The checklist above works on paper without a purchase."
+        ]
       }
     ],
     "sources": [
@@ -14758,11 +15112,12 @@
     "dek": "Find the correct homeschool notice, recipient and filing order, then keep proof of submission without confusing notice with school withdrawal.",
     "metaDescription": "Find the correct homeschool notice, recipient and filing order, then keep proof of submission without confusing notice with school withdrawal.",
     "updatedAt": "2026-11-17",
+    "scopeCountry": "us",
     "body": [
       {
         "kind": "paragraphs",
         "paragraphs": [
-          "A homeschool notice of intent tells the responsible authority that you are establishing a home education program. Whether you need one, where it goes, when to send it and whether acknowledgement must come before withdrawal depend on your state and your chosen legal route. Do not copy another family's filing sequence without checking those details.",
+          "A homeschool notice of intent tells the responsible authority that you are establishing a home education program. Some states call the same filing a letter of intent or a declaration of intent to homeschool, different names for one document. Whether you need one, where it goes, when to send it and whether acknowledgement must come before withdrawal depend on your state and your chosen legal route. Do not copy another family's filing sequence without checking those details.",
           "The difficult moment is often not filling in the form. It is deciding whether you can stop sending your child to their current school on Monday. This US guide helps you identify the correct paperwork and ask a precise question about that transition. It does not establish your eligibility or replace state-specific legal advice."
         ]
       },
@@ -14884,6 +15239,13 @@
             "q": "Do I submit a notice every year?",
             "a": "There is no national annual filing rule. Confirm whether your arrangement requires one initial notice, annual renewal, or updates after particular changes. Record the trigger as well as the date. A continuing registration does not necessarily remove separate testing, evaluation, instruction or record-keeping duties."
           }
+        ]
+      },
+      {
+        "kind": "paragraphs",
+        "heading": "Track the filing, not the legal route",
+        "paragraphs": [
+          "[Homeschooling Companion](/shop/homeschooling-companion) is an optional place to record when the notice was filed and where the acknowledgement is kept. It is not legal advice and does not determine which filing your state requires. The verification steps above work without buying anything."
         ]
       }
     ],
@@ -15030,6 +15392,13 @@
             "q": "Do I need pages and minutes?",
             "a": "Add them if the applicable rules, evaluator, course or your own useful purpose calls for them. Otherwise they can be optional. Do not assume every reviewer wants the same format, and do not reconstruct precise minutes from memory merely to make a reading log look more complete."
           }
+        ]
+      },
+      {
+        "kind": "paragraphs",
+        "heading": "Record titles and dates, nothing more",
+        "paragraphs": [
+          "[Homeschooling Companion](/shop/homeschooling-companion) can hold the books, dates and format notes this log calls for. It does not recommend titles or assess reading level. The log above works in a plain notebook without buying anything."
         ]
       }
     ],
@@ -15178,6 +15547,13 @@
             "q": "What if one child has far fewer entries?",
             "a": "Look first at what happened, what is required and whether entries were missed. Different ages, programs or activities can produce different records. Do not add invented entries to equalize the totals. If the difference reflects a learning or instruction concern, address that concern separately from the filing system."
           }
+        ]
+      },
+      {
+        "kind": "paragraphs",
+        "heading": "Keep shared lessons separate from each child's record",
+        "paragraphs": [
+          "[Homeschooling Companion](/shop/homeschooling-companion) is built for exactly this: shared lessons stay easy to enter while each child's participation and progress stay separate. It supplies no lesson content and runs no test. The structure above works on paper for a smaller household."
         ]
       }
     ],
@@ -15334,6 +15710,13 @@
             "a": "Take that statement seriously and ask what happens during the work. It could involve difficulty, workload, access, interest or the interaction around teaching. Do not assume a hidden prerequisite is always the cause. Keep the conversation specific and seek additional support if distress persists."
           }
         ]
+      },
+      {
+        "kind": "paragraphs",
+        "heading": "Record the change and what happened next",
+        "paragraphs": [
+          "[Homeschooling Companion](/shop/homeschooling-companion) is an optional place to record the one change you tried and whether it helped. It does not diagnose the difficulty or supply replacement lesson content. The proportionate-change approach above works on paper without a purchase."
+        ]
       }
     ],
     "sources": [
@@ -15405,7 +15788,7 @@
       {
         "kind": "list",
         "heading": "Prepare the two-week handoff",
-        "checkable": true,
+        "checkable": false,
         "items": [
           "List bills falling within the likely absence and a little beyond it. Record provider, date, approximate or confirmed amount, and payment method.",
           "Identify the payment account without putting full numbers or credentials on a widely shared sheet. Check scheduled transfers and available funds.",
@@ -15501,6 +15884,13 @@
             "q": "What if nobody has financial authority yet?",
             "a": "For a planned stay, ask the bank and a qualified adviser about appropriate arrangements now. For an existing incapacity, gather current documents and seek help promptly, including from the hospital support team where available. Do not try to create authority by backdating forms or using the patient's signature or credentials."
           }
+        ]
+      },
+      {
+        "kind": "paragraphs",
+        "heading": "Show one next step, not every task at once",
+        "paragraphs": [
+          "[Personal Life Affairs Companion](/shop/personal-life-affairs-companion) asks a short set of questions and shows the one thing most worth doing next, rather than the full list at once. It does not pay a bill or access an account for the person covering for you. The plan above works without buying anything."
         ]
       }
     ],
@@ -15662,6 +16052,13 @@
             "q": "What if the school records have not arrived?",
             "a": "Keep the request receipt and follow up through the school's published process. Ask which records are available and who handles the request rather than inventing a national response deadline. Work from the information you have while avoiding guesses about past achievement or support arrangements."
           }
+        ]
+      },
+      {
+        "kind": "paragraphs",
+        "heading": "Track the paperwork, not the curriculum",
+        "paragraphs": [
+          "[Homeschooling Companion](/shop/homeschooling-companion) is an optional place to track which filings and first-month records are done. It is not a curriculum or a compliance guarantee, and it supplies no lesson content. The paperwork order above works on paper without buying anything."
         ]
       }
     ],
@@ -16164,6 +16561,13 @@
             "a": "Use the manufacturer's current process and consider the exposure. Locking or marking lost, erasing and removing account protection are different actions. For Apple devices, do not remove the device from Find My just because it is missing or erased. Secure exposed accounts and contact the carrier as appropriate."
           }
         ]
+      },
+      {
+        "kind": "paragraphs",
+        "heading": "Record where the backup details are kept",
+        "paragraphs": [
+          "[Travel Companion](/shop/travel-companion) is an optional place to record that a document exists and where backup details are kept, so they are findable if something goes missing. It does not replace a passport or contact an embassy for you. The readiness steps above work without buying anything."
+        ]
       }
     ],
     "sources": [
@@ -16338,6 +16742,13 @@
             "a": "Contact the relevant issuing authority or travel provider promptly and explain the departure date. Ask what lawful options remain and what evidence is accepted. Do not assume a photograph or an airport identity process replaces every document. If travel is not possible, check affected bookings and change terms."
           }
         ]
+      },
+      {
+        "kind": "paragraphs",
+        "heading": "One last record before you leave",
+        "paragraphs": [
+          "[Travel Companion](/shop/travel-companion) can hold the final checks and current departure details this list calls for. It does not send push notifications about changes; checking the airline's own source stays your job. The checklist above works on paper without a purchase."
+        ]
       }
     ],
     "sources": [
@@ -16507,6 +16918,13 @@
             "q": "Do I need permission from the other parent to travel?",
             "a": "The answer depends on destination entry and exit rules, custody arrangements and the family's circumstances. Check official requirements for the actual route and obtain legal advice where needed. A generic permission note or the fact that one parent has a passport does not settle every situation."
           }
+        ]
+      },
+      {
+        "kind": "paragraphs",
+        "heading": "Record what each child needs, confirmed",
+        "paragraphs": [
+          "[Travel Companion](/shop/travel-companion) can hold the supplies and documents confirmed for each child traveling. It does not book the transport equipment or store the documents themselves. The gap-focused plan above works on paper without a purchase."
         ]
       }
     ],
@@ -16691,6 +17109,13 @@
             "q": "What belongs on the morning packing list?",
             "a": "Anything still being used: medicines, glasses, phone, charger, daily toiletries and a document taken out for check-in. Write the item and its current location. A short explicit list is more reliable than promising to remember the few things you could not pack last night."
           }
+        ]
+      },
+      {
+        "kind": "paragraphs",
+        "heading": "Assign shared items, not just pack a list",
+        "paragraphs": [
+          "[Travel Companion](/shop/travel-companion) can hold the packing list and who is carrying each shared item. It does not check it off for you or track what it cost. The weather-based list above works on paper without a purchase."
         ]
       }
     ],
@@ -16877,6 +17302,13 @@
             "a": "Start with visible safety concerns, tires and the vehicle's maintenance information, then check documents and assistance arrangements. Use the owner's manual and vehicle placard rather than generic pressure or interval numbers. A warning light, leak or handling concern needs appropriate assessment before relying on a departure checklist."
           }
         ]
+      },
+      {
+        "kind": "paragraphs",
+        "heading": "Record the plan, not live conditions",
+        "paragraphs": [
+          "[Travel Companion](/shop/travel-companion) is an optional place to record your driving blocks, stops and the car check you completed. It does not track fuel, charging or traffic live. The planning steps above work with a paper map without buying anything."
+        ]
       }
     ],
     "sources": [
@@ -16899,6 +17331,7 @@
     "dek": "Check the box agreement, state access process and required authority before assuming that a key, joint rental or a will guarantees entry.",
     "metaDescription": "Check the box agreement, state access process and required authority before assuming that a key, joint rental or a will guarantees entry.",
     "updatedAt": "2026-11-17",
+    "scopeCountry": "us",
     "body": [
       {
         "kind": "paragraphs",
@@ -16949,7 +17382,7 @@
       {
         "kind": "list",
         "heading": "Create an access record now",
-        "checkable": true,
+        "checkable": false,
         "items": [
           "Identify the institution and exact branch, or the type and location of a home safe. Keep detailed identifiers in a protected record where appropriate.",
           "Review who is actually named on the current box agreement and what their status means. Do not substitute a family understanding for the agreement.",
@@ -16963,7 +17396,7 @@
       {
         "kind": "paragraphs",
         "paragraphs": [
-          "[Open the free safe, box and spare-key access record](/guides/print/library/safe-deposit-box-and-spare-keys-who-can-open-it.html). Use the worksheet without an account or purchase."
+          "[Open the free safe-deposit box and spare-key access record](/guides/print/library/safe-deposit-box-and-spare-keys-who-can-open-it.html). Use the worksheet without an account or purchase."
         ]
       },
       {
@@ -17045,6 +17478,13 @@
             "q": "Where should I record the safe combination?",
             "a": "Use a protected arrangement appropriate to the people who need access, not an ordinary binder listing the safe's location. The general index can name the authorized person and approved way to obtain instructions. Test whether that person can reach the arrangement without relying entirely on your locked device."
           }
+        ]
+      },
+      {
+        "kind": "paragraphs",
+        "heading": "Record the access plan, not the key itself",
+        "paragraphs": [
+          "[Personal Life Affairs Companion](/shop/personal-life-affairs-companion) is an optional place to record who can act, which institution holds the box, and where keys are kept. It is deliberately not a vault, so it never stores the key, a combination or a password. The access record above works in a locked drawer instead."
         ]
       }
     ],
@@ -17233,6 +17673,13 @@
             "a": "Keep the accepted submission and the institution's confirmation of the effective change. A saved draft, mailed envelope or pending request does not necessarily prove the record changed. Update your own handoff page only with the actual status, and follow up if the provider's confirmation is missing or inconsistent."
           }
         ]
+      },
+      {
+        "kind": "paragraphs",
+        "heading": "Track what still needs updating",
+        "paragraphs": [
+          "[Personal Life Affairs Companion](/shop/personal-life-affairs-companion) can hold which accounts and documents you have updated after a life change and which remain. It does not submit the updates for you or store the new paperwork itself. The deadline-first order above works without a purchase."
+        ]
       }
     ],
     "sources": [
@@ -17255,6 +17702,7 @@
     "dek": "Arrange an immediate pet caregiver, a longer-term backup and usable care instructions, then check how authority and funding would work.",
     "metaDescription": "Arrange an immediate pet caregiver, a longer-term backup and usable care instructions, then check how authority and funding would work.",
     "updatedAt": "2026-11-17",
+    "scopeCountry": "us",
     "body": [
       {
         "kind": "paragraphs",
@@ -17266,7 +17714,7 @@
       {
         "kind": "list",
         "heading": "Make the first-day plan usable",
-        "checkable": true,
+        "checkable": false,
         "items": [
           "Ask an immediate caregiver and a backup, explaining the animals, location and likely tasks rather than simply asking for a general favor.",
           "Arrange permitted home access and test it. Identify where carriers, leads, food and current veterinary instructions are kept.",
@@ -17404,6 +17852,13 @@
             "q": "Should I create a pet trust?",
             "a": "That depends on the needs, costs, people involved and the law that applies. A trust may support funding and enforceable instructions, but it needs proper design and implementation. Start by identifying care and cost requirements, then ask a qualified adviser whether a trust or another arrangement serves them."
           }
+        ]
+      },
+      {
+        "kind": "paragraphs",
+        "heading": "Record who already said yes",
+        "paragraphs": [
+          "[Personal Life Affairs Companion](/shop/personal-life-affairs-companion) can hold the caregiver you arranged, the backup, and where care instructions are kept. It does not fund the care itself or replace a will's provisions for a pet. The arrangement above works on paper without buying anything."
         ]
       }
     ],
@@ -17612,7 +18067,7 @@
       {
         "kind": "list",
         "heading": "Start with a manageable notification pass",
-        "checkable": true,
+        "checkable": false,
         "items": [
           "Tell close family and the people responsible for children, dependents, animals or an unattended home. Delegate personal messages if helpful.",
           "Ask the funeral director whether the death has been reported to Social Security, if relevant. Record who is reporting and what remains to be done.",
@@ -17763,6 +18218,13 @@
             "a": "Build the institution list and ask what each one currently requires before choosing a number. Some need certified copies and others may use different verification. Note whether documents are returned. A fixed national recommendation can cause unnecessary cost or still leave you short for your actual circumstances."
           }
         ]
+      },
+      {
+        "kind": "paragraphs",
+        "heading": "Track who still needs telling",
+        "paragraphs": [
+          "[Personal Life Affairs Companion](/shop/personal-life-affairs-companion) is an optional place to record which notifications are sent and which documents each one needs. It does not contact anyone on your behalf or store account numbers. The priority order above works from a printed list."
+        ]
       }
     ],
     "sources": [
@@ -17798,7 +18260,7 @@
       {
         "kind": "list",
         "heading": "Work through the guardian decision",
-        "checkable": true,
+        "checkable": false,
         "items": [
           "Consider the child's existing relationships, stability, cultural and language connections, support needs and the effect of moving.",
           "Assess the proposed caregiver's willingness and practical capacity, not just their finances or family position. Ask how the change affects their household.",
@@ -17936,6 +18398,13 @@
             "q": "What if nobody can agree to take the children?",
             "a": "Do not invent a settled choice. Identify trusted adults, discuss realistic support and ask a qualified adviser about available planning options. Make an immediate-care plan where possible and record the unresolved long-term question. If children lack safe care now, address that urgent situation through appropriate local services."
           }
+        ]
+      },
+      {
+        "kind": "paragraphs",
+        "heading": "Record the plan, not the court filing",
+        "paragraphs": [
+          "[Personal Life Affairs Companion](/shop/personal-life-affairs-companion) can hold who you asked, what they agreed to, and where the will naming them is kept. It is not legal advice and does not file the guardianship nomination for you. The checklist above works on paper without buying anything."
         ]
       }
     ],
@@ -18138,7 +18607,7 @@
     ]
   },
   "car-maintenance-by-mileage-start-with-your-manual": {
-    "title": "Car maintenance by mileage: read your own schedule",
+    "title": "Car maintenance schedule by mileage: read your manual",
     "dek": "Find your vehicle-specific maintenance schedule and separate mileage, time, inspections and severe-use rules without relying on a generic chart.",
     "metaDescription": "Find your vehicle-specific maintenance schedule and separate mileage, time, inspections and severe-use rules without relying on a generic chart.",
     "updatedAt": "2026-11-17",
@@ -18167,7 +18636,7 @@
       {
         "kind": "paragraphs",
         "paragraphs": [
-          "[Open the free from the manufacturer maintenance schedule](/guides/print/library/car-maintenance-by-mileage-start-with-your-manual.html). Use the worksheet without an account or purchase."
+          "[Open the free manufacturer maintenance schedule worksheet](/guides/print/library/car-maintenance-by-mileage-start-with-your-manual.html). Use the worksheet without an account or purchase."
         ]
       },
       {
@@ -18596,6 +19065,13 @@
             "a": "Check the official account or contact the issuer through a known route. Confirm the address and current requirements rather than waiting indefinitely. A missing reminder should trigger a status check, not an assumption that no renewal is due."
           }
         ]
+      },
+      {
+        "kind": "paragraphs",
+        "heading": "Give each renewal its own action date",
+        "paragraphs": [
+          "[Vehicle Maintenance Companion](/shop/vehicle-maintenance-companion) can organize the registration, insurance and inspection dates this guide tracks separately. It has no connection to any DMV or insurer system; every date comes from what you enter. The organizer above works in a plain spreadsheet."
+        ]
       }
     ],
     "sources": [
@@ -18968,6 +19444,13 @@
             "a": "That can be practical in some homes if agreed helpers know to look there, but it also exposes information to visitors. Choose a place that balances access and privacy for your situation. A hidden sheet nobody knows about and a public full medical history are both poor defaults."
           }
         ]
+      },
+      {
+        "kind": "paragraphs",
+        "heading": "Keep it current, not just complete",
+        "paragraphs": [
+          "[Family Health Binder](/shop/family-health-binder) can hold the contacts and key facts this sheet calls for, with the date you last checked them. It keeps only manually entered facts and has no connection to any provider or portal. The sheet above works on paper without a purchase."
+        ]
       }
     ],
     "sources": [
@@ -19128,6 +19611,13 @@
             "a": "Find the manufacturer documents for the correct model year and powertrain, and record the history as unknown where appropriate. Begin a dated log now. Seek vehicle-specific assessment rather than filling gaps with generic replacement intervals or assuming the seller recently serviced everything."
           }
         ]
+      },
+      {
+        "kind": "paragraphs",
+        "heading": "Track the paperwork before the first week",
+        "paragraphs": [
+          "[Vehicle Maintenance Companion](/shop/vehicle-maintenance-companion) is an optional place to record the cover, registration and maintenance intervals a new driver needs confirmed. It does not confirm legal driving status for you. The week-one checklist above works on paper without a purchase."
+        ]
       }
     ],
     "sources": [
@@ -19286,6 +19776,13 @@
             "q": "How often should I check the glove box?",
             "a": "Do it whenever a replacement document arrives, a vehicle changes hands or the regular driver changes. An occasional clear-out can catch other clutter, but the important trigger is a changed fact. Remove obsolete roadside copies without discarding records you need to retain elsewhere."
           }
+        ]
+      },
+      {
+        "kind": "paragraphs",
+        "heading": "Know what belongs there without guessing",
+        "paragraphs": [
+          "[Vehicle Maintenance Companion](/shop/vehicle-maintenance-companion) can hold a record of your current documents separately from what you keep in the car. It does not store the documents themselves. The checklist above works without buying anything."
         ]
       }
     ],
@@ -19846,6 +20343,13 @@
             "a": "Write it down and use the clinic's agreed contact route. Include the visit date and enough context to identify the issue. If you are uncertain whether it can wait, ask the appropriate clinical advice service; do not assume ordinary messaging is suitable for an emergency."
           }
         ]
+      },
+      {
+        "kind": "paragraphs",
+        "heading": "Keep the list somewhere you will actually open it",
+        "paragraphs": [
+          "[Family Health Binder](/shop/family-health-binder) can hold the questions you wrote, in order, for the next visit. It keeps only what you type in and has no connection to any clinical system. The ordering method above works on paper without buying anything."
+        ]
       }
     ],
     "sources": [
@@ -20192,6 +20696,13 @@
             "a": "Decide what originals need to travel with the car and retain copies for yourself. During enquiries, a redacted copy is usually more practical than giving strangers your only evidence. Warranty documents may have their own transfer requirements, so check the actual terms before promising coverage."
           }
         ]
+      },
+      {
+        "kind": "paragraphs",
+        "heading": "Organize the history you can actually show",
+        "paragraphs": [
+          "[Vehicle Maintenance Companion](/shop/vehicle-maintenance-companion) can organize the intervals and history you enter into a buyer-ready summary. It has no connection to any dealer or manufacturer system and cannot verify a record it was not given. The summary above works from your own receipts without buying anything."
+        ]
       }
     ],
     "sources": [
@@ -20218,7 +20729,7 @@
   "symptom-notes-for-a-doctor-visit": {
     "title": "Symptom notes for a doctor visit: what to record",
     "dek": "Record what happened, when it began, how long it lasted and its effect on daily life. Keep observations distinct from guesses and seek help when needed.",
-    "metaDescription": "Record what happened, when it began, how long it lasted and its effect on daily life. Keep observations distinct from guesses and seek help when needed.",
+    "metaDescription": "Build a simple symptom timeline: what happened, when it began, how long it lasted, and its effect on daily life, kept distinct from guesses.",
     "updatedAt": "2026-11-17",
     "body": [
       {
@@ -20378,6 +20889,13 @@
             "q": "What if I cannot remember the exact start date?",
             "a": "Write the best honest range and label it approximate. Distinguish first noticed onset from the date of your first entry. Do not replace uncertainty with a precise date just because a form has a date box; explain the limit when you speak to the clinic."
           }
+        ]
+      },
+      {
+        "kind": "paragraphs",
+        "heading": "Record the pattern, not just the moment",
+        "paragraphs": [
+          "[Family Health Binder](/shop/family-health-binder) is an optional place to keep dated symptom notes between visits. It sends no reminders and does not interpret what you record; that stays with your clinician. The note-taking approach above works in a plain notebook."
         ]
       }
     ],
@@ -20908,6 +21426,13 @@
             "a": "A print choice does not decide clinical relevance. Before sharing a selected page, consider its purpose and whether an omission would make it unsafe or misleading. Discuss uncertain relevance with the clinician or designated health professional instead of allowing a software filter to make that judgment."
           }
         ]
+      },
+      {
+        "kind": "paragraphs",
+        "heading": "Match what is recorded to who receives it",
+        "paragraphs": [
+          "[Family Health Binder](/shop/family-health-binder) is an optional place to keep separate, dated pages for each recipient's purpose. It does not decide what a school or sitter needs to know; that judgment stays yours. The matching approach above works with a plain printed page."
+        ]
       }
     ],
     "sources": [
@@ -21196,6 +21721,13 @@
             "a": "The tires, visibility and emergency-supply checks overlap, but the powertrain tasks do not. Hybrids retain engine maintenance; battery-electric vehicles have their own manufacturer requirements. Check charging, recovery and cold-operation guidance in the correct manual rather than borrowing another vehicle's procedure."
           }
         ]
+      },
+      {
+        "kind": "paragraphs",
+        "heading": "Record what was actually checked",
+        "paragraphs": [
+          "[Vehicle Maintenance Companion](/shop/vehicle-maintenance-companion) is an optional place to record the tires, fluids and roadside kit you checked before freezing weather. It does not inspect your car or know your local conditions. The checklist above works on paper without a purchase."
+        ]
       }
     ],
     "sources": [
@@ -21392,6 +21924,7 @@
     "dek": "Record the date, what was actually covered and one useful observation. Add evidence when it matters, and keep legal requirements separate.",
     "metaDescription": "Copy a simple homeschool record keeping template with dates, lesson references, observations and evidence. Includes a free printable record sheet.",
     "updatedAt": "2026-11-17",
+    "scopeCountry": "us",
     "body": [
       {
         "kind": "paragraphs",
@@ -21750,7 +22283,7 @@
       {
         "kind": "list",
         "heading": "Make a useful first page",
-        "checkable": true,
+        "checkable": false,
         "items": [
           "Choose who should know that the file exists, and ask whether they are willing to help. Do not assume a relative can or wants to take on every task.",
           "Write the location of your current legal documents and the professional or office to contact. Identify originals separately from copies.",
@@ -22649,6 +23182,13 @@
         "paragraphs": [
           "Keep the obligations. Give today's action a clearer place. The free reset sheet asks what matters, what can move, what is blocked and when the rest will be reviewed.",
           "[ADHD Life Companion](/shop/adhd-life-companion) is an optional product to consider if its approach suits you. It is not a diagnosis or treatment, and no product is required for the method here. Start with one useful action, not a promise to become a different kind of person."
+        ]
+      },
+      {
+        "kind": "paragraphs",
+        "heading": "A different job for the list",
+        "paragraphs": [
+          "[ADHD Life Companion](/shop/alongside) is built for exactly this gap: it holds what you are trying to get done and brings it back up at the right moment, instead of just growing longer. It is not a task app with more features, and it does not diagnose why a list stops working. A plain list and the separation above can do the same job without a purchase."
         ]
       }
     ],

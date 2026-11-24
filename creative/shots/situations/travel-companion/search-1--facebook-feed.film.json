@@ -20,7 +20,7 @@
   },
   "treatment": {
     "voice": "editorial",
-    "camera": "float",
+    "camera": "locked",
     "transitions": [
       "slideLeft",
       "whip",
@@ -28,9 +28,9 @@
     ],
     "motif": "timeline",
     "grounds": [
-      "light",
-      "light",
       "ink",
+      "light",
+      "light",
       "accent"
     ],
     "pace": 1.15
@@ -57,7 +57,7 @@
       "why": "Opens on the moment in the person's own words, as the listing records people searching it.",
       "from": 0,
       "dur": 146,
-      "ground": "light",
+      "ground": "ink",
       "transition": "cut",
       "sfx": [],
       "lines": [
@@ -79,7 +79,7 @@
       },
       "screen": {
         "src": "screens/travel-companion-trip.png",
-        "pose": "float",
+        "pose": "flat",
         "focus": {
           "at": 0.45,
           "y": 509,
@@ -135,7 +135,7 @@
       "why": "Ends on where to read the whole guide, with the product beneath it: the viewer leaves with the next step, not only a pitch.",
       "from": 477,
       "dur": 139,
-      "ground": "ink",
+      "ground": "light",
       "transition": "whip",
       "sfx": [
         {
@@ -169,7 +169,7 @@
     },
     {
       "topic": "Guide",
-      "decision": "\"Flight schedule changed? What else in your trip to check\" (draftpace.com/guides/flight-changed-what-else-is-affected)",
+      "decision": "\"Flight schedule changed? Check the rest of your trip\" (draftpace.com/guides/flight-changed-what-else-is-affected)",
       "because": "The guide that covers this moment: what to do comes from it, and the film ends on it."
     },
     {
@@ -185,12 +185,12 @@
     {
       "topic": "Structure",
       "decision": "In their words: The moment typed the way a person searches it, then what to do about it, then the product doing it.",
-      "because": "Best fit for a awareness film on Facebook feed video (platform fit 2, goal fit 3, already used on Facebook feed video ×1). Other candidates: What to do first (-3.7), Inside the tool (-8.5)."
+      "because": "Best fit for a awareness film on Facebook feed video (platform fit 2, goal fit 3, already used on Facebook feed video ×1). Other candidates: Inside the tool (-8.9), The moment (-10.4)."
     },
     {
       "topic": "Angle",
       "decision": "\"My flight changed and I don't know what else is affected\"",
-      "because": "A situation people search for, \"My flight changed and I don't know what else is affected\", with the steps from \"Flight schedule changed? What else in your trip to check\", and how Travel Companion helps."
+      "because": "A situation people search for, \"My flight changed and I don't know what else is affected\", with the steps from \"Flight schedule changed? Check the rest of your trip\", and how Travel Companion helps."
     },
     {
       "topic": "Transitions",
@@ -199,23 +199,13 @@
     },
     {
       "topic": "Camera",
-      "decision": "Camera \"float\"",
-      "because": "Camera \"float\": a gentle float that keeps a held frame alive without demanding attention."
+      "decision": "Camera \"locked\"",
+      "because": "Camera \"locked\": still and precise, so a slow, reading audience is never chasing the frame."
     },
     {
       "topic": "Colour",
-      "decision": "Grounds light → light → ink → accent",
-      "because": "Grounds light → light → ink → accent: a cool accent, so a darker ground is used for contrast at a turn."
-    },
-    {
-      "topic": "Edit",
-      "decision": "Trimmed \"what-to-do\" to 2 items",
-      "because": "Fewer items read properly beats more items skimmed."
-    },
-    {
-      "topic": "Edit",
-      "decision": "Cut \"what-to-do\"",
-      "because": "It would run past 30s, the most Facebook feed video holds attention for."
+      "decision": "Grounds ink → light → light → accent",
+      "because": "Grounds ink → light → light → accent: a cool accent, so a darker ground is used for contrast at a turn."
     },
     {
       "topic": "Sound",

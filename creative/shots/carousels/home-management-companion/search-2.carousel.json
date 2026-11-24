@@ -14,7 +14,7 @@
         "house"
       ],
       "promise": {
-        "text": "New house checklist: what to do in the first week",
+        "text": "New house checklist: the first week after closing",
         "source": "guide:first-week-after-buying-a-house/title"
       },
       "art": {
@@ -31,41 +31,33 @@
       },
       "lines": [
         {
-          "text": "Shutoffs, meter readings, alarms, appliance labels and the inspection report: what to capture in the first week, while it is all in front of you.",
+          "text": "Secure access, check alarms and utilities, and turn the inspection report into a short first-week record without tackling every repair.",
           "source": "guide:first-week-after-buying-a-house/dek#0"
         }
       ],
       "art": {
-        "motif": "bulb",
-        "why": "the slide names \"appliance\", \"label\""
+        "motif": "wrench",
+        "why": "the slide names \"repair\", \"inspection\""
       }
     },
     {
       "kind": "checklist",
       "eyebrow": {
-        "text": "Day one, before anything else",
-        "source": "guide:first-week-after-buying-a-house/body[2].heading"
+        "text": "Before the first night",
+        "source": "guide:first-week-after-buying-a-house/body[1].heading"
       },
       "items": [
         {
-          "text": "Photograph the gas, electric and water meters, with the date visible, before anyone touches them.",
-          "source": "guide:first-week-after-buying-a-house/body[2].items[0]#0"
+          "text": "Arrange exterior rekeying or replacement as appropriate, and change garage, alarm and smart-access permissions.",
+          "source": "guide:first-week-after-buying-a-house/body[1].items[1]#0"
         },
         {
-          "text": "Find the main water shutoff, the breaker panel, and the gas shutoff.",
-          "source": "guide:first-week-after-buying-a-house/body[2].items[1]#0"
+          "text": "Locate the water shutoff, electrical panel and utility emergency contacts without removing equipment covers.",
+          "source": "guide:first-week-after-buying-a-house/body[1].items[3]#0"
         },
         {
-          "text": "Write down which company supplies each utility, and the account number if there's paperwork for it.",
-          "source": "guide:first-week-after-buying-a-house/body[2].items[2]#0"
-        },
-        {
-          "text": "Find out whether the alarm system has a code, and who besides you has it.",
-          "source": "guide:first-week-after-buying-a-house/body[2].items[3]#0"
-        },
-        {
-          "text": "Test every smoke and carbon monoxide alarm, and note the replacement date printed on each unit.",
-          "source": "guide:first-week-after-buying-a-house/body[2].items[4]#0"
+          "text": "Keep an accessible escape route and identify urgent inspection findings before using unfamiliar systems.",
+          "source": "guide:first-week-after-buying-a-house/body[1].items[4]#0"
         }
       ],
       "ticks": true,
@@ -77,27 +69,39 @@
     {
       "kind": "checklist",
       "eyebrow": {
-        "text": "Week one, while it's still easy to ask",
-        "source": "guide:first-week-after-buying-a-house/body[4].heading"
+        "text": "Capture facts without making a full inventory",
+        "source": "guide:first-week-after-buying-a-house/body[8].heading"
       },
       "items": [
         {
-          "text": "Brand, model and serial for the furnace or boiler, water heater, and any appliance left behind.",
-          "source": "guide:first-week-after-buying-a-house/body[4].items[0]#0"
+          "text": "Photograph accessible rating plates for heating, cooling, hot water and major appliances.",
+          "source": "guide:first-week-after-buying-a-house/body[8].items[0]#0"
         },
         {
-          "text": "Warranty end dates for anything recent, especially appliances the previous owner left in the house.",
-          "source": "guide:first-week-after-buying-a-house/body[4].items[3]#0"
+          "text": "Mark installation dates confirmed, estimated or unknown; distinguish recollection from paperwork.",
+          "source": "guide:first-week-after-buying-a-house/body[8].items[1]#0"
         },
         {
-          "text": "Any technician the previous owner recommends.",
-          "source": "guide:first-week-after-buying-a-house/body[4].items[4]#0"
+          "text": "Collect manuals, warranties, service receipts and transfer instructions.",
+          "source": "guide:first-week-after-buying-a-house/body[8].items[2]#0"
+        },
+        {
+          "text": "Verify compatible filter specifications before buying supplies.",
+          "source": "guide:first-week-after-buying-a-house/body[8].items[3]#0"
+        },
+        {
+          "text": "Protect closing papers and the inspection report, with a separate backup.",
+          "source": "guide:first-week-after-buying-a-house/body[8].items[4]#0"
+        },
+        {
+          "text": "Ask focused seller questions, but use manufacturer or professional advice for technical decisions.",
+          "source": "guide:first-week-after-buying-a-house/body[8].items[5]#0"
         }
       ],
       "ticks": true,
       "art": {
         "motif": "bulb",
-        "why": "the slide names \"appliance\", \"furnace\", \"heater\", \"warranty\", \"serial\""
+        "why": "the slide names \"appliance\", \"filter\", \"manual\""
       }
     },
     {
@@ -126,7 +130,7 @@
         "source": "micro"
       },
       "title": {
-        "text": "New house checklist: what to do in the first week",
+        "text": "New house checklist: the first week after closing",
         "source": "guide:first-week-after-buying-a-house/title"
       },
       "url": {
@@ -149,13 +153,13 @@
   ],
   "notes": [
     "Cover: \"I just bought a house and have no idea what needs doing\" (searchedProblems[1].phrase), as people search it.",
-    "Checklist: 5 items from \"Day one, before anything else\".",
-    "Checklist: 3 items from \"Week one, while it's still easy to ask\".",
+    "Checklist: 3 items from \"Before the first night\".",
+    "Checklist: 6 items from \"Capture facts without making a full inventory\".",
     "Help: \"Tap what your home has across twelve areas and it tells you what each one needs and roughly when, before anything becomes a repair.\" (searchedProblems[1].answer), on screens/home-management-companion-workspace.png (\"A couple of things need a look\").",
     "Illustration on the cover: house with checklist, because the carousel's topic: the moment and its guide name \"house\".",
-    "Illustration on the answer: bulb, because the slide names \"appliance\", \"label\".",
+    "Illustration on the answer: wrench, because the slide names \"repair\", \"inspection\".",
     "Illustration on the checklist: water, because the slide names \"water\", \"shutoff\".",
-    "Illustration on the checklist: bulb, because the slide names \"appliance\", \"furnace\", \"heater\", \"warranty\", \"serial\".",
+    "Illustration on the checklist: bulb, because the slide names \"appliance\", \"filter\", \"manual\".",
     "Illustration on the close: house, because the carousel's topic: the moment and its guide name \"house\"."
   ]
 }

@@ -11,15 +11,15 @@
   "width": 1080,
   "height": 1920,
   "fps": 30,
-  "durationInFrames": 757,
-  "structure": "guideChecklist",
+  "durationInFrames": 540,
+  "structure": "guideQuestion",
   "angle": {
-    "text": "What to do when a parent dies: the first two weeks (US)",
-    "source": "guide:what-to-do-when-a-parent-dies/title"
+    "text": "How many death certificates should I order?",
+    "source": "guide:what-to-do-when-a-parent-dies/body[11].items[0].q"
   },
   "treatment": {
     "voice": "editorial",
-    "camera": "dolly",
+    "camera": "float",
     "transitions": [
       "pageTurn",
       "blurDissolve",
@@ -41,61 +41,45 @@
   },
   "scenes": [
     {
-      "id": "hook",
+      "id": "q",
       "kind": "title",
-      "variant": "editorial",
+      "variant": "quote",
       "copy": [
         {
-          "text": "What to do when a parent dies: the first two weeks (US)",
-          "source": "guide:what-to-do-when-a-parent-dies/title"
+          "text": "How many death certificates should I order?",
+          "source": "guide:what-to-do-when-a-parent-dies/body[11].items[0].q"
         }
       ],
-      "emphasis": [
-        "two"
-      ],
-      "why": "The hook is the guide's own title: the question it answers, as a person would put it.",
+      "why": "The question as people ask it; the guide carries it because people search it.",
       "from": 0,
-      "dur": 115,
+      "dur": 130,
       "ground": "light",
       "transition": "cut",
       "sfx": [],
       "lines": [
         [
-          "What to do when a",
-          "parent dies: the first",
-          "two weeks (US)"
+          "How many death",
+          "certificates should I",
+          "order?"
         ]
       ]
     },
     {
-      "id": "list",
-      "kind": "list",
-      "variant": "checklist",
+      "id": "a",
+      "kind": "title",
+      "variant": "label",
       "copy": [
         {
-          "text": "The bank or credit union.",
-          "source": "guide:what-to-do-when-a-parent-dies/body[4].items[1]#0"
-        },
-        {
-          "text": "The pension administrator or your parent's former employer.",
-          "source": "guide:what-to-do-when-a-parent-dies/body[4].items[2]#0"
-        },
-        {
-          "text": "The landlord or mortgage servicer.",
-          "source": "guide:what-to-do-when-a-parent-dies/body[4].items[5]#0"
-        },
-        {
-          "text": "Equifax, Experian and TransUnion, to report the death.",
-          "source": "guide:what-to-do-when-a-parent-dies/body[4].items[6]#0"
+          "text": "There is no universal number.",
+          "source": "guide:what-to-do-when-a-parent-dies/body[11].items[0].a#0"
         }
       ],
-      "eyebrow": {
-        "text": "Who to tell in the first two weeks",
-        "source": "guide:what-to-do-when-a-parent-dies/body[4].heading"
-      },
-      "why": "The guide's own checklist, the first sentence of each item, ticked in as it is read.",
-      "from": 103,
-      "dur": 406,
+      "emphasis": [
+        "universal"
+      ],
+      "why": "The guide's answer, its first sentence: the plain answer before any detail.",
+      "from": 118,
+      "dur": 113,
       "ground": "light",
       "transition": "pageTurn",
       "sfx": [
@@ -103,27 +87,13 @@
           "at": 0,
           "cue": "page",
           "volume": 0.32
-        },
-        {
-          "at": 10,
-          "cue": "pop",
-          "volume": 0.45
-        },
-        {
-          "at": 91,
-          "cue": "pop",
-          "volume": 0.45
-        },
-        {
-          "at": 172,
-          "cue": "pop",
-          "volume": 0.45
-        },
-        {
-          "at": 253,
-          "cue": "pop",
-          "volume": 0.45
         }
+      ],
+      "lines": [
+        [
+          "There is no universal",
+          "number."
+        ]
       ]
     },
     {
@@ -132,27 +102,26 @@
       "variant": "proof",
       "copy": [],
       "caption": {
-        "text": "Eight short questions about your situation.",
-        "source": "howItWorks[0]#0"
+        "text": "It asks rather than presenting a form.",
+        "source": "howItWorks[2]#0"
       },
       "screen": {
-        "src": "screens/personal-life-affairs-companion-workspace.png",
+        "src": "screens/personal-life-affairs-companion-printables.png",
         "pose": "tiltRight",
         "focus": {
           "at": 0.45,
-          "y": 82,
-          "h": 427,
-          "region": "question"
-        },
-        "scroll": []
+          "y": 264,
+          "h": 168,
+          "region": "book"
+        }
       },
-      "why": "The turn: the product the guide itself hands over to, named and shown on its real screen, captioned with its listing's line closest to what the guide teaches. Screen: \"Write down who should be called first.\" (One question at a time: write down who should be called first, with Start, Not relevant to me and Later.) chosen because it is the real screen closest to \"Eight short questions about your situation. What to do when a parent dies: the f\"; focus on \"Write down who should be called first.\".",
+      "why": "The turn: the product the guide itself hands over to, named and shown on its real screen, captioned with its listing's line closest to what the guide teaches. Screen: \"Nothing in it yet, and you can still print it.\" (My Affairs book: a printable handoff book that says where the paperwork is.) chosen because it is the real screen closest to \"It asks rather than presenting a form. What to do when a parent dies: first step\"; focus on \"My Affairs\".",
       "eyebrow": {
         "text": "Personal Life Affairs Companion",
         "source": "title"
       },
-      "from": 497,
-      "dur": 147,
+      "from": 219,
+      "dur": 208,
       "ground": "ink",
       "transition": "blurDissolve",
       "sfx": [
@@ -167,7 +136,7 @@
           "volume": 0.42
         },
         {
-          "at": 66,
+          "at": 94,
           "cue": "tap",
           "volume": 0.55
         }
@@ -192,7 +161,7 @@
         "source": "micro"
       },
       "why": "Ends on where to read the whole guide, with the product beneath it: the viewer leaves with the next step, not only a pitch.",
-      "from": 632,
+      "from": 415,
       "dur": 125,
       "ground": "accent",
       "transition": "blurDissolve",
@@ -223,8 +192,8 @@
     },
     {
       "topic": "Guide",
-      "decision": "\"What to do when a parent dies: the first two weeks (US)\" (draftpace.com/guides/what-to-do-when-a-parent-dies)",
-      "because": "Teaches from the guide first; Personal Life Affairs Companion is the product the guide hands over to. 3 lists and timelines, 5 questions to draw from."
+      "decision": "\"What to do when a parent dies: first steps (US)\" (draftpace.com/guides/what-to-do-when-a-parent-dies)",
+      "because": "Teaches from the guide first; Personal Life Affairs Companion is the product the guide hands over to. 1 lists and timelines, 3 questions to draw from."
     },
     {
       "topic": "Stage",
@@ -238,13 +207,13 @@
     },
     {
       "topic": "Structure",
-      "decision": "The checklist: The guide's checklist on one screen, item by item, then the product that holds it.",
-      "because": "Best fit for a awareness film on YouTube Short (platform fit 2, goal fit 3). Other candidates: In order (4.9), The question people ask (-0.2)."
+      "decision": "The question people ask: One of the guide's own questions, its plain answer, then the product.",
+      "because": "Best fit for a awareness film on YouTube Short (platform fit 2, goal fit 2, already used on YouTube Short ×1). Other candidates: ."
     },
     {
       "topic": "Angle",
-      "decision": "\"What to do when a parent dies: the first two weeks (US)\"",
-      "because": "A checklist from the guide, \"Who to tell in the first two weeks\": 4 of its 7 items."
+      "decision": "\"How many death certificates should I order?\"",
+      "because": "A question from the guide's FAQ, \"How many death certificates should I order?\", and the first sentence of its answer."
     },
     {
       "topic": "Transitions",
@@ -253,8 +222,8 @@
     },
     {
       "topic": "Camera",
-      "decision": "Camera \"dolly\"",
-      "because": "Camera \"dolly\": constant forward movement for a high-energy feed."
+      "decision": "Camera \"float\"",
+      "because": "Camera \"float\": a gentle float that keeps a held frame alive without demanding attention."
     },
     {
       "topic": "Colour",
@@ -268,7 +237,7 @@
     },
     {
       "topic": "Length",
-      "decision": "25.2s, 4 scenes",
+      "decision": "18.0s, 4 scenes",
       "because": "Each scene is held for the time its words take to read on YouTube Short (0.26s a word), inside 18–45s."
     }
   ]

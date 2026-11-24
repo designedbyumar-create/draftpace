@@ -11,15 +11,15 @@
   "width": 1000,
   "height": 1500,
   "fps": 30,
-  "durationInFrames": 526,
-  "structure": "situationMoment",
+  "durationInFrames": 613,
+  "structure": "situationInside",
   "angle": {
     "text": "You need something to show, not a system so heavy it gets abandoned by half term.",
     "source": "problemsSolved[3].problem"
   },
   "treatment": {
     "voice": "editorial",
-    "camera": "locked",
+    "camera": "float",
     "transitions": [
       "lineWipe",
       "slideUp",
@@ -43,7 +43,7 @@
     {
       "id": "moment",
       "kind": "title",
-      "variant": "editorial",
+      "variant": "label",
       "copy": [
         {
           "text": "You need something to show, not a system so heavy it gets abandoned by half term.",
@@ -115,6 +115,49 @@
       ]
     },
     {
+      "id": "also",
+      "kind": "phone",
+      "variant": "proof",
+      "copy": [],
+      "caption": {
+        "text": "Add a child",
+        "source": "tasks[1].label"
+      },
+      "screen": {
+        "src": "screens/homeschooling-companion-kids.png",
+        "pose": "flat",
+        "focus": {
+          "at": 0.45,
+          "y": 159,
+          "h": 126,
+          "region": "state"
+        },
+        "scroll": []
+      },
+      "why": "One more real thing an owner does here, in the listing's own task wording, on the screen it happens on. Screen: \"Your children.\" (Each child with their age and subjects, and the state's homeschool requirements kept alongside.) chosen because it is the real screen closest to \"Add a child\"; focus on \"Oregon · Moderate regulation\".",
+      "from": 411,
+      "dur": 99,
+      "ground": "ink",
+      "transition": "slideUp",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "swish",
+          "volume": 0.192
+        },
+        {
+          "at": 12,
+          "cue": "pop",
+          "volume": 0.252
+        },
+        {
+          "at": 45,
+          "cue": "tap",
+          "volume": 0.33
+        }
+      ]
+    },
+    {
       "id": "cta",
       "kind": "cta",
       "variant": "save",
@@ -129,9 +172,9 @@
         }
       ],
       "why": "Pinterest video pin is a planning surface; the close asks for the save, the price stays quiet.",
-      "from": 411,
+      "from": 498,
       "dur": 115,
-      "ground": "ink",
+      "ground": "accent",
       "transition": "blurDissolve",
       "sfx": [
         {
@@ -175,13 +218,13 @@
     },
     {
       "topic": "Structure",
-      "decision": "The moment: The moment as it feels, set dark, then the help in the light, then what to do next.",
-      "because": "Best fit for a awareness film on Pinterest video pin (platform fit 1, goal fit 3, already used for this product ×3, already used on Pinterest video pin ×2). Other candidates: Inside the tool (-24.6)."
+      "decision": "Inside the tool: The moment, then how the product helps on its real screen, then one more real thing an owner does in it.",
+      "because": "Best fit for a awareness film on Pinterest video pin (platform fit 2, goal fit 2, already used for this product ×2, already used on Pinterest video pin ×3). Other candidates: The moment (-25.4)."
     },
     {
       "topic": "Angle",
       "decision": "\"You need something to show, not a system so heavy it gets abandoned by half term.\"",
-      "because": "The moment \"You need something to show, not a system so heavy it gets abandoned by half term.\", then how Homeschooling Companion helps."
+      "because": "The moment \"You need something to show, not a system so heavy it gets abandoned by half term.\", how Homeschooling Companion helps, and one more real thing it does: \"Add a child\"."
     },
     {
       "topic": "Transitions",
@@ -201,12 +244,7 @@
     {
       "topic": "Variation",
       "decision": "Rotated the ground rhythm",
-      "because": "Its shape was 0.88 similar to sit-homeschooling-companion-search-2--pinterest-video; a different film, not the same one re-coloured."
-    },
-    {
-      "topic": "Variation",
-      "decision": "Changed the camera",
-      "because": "Its shape was 0.78 similar to sit-homeschooling-companion-problem-1--instagram-feed; a different film, not the same one re-coloured."
+      "because": "Its shape was 0.82 similar to sit-homeschooling-companion-search-2--pinterest-video; a different film, not the same one re-coloured."
     },
     {
       "topic": "Sound",
@@ -215,7 +253,7 @@
     },
     {
       "topic": "Length",
-      "decision": "17.5s, 3 scenes",
+      "decision": "20.4s, 4 scenes",
       "because": "Each scene is held for the time its words take to read on Pinterest video pin (0.32s a word), inside 10–32s."
     }
   ]

@@ -11,15 +11,15 @@
   "width": 1080,
   "height": 1350,
   "fps": 30,
-  "durationInFrames": 514,
-  "structure": "situationMoment",
+  "durationInFrames": 634,
+  "structure": "situationInside",
   "angle": {
     "text": "Towing or short-trip driving shortens some intervals, but not all of them equally.",
     "source": "problemsSolved[5].problem"
   },
   "treatment": {
     "voice": "editorial",
-    "camera": "float",
+    "camera": "locked",
     "transitions": [
       "radial",
       "zoomThrough",
@@ -43,7 +43,7 @@
     {
       "id": "moment",
       "kind": "title",
-      "variant": "editorial",
+      "variant": "label",
       "copy": [
         {
           "text": "Towing or short-trip driving shortens some intervals, but not all of them equally.",
@@ -56,7 +56,7 @@
       "why": "Opens on the moment as the listing describes it: the situation the viewer is in right now.",
       "from": 0,
       "dur": 168,
-      "ground": "ink",
+      "ground": "light",
       "transition": "cut",
       "sfx": [],
       "lines": [
@@ -114,6 +114,49 @@
       ]
     },
     {
+      "id": "also",
+      "kind": "phone",
+      "variant": "proof",
+      "copy": [],
+      "caption": {
+        "text": "Print my service history for a buyer",
+        "source": "tasks[5].label"
+      },
+      "screen": {
+        "src": "screens/vehicle-maintenance-companion-history.png",
+        "pose": "tiltRight",
+        "focus": {
+          "at": 0.45,
+          "y": 236,
+          "h": 364,
+          "region": "log"
+        },
+        "scroll": []
+      },
+      "why": "One more real thing an owner does here, in the listing's own task wording, on the screen it happens on. Screen: \"History\" (What has been done and when: each service dated, with the mileage, the shop and the cost.) chosen because it is the real screen closest to \"Print my service history for a buyer\"; focus on \"Oil and filter change\".",
+      "from": 411,
+      "dur": 132,
+      "ground": "accent",
+      "transition": "zoomThrough",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "whoosh",
+          "volume": 0.192
+        },
+        {
+          "at": 12,
+          "cue": "pop",
+          "volume": 0.252
+        },
+        {
+          "at": 59,
+          "cue": "tap",
+          "volume": 0.33
+        }
+      ]
+    },
+    {
       "id": "cta",
       "kind": "cta",
       "variant": "soft",
@@ -128,14 +171,14 @@
         }
       ],
       "why": "Facebook feed video punishes an obvious ad; a soft close names the product and where to find it.",
-      "from": 411,
+      "from": 531,
       "dur": 103,
-      "ground": "light",
-      "transition": "zoomThrough",
+      "ground": "accent",
+      "transition": "radial",
       "sfx": [
         {
           "at": 0,
-          "cue": "whoosh",
+          "cue": "swish",
           "volume": 0.192
         },
         {
@@ -174,13 +217,13 @@
     },
     {
       "topic": "Structure",
-      "decision": "The moment: The moment as it feels, set dark, then the help in the light, then what to do next.",
-      "because": "Best fit for a awareness film on Facebook feed video (platform fit 2, goal fit 3, already used for this product ×3, already used on Facebook feed video ×3). Other candidates: Inside the tool (-37.8)."
+      "decision": "Inside the tool: The moment, then how the product helps on its real screen, then one more real thing an owner does in it.",
+      "because": "Best fit for a awareness film on Facebook feed video (platform fit 3, goal fit 2, already used for this product ×3, already used on Facebook feed video ×3). Other candidates: The moment (-33.1)."
     },
     {
       "topic": "Angle",
       "decision": "\"Towing or short-trip driving shortens some intervals, but not all of them equally.\"",
-      "because": "The moment \"Towing or short-trip driving shortens some intervals, but not all of them equally.\", then how Vehicle Maintenance Companion helps."
+      "because": "The moment \"Towing or short-trip driving shortens some intervals, but not all of them equally.\", how Vehicle Maintenance Companion helps, and one more real thing it does: \"Print my service history for a buyer\"."
     },
     {
       "topic": "Transitions",
@@ -198,13 +241,23 @@
       "because": "Grounds accent → light → light → accent: a warm accent, so light grounds lead and the accent is saved for the turns."
     },
     {
+      "topic": "Variation",
+      "decision": "Rotated the ground rhythm",
+      "because": "Its shape was 0.74 similar to sit-travel-companion-problem-1--instagram-reel; a different film, not the same one re-coloured."
+    },
+    {
+      "topic": "Variation",
+      "decision": "Changed the camera",
+      "because": "Its shape was 0.74 similar to sit-vehicle-maintenance-companion-problem-5--instagram-feed; a different film, not the same one re-coloured."
+    },
+    {
       "topic": "Sound",
       "decision": "Light sound design, low-energy bed",
       "because": "Most of this audience never unmutes, so nothing depends on sound; cues are kept quieter and sparser for those who do."
     },
     {
       "topic": "Length",
-      "decision": "17.1s, 3 scenes",
+      "decision": "21.1s, 4 scenes",
       "because": "Each scene is held for the time its words take to read on Facebook feed video (0.32s a word), inside 10–30s."
     }
   ]

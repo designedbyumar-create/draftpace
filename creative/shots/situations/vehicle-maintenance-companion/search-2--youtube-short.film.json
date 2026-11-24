@@ -12,8 +12,8 @@
   "width": 1080,
   "height": 1920,
   "fps": 30,
-  "durationInFrames": 806,
-  "structure": "situationWords",
+  "durationInFrames": 829,
+  "structure": "situationChecklist",
   "angle": {
     "text": "How do I stop a shop doing work I didn't authorize",
     "source": "searchedProblems[1].phrase"
@@ -44,7 +44,7 @@
     {
       "id": "moment",
       "kind": "title",
-      "variant": "quote",
+      "variant": "label",
       "copy": [
         {
           "text": "How do I stop a shop doing work I didn't authorize",
@@ -57,7 +57,7 @@
       "why": "Opens on the moment in the person's own words, as the listing records people searching it.",
       "from": 0,
       "dur": 107,
-      "ground": "ink",
+      "ground": "light",
       "transition": "cut",
       "sfx": [],
       "lines": [
@@ -74,26 +74,26 @@
       "variant": "checklist",
       "copy": [
         {
-          "text": "Say what you're asking for, and nothing more.",
-          "source": "guide:what-to-tell-a-mechanic-before-work-starts/body[8].items[0]#0"
+          "text": "Identify the vehicle by year, model, plate and current odometer reading.",
+          "source": "guide:what-to-tell-a-mechanic-before-work-starts/body[1].items[0]#0"
         },
         {
-          "text": "Say the most you'll approve without a call.",
-          "source": "guide:what-to-tell-a-mechanic-before-work-starts/body[8].items[1]#0"
+          "text": "Name the jobs you authorize, the total limit and the contact method.",
+          "source": "guide:what-to-tell-a-mechanic-before-work-starts/body[1].items[4]#0"
         },
         {
-          "text": "Get every extra in writing before you say yes.",
-          "source": "guide:what-to-tell-a-mechanic-before-work-starts/body[8].items[2]#0"
+          "text": "Read the work order before signing.",
+          "source": "guide:what-to-tell-a-mechanic-before-work-starts/body[1].items[5]#0"
         }
       ],
       "eyebrow": {
-        "text": "Before you hand over the keys",
-        "source": "guide:what-to-tell-a-mechanic-before-work-starts/body[8].heading"
+        "text": "Before you leave the car",
+        "source": "guide:what-to-tell-a-mechanic-before-work-starts/body[1].heading"
       },
-      "why": "What to do about it, from the guide \"What to tell a mechanic before the work starts\": its own checklist.",
+      "why": "What to do about it, from the guide \"What to tell a mechanic before work starts\": its own checklist, the first sentence of each item.",
       "from": 95,
-      "dur": 353,
-      "ground": "light",
+      "dur": 376,
+      "ground": "ink",
       "transition": "radial",
       "sfx": [
         {
@@ -107,12 +107,12 @@
           "volume": 0.45
         },
         {
-          "at": 98,
+          "at": 104,
           "cue": "pop",
           "volume": 0.45
         },
         {
-          "at": 186,
+          "at": 198,
           "cue": "pop",
           "volume": 0.45
         }
@@ -142,9 +142,9 @@
         "text": "Vehicle Maintenance Companion",
         "source": "title"
       },
-      "from": 436,
+      "from": 459,
       "dur": 264,
-      "ground": "accent",
+      "ground": "light",
       "transition": "zoomThrough",
       "sfx": [
         {
@@ -183,9 +183,9 @@
         "source": "micro"
       },
       "why": "Ends on where to read the whole guide, with the product beneath it: the viewer leaves with the next step, not only a pitch.",
-      "from": 688,
+      "from": 711,
       "dur": 118,
-      "ground": "light",
+      "ground": "accent",
       "transition": "blurDissolve",
       "sfx": [
         {
@@ -219,7 +219,7 @@
     },
     {
       "topic": "Guide",
-      "decision": "\"What to tell a mechanic before the work starts\" (draftpace.com/guides/what-to-tell-a-mechanic-before-work-starts)",
+      "decision": "\"What to tell a mechanic before work starts\" (draftpace.com/guides/what-to-tell-a-mechanic-before-work-starts)",
       "because": "The guide that covers this moment: what to do comes from it, and the film ends on it."
     },
     {
@@ -234,13 +234,13 @@
     },
     {
       "topic": "Structure",
-      "decision": "In their words: The moment typed the way a person searches it, then what to do about it, then the product doing it.",
-      "because": "Best fit for a awareness film on YouTube Short (platform fit 3, goal fit 3, already used on YouTube Short ×4). Other candidates: What to do first (-13.1), Inside the tool (-16.5)."
+      "decision": "What to do first: The moment, the guide's own checklist for it, then the product that keeps track of it.",
+      "because": "Best fit for a awareness film on YouTube Short (platform fit 3, goal fit 3, already used on YouTube Short ×5). Other candidates: In their words (-13.4), The moment (-16.7)."
     },
     {
       "topic": "Angle",
       "decision": "\"How do I stop a shop doing work I didn't authorize\"",
-      "because": "A situation people search for, \"How do I stop a shop doing work I didn't authorize\", with the steps from \"What to tell a mechanic before the work starts\", and how Vehicle Maintenance Companion helps."
+      "because": "The moment \"How do I stop a shop doing work I didn't authorize\", the checklist from \"What to tell a mechanic before work starts\", then how Vehicle Maintenance Companion helps."
     },
     {
       "topic": "Transitions",
@@ -258,18 +258,13 @@
       "because": "Grounds light → ink → light → accent: a warm accent, so light grounds lead and the accent is saved for the turns."
     },
     {
-      "topic": "Variation",
-      "decision": "Rotated the ground rhythm",
-      "because": "Its shape was 0.74 similar to sit-vehicle-maintenance-companion-search-1--pinterest-video; a different film, not the same one re-coloured."
-    },
-    {
       "topic": "Sound",
       "decision": "Full sound design, mid-energy bed",
       "because": "Sound-on placement: every transition, landing and reveal has a cue, and the bed ducks under the brand moment."
     },
     {
       "topic": "Length",
-      "decision": "26.9s, 4 scenes",
+      "decision": "27.6s, 4 scenes",
       "because": "Each scene is held for the time its words take to read on YouTube Short (0.26s a word), inside 15–40s."
     }
   ]

@@ -12,7 +12,7 @@
   "width": 1080,
   "height": 1920,
   "fps": 30,
-  "durationInFrames": 765,
+  "durationInFrames": 868,
   "structure": "situationWords",
   "angle": {
     "text": "I tried YNAB or Mint and gave up",
@@ -20,7 +20,7 @@
   },
   "treatment": {
     "voice": "editorial",
-    "camera": "dolly",
+    "camera": "float",
     "transitions": [
       "lineWipe",
       "blurDissolve",
@@ -57,7 +57,7 @@
       "why": "Opens on the moment in the person's own words, as the listing records people searching it.",
       "from": 0,
       "dur": 83,
-      "ground": "ink",
+      "ground": "light",
       "transition": "cut",
       "sfx": [],
       "lines": [
@@ -68,25 +68,30 @@
       ]
     },
     {
-      "id": "step-1",
-      "kind": "title",
-      "variant": "label",
+      "id": "what-to-do",
+      "kind": "list",
+      "variant": "checklist",
       "copy": [
         {
-          "text": "Do the sum above and write the number down.",
-          "source": "guide:how-to-start-over-after-budget-failure/body[5].steps[0].what#0"
+          "text": "Note the date and balances of each account used for spending.",
+          "source": "guide:how-to-start-over-after-budget-failure/body[1].items[0]#0"
+        },
+        {
+          "text": "Identify pending or unposted commitments without subtracting anything twice.",
+          "source": "guide:how-to-start-over-after-budget-failure/body[1].items[1]#0"
+        },
+        {
+          "text": "Check card statements and the actual payments you must fund.",
+          "source": "guide:how-to-start-over-after-budget-failure/body[1].items[2]#0"
         }
       ],
       "eyebrow": {
-        "text": "Day 1",
-        "source": "guide:how-to-start-over-after-budget-failure/body[5].steps[0].when"
+        "text": "Make today the new starting point",
+        "source": "guide:how-to-start-over-after-budget-failure/body[1].heading"
       },
-      "emphasis": [
-        "number"
-      ],
-      "why": "What to do, in order, from the guide \"You fell off your budget: how to restart this month\": \"Day 1\".",
+      "why": "What to do about it, from the guide \"How to restart a budget from today's money\": its own checklist.",
       "from": 71,
-      "dur": 128,
+      "dur": 392,
       "ground": "light",
       "transition": "lineWipe",
       "sfx": [
@@ -94,84 +99,22 @@
           "at": 0,
           "cue": "tick",
           "volume": 0.6
-        }
-      ],
-      "lines": [
-        [
-          "Do the sum above and",
-          "write the number down."
-        ]
-      ]
-    },
-    {
-      "id": "step-2",
-      "kind": "title",
-      "variant": "label",
-      "copy": [
+        },
         {
-          "text": "Redo the sum from fresh balances.",
-          "source": "guide:how-to-start-over-after-budget-failure/body[5].steps[2].what#0"
-        }
-      ],
-      "eyebrow": {
-        "text": "Day 7",
-        "source": "guide:how-to-start-over-after-budget-failure/body[5].steps[2].when"
-      },
-      "emphasis": [
-        "balances"
-      ],
-      "why": "What to do, in order, from the guide \"You fell off your budget: how to restart this month\": \"Day 7\".",
-      "from": 187,
-      "dur": 104,
-      "ground": "light",
-      "transition": "blurDissolve",
-      "sfx": [
-        {
-          "at": 0,
-          "cue": "whoosh",
-          "volume": 0.32
-        }
-      ],
-      "lines": [
-        [
-          "Redo the sum from",
-          "fresh balances."
-        ]
-      ]
-    },
-    {
-      "id": "step-3",
-      "kind": "title",
-      "variant": "label",
-      "copy": [
-        {
-          "text": "Do it again.",
-          "source": "guide:how-to-start-over-after-budget-failure/body[5].steps[3].what#0"
-        }
-      ],
-      "eyebrow": {
-        "text": "Day 14",
-        "source": "guide:how-to-start-over-after-budget-failure/body[5].steps[3].when"
-      },
-      "emphasis": [
-        "again"
-      ],
-      "why": "What to do, in order, from the guide \"You fell off your budget: how to restart this month\": \"Day 14\".",
-      "from": 279,
-      "dur": 81,
-      "ground": "accent",
-      "transition": "lineWipe",
-      "sfx": [
-        {
-          "at": 0,
+          "at": 10,
           "cue": "tick",
-          "volume": 0.6
+          "volume": 0.45
+        },
+        {
+          "at": 108,
+          "cue": "tick",
+          "volume": 0.45
+        },
+        {
+          "at": 206,
+          "cue": "tick",
+          "volume": 0.45
         }
-      ],
-      "lines": [
-        [
-          "Do it again."
-        ]
       ]
     },
     {
@@ -185,7 +128,7 @@
       },
       "screen": {
         "src": "screens/monthly-money-reset-progress.png",
-        "pose": "tiltRight",
+        "pose": "flat",
         "focus": {
           "at": 0.45,
           "y": 138,
@@ -199,15 +142,15 @@
         "text": "Monthly Money Reset",
         "source": "title"
       },
-      "from": 348,
+      "from": 451,
       "dur": 311,
-      "ground": "ink",
-      "transition": "lineWipe",
+      "ground": "accent",
+      "transition": "blurDissolve",
       "sfx": [
         {
           "at": 0,
-          "cue": "tick",
-          "volume": 0.6
+          "cue": "whoosh",
+          "volume": 0.32
         },
         {
           "at": 12,
@@ -240,15 +183,15 @@
         "source": "micro"
       },
       "why": "Ends on where to read the whole guide, with the product beneath it: the viewer leaves with the next step, not only a pitch.",
-      "from": 647,
+      "from": 750,
       "dur": 118,
-      "ground": "light",
-      "transition": "blurDissolve",
+      "ground": "ink",
+      "transition": "lineWipe",
       "sfx": [
         {
           "at": 0,
-          "cue": "whoosh",
-          "volume": 0.32
+          "cue": "tick",
+          "volume": 0.6
         },
         {
           "at": 8,
@@ -276,7 +219,7 @@
     },
     {
       "topic": "Guide",
-      "decision": "\"You fell off your budget: how to restart this month\" (draftpace.com/guides/how-to-start-over-after-budget-failure)",
+      "decision": "\"How to restart a budget from today's money\" (draftpace.com/guides/how-to-start-over-after-budget-failure)",
       "because": "The guide that covers this moment: what to do comes from it, and the film ends on it."
     },
     {
@@ -292,12 +235,12 @@
     {
       "topic": "Structure",
       "decision": "In their words: The moment typed the way a person searches it, then what to do about it, then the product doing it.",
-      "because": "Best fit for a awareness film on Instagram Reel (platform fit 2, goal fit 3, already used on Instagram Reel ×1). Other candidates: The moment (-2.2)."
+      "because": "Best fit for a awareness film on Instagram Reel (platform fit 2, goal fit 3). Other candidates: The moment (-4.6), What to do first (-6.7)."
     },
     {
       "topic": "Angle",
       "decision": "\"I tried YNAB or Mint and gave up\"",
-      "because": "A situation people search for, \"I tried YNAB or Mint and gave up\", with the steps from \"You fell off your budget: how to restart this month\", and how Monthly Money Reset helps."
+      "because": "A situation people search for, \"I tried YNAB or Mint and gave up\", with the steps from \"How to restart a budget from today's money\", and how Monthly Money Reset helps."
     },
     {
       "topic": "Transitions",
@@ -306,13 +249,18 @@
     },
     {
       "topic": "Camera",
-      "decision": "Camera \"dolly\"",
-      "because": "Camera \"dolly\": constant forward movement for a high-energy feed."
+      "decision": "Camera \"float\"",
+      "because": "Camera \"float\": a gentle float that keeps a held frame alive without demanding attention."
     },
     {
       "topic": "Colour",
       "decision": "Grounds ink → light → light → accent",
       "because": "Grounds ink → light → light → accent: a cool accent, so a darker ground is used for contrast at a turn."
+    },
+    {
+      "topic": "Variation",
+      "decision": "Rotated the ground rhythm",
+      "because": "Its shape was 0.74 similar to sit-homeschooling-companion-search-3--instagram-reel; a different film, not the same one re-coloured."
     },
     {
       "topic": "Sound",
@@ -321,7 +269,7 @@
     },
     {
       "topic": "Length",
-      "decision": "25.5s, 6 scenes",
+      "decision": "28.9s, 4 scenes",
       "because": "Each scene is held for the time its words take to read on Instagram Reel (0.26s a word), inside 12–35s."
     }
   ]

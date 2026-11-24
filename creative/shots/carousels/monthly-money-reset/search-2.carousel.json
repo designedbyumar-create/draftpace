@@ -14,13 +14,13 @@
         "YNAB"
       ],
       "promise": {
-        "text": "You fell off your budget: how to restart this month",
+        "text": "How to restart a budget from today's money",
         "source": "guide:how-to-start-over-after-budget-failure/title"
       },
       "art": {
-        "motif": "calendar",
-        "why": "the carousel's topic: the moment and its guide name \"month\"",
-        "also": "wallet"
+        "motif": "wallet",
+        "why": "the carousel's topic: the moment and its guide name \"money\", \"budget\"",
+        "also": "steps"
       }
     },
     {
@@ -31,11 +31,11 @@
       },
       "lines": [
         {
-          "text": "You do not need to catch up on six weeks of receipts.",
+          "text": "Begin with current balances and unpaid commitments, not a receipt backlog.",
           "source": "guide:how-to-start-over-after-budget-failure/dek#0"
         },
         {
-          "text": "You need today's balance, the bills still coming, and one clear number.",
+          "text": "Protect essentials and resolve shortfalls before rebuilding categories.",
           "source": "guide:how-to-start-over-after-budget-failure/dek#1"
         }
       ],
@@ -45,146 +45,41 @@
       }
     },
     {
-      "kind": "step",
+      "kind": "checklist",
       "eyebrow": {
-        "text": "The restart, step by step",
-        "source": "guide:how-to-start-over-after-budget-failure/body[3].heading"
+        "text": "Make today the new starting point",
+        "source": "guide:how-to-start-over-after-budget-failure/body[1].heading"
       },
-      "number": {
-        "text": "1",
-        "source": "micro"
-      },
-      "head": {
-        "text": "Decide that today is day one.",
-        "source": "guide:how-to-start-over-after-budget-failure/body[3].items[0]#0"
-      },
-      "body": [
+      "items": [
         {
-          "text": "Don't open old statements yet.",
-          "source": "guide:how-to-start-over-after-budget-failure/body[3].items[0]#1"
+          "text": "Note the date and balances of each account used for spending.",
+          "source": "guide:how-to-start-over-after-budget-failure/body[1].items[0]#0"
         },
         {
-          "text": "The point is to get a working number before you feel behind again.",
-          "source": "guide:how-to-start-over-after-budget-failure/body[3].items[0]#2"
-        }
-      ],
-      "emphasis": [
-        "Decide"
-      ],
-      "art": {
-        "motif": "calendar",
-        "why": "the slide names \"day\", \"today\""
-      }
-    },
-    {
-      "kind": "step",
-      "eyebrow": {
-        "text": "The restart, step by step",
-        "source": "guide:how-to-start-over-after-budget-failure/body[3].heading"
-      },
-      "number": {
-        "text": "2",
-        "source": "micro"
-      },
-      "head": {
-        "text": "Look up the balance in every account you spend from, as it stands right now.",
-        "source": "guide:how-to-start-over-after-budget-failure/body[3].items[1]#0"
-      },
-      "body": [],
-      "emphasis": [
-        "balance"
-      ],
-      "art": {
-        "motif": "bank",
-        "why": "the slide names \"account\", \"balance\""
-      }
-    },
-    {
-      "kind": "step",
-      "eyebrow": {
-        "text": "The restart, step by step",
-        "source": "guide:how-to-start-over-after-budget-failure/body[3].heading"
-      },
-      "number": {
-        "text": "3",
-        "source": "micro"
-      },
-      "head": {
-        "text": "Look up what you owe on each credit card.",
-        "source": "guide:how-to-start-over-after-budget-failure/body[3].items[2]#0"
-      },
-      "body": [
-        {
-          "text": "Use the amount you plan to pay this month.",
-          "source": "guide:how-to-start-over-after-budget-failure/body[3].items[2]#1"
+          "text": "Identify pending or unposted commitments without subtracting anything twice.",
+          "source": "guide:how-to-start-over-after-budget-failure/body[1].items[1]#0"
         },
         {
-          "text": "If you carry a balance from month to month, note that as a debt to look at separately, and only count the payment you'll make now.",
-          "source": "guide:how-to-start-over-after-budget-failure/body[3].items[2]#2"
-        }
-      ],
-      "emphasis": [
-        "credit"
-      ],
-      "art": {
-        "motif": "card",
-        "why": "the slide names \"card\", \"credit\""
-      }
-    },
-    {
-      "kind": "step",
-      "eyebrow": {
-        "text": "The restart, step by step",
-        "source": "guide:how-to-start-over-after-budget-failure/body[3].heading"
-      },
-      "number": {
-        "text": "4",
-        "source": "micro"
-      },
-      "head": {
-        "text": "List the bills due before your next paycheck, with the date and the amount.",
-        "source": "guide:how-to-start-over-after-budget-failure/body[3].items[3]#0"
-      },
-      "body": [
+          "text": "Check card statements and the actual payments you must fund.",
+          "source": "guide:how-to-start-over-after-budget-failure/body[1].items[2]#0"
+        },
         {
-          "text": "For a bill that changes, use last month's amount.",
-          "source": "guide:how-to-start-over-after-budget-failure/body[3].items[3]#1"
-        }
-      ],
-      "emphasis": [
-        "paycheck"
-      ],
-      "art": {
-        "motif": "calendar",
-        "why": "the slide names \"date\", \"month\", \"due\""
-      }
-    },
-    {
-      "kind": "step",
-      "eyebrow": {
-        "text": "The restart, step by step",
-        "source": "guide:how-to-start-over-after-budget-failure/body[3].heading"
-      },
-      "number": {
-        "text": "5",
-        "source": "micro"
-      },
-      "head": {
-        "text": "Pick a cushion, a sum you'd like to leave alone for surprises.",
-        "source": "guide:how-to-start-over-after-budget-failure/body[3].items[4]#0"
-      },
-      "body": [
+          "text": "List overdue bills and bills due before the next reliable deposit.",
+          "source": "guide:how-to-start-over-after-budget-failure/body[1].items[3]#0"
+        },
         {
-          "text": "A small number you'll keep beats a big one you'll ignore.",
-          "source": "guide:how-to-start-over-after-budget-failure/body[3].items[4]#1"
+          "text": "Protect necessary groceries, transport, and other essential spending.",
+          "source": "guide:how-to-start-over-after-budget-failure/body[1].items[4]#0"
+        },
+        {
+          "text": "Keep reserves and money promised to another purpose separate.",
+          "source": "guide:how-to-start-over-after-budget-failure/body[1].items[5]#0"
         }
       ],
-      "emphasis": [
-        "surprises"
-      ],
+      "ticks": true,
       "art": {
-        "motif": "piggy",
-        "why": "the slide names \"cushion\""
+        "motif": "wallet",
+        "why": "the slide names \"money\", \"spend\""
       }
     },
     {
@@ -213,7 +108,7 @@
         "source": "micro"
       },
       "title": {
-        "text": "You fell off your budget: how to restart this month",
+        "text": "How to restart a budget from today's money",
         "source": "guide:how-to-start-over-after-budget-failure/title"
       },
       "url": {
@@ -229,22 +124,18 @@
         "source": "micro"
       },
       "art": {
-        "motif": "calendar",
-        "why": "the carousel's topic: the moment and its guide name \"month\""
+        "motif": "wallet",
+        "why": "the carousel's topic: the moment and its guide name \"money\", \"budget\""
       }
     }
   ],
   "notes": [
     "Cover: \"I tried YNAB or Mint and gave up\" (searchedProblems[1].phrase), as people search it.",
-    "Steps: 5 of 7 from the guide's numbered steps \"The restart, step by step\", one per slide, each with the guide's own explanation.",
+    "Checklist: 6 items from \"Make today the new starting point\".",
     "Help: \"Those ask you to keep a whole system current. This asks for a few figures and does the keeping-up itself, so there is nothing to fall behind on.\" (searchedProblems[1].answer), on screens/monthly-money-reset-progress.png (\"Start\").",
-    "Illustration on the cover: calendar with wallet, because the carousel's topic: the moment and its guide name \"month\".",
+    "Illustration on the cover: wallet with steps, because the carousel's topic: the moment and its guide name \"money\", \"budget\".",
     "Illustration on the answer: receipt, because the slide names \"receipt\".",
-    "Illustration on the step: calendar, because the slide names \"day\", \"today\".",
-    "Illustration on the step: bank, because the slide names \"account\", \"balance\".",
-    "Illustration on the step: card, because the slide names \"card\", \"credit\".",
-    "Illustration on the step: calendar, because the slide names \"date\", \"month\", \"due\".",
-    "Illustration on the step: piggy, because the slide names \"cushion\".",
-    "Illustration on the close: calendar, because the carousel's topic: the moment and its guide name \"month\"."
+    "Illustration on the checklist: wallet, because the slide names \"money\", \"spend\".",
+    "Illustration on the close: wallet, because the carousel's topic: the moment and its guide name \"money\", \"budget\"."
   ]
 }

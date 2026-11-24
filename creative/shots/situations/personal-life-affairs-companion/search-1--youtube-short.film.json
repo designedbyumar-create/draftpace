@@ -12,7 +12,7 @@
   "width": 1080,
   "height": 1920,
   "fps": 30,
-  "durationInFrames": 480,
+  "durationInFrames": 852,
   "structure": "situationWords",
   "angle": {
     "text": "What should I write down in case something happens to me",
@@ -20,7 +20,7 @@
   },
   "treatment": {
     "voice": "editorial",
-    "camera": "float",
+    "camera": "dolly",
     "transitions": [
       "pageTurn",
       "blurDissolve",
@@ -28,9 +28,9 @@
     ],
     "motif": "book",
     "grounds": [
+      "light",
+      "light",
       "ink",
-      "light",
-      "light",
       "accent"
     ],
     "pace": 1
@@ -69,6 +69,56 @@
       ]
     },
     {
+      "id": "what-to-do",
+      "kind": "list",
+      "variant": "checklist",
+      "copy": [
+        {
+          "text": "List dependants and the location of their established care instructions.",
+          "source": "guide:what-to-write-down-in-case-something-happens-to-you/body[2].items[1]#0"
+        },
+        {
+          "text": "List important providers by name, not every private account identifier.",
+          "source": "guide:what-to-write-down-in-case-something-happens-to-you/body[2].items[3]#0"
+        },
+        {
+          "text": "Date the page and tell the intended helper where it is.",
+          "source": "guide:what-to-write-down-in-case-something-happens-to-you/body[2].items[6]#0"
+        }
+      ],
+      "eyebrow": {
+        "text": "Make the short handover",
+        "source": "guide:what-to-write-down-in-case-something-happens-to-you/body[2].heading"
+      },
+      "why": "What to do about it, from the guide \"What to write down in case something happens to you\": its own checklist.",
+      "from": 95,
+      "dur": 384,
+      "ground": "light",
+      "transition": "pageTurn",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "page",
+          "volume": 0.32
+        },
+        {
+          "at": 10,
+          "cue": "pop",
+          "volume": 0.45
+        },
+        {
+          "at": 106,
+          "cue": "pop",
+          "volume": 0.45
+        },
+        {
+          "at": 202,
+          "cue": "pop",
+          "volume": 0.45
+        }
+      ]
+    },
+    {
       "id": "help",
       "kind": "phone",
       "variant": "proof",
@@ -79,7 +129,7 @@
       },
       "screen": {
         "src": "screens/personal-life-affairs-companion-workspace.png",
-        "pose": "flat",
+        "pose": "tiltLeft",
         "focus": {
           "at": 0.45,
           "y": 82,
@@ -93,14 +143,14 @@
         "text": "Personal Life Affairs Companion",
         "source": "title"
       },
-      "from": 95,
+      "from": 467,
       "dur": 272,
-      "ground": "light",
-      "transition": "pageTurn",
+      "ground": "ink",
+      "transition": "blurDissolve",
       "sfx": [
         {
           "at": 0,
-          "cue": "page",
+          "cue": "whoosh",
           "volume": 0.32
         },
         {
@@ -134,9 +184,9 @@
         "source": "micro"
       },
       "why": "Ends on where to read the whole guide, with the product beneath it: the viewer leaves with the next step, not only a pitch.",
-      "from": 355,
+      "from": 727,
       "dur": 125,
-      "ground": "ink",
+      "ground": "accent",
       "transition": "blurDissolve",
       "sfx": [
         {
@@ -170,7 +220,7 @@
     },
     {
       "topic": "Guide",
-      "decision": "\"What to write down in case something happens to me\" (draftpace.com/guides/what-to-write-down-in-case-something-happens-to-you)",
+      "decision": "\"What to write down in case something happens to you\" (draftpace.com/guides/what-to-write-down-in-case-something-happens-to-you)",
       "because": "The guide that covers this moment: what to do comes from it, and the film ends on it."
     },
     {
@@ -186,12 +236,12 @@
     {
       "topic": "Structure",
       "decision": "In their words: The moment typed the way a person searches it, then what to do about it, then the product doing it.",
-      "because": "Best fit for a awareness film on YouTube Short (platform fit 3, goal fit 3, already used on YouTube Short ×3). Other candidates: Inside the tool (-11.0), The moment (-13.9)."
+      "because": "Best fit for a awareness film on YouTube Short (platform fit 3, goal fit 3, already used on YouTube Short ×3). Other candidates: What to do first (-5.2), Inside the tool (-9.3)."
     },
     {
       "topic": "Angle",
       "decision": "\"What should I write down in case something happens to me\"",
-      "because": "A situation people search for, \"What should I write down in case something happens to me\", with the steps from \"What to write down in case something happens to me\", and how Personal Life Affairs Companion helps."
+      "because": "A situation people search for, \"What should I write down in case something happens to me\", with the steps from \"What to write down in case something happens to you\", and how Personal Life Affairs Companion helps."
     },
     {
       "topic": "Transitions",
@@ -200,18 +250,13 @@
     },
     {
       "topic": "Camera",
-      "decision": "Camera \"float\"",
-      "because": "Camera \"float\": a gentle float that keeps a held frame alive without demanding attention."
+      "decision": "Camera \"dolly\"",
+      "because": "Camera \"dolly\": constant forward movement for a high-energy feed."
     },
     {
       "topic": "Colour",
-      "decision": "Grounds ink → light → light → accent",
-      "because": "Grounds ink → light → light → accent: a cool accent, so a darker ground is used for contrast at a turn."
-    },
-    {
-      "topic": "Variation",
-      "decision": "Rotated the ground rhythm",
-      "because": "Its shape was 0.78 similar to sit-personal-finance-companion-search-2--youtube-short; a different film, not the same one re-coloured."
+      "decision": "Grounds light → light → ink → accent",
+      "because": "Grounds light → light → ink → accent: a cool accent, so a darker ground is used for contrast at a turn."
     },
     {
       "topic": "Sound",
@@ -220,7 +265,7 @@
     },
     {
       "topic": "Length",
-      "decision": "16.0s, 3 scenes",
+      "decision": "28.4s, 4 scenes",
       "because": "Each scene is held for the time its words take to read on YouTube Short (0.26s a word), inside 15–40s."
     }
   ]

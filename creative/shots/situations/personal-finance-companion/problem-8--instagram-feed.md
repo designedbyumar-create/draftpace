@@ -1,6 +1,6 @@
 # sit-personal-finance-companion-problem-8--instagram-feed
 
-**Instagram feed video** · awareness · 1080×1350 · 24.3s · structure: **situationMoment**
+**Instagram feed video** · awareness · 1080×1350 · 28.5s · structure: **situationInside**
 
 > Angle: "You split bills with somebody and neither of you can remember what was actually squared up last time." — `problemsSolved[7].problem`
 
@@ -13,16 +13,19 @@
 | **Situation** | "You split bills with somebody and neither of you can remember what was actually squared up last time." | One real moment from Personal Finance Companion's listing (problemsSolved[7].problem). The film is about this moment and how the product helps with it: "Mark a bill or subscription shared, set your share of it, and tick it settled when it is genuinely settled. A generated statement says what is settled and what is still owed." |
 | **Stage** | Before launch: helpful and relatable only | Nobody knows Draftpace yet, so films show how it helps with real moments. Who it is not for, questions before buying, what you get and the price wait until there are users to sell to. |
 | **Audience** | You have more than one account, bill, or income source and want them tracked in one real place, not five apps. / You want a next step handed to you, not a dashboard you have to interpret yourself every time. | The listing's own audience lines; the director writes for them. |
-| **Structure** | The moment: The moment as it feels, set dark, then the help in the light, then what to do next. | Best fit for a awareness film on Instagram feed video (platform fit 2, goal fit 3, already used for this product ×4, already used on Instagram feed video ×4). Other candidates: Inside the tool (-37.3). |
-| **Angle** | "You split bills with somebody and neither of you can remember what was actually squared up last time." | The moment "You split bills with somebody and neither of you can remember what was actually squared up last time.", then how Personal Finance Companion helps. |
+| **Structure** | Inside the tool: The moment, then how the product helps on its real screen, then one more real thing an owner does in it. | Best fit for a awareness film on Instagram feed video (platform fit 3, goal fit 2, already used for this product ×5, already used on Instagram feed video ×3). Other candidates: The moment (-39.3). |
+| **Angle** | "You split bills with somebody and neither of you can remember what was actually squared up last time." | The moment "You split bills with somebody and neither of you can remember what was actually squared up last time.", how Personal Finance Companion helps, and one more real thing it does: "Bring in a bank statement without retyping it". |
 | **Transitions** | Transitions follow the product's own identity motif, "index" | Transitions follow the product's own identity motif, "index": an index of tabs, so scenes slide in like the next tab. |
 | **Camera** | Camera "float" | Camera "float": a gentle float that keeps a held frame alive without demanding attention. |
 | **Colour** | Grounds ink → light → light → accent | Grounds ink → light → light → accent: a cool accent, so a darker ground is used for contrast at a turn. |
-| **Variation** | Rotated the ground rhythm | Its shape was 0.88 similar to sit-personal-finance-companion-problem-5--instagram-reel; a different film, not the same one re-coloured. |
-| **Variation** | Changed the camera | Its shape was 0.78 similar to sit-homeschooling-companion-problem-1--instagram-feed; a different film, not the same one re-coloured. |
-| **Variation** | Reordered the transitions | Its shape was 0.78 similar to sit-home-management-companion-problem-2--instagram-feed; a different film, not the same one re-coloured. |
+| **Variation** | Rotated the ground rhythm | Its shape was 0.82 similar to sit-personal-finance-companion-search-8--pinterest-video; a different film, not the same one re-coloured. |
+| **Variation** | Changed the camera | Its shape was 0.74 similar to sit-home-management-companion-problem-2--instagram-feed; a different film, not the same one re-coloured. |
+| **Variation** | Reordered the transitions | Its shape was 0.74 similar to sit-alongside-problem-4--instagram-feed; a different film, not the same one re-coloured. |
+| **Variation** | Switched the brand reveal | Its shape was 0.74 similar to sit-alongside-problem-4--instagram-feed; a different film, not the same one re-coloured. |
+| **Variation** | Re-posed the phones | Its shape was 0.74 similar to sit-alongside-problem-4--instagram-feed; a different film, not the same one re-coloured. |
+| **Variation** | Set the grounds against the accent | Its shape was 0.74 similar to sit-alongside-problem-4--instagram-feed; a different film, not the same one re-coloured. |
 | **Sound** | Light sound design, low-energy bed | Most of this audience never unmutes, so nothing depends on sound; cues are kept quieter and sparser for those who do. |
-| **Length** | 24.3s, 3 scenes | Each scene is held for the time its words take to read on Instagram feed video (0.3s a word), inside 10–30s. |
+| **Length** | 28.5s, 4 scenes | Each scene is held for the time its words take to read on Instagram feed video (0.3s a word), inside 10–30s. |
 
 Treatment: voice `editorial`, camera `locked`, motif `index`, transitions `cardSlide` → `wipe` → `cardSlide`, music bed at 0.16 (low energy).
 
@@ -30,21 +33,29 @@ Treatment: voice `editorial`, camera `locked`, motif `index`, transitions `cardS
 
 ### 1. moment — 0:00.00 to 0:07.00 (frames 0–210, 7.0s)
 
-- **Shot:** title / editorial on a light ground, in by `cut`
+- **Shot:** title / label on a light ground, in by `cut`
 - **On screen:** "You split bills with somebody and neither of you can remember what was actually squared up last time." — `problemsSolved[7].problem`
 - **Set as:** `You split bills with somebody` / `and neither of you can` / `remember what was actually` / `squared up last time.` (accent on "somebody")
 - **Why:** Opens on the moment as the listing describes it: the situation the viewer is in right now.
 
 ### 2. help — 0:06.60 to 0:21.33 (frames 198–640, 14.7s)
 
-- **Shot:** phone / proof on a light ground, in by `blurDissolve`
+- **Shot:** phone / proof on a light ground, in by `wipe`
 - **Eyebrow:** "Personal Finance Companion" — `title`
-- **Real UI:** `screens/personal-finance-companion-bills.png`, pose `tiltLeft`, focus "totals" (y 229, h 224) at 45%
+- **Real UI:** `screens/personal-finance-companion-bills.png`, pose `tiltRight`, focus "totals" (y 229, h 224) at 45%
 - **Caption:** "Mark a bill or subscription shared, set your share of it, and tick it settled when it is genuinely settled. A generated statement says what is settled and what is still owed." — `problemsSolved[7].solution`
-- **Sound:** whoosh @+0f (0.19), pop @+12f (0.25), tap @+199f (0.33)
+- **Sound:** swish @+0f (0.19), pop @+12f (0.25), tap @+199f (0.33)
 - **Why:** How Personal Finance Companion helps with this moment, in the listing's own words, on the real screen that shows it. Screen: "Bills" (What's owed on a schedule: the monthly total, what's left to pay, and each bill marked ready or essential.) chosen because it is the real screen closest to "Mark a bill or subscription shared, set your share of it, and tick it settled wh"; focus on "Monthly total, Left to pay this month".
 
-### 3. cta — 0:20.93 to 0:24.27 (frames 628–728, 3.3s)
+### 3. also — 0:20.93 to 0:25.53 (frames 628–766, 4.6s)
+
+- **Shot:** phone / proof on a accent ground, in by `blurDissolve`
+- **Real UI:** `screens/personal-finance-companion-records.png`, pose `tiltLeft`, focus "accounts" (y 222, h 119) at 45%
+- **Caption:** "Bring in a bank statement without retyping it" — `tasks[6].label`
+- **Sound:** whoosh @+0f (0.19), pop @+12f (0.25), tap @+62f (0.33)
+- **Why:** One more real thing an owner does here, in the listing's own task wording, on the screen it happens on. Screen: "Records" (What's actually true right now, area by area: accounts, income, bills, subscriptions, transactions, debt.) chosen because it is the real screen closest to "Bring in a bank statement without retyping it"; focus on "Accounts".
+
+### 4. cta — 0:25.13 to 0:28.47 (frames 754–854, 3.3s)
 
 - **Shot:** cta / soft on a ink ground, in by `cardSlide`
 - **On screen:** "Personal Finance Companion" — `title`

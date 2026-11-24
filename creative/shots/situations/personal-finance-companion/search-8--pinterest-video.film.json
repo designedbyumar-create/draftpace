@@ -11,8 +11,8 @@
   "width": 1000,
   "height": 1500,
   "fps": 30,
-  "durationInFrames": 636,
-  "structure": "situationWords",
+  "durationInFrames": 790,
+  "structure": "situationInside",
   "angle": {
     "text": "My spreadsheet is out of date and I do not trust it",
     "source": "searchedProblems[7].phrase"
@@ -43,7 +43,7 @@
     {
       "id": "moment",
       "kind": "title",
-      "variant": "quote",
+      "variant": "label",
       "copy": [
         {
           "text": "My spreadsheet is out of date and I do not trust it",
@@ -56,7 +56,7 @@
       "why": "Opens on the moment in the person's own words, as the listing records people searching it.",
       "from": 0,
       "dur": 157,
-      "ground": "light",
+      "ground": "accent",
       "transition": "cut",
       "sfx": [],
       "lines": [
@@ -114,6 +114,48 @@
       ]
     },
     {
+      "id": "also",
+      "kind": "phone",
+      "variant": "proof",
+      "copy": [],
+      "caption": {
+        "text": "Split a bill with somebody and keep track of it",
+        "source": "tasks[4].label"
+      },
+      "screen": {
+        "src": "screens/personal-finance-companion-bills.png",
+        "pose": "flat",
+        "focus": {
+          "at": 0.45,
+          "y": 229,
+          "h": 224,
+          "region": "totals"
+        }
+      },
+      "why": "One more real thing an owner does here, in the listing's own task wording, on the screen it happens on. Screen: \"Bills\" (What's owed on a schedule: the monthly total, what's left to pay, and each bill marked ready or essential.) chosen because it is the real screen closest to \"Split a bill with somebody and keep track of it\"; focus on \"Monthly total, Left to pay this month\".",
+      "from": 510,
+      "dur": 166,
+      "ground": "light",
+      "transition": "wipe",
+      "sfx": [
+        {
+          "at": 0,
+          "cue": "swish",
+          "volume": 0.192
+        },
+        {
+          "at": 12,
+          "cue": "pop",
+          "volume": 0.252
+        },
+        {
+          "at": 75,
+          "cue": "tap",
+          "volume": 0.33
+        }
+      ]
+    },
+    {
       "id": "cta",
       "kind": "cta",
       "variant": "save",
@@ -128,9 +170,9 @@
         }
       ],
       "why": "Pinterest video pin is a planning surface; the close asks for the save, the price stays quiet.",
-      "from": 510,
+      "from": 664,
       "dur": 126,
-      "ground": "ink",
+      "ground": "accent",
       "transition": "blurDissolve",
       "sfx": [
         {
@@ -174,13 +216,13 @@
     },
     {
       "topic": "Structure",
-      "decision": "In their words: The moment typed the way a person searches it, then what to do about it, then the product doing it.",
-      "because": "Best fit for a awareness film on Pinterest video pin (platform fit 3, goal fit 3, already used for this product ×2, already used on Pinterest video pin ×2). Other candidates: Inside the tool (-16.0), The moment (-17.9)."
+      "decision": "Inside the tool: The moment, then how the product helps on its real screen, then one more real thing an owner does in it.",
+      "because": "Best fit for a awareness film on Pinterest video pin (platform fit 2, goal fit 2, already used for this product ×1, already used on Pinterest video pin ×4). Other candidates: In their words (-17.7), The moment (-17.9)."
     },
     {
       "topic": "Angle",
       "decision": "\"My spreadsheet is out of date and I do not trust it\"",
-      "because": "A situation people search for, \"My spreadsheet is out of date and I do not trust it\", and how Personal Finance Companion helps."
+      "because": "The moment \"My spreadsheet is out of date and I do not trust it\", how Personal Finance Companion helps, and one more real thing it does: \"Split a bill with somebody and keep track of it\"."
     },
     {
       "topic": "Transitions",
@@ -204,7 +246,7 @@
     },
     {
       "topic": "Length",
-      "decision": "21.2s, 3 scenes",
+      "decision": "26.3s, 4 scenes",
       "because": "Each scene is held for the time its words take to read on Pinterest video pin (0.32s a word), inside 10–32s."
     }
   ]

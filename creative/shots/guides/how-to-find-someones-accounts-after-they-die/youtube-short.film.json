@@ -11,11 +11,11 @@
   "width": 1080,
   "height": 1920,
   "fps": 30,
-  "durationInFrames": 540,
-  "structure": "guideQuestion",
+  "durationInFrames": 842,
+  "structure": "guideChecklist",
   "angle": {
-    "text": "Are a deceased person's accounts frozen automatically?",
-    "source": "guide:how-to-find-someones-accounts-after-they-die/body[7].items[1].q"
+    "text": "How to find accounts after someone dies (US)",
+    "source": "guide:how-to-find-someones-accounts-after-they-die/title"
   },
   "treatment": {
     "voice": "editorial",
@@ -41,16 +41,19 @@
   },
   "scenes": [
     {
-      "id": "q",
+      "id": "hook",
       "kind": "title",
-      "variant": "quote",
+      "variant": "editorial",
       "copy": [
         {
-          "text": "Are a deceased person's accounts frozen automatically?",
-          "source": "guide:how-to-find-someones-accounts-after-they-die/body[7].items[1].q"
+          "text": "How to find accounts after someone dies (US)",
+          "source": "guide:how-to-find-someones-accounts-after-they-die/title"
         }
       ],
-      "why": "The question as people ask it; the guide carries it because people search it.",
+      "emphasis": [
+        "accounts"
+      ],
+      "why": "The hook is the guide's own title: the question it answers, as a person would put it.",
       "from": 0,
       "dur": 83,
       "ground": "light",
@@ -58,44 +61,69 @@
       "sfx": [],
       "lines": [
         [
-          "Are a deceased",
-          "person's accounts",
-          "frozen automatically?"
+          "How to find accounts",
+          "after someone dies",
+          "(US)"
         ]
       ]
     },
     {
-      "id": "a",
-      "kind": "title",
-      "variant": "label",
+      "id": "list",
+      "kind": "list",
+      "variant": "checklist",
       "copy": [
         {
-          "text": "Often, once the bank learns of the death, though the timing varies by bank and by account type.",
-          "source": "guide:how-to-find-someones-accounts-after-they-die/body[7].items[1].a#0"
+          "text": "Gather a year of bank and card statements where lawfully available.",
+          "source": "guide:how-to-find-someones-accounts-after-they-die/body[2].items[0]#0"
+        },
+        {
+          "text": "Review tax documents for institutions reporting interest, dividends or retirement income.",
+          "source": "guide:how-to-find-someones-accounts-after-they-die/body[2].items[2]#0"
+        },
+        {
+          "text": "Check correspondence from former employers, advisers, accountants and insurers.",
+          "source": "guide:how-to-find-someones-accounts-after-they-die/body[2].items[3]#0"
+        },
+        {
+          "text": "Preserve unresolved letters and relevant records.",
+          "source": "guide:how-to-find-someones-accounts-after-they-die/body[2].items[4]#0"
         }
       ],
-      "emphasis": [
-        "account"
-      ],
-      "why": "The guide's answer, its first sentence: the plain answer before any detail.",
+      "eyebrow": {
+        "text": "Work through the available paper trail",
+        "source": "guide:how-to-find-someones-accounts-after-they-die/body[2].heading"
+      },
+      "why": "The guide's own checklist, the first sentence of each item, ticked in as it is read.",
       "from": 71,
-      "dur": 168,
-      "ground": "light",
+      "dur": 476,
+      "ground": "ink",
       "transition": "pageTurn",
       "sfx": [
         {
           "at": 0,
           "cue": "page",
           "volume": 0.32
+        },
+        {
+          "at": 10,
+          "cue": "pop",
+          "volume": 0.45
+        },
+        {
+          "at": 105,
+          "cue": "pop",
+          "volume": 0.45
+        },
+        {
+          "at": 200,
+          "cue": "pop",
+          "volume": 0.45
+        },
+        {
+          "at": 295,
+          "cue": "pop",
+          "volume": 0.45
         }
-      ],
-      "lines": [
-        [
-          "Often, once the bank learns",
-          "of the death, though the",
-          "timing varies by bank and",
-          "by account type."
-        ]
       ]
     },
     {
@@ -118,14 +146,14 @@
         },
         "scroll": []
       },
-      "why": "The turn: the product the guide itself hands over to, named and shown on its real screen, captioned with its listing's line closest to what the guide teaches. Screen: \"Write down who should be called first.\" (One question at a time: write down who should be called first, with Start, Not relevant to me and Later.) chosen because it is the real screen closest to \"A record of what changed, and when, and what it said before How to find someone'\"; focus on \"Write down who should be called first.\".",
+      "why": "The turn: the product the guide itself hands over to, named and shown on its real screen, captioned with its listing's line closest to what the guide teaches. Screen: \"Write down who should be called first.\" (One question at a time: write down who should be called first, with Start, Not relevant to me and Later.) chosen because it is the real screen closest to \"A record of what changed, and when, and what it said before How to find accounts\"; focus on \"Write down who should be called first.\".",
       "eyebrow": {
         "text": "Personal Life Affairs Companion",
         "source": "title"
       },
-      "from": 227,
-      "dur": 200,
-      "ground": "ink",
+      "from": 535,
+      "dur": 194,
+      "ground": "accent",
       "transition": "blurDissolve",
       "sfx": [
         {
@@ -139,7 +167,7 @@
           "volume": 0.42
         },
         {
-          "at": 90,
+          "at": 87,
           "cue": "tap",
           "volume": 0.55
         }
@@ -164,9 +192,9 @@
         "source": "micro"
       },
       "why": "Ends on where to read the whole guide, with the product beneath it: the viewer leaves with the next step, not only a pitch.",
-      "from": 415,
+      "from": 717,
       "dur": 125,
-      "ground": "accent",
+      "ground": "light",
       "transition": "blurDissolve",
       "sfx": [
         {
@@ -195,8 +223,8 @@
     },
     {
       "topic": "Guide",
-      "decision": "\"How to find someone's accounts after they die\" (draftpace.com/guides/how-to-find-someones-accounts-after-they-die)",
-      "because": "Teaches from the guide first; Personal Life Affairs Companion is the product the guide hands over to. 2 lists and timelines, 5 questions to draw from."
+      "decision": "\"How to find accounts after someone dies (US)\" (draftpace.com/guides/how-to-find-someones-accounts-after-they-die)",
+      "because": "Teaches from the guide first; Personal Life Affairs Companion is the product the guide hands over to. 1 lists and timelines, 3 questions to draw from."
     },
     {
       "topic": "Stage",
@@ -209,19 +237,14 @@
       "because": "The listing's own audience lines; the director writes for them."
     },
     {
-      "topic": "Material",
-      "decision": "Allowed real lines up to 4 words longer",
-      "because": "Every structure Personal Life Affairs Companion's copy supports at YouTube Short's normal line length is already used by its other films; a longer real line beats telling the same story twice."
-    },
-    {
       "topic": "Structure",
-      "decision": "The question people ask: One of the guide's own questions, its plain answer, then the product.",
-      "because": "Best fit for a awareness film on YouTube Short (platform fit 2, goal fit 2, already used on YouTube Short ×2). Other candidates: The checklist (-2.5)."
+      "decision": "The checklist: The guide's checklist on one screen, item by item, then the product that holds it.",
+      "because": "Best fit for a awareness film on YouTube Short (platform fit 2, goal fit 3, already used on YouTube Short ×2). Other candidates: The question people ask (-6.3)."
     },
     {
       "topic": "Angle",
-      "decision": "\"Are a deceased person's accounts frozen automatically?\"",
-      "because": "A question from the guide's FAQ, \"Are a deceased person's accounts frozen automatically?\", and the first sentence of its answer."
+      "decision": "\"How to find accounts after someone dies (US)\"",
+      "because": "A checklist from the guide, \"Work through the available paper trail\": 4 of its 6 items."
     },
     {
       "topic": "Transitions",
@@ -239,13 +262,18 @@
       "because": "Grounds light → light → ink → accent: a cool accent, so a darker ground is used for contrast at a turn."
     },
     {
+      "topic": "Variation",
+      "decision": "Rotated the ground rhythm",
+      "because": "Its shape was 0.74 similar to guide-you-missed-a-payment-what-to-do-next--youtube-short; a different film, not the same one re-coloured."
+    },
+    {
       "topic": "Sound",
       "decision": "Full sound design, mid-energy bed",
       "because": "Sound-on placement: every transition, landing and reveal has a cue, and the bed ducks under the brand moment."
     },
     {
       "topic": "Length",
-      "decision": "18.0s, 4 scenes",
+      "decision": "28.1s, 4 scenes",
       "because": "Each scene is held for the time its words take to read on YouTube Short (0.26s a word), inside 18–45s."
     }
   ]

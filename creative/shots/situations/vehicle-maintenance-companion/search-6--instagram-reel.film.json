@@ -13,7 +13,7 @@
   "height": 1920,
   "fps": 30,
   "durationInFrames": 434,
-  "structure": "situationMoment",
+  "structure": "situationWords",
   "angle": {
     "text": "I have two cars and lose track of which needs what",
     "source": "searchedProblems[5].phrase"
@@ -44,7 +44,7 @@
     {
       "id": "moment",
       "kind": "title",
-      "variant": "editorial",
+      "variant": "quote",
       "copy": [
         {
           "text": "I have two cars and lose track of which needs what",
@@ -57,7 +57,7 @@
       "why": "Opens on the moment in the person's own words, as the listing records people searching it.",
       "from": 0,
       "dur": 107,
-      "ground": "ink",
+      "ground": "light",
       "transition": "cut",
       "sfx": [],
       "lines": [
@@ -94,7 +94,7 @@
       },
       "from": 95,
       "dur": 233,
-      "ground": "light",
+      "ground": "ink",
       "transition": "radial",
       "sfx": [
         {
@@ -169,7 +169,7 @@
     },
     {
       "topic": "Guide",
-      "decision": "\"How to keep track of maintenance on two cars\" (draftpace.com/guides/two-cars-one-household-maintenance)",
+      "decision": "\"How to track maintenance on two household cars\" (draftpace.com/guides/two-cars-one-household-maintenance)",
       "because": "The guide that covers this moment: what to do comes from it, and the film ends on it."
     },
     {
@@ -184,13 +184,13 @@
     },
     {
       "topic": "Structure",
-      "decision": "The moment: The moment as it feels, set dark, then the help in the light, then what to do next.",
-      "because": "Best fit for a awareness film on Instagram Reel (platform fit 3, goal fit 3, already used on Instagram Reel ×6). Other candidates: In their words (-18.8), Inside the tool (-22.8)."
+      "decision": "In their words: The moment typed the way a person searches it, then what to do about it, then the product doing it.",
+      "because": "Best fit for a awareness film on Instagram Reel (platform fit 2, goal fit 3, already used for this product ×2, already used on Instagram Reel ×2). Other candidates: The moment (-19.9), Inside the tool (-23.1)."
     },
     {
       "topic": "Angle",
       "decision": "\"I have two cars and lose track of which needs what\"",
-      "because": "The moment \"I have two cars and lose track of which needs what\", then how Vehicle Maintenance Companion helps, then what the guide \"How to keep track of maintenance on two cars\" says to do."
+      "because": "A situation people search for, \"I have two cars and lose track of which needs what\", with the steps from \"How to track maintenance on two household cars\", and how Vehicle Maintenance Companion helps."
     },
     {
       "topic": "Transitions",

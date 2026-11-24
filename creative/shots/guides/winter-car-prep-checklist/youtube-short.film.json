@@ -11,10 +11,10 @@
   "width": 1080,
   "height": 1920,
   "fps": 30,
-  "durationInFrames": 640,
+  "durationInFrames": 875,
   "structure": "guideChecklist",
   "angle": {
-    "text": "Winter car prep checklist: what to check before frost",
+    "text": "Winter car prep checklist before freezing weather",
     "source": "guide:winter-car-prep-checklist/title"
   },
   "treatment": {
@@ -46,7 +46,7 @@
       "variant": "editorial",
       "copy": [
         {
-          "text": "Winter car prep checklist: what to check before frost",
+          "text": "Winter car prep checklist before freezing weather",
           "source": "guide:winter-car-prep-checklist/title"
         }
       ],
@@ -55,15 +55,15 @@
       ],
       "why": "The hook is the guide's own title: the question it answers, as a person would put it.",
       "from": 0,
-      "dur": 91,
+      "dur": 76,
       "ground": "light",
       "transition": "cut",
       "sfx": [],
       "lines": [
         [
           "Winter car prep",
-          "checklist: what to",
-          "check before frost"
+          "checklist before",
+          "freezing weather"
         ]
       ]
     },
@@ -73,29 +73,29 @@
       "variant": "checklist",
       "copy": [
         {
-          "text": "A flashlight, with batteries that work",
-          "source": "guide:winter-car-prep-checklist/body[4].items[1]#0"
+          "text": "Check tire condition and cold pressure against the vehicle placard.",
+          "source": "guide:winter-car-prep-checklist/body[1].items[0]#0"
         },
         {
-          "text": "Warm clothes and blankets",
-          "source": "guide:winter-car-prep-checklist/body[4].items[2]#0"
+          "text": "Test headlights, brake lights, turn signals, hazards, wipers, washers and glass-clearing functions.",
+          "source": "guide:winter-car-prep-checklist/body[1].items[1]#0"
         },
         {
-          "text": "Bottled water and non-perishable snacks",
-          "source": "guide:winter-car-prep-checklist/body[4].items[3]#0"
+          "text": "Check coolant and washer-fluid requirements in the manual.",
+          "source": "guide:winter-car-prep-checklist/body[1].items[3]#0"
         },
         {
-          "text": "Sand for traction",
-          "source": "guide:winter-car-prep-checklist/body[4].items[4]#0"
+          "text": "Check the forecast and road authority advice before a trip.",
+          "source": "guide:winter-car-prep-checklist/body[1].items[5]#0"
         }
       ],
       "eyebrow": {
-        "text": "What goes in the car",
-        "source": "guide:winter-car-prep-checklist/body[4].heading"
+        "text": "A pre-freeze check you can work through",
+        "source": "guide:winter-car-prep-checklist/body[1].heading"
       },
       "why": "The guide's own checklist, the first sentence of each item, ticked in as it is read.",
-      "from": 79,
-      "dur": 320,
+      "from": 64,
+      "dur": 508,
       "ground": "light",
       "transition": "radial",
       "sfx": [
@@ -110,17 +110,17 @@
           "volume": 0.45
         },
         {
-          "at": 74,
+          "at": 112,
           "cue": "pop",
           "volume": 0.45
         },
         {
-          "at": 138,
+          "at": 214,
           "cue": "pop",
           "volume": 0.45
         },
         {
-          "at": 202,
+          "at": 316,
           "cue": "pop",
           "volume": 0.45
         }
@@ -132,26 +132,27 @@
       "variant": "proof",
       "copy": [],
       "caption": {
-        "text": "Get its usual jobs in one tap.",
-        "source": "howItWorks[1]#0"
+        "text": "A service record by vehicle and by year, which you can print for a buyer",
+        "source": "expectedOutputs[3]"
       },
       "screen": {
-        "src": "screens/vehicle-maintenance-companion-printables.png",
+        "src": "screens/vehicle-maintenance-companion-history.png",
         "pose": "tiltRight",
         "focus": {
           "at": 0.45,
-          "y": 299,
-          "h": 91,
-          "region": "boundary"
-        }
+          "y": 236,
+          "h": 364,
+          "region": "log"
+        },
+        "scroll": []
       },
-      "why": "The turn: the product the guide itself hands over to, named and shown on its real screen, captioned with its listing's line closest to what the guide teaches. Screen: \"Print\" (The Service Boundary: a dated, mileage-stamped page you hand over before a shop touches the car, with what you're asking for and a limit.) chosen because it is the real screen closest to \"Get its usual jobs in one tap. Winter car prep checklist: what to check before f\"; focus on \"Service Boundary\".",
+      "why": "The turn: the product the guide itself hands over to, named and shown on its real screen, captioned with its listing's line closest to what the guide teaches. Screen: \"History\" (What has been done and when: each service dated, with the mileage, the shop and the cost.) chosen because it is the real screen closest to \"A service record by vehicle and by year, which you can print for a buyer Winter \"; focus on \"Oil and filter change\".",
       "eyebrow": {
         "text": "Vehicle Maintenance Companion",
         "source": "title"
       },
-      "from": 387,
-      "dur": 147,
+      "from": 560,
+      "dur": 209,
       "ground": "accent",
       "transition": "zoomThrough",
       "sfx": [
@@ -166,7 +167,7 @@
           "volume": 0.42
         },
         {
-          "at": 66,
+          "at": 94,
           "cue": "tap",
           "volume": 0.55
         }
@@ -191,7 +192,7 @@
         "source": "micro"
       },
       "why": "Ends on where to read the whole guide, with the product beneath it: the viewer leaves with the next step, not only a pitch.",
-      "from": 522,
+      "from": 757,
       "dur": 118,
       "ground": "light",
       "transition": "blurDissolve",
@@ -222,8 +223,8 @@
     },
     {
       "topic": "Guide",
-      "decision": "\"Winter car prep checklist: what to check before frost\" (draftpace.com/guides/winter-car-prep-checklist)",
-      "because": "Teaches from the guide first; Vehicle Maintenance Companion is the product the guide hands over to. 2 lists and timelines, 5 questions to draw from."
+      "decision": "\"Winter car prep checklist before freezing weather\" (draftpace.com/guides/winter-car-prep-checklist)",
+      "because": "Teaches from the guide first; Vehicle Maintenance Companion is the product the guide hands over to. 1 lists and timelines, 3 questions to draw from."
     },
     {
       "topic": "Stage",
@@ -238,12 +239,12 @@
     {
       "topic": "Structure",
       "decision": "The checklist: The guide's checklist on one screen, item by item, then the product that holds it.",
-      "because": "Best fit for a awareness film on YouTube Short (platform fit 2, goal fit 3, already used on YouTube Short ×11). Other candidates: The question people ask (-30.8)."
+      "because": "Best fit for a awareness film on YouTube Short (platform fit 2, goal fit 3, already used on YouTube Short ×19). Other candidates: The question people ask (-53.9)."
     },
     {
       "topic": "Angle",
-      "decision": "\"Winter car prep checklist: what to check before frost\"",
-      "because": "A checklist from the guide, \"What goes in the car\": 4 of its 7 items."
+      "decision": "\"Winter car prep checklist before freezing weather\"",
+      "because": "A checklist from the guide, \"A pre-freeze check you can work through\": 4 of its 6 items."
     },
     {
       "topic": "Transitions",
@@ -267,7 +268,7 @@
     },
     {
       "topic": "Length",
-      "decision": "21.3s, 4 scenes",
+      "decision": "29.2s, 4 scenes",
       "because": "Each scene is held for the time its words take to read on YouTube Short (0.26s a word), inside 18–45s."
     }
   ]

@@ -14,7 +14,7 @@
         "appliance"
       ],
       "promise": {
-        "text": "How to find the model number on any appliance",
+        "text": "How to find an appliance model number safely",
         "source": "guide:how-to-find-the-model-number-on-any-appliance/title"
       },
       "art": {
@@ -31,105 +31,51 @@
       },
       "lines": [
         {
-          "text": "Where the data plate hides on a fridge, washer, dryer, dishwasher, range and water heater, and what to do when the label has worn away.",
+          "text": "Find the rating label, distinguish model from serial, and save the full identifier without moving heavy equipment or opening hazardous covers.",
           "source": "guide:how-to-find-the-model-number-on-any-appliance/dek#0"
         }
       ],
       "art": {
         "motif": "bulb",
-        "why": "the slide names \"fridge\", \"heater\", \"label\""
+        "why": "the slide names \"serial\", \"label\""
       }
     },
     {
-      "kind": "step",
+      "kind": "checklist",
       "eyebrow": {
-        "text": "Find it and save it, step by step",
-        "source": "guide:how-to-find-the-model-number-on-any-appliance/body[5].heading"
+        "text": "Capture the identifier correctly",
+        "source": "guide:how-to-find-the-model-number-on-any-appliance/body[2].heading"
       },
-      "number": {
-        "text": "1",
-        "source": "micro"
-      },
-      "head": {
-        "text": "Do it while the appliance works and you can reach it.",
-        "source": "guide:how-to-find-the-model-number-on-any-appliance/body[5].items[0]#0"
-      },
-      "body": [
+      "items": [
         {
-          "text": "Not on the morning it fails and the technician is at the door.",
-          "source": "guide:how-to-find-the-model-number-on-any-appliance/body[5].items[0]#1"
-        }
-      ],
-      "emphasis": [
-        "appliance"
-      ],
-      "art": {
-        "motif": "toolbox",
-        "why": "the slide names \"technician\""
-      }
-    },
-    {
-      "kind": "step",
-      "eyebrow": {
-        "text": "Find it and save it, step by step",
-        "source": "guide:how-to-find-the-model-number-on-any-appliance/body[5].heading"
-      },
-      "number": {
-        "text": "2",
-        "source": "micro"
-      },
-      "head": {
-        "text": "Open the door, lid or drawer where the plate should be.",
-        "source": "guide:how-to-find-the-model-number-on-any-appliance/body[5].items[1]#0"
-      },
-      "body": [
-        {
-          "text": "Use a flashlight, because plates sit in shadow.",
-          "source": "guide:how-to-find-the-model-number-on-any-appliance/body[5].items[1]#1"
+          "text": "Read the brand from the actual appliance, not only a detached remote or accessory.",
+          "source": "guide:how-to-find-the-model-number-on-any-appliance/body[2].items[0]#0"
         },
         {
-          "text": "For a furnace, turn its power switch off first, and if the plate is not on the front panel, stop and check the manual instead of removing more covers.",
-          "source": "guide:how-to-find-the-model-number-on-any-appliance/body[5].items[1]#2"
-        }
-      ],
-      "emphasis": [
-        "drawer"
-      ],
-      "art": {
-        "motif": "bulb",
-        "why": "the slide names \"furnace\", \"manual\""
-      }
-    },
-    {
-      "kind": "step",
-      "eyebrow": {
-        "text": "Find it and save it, step by step",
-        "source": "guide:how-to-find-the-model-number-on-any-appliance/body[5].heading"
-      },
-      "number": {
-        "text": "3",
-        "source": "micro"
-      },
-      "head": {
-        "text": "Photograph the whole plate, then a close shot of each code.",
-        "source": "guide:how-to-find-the-model-number-on-any-appliance/body[5].items[2]#0"
-      },
-      "body": [
-        {
-          "text": "Do not choose which code to keep.",
-          "source": "guide:how-to-find-the-model-number-on-any-appliance/body[5].items[2]#1"
+          "text": "Use the manufacturer's model-locator instructions for that product type.",
+          "source": "guide:how-to-find-the-model-number-on-any-appliance/body[2].items[1]#0"
         },
         {
-          "text": "Keep them all.",
-          "source": "guide:how-to-find-the-model-number-on-any-appliance/body[5].items[2]#2"
+          "text": "Open only ordinary user-access doors or lids that are safe under the manual.",
+          "source": "guide:how-to-find-the-model-number-on-any-appliance/body[2].items[2]#0"
+        },
+        {
+          "text": "Photograph the full plate and a readable close view, keeping all suffixes.",
+          "source": "guide:how-to-find-the-model-number-on-any-appliance/body[2].items[3]#0"
+        },
+        {
+          "text": "Copy model and serial into separate labeled fields.",
+          "source": "guide:how-to-find-the-model-number-on-any-appliance/body[2].items[4]#0"
+        },
+        {
+          "text": "Check likely confusions such as O and zero, I and one, or missing hyphens.",
+          "source": "guide:how-to-find-the-model-number-on-any-appliance/body[2].items[5]#0"
         }
       ],
-      "emphasis": [
-        "Photograph"
-      ],
+      "ticks": true,
       "art": {
-        "motif": "wrench",
-        "why": "the slide names nothing drawable; the carousel's topic (the moment and its guide name \"part\")"
+        "motif": "magnifier",
+        "why": "the slide names \"missing\""
       }
     },
     {
@@ -158,7 +104,7 @@
         "source": "micro"
       },
       "title": {
-        "text": "How to find the model number on any appliance",
+        "text": "How to find an appliance model number safely",
         "source": "guide:how-to-find-the-model-number-on-any-appliance/title"
       },
       "url": {
@@ -181,13 +127,11 @@
   ],
   "notes": [
     "Cover: \"I don't know which filter or part my appliance takes\" (searchedProblems[4].phrase), as people search it.",
-    "Steps: 3 of 5 from the guide's numbered steps \"Find it and save it, step by step\", one per slide, each with the guide's own explanation.",
+    "Checklist: 6 items from \"Capture the identifier correctly\".",
     "Help: \"A what-to-buy line on each thing, printable as a single Item Card you can take to the counter.\" (searchedProblems[4].answer), on screens/home-management-companion-workspace.png (\"A couple of things need a look\").",
     "Illustration on the cover: bulb with wrench, because the carousel's topic: the moment and its guide name \"appliance\", \"model number\", \"filter\".",
-    "Illustration on the answer: bulb, because the slide names \"fridge\", \"heater\", \"label\".",
-    "Illustration on the step: toolbox, because the slide names \"technician\".",
-    "Illustration on the step: bulb, because the slide names \"furnace\", \"manual\".",
-    "Illustration on the step: wrench, because the slide names nothing drawable; the carousel's topic (the moment and its guide name \"part\").",
+    "Illustration on the answer: bulb, because the slide names \"serial\", \"label\".",
+    "Illustration on the checklist: magnifier, because the slide names \"missing\".",
     "Illustration on the close: bulb, because the carousel's topic: the moment and its guide name \"appliance\", \"model number\", \"filter\"."
   ]
 }

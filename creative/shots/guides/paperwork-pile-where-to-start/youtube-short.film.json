@@ -14,8 +14,8 @@
   "durationInFrames": 540,
   "structure": "guideQuestion",
   "angle": {
-    "text": "What is a doom pile?",
-    "source": "guide:paperwork-pile-where-to-start/body[7].items[1].q"
+    "text": "What goes in the clarification folder?",
+    "source": "guide:paperwork-pile-where-to-start/body[9].items[1].q"
   },
   "treatment": {
     "voice": "editorial",
@@ -46,19 +46,20 @@
       "variant": "quote",
       "copy": [
         {
-          "text": "What is a doom pile?",
-          "source": "guide:paperwork-pile-where-to-start/body[7].items[1].q"
+          "text": "What goes in the clarification folder?",
+          "source": "guide:paperwork-pile-where-to-start/body[9].items[1].q"
         }
       ],
       "why": "The question as people ask it; the guide carries it because people search it.",
       "from": 0,
-      "dur": 77,
+      "dur": 96,
       "ground": "light",
       "transition": "cut",
       "sfx": [],
       "lines": [
         [
-          "What is a doom pile?"
+          "What goes in the",
+          "clarification folder?"
         ]
       ]
     },
@@ -68,16 +69,16 @@
       "variant": "label",
       "copy": [
         {
-          "text": "It's a name for a stack of unsorted things moved somewhere to clear a surface.",
-          "source": "guide:paperwork-pile-where-to-start/body[7].items[1].a#0"
+          "text": "Anything whose meaning or next step you cannot establish yet.",
+          "source": "guide:paperwork-pile-where-to-start/body[9].items[1].a#0"
         }
       ],
       "emphasis": [
-        "somewhere"
+        "establish"
       ],
       "why": "The guide's answer, its first sentence: the plain answer before any detail.",
-      "from": 65,
-      "dur": 155,
+      "from": 84,
+      "dur": 126,
       "ground": "ink",
       "transition": "iris",
       "sfx": [
@@ -89,9 +90,9 @@
       ],
       "lines": [
         [
-          "It's a name for a stack of",
-          "unsorted things moved",
-          "somewhere to clear a surface."
+          "Anything whose meaning",
+          "or next step you",
+          "cannot establish yet."
         ]
       ]
     },
@@ -120,8 +121,8 @@
         "text": "ADHD Life Companion",
         "source": "title"
       },
-      "from": 208,
-      "dur": 226,
+      "from": 198,
+      "dur": 236,
       "ground": "light",
       "transition": "blurDissolve",
       "sfx": [
@@ -136,7 +137,7 @@
           "volume": 0.42
         },
         {
-          "at": 102,
+          "at": 106,
           "cue": "tap",
           "volume": 0.55
         }
@@ -192,8 +193,8 @@
     },
     {
       "topic": "Guide",
-      "decision": "\"Paperwork pile you are avoiding: where to start\" (draftpace.com/guides/paperwork-pile-where-to-start)",
-      "because": "Teaches from the guide first; ADHD Life Companion is the product the guide hands over to. 2 lists and timelines, 5 questions to draw from."
+      "decision": "\"Paperwork pile: start by finding what needs action\" (draftpace.com/guides/paperwork-pile-where-to-start)",
+      "because": "Teaches from the guide first; ADHD Life Companion is the product the guide hands over to. 1 lists and timelines, 3 questions to draw from."
     },
     {
       "topic": "Stage",
@@ -208,12 +209,12 @@
     {
       "topic": "Structure",
       "decision": "The question people ask: One of the guide's own questions, its plain answer, then the product.",
-      "because": "Best fit for a awareness film on YouTube Short (platform fit 2, goal fit 2). Other candidates: In order (5.0)."
+      "because": "Best fit for a awareness film on YouTube Short (platform fit 2, goal fit 2). Other candidates: The checklist (3.5)."
     },
     {
       "topic": "Angle",
-      "decision": "\"What is a doom pile?\"",
-      "because": "A question from the guide's FAQ, \"What is a doom pile?\", and the first sentence of its answer."
+      "decision": "\"What goes in the clarification folder?\"",
+      "because": "A question from the guide's FAQ, \"What goes in the clarification folder?\", and the first sentence of its answer."
     },
     {
       "topic": "Transitions",

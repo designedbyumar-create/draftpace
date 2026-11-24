@@ -1,19 +1,19 @@
 .experience { padding-top: 32px; }
 .prose > div { margin-top: 18px; }
-.prose:first-child p:first-child { border-left: 3px solid var(--primary); padding-left: 20px; font-size: 20px; font-weight: 500; }
+.prose:first-child p:first-child { border-left: 3px solid var(--area); padding-left: 20px; font-size: 20px; font-weight: 500; }
 .prose:first-child p:last-child { color: var(--muted); font-size: 14px; line-height: 1.7; }
 .section { margin-top: 48px; }
-.sectionHead > span { color: var(--primary); text-transform: uppercase; font: 11px/1.6 monospace; }
+.sectionHead > span { color: var(--area); text-transform: uppercase; font: 11px/1.6 monospace; }
 .sectionHead h2 { margin-top: 8px !important; padding-top: 0 !important; border: 0 !important; scroll-margin-top: 110px; }
 .section > p { margin-top: 16px; }
 .patterns { border: 0; padding: 0; margin: 24px 0; display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 10px; }
 .patterns legend { font-size: 14px; font-weight: 600; margin-bottom: 12px; }
 .patterns label { display: flex; gap: 10px; align-items: start; border-bottom: 2px solid var(--border-strong); padding: 14px 8px !important; cursor: pointer; }
-.patterns label[data-selected=true] { border-color: var(--primary); background: var(--primary-soft); }
-.patterns input { margin-top: 4px; accent-color: var(--primary); width: 18px; height: 18px; flex-shrink: 0; }
+.patterns label[data-selected=true] { border-color: var(--area); background: var(--area-soft); }
+.patterns input { margin-top: 4px; accent-color: var(--area); width: 18px; height: 18px; flex-shrink: 0; }
 .patterns strong { display: block; font-size: 14px; }
 .patterns label span span { display: block; color: var(--muted); font-size: 12px; line-height: 1.6; margin-top: 4px; }
-.exampleLabel { display: flex; align-items: center; gap: 9px; font: 12px/1.5 monospace; color: var(--primary); margin-bottom: 15px; }
+.exampleLabel { display: flex; align-items: center; gap: 9px; font: 12px/1.5 monospace; color: var(--area); margin-bottom: 15px; }
 .week { display: grid; grid-template-columns: repeat(5,minmax(0,1fr)); list-style: none; padding: 0; margin: 0; gap: 0; border: 1px solid var(--border-strong); border-radius: 4px; overflow: hidden; }
 .week > li + li { border-left: 1px solid var(--border-strong); }
 .week header { padding: 14px 10px; background: var(--surface-muted); border-bottom: 1px solid var(--border); }
@@ -21,20 +21,20 @@
 .week header span { font: 10px/1.5 monospace; color: var(--muted); }
 .week li > div { padding: 14px 10px; }
 .week p { font-size: 12px; line-height: 1.7; }
-.week li > div > span { display: block; font-size: 10px; text-transform: uppercase; color: var(--primary); margin-bottom: 8px; font-weight: 600; }
+.week li > div > span { display: block; font-size: 10px; text-transform: uppercase; color: var(--area); margin-bottom: 8px; font-weight: 600; }
 .practice { min-height: 155px; }
 .project { border-top: 1px solid var(--border); }
-.week li[data-open=true] { background: var(--primary-soft); }
-.openDay svg { margin-bottom: 15px; color: var(--primary); }
+.week li[data-open=true] { background: var(--area-soft); }
+.openDay svg { margin-bottom: 15px; color: var(--area); }
 .openDay > strong { display: block; font: 21px/1.3 Georgia,serif; margin-bottom: 12px; }
 .toolFooter { display: flex; gap: 15px; justify-content: space-between; align-items: center; font-size: 12px; line-height: 1.7; color: var(--muted); padding-top: 16px; }
-.toolFooter > a { color: var(--primary); display: flex; gap: 6px; align-items: center; flex-shrink: 0; min-height: 44px; }
+.toolFooter > a { color: var(--area); display: flex; gap: 6px; align-items: center; flex-shrink: 0; min-height: 44px; }
 .calculator { border: 1px solid var(--border-strong); border-radius: 6px; margin-top: 24px; overflow: hidden; }
-.calcHeading { display: flex; align-items: center; gap: 14px; padding: 22px; background: var(--primary-soft); }
-.calcHeading > svg { color: var(--primary); }
+.calcHeading { display: flex; align-items: center; gap: 14px; padding: 22px; background: var(--area-soft); }
+.calcHeading > svg { color: var(--area); }
 .calcHeading strong { display: block; font-size: 18px; }
 .calcHeading span { display: block; margin-top: 4px; font-size: 13px; color: var(--muted); }
-.calcHeading button { display: grid; place-items: center; margin-left: auto; min-width: 44px; min-height: 44px; color: var(--primary); }
+.calcHeading button { display: grid; place-items: center; margin-left: auto; min-width: 44px; min-height: 44px; color: var(--area); }
 .inputs { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 18px; padding: 24px; }
 .inputs label { padding: 0 !important; }
 .inputs label span { display: block; margin-bottom: 8px; font-size: 12px; font-weight: 600; }
@@ -42,11 +42,11 @@
 .results { display: grid; grid-template-columns: 1fr 1fr; gap: 0; margin: 0 24px; border-top: 1px solid var(--border-strong); }
 .results > div { padding: 20px 12px 20px 0; }
 .results > div + div { padding-left: 24px; border-left: 1px solid var(--border-strong); }
-.results > div > strong { display: block; font: 48px/1.2 Georgia,serif; margin: 8px 0; color: var(--primary); }
+.results > div > strong { display: block; font: 48px/1.2 Georgia,serif; margin: 8px 0; color: var(--area); }
 .results span { display: block; color: var(--muted); font-size: 12px; line-height: 1.6; }
 .results > p { grid-column: 1/-1; font-size: 15px; line-height: 1.75; padding: 0 0 22px; }
 .mathNote { display: flex; align-items: start; gap: 10px; font-size: 13px !important; line-height: 1.7 !important; padding: 18px 24px; background: var(--surface-muted); }
-.mathNote svg { flex-shrink: 0; color: var(--primary); }
+.mathNote svg { flex-shrink: 0; color: var(--area); }
 .worked { margin-top: 20px; border-bottom: 1px solid var(--border-strong); }
 .worked summary { display: flex; align-items: center; justify-content: space-between; gap: 10px; min-height: 54px; cursor: pointer; font-size: 14px; font-weight: 600; list-style: none; }
 .worked dl > div { padding: 14px 0; border-top: 1px solid var(--border); font-size: 14px; }
@@ -55,20 +55,20 @@
 .routes { margin-top: 20px; border-top: 1px solid var(--border-strong); }
 .routes details { border-bottom: 1px solid var(--border-strong); }
 .routes summary { display: flex; align-items: center; gap: 15px; min-height: 72px; cursor: pointer; list-style: none; }
-.routes summary > span { font: 12px monospace; color: var(--primary); }
+.routes summary > span { font: 12px monospace; color: var(--area); }
 .routes summary strong { flex: 1; font-size: 17px; }
 .routes details[open] summary svg { transform: rotate(90deg); }
 .routes p { margin: 0 0 24px 30px; font-size: 16px; }
 .checks { padding: 0; margin: 20px 0 0; list-style: none; border-top: 1px solid var(--border-strong); }
 .checks li { border-bottom: 1px solid var(--border); }
 .checks label { display: flex; align-items: start; gap: 15px; cursor: pointer; padding: 20px 0 !important; }
-.checks input { margin-top: 4px; width: 20px; height: 20px; flex-shrink: 0; accent-color: var(--primary); }
+.checks input { margin-top: 4px; width: 20px; height: 20px; flex-shrink: 0; accent-color: var(--area); }
 .checks span { font-size: 16px; line-height: 1.7; }
 .checkStatus { color: var(--muted); font: 12px/1.7 monospace !important; }
 .record { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); list-style: none; padding: 0; border-block: 1px solid var(--border-strong); margin-top: 24px; }
 .record li { padding: 22px 15px; }
 .record li + li { border-left: 1px solid var(--border-strong); }
-.record svg { color: var(--primary); }
+.record svg { color: var(--area); }
 .record li p { font-size: 15px; line-height: 1.75; margin: 14px 0; }
 @media(max-width:639px) { .week { grid-template-columns: 1fr; } .week > li { display: grid; grid-template-columns: 100px 1fr; } .week > li + li { border-left: 0; border-top: 1px solid var(--border-strong); } .week header { grid-row: span 2; border-right: 1px solid var(--border); border-bottom: 0; } .week header strong { font-size: 14px; } .week p { font-size: 14px; } .practice { min-height: 0; } .week .project { grid-column: 2; } .patterns { grid-template-columns: 1fr; gap: 0; } .patterns label { min-height: 64px; } .patterns strong { font-size: 15px; } .toolFooter { align-items: start; flex-direction: column; gap: 4px; } .inputs { gap: 18px; grid-template-columns: 1fr; padding: 20px; } .inputs label { display: flex; align-items: center; gap: 12px; justify-content: space-between; } .inputs label span { margin: 0; font-size: 14px; } .inputs input { width: 100px; flex-shrink: 0; } .results { margin: 0 20px; } .results > div + div { padding-left: 16px; } .results > div > strong { font-size: 40px; } .record { grid-template-columns: 1fr; } .record li + li { border-left: 0; border-top: 1px solid var(--border-strong); } .routes p { margin-left: 0; } }
 @media print { .patterns, .inputs, .calcHeading button { display: none; } .worked { display: block; } .week { break-inside: avoid; } }

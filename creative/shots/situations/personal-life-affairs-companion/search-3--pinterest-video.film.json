@@ -20,7 +20,7 @@
   },
   "treatment": {
     "voice": "editorial",
-    "camera": "locked",
+    "camera": "float",
     "transitions": [
       "pageTurn",
       "blurDissolve",
@@ -57,7 +57,7 @@
       "why": "Opens on the moment in the person's own words, as the listing records people searching it.",
       "from": 0,
       "dur": 168,
-      "ground": "light",
+      "ground": "ink",
       "transition": "cut",
       "sfx": [],
       "lines": [
@@ -97,11 +97,11 @@
       "from": 156,
       "dur": 444,
       "ground": "light",
-      "transition": "blurDissolve",
+      "transition": "pageTurn",
       "sfx": [
         {
           "at": 0,
-          "cue": "whoosh",
+          "cue": "page",
           "volume": 0.192
         },
         {
@@ -137,12 +137,12 @@
       "why": "Ends on where to read the whole guide, with the product beneath it: the viewer leaves with the next step, not only a pitch.",
       "from": 588,
       "dur": 161,
-      "ground": "ink",
-      "transition": "pageTurn",
+      "ground": "light",
+      "transition": "blurDissolve",
       "sfx": [
         {
           "at": 0,
-          "cue": "page",
+          "cue": "whoosh",
           "volume": 0.192
         },
         {
@@ -171,7 +171,7 @@
     },
     {
       "topic": "Guide",
-      "decision": "\"Beneficiary vs will: which one decides who gets it?\" (draftpace.com/guides/beneficiary-forms-override-your-will)",
+      "decision": "\"Beneficiary vs will: what controls each account?\" (draftpace.com/guides/beneficiary-forms-override-your-will)",
       "because": "The guide that covers this moment: what to do comes from it, and the film ends on it."
     },
     {
@@ -187,12 +187,12 @@
     {
       "topic": "Structure",
       "decision": "In their words: The moment typed the way a person searches it, then what to do about it, then the product doing it.",
-      "because": "Best fit for a awareness film on Pinterest video pin (platform fit 3, goal fit 3, already used for this product ×1, already used on Pinterest video pin ×3). Other candidates: The moment (-15.4), Inside the tool (-17.5)."
+      "because": "Best fit for a awareness film on Pinterest video pin (platform fit 3, goal fit 3, already used for this product ×1, already used on Pinterest video pin ×4). Other candidates: Inside the tool (-14.2), The moment (-15.4)."
     },
     {
       "topic": "Angle",
       "decision": "\"My pension goes to whoever is named on the form, not my will\"",
-      "because": "A situation people search for, \"My pension goes to whoever is named on the form, not my will\", with the steps from \"Beneficiary vs will: which one decides who gets it?\", and how Personal Life Affairs Companion helps."
+      "because": "A situation people search for, \"My pension goes to whoever is named on the form, not my will\", with the steps from \"Beneficiary vs will: what controls each account?\", and how Personal Life Affairs Companion helps."
     },
     {
       "topic": "Transitions",
@@ -208,21 +208,6 @@
       "topic": "Colour",
       "decision": "Grounds ink → light → light → accent",
       "because": "Grounds ink → light → light → accent: a cool accent, so a darker ground is used for contrast at a turn."
-    },
-    {
-      "topic": "Variation",
-      "decision": "Rotated the ground rhythm",
-      "because": "Its shape was 0.78 similar to sit-personal-finance-companion-search-2--youtube-short; a different film, not the same one re-coloured."
-    },
-    {
-      "topic": "Variation",
-      "decision": "Changed the camera",
-      "because": "Its shape was 1.00 similar to sit-personal-life-affairs-companion-search-1--youtube-short; a different film, not the same one re-coloured."
-    },
-    {
-      "topic": "Variation",
-      "decision": "Reordered the transitions",
-      "because": "Its shape was 0.88 similar to sit-personal-life-affairs-companion-search-1--youtube-short; a different film, not the same one re-coloured."
     },
     {
       "topic": "Sound",

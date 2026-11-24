@@ -1,6 +1,6 @@
 # sit-homeschooling-companion-problem-4--pinterest-video
 
-**Pinterest video pin** · awareness · 1000×1500 · 17.5s · structure: **situationMoment**
+**Pinterest video pin** · awareness · 1000×1500 · 20.4s · structure: **situationInside**
 
 > Angle: "You need something to show, not a system so heavy it gets abandoned by half term." — `problemsSolved[3].problem`
 
@@ -13,23 +13,22 @@
 | **Situation** | "You need something to show, not a system so heavy it gets abandoned by half term." | One real moment from Homeschooling Companion's listing (problemsSolved[3].problem). The film is about this moment and how the product helps with it: "A printed record per child, containing only what you chose to include." |
 | **Stage** | Before launch: helpful and relatable only | Nobody knows Draftpace yet, so films show how it helps with real moments. Who it is not for, questions before buying, what you get and the price wait until there are users to sell to. |
 | **Audience** | You already have a curriculum you chose on purpose and you want something that follows it rather than replacing it. / You teach more than one child and keeping their records separate in your head has stopped working. | The listing's own audience lines; the director writes for them. |
-| **Structure** | The moment: The moment as it feels, set dark, then the help in the light, then what to do next. | Best fit for a awareness film on Pinterest video pin (platform fit 1, goal fit 3, already used for this product ×3, already used on Pinterest video pin ×2). Other candidates: Inside the tool (-24.6). |
-| **Angle** | "You need something to show, not a system so heavy it gets abandoned by half term." | The moment "You need something to show, not a system so heavy it gets abandoned by half term.", then how Homeschooling Companion helps. |
+| **Structure** | Inside the tool: The moment, then how the product helps on its real screen, then one more real thing an owner does in it. | Best fit for a awareness film on Pinterest video pin (platform fit 2, goal fit 2, already used for this product ×2, already used on Pinterest video pin ×3). Other candidates: The moment (-25.4). |
+| **Angle** | "You need something to show, not a system so heavy it gets abandoned by half term." | The moment "You need something to show, not a system so heavy it gets abandoned by half term.", how Homeschooling Companion helps, and one more real thing it does: "Add a child". |
 | **Transitions** | Transitions follow the product's own identity motif, "register" | Transitions follow the product's own identity motif, "register": a register is filled line by line, so scenes are written in from the top. |
 | **Camera** | Camera "float" | Camera "float": a gentle float that keeps a held frame alive without demanding attention. |
 | **Colour** | Grounds light → accent → light → ink | Grounds light → accent → light → ink: a cool accent, so a darker ground is used for contrast at a turn. |
-| **Variation** | Rotated the ground rhythm | Its shape was 0.88 similar to sit-homeschooling-companion-search-2--pinterest-video; a different film, not the same one re-coloured. |
-| **Variation** | Changed the camera | Its shape was 0.78 similar to sit-homeschooling-companion-problem-1--instagram-feed; a different film, not the same one re-coloured. |
+| **Variation** | Rotated the ground rhythm | Its shape was 0.82 similar to sit-homeschooling-companion-search-2--pinterest-video; a different film, not the same one re-coloured. |
 | **Sound** | Light sound design, low-energy bed | Most of this audience never unmutes, so nothing depends on sound; cues are kept quieter and sparser for those who do. |
-| **Length** | 17.5s, 3 scenes | Each scene is held for the time its words take to read on Pinterest video pin (0.32s a word), inside 10–32s. |
+| **Length** | 20.4s, 4 scenes | Each scene is held for the time its words take to read on Pinterest video pin (0.32s a word), inside 10–32s. |
 
-Treatment: voice `editorial`, camera `locked`, motif `register`, transitions `lineWipe` → `slideUp` → `lineWipe`, music bed at 0.16 (low energy).
+Treatment: voice `editorial`, camera `float`, motif `register`, transitions `lineWipe` → `slideUp` → `lineWipe`, music bed at 0.16 (low energy).
 
 ## Script, scene by scene
 
 ### 1. moment — 0:00.00 to 0:06.70 (frames 0–201, 6.7s)
 
-- **Shot:** title / editorial on a light ground, in by `cut`
+- **Shot:** title / label on a light ground, in by `cut`
 - **On screen:** "You need something to show, not a system so heavy it gets abandoned by half term." — `problemsSolved[3].problem`
 - **Set as:** `You need something to show,` / `not a system so heavy it` / `gets abandoned by half term.` (accent on "something")
 - **Why:** Opens on the moment as the listing describes it: the situation the viewer is in right now.
@@ -43,9 +42,17 @@ Treatment: voice `editorial`, camera `locked`, motif `register`, transitions `li
 - **Sound:** tick @+0f (0.36), pop @+12f (0.25), tap @+105f (0.33)
 - **Why:** How Homeschooling Companion helps with this moment, in the listing's own words, on the real screen that shows it. Screen: "What we are doing today." (Today, per child: each lesson in the plan, and what is worth going over again.) chosen because it is the real screen closest to "A printed record per child, containing only what you chose to include. You need "; focus on "Ava".
 
-### 3. cta — 0:13.70 to 0:17.53 (frames 411–526, 3.8s)
+### 3. also — 0:13.70 to 0:17.00 (frames 411–510, 3.3s)
 
-- **Shot:** cta / save on a ink ground, in by `blurDissolve`
+- **Shot:** phone / proof on a ink ground, in by `slideUp`
+- **Real UI:** `screens/homeschooling-companion-kids.png`, pose `flat`, focus "state" (y 159, h 126) at 45%
+- **Caption:** "Add a child" — `tasks[1].label`
+- **Sound:** swish @+0f (0.19), pop @+12f (0.25), tap @+45f (0.33)
+- **Why:** One more real thing an owner does here, in the listing's own task wording, on the screen it happens on. Screen: "Your children." (Each child with their age and subjects, and the state's homeschool requirements kept alongside.) chosen because it is the real screen closest to "Add a child"; focus on "Oregon · Moderate regulation".
+
+### 4. cta — 0:16.60 to 0:20.43 (frames 498–613, 3.8s)
+
+- **Shot:** cta / save on a accent ground, in by `blurDissolve`
 - **On screen:** "Homeschooling Companion" — `title`
 - **On screen:** "Save this for later." — `micro`
 - **Sound:** whoosh @+0f (0.19), settle @+8f (0.30)

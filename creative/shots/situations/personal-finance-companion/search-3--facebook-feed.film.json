@@ -94,7 +94,7 @@
       },
       "from": 112,
       "dur": 422,
-      "ground": "light",
+      "ground": "ink",
       "transition": "cardSlide",
       "sfx": [
         {
@@ -135,7 +135,7 @@
       "why": "Ends on where to read the whole guide, with the product beneath it: the viewer leaves with the next step, not only a pitch.",
       "from": 522,
       "dur": 150,
-      "ground": "ink",
+      "ground": "light",
       "transition": "wipe",
       "sfx": [
         {
@@ -169,7 +169,7 @@
     },
     {
       "topic": "Guide",
-      "decision": "\"Debt snowball vs avalanche: which costs less, which sticks\" (draftpace.com/guides/debt-snowball-vs-avalanche)",
+      "decision": "\"Debt snowball vs avalanche: choose a payment order\" (draftpace.com/guides/debt-snowball-vs-avalanche)",
       "because": "The guide that covers this moment: what to do comes from it, and the film ends on it."
     },
     {
@@ -185,12 +185,12 @@
     {
       "topic": "Structure",
       "decision": "What to do first: The moment, the guide's own checklist for it, then the product that keeps track of it.",
-      "because": "Best fit for a awareness film on Facebook feed video (platform fit 3, goal fit 3, already used on Facebook feed video ×2). Other candidates: Inside the tool (-3.3), The moment (-7.8)."
+      "because": "Best fit for a awareness film on Facebook feed video (platform fit 3, goal fit 3, already used for this product ×1, already used on Facebook feed video ×1). Other candidates: In their words (-5.6), Inside the tool (-6.0)."
     },
     {
       "topic": "Angle",
       "decision": "\"Debt snowball or avalanche, which is better for me\"",
-      "because": "The moment \"Debt snowball or avalanche, which is better for me\", the checklist from \"Debt snowball vs avalanche: which costs less, which sticks\", then how Personal Finance Companion helps."
+      "because": "The moment \"Debt snowball or avalanche, which is better for me\", the checklist from \"Debt snowball vs avalanche: choose a payment order\", then how Personal Finance Companion helps."
     },
     {
       "topic": "Transitions",
@@ -209,11 +209,6 @@
     },
     {
       "topic": "Edit",
-      "decision": "Trimmed \"what-to-do\" to 3 items",
-      "because": "Fewer items read properly beats more items skimmed."
-    },
-    {
-      "topic": "Edit",
       "decision": "Trimmed \"what-to-do\" to 2 items",
       "because": "Fewer items read properly beats more items skimmed."
     },
@@ -221,6 +216,11 @@
       "topic": "Edit",
       "decision": "Cut \"what-to-do\"",
       "because": "It would run past 30s, the most Facebook feed video holds attention for."
+    },
+    {
+      "topic": "Variation",
+      "decision": "Rotated the ground rhythm",
+      "because": "Its shape was 0.78 similar to sit-homeschooling-companion-search-5--facebook-feed; a different film, not the same one re-coloured."
     },
     {
       "topic": "Sound",
